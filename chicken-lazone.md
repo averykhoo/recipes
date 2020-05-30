@@ -8,18 +8,15 @@ This recipe comes from the restaurant "Brennan's" located in New Orleans.
 No one has to know how simple and quick it is.
 I posted this recipe exactly as it was in the book, however, if you like a little "heat" please feel free to add some cayenne pepper to taste.
 
-Proceed with caution:
-References to ingredient amounts, cooking times, and temperatures in directions have NOT been adjusted
-(only the amounts in the ingredients list were updated).
 
 Ingredients
-*   1.5 teaspoons salt
-*   2.25 teaspoons chili powder
-*   2.25 teaspoons onion powder
-*   3 teaspoons garlic powder
-*   6 whole boneless skinless chicken breasts
-*   0.375 cup butter, divided
-*   0.75 cup heavy cream
+*   1 teaspoon salt
+*   1.5 teaspoons chili powder
+*   1.5 teaspoons onion powder
+*   2 teaspoons garlic powder
+*   4 whole boneless skinless chicken breasts
+*   0.25 cup butter, divided
+*   0.5 cup heavy cream
 
 Directions
 1.  Combine the seasonings and coat chicken breasts.
