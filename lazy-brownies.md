@@ -1,27 +1,25 @@
 Preheat oven to 180°C, preset timer for 20 mins
 
-Put in ceramic/glass bowl:
+In a ceramic/glass bowl, microwave for 35-50 sec to melt:
 -   1 block (250g) butter
--   0.5 to 1+ cup cocoa/choco
-
-1.  Microwave 35-50 sec to melt
+-   0.5 to 1+ cup cocoa powder or chocolate chips/bar
 
 Meanwhile in blender:
--   2 cups sugar
--   4 eggs (240g)
+-   2 to 2.5 cups sugar
+-   4 eggs (55-60g each)
 
 1.  Blend well
-2.  Add the microwaved butter/chocolate
+2.  Pour in the microwaved butter/chocolate
 3.  Blend some more
 
 -   0.5 to 2 tsp vanilla extract
 -   1 to 1.5 cups plain flour
--   0.5 tsp salt
--   (up to 2 cups optional stuff here)
+-   0.5 to 0.75 tsp salt
+-   (up to 1.5 cups of add-ons, e.g. chocolate or peanut butter chips, nuts, marshmallow, etc)
 
 1.  Blend/stir/fold until just mixed
 2.  Pour into a pan with base 120 square inches, or about an inch high
 3.  Bake at 180°C for 20 mins
 4.  Leave on counter to room temp
 5.  Solidify in fridge once cool (warm things will spoil fridge food)
-6.  Remove from pan once hardened
+6.  Remove from pan once hardened and cut into pieces
