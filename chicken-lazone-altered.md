@@ -5,8 +5,8 @@
 
 ##  WITH AN OVEN:
 
-*   1-2 teaspoons salt  
-*   1 teaspoon chili powder  
+*   1-2 teaspoons salt
+*   1 teaspoon chili powder
 *   2 onions
 *   2 cloves garlic
 *   1/2 cup butter
@@ -25,7 +25,7 @@
 1.  Melt in saucepan
 
 *   2 cloves garlic, crushed or chopped as finely as humanly possible
-*   1 teaspoon chili powder  
+*   1 teaspoon chili powder
 *   2 onions, chopped as fine as possible
 *   Mushrooms, optional, (a few halved button mushrooms)
 2.  Fry over high heat until mushrooms brown and onions are translucent

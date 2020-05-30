@@ -4,7 +4,7 @@
 *   Serves 8
 
 These are the biscuits I make for biscuits and gravy.
-The trick is to work the dough as little as possible, and if you can get the hang of that, you will have biscuits that bake up higher than anything you've ever seen. 
+The trick is to work the dough as little as possible, and if you can get the hang of that, you will have biscuits that bake up higher than anything you've ever seen.
 
 Ingredients
 *   2 cups​ all-purpose flour
