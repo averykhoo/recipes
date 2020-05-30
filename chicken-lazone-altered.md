@@ -1,4 +1,6 @@
 #   Chicken Lazone (modified)
+*   originally from [RecipeZaar #65768](http://www.recipezaar.com/65768)
+*   see also https://damndelicious.net/2016/03/12/chicken-lazone/
 *   works with garlic fried rice or pasta
 *   potato dauphinois makes a good side dish
 
