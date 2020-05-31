@@ -7,9 +7,9 @@ This is what you need (30–40 meatballs, serves 4):
 *   250 g minced beef
 *   250 g minced pork
 *   1 egg
-*   2–3 dl cream (or milk) and water
-*   2½ tbsp fine chopped onion
-*   ½ dl unsweetened rusk flour
+*   200–300 ml cream (or milk) and water
+*   2.5 tbsp fine chopped onion
+*   50 ml unsweetened rusk flour
 *   2 boiled potatoes, cold
 *   4–5 tbsp butter, margarine or oil
 *   salt
@@ -17,25 +17,25 @@ This is what you need (30–40 meatballs, serves 4):
 *   (allspice)
 
 This is how you do it:
-Heat the onion until golden in a couple of tablespoons of lightly browned butter.
-Mash the potatoes and moisten the rusk flour in a little water.
-Mix all the ingredients into a smooth farce and flavour generously with salt, white pepper and (optional) finecrushed allspice.
-Shape the farce into round balls and transfer to a floured chopping board, then fry them quite slowly in plenty of butter.
+1.  Heat the onion until golden in a couple of tablespoons of lightly browned butter.
+2.  Mash the potatoes and moisten the rusk flour in a little water.
+3.  Mix all the ingredients into a smooth farce and flavour generously with salt, white pepper and (optional) finecrushed allspice.
+4.  Shape the farce into round balls and transfer to a floured chopping board, then fry them quite slowly in plenty of butter.
 
 
 This is what you need (cream sauce, serves 4):
-*   1 dl double cream
-*   2 dl water or beef stock
+*   100 ml double cream
+*   200 l water or beef stock
 *   soy
 *   salt
 *   white pepper
 *   (1 tbsp white flour)
 
 This is how you do it:
-Swirl out the pan with a couple of decilitres of boiling water or meat stock.
-Strain the pan juices and dilute with cream.
-Thicken with white flour if preferred.
-Season well, and serve this and the meatballs with freshly boiled potatoes, lingonberry jam, a green salad and salted or pickled gherkins.
+1.  Swirl out the pan with a couple of decilitres of boiling water or meat stock.
+2.  Strain the pan juices and dilute with cream.
+3.  Thicken with white flour if preferred.
+4.  Season well, and serve this and the meatballs with freshly boiled potatoes, lingonberry jam, a green salad and salted or pickled gherkins.
 
 We also have these easy-to-prepare solutions:
 *   SYLT LINGON - lingonberry jam (400g)
