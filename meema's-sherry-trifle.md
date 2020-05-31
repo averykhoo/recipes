@@ -3,17 +3,18 @@
 
 Ingredients
 *   1 can Fruit Cocktail (with peaches, not pineapple)
-*   3 TB Sherry
+*   3 tbsp Sherry
 *   1 Walnut Butter Cake
 *   Bird’s Eye Custard Powder
 *   UHT Milk
-*   1 ½ cups Whipping Cream (e.g. 38% fat Whipping Cream, from Phoon Huat)
+*   1.5 cups Whipping Cream (e.g. 38% fat Whipping Cream, from Phoon Huat)
 *   1 tsp Icing Sugar
 
 Method
 1.  1 can Fruit Cocktail:
     *   Separate Fruit from Syrup
-    *   Pour Syrup from can into a bowl. Add 3 TB Sherry to the Syrup
+    *   Pour Syrup from can into a bowl.
+        Add 3 tbsp Sherry to the Syrup
     *   Select & separate the Red Cherries from the Fruit Cocktail – reserve for decoration
 2.  Cut the Walnut Butter Cake into 1 inch thick slices
 3.  Cook the Bird’s Eye Custard with UHT Milk
@@ -34,6 +35,6 @@ Method
     Whip the Cream with an electric mixer until soft peaks form, 3 to 5 minutes.
 6.  Cover the Trifle with Whipped Cream.
     *   Decorate with the Red Cherries
-    
+
 Optional:
 *   Add fresh Blueberries in the fruit layers
