@@ -1,4 +1,4 @@
-#   [Swedish Meatballs](http://www.grouprecipes.com/20899/swedish-meatballs.html) (untested)
+#   [Swedish Meatballs](http://www.grouprecipes.com/20899/swedish-meatballs.html)
 *   From krumkake
 *   40 minutes to make
 *   Serves 6

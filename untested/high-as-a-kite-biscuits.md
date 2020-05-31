@@ -1,4 +1,4 @@
-#   [High As A Kite Biscuits](http://www.grouprecipes.com/56252/high-as-a-kite-biscuits.html) (untested)
+#   [High As A Kite Biscuits](http://www.grouprecipes.com/56252/high-as-a-kite-biscuits.html)
 *   From krumkake
 *   10 minutes to make
 *   Serves 8

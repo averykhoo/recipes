@@ -1,4 +1,4 @@
-#   [Prize Winning Banana Bread](http://www.grouprecipes.com/32963/prize-winning-banana-bread.html) (untested)
+#   [Prize Winning Banana Bread](http://www.grouprecipes.com/32963/prize-winning-banana-bread.html)
 *   From krumkake
 *   45 minutes to make
 *   Serves 12
