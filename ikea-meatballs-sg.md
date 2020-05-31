@@ -36,3 +36,9 @@ Swirl out the pan with a couple of decilitres of boiling water or meat stock.
 Strain the pan juices and dilute with cream.
 Thicken with white flour if preferred.
 Season well, and serve this and the meatballs with freshly boiled potatoes, lingonberry jam, a green salad and salted or pickled gherkins.
+
+We also have these easy-to-prepare solutions:
+*   SYLT LINGON - lingonberry jam (400g)
+*   GURKA INLAGD - pickled cucumber (375g)
+*   KÖTTBULLAR - swedish meatballs (1kg)
+*   GRÄDDSÅS - meatball sauce (40g)
