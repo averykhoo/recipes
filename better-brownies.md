@@ -7,7 +7,7 @@ Brownie:
 *   1 cup (170g) 70% dark chocolate (droplets)
 *   1 cup (250g) butter (1 full slab, keep the butter wrapper for flouring the baking pan)
 *   0.5 cups (120g) cream
-*   -----------------------
+*   ==========================
 *   1.75 cups (350g) light brown sugar
 *   0.5 tsp salt
 *   1 tsp instant coffee powder (not 3-in-1 or 2-in-1)
@@ -21,8 +21,6 @@ Brownie:
     *   Tiny marshmallows (or dice large ones)
     *   Tiny reeses, or peanut butter chips
     *   Caramel / toffee chunks
-
-(optional layer: half a cheesecake recipe)
 
 Top layer (crust):
 *   2 egg whites
@@ -79,10 +77,7 @@ To serve:
 
 ##  Notes:
 *   Try bread flour?
-*   less egg (more yolk?)
-*   more water/milk and oil (try up to 270g butter? Or add 1 or 2 tbsp oil?)
 *   More chocolate is possible too, up to 350g, or substitute with cocoa powder
-*   Up to 3tsp vanilla
 *   Large eggs, 55-60g
 *   Partial references:
     *   https://cafedelites.com/worlds-best-fudgiest-brownies/
