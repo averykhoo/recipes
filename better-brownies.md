@@ -5,7 +5,7 @@
 
 Brownie:
 *   1 cup (170g) 70% dark chocolate (droplets)
-*   1 cup (250g) butter
+*   1 cup (250g) butter (1 full slab, keep the butter wrapper for flouring the baking pan)
 *   0.5 cups (120g) cream
 *   -----------------------
 *   1.75 cups (350g) light brown sugar
@@ -40,7 +40,7 @@ Topping:
 
 1.  Preheat oven to 180 C
 2.  If not silicone pan: (eg glass)
-    1.  Butter pan
+    1.  Butter pan (use the butter wrapper)
     2.  Dust pan with cocoa, not flour
 3.  Brown the butter in a saucepan
 4.  Melt the dark chocolate in the microwave (about 30-60 seconds)
