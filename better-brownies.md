@@ -16,11 +16,13 @@ Brownie:
 *   3 eggs + 2 yolks (remaining 2 whites used below)
 *   0.5 tsp vanilla essence (up to 1 tsp)
 *   (optional add-ins) up to 1 cup of anything, but plain is great too
-    *   nuts, toasted in the oven
-    *   chocolate chips
-    *   Tiny marshmallows (or dice large ones)
+    *   chocolate chips (best choice)
     *   Tiny reeses, or peanut butter chips
+    *   Tiny marshmallows (or dice large ones)
     *   Caramel / toffee chunks
+    *   cocoa powder
+    *   nuts, toasted in the oven
+    *   or you could double the initial amount of melted chocolate droplets to 2 cups
 
 Top layer (crust):
 *   2 egg whites
@@ -51,8 +53,7 @@ Topping:
     *   Flour
     *   Eggs & yolks 
     *   vanilla 
-    *   Blend
-7.  if adding nuts or chocolate chips: stir in by hand
+7.  if adding nuts or chocolate chip add-ins: stir in by hand
 8.  make chocolate meringue:
     *   wipe down a large metal bowl with lemon juice / citric acid / whtie vinegar
     *   add egg whites and white sugar
@@ -60,8 +61,9 @@ Topping:
     *   fold in the sifted cocoa and vanilla essence
 9.  Bake at 180C for about 10 mins, a bit until top is flat and sort of solid
 10. pour / spread chocolate meringue in a layer over the brownie
-11. bake at 180C for another 5 mins
+11. bake at 180C for another 5-10 mins
 12. OPTIONAL cheesecake layer here (use 1 full recipe of dorie greenspan's cheesecake)
+    *   you'll end up baking the brownie an extra 1 hr (at 160 C), which is fine
 
 
 To serve:
@@ -77,7 +79,6 @@ To serve:
 
 ##  Notes:
 *   Try bread flour?
-*   More chocolate is possible too, up to 350g, or substitute with cocoa powder
 *   Large eggs, 55-60g
 *   Partial references:
     *   https://cafedelites.com/worlds-best-fudgiest-brownies/
