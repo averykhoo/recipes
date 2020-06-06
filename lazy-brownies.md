@@ -1,9 +1,10 @@
 #   Lazy Brownies
-Preheat oven to 180°C, preset timer for 20 mins
 
-In a ceramic/glass bowl, microwave for 35-50 sec to melt:
+In a non-metallic bowl, microwave for 30-60 sec to melt:
 *   1 block (250g) butter
 *   0.5 to 1+ cup cocoa powder or chocolate chips/bar
+
+Preheat oven to 180°C, preset timer for 20 mins
 
 Meanwhile in blender:
 *   2 to 2.5 cups sugar
@@ -13,13 +14,13 @@ Meanwhile in blender:
 2.  Pour in the microwaved butter/chocolate
 3.  Blend some more
 
-*   0.5 to 2 tsp vanilla extract
-*   1 to 1.5 cups plain flour
+*   0.5 to 1.5 tsp vanilla extract
+*   1 to 1.5 cups plain or cake flour
 *   0.5 to 0.75 tsp salt
-*   (up to 1.5 cups of add-ons, e.g. chocolate or peanut butter chips, nuts, marshmallow, etc)
+*   (up to 1.5 cups of chocolate chips or other add-ons, e.g. peanut butter chips, nuts, marshmallows, etc)
 
 1.  Blend/stir/fold until just mixed
-2.  Pour into a pan with base 120 square inches, or about an inch high
+2.  Pour into a baking pan with base 120 square inches, or about an inch high
 3.  Bake at 180°C for 20 mins
 4.  Leave on counter to room temp
 5.  Solidify in fridge once cool (warm things will spoil fridge food)
