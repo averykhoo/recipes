@@ -16,7 +16,7 @@ real actually-edible food
 *   easy hollandaise
 *   better brownies
 
-## collapsible markdown?
+#   todo: use collapsible markdown
 <details>
 <summary>CLICK ME</summary>
 
