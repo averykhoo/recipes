@@ -8,9 +8,9 @@ GRAHAM CRACKER BASE
 *   4 tablespoons sugar (50g)
 *   pinch of salt
 *   3 tablespoons unsalted butter, melted  in a small pot (45g)
-*   pinch of cinnamon 
-*   pinch of nutmeg 
-*   (untested) Vanilla? 
+*   pinch of cinnamon
+*   pinch of nutmeg
+*   (untested) Vanilla?
 *   (or use lotus biscuits and no spice/sugar/salt)
 
 
@@ -36,7 +36,7 @@ TOPPING
 MORE TOPPING
 *   1 pint = 12 ounces (340 g) fresh raspberries / strawberries
 *   0.5 cup granulated sugar (100 g) (or 1/3 cup for less sweet)
-*   0.5 cup water (120 ml) 
+*   0.5 cup water (120 ml)
 *   (erin's mile-high) zest of 1/2 lemon
 *   (erin's mile-high) zest of 1/2 orange / 0.5tsp orange extract (zest as finely as possible)
 *   (erin's mile-high) 1 tbsp grand marnier
@@ -71,7 +71,7 @@ GRAHAM CRACKER BASE
 8.  Flatten layer at the bottom of the pan.
 9.  Be careful as you do this, as not to tear the aluminum foil.
 10. (optionally) Put pan into fridge/freezer until ready to make the rest of the cake.
-11. Preheat oven to 350°F (180°C), with rack in lower third of oven. 
+11. Preheat oven to 350°F (180°C), with rack in lower third of oven.
 12. Place in the oven for 10 minutes. (Prebaking the crust gives it the nice crunch.)
 13. Remove from the oven and let cool.
 
@@ -86,7 +86,7 @@ CHEESECAKE BATTER
 6.  Beat in the vanilla
 7.  Increase blender speed to max
 8.  Reduce mixer speed to low
-9.  Add the sour cream and/or heavy cream, beat until incorporated. 
+9.  Add the sour cream and/or heavy cream, beat until incorporated.
     (Occasionally scrape sides of mixer bowl to avoid unmixed bits.)
 10. Whip whites with half a cup of sugar to medium peaks, then fold the cheesecake mix in
 11. Place the foil-wrapped springform pan in a large, high-sided roasting pan.
@@ -99,7 +99,7 @@ CHEESECAKE BATTER
 17. Cook at 325°F (160°C) for 1½ hours (1 hour should work).
 18. Turn off the heat of the oven.
 19. Crack open the oven door up to 1-inch (propped open with a wooden spoon), and let the cake cool in the oven, as the oven cools, for at least another hour.
-    (If the oven has a cooling fan and exhaust then just leave it closed maybe) 
+    (If the oven has a cooling fan and exhaust then just leave it closed maybe)
     (This gentle cooling will help prevent the cheesecake surface from cracking, if it hasn't already)
 20. Cover the top of the cheesecake with foil, so that it doesn't actually touch the cheesecake.
 21. Chill in the refrigerator for a minimum of 4 hours, or preferably overnight.
