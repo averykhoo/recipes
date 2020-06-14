@@ -2,6 +2,7 @@
 *   75 minutes to make
 *   Serves 16
 *   From krumkake 12 years ago
+*   see also: http://www.cookingforengineers.com/recipe/89/Cheesecake-Plain-New-York-Style
 
 With 5 blocks of cream cheese in this bad boy, be sure to use both hands to carry the pan...it is HEAVY!
 My daughter, Erin, was actually the one to try this recipe out while she was living at home with us.
@@ -33,18 +34,18 @@ For crust:
 2.  In a mixing bowl, combine graham crumbs, butter and sugar – mix well.
 3.  Press crumbs into bottom and halfway up sides of pan and bake at 375F (190C) until golden, about 8 minutes.
 4.  Set aside to cool while you prepare the cheesecake filling.
-5.  NOTE: If you haven't invested in a pestle yet, go out and get yourself one... 
+5.  NOTE: If you haven't invested in a pestle yet, go out and get yourself one...
     pressing crusts into pans/muffin tins is SO MUCH easier with that little tool!
 
 For cheesecake filling:
-1.  Preheat oven to 500F (260C) degrees. (seriously 260C???)
+1.  Preheat oven to 500F (260C) degrees.
 2.  In a large mixing bowl with an electric mixer, combine cream cheese, sugar, zests, and vanilla ;
     beat until light and creamy.
 3.  Add the flour, then the eggs and the additional yolks, one at a time, mixing well after each addition.
 4.  Add the sour cream and mix until smooth.
 5.  Pour mixture into prepared pan and bake for 12 minutes at 500.
-    Reduce oven temp to 200 and bake for 1 hour.
-6.  DON'T PANIC when you see how brown the top of the cheesecake becomes... 
+    Reduce oven temp to 200F (90C) and bake for 1 hour.
+6.  DON'T PANIC when you see how brown the top of the cheesecake becomes...
     this is what it SHOULD do.
 7.  Turn off the oven and open the oven door;
     allow cheesecake to cool in the oven for an hour before transferring the pan to a cooking rack to cool completely before refrigerating.
