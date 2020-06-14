@@ -15,3 +15,13 @@ real actually-edible food
 *   butter chicken
 *   easy hollandaise
 *   better brownies
+
+#   todo: use collapsible markdown
+<details>
+<summary>CLICK ME</summary>
+
+```python
+print("hello world!")
+```
+
+</details>
