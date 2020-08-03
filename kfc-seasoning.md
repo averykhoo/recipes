@@ -33,6 +33,7 @@
 
 ##  [Original Recipe Card](./kfc-1.jpg)
 *   refer also to photo of [labelled vials](./kfc-2.jpg)
+
 | Vial | Teaspoons  | Ingredient         | Origin                 | Scaled Tsp    | Scaled Tbsp    | Kilograms | Oz      | Price ($) |
 |------|------------|--------------------|------------------------|---------------|----------------|-----------|---------|-----------|
 |      | 48         | Cake Flour         |                        | 4062          | 1354           | 11.34     | 400     |     25.00 |
