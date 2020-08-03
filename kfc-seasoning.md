@@ -23,7 +23,7 @@
 | 0.5    | cups |  147.35   | Salt               | less 20%            |
 
 
-#   Directions
+##  Directions
 1.  Double coat with the mixture above
     *   For the dip, use either:
         *   Buttermilk
@@ -31,8 +31,9 @@
         *   Beaten egg
 
 
-##  [Original Recipe Card](./kfc-1.jpg)
-*   refer also to photo of [labelled vials](./kfc-2.jpg)
+##  Unedited Original Recipe
+![recipe card](./kfc-1.jpg)
+![labelled vials](./kfc-2.jpg)
 
 | Vial | Teaspoons  | Ingredient         | Origin                 | Scaled Tsp    | Scaled Tbsp    | Kilograms | Oz      | Price ($) |
 |------|------------|--------------------|------------------------|---------------|----------------|-----------|---------|-----------|
