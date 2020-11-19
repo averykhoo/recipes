@@ -2,39 +2,37 @@
 *   circa 1970
 
 Ingredients
-*   1 can Fruit Cocktail (with peaches, not pineapple)
-*   3 tbsp Sherry
-*   1 Walnut Butter Cake
-*   Bird’s Eye Custard Powder
-*   UHT Milk
-*   1.5 cups Whipping Cream (e.g. 38% fat Whipping Cream, from Phoon Huat)
-*   1 tsp Icing Sugar
+*   1 can fruit cocktail (with peaches, not pineapple)
+*   3 tbsp sherry
+*   1 walnut butter cake
+*   [Bird's Custard](https://en.wikipedia.org/wiki/Bird's_Custard) powder
+*   UHT milk
+*   1.5 cups whipping cream (e.g. 38% fat whipping cream, from Phoon Huat)
+*   1 tsp icing sugar
 
 Method
-1.  1 can Fruit Cocktail:
-    *   Separate Fruit from Syrup
-    *   Pour Syrup from can into a bowl.
-        Add 3 tbsp Sherry to the Syrup
-    *   Select & separate the Red Cherries from the Fruit Cocktail – reserve for decoration
-2.  Cut the Walnut Butter Cake into 1 inch thick slices
-3.  Cook the Bird’s Eye Custard with UHT Milk
+1.  1 can fruit cocktail:
+    *   Separate fruit from syrup and reserve both separately
+    *   Pour syrup from can into a bowl and add 3 tbsp sherry to the syrup
+    *   Select & separate the red cherries from the fruit cocktail - reserve for decoration
+2.  Cut the walnut butter cake into 1 inch thick slices
+3.  Cook the Bird's Custard with UHT milk
     *   Softer wobbly creamy custard for the bottom layers (add more milk)
     *   Firmer custard for the final top layer
-4.  Choose a pretty Crystal Bowl.
-    Start the layering:
-    1.  Place a layer of Walnut Cake slices on the bottom of the bowl.
-        *   Use a tablespoon to pour the Sherry Syrup over each cake slice
-    2.  Spoon a layer of Fruit Cocktail over the cake, filling spaces between the Cake
-    3.  Pour the Softer Custard over the Fruit Cocktail
-    4.  Repeat layers:
-        *   Cake -> Fruit -> (Softer) Custard
-        *   Use the Firmer Custard for the final topping
-        *   Until Bowl is full within 1cm from the top
-5. Put Whipping Cream in a clean bowl.
-    Add 1 tsp Icing Sugar to the Cream.
-    Whip the Cream with an electric mixer until soft peaks form, 3 to 5 minutes.
-6.  Cover the Trifle with Whipped Cream.
-    *   Decorate with the Red Cherries
+4.  Choose a pretty crystal bowl in which to add the layers:
+    1.  Place a layer of walnut cake slices on the bottom of the bowl.
+    2.  Use a tablespoon / chinese soup spoon to pour the sherry syrup over each cake slice
+    3.  Spoon a layer of fruit cocktail over the cake, filling spaces between the cake
+    4.  Pour the softer custard over the fruit cocktail
+    5.  Repeat the layers above:
+        *   Cake + sherry syrup -> fruit -> (softer) custard
+        *   Use the firmer custard for the final topping
+        *   Until bowl is full within 1 cm from the top (leave space for the cream topping)
+5.  Put whipping cream in a clean bowl.
+    Add 1 tsp icing sugar to the cream.
+    Whip the cream with an electric mixer until soft peaks form, 3 to 5 minutes.
+6.  Cover the trifle with whipped cream.
+    *   Decorate with the red cherries
 
 Optional:
-*   Add fresh Blueberries in the fruit layers
+*   Add fresh blueberries in the fruit layers
