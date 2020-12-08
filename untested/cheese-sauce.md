@@ -28,3 +28,9 @@
 *   This cheese sauce is gooey and tangy.
 *   For a spicier version, substitute half the cheddar cheese with Pepper Jack
     and add 2-3 minced pickled jalapeños, or to taste.
+*   based on [this recipe](https://modernistcuisine.com/recipes/melty-queso-dip/) from Modernist Cuisine,
+    sodium citrate can also be used to dissolve cheese
+    *   while sodium citrate isn't common, it can be synthesized by mixing sodium bicarbonate and citric acid
+        in [appropriate proportions](https://forums.egullet.org/topic/145871-any-chemists-here-would-like-to-synthesize-sodium-citrate-in-a-pinch/?do=findComment&comment=1939016)
+    *   3NaHCO3 (252g) + C6H8O7 (192g) -> Na3C6H5O7.2H2O (294g) + H2O (18g) + 3CO2
+        (but trisodium citrate dihidrate is often used for food, instead of anhydrous)
