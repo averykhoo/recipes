@@ -1,5 +1,5 @@
 #   Chocolate Chip Cookies
-*   refer to [docx](./Chocolate Chip Cookies v9.docx) for comments / details
+*   refer to [docx](./Chocolate%20Chip%20Cookies%20v9.docx) for comments / details
 *   do not update only this markdown!
 
 
@@ -73,7 +73,7 @@
 14. Store in the fridge, separated with baking paper.
     Optionally toast before serving.
 
-To-do:
+##  To-do:
 *   Maybe try a pinch or two of nutmeg?
 *   Add notes about equipment to the start of the recipe
 *   Cookie seems less crispy than it should be, maybe the oven is getting less hot now that it’s older?
