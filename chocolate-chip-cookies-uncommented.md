@@ -8,7 +8,7 @@
 *   400g cake (pastry/top) flour
 *   400g bread (strong) flour
 *   2.5 teaspoons baking powder
-*   2 teaspoons baking soda]
+*   2 teaspoons baking soda
 *   1.5 teaspoons fine salt 
 
 1.  Sift flours, baking soda, baking powder and salt into a medium bowl.
