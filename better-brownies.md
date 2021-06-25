@@ -4,16 +4,16 @@
 ##  ingredients
 
 Brownie:
-*   1 cup (170g) 70% dark chocolate (droplets)
+*   1 cup (170g) 70% dark chocolate (or 80g cocoa powder)
 *   1 cup (250g) butter (1 full slab, keep the butter wrapper for flouring the baking pan)
 *   0.5 cups (120g) cream
 *   ==========================
 *   1.75 cups (350g) light brown sugar
 *   0.5 tsp salt
-*   1 tsp instant coffee powder (not 3-in-1 or 2-in-1)
+*   1 tsp instant coffee powder (not 3-in-1 or 2-in-1) (or 2 tbsp = 1 shot espresso)
 *   1 tbsp Horlicks powder
 *   1 cup (120g) cake flour (or plain)
-*   3 eggs + 2 yolks (remaining 2 whites used below)
+*   3 large (60g) eggs + 2 yolks (remaining 2 whites optionally used below)
 *   0.5 tsp vanilla essence (up to 1 tsp)
 *   (optional add-ins) up to 1 cup of anything, but plain is great too
     *   chocolate chips (best choice)
@@ -24,11 +24,12 @@ Brownie:
     *   nuts, toasted in the oven
     *   or you could double the initial amount of melted chocolate droplets to 2 cups
 
-Top layer (crust):
+OPTIONAL top layer (crust):
 *   2 egg whites
-*   1 cup (200g) fine white sugar
-*   1 cup (80g) cocoa powder, sifted (WARNING: the Lindt cocoa is unusually hygroscopic, add 0.25 cup first)
+*   0.5 cup (100g) fine white sugar
+*   0.67 cup (80g) cocoa powder, sifted (WARNING: the Lindt cocoa is unusually hygroscopic, add 0.25 cup first)
 *   0.5 tsp vanilla essence
+*   pinch of salt
 
 Topping:
 *   Icing sugar (for dusting)
@@ -61,7 +62,7 @@ Topping:
     *   fold in the sifted cocoa and vanilla essence
 9.  Bake at 180C for about 10 mins, a bit until top is flat and sort of solid
 10. pour / spread chocolate meringue in a layer over the brownie
-11. bake at 180C for another 5-10 mins
+11. bake at 120C for 1-2 hours
 12. OPTIONAL cheesecake layer here (use 1 full recipe of dorie greenspan's cheesecake)
     *   you'll end up baking the brownie an extra 1 hr (at 160 C), which is fine
 
@@ -79,6 +80,10 @@ To serve:
 
 ##  Notes:
 *   Try bread flour?
+*   if using cocoa powder
+    *   use 80g
+    *   stir into browned butter
+    *   add cold cream amd mix in
 *   Large eggs, 55-60g
 *   Partial references:
     *   https://cafedelites.com/worlds-best-fudgiest-brownies/

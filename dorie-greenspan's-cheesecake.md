@@ -1,4 +1,4 @@
-#   [Dorie Greenspan's Cheesecake](https://www.seriouseats.com/recipes/2008/04/creamy-cream-cheese-cheesecake-for-passover-recipe.html)
+#   [Dorie Greenspan's Cheesecake](https://web.archive.org/web/20210504153532/https://www.seriouseats.com/recipes/2008/04/creamy-cream-cheese-cheesecake-for-passover-recipe.html)
 *   from: "Baking: From my Home to Yours"
 *   Total time: 30 min prep, 1.5 hr bake, 1-2 hr rest in oven, 2-4 hr cool, 4 hr chill == 10 hours
 
@@ -8,9 +8,15 @@ GRAHAM CRACKER BASE
 *   4 tablespoons sugar (50g)
 *   pinch of salt
 *   3 tablespoons unsalted butter, melted  in a small pot (45g)
-*   pinch of cinnamon
-*   pinch of nutmeg
-*   (untested) Vanilla?
+*   ==========================
+*   1 tsp cinnamon powder
+*   0.5 tsp ground nutmeg
+*   0.5 tsp ground ginger
+*   0.5 tsp vanilla powder (untested)
+*   0.25 tsp ground clove
+*   pinch ground cardamom
+*   pinch white pepper
+*   pinch ground  anise
 *   (or use lotus biscuits and no spice/sugar/salt)
 
 

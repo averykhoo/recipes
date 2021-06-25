@@ -2,7 +2,7 @@
 
 In a non-metallic bowl, microwave for 30-60 sec to melt:
 *   1 block (250g) butter
-*   0.5 to 1+ cup cocoa powder or chocolate chips/bar
+*   0.5 to 1+ cup cocoa powder (80g) or chocolate chips/bar (150g)
 
 Preheat oven to 180°C, preset timer for 20 mins
 
