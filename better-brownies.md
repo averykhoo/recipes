@@ -4,7 +4,7 @@
 ##  ingredients
 
 Brownie:
-*   1 cup (170g) 70% dark chocolate (or 80g cocoa powder)
+*   1 cup (170g) 70% dark chocolate
 *   1 cup (250g) butter (1 full slab, keep the butter wrapper for flouring the baking pan)
 *   0.5 cups (120g) cream
 *   ==========================
@@ -80,10 +80,12 @@ To serve:
 
 ##  Notes:
 *   Try bread flour?
-*   if using cocoa powder
+*   if using cocoa powder in place of chocolate:
     *   use 80g
     *   stir into browned butter
     *   add cold cream amd mix in
+    *   be warned that the brownie's texture will be a bit spongy and dry
+    *   also it'll taste too eggy, maybe use 4 whole eggs instead of 3 + 2 yolks
 *   Large eggs, 55-60g
 *   Partial references:
     *   https://cafedelites.com/worlds-best-fudgiest-brownies/
