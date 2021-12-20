@@ -10,13 +10,13 @@ We like this cream with hot garlic bread.
 Ingredients
 *   3 leeks, sliced
 *   2 garlic cloves, chopped
-*   1 medium cauliflower head, or one 2 pound​ pkg frozen cauliflower florets
+*   1 medium cauliflower head, or one 2 pound pkg frozen cauliflower florets
 *   3 medium carrots, sliced
 *   1 big or 2 medium potatoes, in chunks
 *   4 Tbsp olive oil
-*   4 to 6 cups​ chicken broth, or use bouillon and water
+*   4 to 6 cups chicken broth, or use bouillon and water
 *   salt and pepper
-*   0.5 cup​ goat, Cheddar or feta cheese
+*   0.5 cup goat, Cheddar or feta cheese
 
 How to make it
 1.  In a medium pan heat oil on medium, add leeks and garlic.
