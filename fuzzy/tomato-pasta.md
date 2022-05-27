@@ -1,9 +1,10 @@
 # Tomato sauce pasta
 
 Based off a pomodoro / marinara sauce
+See also this [reddit pomodoro recipe](https://www.reddit.com/r/oddlysatisfying/comments/tvunbp/_/i45u5wy)
 
 1. Slice a lot of tomatoes, maybe 500g-750g into a fry-able size
-2. Also slice half a head of garlic
+2. Also slice (or press) half a head of garlic
 3. Fry in some olive oil until lightly browned on the skin side
 4. Add a little bit of salt and pepper, and squish the tomatoes
 5. Optionally add a little bit of:
@@ -11,8 +12,8 @@ Based off a pomodoro / marinara sauce
    2. tomato paste
    3. anchovy paste
    4. chili flakes
-   5. garlic
-   6. oregano
+   5. oregano (suggested by github copilot)
+   6. finely diced shallot
 6. When almost ready, add torn fresh basil leaves
    1. Must be fresh
    2. Torn to avoid bruising and browning
