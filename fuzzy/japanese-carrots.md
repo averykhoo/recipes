@@ -1,5 +1,7 @@
 # Japanese-style fried carrots
 
+Based off a recipe for "kinpara gobo" (fried burdock)
+
 1. Julienne a couple of carrots
 2. Fry in oil until cooked through
 3. Add a splash of soy sauce and mirin

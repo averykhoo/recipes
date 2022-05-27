@@ -1,5 +1,7 @@
 # Gyudon but with lamb and beef/chicken stock
 
+Based on a normal gyudon recipe, but with some substitutions
+
 1. Slice lamb/mutton into thin chunks
 2. Sear on both sides, then reserve separately
    1. Do NOT remove the lamb juices from the pan
