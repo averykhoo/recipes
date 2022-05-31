@@ -1,5 +1,7 @@
 # Faux Fried Zucchini
 
+this recipe probably works with just about any vegetable
+
 * japanese cucumbers
 * olive oil
 * salt
