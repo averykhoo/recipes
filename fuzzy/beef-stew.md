@@ -9,7 +9,7 @@ Mostly forgot the recipe but probably based on some serious eats thing
 * a bunch of dry herbs
 * sliced onions and garlic
 * mirepoix / soffritto
-* roll-cut carrots
+* diced carrots, potatoes, and optional celery
 * peas maybe
 * a few slices of bread
 * finished with a bit of butter
