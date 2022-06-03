@@ -2,6 +2,8 @@
 
 this recipe probably works with just about any vegetable
 
+should also work in the oven or broiler with a little bit more oil
+
 * zucchini / japanese cucumbers, sliced thinly
 * olive oil
 * salt and pepper
