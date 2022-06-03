@@ -1,8 +1,9 @@
-https://www.tasteatlas.com/carbonara/recipe/luciano-monosilios-carbonara---carbonara-by-romes-carbonara-king
+# La Carbonara
 
-https://www.youtube.com/watch?v=ZCSowIQgHPI
-
-similar: https://www.seriouseats.com/pasta-carbonara-sauce-recipe
+* https://www.tasteatlas.com/carbonara/recipe/luciano-monosilios-carbonara---carbonara-by-romes-carbonara-king
+* https://www.youtube.com/watch?v=ZCSowIQgHPI
+* https://www.youtube.com/watch?v=90LalTBSIhE
+* similar: https://www.seriouseats.com/pasta-carbonara-sauce-recipe
 
 This recipe is adapted from the recipe card Luciano Monosilio gives in his restaurant Luciano - Cucina Italiana with
 each order of carbonara. Still, it is also based on our in-house research. Luciano's carbonara is made with a mixture of
