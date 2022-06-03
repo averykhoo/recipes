@@ -1,18 +1,17 @@
-# Faux Fried Zucchini
+# Fried Zucchini
 
 this recipe probably works with just about any vegetable
 
-* japanese cucumbers
+* zucchini / japanese cucumbers, sliced thinly
 * olive oil
-* salt
-* pepper
-* garlic, minced
-* shallots, minced
+* salt and pepper
+* garlic, minced or thinly sliced
+* shallots, minced or thinly sliced
 * basil / oregano / rosemary / thyme / chives / parsley / etc
-* cheese
+* mature cheddar
 
 1. Fry the cucumber until it's translucent and starts to turn brown.
-2. Add the salt, pepper, garlic, shallots, herbs, and cheese.
-3. Add the cheese and mix it up.
+2. Add the salt, pepper, garlic, shallots, and herbs.
+3. Add the cheese on top and allow to melt before serving.
 4. Can be served mixed with rice and some nice olive oil.
    1. Ends up almost like an aglio olio but with rice
