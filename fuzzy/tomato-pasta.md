@@ -19,4 +19,5 @@ See also this [reddit pomodoro recipe](https://www.reddit.com/r/oddlysatisfying/
    2. Torn to avoid bruising and browning
 7. Add the pasta (and some pasta water) and stir to coat
    1. Avoid adding salt in case this is too salty
-8. Pepper to taste
+8. salt and pepper to taste
+9. white wine?

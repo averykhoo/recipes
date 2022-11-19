@@ -10,6 +10,7 @@ https://showmethecurry.com/curries/dhaba-style-palak-paneer.html
 * garlic, ginger, onion, tomato 
 * chili, cumin, cinnamon, turmeric, salt, clove, cardamom, bay, garam masala, black pepper, coriander
 * fenugreek leaves, yoghurt, cream
+* cashew paste for thickening?
 
 1. blanch and chop/blend spinach and fenugreek (mustard leaves). Blanching removes the raw, bitter, and metallic flavor
    of spinach.

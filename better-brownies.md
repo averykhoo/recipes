@@ -1,5 +1,6 @@
 #   Better than lazy brownies
 
+todo: seen on tiktok - add a frozen layer of nutella and speculoos in the middle
 
 ##  ingredients
 
