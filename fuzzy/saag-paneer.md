@@ -3,6 +3,12 @@
 https://www.sainsburysmagazine.co.uk/recipes/sides/saag-paneer
 https://www.munatycooking.com/palak-paneer/
 https://showmethecurry.com/curries/dhaba-style-palak-paneer.html
+https://www.foodnetwork.com/recipes/aarti-sequeira/saag-paneer1-1927603
+https://www.seriouseats.com/palak-paneer-recipe-5705785
+https://www.cookwithmanali.com/palak-paneer/
+https://www.vegrecipesofindia.com/palak-paneer/
+https://www.bbcgoodfood.com/recipes/saag-paneer
+https://cooking.nytimes.com/recipes/1021954-saag-paneer
 
 * lots of spinach / fenugreek
 * lots of paneer
