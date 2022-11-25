@@ -1,3 +1,0 @@
-# Potato Gratin Dauphinoise
-
-## TODO

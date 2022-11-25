@@ -16,21 +16,23 @@ Basically regular stew with olives and different herbs
 * 1 tsp anchovy paste
 * mirepoix
     * 1 onion / 4-6 shallots, cubed
-    * 8-10 cloves garlic, peeled but whole (much less if you're aiming for authenticity)
     * 1 big carrot, cubed
+    * celery
+* 8-10 cloves garlic, peeled but whole (much less if you're aiming for authenticity)
 * optional 300g artichoke hearts
-* 250g mushrooms (but not golden needle mushrooms)
+* 250g mushrooms (oyster is fine, but not golden needle mushrooms)
 * 1 cup pitted whole olives
 * finished with a bit of butter
 * a few slices of bread
 
 Not provencal:
 
+* excess flour from fried chicken is fried and added into the stew to thicken
 * peas, zucchini
 * gelatin
 * fish sauce replaces anchovy paste
 * mustard
-* capsicum, celery in mirepoix
+* capsicum in mirepoix
 * apple for sweetness, large cubes
 * potatoes, small cubes
 
