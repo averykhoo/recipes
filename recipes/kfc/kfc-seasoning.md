@@ -1,9 +1,9 @@
-#   Kentucky Fried Chicken "Original Recipe"
-*   reverse-engineered at (now-defunct): http://kfc.forumup.co.uk/about718-kfc.htm
-*   or just buy it online: [99x chicken seasoning (Marion-Kay)](https://marionkay.com/product/chicken-seasoning-99-x/)
+# Kentucky Fried Chicken "Original Recipe"
 
+* reverse-engineered at (now-defunct): http://kfc.forumup.co.uk/about718-kfc.htm
+* or just buy it online: [99x chicken seasoning (Marion-Kay)](https://marionkay.com/product/chicken-seasoning-99-x/)
 
-##  Ingredients
+## Ingredients
 
 | Amount | Unit | Grams     | Ingredient         | Notes/Substitutions |
 |--------|------|-----------|--------------------|---------------------|
@@ -22,16 +22,16 @@
 | 2      | tsp  |    7.5    | MSG                | fish sauce?         |
 | 0.5    | cups |  147.35   | Salt               | less 20%            |
 
+## Directions
 
-##  Directions
-1.  Double coat with the mixture above
-    *   For the dip, use either:
-        *   Buttermilk
-        *   2 parts milk, 1 part egg
-        *   Beaten egg
+1. Double coat with the mixture above
+    * For the dip, use either:
+        * Buttermilk
+        * 2 parts milk, 1 part egg
+        * Beaten egg
 
+## Unedited Original Recipe
 
-##  Unedited Original Recipe
 ![recipe card](kfc-seasoning-1.jpg)
 ![labelled vials](kfc-seasoning-2.jpg)
 
@@ -52,22 +52,24 @@
 |      |  0.25      | MSG                | "Sexton Super Pep"     |   21.16666667 |    7           |  0.085    |   2.985 |      1.53 |
 |      |  4.25      | Salt               | Popcorn, Indiana (USA) |  359.65625    |  119.8888889   |  1.671    |  58.94  |      1.76 |
 
+## *BONUS*: Colonel's Coleslaw
 
-##  *BONUS*: Colonel's Coleslaw
-*   ½ cup Miracle Whip (he said other brands turned the mixture grey)
-*   ½ cup tarragon vinegar (The Col used Heinz but it is hard to find these days)
-*   ½ cup sugar
-*   ¼ cup salad oil
-*   dash salt to taste
-*   1 head cabbage, cored and chopped not shredded
-*   1-2 carrots, shredded - optional
-*   1/4 cup shredded onion - optional
+* ½ cup Miracle Whip (he said other brands turned the mixture grey)
+* ½ cup tarragon vinegar (The Col used Heinz but it is hard to find these days)
+* ½ cup sugar
+* ¼ cup salad oil
+* dash salt to taste
+* 1 head cabbage, cored and chopped not shredded
+* 1-2 carrots, shredded - optional
+* 1/4 cup shredded onion - optional
 
-1.  Chop the cabbage, grate the carrots and onion.
-2.  Add other ingredients, mix well, cover well, let flavors meld over night in refrigerator.
-3.  Some people say that carrots and onion were not in the original coleslaw recipe so feel free to leave them out.
-4.  Chopped the cabbage, don't shred it.
+1. Chop the cabbage, grate the carrots and onion.
+2. Add other ingredients, mix well, cover well, let flavors meld over night in refrigerator.
+3. Some people say that carrots and onion were not in the original coleslaw recipe so feel free to leave them out.
+4. Chopped the cabbage, don't shred it.
 
+## Notes:
 
-##  Notes:
-*   Chicago Tribune [said that they found](https://www.chicagotribune.com/travel/ct-kfc-recipe-revealed-20160818-story.html) the [original recipe](https://www.chicagotribune.com/dining/recipes/ct-kfc-recipe-test-20160818-story.html)
+* Chicago
+  Tribune [said that they found](https://www.chicagotribune.com/travel/ct-kfc-recipe-revealed-20160818-story.html)
+  the [original recipe](https://www.chicagotribune.com/dining/recipes/ct-kfc-recipe-test-20160818-story.html)

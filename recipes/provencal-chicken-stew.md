@@ -8,16 +8,16 @@ Basically regular stew with olives and different herbs
 
 * 4 boneless chicken thighs
 * 1 tbsp herbs de provence:
-  * traditionally rosemary, savory/thyme, oregano/marjoram
-  * maybe basil/parsley, tarragon, bay leaf, fennel seed, optional lavender
+    * traditionally rosemary, savory/thyme, oregano/marjoram
+    * maybe basil/parsley, tarragon, bay leaf, fennel seed, optional lavender
 * 1 cup chicken stock
-  * optional 0.5 cup red wine to deglaze
+    * optional 0.5 cup red wine to deglaze
 * 400g halved cherry tomatoes
 * 1 tsp anchovy paste
 * mirepoix
-  * 1 onion / 4-6 shallots, cubed
-  * 8-10 cloves garlic, peeled but whole (much less if you're aiming for authenticity)
-  * 1 big carrot, cubed
+    * 1 onion / 4-6 shallots, cubed
+    * 8-10 cloves garlic, peeled but whole (much less if you're aiming for authenticity)
+    * 1 big carrot, cubed
 * optional 300g artichoke hearts
 * 250g mushrooms (but not golden needle mushrooms)
 * 1 cup pitted whole olives

@@ -13,7 +13,7 @@ https://cooking.nytimes.com/recipes/1021954-saag-paneer
 * lots of spinach / fenugreek
 * lots of paneer
 * ghee
-* garlic, ginger, onion, tomato 
+* garlic, ginger, onion, tomato
 * chili, cumin, cinnamon, turmeric, salt, clove, cardamom, bay, garam masala, black pepper, coriander
 * fenugreek leaves, yoghurt, cream
 * cashew paste for thickening?

@@ -3,15 +3,15 @@
 The same method works for potatoes, sweet potatoes, and beetroot
 
 * Herbs & spices options
-  * Paprika
-  * Garlic
-  * Shallots / onion powder
-  * Thyme
-  * Sesame / poppy seeds
+    * Paprika
+    * Garlic
+    * Shallots / onion powder
+    * Thyme
+    * Sesame / poppy seeds
 * Cheese options
-  * Manchego
-  * Parmesan
-  * Mozzarella
+    * Manchego
+    * Parmesan
+    * Mozzarella
 
 1. Parboil brussels sprouts in salted water, then cool in an ice bath to retain color. Pat dry.
 2. Squash every brussels sprout flat. Coat with olive oil, herbs and spices, cheese, salt, and pepper.

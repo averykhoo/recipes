@@ -16,4 +16,4 @@ should also work in the oven or broiler with a little bit more oil
 2. Add the salt, pepper, garlic, shallots, and herbs.
 3. Add the cheese on top and allow to melt before serving.
 4. Can be served mixed with rice and some nice olive oil.
-   1. Ends up almost like an aglio olio but with rice
+    1. Ends up almost like an aglio olio but with rice

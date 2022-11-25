@@ -1,3 +1,3 @@
-#   Potato Gratin Dauphinoise
+# Potato Gratin Dauphinoise
 
-##  TODO
+## TODO

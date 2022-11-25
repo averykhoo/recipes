@@ -24,34 +24,34 @@ INGREDIENTS (serves 4)
 PREPARATION
 
 1. Guanciale
-   1. Cut off the rind and the pepper layer. Discard or store for another use. It should be about 1.5 cm thick.
-   2. Slice the guanciale into 1 cm slices, stack them, and cut into 1 x 1.5 x 1.5 cm cuboids.
-   3. Add the guanciale to a dry pan (no oil or butter), and sauté over high heat until just browned.
-   4. Once it browns (and may be smoking), lower the heat so it cooks inside but does not burn.
-   5. Let it braise in its fat until crispy on the outside and soft on the inside.
-   6. When the guanciale is done, drain the rendered fat into a separate heatproof bowl.
-   7. Allow both the fat and the guanciale cool to room temperature.
+    1. Cut off the rind and the pepper layer. Discard or store for another use. It should be about 1.5 cm thick.
+    2. Slice the guanciale into 1 cm slices, stack them, and cut into 1 x 1.5 x 1.5 cm cuboids.
+    3. Add the guanciale to a dry pan (no oil or butter), and sauté over high heat until just browned.
+    4. Once it browns (and may be smoking), lower the heat so it cooks inside but does not burn.
+    5. Let it braise in its fat until crispy on the outside and soft on the inside.
+    6. When the guanciale is done, drain the rendered fat into a separate heatproof bowl.
+    7. Allow both the fat and the guanciale cool to room temperature.
 2. Pasta
-   1. Cook the spaghetti according to package directions minus 2 minutes, just shy of al dente.
-   2. Use less salt in the water, maybe just a pinch, as the rest of the recipe is already salty.
-   3. Use less water, as the starchy water is important for the sauce.
-   4. Sir constantly as it cooks.
+    1. Cook the spaghetti according to package directions minus 2 minutes, just shy of al dente.
+    2. Use less salt in the water, maybe just a pinch, as the rest of the recipe is already salty.
+    3. Use less water, as the starchy water is important for the sauce.
+    4. Sir constantly as it cooks.
 3. Sauce
-   1. Whisk the egg yolks and cheese in a large metal bowl.
-   2. Continue whisking over a bain marie while adding half a cup of pasta water, like making a sabayon.
-   3. *Gradually adding hot pasta water may be an alternative to using a bain marie, as it tempers the eggs.*
-   4. Slowly pour in the drained fat from the guanciale and continue whisking, as if making hollandaise/bearnaise.
-   5. You might not use up all the fat. Don't break the emulsion.
-   6. *Possible optimization: use the pasta pot as a bain marie, reducing necessary pots by one.*
+    1. Whisk the egg yolks and cheese in a large metal bowl.
+    2. Continue whisking over a bain marie while adding half a cup of pasta water, like making a sabayon.
+    3. *Gradually adding hot pasta water may be an alternative to using a bain marie, as it tempers the eggs.*
+    4. Slowly pour in the drained fat from the guanciale and continue whisking, as if making hollandaise/bearnaise.
+    5. You might not use up all the fat. Don't break the emulsion.
+    6. *Possible optimization: use the pasta pot as a bain marie, reducing necessary pots by one.*
 4. Putting it all together
-   1. Add pasta and swirl to combine with the sauce.
-   2. Add guanciale and toss to combine
+    1. Add pasta and swirl to combine with the sauce.
+    2. Add guanciale and toss to combine
 5. Serving
-   1. Twirl in a ladle with a pair of chopsticks, then transfer to a bowl.
-   2. Use the ladle to scoop over the guanciale and sauce.
-   3. Sprinkle additional pecorino Romano over the top.
-   4. Sprinkle each portion of carbonara generously with freshly ground pepper.
-   5. Serve immediately, or the sauce will dry out and become sticky.
+    1. Twirl in a ladle with a pair of chopsticks, then transfer to a bowl.
+    2. Use the ladle to scoop over the guanciale and sauce.
+    3. Sprinkle additional pecorino Romano over the top.
+    4. Sprinkle each portion of carbonara generously with freshly ground pepper.
+    5. Serve immediately, or the sauce will dry out and become sticky.
 
 COOKING TIPS
 
