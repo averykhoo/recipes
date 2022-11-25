@@ -1,5 +1,7 @@
 # Spaghetti Amatriciana
 
+somewhere between tomato pasta and pasta alla gricia
+
 makes 2 portions
 
 * olive oil
