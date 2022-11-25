@@ -32,8 +32,8 @@
 
 
 ##  Unedited Original Recipe
-![recipe card](./kfc-seasoning-1.jpg)
-![labelled vials](./kfc-seasoning-2.jpg)
+![recipe card](kfc-seasoning-1.jpg)
+![labelled vials](kfc-seasoning-2.jpg)
 
 | Vial | Teaspoons  | Ingredient         | Origin                 | Scaled Tsp    | Scaled Tbsp    | Kilograms | Oz      | Price ($) |
 |------|------------|--------------------|------------------------|---------------|----------------|-----------|---------|-----------|

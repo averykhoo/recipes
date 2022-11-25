@@ -1,5 +1,5 @@
 #   Chocolate Chip Cookies
-*   refer to [docx](./Chocolate%20Chip%20Cookies%20v9.docx) for comments / details
+*   refer to [docx](Chocolate Chip Cookies v9.docx) for comments / details
 *   do not update only this markdown!
 
 
