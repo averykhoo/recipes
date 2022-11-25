@@ -10,11 +10,11 @@ bake up higher than anything you've ever seen.
 
 Ingredients
 
-* 2 cups​ all-purpose flour
+* 2 cups all-purpose flour
 * 1 tablespoon baking powder
 * 1 teaspoon salt
 * 1 tablespoon sugar (you can add more if you want a sweeter biscuit)
-* 1.5 cups​ heavy whipping cream (DO NOT SUBSTITUTE - I've tried! These biscuits will only pop up sky-high if you use
+* 1.5 cups heavy whipping cream (DO NOT SUBSTITUTE - I've tried! These biscuits will only pop up sky-high if you use
   heavy cream - they were flat and not fluffy inside when I tried half-and-half or whole milk)
 
 How to make it
