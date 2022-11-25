@@ -3,18 +3,28 @@
 https://www.reddit.com/r/GrandTourTopgearFans/comments/kdzrma/oh_cook_i_made_james_mays_fish_pie_yesterday/
 todo: https://thehappyfoodie.co.uk/recipes/luxury-smoked-fish-pie/
 
-* Make some mashed potatoes ahead of time
-  * optionally add a yolk
-  * experiment 2022-11-19: used up excess potato leek mix before it became soup
-* 400g of mixed diced fish, poached in 200 mL of milk and some white wine
-  * james may also used some prawns, but skip those
-* Strain the fish, reserving the milk
-* Sweat/sauté 1 large onion (diced) and 1 leek (sliced) in a knob of butter (about the size of a piece of cheese)
-* Make a béchamel on top of the aromatics with flour and the poaching milk, which is the semi-liquid stuffing
-  * if necessary, deglaze with more wine
-* Layer the casserole: fish on bottom, then the onion/leek/béchamel in the middle, and mashed potatoes on top
-  * optional crumbled ritz crackers on top for texture
-  * or use a fork to texture the top to get more crispy potato topping
-* Bake 190°C/375°F for 15-20 minutes
-* Allow to cool before digging in
-* peas?
+* 500g floury potatoes, peeled and quartered
+* 1/4 cup milk
+* Butter
+* 400g mixed selection of fish, e.g. smoked haddock, cod, salmon fillets ~~and prawns~~
+* 1 cup milk
+* White wine
+* 1 medium onion, diced
+* 1 leek, thinly sliced
+* 1 tbsp flour
+* Parsley / dill
+* Optional peas, boiled
+* Salt and pepper
+* Optional panko or crumbled ritz on top for texture
+
+1. Preheat oven to 180-200°C.
+2. Boil potatoes and mash with milk and butter until smooth. Optional yolk. Season with pepper.
+3. Poach / simmer the fish in the milk and wine for about 5 minutes, longer if frozen. Aim to under-cook the fish.
+4. Remove the fish and reserve the milk.
+5. Saute onion and leek in the butter until translucent. Add flour and fry until not raw.
+6. Use poaching milk to deglaze and make something like bechamel, but thicker and with onion chunks, like pie filling.
+7. Add herbs, pepper, and optional boiled peas.
+8. Layer fish, then bechamel, then potatoes in a casserole dish.
+9. Use a fork to texture the top to get more crispy potato topping. Optional peas on top for decoration.
+10. Bake for 15–20 minutes until the potato is golden brown.
+11. Allow to cool and solidify before serving.
