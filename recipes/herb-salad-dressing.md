@@ -1,8 +1,8 @@
-# Aglio Salad Dressing
+# Aglio Olio inspired Salad Dressing
 
 Ingredients
 
-* 1.5 cups olive oil
+* 1.5 cups olive oil - butter doesn't keep well
 * 2 tsp salt
 * 2 tsp ground black pepper
 * 2 tsp dried rosemary
@@ -20,7 +20,7 @@ Directions
 
 Notes
 
-* total about 5-6 tbsp herbs is the right proportion
-* garlic increased from 12 to 20, since Italians' garlic tolerance is weak
-* parmesan separate to make this more shelf-stable
+* Total about 5-6 tbsp herbs is the right proportion
+* Garlic increased from 12 to 20, since Italians' garlic tolerance is weak
+* Parmesan separate to make this more shelf-stable
 * 3 tsp salt is too much salt
