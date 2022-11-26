@@ -1,24 +1,12 @@
-# recipes
+# Recipes
 
-real actually-edible food
+Recipes for real actually-edible food
 
-# todo
+## Structure (tentative)
 
-* how to display comments (e.g. chocolate chip cookies)
-* how to format weights alongside measures
-* basic conversions chart (1 cup = 16 tbsp = 48 tsp = 240ml)
-* common ingredient density chart (fine / granulated sugar: 1 cup = 200g)
-* how to break a recipe down into sections / submodules
-* standardized recipe format?
-    * good way to specify of ingredient weights and measures - table?
-    * should the title be titlecase? how about the ingredients and instructions?
-* highlight or link to relevant recipes or techniques
-* comments / footnotes for notes and tips
-
-# to add
-
-* butter chicken
-* easy hollandaise
+* [`/curated-untested`](/curated-untested) contains recipes that look interesting but haven't been tested
+* [`/in-progress`](/in-progress) contains recipes that have been made at least once but have missing details
+* [`/recipes`](/recipes) contains the main bulk of the recipes
 
 # todo: use collapsible markdown
 
