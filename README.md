@@ -8,7 +8,7 @@ Recipes for real actually-edible food
 * [`/in-progress`](/in-progress) contains recipes that have been made at least once but have missing details
 * [`/recipes`](/recipes) contains the main bulk of the recipes
 
-# todo: use collapsible markdown
+## todo: use collapsible markdown
 
 <details>
 <summary>CLICK ME</summary>
@@ -16,5 +16,12 @@ Recipes for real actually-edible food
 ```python
 print("hello world!")
 ```
+<blockquote>
+    <details>
+    <summary>test nested section</summary>
+    :smile:
+
+</details>
+</blockquote>
 
 </details>
