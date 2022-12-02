@@ -8,7 +8,7 @@ Based on a normal gyudon recipe, but with some substitutions
 2. Sear on both sides, then reserve separately
     1. Do NOT remove the lamb juices from the pan
 3. Add beef/chicken stock (or dashi to be authentic) and deglaze
-4. Add sliced carrot (roll cut), sliced onions (slice towards the center), and optional sliced garlic
+4. Add sliced (orange) carrot (roll cut), sliced onions (slice towards the center), and optional sliced garlic
     1. Optionally add a tiny amount of finely julienned ginger - maybe 3-5mm worth
 5. Add a splash of soy sauce and mirin; equal amounts, but not too salty
 6. Add lamb back and cover, cooking until lamb is tender
