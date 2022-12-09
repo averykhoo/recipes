@@ -1,4 +1,4 @@
-# Baba Ganoush
+# Baba Ganoush / Baba Ghanoush / Baba Ganouj
 
 https://cookieandkate.com/epic-baba-ganoush-recipe/
 https://www.seriouseats.com/the-best-baba-ganoush-recipe
