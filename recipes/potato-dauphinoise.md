@@ -9,7 +9,8 @@ Ingredients:
 * 2 cups cream, milk, or half-and-half
 * 2 pinches nutmeg powder
 * 1 small pinch clove powder
-* 3-4 potatoes, sliced thinly
+* 1/2 teaspoon salt
+* 3-4 small/medium potatoes, sliced thinly
 * 1/2 cup grated Gruyere cheese (optional)
 
 Instructions:
