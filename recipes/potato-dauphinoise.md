@@ -5,12 +5,12 @@ https://www.greatbritishchefs.com/recipes/potato-dauphinoise-recipe
 
 Ingredients:
 
-* 2 cloves garlic, pressed
+* 4 cloves garlic, pressed
 * 2 cups cream, milk, or half-and-half
 * 2 pinches nutmeg powder
 * 1 small pinch clove powder
 * 1/2 teaspoon salt
-* 3-4 small/medium potatoes, sliced thinly
+* 3-4 small/medium potatoes (about 800g), sliced thinly
 * 1/2 cup grated Gruyere cheese (optional)
 
 Instructions:

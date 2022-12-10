@@ -10,6 +10,8 @@
     * good way to specify of ingredient weights and measures - table?
     * needs to accommodate fuzzy measures - e.g. 1-2 tbsp, a handful of something, knob of butter, ...
     * should the title be titlecase? how about the ingredients and instructions?
+    * how many portions output
+* should be possible to generate a shopping list from recipes and optional scaling
 * highlight or link to relevant recipes or techniques
 * comments / footnotes for notes and tips
 
