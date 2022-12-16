@@ -7,7 +7,7 @@ https://www.themediterraneandish.com/baba-ganoush-recipe/
 
 ## Ingredients:
 
-* 2 medium / 3 large eggplants (2 pounds = 900 grams)
+* 2 large / 3 medium eggplants (2 pounds = 900 grams)
 * 1 tablespoon olive oil
 * 1 teaspoon salt
 * 3-4 cloves of garlic, pressed or minced
