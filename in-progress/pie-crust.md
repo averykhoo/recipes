@@ -12,18 +12,18 @@ lazy to edit so pasting the whole page here first
 * 1 cup (230 grams) very cold unsalted butter, cut into 1/2-inch【1.27 cm】 cubes (2 sticks)
 * 4 to 8 tablespoons ice water
 
-METHOD WHEN MAKING BY HAND
+METHOD WHEN USING FOOD PROCESSOR
 
-1. Add 1 1/2 cups【355 mL】 flour, salt and sugar (optional) to a medium bowl. Stir 2 to 3 times until combined.
-2. Scatter butter cubes over flour and mix briefly with a fork or spatula to coat the butter with flour.
-3. Cut the butter into the flour with a pastry blender, working mixture until the flour has a coarse, mealy texture
-   similar to fresh bread crumbs. About 1 – 2 minutes.
-4. Add remaining 1 cup【237 mL】 of flour. Work butter and flour with the pastry blender until flour is evenly
-   distributed. About 20 seconds. (Dough should look crumbly with pea-sized pieces).
-5. Sprinkle ice water over the mixture — start with 4 tablespoons and add from there. Using a rubber spatula, press the
-   dough into itself. The crumbs should begin to form larger clusters. If you pinch some of the dough and it holds
-   together, it’s ready. If the dough falls apart, add 2 to 4 more tablespoons of water and continue to press until
-   dough comes together.
-6. Remove dough from bowl and place in a mound on a clean surface. Work the dough just enough to form a ball. Cut ball
-   in half then form each half into discs. Wrap each disc with plastic wrap and refrigerate at least 1 hour, and up to 2
-   days. You can also freeze it for up to 3 months (just thaw it overnight in the fridge before using).
+1. Add 1 ½ cups【355 mL】 flour, salt, and sugar (optional) to a food processor. Pulse 2 to 3 times until combined. The
+   remaining cup of flour will be added later.
+2. Scatter butter cubes over flour and process until a dough or paste begins to form, about 15 seconds. (There should be
+   no uncoated flour).
+3. Scrape bowl, redistribute the flour-butter mixture then add remaining 1 cup【237 mL】 of flour. Pulse 4 to 5 times
+   until flour is evenly distributed. (Dough should look broken up and a little crumbly).
+4. Transfer to a medium bowl then sprinkle ice water over mixture — start with 4 tablespoons and add from there. Using a
+   rubber spatula, press the dough into itself. The crumbs should begin to form larger clusters. If you pinch some of
+   the dough and it holds together, it’s ready. If the dough falls apart, add 2 to 4 more tablespoons of water and
+   continue to press until dough comes together.
+5. Remove dough from bowl and place in a mound on a clean surface. Work the dough just enough to form a ball. Cut the
+   ball in half then form each half into discs. Wrap each disc with plastic wrap and refrigerate for at least 1 hour and
+   up to 2 days. You can also freeze it for up to 3 months (just thaw it overnight in the fridge before using it).
