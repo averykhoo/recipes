@@ -6,6 +6,17 @@ see also: https://akispetretzikis.com/en/recipe/1338/kolokythokeftedes
 
 Ingredients
 
+* 1 large zucchini, grated, salted, drained, squeezed lightly in a strainer, about 1 cup if you don't squish it too much
+* 1-2 tablespoons chopped dill or mint
+* 1/2 cup chopped onion
+* pinch of nutmeg
+* 1 beaten egg
+* 2-3 tbsp flour
+* salt and pepper
+* oil for frying
+
+## original from seriouseats
+
 For Fritters:
 
 * 3 cups packed, grated zucchini (from about 6 large zucchini)
@@ -22,7 +33,8 @@ For Tzatziki:
 
 * 1 cup thick greek yogurt
 * 2 cloves raw garlic, minced
-* 1/2-1 cup cucumber, optionally peeled, optionally halved and deseeded, grated, salted, strained for 20 mins, squeezed or patted dry
+* 1/2-1 cup cucumber, optionally peeled, optionally halved and deseeded, grated, salted, strained for 20 mins, squeezed
+  or patted dry
 * 1-3 teaspoons lemon juice
 * 1-2 tablespoon extra virgin olive oil
 * Salt and pepper
@@ -30,7 +42,12 @@ For Tzatziki:
 
 Directions
 
-1. Make Tzatziki: Squeeze excess moisture from cucumber. In a small bowl, mix yogurt, garlic, cucumber. Stir in olive oil. Taste before adding salt. Add pepper and lemon to taste.
-2. Make Fritters: Lay out a layer of paper towels and spread out grated zucchini. Sprinkle zucchini with salt and let sit for at least thirty minutes and up to an hour. Squeeze out all excess moisture from zucchini.
-3. Put drained zucchini in a large bowl with dill, scallions, nutmeg, and feta. Mix to combine. Stir in eggs. Season with salt and pepper. Stir in flour until dough comes together, adding slightly more flour if dough is too wet to form patties. Form dough into 3-4 inch【10.16 cm】 patties.
-5. Heat olive oil in a large skillet over medium high heat. Fry patties until golden brown on both sides and cooked through but still moist, about 2-3 minutes per side. Serve hot with tzatziki alongside.
+1. Make Tzatziki: Squeeze excess moisture from cucumber. In a small bowl, mix yogurt, garlic, cucumber. Stir in olive
+   oil. Taste before adding salt. Add pepper and lemon to taste.
+2. Make Fritters: Lay out a layer of paper towels and spread out grated zucchini. Sprinkle zucchini with salt and let
+   sit for at least thirty minutes and up to an hour. Squeeze out all excess moisture from zucchini.
+3. Put drained zucchini in a large bowl with dill, scallions, nutmeg, and feta. Mix to combine. Stir in eggs. Season
+   with salt and pepper. Stir in flour until dough comes together, adding slightly more flour if dough is too wet to
+   form patties. Form dough into 3-4 inch【10.16 cm】 patties.
+5. Heat olive oil in a large skillet over medium high heat. Fry patties until golden brown on both sides and cooked
+   through but still moist, about 2-3 minutes per side. Serve hot with tzatziki alongside.
