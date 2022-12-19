@@ -7,6 +7,8 @@ https://joythebaker.com/2012/10/sharp-cheddar-cheese-crackers/
 see also: https://www.fifteenspatulas.com/puffed-cheddar-cheese-twists/ (which uses egg white instead of water)
 see also: https://preppykitchen.com/shortbread-cookies-recipe/
 
+makes about 30-35 crackers, or 6-8 shortbread brick cookies 
+
 * 2 tablespoons room temperature unsalted butter
 * 3 ounces【85 g】 sharp cheddar cheese, grated (about 3/4 cup【177 mL】 lightly packed)
 * 1 ounce【28 g】 Parmigiano-Reggiano cheese, finely grated (about 1/3 cup【79 mL】 lightly packed)
