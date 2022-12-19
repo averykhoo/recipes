@@ -16,7 +16,7 @@ Ingredients:
 * 1 1/2 cups granulated sugar
 * 3 cups heavy cream or 2 12-ounce cans evaporated milk (or replace up to 1/3 of the cream with milk)
 * 2 unbaked, 9-inch pie shells
-* Whipped cream (optional)
+* [Whipped cream (optional)](../recipes/chantilly-cream.md)
 
 Procedures:
 
@@ -29,7 +29,7 @@ Procedures:
 4. Divide the pumpkin filling between the two pie shells. Transfer the pies to the oven and bake for 15 minutes.
 5. Reduce the oven temperature to 350°F (160c) and continue baking until the filling is just set in the center of each
    pie and the crust is deep golden brown, about 40-45 minutes. Let the pies cool to room temperature before cutting and
-   serving. Top with whipped cream, if desired.
+   serving. Top with powdered sugar and whipped cream, if desired.
 
 ## ALTERNATIVE: Pumpkin Meringue Pie
 
