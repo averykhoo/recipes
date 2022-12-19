@@ -20,5 +20,5 @@ https://www.themediterraneandish.com/roast-lamb-rack-recipe/
 4. Preheat the oven to 120C and roast for 25-30 minutes
 5. Poke around inside the cut between the bones to see how red it looks
 6. Increase the temperature to 160-180C and finish for 5-10 minutes
-   7. To serve, just slice the fat cap in the appropriate locations. Also have mint sauce and/or jelly, and maybe some
-      red wine shallot (Bordelaise) sauce.
+7. To serve, just slice the fat cap in the appropriate locations. Also have mint sauce and/or jelly, and maybe some
+   red wine shallot (Bordelaise) sauce.
