@@ -1,4 +1,4 @@
-# Kolokithokeftedes (Greek Zucchini Fritters) with Tzatziki Recipe
+# Kolokithokeftedes (Greek Zucchini Fritters)
 
 https://www.seriouseats.com/kolokithokeftedes-greek-zucchini-fritters-with-tzatziki-recipe
 see also: https://www.mygreekdish.com/recipe/kolokithokeftedes-fried-zucchini-balls-or-courgette/
@@ -10,10 +10,15 @@ Ingredients
 * 1-2 tablespoons chopped dill or mint
 * 1/2 cup chopped onion
 * pinch of nutmeg
+* salt and pepper
 * 1 beaten egg
 * 2-3 tbsp flour
-* salt and pepper
 * oil for frying
+
+1. mix zucchini, herbs, onion, spices, salt, pepper
+2. mix in the egg, which should already be beaten. it shouldn't be too drippy.
+3. mix in the flour until it forms something a bit like a sticky wet sponge
+4. fry as squished balls, in olive oil
 
 ## original from seriouseats
 
@@ -29,21 +34,9 @@ For Fritters:
 * Salt and pepper
 * 4 tablespoons olive oil
 
-For Tzatziki:
-
-* 1 cup thick greek yogurt
-* 2 cloves raw garlic, minced
-* 1/2-1 cup cucumber, optionally peeled, optionally halved and deseeded, grated, salted, strained for 20 mins, squeezed
-  or patted dry
-* 1-3 teaspoons lemon juice
-* 1-2 tablespoon extra virgin olive oil
-* Salt and pepper
-* 1-2 tablespoons chopped mint (can sub with dill)
-
 Directions
 
-1. Make Tzatziki: Squeeze excess moisture from cucumber. In a small bowl, mix yogurt, garlic, cucumber. Stir in olive
-   oil. Taste before adding salt. Add pepper and lemon to taste.
+1. Acquire [Tzatziki](./tzatziki.md)
 2. Make Fritters: Lay out a layer of paper towels and spread out grated zucchini. Sprinkle zucchini with salt and let
    sit for at least thirty minutes and up to an hour. Squeeze out all excess moisture from zucchini.
 3. Put drained zucchini in a large bowl with dill, scallions, nutmeg, and feta. Mix to combine. Stir in eggs. Season
