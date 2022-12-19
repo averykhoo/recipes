@@ -4,6 +4,9 @@ Makes two 9-inch pies
 Source: Canal House - https://www.youtube.com/watch?v=VwomP7Urrr4
 Original source: Meta Given's Modern Encyclopedia of Cooking, 1969
 
+see also: https://sallysbakingaddiction.com/the-great-pumpkin-pie-recipe/
+see also: meringue pumpkin pie recipe below
+
 Ingredients:
 
 * 3 1/2 cups [fresh cooked](#fresh-cooked-pumpkin-puree) or canned pumpkin (one 29-ounce can will do)
