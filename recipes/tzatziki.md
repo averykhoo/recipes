@@ -8,8 +8,8 @@ For Tzatziki:
 
 * 1 cup thick greek yogurt
 * 2 cloves raw garlic, minced
-* 1/2-1 cup cucumber, optionally peeled, optionally halved and deseeded, grated, salted, strained for 20 mins, squeezed
-  or patted dry
+* 1/2-1 cup cucumber, grated, salted, drained in a strainer for 20 mins, squeezed or patted dry
+  * use japanese cucumber or something without huge seeds; otherwise, deseed the cucumber
 * 1-3 teaspoons lemon juice
 * 1-2 tablespoon extra virgin olive oil
 * Salt and pepper

@@ -6,19 +6,20 @@ see also: https://akispetretzikis.com/en/recipe/1338/kolokythokeftedes
 
 Ingredients
 
-* 1 large zucchini, grated, salted, drained, squeezed lightly in a strainer, about 1 cup if you don't squish it too much
+* 1 large zucchini: grated, salted, drained in a strainer, squeezed to remove more juice (~1 cup if compacted)
 * 1-2 tablespoons chopped dill or mint
 * 1/2 cup chopped onion
 * pinch of nutmeg
-* salt and pepper
+* pepper
+* optional salt
 * 1 beaten egg
-* 2-3 tbsp flour
+* 3 tbsp flour
 * oil for frying
 
-1. mix zucchini, herbs, onion, spices, salt, pepper
-2. mix in the egg, which should already be beaten. it shouldn't be too drippy.
-3. mix in the flour until it forms something a bit like a sticky wet sponge
-4. fry as squished balls, in olive oil
+1. Mix zucchini, herbs, onion, spices, pepper. Add salt to taste.
+2. Mix in the egg, which should already be beaten. It should be wet but not drippy.
+3. Mix in the flour until it forms something a bit like a sticky wet sponge.
+4. Fry over low heat as squished balls, in olive oil, until browned on both sides and well cooked through
 
 ## original from seriouseats
 
