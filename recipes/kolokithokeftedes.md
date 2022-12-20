@@ -36,7 +36,7 @@ For Fritters:
 
 Directions
 
-1. Acquire [Tzatziki](./tzatziki.md)
+1. Acquire [Tzatziki](tzatziki.md)
 2. Make Fritters: Lay out a layer of paper towels and spread out grated zucchini. Sprinkle zucchini with salt and let
    sit for at least thirty minutes and up to an hour. Squeeze out all excess moisture from zucchini.
 3. Put drained zucchini in a large bowl with dill, scallions, nutmeg, and feta. Mix to combine. Stir in eggs. Season
