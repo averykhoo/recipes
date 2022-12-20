@@ -10,13 +10,14 @@ Ingredients
 * 1-2 tablespoons chopped dill or mint
 * 1/2 cup chopped onion
 * pinch of nutmeg
+* (optional?) cheese
 * pepper
-* optional salt
+* salt to taste
 * 1 beaten egg
-* 3 tbsp flour
+* 3 tbsp flour or almond meal
 * oil for frying
 
-1. Mix zucchini, herbs, onion, spices, pepper. Add salt to taste.
+1. Mix zucchini, herbs, onion, spices, cheese, pepper. Add salt to taste.
 2. Mix in the egg, which should already be beaten. It should be wet but not drippy.
 3. Mix in the flour until it forms something a bit like a sticky wet sponge.
 4. Fry over low heat as squished balls, in olive oil, until browned on both sides and well cooked through
