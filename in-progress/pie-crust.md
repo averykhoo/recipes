@@ -6,7 +6,7 @@ note: make the full recipe, the crust was too thin with half a recipe
 
 lazy to edit so pasting the whole page here first
 
-* 2 ½ cups (325 grams) all-purpose flour
+* 2 - 2.5 cups (325 grams) all-purpose flour (or pastry flour, or 1 part cake to 2 parts plain)
 * 1 teaspoon kosher salt or use 1/2 teaspoon fine sea salt
 * 1 tablespoon sugar, optional
 * 1 cup (230 grams) very cold unsalted butter, cut into 1/2-inch【1.27 cm】 cubes (2 sticks)
@@ -18,7 +18,7 @@ METHOD WHEN USING FOOD PROCESSOR
    remaining cup of flour will be added later.
 2. Scatter butter cubes over flour and process until a dough or paste begins to form, about 15 seconds. (There should be
    no uncoated flour).
-3. Scrape bowl, redistribute the flour-butter mixture then add remaining 1 cup【237 mL】 of flour. Pulse 4 to 5 times
+3. Scrape bowl, redistribute the flour-butter mixture then add remaining 0.5 - 1 cup of flour. Pulse 4 to 5 times
    until flour is evenly distributed. (Dough should look broken up and a little crumbly).
 4. Transfer to a medium bowl then sprinkle ice water over mixture — start with 4 tablespoons and add from there. Using a
    rubber spatula, press the dough into itself. The crumbs should begin to form larger clusters. If you pinch some of
