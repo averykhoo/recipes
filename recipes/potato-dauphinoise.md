@@ -1,12 +1,13 @@
-# todo - Potato Gratin Dauphinoise
+# Potato Gratin Dauphinoise
 
 https://www.bbcgoodfood.com/recipes/dauphinoise-potatoes
 https://www.greatbritishchefs.com/recipes/potato-dauphinoise-recipe
 
 Ingredients:
 
+* (tweak) 1-2 leeks, thinly sliced and fried until cooked
 * 4 cloves garlic, pressed
-* 2 cups cream, milk, or half-and-half
+* 2 cups cream, half-and-half, or full-fat milk
 * 2 pinches nutmeg powder
 * 1 small pinch clove powder
 * 1/2 teaspoon salt
@@ -15,7 +16,7 @@ Ingredients:
 
 Instructions:
 
-1. Press the garlic cloves and simmer in cream in a large pan over medium heat.
+1. Press the garlic cloves and simmer in cream in a large pan over medium heat. Also add leeks, if using.
 2. Add the nutmeg and clove powder and stir to combine.
 3. Add the thinly sliced potatoes to the pan and stir to coat in the milk mixture.
 4. Simmer the potatoes in the milk until they are cooked through, about 10-15 minutes.
