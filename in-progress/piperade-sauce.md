@@ -1,3 +1,7 @@
+# Piperade Sauce
+
+see also: https://www.youtube.com/watch?v=HnZ7XGYNfwA
+
 Ingredients:
 
 * 4 red bell peppers
