@@ -19,7 +19,7 @@ Ingredients:
 * 1 1/2 cups granulated sugar
 * 3 cups heavy cream or 2 12-ounce cans evaporated milk (or replace up to 1/3 of the cream with milk)
 * 2 unbaked, 9-inch pie shells
-* [Whipped cream (optional)](../recipes/chantilly-cream.md)
+* [Whipped cream (optional)](../chantilly-cream.md)
 
 Procedures:
 
