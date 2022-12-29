@@ -2,34 +2,30 @@
 
 http://allrecipes.co.uk/recipe/35663/fruity-buns.aspx
 
+Makes 12 biscuits.
 
-https://web.archive.org/web/20141018001557/http://allrecipes.co.uk/recipe/35663/fruity-buns.aspx
+Tips:
 
-Fruity buns
-Recipe photo: Fruity buns1 / 9Picture by:  flower04
- Add the first review
- 1save
- 30min
-About this recipe: Delicious buns that are SUPER easy to bake. Best eaten alongside your morning or afternoon cuppa. Will keep for several days in a sealed container.
+	Use Fresh Milk
 
-flower04	flower04Renfrewshire, Scotland, UK
-Ingredients
-Makes: 12 fruity buns
-225g self-raising flour
-100g cold butter or margarine, cubed
-100g caster sugar
-1 medium egg
-1 tablespoon milk
-50g fruit jam
-Method
-Prep:20min  ›  Cook:10min  ›  Ready in:30min 
-Preheat the oven to 200 C / Gas 6. Grease two baking trays and sprinkle them with flour. Spread the flour by tipping the trays from side to side.
-Sift the flour into a large mixing bowl then add the cold cubed butter.
-Rub the butter into the flour with your fingers, until the mixture resembles fine breadcrumbs. Stir in the sugar.
-Break the egg into a small bowl and add the milk. Whisk them together then stir them into the breadcrumb mixture in the other bowl.
-Sprinkle a clean surface with some flour. Press the mixture to make a firm ball, then transfer to your floured surface.
-Cut the ball into 12 (or however many you can manage) even-sized pieces.
-Flatten each piece into a round shape and spread them out onto the baking trays. Make a dent in each bun (either with a cutter or with a knife) and fill each with your chosen jam.
-Bake the buns for 10 minutes until risen and golden brown. Transfer each onto a cooling rack and leave them to cool before serving them.
-Tip
-Leave the jam to cool before eating.
+
+Ingredients:
+
+	225g Self Raising Flour - sifted 
+	100g Butter - cold, cut into cubes
+	100g fine sugar
+	1 medium egg
+	1 Tbsp Fresh Milk
+	50g Raspberry Jam
+
+Method:
+
+1.	Turn your oven to 200C. Grease 2 baking trays with olive oil.  Then sprinkle flour over the surface
+2.	Rub the butter & flour until bread crumbs. Stir in the sugar
+3.	Break the egg into a bowl. Pour in the milk and whisk together.
+4.	Add the Egg mixture to the Flour mixture. Stir by hand to form a dough.
+5.	Divide dough into 12 portions. Take 1 portion, to make a firm ball (about 3cm diameter). (this recipe makes about 12 round balls) Press it flat onto the pan. Then, use a melon scoop to make a depression in the centre. Allow a lot of space for the cookie dough to expand.
+6.	Put 1 tsp (or melon scoop of) jam onto each biscuit.
+7.	Bake 200C for 12-14 minutes until risen & golden brown.
+8.	Leave the jam to cool before eating.
+9.	Serve with fresh whipped cream
