@@ -1,6 +1,7 @@
 # Piperade Sauce
 
 see also: https://www.youtube.com/watch?v=HnZ7XGYNfwA
+see also: https://www.nytimes.com/2007/06/13/dining/131rrex.html
 
 Ingredients:
 
