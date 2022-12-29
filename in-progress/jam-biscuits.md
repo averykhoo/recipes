@@ -17,29 +17,30 @@ Tips:
 Ingredients:
 
 * 225g (1.6 cups) [self-raising flour](../recipes/baked-confectionery/self-raising-flour.md), sifted
-  * 210g flour
-  * 2 tsp baking powder
-  * 1 tsp salt
-* 100g butter, cold and cut into cubes
+    * 210g flour or cake flour
+    * 2 tsp baking powder
+    * 1 tsp salt
 * 100g fine sugar
+* 100g butter, cold and cut into cubes
 * 1 medium egg
-* 1 tbsp fresh milk
+* 1 tbsp fresh milk or cream
 * 50g raspberry jam
 
 Method:
 
-1. Preheat your oven to 200°C (400°F) and grease two baking trays with butter or olive oil.
+1. Preheat your oven to 200°C (400°F) and line two baking trays with baking paper.
 2. Sprinkle flour over the surface of the trays and spread it around by tipping the trays from side to side.
-3. In a large mixing bowl, combine the self-raising flour and cold, cubed butter.
-4. Use a fork or pastry cutter to cut the butter into the flour mixture until the mixture resembles fine breadcrumbs.
-5. Stir in the sugar.
+3. Sift the self-raising flour into a blender or mixing bowl.
+4. Mix in the sugar.
+5. Use a fork, pastry cutter, or blend to cut in the butter, until the mixture resembles fine breadcrumbs.
 6. In a small bowl, whisk together the egg and milk.
-7. Add the egg mixture to the flour mixture and stir by hand to form a stiff dough.
+7. Add the egg mixture to the flour mixture and stir by hand to form a stiff dough. If using a blender, blend in the
+   butter first, then pulse in the egg until just combined.
 8. Divide the dough into 12 portions and shape each one into a firm ball (about 3cm in diameter).
 9. Transfer the balls to the prepared baking trays, leaving plenty of space between them.
-10. Press each ball flat and use a melon scoop or teaspoon to make a depression in the center of each biscuit.
+10. Press each ball to 1.5 cm flat and use a melon scoop or teaspoon to make a depression in the center of each biscuit.
 11. Place 1 tsp (or melon scoop) of jam into the depression of each biscuit.
-12. Bake the biscuits at 200°C (400°F) for 10-14 minutes until they are risen and golden brown.
+12. Bake the biscuits at 200°C (400°F) for 10 minutes until they are risen and golden brown.
 13. Allow the biscuits to cool before serving. Enjoy with fresh whipped cream.
 
 Storage:
