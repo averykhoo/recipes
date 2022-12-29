@@ -1,6 +1,6 @@
 # Jam Biscuits (originally named "Fruity Buns")
 
-http://allrecipes.co.uk/recipe/35663/fruity-buns.aspx
+[http://allrecipes.co.uk/recipe/35663/fruity-buns.aspx](https://web.archive.org/web/20141018001557/http://allrecipes.co.uk/recipe/35663/fruity-buns.aspx)
 
 Makes 12 biscuits.
 
