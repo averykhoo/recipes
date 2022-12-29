@@ -16,7 +16,10 @@ Tips:
 
 Ingredients:
 
-* 225g self-raising flour, sifted
+* 225g (1.6 cups) [self-raising flour](../recipes/baked-confectionery/self-raising-flour.md), sifted
+  * 210g flour
+  * 2 tsp baking powder
+  * 1 tsp salt
 * 100g butter, cold and cut into cubes
 * 100g fine sugar
 * 1 medium egg
