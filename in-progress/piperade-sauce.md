@@ -1,10 +1,10 @@
 Ingredients:
 
-* 3-4 red bell peppers
+* 4 red bell peppers
 * 2 tablespoons olive oil
-* 1 small/medium onion, chopped
+* 1 medium onion, chopped
 * 2 cloves garlic, minced
-* 1 large tomato, diced or blended (or 200-250g cherry tomatoes, halved or blended)
+* 1 large or 2 medium tomatoes, diced or blended (or 200-250g halved cherry tomatoes)
 * 1/2 teaspoon dried thyme
 * 1/2 teaspoon dried parsley
 * 1/2 teaspoon paprika
@@ -26,10 +26,15 @@ Instructions:
 10. Reduce the heat to low and simmer the tomato sauce until it is thick and flavorful, about 10 minutes.
 
 11. Remove the peppers from the oven and let them cool until they are easy to handle.
-12. Then peel off the skin, chop the peppers into small squares, and add them to the tomato sauce in the skillet.
+12. Chop the peppers into thin strips, and add them to the tomato sauce in the skillet.
 13. Stir peppers into the tomato sauce and simmer until peppers are tender and the mixture is thick, about 10 minutes.
 14. Serve the piperade hot, either as a side dish or over eggs. Enjoy!
 
 Notes:
 
 * An alternative to the tomato, onion, etc. is to use some pomodoro sauce.
+* There's sometimes piment d’Espelette, hot paprika, or chili flakes to make the sauce spicy.
+* Some recipes call for a blend of different colors of bell pepper.
+* One of the fancy recipes calls for peeling off the roasted bell pepper skin and blending it into the tomato sauce.
+* Fancy French recipes also call for peeling off the tomato skin and deseeding it.
+* Some recipes skip the roasting, and just fry the bell peppers together with the tomatoes.
