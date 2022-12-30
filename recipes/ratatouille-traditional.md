@@ -2,6 +2,8 @@
 
 https://recipe.cookswarehouse.com/fresh-natural-ratatouille-by-paul-bocuse/
 
+Note: a cocotte is a type of heavy pot with a tight-fitting lid - basically a dutch oven.
+
 Ingredients:
 
 * 1/4 cup extra virgin olive oil
@@ -19,7 +21,7 @@ Instructions:
 
 1. Toss the eggplant with sea salt and leave it for 2-4 hours (or overnight).
 2. Rinse the eggplant to remove the excess salt and pat it dry with paper towels or a clean kitchen towel.
-3. Preheat a Staub cocotte over medium heat for 5 minutes.
+3. Preheat a cocotte over medium heat for 5 minutes.
 4. Add the olive oil to the cocotte.
 5. Add the onion, garlic, red pepper, and eggplant to the cocotte. Stir to combine and coat with the olive oil.
 6. Season with salt and pepper and cook over medium heat for 20 minutes.
