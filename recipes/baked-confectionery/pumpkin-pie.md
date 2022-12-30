@@ -26,13 +26,15 @@ Procedures:
 1. Optionally, put pumpkin in nonstick saucepan and stir over direct heat for 10 minutes until somewhat dry and slightly
    caramelized, stirring frequently. Remove from heat but keep hot.
 2. Adjust oven rack to the middle upper position and preheat the oven to 200°C (400°F)
-3. Place pumpkin in a large mixing bowl and whisk in beaten eggs (once the pumpkin is moderately cool, if it was cooked)
-   . Add the cinnamon, salt, ginger, cloves, and mace and whisk to thoroughly combine. Gradually add the sugar, followed
-   by the heavy cream, whisking until all ingredients are incorporated.
-4. Divide the pumpkin filling between the two pie shells. Transfer the pies to the oven and bake for 15 minutes at 200c.
-5. Reduce the oven temperature to 160c (350°F) and continue baking until the filling is just set in the center of each
-   pie and the crust is deep golden brown, about 40-45 minutes. Let the pies cool to room temperature before cutting and
-   serving. Top with powdered sugar and whipped cream, if desired.
+3. Place pumpkin in a large mixing bowl and whisk in beaten eggs (only after the pumpkin is moderately cool, if it was cooked). 
+4. Add the cinnamon, salt, ginger, cloves, and mace and whisk to thoroughly combine.
+5. Gradually add the sugar, followed by the heavy cream, whisking until all ingredients are incorporated.
+6. Divide the pumpkin filling between the two pie shells. 
+7. Draw lines on top with a fork
+8. Transfer the pies to the oven and bake for 15 minutes at 200c.
+9. Reduce the oven temperature to 160c (350°F) and continue baking until the filling is just set in the center of each
+   pie and the crust is deep golden brown, about 40-45 minutes. 
+10. Let the pies cool to room temperature before cutting and serving. Top with powdered sugar and whipped cream, if desired.
 
 ## ALTERNATIVE: Pumpkin Meringue Pie
 

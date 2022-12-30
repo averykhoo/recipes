@@ -5,14 +5,14 @@ https://www.greatbritishchefs.com/recipes/potato-dauphinoise-recipe
 
 Ingredients:
 
-* (tweak) 1-2 leeks, thinly sliced and fried until cooked
-* 4 cloves garlic, pressed
-* 2 cups cream, half-and-half, or full-fat milk
-* 2 pinches nutmeg powder
+* (tweak, not tested) 1 leek, thinly sliced and fried until cooked
+* 3 cloves garlic, pressed
+* 1 cup cream, half-and-half, or full-fat milk
+* 1 pinch nutmeg powder
 * 1 small pinch clove powder
-* 1/2 teaspoon salt
-* 3-4 small/medium potatoes (about 800g), sliced thinly
-* 1/2 cup grated Gruyere cheese (optional)
+* 1/4 teaspoon salt
+* 3-4 small potatoes (about 400g), sliced thinly
+* (optional) 1/2 cup grated cheese (usually Gruyere)
 
 Instructions:
 
