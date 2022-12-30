@@ -20,6 +20,8 @@
   * page 2779 of the 2009 new larousse gastronomique in english (out of 3552 total pages)
   * page 776 of the 2012 Le grand Larousse gastronomique - nouvelle édition in french
     * visible at https://youtu.be/SkK28MEdbvg?t=174
+  * https://fr.wikipedia.org/wiki/Sauce_%C3%A9mulsionn%C3%A9e
+  * https://setupmyhotel.com/train-my-hotel-staff/chef-training/786-derivatives-of-basic-mother-sauce.html
 
 * the new classification generally groups by ingredients and technque
   * https://www.bloc-notes-culinaire.com/2020/02/les-sauces-de-base-et-derivees.html
@@ -35,6 +37,7 @@
       * mode of cooking
       * chemical reaction
       * emulsification
+
 
 * mother sauces and main derived sauces
   * white sauces (sauces blanches)
@@ -95,7 +98,7 @@
       * fresh tomato
           * concasse
           * puree de tomate
-          * coilis de tomate
+          * coulis de tomate
       * concentrated tomato
           * sauce tomate
   * warm emulsified (sauces émulsionnées chaudes)
