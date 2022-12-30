@@ -1,5 +1,6 @@
+# TODO
 
-# todo
+## Schema
 
 * how to display comments (e.g. chocolate chip cookies)
 * how to format weights alongside measures
@@ -15,7 +16,7 @@
 * highlight or link to relevant recipes or techniques
 * comments / footnotes for notes and tips
 
-# look into these schemas
+### look into these schemas
 
 * https://briansunter.com/blog/cooklang
 * https://cooklang.org
