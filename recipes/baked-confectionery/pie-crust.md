@@ -2,7 +2,9 @@
 
 https://www.inspiredtaste.net/22662/flaky-pie-crust-recipe/
 
-note: make the full recipe, the crust was too thin with half a recipe
+note: the crust was a bit too thin with half a recipe
+
+another note: it works without any water, but it's a bit more difficult to roll out. roll it out on a large sheet of clingfilm, then use that to transfer it into the pie dish.
 
 lazy to edit so pasting the whole page here first
 
@@ -10,7 +12,7 @@ lazy to edit so pasting the whole page here first
 * 1 teaspoon kosher salt or use 1/2 teaspoon fine sea salt
 * 1 tablespoon sugar, optional
 * 1 cup (230 grams) very cold unsalted butter, cut into 1/2-inch【1.27 cm】 cubes (2 sticks)
-* 4 to 8 tablespoons ice water
+* 0 to 8 tablespoons ice water
 
 METHOD WHEN USING FOOD PROCESSOR
 
@@ -20,10 +22,11 @@ METHOD WHEN USING FOOD PROCESSOR
    no uncoated flour).
 3. Scrape bowl, redistribute the flour-butter mixture then add remaining 0.5 - 1 cup of flour. Pulse 4 to 5 times
    until flour is evenly distributed. (Dough should look broken up and a little crumbly).
-4. Transfer to a medium bowl then sprinkle ice water over mixture — start with 4 tablespoons and add from there. Using a
+4. Transfer to a medium bowl then sprinkle ice water over mixture — start with 1 tablespoon and add from there. Using a
    rubber spatula, press the dough into itself. The crumbs should begin to form larger clusters. If you pinch some of
    the dough and it holds together, it’s ready. If the dough falls apart, add 2 to 4 more tablespoons of water and
    continue to press until dough comes together.
 5. Remove dough from bowl and place in a mound on a clean surface. Work the dough just enough to form a ball. Cut the
    ball in half then form each half into discs. Wrap each disc with plastic wrap and refrigerate for at least 1 hour and
    up to 2 days. You can also freeze it for up to 3 months (just thaw it overnight in the fridge before using it).
+6. freeze in pie tin after rolling out. blind bake at 200c/400f for 20 mins
