@@ -16,7 +16,7 @@ Tips:
 
 Ingredients:
 
-* 225g (1.6 cups) [self-raising flour](../recipes/baked-confectionery/self-raising-flour.md), sifted
+* 225g (1.6 cups) [self-raising flour](../recipes/confectionery/self-raising-flour.md), sifted
     * 210g flour or cake flour
     * 2 tsp baking powder
     * 1 tsp salt
