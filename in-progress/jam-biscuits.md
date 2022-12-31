@@ -36,7 +36,8 @@ Method:
 6. In a small bowl, whisk together the egg and milk.
 7. Add the egg mixture to the flour mixture and stir by hand to form a stiff dough. If using a blender, blend in the
    butter first, then pulse in the egg until just combined.
-8. Divide the dough into 12 portions and shape each one into a firm ball (about 3cm in diameter).
+8. Divide the dough into 12 portions and shape each one into a firm ball, each weighing about 40g, and about 3-4cm in
+   diameter. (If you make 24x 20g cookies, baking time should decrease to 8 minutes.)
 9. Transfer the balls to the prepared baking trays, leaving plenty of space between them.
 10. Press each ball to 1.5 cm flat and use a melon scoop or teaspoon to make a depression in the center of each biscuit.
 11. Place 1 tsp (or melon scoop) of jam into the depression of each biscuit.
