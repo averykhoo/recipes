@@ -6,7 +6,7 @@
 * 300g potatoes, peeled and diced (about 3 potatoes)
 * 2-3 cups light chicken stock, veg broth, or water
 * salt and pepper to taste (probably about 1 tsp each)
-* (optional) 2 tbsp white wine
+* 2 tbsp white wine
 * 1 tbsp butter to finish
 * chives or dill and cream to garnish
 
@@ -17,7 +17,7 @@
 5. squish potatoes through a ricer back into the pot. add the blended mixture and another cup of stock
 6. bring to a simmer. add last cup of stock to thin it to desired consistency.
 7. add salt and pepper to taste.
-8. optionally drizzle in some wine. finish with butter.
+8. drizzle in some wine. finish with butter.
 9. serve with a drizzle of cream and a garnish of chopped chive or dill.
 
 Notes:
