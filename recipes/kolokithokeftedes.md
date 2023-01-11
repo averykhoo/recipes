@@ -8,7 +8,7 @@ Ingredients
 
 * 1 large zucchini: grated, salted, drained in a strainer, squeezed to remove more juice (~1 cup if compacted)
 * 1-2 tablespoons chopped dill or mint
-* 1/2 cup chopped onion
+* 1/3 cup chopped onion
 * pinch of nutmeg
 * (optional?) cheese
 * pepper
@@ -16,6 +16,8 @@ Ingredients
 * 1 beaten egg
 * 3 tbsp flour or almond meal
 * oil for frying
+
+Makes about 6 pieces
 
 1. Mix zucchini, herbs, onion, spices, cheese, pepper. Add salt to taste.
 2. Mix in the egg, which should already be beaten. It should be wet but not drippy.
