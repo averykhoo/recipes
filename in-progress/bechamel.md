@@ -2,7 +2,7 @@
 
 https://www.seriouseats.com/bechamel-white-sauce-recipe
 
-1. fry amounts butter and flour
+1. fry equal amounts butter and flour
 2. while whisking quickly, slowly pour in milk
 3. bring to a boil
 4. add salt, (white) pepper, nutmeg powder, maybe a touch of mustard
