@@ -4,7 +4,7 @@
 * cheese, traditionally emmental
 * ham
 * optional second slice of bread, depending on how thick it is
-* [bechamel](./bechamel.md)
+* [bechamel](../recipes/bechamel.md)
 * optional egg on top, and more sauce to finish
 
 notes:
