@@ -21,6 +21,7 @@ https://www.youtube.com/watch?v=7AAx0uIuoBQ&t=7s
 
 notes:
 
+* too thick? add milk. too thin? boil it down.
 * escoffier's recipe involved onion and veal
 * alternatively use hot milk and cold roux, but never both hot or both cold
   * e.g. boil a bay leaf and half an onion studded with whole cloves in the milk, then strain out
