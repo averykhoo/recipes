@@ -26,5 +26,5 @@ notes:
 * alternatively use hot milk and cold roux, but never both hot or both cold
   * e.g. boil a bay leaf and half an onion studded with whole cloves in the milk, then strain out
 * add (optional egg yolk and) 1 cup of cheese for a mornay sauce
-  * double the cheese and add a splash of white wine to make mac and cheese sauce
+  * double the cheese (or use a stronger cheese) and add a splash of white wine to make mac and cheese sauce
 * halve the milk and fold in a beaten egg white (with cream of tartar) and bake at 190C to make a souffle
