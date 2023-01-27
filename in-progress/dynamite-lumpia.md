@@ -17,6 +17,7 @@ https://panlasangpinoy.com/dyanamite-lumpia/
 * onion or green onion
 * cheese
 * spring roll wrappers, egg or rice rolls okay
+* clove, fennel, worcestershire, light soy sauce, liquid smoke
 
 notes:
 
