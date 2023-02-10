@@ -73,3 +73,13 @@
 * Chicago
   Tribune [said that they found](https://www.chicagotribune.com/travel/ct-kfc-recipe-revealed-20160818-story.html)
   the [original recipe](https://www.chicagotribune.com/dining/recipes/ct-kfc-recipe-test-20160818-story.html)
+
+## Directions from [reddit](https://www.reddit.com/r/food/comments/1ww8h1/kfc_clone_recipe_results/):
+
+Blend all spices together including the salt in spice grinder until mixed and powdery. Add to flour and mix by hand with
+whisk or in food processor.
+
+Marinate chicken in buttermilk 4 hours to overnight. Remove chicken pieces from buttermilk, place in flour mixture,
+press down to ensure even coating. Deep Fry at 350 degrees for 8 minutes.
+
+Note: KFC may not use buttermilk... I use it because it makes the chicken taste good. So yeah.
