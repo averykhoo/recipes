@@ -10,7 +10,7 @@ Ingredients:
 * 1/4 teaspoon black pepper
 * 1/4 teaspoon sugar
 * 1/8 teaspoon salt
-* 1/8 teaspoon shichimi togarashi (Japanese seven-spice blend)
+* 1/8 (or less) teaspoon shichimi togarashi (Japanese seven-spice blend)
 
 Instructions:
 
