@@ -1,6 +1,6 @@
 # Japanese-ish Beef Meuniere
 
-* 200g frozen fatty sliced beef
+* 200g frozen fatty sliced beef meant for yakiniku
 * 1 tsp salt
 * 1 tsp pepper
 * 1 tbsp plain flour
