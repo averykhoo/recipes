@@ -1,13 +1,13 @@
 # Japanese-ish Beef Meuniere
 
 * 200g frozen fatty sliced beef
-* salt and pepper to season
-* flour to dust over / lightly coat
-* fry and reserve in a bowl
-* 1-2 tsp each shoyu and mirin
-* 1-3 tsp sake or wine to deglaze
-* 1 tsp butter to finish the sauce
-* toss the beef and drippings back in there
+* 1 tsp salt
+* 1 tsp pepper
+* 1 tbsp plain flour
+* 1 tsp shoyu
+* 2 tsp mirin
+* 2 tsp sake or wine
+* 1-2 tsp butter
 
 Instructions:
 
