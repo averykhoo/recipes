@@ -5,6 +5,7 @@
     * each bunch costs about $2 at the thai supermarket at golden mile
         * note: they're moving to aperia mall near lavender in april 2023
 * 0.8 cups of decently good olive oil (160g)
+* 1 tsp salt
 * 12-15 cloves raw garlic, peeled (60g)
 * 1/2 cup pine nuts (100g)
 * 1/3 cup freshly grated parmegiano (10-20g)
@@ -17,7 +18,7 @@
 2. add basil leaves - about 1/3 of the leaves will fit
 3. blend in the leaves
 4. add basil leaves and blend repeatedly until all the leaves are in
-5. add the garlic, pine nuts, and cheese
+5. add the salt, garlic, pine nuts, and cheese
 6. blend to combine, and keep blending to form a pasty consistency
 7. store in an airtight container for up to a couple months
 8. smooth the top surface of the pesto flat with a spatula, and cover with olive oil to prevent oxidation
