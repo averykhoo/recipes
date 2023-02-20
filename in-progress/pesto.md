@@ -6,7 +6,8 @@
         * note: they're moving to aperia mall near lavender in april 2023
 * 0.8 cups of decently good olive oil (160g)
 * 1 tsp salt
-* 12-15 cloves raw garlic, peeled (60g)
+* 2 heads / 12-15 cloves raw garlic, peeled (60g)
+  * use up to 3 heads garlic
 * 1/2 cup pine nuts (100g)
 * 1/3 cup freshly grated parmegiano (10-20g)
     * if using the pre-packaged powdered parmesan cheese, use 3/4 to 1 cup since its really weak
