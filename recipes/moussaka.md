@@ -8,7 +8,8 @@ https://www.recipetineats.com/moussaka-greek-eggplant-beef-bake/
 * 2 zucchini, sliced 0.5-1 cm thick, patted dry, fried golden brown
 * 2 large / 4 small starchy potatoes, sliced 0.5 cm thick, fried golden brown
 * 2 cups ragu
-    * 1 cup mutton (or beef), maybe minced chicken liver or fish sauce
+    * 1 cup (up to 300g) minced mutton or beef
+      * maybe extra minced chicken liver or fish sauce
     * soffrito/mirepoix
     * garlic, onion, bay, paprika, salt, pepper, cinnamon, oregano
     * red wine, sugar (adjust based on wine sweetness)
@@ -18,10 +19,10 @@ https://www.recipetineats.com/moussaka-greek-eggplant-beef-bake/
 * 1-2 cups bechamel sauce, as thick as custard
     * 50g / 0.25 cups flour
     * 1.5 cups milk
-    * nutmeg, maybe clove powder
+    * (optional) nutmeg, maybe clove powder
     * 100g grated parmesan (technically making this a mornay sauce)
     * not too much salt
-    * 1 egg yolk added last helps thicken the sauce
+    * 1 egg yolk added at the end helps thicken the sauce
 * cheese on top
 
 1. Preheat oven to 180°C.
