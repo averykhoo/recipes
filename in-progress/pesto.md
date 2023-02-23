@@ -2,17 +2,19 @@
 
 * leaves from 3 bunches of thai basil (about 200g dry)
     * these basil leaves are larger than holy basil, and don't smell like mint
-    * also pluck off the tippy tops since those bits have flavor - but don't add any stem
+    * also pluck off the tippy tops since those bits have flavor - basically put in everything except the stem
     * each bunch costs about $2 at the thai supermarket at golden mile
         * note: they're moving to aperia mall near lavender in april 2023
-* 0.8 cups of decently good olive oil (160g)
+* 0.8 cups of extra virgin olive oil (160g)
 * 1 tsp salt
 * 2 heads / 12-15 cloves raw garlic, peeled (60g)
-  * use up to 3 heads garlic
+    * use up to 3 heads garlic
 * 1/2 cup pine nuts (100g)
-  * or 1/3 cup also okay
+    * or 1/3 cup also okay
 * 1/3 cup freshly grated parmegiano (10-20g)
     * if using the pre-packaged powdered parmesan cheese, use 3/4 to 1 cup since its really weak
+    * other cheeses are also okay (adjust the amount to taste)
+        * hard cheeses usually have a better shelf life (if you're planning to make this ahead of time)
     * note from 2023-02-19:
         * used 1 cup (60g) of grated gran moravia (hard cheese) since that was in the fridge
         * using 2/3 cup (40g) was still too little
