@@ -4,7 +4,7 @@ https://www.mygreekdish.com/recipe/mousakas/
 https://www.recipetineats.com/moussaka-greek-eggplant-beef-bake/
 
 * 2 eggplants, sliced 1 cm thick, salted to remove water, rinse excess salt off, patted dry, fried golden brown
-    * [ ] try slicing it round instead of long next time
+    * TODO: try slicing it round instead of long next time
 * 2 zucchini, sliced 0.5-1 cm thick, patted dry, fried golden brown
 * 2 large / 4 small starchy potatoes, sliced 0.5 cm thick, fried golden brown
 * 2 cups ragu

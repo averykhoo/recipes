@@ -61,6 +61,7 @@ To make the crunchy praline feuilletine:
 To make the chocolate mousse:
 
 1. Whip the cold whipping cream in a bowl to get the whipped cream and refrigerate.
+   (Note: philips blender with a whipping attachment can only reliably whip 1 cup at a time, so whip in 2 batches)
 2. Melt dark chocolate broken into small pieces in a bain-marie/water bath.
 3. Bring milk to a boil, pour it over the melted chocolate, and mix with a rubber spatula until smooth.
 4. When the chocolate mixture is lukewarm, add it to the whipped cream and mix with a spatula as fast as possible.

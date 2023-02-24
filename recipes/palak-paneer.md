@@ -16,6 +16,7 @@ https://cooking.nytimes.com/recipes/1021954-saag-paneer
 * ghee
 * 10 cloves garlic, 1 cm ginger, 1 medium onion, 200g tomato
 * ~~chili,~~ a teaspoon each of powdered cumin, cinnamon, turmeric, cardamom, garam masala, coriander
+  * if using whole cardamom, toast/fry and crush it, then remove the skin
 * some clove, bay (powder), black pepper
 * tablespoon or two of fenugreek leaves, half to one cup cream, maybe yoghurt
 * tablespoon of cashew paste for thickening?
