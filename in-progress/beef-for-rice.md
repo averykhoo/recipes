@@ -5,7 +5,7 @@
 * 1 tbsp plain flour
 * 1 tsp shoyu
 * 2 tsp mirin
-* 2 tsp sake or wine
+* 2 tsp sake or (red) wine
 * 1-2 tsp butter
 
 Instructions:
