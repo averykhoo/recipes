@@ -14,9 +14,10 @@ The same method works for potatoes, sweet potatoes, and beetroot
     * Parmesan
     * Mozzarella
 
-1. Parboil brussels sprouts in salted water, then (optionally) cool in an ice bath to retain color. Pat dry.
-2. Squash every brussels sprout flat. 
-3. Coat with olive oil, herbs and spices, cheese, salt, and pepper.
-4. Arrange in a single layer in a baking tray, and bake at 220°C for 15 mins. Flip and bake for another 5-10 mins.
-   (Also okay to bake at 170°C for 15 mins for both sides.)
-5. Optionally drizzle with lemon juice and garnish with parsley.
+1. Parboil brussels sprouts in salted water (optionally with a bit of soda bicarb)
+2. (Very much optional) cool in an ice bath to retain color. Pat dry.
+3. Squash every brussels sprout flat with a cup or small bowl. 
+4. Coat with olive oil, herbs and spices, salt, and pepper.
+5. Arrange in a single layer in a baking tray, and bake at 170°C (up to 200°C) for 15 mins. 
+6. Flip, add cheese, and bake for another 15 mins.
+7. Optionally drizzle with lemon juice and garnish with parsley.
