@@ -9,7 +9,7 @@ https://www.recipetineats.com/moussaka-greek-eggplant-beef-bake/
 * 2 large / 4 small starchy potatoes, sliced 0.5 cm thick, fried golden brown
 * 2 cups ragu
     * 1 cup (up to 300g) minced mutton or beef
-      * maybe extra minced chicken liver or fish sauce
+        * maybe extra minced chicken liver or fish sauce
     * soffrito/mirepoix
     * garlic, onion, bay, paprika, salt, pepper, cinnamon, oregano
     * red wine, sugar (adjust based on wine sweetness)
@@ -26,8 +26,10 @@ https://www.recipetineats.com/moussaka-greek-eggplant-beef-bake/
 * cheese on top
 
 1. Preheat oven to 180°C.
-2. Prepare the veggies. Frying / baking the veggies is optional.
+2. Prepare the veggies. Frying / baking the veggies is optional. Consider cutting the veg into smaller pieces so that
+   the moussaka is easier to scoop.
 3. Make the ragu and bechamel.
-4. Prepare a 3 inch deep dish. Layer in the veggies, ragu, and bechamel. The top layer should be bechamel.
+4. Prepare a 3 inch deep dish. Layer in the veggies, ragu, and bechamel. The top layer should be bechamel. Try to make
+   sure the bechamel and ragu have enough veg between that they don't mix
 5. Top with cheese.
 6. Bake for 20 mins at 180°C if the veggies aren't precooked. Bake for 60 mins if raw. 
