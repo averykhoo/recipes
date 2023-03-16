@@ -1,7 +1,8 @@
 # Honey Glaze (for roast ham)
 
 > IMPORTANT:<br>
-> Make sure to cut off the actual ham skin (but leaving behind the fat layer) because that's pretty muh inedible
+> Make sure to cut off the actual ham skin (but leaving behind the fat layer) because that's pretty much inedible.
+> After cutting one way, remove the skin in strips before cutting the other way to make the diamond hatch. 
 
 * 1/2 cup honey
 * 1/4 cup maple syrup
