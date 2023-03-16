@@ -1,5 +1,8 @@
 # Honey Glaze (for roast ham)
 
+> IMPORTANT:<br>
+> Make sure to cut off the actual ham skin (but leaving behind the fat layer) because that's pretty muh inedible
+
 * 1/2 cup honey
 * 1/4 cup maple syrup
 * 1/4 cup (brown) sugar
