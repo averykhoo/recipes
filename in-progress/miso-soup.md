@@ -2,7 +2,7 @@
 
 Ingredients:
 
-* 4-5 cups (~1 liter) dashi (either kombu or bonito is fine)
+* 4-6 cups (1-1.5 liters) dashi (either kombu or bonito is fine)
 * 1-2 tbsp mirin or ryorishu (optional)
 * 4-6 tbsp miso paste
 * 100-200g silken (kinugoshi) tofu, cut into 1/2 inch (~1.5 cm) cubes
