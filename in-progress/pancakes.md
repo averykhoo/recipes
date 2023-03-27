@@ -1,27 +1,30 @@
 # Pancakes
 
-https://www.allrecipes.com/recipe/21014/good-old-fashioned-pancakes/
+(adapted from) calchttps://www.allrecipes.com/recipe/21014/good-old-fashioned-pancakes/
 
 Ingredients
 
-* 1 ½ cups【355 mL】 all-purpose flour
-* 3 ½ teaspoons baking powder
+* 1 cup flour -- try cake flour based on recipe below
+* 2 teaspoons baking powder
 * 1 tablespoon white sugar
 * ¼ teaspoon salt, or more to taste
-* 1 ¼ cups【296 mL】 milk
-* 3 tablespoons butter, melted
+* 1 cup milk
+* 2 tablespoons butter, melted
 * 1 egg
 
 Directions
-Sift flour, baking powder, sugar, and salt together in a large bowl. Make a well in the center and add milk, melted
-butter, and egg; mix until smooth.
 
-Heat a lightly oiled griddle or pan over medium-high heat. Pour or scoop the batter onto the griddle, using
-approximately 1/4 cup【59 mL】 for each pancake; cook until bubbles form and the edges are dry, about 2 to 3 minutes. Flip
-and cook until browned on the other side. Repeat with remaining batter.
+1. Sift flour, baking powder, sugar, and salt together in a large bowl. 
+2. Make a well in the center and add milk, melted butter, and egg; mix until smooth.
+3. Heat a lightly oiled griddle or pan over medium-high heat.
+4. Pour or scoop the batter onto the griddle, using approximately 1/4 cup【59 mL】 for each pancake
+5. Cook until bubbles form and the edges are dry, about 2 to 3 minutes.
+6. Flip and cook until browned on the other side. 
+7. Repeat with remaining batter.
 
 Editor's Note:
-The salt amount has been reduced based on review feedback. The original recipe called for 1 teaspoon.
+
+* The salt amount has been reduced based on review feedback. The original recipe called for 1 teaspoon.
 
 More stuff from that page:
 
@@ -60,7 +63,7 @@ You likely already have everything you need to make this pancake recipe. If not,
 list:
 
 * Flour: This homemade pancake recipe starts with all-purpose flour.
-* Baking powder: Baking powder, a leavener, is the secret to fluffy pancakes.
+* Baking powder: Baking powder, a leavening agent, is the secret to fluffy pancakes.
 * Sugar: Just a tablespoon of white sugar is all you'll need for subtly sweet pancakes.
 * Salt: A pinch of salt will enhance the overall flavor without making your pancakes taste salty.
 * Milk and butter: Milk and butter add moisture and richness to the pancakes.
