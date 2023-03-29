@@ -1,6 +1,6 @@
 # Pancakes
 
-(adapted from) calchttps://www.allrecipes.com/recipe/21014/good-old-fashioned-pancakes/
+(adapted from) https://www.allrecipes.com/recipe/21014/good-old-fashioned-pancakes/
 
 Ingredients
 
