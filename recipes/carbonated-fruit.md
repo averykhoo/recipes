@@ -5,7 +5,7 @@ make some fizzy fruit
 ingredients:
 
 * dry ice
-* wide-mouth polycarbonate bottle (e.g. nalgene)
+* wide-mouth polycarbonate bottle (ideally from a reputable brand, e.g. nalgene)
 * some fruit (ideally soft-ish fruit) peeled and maybe sliced open
     * peeled and sliced pears
     * strawberries (safe not to peel these)
