@@ -20,7 +20,8 @@ instructions:
 3. put one marble sized (diameter 1/2 inch ~= 1.5cm) chunk of dry ice in the bottle
 4. cap the bottle
 5. wait a bit for the dry ice to turn to gas
-6. let the gas infuse into the fruit for a bit
+6. let the gas infuse into the fruit for a bit - half an hour at least, but up to a few hours
+   (this can be done in the fridge)
 7. very slowly uncap the bottle, letting the gas leak out before fully unscrewing the cap
 
 slightly hand-wavy science:
