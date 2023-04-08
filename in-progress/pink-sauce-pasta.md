@@ -13,3 +13,5 @@ note: for this to turn out pink and not orange, the tomatoes must be red and not
 9. keep adding pasta water and reducing until everything looks cooked
 10. add cream
 11. cheese and salt to taste
+12. add a bit more chicken stock if it's too sticky/starchy
+13. serve with pine nuts and maybe basil leaves
