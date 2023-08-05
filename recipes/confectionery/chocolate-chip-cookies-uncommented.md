@@ -14,7 +14,7 @@
 1. Sift flours, baking soda, baking powder and salt into a medium bowl.
    Set aside.
 
-* 500g unsalted butter (2 slabs)
+* 450g unsalted butter (2 slabs, each 227g)
 * 400g white sugar
 * 450g light-brown sugar
 
