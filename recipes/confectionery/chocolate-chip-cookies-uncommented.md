@@ -61,15 +61,16 @@
     Cookies will appear to be too soft, but will harden significantly as it cools.
     (the following settings optimized for the Sharp AX-1500V oven, bottom tray only)
 
-| Cookie Weight | Cookie Diameter | Baking Time | Cookies Per Tray | Shape        |
-|---------------|-----------------|-------------|------------------|--------------|
-| 10 g          | 4.5 cm          | 8.5 mins    | 15 (rectilinear) | [⋮⋮⋮⋮⋮]  |        
-| 25 g          | 6.5 cm          | 9 mins      | 9 (rectilinear)  | [⋮⋮⋮]     |       
-| 50 g          | 8 cm            | 12 mins     | 5 (2-1-2)        | [ ˙̣ ⋅ ˙̣ ]    | 
-| 100 g         | 12 cm           | 15 mins     | 4 (zigzag)       | [.˙.˙]       |  
+| Cookie Weight | Cookie Diameter | Baking Time | Cookies Per Tray | Shape       |
+|---------------|-----------------|-------------|------------------|-------------|
+| 10 g          | 4.5 cm          | 8.5 mins    | 15 (rectilinear) | [⋮⋮⋮⋮⋮]     |        
+| 25 g          | 6.5 cm          | 9 mins      | 9 (rectilinear)  | [⋮⋮⋮]       |       
+| 50 g          | 8 cm            | 12 mins     | 5 (2-1-2)        | [ ˙̣ ⋅ ˙̣ ] | 
+| 100 g         | 12 cm           | 15 mins     | 4 (zigzag)       | [.˙.˙]      |  
 
-12. Transfer sheet to a wire rack for ~10 minutes, then slip cookies onto another rack to cool a bit more.
-    Cookie will be soft and fragile for the first few minutes out of the oven, so be careful not to break it.
+12. Allow to cool for 5-6 minutes. Transfer sheet to a wire rack for another 10 minutes, then slip cookies onto another
+    rack to cool a bit more. Cookie will be soft and fragile for the first few minutes out of the oven, so be careful
+    not to break it.
 
 13. Repeat with remaining dough, or reserve dough, refrigerated, for baking remaining batches the next day.
 
