@@ -1,6 +1,5 @@
 # Ramen Eggs (aka "Ajitsuke Tamago" or "Ajitama")
 
-* 1 tbsp vinegar (can be skipped)
 * 7 eggs
 * 1/4 cup shoyu
 * 1/4 cup mirin
