@@ -4,7 +4,7 @@ from Ati
 
 * 380g cleaned deseeded chili
 * 100g garlic
-* 1 cup oil
+* 1 cup oil <- todo: not sure about this amount
 * 1 tsp salt
 * 1/8 tsp sugar (if not adding msg)
 * 1/2 tsp chicken bouillon powder (alternatively, a pinch of msg)
