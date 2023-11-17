@@ -2,25 +2,26 @@
 
 * reverse-engineered at (now-defunct): http://kfc.forumup.co.uk/about718-kfc.htm
 * or just buy it online: [99x chicken seasoning (Marion-Kay)](https://marionkay.com/product/chicken-seasoning-99-x/)
+* if the chicken is brined, skip the salt
 
 ## Ingredients
 
-| Amount | Unit | Grams     | Ingredient         | Notes/Substitutions |
-|--------|------|-----------|--------------------|---------------------|
-| 1      | kg   | 1000      | Cake Flour         |                     |
-| 3      | Tbsp |   17.64   | White Pepper       |                     |
-| 1.5    | Tbsp |   11.9    | Black Pepper       |                     |
-| 2.5    | Tbsp |    4.94   | Sage               |                     |
-| 2.5    | tsp  |    4.67   | Coriander          | caraway?            |
-| 2.5    | tsp  |    4.23   | Ginger             |                     |
-| 1.75   | tsp  |    3.26   | Ancho Chile Pepper | red chili flakes    |
-| 1.5    | tsp  |    2.65   | Vanilla Beans      |                     |
-| 1.5    | tsp  |    2.38   | Bay Leaves         |                     |
-| 1.5    | tsp  |    2.03   | Savory             | thyme               |
-| 1      | tsp  |    2.03   | Cloves             | allspice            |
-| 1      | tsp  |    1.76   | Cardamom           | nutmeg + cinnamon   |
-| 2      | tsp  |    7.5    | MSG                | fish sauce?         |
-| 0.5    | cups |  147.35   | Salt               | less 20%            |
+| Amount | Unit | Grams     | Ingredient         | Notes/Substitutions           |
+|--------|------|-----------|--------------------|-------------------------------|
+| 1      | kg   | 1000      | Cake Flour         |                               |
+| 3      | Tbsp |   17.64   | White Pepper       |                               |
+| 1.5    | Tbsp |   11.9    | Black Pepper       |                               |
+| 2.5    | Tbsp |    4.94   | Sage               |                               |
+| 2.5    | tsp  |    4.67   | Coriander          | caraway?                      |
+| 2.5    | tsp  |    4.23   | Ginger             |                               |
+| 1.75   | tsp  |    3.26   | Ancho Chile Pepper | red chili flakes              |
+| 1.5    | tsp  |    2.65   | Vanilla Beans      |                               |
+| 1.5    | tsp  |    2.38   | Bay Leaves         |                               |
+| 1.5    | tsp  |    2.03   | Savory             | thyme                         |
+| 1      | tsp  |    2.03   | Cloves             | allspice                      |
+| 1      | tsp  |    1.76   | Cardamom           | nutmeg + cinnamon             |
+| 2      | tsp  |    7.5    | MSG                | fish sauce?                   |
+| 0.5    | cups |  147.35   | Salt               | use 25% less = 1/3 cup = 110g |
 
 ## Directions
 
