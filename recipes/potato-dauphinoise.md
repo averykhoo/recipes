@@ -5,7 +5,7 @@ https://www.greatbritishchefs.com/recipes/potato-dauphinoise-recipe
 
 Ingredients:
 
-* (tweak, not tested) 1 leek, thinly sliced and fried until cooked
+* (optional) bunch of garlic chives (koo chye), cut on a bias
 * 3 cloves garlic, pressed
 * 1 cup cream, half-and-half, or full-fat milk
 * 1 pinch nutmeg powder
@@ -16,7 +16,7 @@ Ingredients:
 
 Instructions:
 
-1. Press the garlic cloves and simmer in cream in a large pan over medium heat. Also add leeks, if using.
+1. Press the garlic cloves and simmer in cream in a large pan over medium heat. Also add chives, if using.
 2. Add the nutmeg and clove powder and stir to combine.
 3. Add the thinly sliced potatoes to the pan and stir to coat in the milk mixture.
 4. Simmer the potatoes in the milk until they are cooked through, about 10-15 minutes.
