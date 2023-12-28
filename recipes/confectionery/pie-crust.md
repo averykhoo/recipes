@@ -4,20 +4,24 @@ https://www.inspiredtaste.net/22662/flaky-pie-crust-recipe/
 
 note: the crust was a bit too thin with half a recipe
 
-another note: it works without any water, but it's a bit more difficult to roll out. roll it out on a large sheet of clingfilm, then use that to transfer it into the pie dish.
+another note: it works without any water, but it's a bit more difficult to roll out. roll it out on a large sheet of
+clingfilm, then use that to transfer it into the pie dish.
 
 lazy to edit so pasting the whole page here first
 
 * 2 - 2.5 cups (325 grams) all-purpose flour (or pastry flour, or 1 part cake to 2 parts plain)
+    * this is used in 2 parts below
 * 1 teaspoon kosher salt or use 1/2 teaspoon fine sea salt
 * 1 tablespoon sugar, optional
 * 1 cup (230 grams) very cold unsalted butter, cut into 1/2-inch【1.27 cm】 cubes (2 sticks)
-* 0 to 8 tablespoons ice water
+* 0 to 8 tablespoons ice water (skip)
 
 METHOD WHEN USING FOOD PROCESSOR
 
 1. Add 1 ½ cups【355 mL】 flour, salt, and sugar (optional) to a food processor. Pulse 2 to 3 times until combined. The
    remaining cup of flour will be added later.
+    * note: this shouldn't matter much
+    * also, blending in an ice cube as soon as it's fully mixed helps speed things up
 2. Scatter butter cubes over flour and process until a dough or paste begins to form, about 15 seconds. (There should be
    no uncoated flour).
 3. Scrape bowl, redistribute the flour-butter mixture then add remaining 0.5 - 1 cup of flour. Pulse 4 to 5 times
