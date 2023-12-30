@@ -30,14 +30,14 @@ Directions
    until it's 2 minutes away from being tender yet firm to the bite, 9 to 10 minutes.
 8. As you are cooking the spaghetti, heat olive oil in a skillet over medium heat.
 9. Add zucchini and salt and cook, stirring occasionally, until it starts to release juices, soften, and break down,
-   3 to 5 minutes.
+   3 to 5 minutes. Also add garlic, if using
 10. Add a couple splashes of the pasta water to the zucchini, but don't overdo it.
 11. Break zucchini into small pieces with the edge of a spoon or spatula.
 12. Reduce heat to low and toss in basil and butter; stir until butter melts.
 13. Grab spaghetti with tongs and transfer it right into the sauce; stir until coated.
 14. Mix in Pecorino Romano and Parmigiano-Reggiano cheeses.
 15. Add a final splash of pasta water and adjust salt if needed.
-16. Serve with more grated cheese and fresh basil.
+16. Serve with more grated cheese, fresh basil, pepper, and optional butter.
 
 Chef's Notes
 
