@@ -9,7 +9,6 @@
 * 1 tbsp mayo
 * 1-2 spring onions, chopped
 * handful of chives, chopped
-* 2 [ramen eggs](../recipes/ramen-eggs.md)
 
 1. mix egg yolks with reheated rice in a pan that isn't hot yet
 2. start frying, moving and scraping constantly until the yolk is cooked onto the surface of the rice
@@ -20,4 +19,4 @@
 7. add rice and mix together
 8. add optional mayo and spring onions / chives
 9. optionally use a blowtorch to lightly char the salmon
-10. serve with marinated onsen egg
+10. serve with [marinated onsen egg](../recipes/ramen-eggs.md) and [miso soup](../recipes/miso-soup.md)
