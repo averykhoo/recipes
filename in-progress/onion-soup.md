@@ -25,8 +25,8 @@ Time: 1 hour 20 minutes
 
 In 1954, what was then called the Food News Department of The New York Times released a pamphlet simply called “Soups,”
 which had 20 recipes for soups “thick and thin, hot and cold,” including those for minestrone, shrimp bisque and this
-French onion soup. We’ve updated the recipe adding sherry and wine to layer in more flavors. The bulk of the time is
-spent on caramelizing the onions, a process that always takes longer than it seems it should. But it’s worth the wait.
+French onion soup. We've updated the recipe adding sherry and wine to layer in more flavors. The bulk of the time is
+spent on caramelizing the onions, a process that always takes longer than it seems it should. But it's worth the wait.
 
 INGREDIENTS
 Yield: 4 to 6 servings

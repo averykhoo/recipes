@@ -38,10 +38,10 @@ Notes
 * cherry tomatoes – the sweeter the better! There are so many types of mini tomatoes these days, from strawberry to
   grape to on the vine to heirloom. I used one package of classic cherry tomatoes and one package of cherry tomatoes on
   the vine.
-* feta – you’ll want to get a nice higher quality Greek feta since it’s the main flavor of the dish. Grab a block of
-  feta, the kind that comes in a brine, not the crumbles. If you want a milder, creamier feta, try French feta, it’s
+* feta – you'll want to get a nice higher quality Greek feta since it's the main flavor of the dish. Grab a block of
+  feta, the kind that comes in a brine, not the crumbles. If you want a milder, creamier feta, try French feta, it's
   less tart than Greek.
-* olive oil – most of the recipes I’ve seen call from anywhere from 1/4 to 1/2 cup of olive oil. I went with 1/3 cup,
+* olive oil – most of the recipes I've seen call from anywhere from 1/4 to 1/2 cup of olive oil. I went with 1/3 cup,
   you want enough to coat the tomatoes and feta while having a bit of oil pool at the bottom of your baking dish so the
   tomatoes are essentially doing a tomato confit type thing. Too little olive oil and your tomatoes will end up drying
   out.

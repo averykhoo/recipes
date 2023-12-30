@@ -65,7 +65,7 @@ COOKING TIPS
     * A more traditional approach is to combine drained pasta, eggs, and guanciale in a pot where pasta was cooked, then
       stir the ingredients over low heat until pasta gets coated with a creamy sauce, which may need loosening with a
       bit of cooking water. However, it seems that the traditional approach may yield unsatisfactory results, which is
-      why it’s often recommended to mix the carbonara sauce over a double broiler or even mix it with the hot pasta in a
+      why it's often recommended to mix the carbonara sauce over a double broiler or even mix it with the hot pasta in a
       large bowl allowing the heat of the pasta to cook it.
 * Eggs
     * Although traditionally, carbonara is prepared with egg yolks only, many recipes use whole eggs or a combination of
@@ -73,7 +73,7 @@ COOKING TIPS
       servings to four yolks/eggs for four servings. Also, to get an extra rich sauce, some recipes call for adding one
       egg for every 4 egg yolks.
 * Egg Yolks Or Eggs
-    * Although today it’s been widely established that carbonara is prepared with egg yolks, there are also claims that
+    * Although today it's been widely established that carbonara is prepared with egg yolks, there are also claims that
       making carbonara with whole eggs is also traditional.
 * How Much Guanciale
     * The amount of guanciale varies from recipe to recipe. Some call for merely 25g (0.9 oz) per serving, while others
@@ -97,7 +97,7 @@ COOKING TIPS
     * Traditionally, the best cheese is Italian pecorino (sheep cheese), preferably the Pecorino Romano variety, but it
       can be partially or entirely substituted with Parmigiano-Reggiano. However, this will make for a much saltier
       carbonara sauce, especially if combined with pancetta or bacon, so take note and cut back on the salt when cooking
-      pasta. Also, because Pecorino Romano cheese is a hard-melting cheese, it’s crucial that it’s grated finely in
+      pasta. Also, because Pecorino Romano cheese is a hard-melting cheese, it's crucial that it's grated finely in
       order to advance its melting properties.
 * Pasta
     * Spaghetti may be the standard choice of pasta, but other types of pasta like fettuccine, rigatoni, bucatini,
@@ -123,5 +123,5 @@ COOKING TIPS
       pop of color in the form of roughly chopped parsley.
 * Serving
     * While preparing spaghetti alla carbonara, it is recommended to warm the serving bowls/plates, as this will keep
-      the carbonara sauce creamy for longer. Also, carbonara should be served right after it’s been prepared, as the
+      the carbonara sauce creamy for longer. Also, carbonara should be served right after it's been prepared, as the
       sauce turns dry very quickly.

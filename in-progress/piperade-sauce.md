@@ -38,7 +38,7 @@ Instructions:
 Notes:
 
 * An alternative to the tomato, onion, etc. is to use some pomodoro sauce.
-* There's sometimes piment d’Espelette, hot paprika, or chili flakes to make the sauce spicy.
+* There's sometimes piment d'Espelette, hot paprika, or chili flakes to make the sauce spicy.
 * Some recipes call for a blend of different colors of bell pepper.
 * One of the fancy recipes calls for peeling off the roasted bell pepper skin and blending it into the tomato sauce.
 * Fancy French recipes also call for peeling off the tomato skin and deseeding it.

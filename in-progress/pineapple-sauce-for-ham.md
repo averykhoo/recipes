@@ -31,7 +31,7 @@
 
 ## QUICK & EASY LEG OF HAM
 
-Catherine’s short-cut, Dec-2010
+Catherine's short-cut, Dec-2010
 
 * 2kg fully-cooked ham
 
@@ -53,7 +53,7 @@ N.B.
 
 ### Storage
 
-From Australian Woolworth’s mag, Dec-2010
+From Australian Woolworth's mag, Dec-2010
 
 (This really works!)
 

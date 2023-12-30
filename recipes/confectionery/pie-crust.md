@@ -28,7 +28,7 @@ METHOD WHEN USING FOOD PROCESSOR
    until flour is evenly distributed. (Dough should look broken up and a little crumbly).
 4. Transfer to a medium bowl then sprinkle ice water over mixture — start with 1 tablespoon and add from there. Using a
    rubber spatula, press the dough into itself. The crumbs should begin to form larger clusters. If you pinch some of
-   the dough and it holds together, it’s ready. If the dough falls apart, add 2 to 4 more tablespoons of water and
+   the dough and it holds together, it's ready. If the dough falls apart, add 2 to 4 more tablespoons of water and
    continue to press until dough comes together.
 5. Remove dough from bowl and place in a mound on a clean surface. Work the dough just enough to form a ball. Cut the
    ball in half then form each half into discs. Wrap each disc with plastic wrap and refrigerate for at least 1 hour and

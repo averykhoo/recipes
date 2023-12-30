@@ -7,9 +7,9 @@
 
 With 5 blocks of cream cheese in this bad boy, be sure to use both hands to carry the pan...it is HEAVY!
 My daughter, Erin, was actually the one to try this recipe out while she was living at home with us.
-Well, okay, she didn’t make it for her mom and dad – she made it for a guy she was dating.
+Well, okay, she didn't make it for her mom and dad – she made it for a guy she was dating.
 
-He didn’t last, but the recipe sure did…it is fantastic!
+He didn't last, but the recipe sure did…it is fantastic!
 Despite the weight of the pan, the texture is still light and not overly solid.
 The citrus adds just a hint of flavor, and makes this one really good with a fruit topping (but I also love it just
 plain).
@@ -23,7 +23,7 @@ Graham cracker crust:
 
 cheesecake filling:
 
-* 2.5 lbs (5x 8-ounce blocks) (1.15kg) cream cheese, softened (I don’t recommend reduced or no-fat for this one)
+* 2.5 lbs (5x 8-ounce blocks) (1.15kg) cream cheese, softened (I don't recommend reduced or no-fat for this one)
 * 1.75 cups​ sugar
 * zest of 1 lemon
 * zest of 1 orange, or 1/2 teaspoon orange extract

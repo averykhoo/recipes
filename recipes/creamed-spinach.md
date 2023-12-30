@@ -30,5 +30,5 @@
 7. Stir in 1 tablespoon of flour and continue to slow saute for about 2 minutes until flour is cooked.
 8. Remove from heat and blend in heavy cream.
 9. Bring to simmer again for two minutes or so, blending in drops of more cream if the spinach seems too thick.
-10. Season carefully with salt and pepper (a little goes a long way). Blend in a bit more butter if you’d like.
+10. Season carefully with salt and pepper (a little goes a long way). Blend in a bit more butter if you'd like.
 11. (Optional) To make a gratin, stir in half a cup of cream cheese and top with half a cup of gruyere, then bake.

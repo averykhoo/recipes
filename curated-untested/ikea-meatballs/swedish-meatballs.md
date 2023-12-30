@@ -47,9 +47,9 @@ How to make it
    (if needed – the pan drippings will have the flavors from the meatballs, so it all depends on how much you like the
    allspice flavor!).
 9. Return meatballs to the gravy and simmer very, very gently for 30 minutes
-   (you don’t want to break the cream or half-and-half), stirring often.
+   (you don't want to break the cream or half-and-half), stirring often.
 10. Taste gravy again and adjust seasoning, if needed
-    (it probably won’t be needed, as the simmering will incorporate the flavors from the meatballs into the gravy and it
+    (it probably won't be needed, as the simmering will incorporate the flavors from the meatballs into the gravy and it
     should be fine).
 11. This gravy is generally not a thick gravy, but you can thicken more, if desired, with a mixture of cornstarch and
     water.

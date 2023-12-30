@@ -27,7 +27,7 @@ Method:
 Notes:
 
 * The chocolate will thicken all of a sudden, so do watch for this and remove from the ice bath as soon as you see this
-  happening, lest it’ll turn hard and clumpy if left to cool too much. Don’t worry if this happens though, just heat the
+  happening, lest it'll turn hard and clumpy if left to cool too much. Don't worry if this happens though, just heat the
   bowl over a water bath/bain-marie, stir, and the mousse will come together again!
 * If the chocolate mixture doesn't contain enough fat, it won't whip into a foam.
   Melt the mixture again over a bain marie and add more chocolate.

@@ -3,7 +3,7 @@
 * 4-6 servings
 
 My followers know I love chocolate very much: Chocolate cakes, chocolate cookies and everything related to chocolate.
-In a city where chocolate is revered as an art form, it’s as if it “flows” in the Seine River!
+In a city where chocolate is revered as an art form, it's as if it “flows” in the Seine River!
 One of my favorite desserts is chocolate mousse, which I discovered far before my culinary journey in Paris.
 
 Actually, the first time I tasted it was in my childhood when the chocolate mousse was sold at the neighborhood
@@ -12,7 +12,7 @@ After one taste, I felt like I won the lottery! Over the years, I have tried man
 recipe is my favorite.
 It is very simple to make.
 With an airy and light texture, it is a dessert that leaves you wanting a second helping.
-You’ll be asking for more!
+You'll be asking for more!
 
 Ingredients
 

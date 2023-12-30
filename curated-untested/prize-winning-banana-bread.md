@@ -6,7 +6,7 @@
 
 This recipe won 1st place at the Nicollet County Fair in 1981 and it stills remains our family favorite for banana
 bread.
-I’ve modified it ever so slightly over the years, but the end result remains moist and flavorful.
+I've modified it ever so slightly over the years, but the end result remains moist and flavorful.
 
 Ingredients
 
@@ -43,4 +43,4 @@ How to make it
    some Nutella…the possibilities are endless!
 10. Use slices of banana bread to make your French toast.
     Just dust the finished product with some powdered sugar, or a little powdered sugar glaze, or spread on some
-    Nutella, and maple syrup is good on it, too…you’ve gotta try it!
+    Nutella, and maple syrup is good on it, too…you've gotta try it!

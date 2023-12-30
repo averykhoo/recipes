@@ -2,7 +2,7 @@
 
 https://www.youtube.com/watch?v=Z6zRRuBpPnw
 
-I don’t know how anything so curdled, coagulated, lumpy, and broken can turn out so delicious, but this pie manages to
+I don't know how anything so curdled, coagulated, lumpy, and broken can turn out so delicious, but this pie manages to
 defy the odds. The result is half pie, half candy bar, and 100% delicious.
 
 Yield: one 9-inch pie, 8 to 12 slices
@@ -30,11 +30,11 @@ Active time: about 30 minutes
 4. Whisk the eggs and vanilla (or booze) in a medium bowl until well combined, then fold in the pecans with a flexible
    spatula. Pour the hot butterscotch over the eggy-pecans and fold with a spatula until the pecans are well coated in
    butterscotch and the eggs are mostly absorbed. The butter will seem to pool out of the mixture, and you may notice a
-   few specks of curdled egg, but that’s a-okay. Really.
-5. Scrape into the prepared crust, and don’t worry about trying to spread it into an even layer. Bake 30 minutes, then
+   few specks of curdled egg, but that's a-okay. Really.
+5. Scrape into the prepared crust, and don't worry about trying to spread it into an even layer. Bake 30 minutes, then
    cover the outer ring of crust with a pie shield and continue baking until the filling is bubbling hot and all puffed
    up, about 15 minutes more. When fully baked, the pie will register 210° in the center. Cool at least 2 hours before
-   slicing with a chef’s knife; prior to that the filling will be warm and runny.
+   slicing with a chef's knife; prior to that the filling will be warm and runny.
 6. Wrapped in plastic, leftovers will keep 3 days at room temperature, or a week in the fridge.
 
 Troubleshooting:
@@ -122,7 +122,7 @@ Notes
 * Compared to stoneware or heavy enameled ceramic, tempered-glass pie plates conduct heat quickly and evenly, so the
   crust bakes up light and crisp, never greasy or soft.
 * When room temperature exceeds 74°F (23°C), kitchen equipment and pantry staples will act as a heat source to the
-  butter, creating a sticky dough. If it’s warm in your kitchen, take these proactive steps to manage your dough
+  butter, creating a sticky dough. If it's warm in your kitchen, take these proactive steps to manage your dough
   temperature.
 * See our crash course in mastering pie dough for more tips and troubleshooting.
 

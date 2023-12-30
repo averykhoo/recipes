@@ -81,5 +81,5 @@
 
 * Maybe try a pinch or two of nutmeg?
 * Add notes about equipment to the start of the recipe
-* Cookie seems less crispy than it should be, maybe the oven is getting less hot now that it’s older?
+* Cookie seems less crispy than it should be, maybe the oven is getting less hot now that it's older?
   Possibly due to thermocouple drift since the oven is pretty old, so maybe try raising the temp back to 180
