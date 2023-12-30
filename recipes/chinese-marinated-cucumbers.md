@@ -1,6 +1,7 @@
 # Chinese Marinated Cucumbers
 
 see also: https://www.seriouseats.com/sichuan-style-smashed-cucumber-salad-recipe
+see also: https://cooking.nytimes.com/recipes/1017629-chinese-smashed-cucumbers-with-sesame-oil-and-garlic
 
 * 500g japanese cucumbers
 * 1 shallot, finely minced
