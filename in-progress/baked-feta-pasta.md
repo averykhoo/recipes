@@ -11,11 +11,13 @@ Ingredients
 * 200g-227g feta cheese (1 block)
 * 2-4 cloves garlic, squashed flat or cut in half lengthwise
 * (optional) 1-2 shallots, quartered
-* (optional) chili flakes
+* (optional) ~~chili flakes~~ maybe use paprika instead
+* (?) maybe throw in some herbs
 * salt and pepper
-* 450g pasta
+* 450g pasta - fusilli or farfalle look good
 * salt
 * fresh basil, chopped, to finish
+* (?) saw someone add honey too, but that probably doesn't go?
 
 Instructions
 
