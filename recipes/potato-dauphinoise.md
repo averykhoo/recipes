@@ -11,13 +11,15 @@ Ingredients:
 * 1 pinch nutmeg powder
 * 1 small pinch clove powder
 * 1/4 teaspoon salt
+* (optional) shake of white pepper
+* (optional) shake of paprika
 * 3-4 small potatoes (about 400g), sliced thinly
 * (optional) 1/2 cup grated cheese (usually Gruyere)
 
 Instructions:
 
 1. Press the garlic cloves and simmer in cream in a large pan over medium heat. Also add chives, if using.
-2. Add the nutmeg and clove powder and stir to combine.
+2. Add the nutmeg and clove powder (and optional pepper and paprika) and stir to combine.
 3. Add the thinly sliced potatoes to the pan and stir to coat in the milk mixture.
 4. Simmer the potatoes in the milk until they are cooked through, about 10-15 minutes.
 5. Transfer the potatoes to a casserole dish, layering them horizontally.
