@@ -1,8 +1,9 @@
-# Chicken Lazone
+# Chicken Lazone (adapted)
 
 * originally from [RecipeZaar #65768](http://www.recipezaar.com/65768)
 * see also https://damndelicious.net/2016/03/12/chicken-lazone/
 * see also [recipe below](#chicken-lazonehttpswwwfoodcomrecipechicken-lazone-65768)
+* see also [chef john's video](https://youtu.be/NCxBc3dF8wc)
 * likely originated as Chicken Fricassee,  
   eg: https://www.marthastewart.com/925889/chicken-fricassee-fricassee-de-poulet-lancienne
 * works with garlic fried rice or pasta
