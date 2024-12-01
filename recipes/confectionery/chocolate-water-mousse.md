@@ -33,3 +33,7 @@ Notes:
   Melt the mixture again over a bain marie and add more chocolate.
 * If the mousse isn't light enough, melt the mixture and add more water.
 * If the mixture is over-whipped, it will become grainy. Melt the mixture and restart.
+
+my notes:
+
+* this works well with coffee in place of water, for a kind of mocha mousse
