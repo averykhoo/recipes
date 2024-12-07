@@ -5,7 +5,7 @@ Ingredients:
 * 200 to 300 grams of bean sprouts
 * 2 tablespoons shoyu (soy sauce)
 * 2 tablespoons toasted sesame oil
-* 2 teaspoons tahini
+* ~~2 teaspoons tahini~~
 * 1 teaspoon vinegar
 * 1/4 teaspoon black pepper
 * 1/4 teaspoon sugar
