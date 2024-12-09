@@ -8,3 +8,4 @@
 * pumpkin pie? or [brownie](../recipes/confectionery/lazy-brownies.md)?
     * may need a knife to cut it, or pre-cut it
 * [nama choco](../recipes/confectionery/nama-chocolate.md)? or filled choco?
+* [brownie](../recipes/confectionery/lazy-brownies.md)
