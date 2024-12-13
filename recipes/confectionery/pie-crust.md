@@ -9,11 +9,11 @@ clingfilm, then use that to transfer it into the pie dish.
 
 lazy to edit so pasting the whole page here first
 
-* 2 - 2.5 cups (325 grams) all-purpose flour (or pastry flour, or 1 part cake to 2 parts plain)
+* 350 grams all-purpose flour (or pastry flour, or 1 part cake to 2 parts plain)
     * this is used in 2 parts below
 * 1 teaspoon kosher salt or use 1/2 teaspoon fine sea salt
 * 1 tablespoon sugar, optional
-* 1 cup (230 grams) very cold unsalted butter, cut into 1/2-inch【1.27 cm】 cubes (2 sticks)
+* 250 grams very cold unsalted butter, cut into 1/2-inch【1.27 cm】 cubes (2 sticks)
 * 0 to 8 tablespoons ice water (skip)
 
 METHOD WHEN USING FOOD PROCESSOR
@@ -34,3 +34,13 @@ METHOD WHEN USING FOOD PROCESSOR
    ball in half then form each half into discs. Wrap each disc with plastic wrap and refrigerate for at least 1 hour and
    up to 2 days. You can also freeze it for up to 3 months (just thaw it overnight in the fridge before using it).
 6. freeze in pie tin after rolling out. blind bake at 200c/400f for 20 mins
+
+blind baking:
+
+* stab with fork
+* line with parchment
+* pour over sugar, pressing it into the corners
+* bake at 200c for 15 mins
+* remove parchment and (very hot) sugar
+* bake at 200c for 5 more mins
+* store sugar (very carefully, it's hot)
