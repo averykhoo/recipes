@@ -32,3 +32,4 @@ scale up as necessary, the original recipe called for 4 eggs
 * malt / horlicks powder
 * add butter/cream = more gooey
 * add flour = more cakey
+* seen on tiktok - add a frozen layer of nutella and speculoos in the middle
