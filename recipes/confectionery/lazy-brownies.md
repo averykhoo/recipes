@@ -1,8 +1,19 @@
 # Lazy Brownies
 
-## ingredients
+scale up as necessary to fit your pan, the original recipe called for 4 eggs
 
-scale up as necessary, the original recipe called for 4 eggs
+| scale | square | round |
+|-------|--------|-------|
+| 1x    | 4"     | 4.5"  |
+| 2x    | 5.5"   | 6"    |
+| 3x    | 7"     | 8"    |
+| 4x    | 8"     | 9"    |
+| 5x    | 9"     | 10"   |
+| 6x    | 9.5"   | 11"   |
+| 7x    | 10.5"  | 12"   |
+| 8x    | 11"    | 12.5" |
+
+## ingredients
 
 * 50g butter
 * 50g chocolate chips
