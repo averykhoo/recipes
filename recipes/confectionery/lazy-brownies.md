@@ -1,6 +1,8 @@
 # Lazy Brownies
 
-scale up as necessary to fit your pan, the original recipe called for 4 eggs
+one portion makes about 260ml of brownie.
+scale up as necessary to fit your pan.
+this is how big a pan you need for a 1-inch tall brownie:
 
 | scale | square | round |
 |-------|--------|-------|
