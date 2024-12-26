@@ -8,11 +8,11 @@ and pepper is important too
 
 ## ingredients, part 1
 
-* 2 carrots
+* 1-2 carrots
 * 1 onion
-* 2 stalks celery
+* 1-2 stalks celery
 * 1 red capsicum, cored
-* 500g cherry tomatoes
+* 500g cherry tomatoes (todo: try 1kg)
 * 5 cloves garlic, peeled
 * 1 cup chicken or beef stock
 * optional herbs
@@ -27,9 +27,9 @@ and pepper is important too
 * herbs & spices (oregano, fresh rosemary, parsley, bay, nutmeg, ...?)
 * 1 tsp worcestershire sauce, of half the amount of fish sauce
 * up to 1 tbsp tomato paste
-* 1/4 to 1 cup red wine
-* up to 1/2 cup milk (skip if using this for lasagna)
+* 1/4 to 1 cup wine
 * optional:
+    * up to 1/2 cup milk
     * gelatin
     * mushroom
     * parmesan
@@ -45,7 +45,7 @@ and pepper is important too
 ## directions, part 2
 
 1. fry the bacon to render the fat
-2. add the rest of the meat and fry until no longer raw
+2. add the rest of the meat and fry until no longer raw or wet (if the meat releases water, boil it off)
 3. turn off the heat and stir in the chicken liver until everything is coated
 4. mix in herbs, tomato sauce from part 1, and a dash of worcestershire
 5. if the sauce isn't tomatoey enough, scoot everything over to the side, fry the tomato paste, then mix in
@@ -55,5 +55,6 @@ and pepper is important too
 
 notes:
 
-* to do this in one pipeline: fry the soffrito in bacon fat, then add meat, then tomatoes, garlic, herbs, spices
+* to do this in one pan: fry the soffrito dry, render bacon, add meat, then tomatoes, garlic, herbs, spices
 * for lasagna: omit milk and nutmeg, and consider using more (maybe 2x?) tomatoes
+* any color of wine will work, but red gives the final sauce a nicer color
