@@ -14,3 +14,4 @@ https://www.pastagrammar.com/post/lasagna-alla-bolognese-authentic-italian-lasag
 4. bake at 170c for 30 mins or until pasta is cooked
 
 * traditionally, lasagna noodles are green - see italian flag
+* healthy option: add a layer of very thinly sliced zucchini (use a peeler or mandoline)
