@@ -4,7 +4,7 @@
 
 * weisswurst sausages
 * [moussaka](../recipes/moussaka.md)
-* [spaghetti bolognese](../in-progress/pasta-bolognese.md)
+* [spaghetti bolognese](../in-progress/ragu-alla-bolognese)
 
 contributed:
 

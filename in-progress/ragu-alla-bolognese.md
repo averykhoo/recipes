@@ -1,12 +1,14 @@
-# todo - pasta bolognese / ragu
+# ragu alla bolognese
 
 https://www.seriouseats.com/the-best-slow-cooked-bolognese-sauce-recipe
 https://www.insidehook.com/article/food-and-drink/chef-marc-forgione-rules-traditional-bolognese
-don't forget the nutmeg and dairy
+https://www.pastagrammar.com/post/rag%C3%B9-alla-bolognese-authentic-bolognese-sauce-recipe
 about 50-65g dried pasta per person (500g packet of dried pasta usually feeds 8-10)
 and pepper is important too
 
 ## ingredients, part 1
+
+[//]: # (TODO: this is pretty much passata and should be a separate page)
 
 * 1-2 carrots
 * 1 onion
@@ -16,6 +18,7 @@ and pepper is important too
 * 5 cloves garlic, peeled
 * 1 cup chicken or beef stock
 * optional herbs
+* salt and pepper
 
 ## ingredients, part 2
 
@@ -24,7 +27,7 @@ and pepper is important too
 * 250g ground beef
 * optional 250g more minced pork
 * 100g chicken livers, blended into a liquidy paste
-* herbs & spices (oregano, fresh rosemary, parsley, bay, nutmeg, ...?)
+* herbs & spices (oregano, fresh rosemary, parsley, bay, pepper, nutmeg, ...?)
 * 1 tsp worcestershire sauce, of half the amount of fish sauce
 * up to 1 tbsp tomato paste
 * 1/4 to 1 cup wine
@@ -53,7 +56,7 @@ and pepper is important too
 7. deglaze with wine and stir well to combine; repeat these 2 steps until you've added all the wine you want to add
 8. add milk and stir, letting it be fully absorbed
 
-notes:
+## notes
 
 * to do this in one pan: fry the soffrito dry, render bacon, add meat, then tomatoes, garlic, herbs, spices
 * for lasagna: omit milk and nutmeg, and consider using more (maybe 2x?) tomatoes

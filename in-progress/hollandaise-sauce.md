@@ -1,6 +1,6 @@
 # todo - easy hollandaise sauce
 
-Todo: refer to serious eats blender recipe and update this
+[//]: # (Todo: refer to serious eats blender recipe and update this)
 
 Not sure where this recipe originated from
 
