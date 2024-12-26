@@ -15,6 +15,7 @@ Ingredients:
 * (optional) shake of paprika
 * 3-4 small potatoes (about 400g), sliced thinly
 * (optional) 1/2 cup grated cheese (usually Gruyere)
+* (optional) truffle oil
 
 Instructions:
 
