@@ -1,17 +1,19 @@
-# Bechamel Sauce
+# Bechamel / Besciamella
 
 https://www.seriouseats.com/a-brief-guide-to-roux
 https://www.seriouseats.com/bechamel-white-sauce-recipe
 https://www.seriouseats.com/mornay-sauce-recipe
 https://www.seriouseats.com/savory-cheese-souffle
 https://www.youtube.com/watch?v=7AAx0uIuoBQ&t=7s
+https://www.pastagrammar.com/post/basic-besciamella-sauce
 
-* 1 heaped tbsp butter
-* 1 heaped tbsp flour
+* 1 heaped tbsp (20g) butter
+* 2 heaped tbsp (20g) flour
 * 1 cup milk
-* pinch or two of salt and (white) pepper
+* pinch or two of salt
+* pepper
 * nutmeg
-* optional dijon mustard
+* (optional) dijon mustard
 
 1. fry equal weights of butter and flour until cooked and blonde, and smells lightly nutty
 2. while whisking quickly, slowly pour in the milk

@@ -1,12 +1,16 @@
 # lasagna
 
+https://www.pastagrammar.com/post/lasagna-alla-bolognese-authentic-italian-lasagna-recipe
+
 * [bolognese](../in-progress/ragu-alla-bolognese)
-* lasagna noodles, either fresh or quick cooking, otherwise parboil them
-* [mornay](./bechamel.md) using parmesan
 * optional intermediate mild cheese - mozzarella, ricotta, etc
+* [mornay](./bechamel.md) using parmesan
+* lasagna noodles, either fresh or quick cooking, otherwise parboil them
 * topping cheese - parmegiano, mature cheddar
 
-1. layer the lasagna from the bottom repeating red, noodle, white, optional extra cheese, ...
-2. you can probably get 2-3 reps in a 2-inch dish
-3. top with parmegiano, not mozzarella
+1. start with a thin layer of ragu and bechamel, then put a layer of pasta
+2. layer the lasagna, repeating red, optional extra cheese, white, pasta, ...
+3. top with a thicker layer of ragu, bechamel, and finish with parmegiano
 4. bake at 170c for 30 mins or until pasta is cooked
+
+* traditionally, lasagna noodles are green - see italian flag
