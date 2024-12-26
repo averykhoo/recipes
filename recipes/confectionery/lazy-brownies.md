@@ -28,7 +28,7 @@ this is how big a pan you need for a 1-inch tall brownie:
 
 ## directions
 
-1. microwave the butter and chocolate until just melted, and mix to form a smooth ganacheS
+1. microwave the butter and chocolate until just melted, and mix to form a smooth cream
 2. preheat oven to 180°C, preset timer for 20 mins
 3. mix in the sugar, salt, vanilla, and egg(s)
 4. fold in the flour
