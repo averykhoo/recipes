@@ -19,12 +19,13 @@ this is how big a pan you need for a 1-inch tall brownie:
 
 * 50g butter
 * 50g chocolate chips
-* 100g sugar
+* 80g sugar
 * 1/8 tsp (or one pinch) of salt
 * 1/4 tsp vanilla extract
 * 1 egg (55g)
-* 40g cake / plain flour
+* 50g cake / plain flour
 * 40g optional mixins (e.g., more (unmelted) chocolate chips, nuts, etc.)
+    * chop choc chips a little finer - too big is hard to eat when cold
 
 ## directions
 
