@@ -34,13 +34,13 @@ METHOD WHEN USING FOOD PROCESSOR
    ball in half then form each half into discs. Wrap each disc with plastic wrap and refrigerate for at least 1 hour and
    up to 2 days. You can also freeze it for up to 3 months (just thaw it overnight in the fridge before using it).
 6. roll out and arrange in a pie tin about 2cm high (the pie is quite flat), then stab with a fork
-7. freeze in pie tin after rolling out. blind bake at 200c/400f for 20 mins
+7. freeze in pie tin after docking with a fork. blind bake at 200c/400f for 20 mins, with baking beans
 
 blind baking:
 
-* stab with fork when the dough is not frozen, otherwise the dough might crack
-* line with parchment
-* pour over sugar, pressing it into the corners
+* stab with fork when the dough is not frozen, otherwise the dough will crack
+* line with parchment at the botton
+* line with parchment or foil, then pour over sugar, pressing it into the corners
 * bake at 200c for 15 mins
 * remove parchment and (very hot) sugar
 * bake at 200c for 5 more mins
