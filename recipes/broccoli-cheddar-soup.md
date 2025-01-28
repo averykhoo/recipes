@@ -12,7 +12,7 @@
 
 ## Ingredients
 
-* 1 lb bacon, chopped (reserve some for topping)
+* 1 lb bacon, chopped
 * 2 tbsp butter
 * 2 tbsp bacon fat (or more butter)
 * 2 medium yellow onions, diced
@@ -33,8 +33,9 @@
 
 ## Instructions
 
-1. Fry bacon, butter, bacon fat, onion, salt, pepper, paprika, and optional cayenne
-2. Add garlic and flour, cook until fragrant
-3. Add broth, broccoli, carrots, optional bouillon, and simmer until veggies are tender
-4. Add reserved bacon, cream, cheese, nutmeg, and simmer until cheese is just melted
-5. Serve topped with melted cheese
+1. Fry bacon and reserve
+2. Fry butter, bacon fat, onion, salt, pepper, paprika, and optional cayenne
+3. Add garlic and flour, cook until fragrant
+4. Add broth, broccoli, carrots, optional bouillon, and simmer until veggies are tender
+5. Add most of the reserved bacon, cream, cheese, nutmeg, and simmer until cheese is just melted
+6. Serve topped with melted cheese and reserved bacon
