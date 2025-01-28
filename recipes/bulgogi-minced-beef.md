@@ -15,15 +15,7 @@ https://damndelicious.net/2019/04/21/korean-beef-bulgogi/
 * 2 tbsp sesame oil
 * 3 tbsp brown sugar
 * 1 tsp pepper
-
-serve with:
-
-* 2 tbsp sesame oil
-* 1/2 tsp liquid smoke
-* 1-2 small carrots, sliced thinly or into sticks (optionally marinated with the beef)
-* 1/2 to 1 onion, sliced paper thin
-* sesame seeds
-* green onion for garnish
+* (todo: try this) 1/2 tsp liquid smoke
 
 1. blend the marinade (optional, depending on how finely everything was cut)
 2. add to beef in a bag and massage a little
@@ -32,3 +24,11 @@ serve with:
 5. add beef with marinade and keep cooking until dry-ish and done
 6. add sesame seeds and thinly sliced green onion, and stir it in
 7. serve with rice
+
+serve with:
+
+* 1-2 small carrots, sliced thinly or into sticks (optionally marinated with the beef)
+* 1/2 to 1 onion, sliced paper thin, fried until translucent
+* 2 tbsp sesame oil, to flavor plain rice
+* sesame seeds, over the rice
+* spring onion sliced on a bias, for garnish
