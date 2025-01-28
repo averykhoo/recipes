@@ -15,11 +15,14 @@ this is how big a pan you need for a 1-inch tall brownie:
 | 7x    | 10.5"  | 12"   |
 | 8x    | 11"    | 12.5" |
 
+turns out it might be better thinner, so maybe use a size up
+
 ## ingredients
 
-* 50g butter
+* 40g butter
 * 50g chocolate chips
-* 80g sugar
+* (todo: use this to dry it out a little) 2 tbsp cocoa powder
+* 50g sugar (reduced from 80g)
 * 1/8 tsp (or one pinch) of salt
 * 1/4 tsp vanilla extract
 * 1 egg (55g)
@@ -31,7 +34,7 @@ this is how big a pan you need for a 1-inch tall brownie:
 
 1. microwave the butter and chocolate until just melted, and mix to form a smooth cream
 2. preheat oven to 180°C, preset timer for 20 mins
-3. mix in the sugar, salt, vanilla, and egg(s)
+3. mix in the cocoa, sugar, salt, vanilla, and egg(s)
 4. fold in the flour
 5. fold in the mix-ins
 6. bake at 180°C for 20 mins, in a pan lined with baking paper
