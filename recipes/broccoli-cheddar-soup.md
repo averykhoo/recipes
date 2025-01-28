@@ -13,8 +13,7 @@
 ## Ingredients
 
 * 1 lb bacon, chopped
-* 2 tbsp butter
-* 2 tbsp bacon fat (or more butter)
+* 2-4 tbsp butter or bacon fat
 * 2 medium yellow onions, diced
 * Salt and pepper, to taste
 * 1 tsp smoked paprika
@@ -34,7 +33,7 @@
 ## Instructions
 
 1. Fry bacon and reserve
-2. Fry butter, bacon fat, onion, salt, pepper, paprika, and optional cayenne
+2. Fry butter / bacon fat, onion, salt, pepper, paprika, and optional cayenne
 3. Add garlic and flour, cook until fragrant
 4. Add broth, broccoli, carrots, optional bouillon, and simmer until veggies are tender
 5. Add most of the reserved bacon, cream, cheese, nutmeg, and simmer until cheese is just melted
