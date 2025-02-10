@@ -37,6 +37,7 @@
 3. Add garlic and flour, cook until fragrant
 4. Add broth, broccoli, carrots, optional bouillon, and simmer until veggies are tender
 5. Add most of the reserved bacon, cream, cheese, nutmeg, and simmer until cheese is just melted
+   (do not boil, or the cheese will separate)
 6. Serve topped with melted cheese and reserved bacon
 
 ## Notes
