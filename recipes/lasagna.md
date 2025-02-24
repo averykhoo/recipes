@@ -2,7 +2,7 @@
 
 https://www.pastagrammar.com/post/lasagna-alla-bolognese-authentic-italian-lasagna-recipe
 
-* [bolognese](../in-progress/ragu-alla-bolognese)
+* [bolognese](pasta/ragu-alla-bolognese.md)
 * optional intermediate mild cheese - mozzarella, ricotta, etc
 * [mornay](./bechamel.md) using parmesan
 * lasagna noodles, either fresh or quick cooking, otherwise parboil them

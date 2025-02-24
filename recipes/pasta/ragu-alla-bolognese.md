@@ -8,31 +8,31 @@ and pepper is important too
 
 ## ingredients, part 1
 
-[//]: # (TODO: this is pretty much passata and should be a separate page)
+[//]: # (TODO: this is pretty much passata and could be a separate page)
 
 * 1-2 carrots
 * 1 onion
 * 1-2 stalks celery
 * 1 red capsicum, cored
-* 500g cherry tomatoes (todo: try 1kg)
+* 1kg cherry tomatoes
 * 5 cloves garlic, peeled
 * 1 cup chicken or beef stock
-* optional herbs
+* optional (fresh?) herbs
 * salt and pepper
 
 ## ingredients, part 2
 
-* 100g bacon (or 50g beef fat plus a bit of salt), sliced very thinly and cut into small bits
+* 100g-200g bacon, sliced very thinly and cut into small bits
+  * to make this halal, substitute with 50g beef fat plus a bit of salt
 * 250g ground mutton
 * 250g ground beef
-* optional 250g more minced pork
-* 100g chicken livers, blended into a liquidy paste
+* 100-200g chicken livers, blended into a liquid paste
 * herbs & spices (oregano, fresh rosemary, parsley, bay, pepper, nutmeg, ...?)
 * 1 tsp worcestershire sauce, of half the amount of fish sauce
-* up to 1 tbsp tomato paste
+* (as necessary) 1 tbsp tomato paste
 * 1/4 to 1 cup wine
 * optional:
-    * up to 1/2 cup milk
+    * up to 1/2 cup milk, pinch of nutmeg
     * gelatin
     * mushroom
     * parmesan
