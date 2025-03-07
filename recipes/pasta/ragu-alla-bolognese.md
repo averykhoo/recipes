@@ -61,3 +61,8 @@ and pepper is important too
 * to do this in one pan: fry the soffrito dry, render bacon, add meat, then tomatoes, garlic, herbs, spices
 * for lasagna: omit milk and nutmeg, and consider using more (maybe 2x?) tomatoes
 * any color of wine will work, but red gives the final sauce a nicer color
+
+use for:
+* pasta bolognese
+* lasagna
+* chili cheese fries
