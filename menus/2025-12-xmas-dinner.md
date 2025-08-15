@@ -1,1 +1,2 @@
-broccoli cheese ham soup
+* broccoli cheese ham soup
+* deep fried olives stuffed with meat like Io served with mayo
