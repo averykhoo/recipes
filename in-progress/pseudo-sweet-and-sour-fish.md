@@ -1,8 +1,7 @@
 # Pseudo Sweet and Sour Fish
 
-* Fillet of fish
-* 1/4 onion, handful cherry tomato, sprig of basil, 1/4 tsp ginger powder, no salt
-* Preheat then steam at water mark 3 at 150c for 7-10 mins
-* Heat 1-2 tbsp sesame oil in a pan until really hot then pour over
-* Pour over some shoyu
-* Serve with steamed rice
+* Flour and fry fish
+* Slice tomatoes, shallots, couple cloves of garlic, and fry in a little oil
+* Add a bit of pineapple sauce, tomato paste, cook out the rawness of the paste
+* Dilute with orange juice and throw the fried fish back in to warm up
+* Serve with rice
