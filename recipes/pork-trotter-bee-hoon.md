@@ -11,9 +11,10 @@
 * 1 tbsp dark soy sauce
 * 1-2 stalks spring onion, sliced thin
 
-1. pre-soak the bee hoon and mushrooms
-2. fry the garlic and carrot in a pan
-3. add the lettuce and mushrooms and bee hoon and cook for 10 mins
-4. add the pork trotters and water and cook for 10 mins
-5. add the shoyu and dark soy sauce to taste
-6. serve with spring onion
+1. Pre-soak the bee hoon and mushrooms.
+2. Fry the garlic and carrots in a pan until fragrant.
+3. Add the mushrooms and stir-fry for a minute.
+4. Add the pork trotters, water, shoyu, and dark soy sauce. Bring it to a simmer.
+5. Stir in the lettuce and cook until it has just wilted.
+6. Add the soaked bee hoon and cook until it has absorbed most of the sauce.
+7. Serve with spring onions on top.
