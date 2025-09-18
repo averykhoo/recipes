@@ -30,14 +30,14 @@ jobs:
             echo "An index of all markdown files in the collection."
             echo ""
             echo '```'
-            tree -P "*.md" --noreport curated-untested in-progress menus recipes
+            tree -P "*.md" --noreport curated-untested in-progress recipes
             echo '```'
           } > contents.md
 
       - name: Assemble docs directory
         run: |
           mkdir docs
-          cp -r curated-untested in-progress menus recipes docs/
+          cp -r curated-untested in-progress recipes docs/
           cp contents.md docs/index.md
 
       - name: Build site with MkDocs
