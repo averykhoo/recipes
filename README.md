@@ -1,6 +1,6 @@
 # Recipes
 
-Recipes for real actually-edible food
+Recipes for real actually-edible food: https://averykhoo.github.io/recipes
 
 ## Structure (tentative)
 

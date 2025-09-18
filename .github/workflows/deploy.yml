@@ -22,13 +22,23 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Generate Contents Page
+        run: |
+          {
+            echo "# Contents"
+            echo ""
+            echo "An index of all markdown files in the collection."
+            echo ""
+            echo '```'
+            tree -P "*.md" --noreport curated-untested in-progress menus recipes
+            echo '```'
+          } > contents.md
+
       - name: Assemble docs directory
         run: |
           mkdir docs
           cp -r curated-untested in-progress menus recipes docs/
-          cp README.md docs/index.md
-          # Copy any other top-level markdown files you want on the site
-          cp TODO.md TODO-SAUCES.md more-christmas-possibilities.md docs/
+          cp contents.md docs/index.md
 
       - name: Build site with MkDocs
         run: mkdocs build

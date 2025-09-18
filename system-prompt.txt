@@ -208,6 +208,24 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Generate Contents Page
+        run: |
+          {
+            echo "# Contents"
+            echo ""
+            echo "An index of all markdown files in the collection."
+            echo ""
+            echo '```'
+            tree -P "*.md" --noreport curated-untested in-progress menus recipes
+            echo '```'
+          } > contents.md
+
+      - name: Assemble docs directory
+        run: |
+          mkdir docs
+          cp -r curated-untested in-progress menus recipes docs/
+          cp contents.md docs/index.md
+
       - name: Build site with MkDocs
         run: mkdocs build
 
@@ -3105,8 +3123,6 @@ sauce:
 site_name: My Recipe Collection
 site_description: A collection of recipes for real, actually-edible food.
 
-docs_dir: recipes # Tell MkDocs to use the root directory for source files
-
 theme:
   name: material
   palette:
@@ -3172,7 +3188,7 @@ markdown_extensions:
 ````markdown
 # Recipes
 
-Recipes for real actually-edible food
+Recipes for real actually-edible food: https://averykhoo.github.io/recipes
 
 ## Structure (tentative)
 
