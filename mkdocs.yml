@@ -1,12 +1,7 @@
 site_name: My Recipe Collection
 site_description: A collection of recipes for real, actually-edible food.
 
-# Use the root directory for source files, but explicitly exclude build artifacts
-# and config files from the navigation to prevent build errors.
-nav:
-  - ...
-  - "!README.md"
-  - "!.github"
+docs_dir: . # Tell MkDocs to use the root directory for source files
 
 theme:
   name: material
