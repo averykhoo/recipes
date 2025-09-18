@@ -5982,7 +5982,7 @@ For Tzatziki:
 ````
 mkdocs
 mkdocs-material
-mkdocs-awesome-pages
+mkdocs-awesome-pages-plugin
 pymdown-extensions
 ````
 --- End of File: requirements.txt ---

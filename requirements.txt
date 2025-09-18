@@ -1,4 +1,4 @@
 mkdocs
 mkdocs-material
-mkdocs-awesome-pages
+mkdocs-awesome-pages-plugin
 pymdown-extensions
