@@ -22,6 +22,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Assemble docs directory
+        run: |
+          mkdir docs
+          cp -r curated-untested in-progress menus recipes docs/
+          cp README.md docs/index.md
+          # Copy any other top-level markdown files you want on the site
+          cp TODO.md TODO-SAUCES.md more-christmas-possibilities.md docs/
+
       - name: Build site with MkDocs
         run: mkdocs build
 
