@@ -3105,6 +3105,8 @@ sauce:
 site_name: My Recipe Collection
 site_description: A collection of recipes for real, actually-edible food.
 
+docs_dir: . # Tell MkDocs to use the root directory for source files
+
 theme:
   name: material
   palette:
