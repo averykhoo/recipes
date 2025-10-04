@@ -10,6 +10,7 @@
   * made of about 250g cherry tomatoes and some water
 * extra water or stock as needed
 * optional stracciatella or burrata (or maybe some whipped cream cheese) to serve
+* fresh basil
 
 1. fry the bell peppers and nduja
 2. add paprika and garlic
@@ -17,5 +18,5 @@
 4. add half the passata and a smidge of water/stock if needed to let the pasta boil/steam a little
 5. add the remaining passata and flip, adding more water/stock as needed
 6. keep adding water or stock until the pasta is cooked 
-7. serve with optional cheese
+7. serve with optional cheese and fresh basil
 
