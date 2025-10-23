@@ -175,8 +175,8 @@ Incrementation is automatic, you can simply use `1.` everywhere
 - First item
 - Second item
 - Third item
-  1. Indented item
-  1. Indented item
+    1. Indented item
+    1. Indented item
 - Fourth item
 ```
 
@@ -185,8 +185,8 @@ Incrementation is automatic, you can simply use `1.` everywhere
 - First item
 - Second item
 - Third item
-  1. Indented item
-  1. Indented item
+    1. Indented item
+    1. Indented item
 - Fourth item
 
 
