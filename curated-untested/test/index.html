@@ -668,7 +668,7 @@
           <li class="md-nav__item">
   <a href="#strikethrough" class="md-nav__link">
     <span class="md-ellipsis">
-      ~~Strikethrough~~
+      Strikethrough
     </span>
   </a>
   
@@ -3980,7 +3980,7 @@
           <li class="md-nav__item">
   <a href="#strikethrough" class="md-nav__link">
     <span class="md-ellipsis">
-      ~~Strikethrough~~
+      Strikethrough
     </span>
   </a>
   
@@ -4545,8 +4545,8 @@ or <strong>two underscores</strong>.</p>
 <pre><code>Three stars gives `***bold and italic***`
 </code></pre>
 <p>Three stars gives <strong><em>bold and italic</em></strong></p>
-<h3 id="strikethrough">~~Strikethrough~~</h3>
-<p>Using <code>~~two tildes~~</code> will strikethrough:  ~~two tildes~~</p>
+<h3 id="strikethrough"><del>Strikethrough</del></h3>
+<p>Using <code>~~two tildes~~</code> will strikethrough:  <del>two tildes</del></p>
 <h2 id="blockquotes">Blockquotes</h2>
 <p><strong>Syntax:</strong></p>
 <pre><code>&gt; blockquote
@@ -4585,7 +4585,7 @@ or <strong>two underscores</strong>.</p>
 <p><strong>Markdown</strong> can be used <em>inside quotes</em>
 1. This is the first list item.
 1. This is the second list item.</p>
-<p>~~strikethrough~~</p>
+<p><del>strikethrough</del></p>
 <p>Here's some example code:</p>
 <pre><code>return shell_exec("echo $input | $markdown_script");
 </code></pre>
@@ -4649,9 +4649,9 @@ or <strong>two underscores</strong>.</p>
 <ul>
 <li>First item</li>
 <li>Second item</li>
-<li>Third item</li>
-<li>Indented item</li>
-<li>Indented item</li>
+<li>Third item
+  1. Indented item
+  1. Indented item</li>
 <li>Fourth item</li>
 </ul>
 <h2 id="linebreaks">Linebreaks</h2>
@@ -4850,9 +4850,9 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit [...]
 - [ ] Update the website
 </code></pre></div>
 <p><strong>Output:</strong></p>
-<ul>
-<li>[x] Write the press release</li>
-<li>[ ] Update the website</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Write the press release</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Update the website</li>
 </ul>
 <h2 id="tables">Tables</h2>
 <div class="highlight"><pre><span></span><code>| Syntax    | Description |
@@ -4920,9 +4920,8 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit [...]
 [^1]: This is the first footnote.
 </code></pre></div>
 <p><strong>Output:</strong></p>
-<p>Here's a sentence with a footnote[^1].<br />
+<p>Here's a sentence with a footnote<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.<br />
 (see the result at the bottom of the page)</p>
-<p>[^1]: This is the first footnote.</p>
 <h3 id="long-footnote">Long footnote</h3>
 <div class="highlight"><pre><span></span><code>Here&#39;s a longer one.[^bignote]
 (see the result at the bottom of the page)
@@ -4936,15 +4935,8 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit [...]
     Note that you can place the footnote anywhere you want in your article
 </code></pre></div>
 <p><strong>Output:</strong></p>
-<p>Here's a longer one.[^bignote]
+<p>Here's a longer one.<sup id="fnref:bignote"><a class="footnote-ref" href="#fn:bignote">2</a></sup>
 (see the result at the bottom of the page)</p>
-<p>[^bignote]: Here's one with multiple paragraphs and code.</p>
-<pre><code>Indent paragraphs to include them in the footnote.
-
-`{ my code }`
-
-Note that you can place the footnote anywhere you want in your article
-</code></pre>
 <h2 id="definition-list">Definition List</h2>
 <div class="highlight"><pre><span></span><code>term
 : definition
@@ -4997,6 +4989,20 @@ You can use up to 6 <code>#</code> symbols for the corresponding Heading levels<
 <li>https://codeit.suntprogramator.dev/basic-markdown-syntax/</li>
 <li>https://daringfireball.net/projects/markdown/syntax.text</li>
 </ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>This is the first footnote.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:bignote">
+<p>Here's one with multiple paragraphs and code.</p>
+<p>Indent paragraphs to include them in the footnote.</p>
+<p><code>{ my code }</code></p>
+<p>Note that you can place the footnote anywhere you want in your article&#160;<a class="footnote-backref" href="#fnref:bignote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
