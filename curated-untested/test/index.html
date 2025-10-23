@@ -4641,17 +4641,19 @@ or <strong>two underscores</strong>.</p>
 <div class="highlight"><pre><span></span><code>- First item
 - Second item
 - Third item
-  1. Indented item
-  1. Indented item
+    1. Indented item
+    1. Indented item
 - Fourth item
 </code></pre></div>
 <p><strong>Output:</strong></p>
 <ul>
 <li>First item</li>
 <li>Second item</li>
-<li>Third item
-  1. Indented item
-  1. Indented item</li>
+<li>Third item<ol>
+<li>Indented item</li>
+<li>Indented item</li>
+</ol>
+</li>
 <li>Fourth item</li>
 </ul>
 <h2 id="linebreaks">Linebreaks</h2>
