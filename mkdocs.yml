@@ -21,5 +21,11 @@ plugins:
 
 markdown_extensions:
   - admonition
-  - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.tilde:
+      subscript: false
+  - pymdownx.betterem
+  - pymdownx.extensions.footnotes
+  - pymdownx.emoji
+  - pymdownx.tasklist:
+      custom_checkbox: true
