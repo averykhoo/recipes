@@ -21,11 +21,12 @@ plugins:
 
 markdown_extensions:
   - admonition
-  - pymdownx.superfences
-  - pymdownx.tilde:
-      subscript: false
+  - footnotes
+  - sane_lists
   - pymdownx.betterem
-  - pymdownx.footnotes
   - pymdownx.emoji
+  - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
+  - pymdownx.tilde:
+      subscript: false
