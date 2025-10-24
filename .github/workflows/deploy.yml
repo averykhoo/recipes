@@ -17,12 +17,19 @@ jobs:
         run: |
           find curated-untested in-progress recipes -type f -name "*.md" -exec sed -i '1s/^/---\nlayout: default\n---\n/' {} +
 
+      - name: Fix Markdown Links
+        # Finds all links ending in .md) and replaces them with .html)
+        # This makes intra-page links work after Jekyll builds the site.
+        run: |
+          find . -type f -name "*.md" -exec sed -i 's/\.md)/.html)/g' {} +
+
       - name: Rename folders for Jekyll
         # This step temporarily renames the folders to what Jekyll expects
         run: |
           mv curated-untested _curated-untested
           mv in-progress _in-progress
           mv recipes _recipes
+          # We don't rename 'menus' as it's not a collection, just a folder of pages.
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
