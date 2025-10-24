@@ -6,25 +6,25 @@ on:
       - master # Or 'main', depending on your repository's default branch
 
 jobs:
-  deploy:
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          python-version: 3.x
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          ruby-version: '3.1' # A recent stable version of Ruby
+          bundler-cache: true # Automatically runs 'bundle install' and caches gems
 
       - name: Generate Contents Page
         run: |
           {
+            echo "---"
+            echo "layout: default"
+            echo "title: Home"
+            echo "---"
             echo "# Contents"
             echo ""
             echo "An index of all markdown files in the collection."
@@ -32,19 +32,13 @@ jobs:
             echo '```'
             tree -P "*.md" --noreport curated-untested in-progress recipes
             echo '```'
-          } > contents.md
+          } > index.md
 
-      - name: Assemble docs directory
-        run: |
-          mkdir docs
-          cp -r curated-untested in-progress recipes docs/
-          cp contents.md docs/index.md
-
-      - name: Build site with MkDocs
-        run: mkdocs build
+      - name: Build site with Jekyll
+        run: bundle exec jekyll build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+          publish_dir: ./_site # Jekyll's default output directory

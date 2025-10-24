@@ -1,0 +1,9 @@
+title: My Recipe Collection
+description: A collection of recipes for real, actually-edible food.
+theme: minima
+
+# Enable GitHub Flavored Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
