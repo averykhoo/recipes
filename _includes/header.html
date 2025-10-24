@@ -1,0 +1,32 @@
+<header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search recipes...">
+      <ul id="results-container"></ul>
+    </div>
+
+  </div>
+</header>
+
+<!-- Script for Simple-Jekyll-Search -->
+<script src="https://unpkg.com/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
+<script>
+  var sjs = SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '{{ "/search.json" | relative_url }}',
+    searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+    noResultsText: 'No results found',
+    limit: 20
+  });
+</script>
+
+<style>
+.search-container { position: relative; }
+#search-input { width: 100%; padding: 8px; box-sizing: border-box; }
+#results-container { list-style-type: none; padding: 0; margin: 0; position: absolute; background-color: white; border: 1px solid #ddd; width: 100%; z-index: 100; max-height: 400px; overflow-y: auto; }
+#results-container li a { display: block; padding: 8px 12px; text-decoration: none; color: #333; }
+#results-container li a:hover { background-color: #f5f5f5; }
+</style>

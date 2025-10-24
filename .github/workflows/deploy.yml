@@ -3,7 +3,7 @@ name: Deploy Recipes to GitHub Pages
 on:
   push:
     branches:
-      - master # Or 'main', depending on your repository's default branch
+      - master
 
 jobs:
   build_and_deploy:
@@ -12,27 +12,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Add Front Matter to recipes
+        run: |
+          find curated-untested in-progress recipes -type f -name "*.md" -exec sed -i '1s/^/---\nlayout: default\n---\n/' {} +
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1' # A recent stable version of Ruby
-          bundler-cache: true # Automatically runs 'bundle install' and caches gems
-
-      - name: Generate Contents Page
-        run: |
-          {
-            echo "---"
-            echo "layout: default"
-            echo "title: Home"
-            echo "---"
-            echo "# Contents"
-            echo ""
-            echo "An index of all markdown files in the collection."
-            echo ""
-            echo '```'
-            tree -P "*.md" --noreport curated-untested in-progress recipes
-            echo '```'
-          } > index.md
+          ruby-version: '3.1'
+          bundler-cache: true
 
       - name: Build site with Jekyll
         run: bundle exec jekyll build
@@ -41,4 +29,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site # Jekyll's default output directory
+          publish_dir: ./_site

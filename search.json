@@ -1,0 +1,17 @@
+---
+layout: null
+---
+[
+  {% for collection in site.collections %}
+    {% unless collection.label == "posts" %}
+      {% for item in collection.docs %}
+        {
+          "title": "{{ item.title | default: item.name | xml_escape }}",
+          "url": "{{ item.url | relative_url }}",
+          "content": {{ item.content | strip_html | strip_newlines | jsonify }}
+        }
+        {% unless forloop.last and collection.label == site.collections.last.label %},{% endunless %}
+      {% endfor %}
+    {% endunless %}
+  {% endfor %}
+]

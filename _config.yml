@@ -2,8 +2,43 @@ title: My Recipe Collection
 description: A collection of recipes for real, actually-edible food.
 theme: minima
 
-# Enable GitHub Flavored Markdown
-markdown: kramdown
-kramdown:
-  input: GFM
-  hard_wrap: false
+# Configure collections for each recipe folder
+collections:
+  curated-untested:
+    output: true
+  in-progress:
+    output: true
+  recipes:
+    output: true
+
+# Default layout for pages and posts
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "curated-untested"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "in-progress"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "recipes"
+    values:
+      layout: "default"
+
+# Configuration for the search feature
+search:
+  - title: recipes
+    url: /recipes.json
+    collections:
+      - curated-untested
+      - in-progress
+      - recipes
