@@ -116,7 +116,7 @@ for root_dir in ROOT_DIRS:
 
 # 4. Fix internal markdown links to point to .html
 print("\n--- Fixing internal markdown links ---")
-for root_dir in root_dirs_paths:
+for root_dir in ROOT_DIRS:
     for md_file in root_dir.rglob('*.md'):
         content = md_file.read_text(encoding='utf-8')
         if '.md)' in content:
