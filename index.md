@@ -2,27 +2,9 @@
 layout: default
 title: Home
 ---
-# Contents
+# Welcome to My Recipe Collection
 
-An index of all markdown files in the collection.
+This is a personal collection of recipes for real, actually-edible food.
 
-## Recipes
-<ul>
-  {% for recipe in site.recipes %}
-    <li><a href="{{ recipe.url | relative_url }}">{{ recipe.title | default: recipe.name }}</a></li>
-  {% endfor %}
-</ul>
-
-## In Progress
-<ul>
-  {% for recipe in site.in-progress %}
-    <li><a href="{{ recipe.url | relative_url }}">{{ recipe.title | default: recipe.name }}</a></li>
-  {% endfor %}
-</ul>
-
-## Curated & Un-tested
-<ul>
-  {% for recipe in site.curated-untested %}
-    <li><a href="{{ recipe.url | relative_url }}">{{ recipe.title | default: recipe.name }}</a></li>
-  {% endfor %}
-</ul>
+Use the navigation sidebar on the left to browse through the different recipe categories. 
+You can also use the search bar at the top of the page to find a specific recipe.

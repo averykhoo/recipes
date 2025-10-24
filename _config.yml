@@ -1,23 +1,19 @@
+# Use the jekyll-remote-theme plugin
+plugins:
+  - jekyll-remote-theme
+
+# Set the remote theme to Just the Docs
+remote_theme: just-the-docs/just-the-docs
+
 # Site settings
 title: My Recipe Collection
 description: A collection of recipes for real, actually-edible food.
-theme: minima
 
-# GitHub Pages settings
-# The baseurl is the subpath of your site, e.g. /recipes
-# The url is the main domain.
-# Replace "averykhoo" with your GitHub username.
-# Replace "recipes" with your repository name.
-baseurl: "/recipes"
-url: "https://averykhoo.github.io"
+# Enable the theme's built-in search
+search_enabled: true
 
-# Enable GitHub Flavored Markdown
-markdown: kramdown
-kramdown:
-  input: GFM
-  hard_wrap: false
-
-# Configure collections for each recipe folder
+# --- Jekyll Collections Configuration ---
+# 1. Define the collections for Jekyll to process
 collections:
   curated-untested:
     output: true
@@ -26,7 +22,17 @@ collections:
   recipes:
     output: true
 
-# Apply the default theme layout to all documents in the site
+# 2. Configure how Just the Docs displays the collections in the navigation
+just_the_docs:
+  collections:
+    recipes:
+      name: Recipes
+    in-progress:
+      name: In Progress
+    curated-untested:
+      name: Curated & Un-tested
+
+# Apply the default theme layout to all documents
 defaults:
   - scope:
       path: ""
