@@ -3,8 +3,8 @@
 6 pax
 
 * weisswurst sausages
-* [moussaka](../recipes/moussaka.md)
-* [spaghetti bolognese](../recipes/pasta/ragu-alla-bolognese.md)
+* [moussaka](../recipes/moussaka.html)
+* [spaghetti bolognese](../recipes/pasta/ragu-alla-bolognese.html)
 
 contributed:
 

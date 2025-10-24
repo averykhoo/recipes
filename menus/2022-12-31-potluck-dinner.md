@@ -2,10 +2,10 @@
 
 5 pax (+2 children = 7 total)
 
-* [small scone biscuits](../recipes/confectionery/jam-biscuits.md) (made extra small, and no jam)
+* [small scone biscuits](../recipes/confectionery/jam-biscuits.html) (made extra small, and no jam)
 * tomato pasta (cavatelli) with bacon
-* [ratatouille](../in-progress/ratatouille-movie-version.md)
-* [moussaka](../recipes/moussaka.md)
+* [ratatouille](../in-progress/ratatouille-movie-version.html)
+* [moussaka](../recipes/moussaka.html)
 * fruit punch
 
 brought:
