@@ -3,7 +3,7 @@ name: Deploy Recipes to GitHub Pages
 on:
   push:
     branches:
-      - master
+      - master # Or 'main'
 
 jobs:
   build_and_deploy:
@@ -13,8 +13,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Add Front Matter to recipes
+        # This step runs on the original folder names
         run: |
           find curated-untested in-progress recipes -type f -name "*.md" -exec sed -i '1s/^/---\nlayout: default\n---\n/' {} +
+
+      - name: Rename folders for Jekyll
+        # This step temporarily renames the folders to what Jekyll expects
+        run: |
+          mv curated-untested _curated-untested
+          mv in-progress _in-progress
+          mv recipes _recipes
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -23,6 +31,7 @@ jobs:
           bundler-cache: true
 
       - name: Build site with Jekyll
+        # Jekyll now sees the _-prefixed folders and builds the site correctly
         run: bundle exec jekyll build
 
       - name: Deploy to GitHub Pages
