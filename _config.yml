@@ -6,7 +6,7 @@ plugins:
 remote_theme: just-the-docs/just-the-docs
 
 # Site settings
-title: 🎂📖
+title: Recipes
 description: A collection of recipes for real, actually-edible food.
 
 # Enable the theme's built-in search

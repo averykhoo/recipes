@@ -2,7 +2,7 @@
 layout: default
 title: Home
 ---
-![cake-book icon](./cakebook.png)
+# 🎂📖
 
 This is a collection of recipes for real, actually-edible food.
 
