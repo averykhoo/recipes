@@ -2,14 +2,6 @@ from pathlib import Path
 
 # --- Configuration ---
 ROOT_DIRS = [Path('recipes'), Path('in-progress'), Path('curated-untested')]
-TITLE_MAP = {
-    'recipes': 'Recipes',
-    'in-progress': 'In Progress',
-    'curated-untested': 'Curated & Un-tested',
-    'kfc': 'KFC',
-    'pasta': 'Pasta',
-    'confectionery': 'Confectionery',
-}
 
 
 # --- Helper Functions ---
@@ -21,7 +13,16 @@ def get_title(dir_name: str) -> str:
     :param dir_name:
     :return:
     """
-    return TITLE_MAP.get(dir_name, dir_name.replace('-', ' ').replace('_', ' ').title())
+    # change `-` and `_` to space and titlecase (after coalescing and stripping whitespace)
+    _default = ' '.join(dir_name.replace('-', ' ').replace('_', ' ').split()).title()
+
+    # these are the special cases
+    _title_map = {
+        'curated-untested': 'Curated & Untested',
+        'kfc': 'KFC',
+    }
+
+    return _title_map.get(dir_name, _default)
 
 
 def generate_front_matter_str(title: str,
@@ -72,10 +73,11 @@ for md_file in Path('.').glob('**/*.md'):
 # 2. Create parent index.md pages for navigation
 print("\n--- Generating parent index.md pages ---")
 for root_dir in ROOT_DIRS:
-    # Use rglob to find all directories including the root
-    all_dirs = [root_dir] + list(root_dir.rglob('**/'))
-    for directory in all_dirs:
-        if not directory.is_dir():
+    for directory in root_dir.rglob('**/'):
+        if not directory.is_dir(): continue
+
+        if directory in ROOT_DIRS:
+            print(f"Skipping index.md for top-level collection folder: {directory}")
             continue
 
         index_path = directory / 'index.md'
@@ -100,7 +102,10 @@ for root_dir in ROOT_DIRS:
             continue
 
         title = get_title(md_file.stem)
-        parent = get_title(md_file.parent.name)
+
+        parent = None
+        if md_file.parent not in ROOT_DIRS:
+            parent = get_title(md_file.parent.name)
 
         front_matter = generate_front_matter_str(title=title, parent=parent)
 

@@ -27,10 +27,13 @@ just_the_docs:
   collections:
     recipes:
       name: Recipes
+      nav_fold: true
     in-progress:
       name: In Progress
+      nav_fold: true
     curated-untested:
       name: Curated & Un-tested
+      nav_fold: true
 
 # Apply the default theme layout to all documents
 defaults:
