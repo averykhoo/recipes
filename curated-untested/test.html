@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>My Recipe Collection | A collection of recipes for real, actually-edible food.</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="My Recipe Collection" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of recipes for real, actually-edible food." />
+<meta property="og:description" content="A collection of recipes for real, actually-edible food." />
+<meta property="og:site_name" content="My Recipe Collection" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="My Recipe Collection" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"A collection of recipes for real, actually-edible food.","headline":"My Recipe Collection","url":"/curated-untested/test.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="My Recipe Collection" /></head>
+<body><header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">My Recipe Collection</a>
+
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search recipes...">
+      <ul id="results-container"></ul>
+    </div>
+
+  </div>
+</header>
+
+<!-- Script for Simple-Jekyll-Search -->
+<script src="https://unpkg.com/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
+<script>
+  var sjs = SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+    noResultsText: 'No results found',
+    limit: 20
+  });
+</script>
+
+<style>
+.search-container { position: relative; }
+#search-input { width: 100%; padding: 8px; box-sizing: border-box; }
+#results-container { list-style-type: none; padding: 0; margin: 0; position: absolute; background-color: white; border: 1px solid #ddd; width: 100%; z-index: 100; max-height: 400px; overflow-y: auto; }
+#results-container li a { display: block; padding: 8px 12px; text-decoration: none; color: #333; }
+#results-container li a:hover { background-color: #f5f5f5; }
+</style><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <blockquote>
+  <p>from: https://raw.githubusercontent.com/RoneoOrg/markdown/main/README.md</p>
+</blockquote>
+
+<h1 id="markdown-crash-test">Markdown Crash Test</h1>
+
+<h2 id="benchmarking-the-support-of-markdown-with-a-comprehensive-checklist">Benchmarking the support of Markdown with a comprehensive checklist</h2>
+
+<p><strong>You’re working on a project featuring Markdown?</strong></p>
+
+<p>Drop <a href="https://raw.githubusercontent.com/RoneoOrg/markdown/main/README.md">the source of this page</a> wherever you want to test <em>or showcase</em> the support of Markdown, and check that every single feature is properly rendered.</p>
+
+<p><strong>Table of Contents</strong></p>
+
+<ul>
+  <li><a href="#basic-formatting">Basic formatting</a></li>
+  <li><a href="#blockquotes">Blockquotes</a></li>
+  <li><a href="#lists">Lists</a></li>
+  <li><a href="#linebreaks">Linebreaks</a></li>
+  <li><a href="#links">Links</a></li>
+  <li><a href="#code-formatting">Code formatting</a></li>
+  <li><a href="#images">Images</a></li>
+  <li><a href="#task-lists">Task lists</a></li>
+  <li><a href="#tables">Tables</a></li>
+  <li><a href="#footnotes">Footnotes</a></li>
+  <li><a href="#definition-list">Definition List</a></li>
+  <li><a href="#headings">Headings</a></li>
+</ul>
+
+<h2 id="basic-formatting">Basic formatting</h2>
+
+<h3 id="bold-text"><strong>Bold</strong> text</h3>
+
+<p><strong>Syntax:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>You can mark some text as bold with **two asterisks**
+or __two underscores__.
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<p>You can mark some text as bold with <strong>two asterisks</strong>
+or <strong>two underscores</strong>.</p>
+
+<h3 id="italic"><em>Italic</em></h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Use a *single asterisk* or a _single underscore_ for italic.
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<p>Use a <em>single asterisk</em> or a <em>single underscore</em> for italic.</p>
+
+<h3 id="bold-and-italic"><strong><em>Bold and italic</em></strong></h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Three stars gives `***bold and italic***`
+</code></pre></div></div>
+
+<p>Three stars gives <strong><em>bold and italic</em></strong></p>
+
+<h3 id="strikethrough"><del>Strikethrough</del></h3>
+
+<p>Using <code class="language-plaintext highlighter-rouge">~~two tildes~~</code> will strikethrough:  <del>two tildes</del></p>
+
+<h2 id="blockquotes">Blockquotes</h2>
+
+<p><strong>Syntax:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; blockquote
+</code></pre></div></div>
+
+<p><strong>Output</strong>:</p>
+
+<blockquote>
+  <p>blockquote</p>
+</blockquote>
+
+<h3 id="nested-blockquotes">Nested blockquotes</h3>
+
+<p><strong>Syntax:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; First level
+&gt;
+&gt;&gt; Second level
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<blockquote>
+  <p>First level</p>
+  <blockquote>
+    <p>Second level</p>
+  </blockquote>
+</blockquote>
+
+<h3 id="markdown-in-blockquotes">Markdown in blockquotes</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; **Markdown** can be used *inside quotes*
+&gt;
+&gt; 1.   This is the first list item.
+&gt; 1.   This is the second list item.
+&gt;
+&gt; ~~strikethrough~~
+&gt;
+&gt; Here's some example code:
+&gt;
+&gt;     return shell_exec("echo $input | $markdown_script");
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<blockquote>
+  <p><strong>Markdown</strong> can be used <em>inside quotes</em></p>
+  <ol>
+    <li>This is the first list item.</li>
+    <li>This is the second list item.</li>
+  </ol>
+
+  <p><del>strikethrough</del></p>
+
+  <p>Here’s some example code:</p>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>return shell_exec("echo $input | $markdown_script");
+</code></pre></div>  </div>
+</blockquote>
+
+<h2 id="lists">Lists</h2>
+
+<h3 id="unordered-list">Unordered list</h3>
+
+<p>Cant be marked with <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">+</code> or <code class="language-plaintext highlighter-rouge">*</code></p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> First item
+<span class="p">-</span> Second item
+<span class="p">-</span> Third item
+</code></pre></div></div>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">+</span> First item
+<span class="p">+</span> Second item
+<span class="p">+</span> Third item
+</code></pre></div></div>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">*</span> First item
+<span class="p">*</span> Second item
+<span class="p">*</span> Third item
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<ul>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>
+    <p>Third item</p>
+  </li>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>
+    <p>Third item</p>
+  </li>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+</ul>
+
+<h3 id="ordered-lists">Ordered lists</h3>
+
+<p>Incrementation is automatic, you can simply use <code class="language-plaintext highlighter-rouge">1.</code> everywhere</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. First item
+1. Second item
+1. Third item
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<ol>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item</li>
+</ol>
+
+<h3 id="nested-list">Nested list</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- First item
+- Second item
+- Third item
+    1. Indented item
+    1. Indented item
+- Fourth item
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<ul>
+  <li>First item</li>
+  <li>Second item</li>
+  <li>Third item
+    <ol>
+      <li>Indented item</li>
+      <li>Indented item</li>
+    </ol>
+  </li>
+  <li>Fourth item</li>
+</ul>
+
+<h2 id="linebreaks">Linebreaks</h2>
+
+<p><strong>When you hit enter just once</strong> between two lines, both lines are joined into a single paragraph.</p>
+
+<p>But, if you <strong>leave a blank line between them</strong>, they will split into two paragraphs.</p>
+
+<p><strong>Demonstration</strong>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This text is a paragraph.
+This won't be another paragraph, it will join the line above it.
+
+This will be another paragraph, as it has a blank line above it.
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<p>This text is a paragraph. This won’t be another paragraph, it will join the line above it.</p>
+
+<p>This will be another paragraph, as it has a blank line above it.</p>
+
+<h3 id="force-line-breaks">Force line breaks</h3>
+
+<p>To force a line break, <strong>end a line with two or more whitespaces</strong>, and then type return.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This is the first line.··
+Second line
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<p>This is the first line.<br />
+Second line</p>
+
+<h3 id="horizontal-lines">Horizontal lines</h3>
+
+<p>Can be inserted with four <code class="language-plaintext highlighter-rouge">*</code>, <code class="language-plaintext highlighter-rouge">-</code> or <code class="language-plaintext highlighter-rouge">_</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>----
+
+****
+
+____
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<hr />
+
+<hr />
+
+<hr />
+
+<h2 id="links">Links</h2>
+
+<h3 id="basic-links">Basic links</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Semantic description](https://roneo.org/markdown)  
+&lt;address@example.com&gt;  
+&lt;https://roneo.org/markdown&gt; works too. Must be used for explicit links.
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<p><a href="https://roneo.org/markdown">Semantic description</a><br />
+<a href="mailto:address@example.com">address@example.com</a><br />
+<a href="https://roneo.org/markdown">https://roneo.org/markdown</a> works too. Must be used for explicit links.</p>
+
+<h3 id="links-using-text-reference">Links using text reference</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[I'm a link][Reference text]
+
+[This link] will do the same as well. It works as the identifier itself.
+
+
+[reference text]: https://jamstack.club
+[this link]: https://roneo.org/markdown
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<p><a href="https://jamstack.club">I’m a link</a></p>
+
+<p><a href="https://roneo.org/markdown">This link</a> will do the same as well. It works as the identifier itself.</p>
+
+<p><strong>Note:</strong> The reference text is <em>not</em> case sensitive</p>
+
+<h3 id="link-with-a-title-on-hover">Link with a title on hover</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Random text][random-identifier].
+Hover the mouse over it to see the title.
+
+Several syntaxes are accepted:
+[One](https://eff.org "First site")
+[Two](https://example.com 'Second site')
+[Three](https://example.com (Third site))
+
+[random-identifier]: https://roneo.org/markdown "This example has a title"
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<p><a href="https://roneo.org/markdown" title="This example has a title">Random text</a>. Hover the mouse over it to see the title.</p>
+
+<p>Several syntaxes are accepted:
+<a href="https://eff.org" title="First site">One</a>
+<a href="https://jamstack.club" title="Second site">Two</a>
+<a href="https://debian.org (Third site)">Three</a></p>
+
+<h3 id="links-with-markdown-style">Links with Markdown style</h3>
+
+<p>To <strong><em>emphasize</em></strong> links, add asterisks before and after the brackets and parentheses.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I love supporting the **[EFF](https://eff.org)**.  
+This is the *[Markdown Guide](https://www.markdownguide.org)*.
+</code></pre></div></div>
+
+<p>To denote links as <code class="language-plaintext highlighter-rouge">code</code>, add backticks <em>inside</em> the brackets:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>See the section on [`code`](#code).
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<p>I love supporting the <strong><a href="https://eff.org">EFF</a></strong>.<br />
+This is the <em><a href="https://www.markdownguide.org">Markdown Guide</a></em>.<br />
+See the section on <a href="#code"><code class="language-plaintext highlighter-rouge">code</code></a>.</p>
+
+<h3 id="attribute-a-custom-anchor-to-a-heading">Attribute a custom anchor to a heading</h3>
+
+<p>Anchors are automatically generated based on the heading’s content. You can customize the anchor this way:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>### Heading {#custom-id}
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<h4 id="custom-id">Heading</h4>
+
+<h2 id="code-formatting">Code formatting</h2>
+
+<h3 id="inline">Inline</h3>
+
+<p>Wrap with single backticks to highlight as<code class="language-plaintext highlighter-rouge">`code`</code> → <code class="language-plaintext highlighter-rouge">code</code></p>
+
+<h3 id="codeblocks">Codeblocks</h3>
+
+<p>Create a code block with three backticks <code class="language-plaintext highlighter-rouge"></code><code class="language-plaintext highlighter-rouge"> </code>` before and after your block of code.</p>
+
+<p><strong>Output:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt hello
+cat /etc/apt/sources.list
+</code></pre></div></div>
+
+<p>Also possible with a tabulation or four empty spaces at the beginning of the lines:</p>
+
+<p><strong>Tabulation</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt hello
+echo "hi"
+</code></pre></div></div>
+
+<p><strong>Four whitespaces</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt hello
+</code></pre></div></div>
+
+<p>Let’s test the wrapping of a long line:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test
+</code></pre></div></div>
+
+<h3 id="codeblocks-with-syntax-highlighting">Codeblocks with syntax highlighting</h3>
+
+<p>Set the language right after the first backticks (for example <code class="language-plaintext highlighter-rouge"></code><code class="language-plaintext highlighter-rouge">html  </code>`) to get syntax highlighting</p>
+
+<h4 id="samples">Samples:</h4>
+
+<h4 id="html">HTML</h4>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"fr"</span> <span class="na">itemscope</span> <span class="na">itemtype=</span><span class="s">"http://schema.org/WebPage"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1.0, maximum-scale=1.0"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h4 id="css">CSS</h4>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Comment */</span>
+<span class="nc">.blog-post</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span> <span class="p">{</span>
+  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">1.6em</span><span class="p">;</span>
+  <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">0.8em</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="bash">Bash</h4>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Comment</span>
+
+<span class="k">if</span> <span class="o">[[</span> <span class="o">!</span> <span class="nv">$system</span> <span class="o">=</span>~ Linux|MacOS|BSD <span class="o">]]</span><span class="p">;</span> <span class="k">then
+	</span><span class="nb">echo</span> <span class="s2">"This version of bashtop does not support </span><span class="nv">$system</span><span class="s2"> platform."</span>
+
+<span class="nb">sudo </span>apt <span class="nb">install test</span>
+</code></pre></div></div>
+
+<h4 id="diff">Diff</h4>
+
+<div class="language-diff highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gd">- delete
+</span><span class="gi">+ add
+</span><span class="gs">! test
+</span># comment
+</code></pre></div></div>
+
+<h3 id="escaping-with-backslashes">Escaping with backslashes</h3>
+
+<p>Any ASCII punctuation character may be escaped using a single backslash.</p>
+
+<p>Example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\*this is not italic*
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<p>*this is not italic*</p>
+
+<p>Markdown provides backslash escapes for the following characters:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\   backslash
+`   backtick
+*   asterisk
+_   underscore
+{}  curly braces
+[]  square brackets
+()  parentheses
+#   hash mark
++	plus sign
+-	minus sign (hyphen)
+.   dot
+!   exclamation mark
+</code></pre></div></div>
+
+<h2 id="images">Images</h2>
+
+<h3 id="basic-syntax">Basic syntax</h3>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  !<span class="p">[</span><span class="nv">Semantic description of the image</span><span class="p">](</span><span class="sx">https://roneo.org/img/ok.png</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="https://roneo.org/img/ok.png" alt="Semantic description of the image" /></p>
+
+<p><strong>Note: The text inside the square brackets is important!</strong></p>
+
+<p>Screen reader users get informations about the image with this attribute called <code class="language-plaintext highlighter-rouge">ALT</code>, for <em>alternative text</em>.</p>
+
+<p>Including <strong>descriptive</strong> alt text <a href="https://webaim.org/techniques/alttext/">helps maintain accessibility</a> for every visitor and should always be included with an image. When you add alt text be sure to describe the content and function of the picture.<br />
+In addition to the accessibility benefits, <code class="language-plaintext highlighter-rouge">ALT</code> is useful for SEO. It’s also displayed when, for some reason, the picture is not loaded by the browser.</p>
+
+<h3 id="image-with-title-and-caption">Image with title and caption</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![Semantic description](https://roneo.org/img/ok.png "Your title")*Your caption*
+</code></pre></div></div>
+
+<p><img src="https://roneo.org/img/ok.png" alt="Semantic description" title="Your title" /><em>Your caption</em></p>
+
+<h3 id="clickable-images">Clickable images</h3>
+
+<p>For clickable images, simply wrap the image markup into a <a href="#links">link markup</a>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[![Semantic description](https://roneo.org/img/ok.png "Your title")](http://jamstack.club)
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<p><a href="http://jamstack.club"><img src="https://roneo.org/img/ok.png" alt="Semantic description" title="Your title" /></a></p>
+
+<h3 id="image-with-an-identifier">Image with an identifier</h3>
+
+<p>You can call the image with an identifier as we do for <a href="#links">links</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![Semantic desc.][image identifier]
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit [...]
+
+[image identifier]: https://roneo.org/img/ok.png "Title"
+</code></pre></div></div>
+
+<p><img src="https://roneo.org/img/ok.png" alt="Semantic desc." title="Title" /></p>
+
+<h2 id="task-lists">Task lists</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- [X] Write the press release
+- [ ] Update the website
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Write the press release</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Update the website</li>
+</ul>
+
+<h2 id="tables">Tables</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| Syntax    | Description |
+| --------- | ----------- |
+| Header    | Title       |
+| Paragraph | Text        |
+</code></pre></div></div>
+
+<p>or</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| Syntax | Description |
+| - | --- |
+| Header | Title |
+| Paragraph | Text|
+</code></pre></div></div>
+
+<p>will render the same way:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Syntax</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Header</td>
+      <td>Title</td>
+    </tr>
+    <tr>
+      <td>Paragraph</td>
+      <td>Text</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="text-alignment-in-tables">Text alignment in tables</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| Syntax    | Description |   Test Text |
+| :-------- | :---------: | ----------: |
+| Header    |    Title    | Here's this |
+| Paragraph |    Text     |    And more |
+</code></pre></div></div>
+
+<p>See the way the text is aligned, depending on the position of <code class="language-plaintext highlighter-rouge">':'</code></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Syntax</th>
+      <th style="text-align: center">Description</th>
+      <th style="text-align: right">Test Text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Header</td>
+      <td style="text-align: center">Title</td>
+      <td style="text-align: right">Here’s this</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Paragraph</td>
+      <td style="text-align: center">Text</td>
+      <td style="text-align: right">And more</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="footnotes">Footnotes</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Here's a sentence with a footnote[^1].
+(see the result at the bottom of the page)
+
+[^1]: This is the first footnote.
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<p>Here’s a sentence with a footnote<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>.<br />
+(see the result at the bottom of the page)</p>
+
+<h3 id="long-footnote">Long footnote</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Here's a longer one.[^bignote]
+(see the result at the bottom of the page)
+
+[^bignote]: Here's one with multiple paragraphs and code.
+	
+	Indent paragraphs to include them in the footnote.
+	
+	`{ my code }`
+	
+	Note that you can place the footnote anywhere you want in your article
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<p>Here’s a longer one.<sup id="fnref:bignote"><a href="#fn:bignote" class="footnote" rel="footnote" role="doc-noteref">2</a></sup>
+(see the result at the bottom of the page)</p>
+
+<h2 id="definition-list">Definition List</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>term
+: definition
+
+second term
+: meaning
+
+complex term
+: long definition including **bold text**. Velit tempor cillum aute culpa pariatur enim laboris consectetur tempor. Aute elit non do ipsum. Nisi quis culpa magna esse ipsum. Ad aliquip ullamco minim cillum in ullamco.
+</code></pre></div></div>
+
+<p><strong>Output:</strong></p>
+
+<dl>
+  <dt>term</dt>
+  <dd>definition</dd>
+  <dt>second term</dt>
+  <dd>meaning</dd>
+  <dt>complex term</dt>
+  <dd>long definition including <strong>bold text</strong>. Velit tempor cillum aute culpa pariatur enim laboris consectetur tempor. Aute elit non do ipsum. Nisi quis culpa magna esse ipsum. Ad aliquip ullamco minim cillum in ullamco.</dd>
+</dl>
+
+<h2 id="headings">Headings</h2>
+
+<p>Add <code class="language-plaintext highlighter-rouge">##</code> at the beginning of a line to set as Heading.<br />
+You can use up to 6 <code class="language-plaintext highlighter-rouge">#</code> symbols for the corresponding Heading levels</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Heading 1
+[...]
+
+###### Heading 6
+</code></pre></div></div>
+
+<h2 id="heading-2">Heading 2</h2>
+
+<p>pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.</p>
+
+<h3 id="heading-3">Heading 3</h3>
+
+<p>pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.</p>
+
+<h4 id="heading-4">Heading 4</h4>
+
+<p>pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.</p>
+
+<h5 id="heading-5">Heading 5</h5>
+
+<p>pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.</p>
+
+<h6 id="heading-6">Heading 6</h6>
+
+<p>pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.</p>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>Source of this page: <a href="https://roneo.org/markdown">roneo.org/markdown</a></li>
+  <li><a href="https://www.markdownguide.org/basic-syntax">Markdown Guide - Basic Syntax</a></li>
+  <li><a href="https://www.markdownguide.org/extended-syntax">Markdown Guide - Extended Syntax</a></li>
+  <li><a href="https://daringfireball.net/projects/markdown/syntax">Daring Fireball: Markdown Syntax Documentation</a></li>
+  <li><a href="https://about.gitlab.com/handbook/markdown-guide/">Markdown Guide at Gitlab.com</a></li>
+  <li><a href="https://spec.commonmark.org/0.29/">CommonMark Spec</a></li>
+</ul>
+
+<h2 id="related-projects">Related projects</h2>
+
+<ul>
+  <li>https://github.com/ericwbailey/markdown-test-file</li>
+  <li>https://scottspence.com/posts/writing-with-markdown</li>
+  <li>https://codingnconcepts.com/markdown/markdown-syntax/</li>
+  <li>https://codeit.suntprogramator.dev/basic-markdown-syntax/</li>
+  <li>https://daringfireball.net/projects/markdown/syntax.text</li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>This is the first footnote. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:bignote">
+      <p>Here’s one with multiple paragraphs and code.</p>
+
+      <p>Indent paragraphs to include them in the footnote.</p>
+
+      <p><code class="language-plaintext highlighter-rouge">{ my code }</code></p>
+
+      <p>Note that you can place the footnote anywhere you want in your article <a href="#fnref:bignote" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">My Recipe Collection</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">My Recipe Collection</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A collection of recipes for real, actually-edible food.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

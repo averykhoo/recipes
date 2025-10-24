@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>My Recipe Collection | A collection of recipes for real, actually-edible food.</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="My Recipe Collection" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of recipes for real, actually-edible food." />
+<meta property="og:description" content="A collection of recipes for real, actually-edible food." />
+<meta property="og:site_name" content="My Recipe Collection" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="My Recipe Collection" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"A collection of recipes for real, actually-edible food.","headline":"My Recipe Collection","url":"/recipes/carbonated-fruit.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="My Recipe Collection" /></head>
+<body><header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">My Recipe Collection</a>
+
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search recipes...">
+      <ul id="results-container"></ul>
+    </div>
+
+  </div>
+</header>
+
+<!-- Script for Simple-Jekyll-Search -->
+<script src="https://unpkg.com/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
+<script>
+  var sjs = SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+    noResultsText: 'No results found',
+    limit: 20
+  });
+</script>
+
+<style>
+.search-container { position: relative; }
+#search-input { width: 100%; padding: 8px; box-sizing: border-box; }
+#results-container { list-style-type: none; padding: 0; margin: 0; position: absolute; background-color: white; border: 1px solid #ddd; width: 100%; z-index: 100; max-height: 400px; overflow-y: auto; }
+#results-container li a { display: block; padding: 8px 12px; text-decoration: none; color: #333; }
+#results-container li a:hover { background-color: #f5f5f5; }
+</style><main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h1 id="carbonated-fruit">Carbonated Fruit</h1>
+
+<p>make some fizzy fruit</p>
+
+<p>ingredients:</p>
+
+<ul>
+  <li>dry ice</li>
+  <li>wide-mouth polycarbonate bottle (ideally from a reputable brand, e.g. nalgene)</li>
+  <li>some fruit (ideally soft-ish fruit) peeled and maybe sliced open
+    <ul>
+      <li>peeled and sliced pears</li>
+      <li>strawberries (safe not to peel these)</li>
+      <li>watermelon chunks</li>
+      <li>peeled grapes</li>
+      <li>orange slices</li>
+    </ul>
+  </li>
+</ul>
+
+<p>instructions:</p>
+
+<ol>
+  <li>peel, slice, and chill the fruit in the fridge</li>
+  <li>put fruit in bottle</li>
+  <li>put one marble sized (diameter 1/2 inch ~= 1.5cm) chunk of dry ice in the bottle</li>
+  <li>cap the bottle</li>
+  <li>wait a bit for the dry ice to turn to gas</li>
+  <li>let the gas infuse into the fruit for a bit - half an hour at least, but up to overnight
+(this can be done in the fridge)</li>
+  <li>very slowly uncap the bottle, letting the gas leak out before fully unscrewing the cap</li>
+</ol>
+
+<p>slightly hand-wavy science:</p>
+
+<ul>
+  <li>a marble has a diameter of about 1/2 inches to 1.5cm -&gt; the volume of dry ice is about 1 to 2 ml (~= 1.5 ml)</li>
+  <li>dry ice has a density of 1.6g/cm3 -&gt; the mass of dry ice is 1.6 * 1.5 = 2.4g</li>
+  <li>the molar mass of carbon dioxide is about 44 -&gt; we have about 0.054 mols total</li>
+  <li>that’s about 4e-5 to 8e-5 mols of carbon dioxide (~= 6e-5 mols)</li>
+  <li>a nalgene bottle has a volume of about 1.5 liters = 1.5e-3 cubic meters</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n</span> <span class="o">=</span> <span class="mf">0.054</span>  <span class="c1"># moles of carbon dioxide
+</span><span class="n">R</span> <span class="o">=</span> <span class="mf">8.31</span>  <span class="c1"># universal gas constant
+</span><span class="n">T</span> <span class="o">=</span> <span class="mi">298</span>  <span class="c1"># room temperature (25 C) converted to kelvin
+</span><span class="n">V</span> <span class="o">=</span> <span class="mf">1.5e-3</span>  <span class="c1"># bottle volume of 1.5 liters, converted to cubic meters
+</span><span class="n">P</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">/</span> <span class="n">V</span>
+<span class="c1"># = (0.054 * 8.31 * 298) / 1.5e-3
+# = 89149 pascals
+# ~= 90 kPa ~= 0.9 atm
+</span></code></pre></div></div>
+
+<ul>
+  <li>since CO2 is negligible in the atmosphere, we can ignore the fancy partial pressure math and just add 1 atmosphere to
+account for the gas already in the bottle, so the final pressure will be 1.9 atm ~= 28 psi</li>
+  <li>doubling size of the chunk (or using a much smaller bottle) would at most double the partial pressure of CO2, bringing
+it up to 2.8 atm ~= 41 psi</li>
+  <li>based on <a href="https://www.youtube.com/watch?v=eNTGCgnBoSo">this youtube video</a>, nalgene bottles seem fairly safe up to
+about 40 psi and it shouldn’t be <em>too dangerous</em> unless you reach 100 psi</li>
+  <li>also i’ve tested this recipe once and excess pressure tends to leak out the cap since you can only tighten it so much
+if you’re doing it by hand</li>
+  <li>the fruit should be cold (but not frozen) since that lets the gas dissolve into the fruit more easily - the solubility
+of CO2 in water about doubles when you go from 25 to 5 degrees celsius</li>
+</ul>
+
+<p>Solubility of CO2 in pure water at different temperatures (<a href="https://www.fao.org/3/ac183e/AC183E06.htm">source</a>)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Temperature (°C)</th>
+      <th>Solubility (mg/litre)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1.10</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>0.91</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>0.76</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>0.65</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>0.56</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>0.48</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>0.42</td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>0.36</td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td>0.31</td>
+    </tr>
+  </tbody>
+</table>
+
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">My Recipe Collection</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">My Recipe Collection</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A collection of recipes for real, actually-edible food.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
