@@ -24,12 +24,13 @@ jobs:
         uses: actions/checkout@v4
 
       # --- Custom Pre-build Steps for this Repository ---
-      - name: Add Front Matter to recipe files
-        # This step now ONLY targets the three specified recipe folders.
-        run: |
-          find curated-untested in-progress recipes -type f -name "*.md" -exec sed -i '1s/^/---\nlayout: default\n---\n/' {} +
-      - name: Fix Markdown Links in recipe files
-        # This step now ONLY targets the three specified recipe folders.
+      - name: Generate Front Matter for Navigation
+        # This step runs our new Python script to create all front matter
+        # for titles, parents, and grandparents automatically.
+        run: python scripts/generate_front_matter.py
+
+      - name: Fix Markdown Links to point to .html files
+        # This still targets only the three main recipe folders.
         run: |
           find curated-untested in-progress recipes -type f -name "*.md" -exec sed -i 's/\.md)/.html)/g' {} +
       - name: Rename folders for Jekyll Collections
