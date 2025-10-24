@@ -1,8 +1,17 @@
+# Site settings
 title: My Recipe Collection
 description: A collection of recipes for real, actually-edible food.
 theme: minima
 
-# Enable GitHub Flavored Markdown for full compatibility
+# GitHub Pages settings
+# The baseurl is the subpath of your site, e.g. /recipes
+# The url is the main domain.
+# Replace "averykhoo" with your GitHub username.
+# Replace "recipes" with your repository name.
+baseurl: "/recipes"
+url: "https://averykhoo.github.io"
+
+# Enable GitHub Flavored Markdown
 markdown: kramdown
 kramdown:
   input: GFM
@@ -17,34 +26,9 @@ collections:
   recipes:
     output: true
 
-# Default layout for all pages and collection documents
+# Apply the default theme layout to all documents in the site
 defaults:
   - scope:
       path: ""
-      type: "pages"
     values:
       layout: "default"
-  - scope:
-      path: ""
-      type: "curated-untested"
-    values:
-      layout: "default"
-  - scope:
-      path: ""
-      type: "in-progress"
-    values:
-      layout: "default"
-  - scope:
-      path: ""
-      type: "recipes"
-    values:
-      layout: "default"
-
-# Configuration for the search feature
-search:
-  - title: recipes
-    url: /recipes.json
-    collections:
-      - curated-untested
-      - in-progress
-      - recipes
