@@ -24,15 +24,15 @@ jobs:
         uses: actions/checkout@v4
 
       # --- Custom Pre-build Steps for this Repository ---
-      - name: Generate Front Matter for Navigation
-        # This step runs our new Python script to create all front matter
-        # for titles, parents, and grandparents automatically.
-        run: python scripts/generate_front_matter.py
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
-      - name: Fix Markdown Links to point to .html files
-        # This still targets only the three main recipe folders.
-        run: |
-          find curated-untested in-progress recipes -type f -name "*.md" -exec sed -i 's/\.md)/.html)/g' {} +
+      - name: Run Jekyll Pre-build Script
+        # This single script handles cleanup, front matter, and link fixing.
+        run: python scripts/jekyll_prebuild.py
+
       - name: Rename folders for Jekyll Collections
         run: |
           mv curated-untested _curated-untested
