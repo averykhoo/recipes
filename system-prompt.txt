@@ -20,10 +20,14 @@ Your goal is to develop a robust mental model of this repository based *only* on
 │   └── workflows
 │       └── deploy.yml
 ├── .gitignore
+├── Gemfile
+├── Generated Image October 24, 2025 - 10_16PM.png
 ├── README.md
 ├── TODO-SAUCES.md
 ├── TODO.md
+├── _config.yml
 ├── build_system_prompt.py
+├── cakebook.png
 ├── curated-untested
 │   ├── cheese-sauce.md
 │   ├── chocolate-marquise.md
@@ -43,6 +47,7 @@ Your goal is to develop a robust mental model of this repository based *only* on
 │   ├── polpette-di-ricotta.md
 │   ├── prize-winning-banana-bread.md
 │   └── test.md
+├── favicon.ico
 ├── in-progress
 │   ├── artichoke-pasta.md
 │   ├── bacon-wrapped-smokies.md
@@ -86,6 +91,7 @@ Your goal is to develop a robust mental model of this repository based *only* on
 │   ├── some-kind-of-salad.md
 │   ├── thai-olive-rice.md
 │   └── tortang-talong.md
+├── index.md
 ├── menus
 │   ├── 2022-12-17-dinner.md
 │   ├── 2022-12-18-dinner.md
@@ -107,7 +113,6 @@ Your goal is to develop a robust mental model of this repository based *only* on
 │   ├── 2025-01-04-potluck-dinner.md
 │   ├── 2025-01-18-cny-hotpot-lunch.md
 │   └── 2025-12-xmas-dinner.md
-├── mkdocs.yml
 ├── more-christmas-possibilities.md
 ├── recipes
 │   ├── baba-ganoush.md
@@ -181,7 +186,8 @@ Your goal is to develop a robust mental model of this repository based *only* on
 │   ├── smashed-brussels-sprouts.md
 │   ├── tzatziki.md
 │   └── white-kimchi.md
-├── requirements.txt
+├── scripts
+│   └── jekyll_prebuild.py
 └── system-prompt.txt
 ````
 
@@ -193,52 +199,67 @@ name: Deploy Recipes to GitHub Pages
 
 on:
   push:
-    branches:
-      - master # Or 'main', depending on your repository's default branch
+    branches: ["master"] # Or "main"
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      # --- Custom Pre-build Steps for this Repository ---
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: '3.10'
 
-      - name: Install dependencies
+      - name: Run Jekyll Pre-build Script
+        # This single script handles cleanup, front matter, and link fixing.
+        run: python scripts/jekyll_prebuild.py
+
+      - name: Rename folders for Jekyll Collections
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          mv curated-untested _curated-untested
+          mv in-progress _in-progress
+          mv recipes _recipes
+      # --- End of Custom Steps ---
 
-      - name: Generate Contents Page
-        run: |
-          {
-            echo "# Contents"
-            echo ""
-            echo "An index of all markdown files in the collection."
-            echo ""
-            echo '```'
-            tree -P "*.md" --noreport curated-untested in-progress recipes
-            echo '```'
-          } > contents.md
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
 
-      - name: Assemble docs directory
-        run: |
-          mkdir docs
-          cp -r curated-untested in-progress recipes docs/
-          cp contents.md docs/index.md
-
-      - name: Build site with MkDocs
-        run: mkdocs build
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+          source: ./
+          destination: ./_site
+          # This line forces the action to respect your Gemfile
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 ````
 --- End of File: .github/workflows/deploy.yml ---
 --- File: .gitignore ---
@@ -377,6 +398,53 @@ dmypy.json
 
 ````
 --- End of File: .gitignore ---
+--- File: _config.yml ---
+````yaml
+# Use the jekyll-remote-theme plugin
+plugins:
+  - jekyll-remote-theme
+
+# Set the remote theme to Just the Docs
+remote_theme: just-the-docs/just-the-docs
+
+# Site settings
+title: Recipes
+description: A collection of recipes for real, actually-edible food.
+
+# Enable the theme's built-in search
+search_enabled: true
+
+# --- Jekyll Collections Configuration ---
+# 1. Define the collections for Jekyll to process
+collections:
+  curated-untested:
+    output: true
+  in-progress:
+    output: true
+  recipes:
+    output: true
+
+# 2. Configure how Just the Docs displays the collections in the navigation
+just_the_docs:
+  collections:
+    recipes:
+      name: Recipes
+      nav_fold: true
+    in-progress:
+      name: In Progress
+      nav_fold: true
+    curated-untested:
+      name: Curated & Un-tested
+      nav_fold: true
+
+# Apply the default theme layout to all documents
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+````
+--- End of File: _config.yml ---
 --- File: curated-untested/cheese-sauce.md ---
 ````markdown
 # Nacho Cheese Sauce
@@ -3483,6 +3551,20 @@ source: recipe card from kinmemai (rice brand)
 * works with [dynamite](./dynamite-lumpia.md)
 ````
 --- End of File: in-progress/tortang-talong.md ---
+--- File: index.md ---
+````markdown
+---
+layout: default
+title: Home
+---
+# 🎂📖
+
+This is a collection of recipes for real, actually-edible food.
+
+Use the navigation sidebar on the left to browse through the different recipe categories. 
+You can also use the search bar at the top of the page to find a specific recipe.
+````
+--- End of File: index.md ---
 --- File: menus/2022-12-17-dinner.md ---
 ````markdown
 # menu
@@ -3877,42 +3959,6 @@ sauce:
 * beef or lamb roast? 
 ````
 --- End of File: menus/2025-12-xmas-dinner.md ---
---- File: mkdocs.yml ---
-````yaml
-site_name: My Recipe Collection
-site_description: A collection of recipes for real, actually-edible food.
-
-theme:
-  name: material
-  palette:
-    # Palette toggle for light mode
-    - scheme: default
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    # Palette toggle for dark mode
-    - scheme: slate
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-
-plugins:
-  - search
-  - awesome-pages
-
-markdown_extensions:
-  - admonition
-  - footnotes
-  - sane_lists
-  - pymdownx.betterem
-  - pymdownx.emoji
-  - pymdownx.superfences
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.tilde:
-      subscript: false
-````
---- End of File: mkdocs.yml ---
 --- File: more-christmas-possibilities.md ---
 ````markdown
 # unused christmas menu items
@@ -6846,14 +6892,147 @@ Pickling liquid:
 
 ````
 --- End of File: recipes/white-kimchi.md ---
---- File: requirements.txt ---
+--- File: scripts/jekyll_prebuild.py ---
+````python
+import re
+from pathlib import Path
+
+# --- Configuration ---
+ROOT_DIRS = [
+    Path('recipes'),
+    Path('in-progress'),
+    Path('curated-untested'),
+]
+
+
+# --- Helper Functions ---
+
+def get_title(dir_name: str) -> str:
+    """
+    Generates a human-readable title from a file or folder name.
+
+    :param dir_name:
+    :return:
+    """
+    # replace hyphens and underscores with spaces, then title case
+    _default = re.sub(r'[ _-]+', ' ', dir_name).strip().title()
+
+    # these are the special cases
+    _title_map = {
+        'curated-untested': 'Curated & Untested',
+        'kfc': 'KFC',
+    }
+    return _title_map.get(dir_name, _default)
+
+
+def generate_front_matter_str(title: str,
+                              parent: str | None = None,
+                              has_children: bool = False,
+                              nav_order: int | None = None,
+                              ) -> str:
+    """
+    Generates a complete front matter block as a string using f-strings.
+
+    :param title:
+    :param parent:
+    :param has_children:
+    :param nav_order:
+    :return:
+    """
+    lines = [
+        "---",
+        "layout: default",
+        f"title: {title}"
+    ]
+    if parent:
+        lines.append(f"parent: {parent}")
+    if has_children:
+        lines.append("has_children: true")
+    if nav_order is not None:
+        lines.append(f"nav_order: {nav_order}")
+    lines.append("---")
+    return "\n".join(lines) + "\n\n"
+
+
+# --- Main Script Logic ---
+
+# 1. Clean up unwanted Markdown files
+print("--- Cleaning up unwanted markdown files ---")
+
+for md_file in Path('.').glob('**/*.md'):
+    # Keep the root index.md
+    if md_file.resolve() == Path('index.md').resolve():
+        continue
+
+    # Keep any file that is within one of the ROOT_DIRS
+    is_in_root_dirs = any(root_dir.resolve() in md_file.resolve().parents for root_dir in ROOT_DIRS)
+    if not is_in_root_dirs:
+        print(f"Deleting unwanted file: {md_file}")
+        md_file.unlink()
+
+# 2. Create parent index.md pages for navigation
+print("\n--- Generating parent index.md pages ---")
+for root_dir in ROOT_DIRS:
+    for directory in root_dir.rglob('**/'):
+        if not directory.is_dir(): continue
+
+        if directory in ROOT_DIRS:
+            print(f"Skipping index.md for top-level collection folder: {directory}")
+            continue
+
+        index_path = directory / 'index.md'
+        if index_path.exists():
+            continue
+
+        title = get_title(directory.name)
+        parent = get_title(directory.parent.name) if directory.parent != Path('.') else None
+
+        front_matter = generate_front_matter_str(title=title, parent=parent, has_children=True, nav_order=1)
+
+        content = f"# {title}\n\nThis section contains recipes related to {title}."
+        index_path.write_text(front_matter + content, encoding='utf-8')
+        print(f"Created parent page: {index_path}")
+
+# 3. Process all individual recipe files
+print("\n--- Generating front matter for recipe files ---")
+for root_dir in ROOT_DIRS:
+    for md_file in root_dir.rglob('*.md'):
+        # Skip the index files we just created/verified
+        if md_file.name == 'index.md':
+            continue
+
+        title = get_title(md_file.stem)
+
+        parent = None
+        if md_file.parent not in ROOT_DIRS:
+            parent = get_title(md_file.parent.name)
+
+        front_matter = generate_front_matter_str(title=title, parent=parent)
+
+        original_content = md_file.read_text(encoding='utf-8')
+
+        # Make the process idempotent: don't add front matter if it already exists
+        if original_content.startswith('---'):
+            print(f"Skipping already processed file: {md_file}")
+            continue
+
+        md_file.write_text(front_matter + original_content, encoding='utf-8')
+        print(f"Generated front matter for: {md_file}")
+
+# 4. Fix internal markdown links to point to .html
+print("\n--- Fixing internal markdown links ---")
+for root_dir in ROOT_DIRS:
+    for md_file in root_dir.rglob('*.md'):
+        content = md_file.read_text(encoding='utf-8')
+        if '.md)' in content:
+            new_content = content.replace('.md)', '.html)')
+            md_file.write_text(new_content, encoding='utf-8')
+            print(f"Fixed links in: {md_file}")
+
+print("\nJekyll pre-build script complete.")
+
 ````
-mkdocs
-mkdocs-material
-mkdocs-awesome-pages-plugin
-pymdown-extensions
-````
---- End of File: requirements.txt ---
+--- End of File: scripts/jekyll_prebuild.py ---
 --- File: TODO-SAUCES.md ---
 ````markdown
 # French Mother Sauces

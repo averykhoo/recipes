@@ -1,7 +1,12 @@
+import re
 from pathlib import Path
 
 # --- Configuration ---
-ROOT_DIRS = [Path('recipes'), Path('in-progress'), Path('curated-untested')]
+ROOT_DIRS = [
+    Path('recipes'),
+    Path('in-progress'),
+    Path('curated-untested'),
+]
 
 
 # --- Helper Functions ---
@@ -13,15 +18,14 @@ def get_title(dir_name: str) -> str:
     :param dir_name:
     :return:
     """
-    # change `-` and `_` to space and titlecase (after coalescing and stripping whitespace)
-    _default = ' '.join(dir_name.replace('-', ' ').replace('_', ' ').split()).title()
+    # replace hyphens and underscores with spaces, then title case
+    _default = re.sub(r'[ _-]+', ' ', dir_name).strip().title()
 
     # these are the special cases
     _title_map = {
         'curated-untested': 'Curated & Untested',
         'kfc': 'KFC',
     }
-
     return _title_map.get(dir_name, _default)
 
 
@@ -48,7 +52,7 @@ def generate_front_matter_str(title: str,
         lines.append(f"parent: {parent}")
     if has_children:
         lines.append("has_children: true")
-    if nav_order:
+    if nav_order is not None:
         lines.append(f"nav_order: {nav_order}")
     lines.append("---")
     return "\n".join(lines) + "\n\n"
