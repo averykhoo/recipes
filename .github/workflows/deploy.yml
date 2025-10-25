@@ -51,6 +51,7 @@ jobs:
           source: ./
           destination: ./_site
           # This line forces the action to respect your Gemfile
+          use_gemfile: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
