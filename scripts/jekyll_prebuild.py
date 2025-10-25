@@ -1,3 +1,4 @@
+import logging
 import re
 from pathlib import Path
 from typing import Optional
@@ -104,80 +105,84 @@ def update_front_matter(file_path: Path,
 # --- Main Script Logic ---
 
 if __name__ == '__main__':
+    try:
 
-    # 1. Clean up unwanted Markdown files to avoid building them into the site
-    print("--- Cleaning up unwanted markdown files ---")
+        # 1. Clean up unwanted Markdown files to avoid building them into the site
+        print("--- Cleaning up unwanted markdown files ---")
 
-    for md_file in Path('.').glob('**/*.[mM][dD]'):
-        # Keep the root index.md
-        if md_file.resolve() == Path('index.md').resolve():
-            continue
-
-        # Keep any file that is within one of the ROOT_DIRS, remove the rest
-        is_in_root_dirs = any(root_dir.resolve() in md_file.resolve().parents for root_dir in COLLECTION_DIRS)
-        if not is_in_root_dirs:
-            print(f"Deactivating file by renaming: {md_file}")
-            md_file.rename(md_file.with_suffix('.deactivated_md.txt'))
-
-    # 2. Create parent index.md pages for navigation
-    print("\n--- Generating parent index.md pages ---")
-    for collection_dir in COLLECTION_DIRS:
-        for directory in collection_dir.glob('**/'):
-            if not directory.is_dir():
+        for md_file in Path('.').glob('**/*.[mM][dD]'):
+            # Keep the root index.md
+            if md_file.resolve() == Path('index.md').resolve():
                 continue
 
-            if directory in COLLECTION_DIRS:
-                print(f"Skipping index.md for top-level collection folder: {directory}")
-                continue
+            # Keep any file that is within one of the ROOT_DIRS, remove the rest
+            is_in_root_dirs = any(root_dir.resolve() in md_file.resolve().parents for root_dir in COLLECTION_DIRS)
+            if not is_in_root_dirs:
+                print(f"Deactivating file by renaming: {md_file}")
+                md_file.rename(md_file.with_suffix('.deactivated_md.txt'))
 
-            index_path = directory / 'index.md'
-            _title = get_title(directory.name)
+        # 2. Create parent index.md pages for navigation
+        print("\n--- Generating parent index.md pages ---")
+        for collection_dir in COLLECTION_DIRS:
+            for directory in collection_dir.glob('**/'):
+                if not directory.is_dir():
+                    continue
 
-            update_front_matter(
-                file_path=index_path,
-                title=_title,
-                parent=get_title(directory.parent.name),
-                has_children=True,
-                nav_order=1,
-                initial_content=f"# {_title}\n\nThis section contains recipes related to {_title}.",
-            )
-            print(f"Processed parent page: {index_path}")
+                if directory in COLLECTION_DIRS:
+                    print(f"Skipping index.md for top-level collection folder: {directory}")
+                    continue
 
-    # 3. Process all individual recipe files
-    print("\n--- Generating front matter for recipe files ---")
-    for collection_dir in COLLECTION_DIRS:
-        for md_file in collection_dir.glob('**/*.[mM][dD]'):
-            # Skip the index files we just created/verified
-            if md_file.name == 'index.md':
-                continue
+                index_path = directory / 'index.md'
+                _title = get_title(directory.name)
 
-            update_front_matter(
-                file_path=md_file,
-                title=get_title(md_file.stem),
-                parent=get_title(md_file.parent.name) if md_file.parent not in COLLECTION_DIRS else None,
-            )
-            print(f"Processed recipe file: {md_file}")
+                update_front_matter(
+                    file_path=index_path,
+                    title=_title,
+                    parent=get_title(directory.parent.name),
+                    has_children=True,
+                    nav_order=1,
+                    initial_content=f"# {_title}\n\nThis section contains recipes related to {_title}.",
+                )
+                print(f"Processed parent page: {index_path}")
 
-    # 4. Fix internal Markdown links to point to .html
+        # 3. Process all individual recipe files
+        print("\n--- Generating front matter for recipe files ---")
+        for collection_dir in COLLECTION_DIRS:
+            for md_file in collection_dir.glob('**/*.[mM][dD]'):
+                # Skip the index files we just created/verified
+                if md_file.name == 'index.md':
+                    continue
 
-    # Regex to find .md links, capturing the part before the extension.
-    # It is case-insensitive and handles anchors correctly.
+                update_front_matter(
+                    file_path=md_file,
+                    title=get_title(md_file.stem),
+                    parent=get_title(md_file.parent.name) if md_file.parent not in COLLECTION_DIRS else None,
+                )
+                print(f"Processed recipe file: {md_file}")
 
-    print("\n--- Fixing internal markdown links ---")
-    all_md_files = [_md for _dir in COLLECTION_DIRS for _md in _dir.glob('**/*.[mM][dD]')]
-    for md_file in all_md_files:
-        try:
-            content = md_file.read_text(encoding='utf-8')
+        # 4. Fix internal Markdown links to point to .html
 
-            # Replace the matched .md extension with .html, preserving the captured path.
-            new_content, num_replacements = RE_LINK.subn(RE_LINK_SUB, content)
+        # Regex to find .md links, capturing the part before the extension.
+        # It is case-insensitive and handles anchors correctly.
 
-            # Only write to the file if a change was actually made.
-            if num_replacements > 0:
-                md_file.write_text(new_content, encoding='utf-8')
-                print(f"Fixed {num_replacements} link(s) in: {md_file}")
+        print("\n--- Fixing internal markdown links ---")
+        all_md_files = [_md for _dir in COLLECTION_DIRS for _md in _dir.glob('**/*.[mM][dD]')]
+        for md_file in all_md_files:
+            try:
+                content = md_file.read_text(encoding='utf-8')
 
-        except Exception as e:
-            print(f"Error processing {md_file}: {e}")
+                # Replace the matched .md extension with .html, preserving the captured path.
+                new_content, num_replacements = RE_LINK.subn(RE_LINK_SUB, content)
 
-    print("\nJekyll pre-build script complete.")
+                # Only write to the file if a change was actually made.
+                if num_replacements > 0:
+                    md_file.write_text(new_content, encoding='utf-8')
+                    print(f"Fixed {num_replacements} link(s) in: {md_file}")
+
+            except Exception as e:
+                print(f"Error processing {md_file}: {e}")
+
+        print("\nJekyll pre-build script complete.")
+    except Exception as e:
+        logging.exception(str(e))
+        raise
