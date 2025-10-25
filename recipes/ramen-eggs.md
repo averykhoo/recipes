@@ -4,7 +4,7 @@
 * 1/4 cup shoyu
 * 1/4 cup mirin
 * 1/4 cup sake (optionally less or none, to taste)
-* 2 tbsp sugar
+* 2 Tbsp sugar
 * 1/4 - 1/2 cup dashi or water
 
 1. Boil eggs until just about done, about 7 minutes, starting in boiling water
@@ -18,5 +18,5 @@
 
 Notes:
 
-* Optionally add 1 tbsp of vinegar into the water when boiling the eggs for easier peeling
+* Optionally add 1 Tbsp of vinegar into the water when boiling the eggs for easier peeling
 * Add a teaspoon of dark soy sauce for darker colored eggs

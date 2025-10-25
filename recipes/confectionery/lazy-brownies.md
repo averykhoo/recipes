@@ -21,7 +21,7 @@ turns out it might be better thinner, so maybe use a size up
 
 * 40g butter
 * 50g chocolate chips
-* (todo: use this to dry it out a little) 2 tbsp cocoa powder
+* (todo: use this to dry it out a little) 2 Tbsp cocoa powder
 * 50g sugar (reduced from 80g)
 * 1/8 tsp (or one pinch) of salt
 * 1/4 tsp vanilla extract

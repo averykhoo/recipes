@@ -13,8 +13,8 @@ Brownie:
 * ==========================
 * 1.75 cups (350g) light brown sugar
 * 0.5 tsp salt
-* 1 tsp instant coffee powder (not 3-in-1 or 2-in-1) (or 2 tbsp = 1 shot espresso)
-* 1 tbsp Horlicks powder
+* 1 tsp instant coffee powder (not 3-in-1 or 2-in-1) (or 2 Tbsp = 1 shot espresso)
+* 1 Tbsp Horlicks powder
 * 1 cup (120g) cake flour (or plain)
 * 3 large (60g) eggs + 2 yolks (remaining 2 whites optionally used below)
 * 0.5 tsp vanilla essence (up to 1 tsp)

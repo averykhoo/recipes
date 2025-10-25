@@ -20,7 +20,7 @@ Directions
 
 Notes
 
-* Total about 5-6 tbsp herbs is the right proportion
+* Total about 5-6 Tbsp herbs is the right proportion
 * Garlic increased from 12 to 20, since Italians' garlic tolerance is weak
 * Parmesan separate to make this more shelf-stable
 * 3 tsp salt is too much salt

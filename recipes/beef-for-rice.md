@@ -2,7 +2,7 @@
 
 * 200g frozen fatty sliced beef meant for yakiniku (about 9 slices)
 * 1 tsp pepper
-* 1 tbsp plain flour
+* 1 Tbsp plain flour
 * 1 tsp shoyu
 * 2 tsp mirin
 * 2 tsp red wine

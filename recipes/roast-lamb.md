@@ -2,11 +2,11 @@
 
 https://www.themediterraneandish.com/roast-lamb-rack-recipe/
 
-* 3 tbsp dry rosemary
-* 1 tbsp oregano
-* 1 tbsp thyme
+* 3 Tbsp dry rosemary
+* 1 Tbsp oregano
+* 1 Tbsp thyme
 * 1 tsp paprika
-* 1 tsp salt (can try up to 1 tbsp, it wasn't salty enough)
+* 1 tsp salt (can try up to 1 Tbsp, it wasn't salty enough)
 * 1 tsp pepper
 * 20-30 cloves raw garlic
 * about 1/2 cup olive oil

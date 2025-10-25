@@ -11,10 +11,10 @@ This is what you need (30–40 meatballs, serves 4):
 * 250 g minced pork
 * 1 egg
 * 200–300 ml cream (or milk) and water
-* 2.5 tbsp fine chopped onion
+* 2.5 Tbsp fine chopped onion
 * 50 ml unsweetened rusk flour
 * 2 boiled potatoes, cold
-* 4–5 tbsp butter, margarine or oil
+* 4–5 Tbsp butter, margarine or oil
 * salt
 * white pepper
 * (allspice)
@@ -35,7 +35,7 @@ This is what you need (cream sauce, serves 4):
 * soy
 * salt
 * white pepper
-* (1 tbsp white flour)
+* (1 Tbsp white flour)
 
 This is how you do it:
 

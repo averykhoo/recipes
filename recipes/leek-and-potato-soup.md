@@ -1,13 +1,13 @@
 # Potage Parmentier (Leek & Potato Soup)
 
-* 1-2 tbsp butter
+* 1-2 Tbsp butter
 * 300g thinly sliced leeks (about 2 leeks)
 * 3 cloves garlic, sliced or minced
 * 300g potatoes, peeled and diced (about 3 potatoes)
 * 2-3 cups light chicken stock, veg broth, or water
 * salt and pepper to taste (probably about 1 tsp each)
-* 2 tbsp white wine
-* 1 tbsp butter to finish
+* 2 Tbsp white wine
+* 1 Tbsp butter to finish
 * chives or dill and cream to garnish
 
 1. fry the leek and garlic in butter until softened, about 5 mins.

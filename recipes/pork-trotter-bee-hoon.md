@@ -11,8 +11,8 @@ https://annieliciousfood.blogspot.com/2012/09/pig-trotters-bee-hoon.html
 * 130g dried bee hoon, soaked for about 20 mins
 * 1 can pork trotters, 2 would be better
 * about 1 pork trotter can full of water (used to soak mushrooms), which is a good way to wash in the last bits of pork
-* 1 tbsp shoyu
-* 1 tbsp dark soy sauce
+* 1 Tbsp shoyu
+* 1 Tbsp dark soy sauce
 * 1-2 stalks spring onion, sliced thin
 
 1. Pre-soak the bee hoon and mushrooms.

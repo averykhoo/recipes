@@ -4,12 +4,12 @@
 
 * how to display comments (e.g. chocolate chip cookies)
 * how to format weights alongside measures
-* basic conversions chart (1 cup = 16 tbsp = 48 tsp = 240ml)
+* basic conversions chart (1 cup = 16 Tbsp = 48 tsp = 240ml)
 * common ingredient density chart (fine / granulated sugar: 1 cup = 200g)
 * how to break a recipe down into sections / submodules
 * standardized recipe format?
     * good way to specify of ingredient weights and measures - table?
-    * needs to accommodate fuzzy measures - e.g. 1-2 tbsp, a handful of something, knob of butter, ...
+    * needs to accommodate fuzzy measures - e.g. 1-2 Tbsp, a handful of something, knob of butter, ...
     * should the title be titlecase? how about the ingredients and instructions?
     * how many portions output
 * should be possible to generate a shopping list from recipes and optional scaling

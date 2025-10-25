@@ -38,7 +38,7 @@
 
 2. Fry over high heat until mushrooms brown and onions are translucent
 
-* 1-2 tbsp white wine
+* 1-2 Tbsp white wine
 * 1 cup heavy whipping cream
 * 1 tsp salt
 * 1/2 tsp pepper

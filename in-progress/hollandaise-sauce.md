@@ -9,7 +9,7 @@ Not sure where this recipe originated from
 * 1/8 tsp sugar
 * 1/2 tsp paprika
 * a pinch of turmeric for color
-* 2-2.5 tbsp lemon juice
+* 2-2.5 Tbsp lemon juice
 * 200g butter (up to 100g more at the end, depending on consistency)
 * (optional) a pinch each of onion and garlic powder
 * (if it's to be served on fish) maybe some grated parmesan

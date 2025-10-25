@@ -9,11 +9,11 @@ https://damndelicious.net/2019/04/21/korean-beef-bulgogi/
 * 1 pear, grated or blended
 * 8 cloves minced/blended/pressed garlic
 * 2-3 shallots or 1/2 onion, finely diced or blended
-* 1/2 to 1 tbsp grated ginger (about 1.5cm)
-* 1 tbsp miso
-* 4 tbsp shoyu
-* 2 tbsp sesame oil
-* 3 tbsp brown sugar
+* 1/2 to 1 Tbsp grated ginger (about 1.5cm)
+* 1 Tbsp miso
+* 4 Tbsp shoyu
+* 2 Tbsp sesame oil
+* 3 Tbsp brown sugar
 * 1 tsp pepper
 * (todo: try this) 1/2 tsp liquid smoke
 
@@ -29,6 +29,6 @@ serve with:
 
 * 1-2 small carrots, sliced thinly or into sticks (optionally marinated with the beef)
 * 1/2 to 1 onion, sliced paper thin, fried until translucent
-* 2 tbsp sesame oil, to flavor plain rice
+* 2 Tbsp sesame oil, to flavor plain rice
 * sesame seeds, over the rice
 * spring onion sliced on a bias, for garnish

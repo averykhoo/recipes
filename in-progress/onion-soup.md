@@ -3,11 +3,11 @@
 see also: https://www.youtube.com/watch?v=rzL07v6w8AA
 
 * 4 biggish onions, sliced pole to pole
-* 1 tbsp oil
-* 1 tbsp butter
+* 1 Tbsp oil
+* 1 Tbsp butter
 * 1 tsp salt
 * some water, optional
-* 1 tbsp flour
+* 1 Tbsp flour
 * 4-8 cups water or stock
 * bay
 * thyme
@@ -77,5 +77,5 @@ PREPARATION
 > Gonzalo
 > (2 years ago)
 > 1 Tbsp of Sherry is a very small amount, it won't add any significant flavour. Also, if Sherry boils for a long time, it
-> completely loses its aroma. I suggest adding 2 tbsp on each individual soup dish just before broiling (that's the way
+> completely loses its aroma. I suggest adding 2 Tbsp on each individual soup dish just before broiling (that's the way
 > people have fancy consomme in Madrid).

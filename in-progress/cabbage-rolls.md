@@ -5,8 +5,8 @@
 * 250g thinly sliced beef, like for sukiyaki
 * 150g enoki, bottom trimmed and washed
 * 1/2 cup stock 
-* 1 tbsp of shoyu
-* 1 tbsp of mirin
+* 1 Tbsp of shoyu
+* 1 Tbsp of mirin
 * 2 tsp sesame oil
 * ponzu to serve
 

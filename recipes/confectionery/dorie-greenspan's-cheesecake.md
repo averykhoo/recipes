@@ -46,7 +46,7 @@ MORE TOPPING
 * 0.5 cup water (120 ml)
 * (erin's mile-high) zest of 1/2 lemon
 * (erin's mile-high) zest of 1/2 orange / 0.5tsp orange extract (zest as finely as possible)
-* (erin's mile-high) 1 tbsp grand marnier
+* (erin's mile-high) 1 Tbsp grand marnier
 
 SPECIAL EQUIPMENT NEEDED
 

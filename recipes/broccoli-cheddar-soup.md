@@ -13,13 +13,13 @@
 ## Ingredients
 
 * 1 lb bacon, chopped
-* 2 tbsp butter or bacon fat
+* 2 Tbsp butter or bacon fat
 * 2 medium yellow onions, diced
 * Pepper, to taste
 * 1 tsp smoked paprika
 * Dash of cayenne, optional
 * 8 cloves garlic, minced
-* 3 tbsp flour
+* 3 Tbsp flour
 * 2 cups chicken broth (add more if needed, if cooking uncovered)
 * 2 heads of broccoli, chopped and rinsed
 * 2-3 carrots, shredded or grated

@@ -12,7 +12,7 @@ https://www.reddit.com/r/GrandTourTopgearFans/comments/kdzrma/oh_cook_i_made_jam
 * White wine
 * 1 medium onion, diced
 * 1 leek, thinly sliced
-* 1 tbsp flour
+* 1 Tbsp flour
 * Parsley / dill
 * Optional peas, boiled
 * Salt and pepper

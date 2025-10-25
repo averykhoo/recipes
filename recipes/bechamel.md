@@ -7,8 +7,8 @@ https://www.seriouseats.com/savory-cheese-souffle
 https://www.youtube.com/watch?v=7AAx0uIuoBQ&t=7s
 https://www.pastagrammar.com/post/basic-besciamella-sauce
 
-* 1 heaped tbsp (20g) butter
-* 2 heaped tbsp (20g) flour
+* 1 heaped Tbsp (20g) butter
+* 2 heaped Tbsp (20g) flour
 * 1 cup milk
 * pinch or two of salt
 * pepper

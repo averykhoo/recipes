@@ -5,7 +5,7 @@
 Ingredients
 
 * 1 can fruit cocktail (with peaches, not pineapple)
-* 3 tbsp sherry
+* 3 Tbsp sherry
 * 1 walnut butter cake
 * [Bird's Custard](https://en.wikipedia.org/wiki/Bird's_Custard) powder
 * UHT milk
@@ -16,7 +16,7 @@ Method
 
 1. 1 can fruit cocktail:
     * Separate fruit from syrup and reserve both separately
-    * Pour syrup from can into a bowl and add 3 tbsp sherry to the syrup
+    * Pour syrup from can into a bowl and add 3 Tbsp sherry to the syrup
     * Select & separate the red cherries from the fruit cocktail - reserve for decoration
 2. Cut the walnut butter cake into 1 inch thick slices
 3. Cook the Bird's Custard with UHT milk

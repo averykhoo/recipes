@@ -44,6 +44,6 @@ https://www.themediterraneandish.com/baba-ganoush-recipe/
 * A couple drops of liquid smoke rounds up the flavor, since we didn't actually bbq the eggplant.
 * Smaller eggplants have less irritating seeds, so don't go for a single gigantic 900g eggplant.
 * Oil can be replaced with plain low-fat yoghurt, if NYT is to be believed.
-  * More likely - add 1/4 cup yoghurt, reduce the oil to 1/4 cup, reduce the lemon juice to 1 tbsp.
+  * More likely - add 1/4 cup yoghurt, reduce the oil to 1/4 cup, reduce the lemon juice to 1 Tbsp.
 * Toasted pine nuts are another possible garnish.
 * Lemon juice can be partly substituted with sumac powder?

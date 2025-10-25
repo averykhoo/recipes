@@ -24,7 +24,7 @@ Sift together:
 * 2 pinches cinnamon to taste
 * 1 pinch nutmeg to taste 
 
-2. Add 5 tbsp chopped preserved ginger (from 3. Australian supermarket candied ginger) 
+2. Add 5 Tbsp chopped preserved ginger (from 3. Australian supermarket candied ginger) 
 4. Mix well. 
 5. Make into ginger snap cookie shape. 
 

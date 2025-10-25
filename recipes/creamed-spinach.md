@@ -12,8 +12,8 @@
 ## Ingredients
 
 * 1 pound / 500g baby spinach
-* 1 tbsp Butter
-* 1 tbsp Flour
+* 1 Tbsp Butter
+* 1 Tbsp Flour
 * 0.25 cups heavy cream / 0.5 cups milk or stock
 * Salt and Pepper
 * (Optional) pinch of nutmeg, chopped shallot, couple cloves of garlic

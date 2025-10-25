@@ -33,7 +33,7 @@ Pickling liquid:
 * 0.5 cup onion
 * 0.5-1 inch ginger
 * 1 tablespoon salt mixed in 2-4 cups water to form a brine
-* (optional) 1 tbsp fish sauce
+* (optional) 1 Tbsp fish sauce
 
 ## Directions
 

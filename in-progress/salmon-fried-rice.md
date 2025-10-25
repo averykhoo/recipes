@@ -4,9 +4,9 @@
 * 2 egg yolks
 * 3-5 cloves garlic, minced, crushed, or sliced, but not whole
 * 100-200g salmon
-* 1 tbsp miso
-* 1 tbsp shoyu
-* 1 tbsp mayo
+* 1 Tbsp miso
+* 1 Tbsp shoyu
+* 1 Tbsp mayo
 * 1-2 spring onions, chopped
 * handful of chives, chopped
 

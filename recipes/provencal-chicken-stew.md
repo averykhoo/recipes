@@ -7,7 +7,7 @@ https://howtofeedaloon.com/provencal-chicken-stew/
 Basically regular stew with olives and different herbs
 
 * 4 boneless chicken thighs
-* 1 tbsp herbs de provence:
+* 1 Tbsp herbs de provence:
     * traditionally rosemary, savory/thyme, oregano/marjoram
     * maybe basil/parsley, tarragon, bay leaf, fennel seed, optional lavender
 * 1 cup chicken stock

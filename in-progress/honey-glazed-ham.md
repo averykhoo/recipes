@@ -7,8 +7,8 @@
 * 1/2 cup honey
 * 1/4 cup maple syrup
 * 1/4 cup (brown) sugar
-* 2 tbsp butter
-* 1 tbsp mustard
+* 2 Tbsp butter
+* 1 Tbsp mustard
 * 2 pinches cinnamon
 * 1 pinch nutmeg
 * (optional) splash of white wine

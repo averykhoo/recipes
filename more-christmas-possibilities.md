@@ -16,8 +16,8 @@
 * mushroom duxelle en croute
   * 250-450g mushroom
   * 1/4 cup shallot
-  * 2 tbsp butter
-  * 1-2 tbsp herbs
+  * 2 Tbsp butter
+  * 1-2 Tbsp herbs
   * salt and pepper to taste
   * 1/4 cup white wine
 * roast rack of lamb

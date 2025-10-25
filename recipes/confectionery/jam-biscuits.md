@@ -23,7 +23,7 @@ Ingredients:
 * 100g fine sugar
 * 100g butter, cold and cut into cubes
 * 1 medium egg
-* 1 tbsp fresh milk or cream
+* 1 Tbsp fresh milk or cream
 * 50g raspberry jam
 * (to try out) 1 tsp vanilla, tiny pinch of cinnamon
 

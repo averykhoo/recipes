@@ -14,7 +14,7 @@ Ingredients
 * pepper
 * salt to taste
 * 1 beaten egg
-* 3 tbsp flour or almond meal
+* 3 Tbsp flour or almond meal
 * oil for frying
 
 Makes about 6 pieces

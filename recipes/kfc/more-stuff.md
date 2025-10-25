@@ -24,10 +24,10 @@ Make sure you have corn oil on hand for frying.
 **Brine:**
 
 * 4 cups of water
-* 1 tbsp white Vinegar
-* 1 tbsp table salt, non iodized
-* 1 tbsp Sugar, white
-* 1 tbsp MSG
+* 1 Tbsp white Vinegar
+* 1 Tbsp table salt, non iodized
+* 1 Tbsp Sugar, white
+* 1 Tbsp MSG
 * Cut chicken into 9 pieces, rinse and place into well mixed brine and refrigerate. After 4 hours, remove the chicken
   from brine and rinse in fresh water.
 * Add the brined chicken to egg wash.

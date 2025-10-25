@@ -7,12 +7,12 @@ see also: https://cooking.nytimes.com/recipes/1017629-chinese-smashed-cucumbers-
 * 1 shallot, finely minced
 * 2 stalks spring onion, chopped
 * 2 cloves garlic, finely minced or crushed
-* 2 tbsp shoyu
+* 2 Tbsp shoyu
 * 1/4 tsp shichimi togarashi
-* 1 tbsp rice vinegar
-* 1 tbsp sesame oil
-* 1.5 tbsp sugar
-* 1 tbsp toasted sesame seeds
+* 1 Tbsp rice vinegar
+* 1 Tbsp sesame oil
+* 1.5 Tbsp sugar
+* 1 Tbsp toasted sesame seeds
 * chopped cilantro to garnsish (optional)
 
 1. crush cucumber into 4 quarters
