@@ -1,6 +1,9 @@
-# Use the jekyll-remote-theme plugin
 plugins:
   - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jemoji
 
 # Set the remote theme to Just the Docs
 remote_theme: just-the-docs/just-the-docs
@@ -41,3 +44,21 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+# Add a floating search button on pages for easy access
+search:
+  button: true
+  # Add a keyboard shortcut (Ctrl+K or Cmd+K) to focus the search bar
+  focus_shortcut_key: "k"
+
+# Add a "Back to top" link at the bottom of long recipe pages
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Enable the copy button on code snippets (useful for ingredient lists formatted in blocks)
+enable_copy_code_button: true
+
+# Add a link to your GitHub repo in the top right corner
+aux_links:
+  "View on GitHub":
+    - "https://github.com/averykhoo/recipes" # Replace with your repo URL if different

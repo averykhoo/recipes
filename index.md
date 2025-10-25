@@ -2,7 +2,7 @@
 layout: default
 title: Home
 ---
-# 🎂📖
+# :birthday: :book:
 
 This is a collection of recipes for real, actually-edible food.
 
