@@ -136,7 +136,7 @@ if __name__ == '__main__':
             update_front_matter(
                 file_path=index_path,
                 title=_title,
-                parent=get_title(directory.parent.name),
+                parent=get_title(directory.parent.name) if directory.parent not in COLLECTION_DIRS else None,
                 has_children=True,
                 nav_order=1,
                 initial_content=f"# {_title}\n\nThis section contains recipes related to {_title}.",
