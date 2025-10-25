@@ -1,9 +1,11 @@
 # Bulgogi Beef
 
-https://www.justonecookbook.com/bulgogi-korean-grilled-beef/#wprm-recipe-container-61293
-https://www.maangchi.com/recipe/bulgogi
-https://mykoreankitchen.com/bulgogi-korean-bbq-beef/
-https://damndelicious.net/2019/04/21/korean-beef-bulgogi/
+* https://www.justonecookbook.com/bulgogi-korean-grilled-beef/#wprm-recipe-container-61293
+* https://www.maangchi.com/recipe/bulgogi
+* https://mykoreankitchen.com/bulgogi-korean-bbq-beef/
+* https://damndelicious.net/2019/04/21/korean-beef-bulgogi/
+
+ingredients:
 
 * 250g minced or sukiyaki-sliced beef, defrosted and kneaded
 * 1 pear, grated or blended
@@ -14,21 +16,20 @@ https://damndelicious.net/2019/04/21/korean-beef-bulgogi/
 * 4 Tbsp shoyu
 * 2 Tbsp sesame oil
 * 3 Tbsp brown sugar
+* 1/2 tsp liquid smoke
+* 1/2 onion, sliced pole to pole
+* 1-2 small carrots, julienned
 * 1 tsp pepper
-* (todo: try this) 1/2 tsp liquid smoke
+* toasted sesame seeds
+* (optional) spring onion, thinly sliced on a bias
 
-1. blend the marinade (optional, depending on how finely everything was cut)
-2. add to beef in a bag and massage a little
-3. chill for 2 to 24 hours
-4. cook onion and carrot in sesame oil
-5. add beef with marinade and keep cooking until dry-ish and done
-6. add sesame seeds and thinly sliced green onion, and stir it in
-7. serve with rice
+directions:
 
-serve with:
-
-* 1-2 small carrots, sliced thinly or into sticks (optionally marinated with the beef)
-* 1/2 to 1 onion, sliced paper thin, fried until translucent
-* 2 Tbsp sesame oil, to flavor plain rice
-* sesame seeds, over the rice
-* spring onion sliced on a bias, for garnish
+1. (optional, instead of cutting) blend the marinade
+2. (also optional) strain through a cloth, except for the pepper
+3. add to beef in a bag and massage a little
+4. chill for 2 to 24 hours
+5. cook onion and carrot in sesame oil
+6. add beef with marinade and keep cooking until dry-ish and done
+7. top with sesame seeds and spring onion, and stir it in
+8. serve with rice, flavored with sesame oil
