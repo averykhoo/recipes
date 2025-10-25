@@ -14,6 +14,8 @@ COLLECTION_DIRS = [
     Path('curated-untested'),
 ]
 
+# this is used to replace links to *.md with links to *.html, which is what jekyll generates
+# it's a little long so i suggest using https://www.debuggex.com to inspect the diagram
 RE_LINK = re.compile(
     r"(?<!!)(\[(?:\\[\[\]]|(?<!\\)[^[\]])*])\((((?<!<)[^)#\s]+)\.md([\s#][^)]*)?|(<[^)#>]+)\.md(\s*[#>][^)]*)?)\)",
     re.I)
@@ -57,15 +59,15 @@ def update_front_matter(file_path: Path,
     - Keys for optional arguments (parent, has_children, nav_order) are only
       added or updated if a value is provided or if has_children is True.
 
-    Args:
-        file_path (Path): The path to the markdown file.
-        title (str): The title for the front matter.
-        parent (Optional[str]): The parent page's title.
-        has_children (bool): Whether the page has child pages.
-        nav_order (Optional[int]): The navigation order.
-        initial_content (str): New file content
-        setdefault_layout (str): The default layout to set if none exists.
+    :param file_path: The path to the markdown file.
+    :param title: The title for the front matter.
+    :param parent: The parent page's title.
+    :param has_children: Whether the page has child pages.
+    :param nav_order: The navigation order.
+    :param initial_content: New file content
+    :param setdefault_layout: The default layout to set if none exists.
     """
+
     # 1. Ensure parent directories exist
     file_path.parent.mkdir(parents=True, exist_ok=True)
 

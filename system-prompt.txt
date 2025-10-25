@@ -167,6 +167,7 @@ Your goal is to develop a robust mental model of this repository based *only* on
 │   ├── miso-soup.md
 │   ├── moussaka.md
 │   ├── moyashi.md
+│   ├── ohitashi.md
 │   ├── palak-paneer.md
 │   ├── pasta
 │   │   ├── amatriciana.md
@@ -816,10 +817,10 @@ This is what you need (30–40 meatballs, serves 4):
 * 250 g minced pork
 * 1 egg
 * 200–300 ml cream (or milk) and water
-* 2.5 tbsp fine chopped onion
+* 2.5 Tbsp fine chopped onion
 * 50 ml unsweetened rusk flour
 * 2 boiled potatoes, cold
-* 4–5 tbsp butter, margarine or oil
+* 4–5 Tbsp butter, margarine or oil
 * salt
 * white pepper
 * (allspice)
@@ -840,7 +841,7 @@ This is what you need (cream sauce, serves 4):
 * soy
 * salt
 * white pepper
-* (1 tbsp white flour)
+* (1 Tbsp white flour)
 
 This is how you do it:
 
@@ -2280,8 +2281,8 @@ Brownie:
 * ==========================
 * 1.75 cups (350g) light brown sugar
 * 0.5 tsp salt
-* 1 tsp instant coffee powder (not 3-in-1 or 2-in-1) (or 2 tbsp = 1 shot espresso)
-* 1 tbsp Horlicks powder
+* 1 tsp instant coffee powder (not 3-in-1 or 2-in-1) (or 2 Tbsp = 1 shot espresso)
+* 1 Tbsp Horlicks powder
 * 1 cup (120g) cake flour (or plain)
 * 3 large (60g) eggs + 2 yolks (remaining 2 whites optionally used below)
 * 0.5 tsp vanilla essence (up to 1 tsp)
@@ -2379,8 +2380,8 @@ To serve:
 * 250g thinly sliced beef, like for sukiyaki
 * 150g enoki, bottom trimmed and washed
 * 1/2 cup stock 
-* 1 tbsp of shoyu
-* 1 tbsp of mirin
+* 1 Tbsp of shoyu
+* 1 Tbsp of mirin
 * 2 tsp sesame oil
 * ponzu to serve
 
@@ -2412,7 +2413,7 @@ https://www.bbcgoodfood.com/recipes/cauliflower-cheese-0
 * 1/4 cup flour
 * 2 cups / 500ml milk
 * 100g strong cheddar, grated
-* 2-3 tbsp breadcrumbs (optional)
+* 2-3 Tbsp breadcrumbs (optional)
 
 1. boil cauliflower until soft, about 5 minutes
 2. drain, break into smaller chunks, and place in baking dish
@@ -2799,7 +2800,7 @@ Not sure where this recipe originated from
 * 1/8 tsp sugar
 * 1/2 tsp paprika
 * a pinch of turmeric for color
-* 2-2.5 tbsp lemon juice
+* 2-2.5 Tbsp lemon juice
 * 200g butter (up to 100g more at the end, depending on consistency)
 * (optional) a pinch each of onion and garlic powder
 * (if it's to be served on fish) maybe some grated parmesan
@@ -2822,8 +2823,8 @@ Not sure where this recipe originated from
 * 1/2 cup honey
 * 1/4 cup maple syrup
 * 1/4 cup (brown) sugar
-* 2 tbsp butter
-* 1 tbsp mustard
+* 2 Tbsp butter
+* 1 Tbsp mustard
 * 2 pinches cinnamon
 * 1 pinch nutmeg
 * (optional) splash of white wine
@@ -2873,11 +2874,11 @@ served with fois gras on toast
 see also: https://www.youtube.com/watch?v=rzL07v6w8AA
 
 * 4 biggish onions, sliced pole to pole
-* 1 tbsp oil
-* 1 tbsp butter
+* 1 Tbsp oil
+* 1 Tbsp butter
 * 1 tsp salt
 * some water, optional
-* 1 tbsp flour
+* 1 Tbsp flour
 * 4-8 cups water or stock
 * bay
 * thyme
@@ -2947,7 +2948,7 @@ PREPARATION
 > Gonzalo
 > (2 years ago)
 > 1 Tbsp of Sherry is a very small amount, it won't add any significant flavour. Also, if Sherry boils for a long time, it
-> completely loses its aroma. I suggest adding 2 tbsp on each individual soup dish just before broiling (that's the way
+> completely loses its aroma. I suggest adding 2 Tbsp on each individual soup dish just before broiling (that's the way
 > people have fancy consomme in Madrid).
 ````
 --- End of File: in-progress/onion-soup.md ---
@@ -3170,11 +3171,11 @@ Editorial contributions by Corey Williams
 * mummy's recipe has
     * 1/4 cup water
     * 1/4 cup brown sugar
-    * 2 tbsp ketchup
-    * 2 tbsp shoyu
+    * 2 Tbsp ketchup
+    * 2 Tbsp shoyu
     * 1 tsp (coarse) mustard
     * 1 can pineapple rings, blended, including the water
-    * 1 tbsp cornstarch, mixed into additional 1/4 cup water
+    * 1 Tbsp cornstarch, mixed into additional 1/4 cup water
 
 1. mix
 2. boil, then simmer with lid for 10 mins
@@ -3302,7 +3303,7 @@ Notes:
 * Fillet of fish
 * 1/4 onion, handful cherry tomato, sprig of basil, 1/4 tsp ginger powder, no salt
 * Preheat then steam at water mark 3 at 150c for 7-10 mins
-* Heat 1-2 tbsp sesame oil in a pan until really hot then pour over
+* Heat 1-2 Tbsp sesame oil in a pan until really hot then pour over
 * Pour over some shoyu
 * Serve with steamed rice
 
@@ -3426,9 +3427,9 @@ Instructions:
 * 2 egg yolks
 * 3-5 cloves garlic, minced, crushed, or sliced, but not whole
 * 100-200g salmon
-* 1 tbsp miso
-* 1 tbsp shoyu
-* 1 tbsp mayo
+* 1 Tbsp miso
+* 1 Tbsp shoyu
+* 1 Tbsp mayo
 * 1-2 spring onions, chopped
 * handful of chives, chopped
 
@@ -4004,8 +4005,8 @@ sauce:
 * mushroom duxelle en croute
   * 250-450g mushroom
   * 1/4 cup shallot
-  * 2 tbsp butter
-  * 1-2 tbsp herbs
+  * 2 Tbsp butter
+  * 1-2 Tbsp herbs
   * salt and pepper to taste
   * 1/4 cup white wine
 * roast rack of lamb
@@ -4101,7 +4102,7 @@ https://www.themediterraneandish.com/baba-ganoush-recipe/
 * A couple drops of liquid smoke rounds up the flavor, since we didn't actually bbq the eggplant.
 * Smaller eggplants have less irritating seeds, so don't go for a single gigantic 900g eggplant.
 * Oil can be replaced with plain low-fat yoghurt, if NYT is to be believed.
-  * More likely - add 1/4 cup yoghurt, reduce the oil to 1/4 cup, reduce the lemon juice to 1 tbsp.
+  * More likely - add 1/4 cup yoghurt, reduce the oil to 1/4 cup, reduce the lemon juice to 1 Tbsp.
 * Toasted pine nuts are another possible garnish.
 * Lemon juice can be partly substituted with sumac powder?
 
@@ -4118,8 +4119,8 @@ https://www.seriouseats.com/savory-cheese-souffle
 https://www.youtube.com/watch?v=7AAx0uIuoBQ&t=7s
 https://www.pastagrammar.com/post/basic-besciamella-sauce
 
-* 1 heaped tbsp (20g) butter
-* 2 heaped tbsp (20g) flour
+* 1 heaped Tbsp (20g) butter
+* 2 heaped Tbsp (20g) flour
 * 1 cup milk
 * pinch or two of salt
 * pepper
@@ -4150,7 +4151,7 @@ notes:
 
 * 200g frozen fatty sliced beef meant for yakiniku (about 9 slices)
 * 1 tsp pepper
-* 1 tbsp plain flour
+* 1 Tbsp plain flour
 * 1 tsp shoyu
 * 2 tsp mirin
 * 2 tsp red wine
@@ -4185,13 +4186,13 @@ Instructions:
 ## Ingredients
 
 * 1 lb bacon, chopped
-* 2 tbsp butter or bacon fat
+* 2 Tbsp butter or bacon fat
 * 2 medium yellow onions, diced
 * Pepper, to taste
 * 1 tsp smoked paprika
 * Dash of cayenne, optional
 * 8 cloves garlic, minced
-* 3 tbsp flour
+* 3 Tbsp flour
 * 2 cups chicken broth (add more if needed, if cooking uncovered)
 * 2 heads of broccoli, chopped and rinsed
 * 2-3 carrots, shredded or grated
@@ -4234,11 +4235,11 @@ https://damndelicious.net/2019/04/21/korean-beef-bulgogi/
 * 1 pear, grated or blended
 * 8 cloves minced/blended/pressed garlic
 * 2-3 shallots or 1/2 onion, finely diced or blended
-* 1/2 to 1 tbsp grated ginger (about 1.5cm)
-* 1 tbsp miso
-* 4 tbsp shoyu
-* 2 tbsp sesame oil
-* 3 tbsp brown sugar
+* 1/2 to 1 Tbsp grated ginger (about 1.5cm)
+* 1 Tbsp miso
+* 4 Tbsp shoyu
+* 2 Tbsp sesame oil
+* 3 Tbsp brown sugar
 * 1 tsp pepper
 * (todo: try this) 1/2 tsp liquid smoke
 
@@ -4254,7 +4255,7 @@ serve with:
 
 * 1-2 small carrots, sliced thinly or into sticks (optionally marinated with the beef)
 * 1/2 to 1 onion, sliced paper thin, fried until translucent
-* 2 tbsp sesame oil, to flavor plain rice
+* 2 Tbsp sesame oil, to flavor plain rice
 * sesame seeds, over the rice
 * spring onion sliced on a bias, for garnish
 ````
@@ -4375,7 +4376,7 @@ Solubility of CO2 in pure water at different temperatures ([source](https://www.
 
 2. Fry over high heat until mushrooms brown and onions are translucent
 
-* 1-2 tbsp white wine
+* 1-2 Tbsp white wine
 * 1 cup heavy whipping cream
 * 1 tsp salt
 * 1/2 tsp pepper
@@ -4433,12 +4434,12 @@ see also: https://cooking.nytimes.com/recipes/1017629-chinese-smashed-cucumbers-
 * 1 shallot, finely minced
 * 2 stalks spring onion, chopped
 * 2 cloves garlic, finely minced or crushed
-* 2 tbsp shoyu
+* 2 Tbsp shoyu
 * 1/4 tsp shichimi togarashi
-* 1 tbsp rice vinegar
-* 1 tbsp sesame oil
-* 1.5 tbsp sugar
-* 1 tbsp toasted sesame seeds
+* 1 Tbsp rice vinegar
+* 1 Tbsp sesame oil
+* 1.5 Tbsp sugar
+* 1 Tbsp toasted sesame seeds
 * chopped cilantro to garnsish (optional)
 
 1. crush cucumber into 4 quarters
@@ -4459,7 +4460,7 @@ see also: https://cooking.nytimes.com/recipes/1017629-chinese-smashed-cucumbers-
 https://www.allrecipes.com/recipe/247089/vanilla-chantilly-cream/
 
 * 1 cup cream, cold but not frozen
-* 2 tbsp confectioners / icing sugar - the tiny bit of starch in there helps to stabilize the whipped cream
+* 2 Tbsp confectioners / icing sugar - the tiny bit of starch in there helps to stabilize the whipped cream
 * 1/2 tsp vanilla essence
 * (optional) seeds from 1/2 pod vanilla
 * if using a metal mixing bowl (or anything with high heat capacity), chill the bowl first
@@ -4469,7 +4470,7 @@ For stabilizing:
 https://veenaazmanov.com/stabilize-whipped-cream-5-different-methods/
 
 * 1/2 tsp gelatin powder
-* 1 tbsp cold water
+* 1 Tbsp cold water
 
 1. allow to bloom in cold water to avoid grainy bits
 2. microwave for a short while until just transparent, not too long or the gelatin won't gel
@@ -4669,7 +4670,7 @@ MORE TOPPING
 * 0.5 cup water (120 ml)
 * (erin's mile-high) zest of 1/2 lemon
 * (erin's mile-high) zest of 1/2 orange / 0.5tsp orange extract (zest as finely as possible)
-* (erin's mile-high) 1 tbsp grand marnier
+* (erin's mile-high) 1 Tbsp grand marnier
 
 SPECIAL EQUIPMENT NEEDED
 
@@ -4889,7 +4890,7 @@ Sift together:
 * 2 pinches cinnamon to taste
 * 1 pinch nutmeg to taste 
 
-2. Add 5 tbsp chopped preserved ginger (from 3. Australian supermarket candied ginger) 
+2. Add 5 Tbsp chopped preserved ginger (from 3. Australian supermarket candied ginger) 
 4. Mix well. 
 5. Make into ginger snap cookie shape. 
 
@@ -4924,7 +4925,7 @@ Ingredients:
 * 100g fine sugar
 * 100g butter, cold and cut into cubes
 * 1 medium egg
-* 1 tbsp fresh milk or cream
+* 1 Tbsp fresh milk or cream
 * 50g raspberry jam
 * (to try out) 1 tsp vanilla, tiny pinch of cinnamon
 
@@ -4985,7 +4986,7 @@ turns out it might be better thinner, so maybe use a size up
 
 * 40g butter
 * 50g chocolate chips
-* (todo: use this to dry it out a little) 2 tbsp cocoa powder
+* (todo: use this to dry it out a little) 2 Tbsp cocoa powder
 * 50g sugar (reduced from 80g)
 * 1/8 tsp (or one pinch) of salt
 * 1/4 tsp vanilla extract
@@ -5026,7 +5027,7 @@ turns out it might be better thinner, so maybe use a size up
 Ingredients
 
 * 1 can fruit cocktail (with peaches, not pineapple)
-* 3 tbsp sherry
+* 3 Tbsp sherry
 * 1 walnut butter cake
 * [Bird's Custard](https://en.wikipedia.org/wiki/Bird's_Custard) powder
 * UHT milk
@@ -5037,7 +5038,7 @@ Method
 
 1. 1 can fruit cocktail:
     * Separate fruit from syrup and reserve both separately
-    * Pour syrup from can into a bowl and add 3 tbsp sherry to the syrup
+    * Pour syrup from can into a bowl and add 3 Tbsp sherry to the syrup
     * Select & separate the red cherries from the fruit cocktail - reserve for decoration
 2. Cut the walnut butter cake into 1 inch thick slices
 3. Cook the Bird's Custard with UHT milk
@@ -5262,8 +5263,8 @@ Notes:
 ## Ingredients
 
 * 1 pound / 500g baby spinach
-* 1 tbsp Butter
-* 1 tbsp Flour
+* 1 Tbsp Butter
+* 1 Tbsp Flour
 * 0.25 cups heavy cream / 0.5 cups milk or stock
 * Salt and Pepper
 * (Optional) pinch of nutmeg, chopped shallot, couple cloves of garlic
@@ -5396,7 +5397,7 @@ Directions
 
 Notes
 
-* Total about 5-6 tbsp herbs is the right proportion
+* Total about 5-6 Tbsp herbs is the right proportion
 * Garlic increased from 12 to 20, since Italians' garlic tolerance is weak
 * Parmesan separate to make this more shelf-stable
 * 3 tsp salt is too much salt
@@ -5443,7 +5444,7 @@ https://www.reddit.com/r/GrandTourTopgearFans/comments/kdzrma/oh_cook_i_made_jam
 * White wine
 * 1 medium onion, diced
 * 1 leek, thinly sliced
-* 1 tbsp flour
+* 1 Tbsp flour
 * Parsley / dill
 * Optional peas, boiled
 * Salt and pepper
@@ -5804,10 +5805,10 @@ Make sure you have corn oil on hand for frying.
 **Brine:**
 
 * 4 cups of water
-* 1 tbsp white Vinegar
-* 1 tbsp table salt, non iodized
-* 1 tbsp Sugar, white
-* 1 tbsp MSG
+* 1 Tbsp white Vinegar
+* 1 Tbsp table salt, non iodized
+* 1 Tbsp Sugar, white
+* 1 Tbsp MSG
 * Cut chicken into 9 pieces, rinse and place into well mixed brine and refrigerate. After 4 hours, remove the chicken
   from brine and rinse in fresh water.
 * Add the brined chicken to egg wash.
@@ -5977,7 +5978,7 @@ Ingredients
 * pepper
 * salt to taste
 * 1 beaten egg
-* 3 tbsp flour or almond meal
+* 3 Tbsp flour or almond meal
 * oil for frying
 
 Makes about 6 pieces
@@ -6081,14 +6082,14 @@ How to make it
 ````markdown
 # Potage Parmentier (Leek & Potato Soup)
 
-* 1-2 tbsp butter
+* 1-2 Tbsp butter
 * 300g thinly sliced leeks (about 2 leeks)
 * 3 cloves garlic, sliced or minced
 * 300g potatoes, peeled and diced (about 3 potatoes)
 * 2-3 cups light chicken stock, veg broth, or water
 * salt and pepper to taste (probably about 1 tsp each)
-* 2 tbsp white wine
-* 1 tbsp butter to finish
+* 2 Tbsp white wine
+* 1 Tbsp butter to finish
 * chives or dill and cream to garnish
 
 1. fry the leek and garlic in butter until softened, about 5 mins.
@@ -6116,8 +6117,8 @@ Notes:
 Ingredients:
 
 * 4-6 cups (1-1.5 liters) dashi (either kombu or bonito is fine)
-* 1-2 tbsp mirin or ryorishu (optional)
-* 4-6 tbsp miso paste
+* 1-2 Tbsp mirin or ryorishu (optional)
+* 4-6 Tbsp miso paste
 * 100-200g silken (kinugoshi) tofu, cut into 1/2 inch (~1.5 cm) cubes
 * 1-2 tsp dried wakame
 * 1 spring onion, sliced thinly
@@ -6207,6 +6208,35 @@ Instructions:
 
 ````
 --- End of File: recipes/moyashi.md ---
+--- File: recipes/ohitashi.md ---
+````markdown
+# Ohitashi (Japanese Marinated Spinach Salad)
+
+* https://www.justonecookbook.com/spinach-ohitashi-japanese-spinach-salad-with-bonito-flakes/#recipe
+* https://www.seriouseats.com/ohitashi-japanese-blanched-greens-dashi-recipe
+
+serves 4
+
+instructions:
+
+* 600g spinach, washed and stems discarded
+* 1 tsp sesame oil
+* 3 Tbsp (reduced salt) shoyu
+* 2 Tbsp mirin
+* 1/4 cup Tbsp kombu dashi
+* 1 tsp toasted sesame seeds
+* optional katsuobushi
+
+directions:
+
+1. boil spinach, then strain and allow to cool
+2. wring out all the water using a cloth bag or towel - make sure it's really quite dry
+3. slice into about 2 inch lengths
+4. put in a container and marinate, covered, in the fridge
+5. serve cold
+
+````
+--- End of File: recipes/ohitashi.md ---
 --- File: recipes/palak-paneer.md ---
 ````markdown
 # Palak Paneer / Saag Paneer
@@ -6510,7 +6540,7 @@ and pepper is important too
 * 100-200g chicken livers, blended into a liquid paste
 * herbs & spices (oregano, fresh rosemary, parsley, bay, pepper, nutmeg, ...?)
 * 1 tsp worcestershire sauce, of half the amount of fish sauce
-* (as necessary) 1 tbsp tomato paste
+* (as necessary) 1 Tbsp tomato paste
 * 1/4 to 1 cup wine
 * optional:
     * up to 1/2 cup milk, pinch of nutmeg
@@ -6646,8 +6676,8 @@ https://annieliciousfood.blogspot.com/2012/09/pig-trotters-bee-hoon.html
 * 130g dried bee hoon, soaked for about 20 mins
 * 1 can pork trotters, 2 would be better
 * about 1 pork trotter can full of water (used to soak mushrooms), which is a good way to wash in the last bits of pork
-* 1 tbsp shoyu
-* 1 tbsp dark soy sauce
+* 1 Tbsp shoyu
+* 1 Tbsp dark soy sauce
 * 1-2 stalks spring onion, sliced thin
 
 1. Pre-soak the bee hoon and mushrooms.
@@ -6705,7 +6735,7 @@ https://howtofeedaloon.com/provencal-chicken-stew/
 Basically regular stew with olives and different herbs
 
 * 4 boneless chicken thighs
-* 1 tbsp herbs de provence:
+* 1 Tbsp herbs de provence:
     * traditionally rosemary, savory/thyme, oregano/marjoram
     * maybe basil/parsley, tarragon, bay leaf, fennel seed, optional lavender
 * 1 cup chicken stock
@@ -6756,7 +6786,7 @@ PREPARATION
 * 1/4 cup shoyu
 * 1/4 cup mirin
 * 1/4 cup sake (optionally less or none, to taste)
-* 2 tbsp sugar
+* 2 Tbsp sugar
 * 1/4 - 1/2 cup dashi or water
 
 1. Boil eggs until just about done, about 7 minutes, starting in boiling water
@@ -6770,7 +6800,7 @@ PREPARATION
 
 Notes:
 
-* Optionally add 1 tbsp of vinegar into the water when boiling the eggs for easier peeling
+* Optionally add 1 Tbsp of vinegar into the water when boiling the eggs for easier peeling
 * Add a teaspoon of dark soy sauce for darker colored eggs
 
 ````
@@ -6781,11 +6811,11 @@ Notes:
 
 https://www.themediterraneandish.com/roast-lamb-rack-recipe/
 
-* 3 tbsp dry rosemary
-* 1 tbsp oregano
-* 1 tbsp thyme
+* 3 Tbsp dry rosemary
+* 1 Tbsp oregano
+* 1 Tbsp thyme
 * 1 tsp paprika
-* 1 tsp salt (can try up to 1 tbsp, it wasn't salty enough)
+* 1 tsp salt (can try up to 1 Tbsp, it wasn't salty enough)
 * 1 tsp pepper
 * 20-30 cloves raw garlic
 * about 1/2 cup olive oil
@@ -6899,7 +6929,7 @@ Pickling liquid:
 * 0.5 cup onion
 * 0.5-1 inch ginger
 * 1 tablespoon salt mixed in 2-4 cups water to form a brine
-* (optional) 1 tbsp fish sauce
+* (optional) 1 Tbsp fish sauce
 
 ## Directions
 
@@ -6942,6 +6972,8 @@ COLLECTION_DIRS = [
     Path('curated-untested'),
 ]
 
+# this is used to replace links to *.md with links to *.html, which is what jekyll generates
+# it's a little long so i suggest using https://www.debuggex.com to inspect the diagram
 RE_LINK = re.compile(
     r"(?<!!)(\[(?:\\[\[\]]|(?<!\\)[^[\]])*])\((((?<!<)[^)#\s]+)\.md([\s#][^)]*)?|(<[^)#>]+)\.md(\s*[#>][^)]*)?)\)",
     re.I)
@@ -6985,15 +7017,15 @@ def update_front_matter(file_path: Path,
     - Keys for optional arguments (parent, has_children, nav_order) are only
       added or updated if a value is provided or if has_children is True.
 
-    Args:
-        file_path (Path): The path to the markdown file.
-        title (str): The title for the front matter.
-        parent (Optional[str]): The parent page's title.
-        has_children (bool): Whether the page has child pages.
-        nav_order (Optional[int]): The navigation order.
-        initial_content (str): New file content
-        setdefault_layout (str): The default layout to set if none exists.
+    :param file_path: The path to the markdown file.
+    :param title: The title for the front matter.
+    :param parent: The parent page's title.
+    :param has_children: Whether the page has child pages.
+    :param nav_order: The navigation order.
+    :param initial_content: New file content
+    :param setdefault_layout: The default layout to set if none exists.
     """
+
     # 1. Ensure parent directories exist
     file_path.parent.mkdir(parents=True, exist_ok=True)
 
@@ -7064,7 +7096,7 @@ if __name__ == '__main__':
             update_front_matter(
                 file_path=index_path,
                 title=_title,
-                parent=get_title(directory.parent.name),
+                parent=get_title(directory.parent.name) if directory.parent not in COLLECTION_DIRS else None,
                 has_children=True,
                 nav_order=1,
                 initial_content=f"# {_title}\n\nThis section contains recipes related to {_title}.",
@@ -7387,12 +7419,12 @@ if __name__ == '__main__':
 
 * how to display comments (e.g. chocolate chip cookies)
 * how to format weights alongside measures
-* basic conversions chart (1 cup = 16 tbsp = 48 tsp = 240ml)
+* basic conversions chart (1 cup = 16 Tbsp = 48 tsp = 240ml)
 * common ingredient density chart (fine / granulated sugar: 1 cup = 200g)
 * how to break a recipe down into sections / submodules
 * standardized recipe format?
     * good way to specify of ingredient weights and measures - table?
-    * needs to accommodate fuzzy measures - e.g. 1-2 tbsp, a handful of something, knob of butter, ...
+    * needs to accommodate fuzzy measures - e.g. 1-2 Tbsp, a handful of something, knob of butter, ...
     * should the title be titlecase? how about the ingredients and instructions?
     * how many portions output
 * should be possible to generate a shopping list from recipes and optional scaling
