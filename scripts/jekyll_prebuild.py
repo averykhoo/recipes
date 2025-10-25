@@ -108,7 +108,7 @@ if __name__ == '__main__':
     # 1. Clean up unwanted Markdown files to avoid building them into the site
     print("--- Cleaning up unwanted markdown files ---")
 
-    for md_file in Path('.').glob('**/*.md', case_sensitive=False):
+    for md_file in Path('.').glob('**/*.[mM][dD]'):
         # Keep the root index.md
         if md_file.resolve() == Path('index.md').resolve():
             continue
@@ -146,7 +146,7 @@ if __name__ == '__main__':
     # 3. Process all individual recipe files
     print("\n--- Generating front matter for recipe files ---")
     for collection_dir in COLLECTION_DIRS:
-        for md_file in collection_dir.glob('**/*.md', case_sensitive=False):
+        for md_file in collection_dir.glob('**/*.[mM][dD]'):
             # Skip the index files we just created/verified
             if md_file.name == 'index.md':
                 continue
@@ -164,7 +164,7 @@ if __name__ == '__main__':
     # It is case-insensitive and handles anchors correctly.
 
     print("\n--- Fixing internal markdown links ---")
-    all_md_files = [_md for _dir in COLLECTION_DIRS for _md in _dir.glob('**/*.md', case_sensitive=False)]
+    all_md_files = [_md for _dir in COLLECTION_DIRS for _md in _dir.glob('**/*.[mM][dD]')]
     for md_file in all_md_files:
         try:
             content = md_file.read_text(encoding='utf-8')
