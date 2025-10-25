@@ -14,6 +14,11 @@ COLLECTION_DIRS = [
     Path('curated-untested'),
 ]
 
+RE_LINK = re.compile(
+    r"(?<!!)(\[(?:\\[\[\]]|(?<!\\)[^[\]])*])\((((?<!<)[^)#\s]+)\.md([\s#][^)]*)?|(<[^)#>]+)\.md(\s*[#>][^)]*)?)\)",
+    re.I)
+RE_LINK_SUB = r'\1(\3\5.html\4\6)'
+
 
 # --- Helper Functions ---
 
@@ -157,7 +162,6 @@ if __name__ == '__main__':
 
     # Regex to find .md links, capturing the part before the extension.
     # It is case-insensitive and handles anchors correctly.
-    link_pattern = re.compile(r"(\([^()#\s]*?)\.md\b", re.IGNORECASE)
 
     print("\n--- Fixing internal markdown links ---")
     all_md_files = [_md for _dir in COLLECTION_DIRS for _md in _dir.glob('**/*.md', case_sensitive=False)]
@@ -166,7 +170,7 @@ if __name__ == '__main__':
             content = md_file.read_text(encoding='utf-8')
 
             # Replace the matched .md extension with .html, preserving the captured path.
-            new_content, num_replacements = link_pattern.subn(r"\1.html", content)
+            new_content, num_replacements = RE_LINK.subn(RE_LINK_SUB, content)
 
             # Only write to the file if a change was actually made.
             if num_replacements > 0:
