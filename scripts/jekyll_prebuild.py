@@ -98,7 +98,7 @@ def update_front_matter(file_path: Path,
         post.content = initial_content
 
     # 4. Write the updated post (front matter + content) back to the file
-    with open(file_path, 'w', encoding='utf-8') as f:
+    with open(file_path, 'wb') as f:
         frontmatter.dump(post, f)
 
 
