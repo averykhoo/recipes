@@ -186,8 +186,10 @@ Your goal is to develop a robust mental model of this repository based *only* on
 │   ├── smashed-brussels-sprouts.md
 │   ├── tzatziki.md
 │   └── white-kimchi.md
+├── requirements.txt
 ├── scripts
-│   └── jekyll_prebuild.py
+│   ├── jekyll_prebuild.py
+│   └── test_markdown_link_regex_pattern.py
 └── system-prompt.txt
 ````
 
@@ -228,7 +230,9 @@ jobs:
 
       - name: Run Jekyll Pre-build Script
         # This single script handles cleanup, front matter, and link fixing.
-        run: python scripts/jekyll_prebuild.py
+        run: |
+          pip install -r requirements.txt
+          python scripts/jekyll_prebuild.py
 
       - name: Rename folders for Jekyll Collections
         run: |
@@ -400,9 +404,12 @@ dmypy.json
 --- End of File: .gitignore ---
 --- File: _config.yml ---
 ````yaml
-# Use the jekyll-remote-theme plugin
 plugins:
   - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jemoji
 
 # Set the remote theme to Just the Docs
 remote_theme: just-the-docs/just-the-docs
@@ -443,6 +450,24 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+# Add a floating search button on pages for easy access
+search:
+  button: true
+  # Add a keyboard shortcut (Ctrl+K or Cmd+K) to focus the search bar
+  focus_shortcut_key: "k"
+
+# Add a "Back to top" link at the bottom of long recipe pages
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Enable the copy button on code snippets (useful for ingredient lists formatted in blocks)
+enable_copy_code_button: true
+
+# Add a link to your GitHub repo in the top right corner
+aux_links:
+  "View on GitHub":
+    - "https://github.com/averykhoo/recipes" # Replace with your repo URL if different
 ````
 --- End of File: _config.yml ---
 --- File: curated-untested/cheese-sauce.md ---
@@ -3561,8 +3586,8 @@ title: Home
 
 This is a collection of recipes for real, actually-edible food.
 
-Use the navigation sidebar on the left to browse through the different recipe categories. 
-You can also use the search bar at the top of the page to find a specific recipe.
+Use the navigation bar to leaf through the recipes.
+Or use `Ctrl + K`/`Cmd + K` or the floating :mag: button at the bottom of the page to find a specific ingredient or recipe.
 ````
 --- End of File: index.md ---
 --- File: menus/2022-12-17-dinner.md ---
@@ -6892,17 +6917,35 @@ Pickling liquid:
 
 ````
 --- End of File: recipes/white-kimchi.md ---
+--- File: requirements.txt ---
+````
+python-frontmatter
+pathspec
+
+````
+--- End of File: requirements.txt ---
 --- File: scripts/jekyll_prebuild.py ---
 ````python
 import re
 from pathlib import Path
+from typing import Optional
+
+import frontmatter
 
 # --- Configuration ---
-ROOT_DIRS = [
+
+# these are the collections to be published in the Jekyll site
+# all other folders (and any md files not in folders) will not be published, except for the main index.md
+COLLECTION_DIRS = [
     Path('recipes'),
     Path('in-progress'),
     Path('curated-untested'),
 ]
+
+RE_LINK = re.compile(
+    r"(?<!!)(\[(?:\\[\[\]]|(?<!\\)[^[\]])*])\((((?<!<)[^)#\s]+)\.md([\s#][^)]*)?|(<[^)#>]+)\.md(\s*[#>][^)]*)?)\)",
+    re.I)
+RE_LINK_SUB = r'\1(\3\5.html\4\6)'
 
 
 # --- Helper Functions ---
@@ -6915,124 +6958,270 @@ def get_title(dir_name: str) -> str:
     :return:
     """
     # replace hyphens and underscores with spaces, then title case
-    _default = re.sub(r'[ _-]+', ' ', dir_name).strip().title()
+    title = re.sub(r'[\s_-]+', ' ', dir_name).strip().title()
 
     # these are the special cases
-    _title_map = {
+    special_cases = {
         'curated-untested': 'Curated & Untested',
         'kfc': 'KFC',
     }
-    return _title_map.get(dir_name, _default)
+    return special_cases.get(dir_name, title)
 
 
-def generate_front_matter_str(title: str,
-                              parent: str | None = None,
-                              has_children: bool = False,
-                              nav_order: int | None = None,
-                              ) -> str:
+def update_front_matter(file_path: Path,
+                        title: str,
+                        parent: str | None = None,
+                        has_children: bool = False,
+                        nav_order: int | None = None,
+                        initial_content: str | None = None,
+                        setdefault_layout: str = "default",
+                        ) -> None:
     """
-    Generates a complete front matter block as a string using f-strings.
+    Reads a file, updates its YAML front matter, and writes it back.
 
-    :param title:
-    :param parent:
-    :param has_children:
-    :param nav_order:
-    :return:
+    - If the file or its parent directories do not exist, they will be created.
+    - If the file has no front matter, it will be added.
+    - Existing front matter keys will be updated with the provided values.
+    - Keys for optional arguments (parent, has_children, nav_order) are only
+      added or updated if a value is provided or if has_children is True.
+
+    Args:
+        file_path (Path): The path to the markdown file.
+        title (str): The title for the front matter.
+        parent (Optional[str]): The parent page's title.
+        has_children (bool): Whether the page has child pages.
+        nav_order (Optional[int]): The navigation order.
+        initial_content (str): New file content
+        setdefault_layout (str): The default layout to set if none exists.
     """
-    lines = [
-        "---",
-        "layout: default",
-        f"title: {title}"
-    ]
+    # 1. Ensure parent directories exist
+    file_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # 2. Read the existing file and its front matter
+    try:
+        post = frontmatter.load(str(file_path.resolve()))
+        if post.content.rstrip('\r\n'):
+            initial_content = None
+    except FileNotFoundError:  # frontmatter.YAMLParseError:
+        post = frontmatter.Post(content='')  # If file doesn't exist, start fresh
+
+    # 3. Update the front matter with new or corrected info
+    post.metadata.setdefault('layout', setdefault_layout)
+    post.metadata['title'] = title
     if parent:
-        lines.append(f"parent: {parent}")
+        post.metadata['parent'] = parent
+
+    # In "Just the Docs", has_children is usually only present if true
     if has_children:
-        lines.append("has_children: true")
+        post.metadata['has_children'] = True
+    elif 'has_children' in post.metadata:
+        del post.metadata['has_children']  # Clean up if not needed
+
     if nav_order is not None:
-        lines.append(f"nav_order: {nav_order}")
-    lines.append("---")
-    return "\n".join(lines) + "\n\n"
+        post.metadata['nav_order'] = nav_order
+
+    # If the file was newly created, add the initial content
+    if initial_content:
+        post.content = initial_content
+
+    # 4. Write the updated post (front matter + content) back to the file
+    with open(file_path, 'wb') as f:
+        frontmatter.dump(post, f)
 
 
 # --- Main Script Logic ---
 
-# 1. Clean up unwanted Markdown files
-print("--- Cleaning up unwanted markdown files ---")
+if __name__ == '__main__':
 
-for md_file in Path('.').glob('**/*.md'):
-    # Keep the root index.md
-    if md_file.resolve() == Path('index.md').resolve():
-        continue
+    # 1. Clean up unwanted Markdown files to avoid building them into the site
+    print("--- Cleaning up unwanted markdown files ---")
 
-    # Keep any file that is within one of the ROOT_DIRS
-    is_in_root_dirs = any(root_dir.resolve() in md_file.resolve().parents for root_dir in ROOT_DIRS)
-    if not is_in_root_dirs:
-        print(f"Deleting unwanted file: {md_file}")
-        md_file.unlink()
-
-# 2. Create parent index.md pages for navigation
-print("\n--- Generating parent index.md pages ---")
-for root_dir in ROOT_DIRS:
-    for directory in root_dir.rglob('**/'):
-        if not directory.is_dir(): continue
-
-        if directory in ROOT_DIRS:
-            print(f"Skipping index.md for top-level collection folder: {directory}")
+    for md_file in Path('.').glob('**/*.[mM][dD]'):
+        # Keep the root index.md
+        if md_file.resolve() == Path('index.md').resolve():
             continue
 
-        index_path = directory / 'index.md'
-        if index_path.exists():
-            continue
+        # Keep any file that is within one of the ROOT_DIRS, remove the rest
+        is_in_root_dirs = any(root_dir.resolve() in md_file.resolve().parents for root_dir in COLLECTION_DIRS)
+        if not is_in_root_dirs:
+            print(f"Deactivating file by renaming: {md_file}")
+            md_file.rename(md_file.with_suffix('.deactivated_md.txt'))
 
-        title = get_title(directory.name)
-        parent = get_title(directory.parent.name) if directory.parent != Path('.') else None
+    # 2. Create parent index.md pages for navigation
+    print("\n--- Generating parent index.md pages ---")
+    for collection_dir in COLLECTION_DIRS:
+        for directory in collection_dir.glob('**/'):
+            if not directory.is_dir():
+                continue
 
-        front_matter = generate_front_matter_str(title=title, parent=parent, has_children=True, nav_order=1)
+            if directory in COLLECTION_DIRS:
+                print(f"Skipping index.md for top-level collection folder: {directory}")
+                continue
 
-        content = f"# {title}\n\nThis section contains recipes related to {title}."
-        index_path.write_text(front_matter + content, encoding='utf-8')
-        print(f"Created parent page: {index_path}")
+            index_path = directory / 'index.md'
+            _title = get_title(directory.name)
 
-# 3. Process all individual recipe files
-print("\n--- Generating front matter for recipe files ---")
-for root_dir in ROOT_DIRS:
-    for md_file in root_dir.rglob('*.md'):
-        # Skip the index files we just created/verified
-        if md_file.name == 'index.md':
-            continue
+            update_front_matter(
+                file_path=index_path,
+                title=_title,
+                parent=get_title(directory.parent.name),
+                has_children=True,
+                nav_order=1,
+                initial_content=f"# {_title}\n\nThis section contains recipes related to {_title}.",
+            )
+            print(f"Processed parent page: {index_path}")
 
-        title = get_title(md_file.stem)
+    # 3. Process all individual recipe files
+    print("\n--- Generating front matter for recipe files ---")
+    for collection_dir in COLLECTION_DIRS:
+        for md_file in collection_dir.glob('**/*.[mM][dD]'):
+            # Skip the index files we just created/verified
+            if md_file.name == 'index.md':
+                continue
 
-        parent = None
-        if md_file.parent not in ROOT_DIRS:
-            parent = get_title(md_file.parent.name)
+            update_front_matter(
+                file_path=md_file,
+                title=get_title(md_file.stem),
+                parent=get_title(md_file.parent.name) if md_file.parent not in COLLECTION_DIRS else None,
+            )
+            print(f"Processed recipe file: {md_file}")
 
-        front_matter = generate_front_matter_str(title=title, parent=parent)
+    # 4. Fix internal Markdown links to point to .html
 
-        original_content = md_file.read_text(encoding='utf-8')
+    # Regex to find .md links, capturing the part before the extension.
+    # It is case-insensitive and handles anchors correctly.
 
-        # Make the process idempotent: don't add front matter if it already exists
-        if original_content.startswith('---'):
-            print(f"Skipping already processed file: {md_file}")
-            continue
+    print("\n--- Fixing internal markdown links ---")
+    all_md_files = [_md for _dir in COLLECTION_DIRS for _md in _dir.glob('**/*.[mM][dD]')]
+    for md_file in all_md_files:
+        try:
+            content = md_file.read_text(encoding='utf-8')
 
-        md_file.write_text(front_matter + original_content, encoding='utf-8')
-        print(f"Generated front matter for: {md_file}")
+            # Replace the matched .md extension with .html, preserving the captured path.
+            new_content, num_replacements = RE_LINK.subn(RE_LINK_SUB, content)
 
-# 4. Fix internal markdown links to point to .html
-print("\n--- Fixing internal markdown links ---")
-for root_dir in ROOT_DIRS:
-    for md_file in root_dir.rglob('*.md'):
-        content = md_file.read_text(encoding='utf-8')
-        if '.md)' in content:
-            new_content = content.replace('.md)', '.html)')
-            md_file.write_text(new_content, encoding='utf-8')
-            print(f"Fixed links in: {md_file}")
+            # Only write to the file if a change was actually made.
+            if num_replacements > 0:
+                md_file.write_text(new_content, encoding='utf-8')
+                print(f"Fixed {num_replacements} link(s) in: {md_file}")
 
-print("\nJekyll pre-build script complete.")
+        except Exception as e:
+            print(f"Error processing {md_file}: {e}")
+
+    print("\nJekyll pre-build script complete.")
 
 ````
 --- End of File: scripts/jekyll_prebuild.py ---
+--- File: scripts/test_markdown_link_regex_pattern.py ---
+```````python
+from jekyll_prebuild import RE_LINK
+from jekyll_prebuild import RE_LINK_SUB
+
+test_cases = [
+    # --- POSITIVE CASES (SHOULD CHANGE) ---
+    ("Simple link", "[link](file.md)", "[link](file.html)"),
+    ("Simple link with path", "[link](path/to/file.md)", "[link](path/to/file.html)"),
+    ("Case variation .MD", "[link](file.MD)", "[link](file.html)"),
+    ("Case variation .mD", "[link](file.mD)", "[link](file.html)"),
+    ("Link with anchor", "[link](file.md#anchor)", "[link](file.html#anchor)"),
+    ("Link with title (double quotes)", '[link](file.md "My Title")', '[link](file.html "My Title")'),
+    ("Link with title (single quotes)", "[link](file.md 'My Title')", "[link](file.html 'My Title')"),
+    ("Link with anchor and title", '[link](file.md#anchor "My Title")', '[link](file.html#anchor "My Title")'),
+    ("Multiple links on one line", "See [a](a.md) and [b](b.md).", "See [a](a.html) and [b](b.html)."),
+    ("Link with .md in anchor", "[link](a.md#b.md)", "[link](a.html#b.md)"),
+    ("Link with underscore in name", "[my_link](my_file.md)", "[my_link](my_file.html)"),
+    ("Link with hyphen in name", "[my-link](my-file.md)", "[my-link](my-file.html)"),
+    ("Multiple links on one line", "See [a](a.md) and [b](b.md).", "See [a](a.html) and [b](b.html)."),
+
+    # --- Angle Bracket Positive Cases (Should Change) ---
+    ("Angle bracket link", "[link](<file.md>)", "[link](<file.html>)"),
+    ("Angle bracket with path", "[link](<path/to/file.md>)", "[link](<path/to/file.html>)"),
+    ("Angle bracket with anchor", "[link](<file.md#anchor>)", "[link](<file.html#anchor>)"),
+    ("Angle bracket with anchor and title", '[link](<file.md#anchor "title">)', '[link](<file.html#anchor "title">)'),
+    ("Link with .md in anchor", "[link](a.md#b.md)", "[link](a.html#b.md)"),
+
+    # --- Standard Negative Cases (Should NOT Change) ---
+    ("Image link", "![img](image.md)", "![img](image.md)"),
+    ("Image link with path", "![img](path/to/image.md)", "![img](path/to/image.md)"),
+    ("Plain text, not a link", "This is a file (e.g., file.md).", "This is a file (e.g., file.md)."),
+    ("Link to a non-md file", "[link](file.html)", "[link](file.html)"),
+    ("Link to an anchor with .md in it", "[link](#anchor.md)", "[link](#anchor.md)"),
+    ("Link where .md is in the title", "[link](file.html 'title.md')", "[link](file.html 'title.md')"),
+    ("Link where .md is not at the end", "[link](file.mdf)", "[link](file.mdf)"),
+    ("Reference-style link definition", "[reflink]: my-file.md", "[reflink]: my-file.md"),
+    ("URL with .md in it", "Go to https://example.com/file.md/page", "Go to https://example.com/file.md/page"),
+    ("Link with no path, just anchor", "[link](#anchor)", "[link](#anchor)"),
+
+    # --- NEW & WEIRD STRESS TESTS ---
+
+    # Malformed & Tricky Links (Should NOT Change)
+    ("Malformed link (no closing paren)", "[link](file.md", "[link](file.md"),
+    ("Malformed link (space in path)", "[link](my file.md)", "[link](my file.md)"),
+    ("Escaped brackets in link text", "[a\\]b](file.md)", "[a\\]b](file.html)"),  # This one should change
+    ("Inline code with just the URL part", "Use `(file.md)` to refer to it.", "Use `(file.md)` to refer to it."),
+    ("Just an image link", "![alt text](image.md)", "![alt text](image.md)"),
+    ("Text immediately after image link", "![alt text](image.md)nochange", "![alt text](image.md)nochange"),
+
+    # links cannot contain links, so the outer link is bogus
+    ("Link inside a (broken) link's text", "[[inner](inner.md)](outer.md)", "[[inner](inner.html)](outer.md)"),
+
+    # Should change both
+    ("Link where .md is part of the title attribute", '[link](file.txt "title with file.md")',
+     '[link](file.txt "title with file.md")'),
+
+    # Spacing variations (Should Change)
+    ("No space between link parts", "[text](file.md)", "[text](file.html)"),
+    ("Space inside URL before .md", "[link](my file.md)", "[link](my file.md)"),
+    # This is invalid Markdown, should not change
+    ("Link with excessive space in title", '[link](file.md      "My Title"    )',
+     '[link](file.html      "My Title"    )'),
+
+    # Complex paths (Should Change)
+    ("Relative path", "[link](../relative/path.md)", "[link](../relative/path.html)"),
+    ("Path with dots", "[link](version.1.2.md)", "[link](version.1.2.html)"),
+
+    # Very tricky negatives (Should NOT change)
+    ("URL in plain text", "http://example.com/page.md", "http://example.com/page.md"),
+    ("Email context", "<info@example.md>", "<info@example.md>"),  # This is not a markdown link
+    ("HTML link", '<a href="file.md">link</a>', '<a href="file.md">link</a>'),
+    ("Image link immediately after text", "text![img](image.md)", "text![img](image.md)"),
+
+    # currently failing
+    ("Code block with markdown link", "```\n[link](code.md)\n```", "```\n[link](code.md)\n```"),
+    ("Long code block with markdown link", "``````\n[link](code.md)\n``````", "``````\n[link](code.md)\n``````"),
+    ("Inline code with link syntax", "`[link](code.md)`", "`[link](code.md)`"),
+    ("Image inside another link's text", "[![inner](inner.jpg)](outer.md)", "[![inner](inner.jpg)](outer.html)"),
+]
+
+if __name__ == '__main__':
+
+    print("--- Running Regex Test Suite ---\n")
+    print(f'{RE_LINK=!r}')
+    print(f'{RE_LINK_SUB=}')
+
+    failed = []
+
+    for i, (desc, input_str, expected) in enumerate(test_cases):
+        print(f"Test {i + 1}: {desc}")
+        print(f"  Input:    '{input_str}'")
+
+        # --- Test Your Regex ---
+        your_result = RE_LINK.sub(RE_LINK_SUB, input_str)
+        your_pass = your_result == expected
+        your_status = f"PASS" if your_pass else f"FAIL"
+        print(f"  Your Regex Result: '{your_result}' [{your_status}]")
+
+        if not your_pass:
+            print(f"  Expected: '{expected}'")
+            failed.append(i + 1)
+
+        print("-" * 20)
+
+    print(f'passed: {len(test_cases) - len(failed)}')
+    print(f'failed: {failed}')
+
+```````
+--- End of File: scripts/test_markdown_link_regex_pattern.py ---
 --- File: TODO-SAUCES.md ---
 ````markdown
 # French Mother Sauces
