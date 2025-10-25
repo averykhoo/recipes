@@ -1,8 +1,14 @@
 import re
 from pathlib import Path
+from typing import Optional
+
+import frontmatter
 
 # --- Configuration ---
-ROOT_DIRS = [
+
+# these are the collections to be published in the Jekyll site
+# all other folders (and any md files not in folders) will not be published, except for the main index.md
+COLLECTION_DIRS = [
     Path('recipes'),
     Path('in-progress'),
     Path('curated-untested'),
@@ -19,118 +25,155 @@ def get_title(dir_name: str) -> str:
     :return:
     """
     # replace hyphens and underscores with spaces, then title case
-    _default = re.sub(r'[ _-]+', ' ', dir_name).strip().title()
+    title = re.sub(r'[\s_-]+', ' ', dir_name).strip().title()
 
     # these are the special cases
-    _title_map = {
+    special_cases = {
         'curated-untested': 'Curated & Untested',
         'kfc': 'KFC',
     }
-    return _title_map.get(dir_name, _default)
+    return special_cases.get(dir_name, title)
 
 
-def generate_front_matter_str(title: str,
-                              parent: str | None = None,
-                              has_children: bool = False,
-                              nav_order: int | None = None,
-                              ) -> str:
+def update_front_matter(file_path: Path,
+                        title: str,
+                        parent: str | None = None,
+                        has_children: bool = False,
+                        nav_order: int | None = None,
+                        initial_content: str | None = None,
+                        setdefault_layout: str = "default",
+                        ) -> None:
     """
-    Generates a complete front matter block as a string using f-strings.
+    Reads a file, updates its YAML front matter, and writes it back.
 
-    :param title:
-    :param parent:
-    :param has_children:
-    :param nav_order:
-    :return:
+    - If the file or its parent directories do not exist, they will be created.
+    - If the file has no front matter, it will be added.
+    - Existing front matter keys will be updated with the provided values.
+    - Keys for optional arguments (parent, has_children, nav_order) are only
+      added or updated if a value is provided or if has_children is True.
+
+    Args:
+        file_path (Path): The path to the markdown file.
+        title (str): The title for the front matter.
+        parent (Optional[str]): The parent page's title.
+        has_children (bool): Whether the page has child pages.
+        nav_order (Optional[int]): The navigation order.
+        initial_content (str): New file content
+        setdefault_layout (str): The default layout to set if none exists.
     """
-    lines = [
-        "---",
-        "layout: default",
-        f"title: {title}"
-    ]
+    # 1. Ensure parent directories exist
+    file_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # 2. Read the existing file and its front matter
+    try:
+        post = frontmatter.load(str(file_path.resolve()))
+        if post.content.rstrip('\r\n'):
+            initial_content = None
+    except FileNotFoundError:  # frontmatter.YAMLParseError:
+        post = frontmatter.Post(content='')  # If file doesn't exist, start fresh
+
+    # 3. Update the front matter with new or corrected info
+    post.metadata.setdefault('layout', setdefault_layout)
+    post.metadata['title'] = title
     if parent:
-        lines.append(f"parent: {parent}")
+        post.metadata['parent'] = parent
+
+    # In "Just the Docs", has_children is usually only present if true
     if has_children:
-        lines.append("has_children: true")
+        post.metadata['has_children'] = True
+    elif 'has_children' in post.metadata:
+        del post.metadata['has_children']  # Clean up if not needed
+
     if nav_order is not None:
-        lines.append(f"nav_order: {nav_order}")
-    lines.append("---")
-    return "\n".join(lines) + "\n\n"
+        post.metadata['nav_order'] = nav_order
+
+    # If the file was newly created, add the initial content
+    if initial_content:
+        post.content = initial_content
+
+    # 4. Write the updated post (front matter + content) back to the file
+    with open(file_path, 'w', encoding='utf-8') as f:
+        frontmatter.dump(post, f)
 
 
 # --- Main Script Logic ---
 
-# 1. Clean up unwanted Markdown files
-print("--- Cleaning up unwanted markdown files ---")
+if __name__ == '__main__':
 
-for md_file in Path('.').glob('**/*.md'):
-    # Keep the root index.md
-    if md_file.resolve() == Path('index.md').resolve():
-        continue
+    # 1. Clean up unwanted Markdown files to avoid building them into the site
+    print("--- Cleaning up unwanted markdown files ---")
 
-    # Keep any file that is within one of the ROOT_DIRS
-    is_in_root_dirs = any(root_dir.resolve() in md_file.resolve().parents for root_dir in ROOT_DIRS)
-    if not is_in_root_dirs:
-        print(f"Deleting unwanted file: {md_file}")
-        md_file.unlink()
-
-# 2. Create parent index.md pages for navigation
-print("\n--- Generating parent index.md pages ---")
-for root_dir in ROOT_DIRS:
-    for directory in root_dir.rglob('**/'):
-        if not directory.is_dir(): continue
-
-        if directory in ROOT_DIRS:
-            print(f"Skipping index.md for top-level collection folder: {directory}")
+    for md_file in Path('.').glob('**/*.md', case_sensitive=False):
+        # Keep the root index.md
+        if md_file.resolve() == Path('index.md').resolve():
             continue
 
-        index_path = directory / 'index.md'
-        if index_path.exists():
-            continue
+        # Keep any file that is within one of the ROOT_DIRS, remove the rest
+        is_in_root_dirs = any(root_dir.resolve() in md_file.resolve().parents for root_dir in COLLECTION_DIRS)
+        if not is_in_root_dirs:
+            print(f"Deactivating file by renaming: {md_file}")
+            md_file.rename(md_file.with_suffix('.deactivated_md.txt'))
 
-        title = get_title(directory.name)
-        parent = get_title(directory.parent.name) if directory.parent != Path('.') else None
+    # 2. Create parent index.md pages for navigation
+    print("\n--- Generating parent index.md pages ---")
+    for collection_dir in COLLECTION_DIRS:
+        for directory in collection_dir.glob('**/'):
+            if not directory.is_dir():
+                continue
 
-        front_matter = generate_front_matter_str(title=title, parent=parent, has_children=True, nav_order=1)
+            if directory in COLLECTION_DIRS:
+                print(f"Skipping index.md for top-level collection folder: {directory}")
+                continue
 
-        content = f"# {title}\n\nThis section contains recipes related to {title}."
-        index_path.write_text(front_matter + content, encoding='utf-8')
-        print(f"Created parent page: {index_path}")
+            index_path = directory / 'index.md'
+            _title = get_title(directory.name)
 
-# 3. Process all individual recipe files
-print("\n--- Generating front matter for recipe files ---")
-for root_dir in ROOT_DIRS:
-    for md_file in root_dir.rglob('*.md'):
-        # Skip the index files we just created/verified
-        if md_file.name == 'index.md':
-            continue
+            update_front_matter(
+                file_path=index_path,
+                title=_title,
+                parent=get_title(directory.parent.name),
+                has_children=True,
+                nav_order=1,
+                initial_content=f"# {_title}\n\nThis section contains recipes related to {_title}.",
+            )
+            print(f"Processed parent page: {index_path}")
 
-        title = get_title(md_file.stem)
+    # 3. Process all individual recipe files
+    print("\n--- Generating front matter for recipe files ---")
+    for collection_dir in COLLECTION_DIRS:
+        for md_file in collection_dir.glob('**/*.md', case_sensitive=False):
+            # Skip the index files we just created/verified
+            if md_file.name == 'index.md':
+                continue
 
-        parent = None
-        if md_file.parent not in ROOT_DIRS:
-            parent = get_title(md_file.parent.name)
+            update_front_matter(
+                file_path=md_file,
+                title=get_title(md_file.stem),
+                parent=get_title(md_file.parent.name) if md_file.parent not in COLLECTION_DIRS else None,
+            )
+            print(f"Processed recipe file: {md_file}")
 
-        front_matter = generate_front_matter_str(title=title, parent=parent)
+    # 4. Fix internal Markdown links to point to .html
 
-        original_content = md_file.read_text(encoding='utf-8')
+    # Regex to find .md links, capturing the part before the extension.
+    # It is case-insensitive and handles anchors correctly.
+    link_pattern = re.compile(r"(\([^()#\s]*?)\.md\b", re.IGNORECASE)
 
-        # Make the process idempotent: don't add front matter if it already exists
-        if original_content.startswith('---'):
-            print(f"Skipping already processed file: {md_file}")
-            continue
+    print("\n--- Fixing internal markdown links ---")
+    all_md_files = [_md for _dir in COLLECTION_DIRS for _md in _dir.glob('**/*.md', case_sensitive=False)]
+    for md_file in all_md_files:
+        try:
+            content = md_file.read_text(encoding='utf-8')
 
-        md_file.write_text(front_matter + original_content, encoding='utf-8')
-        print(f"Generated front matter for: {md_file}")
+            # Replace the matched .md extension with .html, preserving the captured path.
+            new_content, num_replacements = link_pattern.subn(r"\1.html", content)
 
-# 4. Fix internal markdown links to point to .html
-print("\n--- Fixing internal markdown links ---")
-for root_dir in ROOT_DIRS:
-    for md_file in root_dir.rglob('*.md'):
-        content = md_file.read_text(encoding='utf-8')
-        if '.md)' in content:
-            new_content = content.replace('.md)', '.html)')
-            md_file.write_text(new_content, encoding='utf-8')
-            print(f"Fixed links in: {md_file}")
+            # Only write to the file if a change was actually made.
+            if num_replacements > 0:
+                md_file.write_text(new_content, encoding='utf-8')
+                print(f"Fixed {num_replacements} link(s) in: {md_file}")
 
-print("\nJekyll pre-build script complete.")
+        except Exception as e:
+            print(f"Error processing {md_file}: {e}")
+
+    print("\nJekyll pre-build script complete.")

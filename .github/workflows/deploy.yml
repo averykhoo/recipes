@@ -31,7 +31,9 @@ jobs:
 
       - name: Run Jekyll Pre-build Script
         # This single script handles cleanup, front matter, and link fixing.
-        run: python scripts/jekyll_prebuild.py
+        run: |
+          pip install -r requirements.txt
+          python scripts/jekyll_prebuild.py
 
       - name: Rename folders for Jekyll Collections
         run: |
