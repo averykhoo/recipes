@@ -4,3 +4,5 @@
 * flower salad? 
 * ham as usual
 * beef or lamb roast? 
+* pumpkin pie
+* baked brie
