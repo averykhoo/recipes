@@ -4,6 +4,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jemoji
+  - jekyll-titles-from-headings
 
 # Set the remote theme to Just the Docs
 remote_theme: just-the-docs/just-the-docs
