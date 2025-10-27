@@ -3,6 +3,11 @@
 
 https://southernshelle.com/the-best-quick-southern-banana-pudding-recipe/#tasty-recipes-2582-jump-target
 
+https://www.the-girl-who-ate-everything.com/magnolia-bakerys-famous-banana-pudding/
+
+
+https://drive.google.com/file/d/1AozqQ7w9ujZMW5Hp_zUM3KrSg4O9Q_ij/view?usp=sharing, https://drive.google.com/file/d/1aG8reIvSbGl9l6-uIms7f5HiitvKx_wQ/view?usp=sharing, https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221jwyLxdi_EUWitPu6iqiDydJ1OAD7WQDN%22%5D,%22action%22:%22open%22,%22userId%22:%22117280320071755292615%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing
+
 also
 
 ```
