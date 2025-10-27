@@ -34,7 +34,6 @@ jobs:
           cp -r curated-untested .jekyll_build/_curated-untested
           cp -r in-progress .jekyll_build/_in-progress
           cp -r recipes .jekyll_build/_recipes
-          cp index.md .jekyll_build/index.md
 
       # This single script handles cleanup, front matter, and link fixing.
       - name: Run Jekyll Pre-build Script
