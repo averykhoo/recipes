@@ -110,7 +110,7 @@ if __name__ == '__main__':
     # 1. Clean up unwanted Markdown files to avoid building them into the site
     print("--- Cleaning up unwanted markdown files ---")
 
-    for md_file in Path('.').glob('**/*.[mM][dD]'):
+    for md_file in Path('').glob('**/*.[mM][dD]'):
         # Keep the root index.md
         if md_file.resolve() == Path('index.md').resolve():
             continue

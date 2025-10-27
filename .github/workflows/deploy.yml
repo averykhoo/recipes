@@ -29,17 +29,18 @@ jobs:
         with:
           python-version: '3.10'
 
+      - name: Clone folders for Jekyll
+        run: |
+          cp -r curated-untested .jekyll_build/_curated-untested
+          cp -r in-progress .jekyll_build/_in-progress
+          cp -r recipes .jekyll_build/_recipes
+          cp index.md .jekyll_build/index.md
+
+      # This single script handles cleanup, front matter, and link fixing.
       - name: Run Jekyll Pre-build Script
-        # This single script handles cleanup, front matter, and link fixing.
         run: |
           pip install -r requirements.txt
-          python scripts/jekyll_prebuild.py
-
-      - name: Rename folders for Jekyll Collections
-        run: |
-          mv curated-untested _curated-untested
-          mv in-progress _in-progress
-          mv recipes _recipes
+          cd .jekyll_build && python scripts/jekyll_prebuild.py
       # --- End of Custom Steps ---
 
       - name: Setup GitHub Pages
@@ -48,8 +49,8 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1 # note that this uses jekyll v3.10.0 and cannot be changed
         with:
-          source: ./
-          destination: ./_site
+          source: ./.jekyll_build/
+          destination: ./.jekyll_build/_site
           # This option suggested by gemini does not exist
           # `Warning: Unexpected input(s) 'use_gemfile', valid inputs are ['entryPoint', 'args', 'source', ...]`
           #use_gemfile: true

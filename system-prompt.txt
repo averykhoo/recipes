@@ -20,7 +20,6 @@ Your goal is to develop a robust mental model of this repository based *only* on
 │   └── workflows
 │       └── deploy.yml
 ├── .gitignore
-├── Gemfile
 ├── Generated Image October 24, 2025 - 10_16PM.png
 ├── README.md
 ├── TODO-SAUCES.md
@@ -246,11 +245,13 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+        uses: actions/jekyll-build-pages@v1 # note that this uses jekyll v3.10.0 and cannot be changed
         with:
           source: ./
           destination: ./_site
-          # This line forces the action to respect your Gemfile
+          # This option suggested by gemini does not exist
+          # `Warning: Unexpected input(s) 'use_gemfile', valid inputs are ['entryPoint', 'args', 'source', ...]`
+          #use_gemfile: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
