@@ -1,5 +1,26 @@
 # TODO
 
+
+## todo: use collapsible markdown
+
+<details>
+<summary>CLICK ME</summary>
+
+```python
+print("hello world!")
+```
+<blockquote>
+    <details>
+    <summary>test nested section</summary>
+    :smile:
+
+</details>
+</blockquote>
+
+</details>
+
+
+
 ## Schema
 
 * how to display comments (e.g. chocolate chip cookies)
@@ -18,6 +39,7 @@
 
 ### look into these schemas
 
+* https://github.com/cnstoll/Grocery-Recipe-Format
 * https://briansunter.com/blog/cooklang
 * https://cooklang.org
 * https://www.reddit.com/r/Pizza/comments/3rvxdf/basic_recipe_writing_tables_and_formatting_with/

@@ -29,7 +29,7 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Clone folders for Jekyll
+      - name: Assemble site - clone folders for Jekyll
         run: |
           cp -r curated-untested .jekyll-build/_curated-untested
           cp -r in-progress .jekyll-build/_in-progress
@@ -40,22 +40,28 @@ jobs:
         run: |
           pip install -r requirements.txt
           cd .jekyll-build && python scripts/jekyll_prebuild.py
-      # --- End of Custom Steps ---
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
+      # STEP 2: Build the site with Jekyll, pointing to the prepared directory.
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1 # note that this uses jekyll v3.10.0 and cannot be changed
         with:
-          source: ./.jekyll-build/
-          destination: ./_site
+          # Tell Jekyll to use our generated directory as its source
+          source: ./.jekyll-build
+          # Tell Jekyll to place the final site *inside* that same directory
+          destination: ./.jekyll-build/_site
           # This option suggested by gemini does not exist
           # `Warning: Unexpected input(s) 'use_gemfile', valid inputs are ['entryPoint', 'args', 'source', ...]`
           #use_gemfile: true
 
+      # STEP 3: Upload the final, built site from the correct location.
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          # Point the uploader to the destination we specified above
+          path: ./.jekyll-build/_site
 
   deploy:
     environment:
