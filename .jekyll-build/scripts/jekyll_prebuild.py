@@ -9,9 +9,9 @@ import frontmatter
 # these are the collections to be published in the Jekyll site
 # all other folders (and any md files not in folders) will not be published, except for the main index.md
 COLLECTION_DIRS = [
-    Path('recipes'),
-    Path('in-progress'),
-    Path('curated-untested'),
+    Path('_recipes'),
+    Path('_in-progress'),
+    Path('_curated-untested'),
 ]
 
 # this is used to replace links to *.md with links to *.html, which is what jekyll generates
