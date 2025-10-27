@@ -49,7 +49,7 @@ jobs:
         uses: actions/jekyll-build-pages@v1 # note that this uses jekyll v3.10.0 and cannot be changed
         with:
           source: ./.jekyll_build/
-          destination: ./.jekyll_build/_site
+          destination: ./_site
           # This option suggested by gemini does not exist
           # `Warning: Unexpected input(s) 'use_gemfile', valid inputs are ['entryPoint', 'args', 'source', ...]`
           #use_gemfile: true
