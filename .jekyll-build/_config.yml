@@ -4,7 +4,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jemoji
-  - jekyll-titles-from-headings
+#  - jekyll-titles-from-headings  # does not overwrite yamll frontmatter
 
 # Set the remote theme to Just the Docs
 remote_theme: just-the-docs/just-the-docs

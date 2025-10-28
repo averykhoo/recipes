@@ -1,6 +1,5 @@
 import re
 from pathlib import Path
-from typing import Optional
 
 import frontmatter
 
@@ -17,14 +16,20 @@ COLLECTION_DIRS = [
 # this is used to replace links to *.md with links to *.html, which is what jekyll generates
 # it's a little long so i suggest using https://www.debuggex.com to inspect the diagram
 RE_LINK = re.compile(
-    r"(?<!!)(\[(?:\\[\[\]]|(?<!\\)[^[\]])*])\((((?<!<)[^)#\s]+)\.md([\s#][^)]*)?|(<[^)#>]+)\.md(\s*[#>][^)]*)?)\)",
-    re.I)
+    r'(?<!!)(\[(?:\\[\[\]]|(?<!\\)[^[\]])*])\((((?<!<)[^)#\s]+)\.md([\s#][^)]*)?|(<[^)#>]+)\.md(\s*[#>][^)]*)?)\)',
+    re.IGNORECASE,
+)
 RE_LINK_SUB = r'\1(\3\5.html\4\6)'
+
+RE_MARKDOWN_TITLE = re.compile(
+    r'^(?:#{1,2}\s+(.+?\w.+?)|(.+?\w.+?)\n(?:={2,}|-{2,})\s*)$',
+    re.MULTILINE,
+)
 
 
 # --- Helper Functions ---
 
-def get_title(dir_name: str) -> str:
+def get_dir_title(dir_name: str) -> str:
     """
     Generates a human-readable title from a file or folder name.
     Note that collection names are not processed here, but via `_config.yml`
@@ -40,6 +45,21 @@ def get_title(dir_name: str) -> str:
         'kfc': 'KFC',
     }
     return special_cases.get(dir_name, title)
+
+
+def get_page_title(page_path: Path | str) -> str | None:
+    page_path = Path(page_path)
+    print(page_path)
+    with page_path.open(encoding='utf8') as f:
+        lines = f.readlines()[:10]
+        print(lines)
+    match = RE_MARKDOWN_TITLE.search(''.join(lines))
+    if not match:
+        return None
+    title = match.group(0)
+    title = title.partition('\n')[0].lstrip()
+    title = title.strip('#').strip()
+    return title
 
 
 def update_front_matter(file_path: Path,
@@ -134,12 +154,12 @@ if __name__ == '__main__':
                 continue
 
             index_path = directory / 'index.md'
-            _title = get_title(directory.name)
+            _title = get_dir_title(directory.name)
 
             update_front_matter(
                 file_path=index_path,
                 title=_title,
-                parent=get_title(directory.parent.name) if directory.parent not in COLLECTION_DIRS else None,
+                parent=get_dir_title(directory.parent.name) if directory.parent not in COLLECTION_DIRS else None,
                 has_children=True,
                 nav_order=1,
                 initial_content=f"# {_title}\n\nThis section contains recipes related to {_title}.",
@@ -156,8 +176,8 @@ if __name__ == '__main__':
 
             update_front_matter(
                 file_path=md_file,
-                title=get_title(md_file.stem),
-                parent=get_title(md_file.parent.name) if md_file.parent not in COLLECTION_DIRS else None,
+                title=get_page_title(md_file) or get_dir_title(md_file.stem),
+                parent=get_dir_title(md_file.parent.name) if md_file.parent not in COLLECTION_DIRS else None,
             )
             print(f"Processed recipe file: {md_file}")
 
