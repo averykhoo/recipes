@@ -1,6 +1,5 @@
 # TODO
 
-
 ## todo: use collapsible markdown
 
 <details>
@@ -9,6 +8,7 @@
 ```python
 print("hello world!")
 ```
+
 <blockquote>
     <details>
     <summary>test nested section</summary>
@@ -18,8 +18,6 @@ print("hello world!")
 </blockquote>
 
 </details>
-
-
 
 ## Schema
 
@@ -68,3 +66,12 @@ print("hello world!")
 * https://based.cooking
 * https://slate.com/human-interest/2012/05/how-to-cook-onions-why-recipe-writers-lie-and-lie-about-how-long-they-take-to-caramelize.html
 * http://www.grouprecipes.com/133488/mexican-hash.html
+
+## other todo
+
+* pwa / serviceworker
+* JSON-LD injection - inject via `json-ld` key into yaml frontmatter and use an _include template
+* recipe parsing - requires some schema first
+* dark mode toggle
+* better link cleaning via markdown-soup, which will probably a concrete syntax tree wrapper around markdown-it-py
+* consider not using the github jekyll action since it's very outdated

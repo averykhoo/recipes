@@ -27,6 +27,7 @@ RE_LINK_SUB = r'\1(\3\5.html\4\6)'
 def get_title(dir_name: str) -> str:
     """
     Generates a human-readable title from a file or folder name.
+    Note that collection names are not processed here, but via `_config.yml`
 
     :param dir_name:
     :return:
@@ -36,7 +37,6 @@ def get_title(dir_name: str) -> str:
 
     # these are the special cases
     special_cases = {
-        'curated-untested': 'Curated & Untested',
         'kfc': 'KFC',
     }
     return special_cases.get(dir_name, title)
@@ -107,19 +107,20 @@ def update_front_matter(file_path: Path,
 
 if __name__ == '__main__':
 
-    # 1. Clean up unwanted Markdown files to avoid building them into the site
-    print("--- Cleaning up unwanted markdown files ---")
-
-    for md_file in Path('').glob('**/*.[mM][dD]'):
-        # Keep the root index.md
-        if md_file.resolve() == Path('index.md').resolve():
-            continue
-
-        # Keep any file that is within one of the ROOT_DIRS, remove the rest
-        is_in_root_dirs = any(root_dir.resolve() in md_file.resolve().parents for root_dir in COLLECTION_DIRS)
-        if not is_in_root_dirs:
-            print(f"Deactivating file by renaming: {md_file}")
-            md_file.rename(md_file.with_suffix('.deactivated_md.txt'))
+    # (not needed now that we're copying in just the desired folders)
+    # # 1. Clean up unwanted Markdown files to avoid building them into the site
+    # print("--- Cleaning up unwanted markdown files ---")
+    #
+    # for md_file in Path('').glob('**/*.[mM][dD]'):
+    #     # Keep the root index.md
+    #     if md_file.resolve() == Path('index.md').resolve():
+    #         continue
+    #
+    #     # Keep any file that is within one of the ROOT_DIRS, remove the rest
+    #     is_in_root_dirs = any(root_dir.resolve() in md_file.resolve().parents for root_dir in COLLECTION_DIRS)
+    #     if not is_in_root_dirs:
+    #         print(f"Deactivating file by renaming: {md_file}")
+    #         md_file.rename(md_file.with_suffix('.deactivated_md.txt'))
 
     # 2. Create parent index.md pages for navigation
     print("\n--- Generating parent index.md pages ---")

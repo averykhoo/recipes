@@ -41,7 +41,7 @@ just_the_docs:
       name: In Progress
       nav_fold: true
     curated-untested:
-      name: Curated & Un-tested
+      name: Curated & Untested
       nav_fold: true
 
 # Apply the default theme layout to all documents
