@@ -1,4 +1,4 @@
-from jekyll_prebuild import RE_MARKDOWN_LINK
+from jekyll_prebuild import RE_MARKDOWN_LINK_MD
 from jekyll_prebuild import RE_MARKDOWN_LINK_SUB
 
 test_cases = [
@@ -80,7 +80,7 @@ test_cases = [
 if __name__ == '__main__':
 
     print("--- Running Regex Test Suite ---\n")
-    print(f'{RE_MARKDOWN_LINK=!r}')
+    print(f'{RE_MARKDOWN_LINK_MD=!r}')
     print(f'{RE_MARKDOWN_LINK_SUB=}')
 
     failed = []
@@ -90,7 +90,7 @@ if __name__ == '__main__':
         print(f"  Input:    '{input_str}'")
 
         # --- Test Your Regex ---
-        your_result = RE_MARKDOWN_LINK.sub(RE_MARKDOWN_LINK_SUB, input_str)
+        your_result = RE_MARKDOWN_LINK_MD.sub(RE_MARKDOWN_LINK_SUB, input_str)
         your_pass = your_result == expected
         your_status = f"PASS" if your_pass else f"FAIL"
         print(f"  Your Regex Result: '{your_result}' [{your_status}]")

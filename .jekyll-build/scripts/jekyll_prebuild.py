@@ -15,7 +15,7 @@ COLLECTION_DIRS = [
 
 # this is used to replace links to *.md with links to *.html, which is what jekyll generates
 # it's a little long so i suggest using https://www.debuggex.com to inspect the diagram
-RE_MARKDOWN_LINK = re.compile(
+RE_MARKDOWN_LINK_MD = re.compile(
     r'(?<!!)(\[(?:\\[\[\]]|(?<!\\)[^[\]])*])\((((?<!<)[^)#\s]+)\.md([\s#][^)]*)?|(<[^)#>]+)\.md(\s*[#>][^)]*)?)\)',
     re.IGNORECASE,
 )
@@ -24,6 +24,10 @@ RE_MARKDOWN_LINK_SUB = r'\1(\3\5.html\4\6)'
 RE_MARKDOWN_TITLE = re.compile(
     r'^(?:#{1,2}\s+(.+?\w.+?)|(.+?\w.+?)\n(?:={2,}|-{2,})\s*)$',
     re.MULTILINE,
+)
+RE_MARKDOWN_LINK = re.compile(
+    r'(?<!!)(\[(?:\\[\[\]]|(?<!\\)[^[\]])*])\((((?<!<)[^)#\s]+).*([\s#][^)]*)?|(<[^)#>]+).*(\s*[#>][^)]*)?)\)',
+    re.IGNORECASE,
 )
 
 
@@ -48,7 +52,6 @@ def get_dir_title(dir_name: str) -> str:
 
 
 def get_page_title(page_path: Path | str) -> str | None:
-
     # read the first 10 lines
     page_path = Path(page_path)
     with page_path.open(encoding='utf8') as f:
@@ -200,7 +203,7 @@ if __name__ == '__main__':
             content = md_file.read_text(encoding='utf-8')
 
             # Replace the matched .md extension with .html, preserving the captured path.
-            new_content, num_replacements = RE_MARKDOWN_LINK.subn(RE_MARKDOWN_LINK_SUB, content)
+            new_content, num_replacements = RE_MARKDOWN_LINK_MD.subn(RE_MARKDOWN_LINK_SUB, content)
 
             # Only write to the file if a change was actually made.
             if num_replacements > 0:
