@@ -1,4 +1,4 @@
-# Better than lazy brownies
+# Better than [lazy brownies](../recipes/confectionery/lazy-brownies.md)
 
 [//]: # (todo: seen on tiktok - add a frozen layer of nutella and speculoos in the middle)
 [//]: # (todo: maybe use the meringue as a base layer instead of the top layer)
@@ -94,4 +94,4 @@ To serve:
 * Partial references:
     * https://cafedelites.com/worlds-best-fudgiest-brownies/
     * https://tasty.co/recipe/the-best-fudgy-brownies
-    * Lazy brownies
+    * [Lazy brownies](../recipes/confectionery/lazy-brownies.md)
