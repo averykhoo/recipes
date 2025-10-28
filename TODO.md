@@ -75,3 +75,4 @@ print("hello world!")
 * dark mode toggle
 * better link cleaning via markdown-soup, which will probably a concrete syntax tree wrapper around markdown-it-py
 * consider not using the github jekyll action since it's very outdated
+* change logo to cookie book / 🍪📖 / :cookie: :book: (does :cookie::book: work)
