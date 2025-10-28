@@ -68,7 +68,7 @@ def get_page_title(page_path: Path | str) -> str | None:
     title = title.strip('#').strip()
 
     # remove markdown links, if any
-    title = RE_MARKDOWN_LINK.sub(lambda m: m.groups(1)[1:-1], title)
+    title = RE_MARKDOWN_LINK.sub(lambda m: m.group(1)[1:-1], title)
     return title
 
 
