@@ -32,6 +32,7 @@ collections:
 
 # 2. Configure how Just the Docs displays the collections in the navigation
 just_the_docs:
+  color_scheme: system
   collections:
     recipes:
       name: Recipes
@@ -48,17 +49,17 @@ defaults:
   - scope:
       path: ""
     values:
-      layout: "default"
+      layout: default
 
 # Add a floating search button on pages for easy access
 search:
   button: true
   # Add a keyboard shortcut (Ctrl+K or Cmd+K) to focus the search bar
-  focus_shortcut_key: "k"
+  focus_shortcut_key: k
 
 # Add a "Back to top" link at the bottom of long recipe pages
 back_to_top: true
-back_to_top_text: "Back to top"
+back_to_top_text: Back to top
 
 # Enable the copy button on code snippets (useful for ingredient lists formatted in blocks)
 enable_copy_code_button: true
@@ -66,10 +67,10 @@ enable_copy_code_button: true
 # Add a link to your GitHub repo in the top right corner
 aux_links:
   "View on GitHub":
-    - "https://github.com/averykhoo/recipes" # Replace with your repo URL if different
+    - https://github.com/averykhoo/recipes
 
 # Set a path/url to a favicon that will be displayed by the browser
-favicon_ico: "favicon.ico"
+favicon_ico: favicon.ico
 
 mermaid:
   # Version of mermaid library
