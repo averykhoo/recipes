@@ -3,8 +3,6 @@
 * https://www.the-girl-who-ate-everything.com/magnolia-bakerys-famous-banana-pudding/
 * https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221jwyLxdi_EUWitPu6iqiDydJ1OAD7WQDN%22%5D,%22action%22:%22open%22,%22userId%22:%22117280320071755292615%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing
 
----
-
 ## Ingredients
 
 * 6 Tbsp sweetened condensed milk
@@ -33,11 +31,15 @@
 
 ---
 
-## (Original) Magnolia's Famous Banana Pudding
+# (Original) Magnolia's Famous Banana Pudding
+
+SERVES 12-15
 
 > I started making this pudding when I was in my early twenties and cooking at a Tex-Mex restaurant and bar.
 > Customers loved it, so when we opened the bakery many years later, it seemed like a great idea to serve it there.
 > It remains the second most popular dessert (after the cupcakes) at the bakery.
+
+## Ingredients
 
 * One 14-ounce can sweetened condensed milk
 * 1½ cups ice-cold water
@@ -45,6 +47,8 @@
 * 3 cups heavy cream
 * One 12-ounce box Nabisco Nilla Wafers (no substitutions!)
 * 4 cups sliced ripe bananas
+
+## Directions
 
 1. In a small bowl, on the medium speed of an electric mixer,
    beat together the sweetened condensed milk and water until well combined, about 1 minute.
@@ -61,8 +65,6 @@
    Repeat the layering twice more, garnishing with additional wafers or wafer crumbs on the top layer of the pudding.
    Cover tightly with plastic wrap and allow to chill in the refrigerator for 4 hours--or up to 8 hours,
    but no longer!--before serving.
-
-SERVES 12-15
 
 *Ice Creams and Icebox Desserts*
 *Page 113*
