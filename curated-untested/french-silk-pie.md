@@ -6,7 +6,7 @@ While the name implies otherwise, French silk pie was an American creation.
 The name refers to the light and smooth texture that leaves a silky rich feeling in the mouth.
 
 
-Ingredients
+## Ingredients
 
 * 1 sheet refrigerated pie crust
 * 2/3 cup sugar
@@ -18,7 +18,8 @@ Ingredients
 * 2 teaspoons confectioners' sugar
 * Optional: Whipped cream and chocolate curls
 
-Directions
+## Directions
+
 1. Cut pie crust in half. Repackage and refrigerate 1 half for another use. 
 2. On a lightly floured surface, roll out remaining half into an 8-in circle. 
 3. Transfer to a 7-in pie plate; flute edge.

@@ -2,6 +2,8 @@
 
 see also: https://www.youtube.com/watch?v=rzL07v6w8AA
 
+## Ingredients
+
 * 4 biggish onions, sliced pole to pole
 * 1 Tbsp oil
 * 1 Tbsp butter
@@ -16,10 +18,14 @@ see also: https://www.youtube.com/watch?v=rzL07v6w8AA
 * salt and pepper to taste
 * bread and gruyere
 
-## from NYT
+---
 
-French Onion Soup
+# French Onion Soup
+
 By Sara Bonisteel
+(from NYT)
+
+Yield: 4 to 6 servings
 
 Time: 1 hour 20 minutes
 
@@ -28,8 +34,7 @@ which had 20 recipes for soups “thick and thin, hot and cold,” including tho
 French onion soup. We've updated the recipe adding sherry and wine to layer in more flavors. The bulk of the time is
 spent on caramelizing the onions, a process that always takes longer than it seems it should. But it's worth the wait.
 
-INGREDIENTS
-Yield: 4 to 6 servings
+## INGREDIENTS
 
 * 3 tablespoons unsalted butter
 * 3 to 4 large red or yellow onions (about 3 pounds), peeled and thinly sliced
@@ -42,7 +47,7 @@ Yield: 4 to 6 servings
 * French bread cut into 8 to 12½-inch slices
 * 1½ cups grated Gruyère cheese
 
-PREPARATION
+## DIRECTIONS
 
 1. Melt butter in a heavy Dutch oven over medium heat. Add onions and ½ teaspoon salt, stir and cover, letting onions
    soften for 5 minutes. Remove lid and let onions caramelize until golden brown over medium heat, stirring
@@ -60,13 +65,16 @@ PREPARATION
    cover top with bread slices. Sprinkle each casserole generously with Gruyère. Broil for a minute or two, watching
    carefully, until cheese melts and browns. Serve immediately.
 
-### nyt comments
+---
+
+## nyt comments
 
 > diane
 > (2 years ago)
 > Simplify by making overnight caramelized onions. Fill slow cooker with 4-5 lbs sliced onions, pour 1/3 cup olive over
 > the onions & mix well. Cover with lid and cook on HIGH for 7-9 hours. Yes it does indeed needs to be High. I had my
-> doubts at first, but I've done this probably at least 20 times and the onions cook way down & caramelize beautifully. I
+> doubts at first, but I've done this probably at least 20 times and the onions cook way down & caramelize beautifully.
+> I
 > haven't tried this yet with my new multi-cooker but plan to try that next using slow cooker function.
 
 > Elisa
@@ -76,6 +84,7 @@ PREPARATION
 
 > Gonzalo
 > (2 years ago)
-> 1 Tbsp of Sherry is a very small amount, it won't add any significant flavour. Also, if Sherry boils for a long time, it
+> 1 Tbsp of Sherry is a very small amount, it won't add any significant flavour. Also, if Sherry boils for a long time,
+> it
 > completely loses its aroma. I suggest adding 2 Tbsp on each individual soup dish just before broiling (that's the way
 > people have fancy consomme in Madrid).

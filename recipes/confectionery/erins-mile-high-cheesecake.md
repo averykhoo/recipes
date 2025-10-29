@@ -14,26 +14,24 @@ Despite the weight of the pan, the texture is still light and not overly solid.
 The citrus adds just a hint of flavor, and makes this one really good with a fruit topping (but I also love it just
 plain).
 
-Ingredients
-Graham cracker crust:
+## Ingredients for Graham cracker crust:
 
-* 1 cup​ graham cracker crumbs
+* 1 cup graham cracker crumbs
 * 3 tablespoons butter
 * 3 tablespoons sugar
 
-cheesecake filling:
+## Ingredients for cheesecake filling:
 
 * 2.5 lbs (5x 8-ounce blocks) (1.15kg) cream cheese, softened (I don't recommend reduced or no-fat for this one)
-* 1.75 cups​ sugar
+* 1.75 cups sugar
 * zest of 1 lemon
 * zest of 1 orange, or 1/2 teaspoon orange extract
 * 1 teaspoon vanilla extract
 * 3 tablespoons flour
 * 5 eggs + 2 egg yolks
-* 0.5 cups​ sour cream
+* 0.5 cups sour cream
 
-Directions:
-For crust:
+## Directions for crust:
 
 1. Butter the bottom and sides of a 9-inch springform pan.
 2. In a mixing bowl, combine graham crumbs, butter and sugar – mix well.
@@ -42,7 +40,7 @@ For crust:
 5. NOTE: If you haven't invested in a pestle yet, go out and get yourself one...
    pressing crusts into pans/muffin tins is SO MUCH easier with that little tool!
 
-For cheesecake filling:
+## Directions for cheesecake filling:
 
 1. Preheat oven to 500F (260C) degrees.
 2. In a large mixing bowl with an electric mixer, combine cream cheese, sugar, zests, and vanilla ;
@@ -59,14 +57,20 @@ For cheesecake filling:
 8. It is best if refrigerated overnight or at least 10 hours
 9. Serve plain or with a strawberry sauce.
 
-Optional Strawberry Sauce:
+---
 
-* 2 pints​ fresh strawberries, stem removed, fruit chopped into large chunks
-* 0.75 cup​ sugar
-* 1 cup​ water
+# Optional Strawberry Sauce:
+
+## Ingredients
+
+* 2 pints fresh strawberries, stem removed, fruit chopped into large chunks
+* 0.75 cup sugar
+* 1 cup water
 * 1 teaspoon finely grated lemon zest
 * 1 teaspoon finely grated orange zest
 * 2 tablespoons Grand Marnier liqueur
+
+## Directions
 
 1. In a saucepan, combine strawberries, sugar, water, and zest;
    cook until strawberries are soft and liquid is thickened, about 10 minutes.

@@ -1,6 +1,6 @@
 # [Nuage Chocolat – Chocolate Cloud](https://parischezsharon.com/2020/04/nuage-chocolat-chocolate-cloud.html)
 
-* 4-6 servings
+* Serves 4-6
 
 My followers know I love chocolate very much: Chocolate cakes, chocolate cookies and everything related to chocolate.
 In a city where chocolate is revered as an art form, it's as if it “flows” in the Seine River!
@@ -14,7 +14,7 @@ It is very simple to make.
 With an airy and light texture, it is a dessert that leaves you wanting a second helping.
 You'll be asking for more!
 
-Ingredients
+## Ingredients
 
 * 100 g fresh milk
 * 190 g dark chocolate, chopped 70%
@@ -22,7 +22,7 @@ Ingredients
 * 175 g egg whites (usually from 5 eggs L)
 * 40 g caster sugar
 
-Preparation
+## Directions
 
 1. Heat the milk until simmering
 2. Melt the chocolate in a double boiler or the microwave.

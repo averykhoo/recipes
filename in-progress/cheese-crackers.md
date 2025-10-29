@@ -7,7 +7,9 @@ https://joythebaker.com/2012/10/sharp-cheddar-cheese-crackers/
 see also: https://www.fifteenspatulas.com/puffed-cheddar-cheese-twists/ (which uses egg white instead of water)
 see also: https://preppykitchen.com/shortbread-cookies-recipe/
 
-makes about 30-35 crackers, or 6-8 shortbread brick cookies 
+yields 30-35 crackers, or 6-8 shortbread brick cookies 
+
+## ingredients
 
 * 2 tablespoons room temperature unsalted butter
 * 3 ounces【85 g】 sharp cheddar cheese, grated (about 3/4 cup【177 mL】 lightly packed)
@@ -17,6 +19,8 @@ makes about 30-35 crackers, or 6-8 shortbread brick cookies
 * 1/4 teaspoon salt
 * 1/2 cup【118 mL】 all-purpose flour (2.25 oz【64 g】 by weight)
 * 1 tablespoon cold water
+
+## directions
 
 1. Cream together the butter, cheese, spices, and salt. Use a fork.
 2. Add flour and keep mixing to form sand.
@@ -28,6 +32,8 @@ makes about 30-35 crackers, or 6-8 shortbread brick cookies
 8. Bake at 180C for 10-15 minutes.
 9. Allow to cool slightly before picking them up.
 10. Store in an airtight container.
+
+---
 
 Notes:
 

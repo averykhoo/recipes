@@ -3,7 +3,7 @@
 see also: https://www.youtube.com/watch?v=HnZ7XGYNfwA
 see also: https://www.nytimes.com/2007/06/13/dining/131rrex.html
 
-Ingredients:
+## Ingredients:
 
 * 4 red bell peppers
 * 2 tablespoons olive oil
@@ -16,7 +16,7 @@ Ingredients:
 * 1/2 teaspoon salt
 * 1/8 teaspoon black pepper
 
-Instructions:
+## Directions:
 
 1. Preheat the oven to 400°F (200°C).
 2. Cut the bell peppers in half lengthwise and remove the seeds and ribs.
@@ -34,6 +34,8 @@ Instructions:
 12. Chop the peppers into thin strips, and add them to the tomato sauce in the skillet.
 13. Stir peppers into the tomato sauce and simmer until peppers are tender and the mixture is thick, about 10 minutes.
 14. Serve the piperade hot, either as a side dish or over eggs. Enjoy!
+
+---
 
 Notes:
 

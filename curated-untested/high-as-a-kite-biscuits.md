@@ -8,7 +8,7 @@ These are the biscuits I make for biscuits and gravy.
 The trick is to work the dough as little as possible, and if you can get the hang of that, you will have biscuits that
 bake up higher than anything you've ever seen.
 
-Ingredients
+## Ingredients
 
 * 2 cups all-purpose flour
 * 1 tablespoon baking powder
@@ -17,7 +17,7 @@ Ingredients
 * 1.5 cups heavy whipping cream (DO NOT SUBSTITUTE - I've tried! These biscuits will only pop up sky-high if you use
   heavy cream - they were flat and not fluffy inside when I tried half-and-half or whole milk)
 
-How to make it
+## Directions
 
 1. In a medium bowl, stir together all ingredients just until the dough forms a ball and ingredients are moistened.
 2. Turn the dough out onto a work surface that is dusted with a very small amount of additional flour.

@@ -2,6 +2,8 @@
 
 Based off a recipe for ["kinpara gobo"](https://www.thespruceeats.com/kinpira-gobo-recipe-2031655) (fried burdock)
 
+## Directions
+
 1. Julienne a couple of carrots
 2. Fry in oil until cooked through
 3. Add a splash of soy sauce and mirin

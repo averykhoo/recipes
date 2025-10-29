@@ -4,7 +4,7 @@
 * released during the 2020 pandemic
 * see also: [Ikea SG recipe card](https://www.ikea.com/ms/en_SG/pdf/restaurant/Meatballs_w_creamsauce.pdf)
 
-Ingredients - Meatballs
+## Ingredients - Meatballs
 
 * 500g beef mince
 * 250g pork mince
@@ -15,7 +15,7 @@ Ingredients - Meatballs
 * 5 tablespoons of whole milk
 * generous salt and pepper to taste
 
-Ingredients – Cream Sauce
+## Ingredients – Cream Sauce
 
 * dash of oil
 * 40g butter
@@ -48,6 +48,7 @@ Directions
 6. When ready to eat, serve with your favourite potatoes - either creamy mash or mini new boiled potatoes.
    Enjoy!
 
+---
 
 Source:
 

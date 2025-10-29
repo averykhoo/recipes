@@ -2,7 +2,9 @@
 
 source: recipe card from kinmemai (rice brand)
 
-## Ingredients (8-10 portions)
+serves 8-10 portions
+
+## Ingredients
 
 * 5 cups white rice, uncooked
 * 6 cups Water
@@ -12,14 +14,14 @@ source: recipe card from kinmemai (rice brand)
 * 1-2 tsps Fish sauce
 * White pepper
 
-## Garnishes
+## Ingredients for Garnishes
 
 * 1 cup Peanut, roasted
 * 5-6 Fresh basil leaves
 * 2 Fresh red chillies, sliced
 * 1 Thin-skinned large lime, diced finely
 
-## Instructions
+## Directions
 
 1. Cook rice with water in a rice cooker till dry and fluffy. While rice is cooking, prepare the garnishes.
 2. Pour out two tablespoons of oil from the bottle of olive paste and heat in a wok.

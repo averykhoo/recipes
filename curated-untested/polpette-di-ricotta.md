@@ -5,7 +5,7 @@ Makes: About 20 polpette
 
 Cook Time: 35 minutes
 
-For this recipe, you will need:
+## Ingredients
 
 * 18 ounces (500 g) ricotta
 * 1.75 ounces (50 g) grated pecorino cheese, or to taste
@@ -18,6 +18,7 @@ For this recipe, you will need:
 * 4 tablespoons (60 g) extra-virgin olive oil
 * 1 clove garlic, peeled
 
+## Directions
 
 1. In a large mixing bowl combine the ricotta, cheeses, eggs, parsley, plenty of black pepper, and a big pinch of salt.
 2. Add about half of the bread crumbs and mix together with a spoon.
@@ -33,6 +34,8 @@ For this recipe, you will need:
 11. If the water evaporates completely, add a little bit more as necessary to keep a simmer going.
 12. Serve warm and fresh, drizzled with the pan juices.
 13. Buon appetito!
+
+---
 
 Notes:
 

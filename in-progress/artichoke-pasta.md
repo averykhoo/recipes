@@ -2,6 +2,8 @@
 
 kind of a quattro stagioni pasta
 
+## Ingredients
+
 * pasta, boiled, salted water reserved? boil in water and stock?
 * butter or ghee
 * leek? peas? spinach? scallions? garlic? olives? ham/bacon? mushroom?

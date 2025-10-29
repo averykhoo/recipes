@@ -1,5 +1,7 @@
 # salmon pasta
 
+## ingredients
+
 * butter
 * onion?
 * garlic

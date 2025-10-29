@@ -8,7 +8,7 @@ This recipe won 1st place at the Nicollet County Fair in 1981 and it stills rema
 bread.
 I've modified it ever so slightly over the years, but the end result remains moist and flavorful.
 
-Ingredients
+## Ingredients
 
 * 0.5 cup butter, softened
 * 0.25 cup vegetable oil
@@ -23,7 +23,7 @@ Ingredients
 * 0.5 teaspoon salt
 * additional brown sugar for top of batter
 
-How to make it
+## Directions
 
 1. Mix together butter, oil, sugars and eggs.
 2. Add mashed bananas, sour cream and vanilla, stirring together well.

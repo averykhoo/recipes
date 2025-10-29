@@ -1,5 +1,7 @@
 # fried garlic shoots
 
+## ingredients
+
 * garlic shoots, root and brown tip discarded, cut into 4cm bits, blanched in salted water
 * onion, sliced or diced
 * any mushroom, used oyster

@@ -4,7 +4,7 @@ https://recipe.cookswarehouse.com/fresh-natural-ratatouille-by-paul-bocuse/
 
 Note: a cocotte is a type of heavy pot with a tight-fitting lid - basically a dutch oven.
 
-Ingredients:
+## Ingredients:
 
 * 1/4 cup extra virgin olive oil
 * 1 large onion (230 g), coarsely chopped
@@ -17,7 +17,7 @@ Ingredients:
 * Sea salt
 * Freshly ground pepper
 
-Instructions:
+## Directions:
 
 1. Toss the eggplant with sea salt and leave it for 2-4 hours (or overnight).
 2. Rinse the eggplant to remove the excess salt and pat it dry with paper towels or a clean kitchen towel.

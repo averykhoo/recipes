@@ -1,5 +1,7 @@
 # Cabbage Rolls
 
+## ingredients
+
 * 10 long cabbage leaves, washed
 * 250g baby asparagus, washed (or normal asparagus, peeled)
 * 250g thinly sliced beef, like for sukiyaki
@@ -9,6 +11,8 @@
 * 1 Tbsp of mirin
 * 2 tsp sesame oil
 * ponzu to serve
+
+## directions
 
 1. boil the cabbage leaves to soften, cool, and shake off excess water
 2. cut the baby asparagus into ~2 inch lengths (roughly in half) and roast them for 15 mins at about 170c

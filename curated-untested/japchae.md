@@ -1,9 +1,10 @@
 # Japchae (Korean Sweet Potato Starch Noodles with Vegetables and Beef)
+
 https://www.americastestkitchen.com/recipes/15175-japchae-korean-sweet-potato-starch-noodles-with-vegetables-and-beef
 By Lan Lam
 
 
-Ingredients:
+## Ingredients:
 
 * 8 ounces boneless beef short ribs, trimmed
 * 2 teaspoons plus ¼ cup soy sauce, divided
@@ -22,14 +23,15 @@ Ingredients:
 * 1 small red bell pepper, stemmed, seeded, and cut into ⅛-inch-wide strips
 * 2 tablespoons sesame seeds, toasted, divided
 
+## Notes
 
-
-Notes: 
 * Dangmyeon, Korean sweet potato starch noodles, are sometimes labeled as japchae noodles or sweet potato starch vermicelli. 
 * Do not substitute other noodles or use frozen spinach instead of fresh.
 * Halve lengthwise any scallions wider than ½ inch.
 * To streamline assembly, cut, cover, and refrigerate the vegetables in advance. 
 * Serve this dish warm or at room temperature.
+
+## Directions
 
 1. Bring 2 quarts water to boil in large pot.
 2. Slice beef crosswise ¼-inch thick. 

@@ -1,5 +1,7 @@
 # Tortang Talong
 
+## directions
+
 1. roast eggplant until blackened
 2. slice like a fan
 3. add starch and a pinch of tumeric
@@ -10,6 +12,10 @@
 8. flip and fry some more
 9. add optional ground pork, fish sauce, soy sauce, minced garlic, diced onion
 10. serve with rice
+
+---
+
+notes:
 
 * traditionally served with banana ketchup
 * air fryer might also work

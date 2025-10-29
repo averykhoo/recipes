@@ -4,7 +4,7 @@ https://liemessa.fi/2020/09/baked-feta-pasta-original-recipe/
 https://iamafoodblog.com/tiktok-baked-feta-pasta/
 https://www.delish.com/cooking/recipe-ideas/a35421563/baked-feta-pasta-tiktok/
 
-Ingredients
+## Ingredients
 
 * 1/3 cup olive oil, the good stuff
 * 500g cherry tomatoes, halved
@@ -19,7 +19,7 @@ Ingredients
 * fresh basil, chopped, to finish
 * (?) saw someone add honey too, but that probably doesn't go?
 
-Instructions
+## Directions
 
 1. Preheat the oven to 400°F / 200°C.
 2. In a large baking dish, toss the tomatoes, crushed garlic, and quartered shallots with the olive oil.
@@ -34,6 +34,8 @@ Instructions
 11. Stir in the drained pasta until well coated and creamy, adding in a bit of pasta water to loosen if too thick.
 12. Taste and season with salt and pepper.
 13. Stir in some chopped basil and finish with crushed red pepper. Enjoy!
+
+---
 
 Notes
 

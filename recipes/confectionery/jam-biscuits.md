@@ -2,7 +2,7 @@
 
 [http://allrecipes.co.uk/recipe/35663/fruity-buns.aspx](https://web.archive.org/web/20141018001557/http://allrecipes.co.uk/recipe/35663/fruity-buns.aspx)
 
-Makes 12 biscuits.
+Yields 12 biscuits.
 
 Tips:
 
@@ -14,7 +14,7 @@ Tips:
 * Leave plenty of space between the dough balls on the baking tray to allow for expansion as they bake
 * Keep an eye on the biscuits as they bake to ensure they don't burn
 
-Ingredients:
+## Ingredients:
 
 * 225g (1.6 cups) [self-raising flour](self-raising-flour.md), sifted
     * 210g flour or cake flour
@@ -27,7 +27,7 @@ Ingredients:
 * 50g raspberry jam
 * (to try out) 1 tsp vanilla, tiny pinch of cinnamon
 
-Method:
+## Directions:
 
 1. Preheat your oven to 200°C (400°F) and line two baking trays with baking paper.
 2. Sprinkle flour over the surface of the trays and spread it around by tipping the trays from side to side.
@@ -44,6 +44,8 @@ Method:
 11. Place 1 tsp (or melon scoop) of jam into the depression of each biscuit.
 12. Bake the biscuits at 200°C (400°F) for 10 minutes until they are risen and golden brown.
 13. Allow the biscuits to cool before serving. Enjoy with fresh whipped cream.
+
+---
 
 Storage:
 

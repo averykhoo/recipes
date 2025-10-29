@@ -2,7 +2,7 @@
 
 (adapted from) https://www.allrecipes.com/recipe/21014/good-old-fashioned-pancakes/
 
-Ingredients
+## Ingredients
 
 * 1 cup flour -- try cake flour based on recipe below
 * 2 teaspoons baking powder
@@ -12,7 +12,7 @@ Ingredients
 * 2 tablespoons butter, melted
 * 1 egg
 
-Directions
+## Directions
 
 1. Sift flour, baking powder, sugar, and salt together in a large bowl. 
 2. Make a well in the center and add milk, melted butter, and egg; mix until smooth.
@@ -22,7 +22,9 @@ Directions
 6. Flip and cook until browned on the other side. 
 7. Repeat with remaining batter.
 
-Editor's Note:
+---
+
+## Editor's Note:
 
 * The salt amount has been reduced based on review feedback. The original recipe called for 1 teaspoon.
 
@@ -115,7 +117,13 @@ aellis1970. "They are so delicious, they were eaten without syrup."
 
 Editorial contributions by Corey Williams
 
-## see also: http://thepioneerwoman.com/cooking/2009/05/perfect-pancakes/
+---
+
+# Perfect Pancakes
+
+see also: http://thepioneerwoman.com/cooking/2009/05/perfect-pancakes/
+
+## Ingredients
 
 * 3 cups Plus 2 Tablespoons Cake Flour (essential ingredient)
 * 3 Tablespoons Baking Powder
@@ -129,6 +137,8 @@ Editorial contributions by Corey Williams
 * 4 Tablespoons Butter, Melted (in a microwave)
 * Extra Butter
 * Maple Or Pancake Syrup
+
+## Directions
 
 1. Mix together dry ingredients in large bowl.
 2. Mix together milk, eggs, and vanilla in a separate bowl.

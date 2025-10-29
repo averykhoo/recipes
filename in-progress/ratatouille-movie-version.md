@@ -3,7 +3,7 @@
 https://www.nytimes.com/2007/06/13/dining/131rrex.html
 theme song: [le festin](https://www.youtube.com/watch?v=beamS4GZ5T8)
 
-Ingredients:
+## Ingredients:
 
 * 1/2 eggplant, sliced 3mm thick
 * 2-3 tomatoes, sliced 3mm thick (this might need a knife)
@@ -13,7 +13,7 @@ Ingredients:
 * 1/2 cup [piperade](./piperade-sauce.md), optionally blended (or use a tomato-based sauce like pomodoro)
 * 1-2 tablespoons olive oil or vinaigrette
 
-Directions:
+## Directions:
 
 1. Preheat oven to 140°C.
 2. Spread out purple eggplant slice on a large work surface. Sprinkle some salt and pepper.

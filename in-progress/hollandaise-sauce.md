@@ -4,6 +4,8 @@
 
 Not sure where this recipe originated from
 
+## ingredients
+
 * 4 (large) yolks
 * 1/4 tsp salt
 * 1/8 tsp sugar
@@ -13,6 +15,8 @@ Not sure where this recipe originated from
 * 200g butter (up to 100g more at the end, depending on consistency)
 * (optional) a pinch each of onion and garlic powder
 * (if it's to be served on fish) maybe some grated parmesan
+
+## Directions
 
 1. Aside from the butter, whisk the remaining ingredients well in a bowl 
 2. Bathe bowl in hot water bath and keep whisking until it thickens 

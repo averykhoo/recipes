@@ -6,6 +6,8 @@ https://howtofeedaloon.com/provencal-chicken-stew/
 
 Basically regular stew with olives and different herbs
 
+## ingredients
+
 * 4 boneless chicken thighs, seasoned and floured
 * rosemary, savory/thyme, oregano/marjoram, maybe basil/parsley, tarragon, bay leaf, fennel seed, lavender
 * 1 cup chicken stock
@@ -24,16 +26,16 @@ Basically regular stew with olives and different herbs
 * apple for sweetness, large cubes
 * potatoes, small cubes
 
-PREPARATION
+## directions
 
-* Dredge the chicken parts in flour
-* Fry the chicken until browned but not cooked through, then reserve.
-* excess flour from fried chicken is fried and added into the stew to thicken
-* fry onions first, then remainder of mirepoix and garlic, and salt and pepper and spices
-* fry mushrooms separately in butter and herbs until browned
-* add tomato and fry and squish
-* Deglaze with wine and stock
-* Add remaining vegetables and olives and stew until tender with lid on, adding water/stock as needed.
-* Add chicken on top and allow to steam with lid on
-* Finish with butter and stir in the chicken
-* Serve with toasted brioche
+1. Dredge the chicken parts in flour
+2. Fry the chicken until browned but not cooked through, then reserve.
+3. excess flour from fried chicken is fried and added into the stew to thicken
+4. fry onions first, then remainder of mirepoix and garlic, and salt and pepper and spices
+5. fry mushrooms separately in butter and herbs until browned
+6. add tomato and fry and squish
+7. Deglaze with wine and stock
+8. Add remaining vegetables and olives and stew until tender with lid on, adding water/stock as needed.
+9. Add chicken on top and allow to steam with lid on
+10. Finish with butter and stir in the chicken
+11. Serve with toasted brioche

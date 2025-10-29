@@ -1,5 +1,7 @@
 # greek-inspired salad recipe, randomly put together, not bad
 
+## Ingredients
+
 * mesclun
 * cherry tomatoes
 * cucumber, seeded (forgot to add this)

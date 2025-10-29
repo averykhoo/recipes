@@ -8,6 +8,8 @@ defy the odds. The result is half pie, half candy bar, and 100% delicious.
 Yield: one 9-inch pie, 8 to 12 slices
 Active time: about 30 minutes
 
+## Ingredients
+
 * 4 large eggs
 * 1 cup, 8 ounces water
 * 3 cups, 21 ounces plain or toasted sugar
@@ -16,6 +18,8 @@ Active time: about 30 minutes
 * 1 Tablespoon vanilla extract, Scotch, or bourbon
 * 2 1/2 cups, 10 ounces pecan halves, raw
 * 1 fully baked 9-inch pie crust
+
+## Directions
 
 1. Before getting started, place the whole eggs in a small bowl, cover with hot tap water and set aside.
 2. Combine 8 ounces (1 cup) water with the sugar and salt in a 3-quart stainless steel saucier over medium heat. Stir
@@ -37,6 +41,8 @@ Active time: about 30 minutes
    slicing with a chef's knife; prior to that the filling will be warm and runny.
 6. Wrapped in plastic, leftovers will keep 3 days at room temperature, or a week in the fridge.
 
+---
+
 Troubleshooting:
 
 * This recipe depends on an accurate digital thermometer, and when things go wrong you can bet the readings were off.
@@ -45,9 +51,11 @@ Troubleshooting:
   heat, or when the batteries start to fade. Check the temperature range of your thermometer to be certain it can
   register 335°, then test its accuracy by making sure it reads 212° in a pot of boiling water.
 
+---
+
 # [Recommended Pie Crust Recipe](https://www.seriouseats.com/old-fashioned-flaky-pie-dough-recipe)
 
-Ingredients
+## Ingredients
 
 * 8 ounces【227 g】 low-protein all-purpose flour, such as Gold Medal Blue Label (1 2/3 cups【394 mL】; 225g), plus more for
   dusting
@@ -56,60 +64,72 @@ Ingredients
 * 8 ounces【227 g】 unsalted, American-style butter, straight from the fridge (2 sticks; 225g), cold
 * 4 ounces【113 g】 cold tap water (1/2 cup【118 mL】; 115g)
 
-Directions
+## Directions
 
-* For the Dough:
-    1. Whisk flour, sugar, and salt together in a medium bowl.
-    2. Cut butter into cubes no smaller than 1/2 inch【1.27 cm】, and toss with flour mixture to break up the pieces.
-    3. With your fingertips, smash each cube flat—that's it! No rubbing or cutting.
-    4. Stir in water, then knead dough against sides of the bowl until it comes together in a shaggy ball.
-    5. Dough temperature should register between 65 and 70°F (18 and 21°C);
-       if not, refrigerate briefly before rolling and folding (see note).
-* Make the Layers:
-    1. On a generously floured work surface, roll dough into a roughly 10- by 15-inch【38.1 cm】 rectangle.
-    2. Fold the 10-inch【25.4 cm】 sides to the center, then close the newly formed packet like a book.
-    3. Fold in half once more, bringing the short sides together to create a thick block.
-    4. Divide in half with a sharp knife or bench scraper.
-    5. Dough temperature should still be somewhere between 65 and 70°F (18 and 21°C);
-       if not, refrigerate briefly before proceeding (see note).
-* For Single-Crusted Pies:
-    1. Using as much flour as needed, roll one piece into a 14-inch【35.56 cm】 circle;
-       this size allows ample room to line pie plate, with enough overhang to form a generous border.
-    2. At smaller sizes, dough will fall short, making it difficult to shape edges,
-       and thicker dough will not crisp as intended. Transfer to 9-inch【22.86 cm】 pie plate;
-       dough should be easy to handle, and will not require any special procedures to move.
-    3. Dust off excess flour with a pastry brush, using it to nestle dough into corners of pan.
-    4. With scissors or kitchen shears, trim edge so that it overhangs by 1 1/4 inches【3.18 cm】.
-    5. Fold overhang over itself to create thick border that sits on top edge of pie plate, not below.
-    6. Crimp or shape crust as desired. Repeat with remaining dough.
-    7. Wrap with plastic and refrigerate at least 2 hours and up to overnight.
-    8. Use as directed in your favorite recipe.
-* For a Double-Crusted Pie:
-    1. Using as much flour as needed, roll one piece into a 14-inch【35.56 cm】 circle;
-       this size allows ample room to line pie plate, with enough overhang to form a generous border.
-    2. At smaller sizes, dough will fall short, making it difficult to shape edges,
-       and thicker dough will not crisp as intended.
-    3. Transfer to 9-inch【22.86 cm】 pie plate;
-       dough should be easy to handle, and will not require any special procedures to move.
-    4. Dust off excess flour with a pastry brush, using it to nestle dough into corners of pan.
-    5. With scissors or kitchen shears, trim edge so that it overhangs by 1 1/4 inches【3.18 cm】.
-    6. For solid top crust, roll remaining dough as before; for lattice-top pie,
-       roll into a 9- by 15-inch【38.1 cm】 rectangle instead.
-    7. Transfer to a baking sheet or parchment-lined cutting board.
-    8. (The parchment will prevent dough from absorbing any savory odors from the board.)
-    9. Wrap both portions in plastic and refrigerate at least 2 hours and up to overnight.
-    10. Use as directed in your favorite recipe; after filling pie and sealing crusts together,
-        refrigerate 30 minutes before baking.
-* For a Blind-Baked Pie:
-    1. Adjust oven rack to lower-middle position and preheat to 350°F (180°C).
-    2. Line pie shell that has been chilled for at least 2 hours (as outlined in Step 3) with a large sheet of aluminum
-       foil, pressing so it conforms to curves of plate.
-    3. (A second sheet of foil may be needed for full coverage.)
-    4. Fill to brim with sugar, transfer to a half sheet pan,
-       and bake until fully set and golden around the edges, 60 to 75 minutes.
-    5. Fold long sides of foil toward middle, gather short sides,
-       and use both hands to carefully transfer sugar to heat-safe bowl. Let sugar cool to room temperature.
-    6. If needed, continue baking crust a few minutes more to brown along the bottom.
+
+For the Dough:
+
+1. Whisk flour, sugar, and salt together in a medium bowl.
+2. Cut butter into cubes no smaller than 1/2 inch【1.27 cm】, and toss with flour mixture to break up the pieces.
+3. With your fingertips, smash each cube flat—that's it! No rubbing or cutting.
+4. Stir in water, then knead dough against sides of the bowl until it comes together in a shaggy ball.
+5. Dough temperature should register between 65 and 70°F (18 and 21°C);
+   if not, refrigerate briefly before rolling and folding (see note).
+
+Make the Layers:
+
+1. On a generously floured work surface, roll dough into a roughly 10- by 15-inch【38.1 cm】 rectangle.
+2. Fold the 10-inch【25.4 cm】 sides to the center, then close the newly formed packet like a book.
+3. Fold in half once more, bringing the short sides together to create a thick block.
+4. Divide in half with a sharp knife or bench scraper.
+5. Dough temperature should still be somewhere between 65 and 70°F (18 and 21°C);
+   if not, refrigerate briefly before proceeding (see note).
+
+For Single-Crusted Pies:
+
+1. Using as much flour as needed, roll one piece into a 14-inch【35.56 cm】 circle;
+   this size allows ample room to line pie plate, with enough overhang to form a generous border.
+2. At smaller sizes, dough will fall short, making it difficult to shape edges,
+   and thicker dough will not crisp as intended. Transfer to 9-inch【22.86 cm】 pie plate;
+   dough should be easy to handle, and will not require any special procedures to move.
+3. Dust off excess flour with a pastry brush, using it to nestle dough into corners of pan.
+4. With scissors or kitchen shears, trim edge so that it overhangs by 1 1/4 inches【3.18 cm】.
+5. Fold overhang over itself to create thick border that sits on top edge of pie plate, not below.
+6. Crimp or shape crust as desired. Repeat with remaining dough.
+7. Wrap with plastic and refrigerate at least 2 hours and up to overnight.
+8. Use as directed in your favorite recipe.
+
+For a Double-Crusted Pie:
+
+1. Using as much flour as needed, roll one piece into a 14-inch【35.56 cm】 circle;
+   this size allows ample room to line pie plate, with enough overhang to form a generous border.
+2. At smaller sizes, dough will fall short, making it difficult to shape edges,
+   and thicker dough will not crisp as intended.
+3. Transfer to 9-inch【22.86 cm】 pie plate;
+   dough should be easy to handle, and will not require any special procedures to move.
+4. Dust off excess flour with a pastry brush, using it to nestle dough into corners of pan.
+5. With scissors or kitchen shears, trim edge so that it overhangs by 1 1/4 inches【3.18 cm】.
+6. For solid top crust, roll remaining dough as before; for lattice-top pie,
+   roll into a 9- by 15-inch【38.1 cm】 rectangle instead.
+7. Transfer to a baking sheet or parchment-lined cutting board.
+8. (The parchment will prevent dough from absorbing any savory odors from the board.)
+9. Wrap both portions in plastic and refrigerate at least 2 hours and up to overnight.
+10. Use as directed in your favorite recipe; after filling pie and sealing crusts together,
+    refrigerate 30 minutes before baking.
+
+For a Blind-Baked Pie:
+
+1. Adjust oven rack to lower-middle position and preheat to 350°F (180°C).
+2. Line pie shell that has been chilled for at least 2 hours (as outlined in Step 3) with a large sheet of aluminum
+   foil, pressing so it conforms to curves of plate.
+3. (A second sheet of foil may be needed for full coverage.)
+4. Fill to brim with sugar, transfer to a half sheet pan,
+   and bake until fully set and golden around the edges, 60 to 75 minutes.
+5. Fold long sides of foil toward middle, gather short sides,
+   and use both hands to carefully transfer sugar to heat-safe bowl. Let sugar cool to room temperature.
+6. If needed, continue baking crust a few minutes more to brown along the bottom.
+
+---
 
 Special Equipment
 

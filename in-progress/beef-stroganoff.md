@@ -1,6 +1,6 @@
 # beef stroganoff
 
-Ingredients:
+## Ingredients:
 
 * 1/2 pound beef, cut into strips or cubes
 * i tsp paprika
@@ -19,12 +19,10 @@ Ingredients:
 * salt and pepper to taste
 * about 120g dried pasta
 
-optional, if using, halve the worcestershire sauce:
+* (optional) 1/2 tsp shoyu - if using, replace 1/2 tsp sauce
+* (optional) 1/4 tsp fish sauce - if using, replace 1/2 tsp worcestershire sauce
 
-* 1/2 tsp shoyu
-* 1/4 tsp fish sauce
-
-Instructions:
+## Directions
 
 1. Season the beef with paprika and salt and pepper to taste
 2. Optionally dust the beef in the flour and shake off excess

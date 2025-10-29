@@ -2,7 +2,7 @@
 
 https://www.pastagrammar.com/post/polpette-di-melanzane-authentic-italian-eggplant-meatball-recipe
 
-For this recipe, you will need:
+## Ingredients
 
 * Salt
 * About 26 ounces (750 g) eggplant, cut into ½ inch (1.25 cm) cubes
@@ -15,6 +15,7 @@ For this recipe, you will need:
 * About 1 cup (100 g) fresh bread crumbs, plus extra for breading, adjusted to taste
 * Vegetable oil for frying
 
+## Directions
 
 1. Bring a large pot of water to a rolling boil and salt it generously.
 2. Add the cubed eggplant and boil for about 10 minutes, or until the eggplant is very tender.

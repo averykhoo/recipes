@@ -1,5 +1,7 @@
 # oyakodon
 
+## ingredients
+
 * 100-300g chicken, sliced into forkable chunks
 * 1 large onion (or 2 small)
 * optional carrots
@@ -8,6 +10,8 @@
 * mirin
 * optional sake
 * 2 eggs
+
+## directions
 
 1. fry chicken to brown the outside, then reserve
 2. fry onions, carrots, any other veggies

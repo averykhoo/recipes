@@ -2,6 +2,8 @@
 
 note: for this to turn out pink and not orange, the tomatoes must be red and not orange
 
+## ingredients
+
 1. fry bacon and halved cherry tomatoes (and pepper - salt comes from pasta water)
 2. add chicken stock to help tomatoes to cook
 3. also add herbs if desired

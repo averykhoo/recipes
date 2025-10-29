@@ -2,12 +2,16 @@
 
 from Ati
 
+## Ingredients
+
 * 380g cleaned deseeded chili
 * 100g garlic
 * 1 cup oil <- todo: not sure about this amount
 * 1 tsp salt
 * 1/2 tsp chicken bouillon powder (alternatively, a pinch of msg)
 * 1/8 tsp sugar (if not adding msg)
+
+## Directions
 
 1. Blend chili and garlic until they're about 3mm across
 2. Get the oil very hot (otherwise it'll be bitter)

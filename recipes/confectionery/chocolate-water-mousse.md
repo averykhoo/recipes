@@ -6,13 +6,13 @@
 * https://bluejeanchef.com/recipes/herve-this-chocolate-mousse
 * https://food52.com/recipes/16044-herve-this-chocolate-mousse
 
-Ingredients:
+## Ingredients:
 
 * 200g dark chocolate, finely chopped (high in cocoa butter)
 * 150g water
 * (optional) tiny pinch of fine salt
 
-Method:
+## Directions:
 
 1. Place chopped-up chocolate in a big bowl, and prepare an ice bath (with a towel on the bottom to hold it in place).
 2. Bring the water to a boil, then pour over the chocolate.
@@ -23,6 +23,8 @@ Method:
 7. Serve immediately at room temperature.
 8. Otherwise, keep covered in the fridge (it will eventually solidify).
 9. Reheat gently over a bain-marie (to soften it), and whisk before serving.
+
+---
 
 Notes:
 

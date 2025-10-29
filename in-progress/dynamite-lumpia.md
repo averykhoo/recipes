@@ -7,6 +7,8 @@ https://food52.com/recipes/84691-dynamite-lumpia-recipe
 https://www.kawalingpinoy.com/dynamite-lumpia/
 https://panlasangpinoy.com/dyanamite-lumpia/
 
+## ingredients
+
 * big fat chili peppers, seeds and pith thoroughly removed
 * meat
 * garlic
@@ -18,6 +20,8 @@ https://panlasangpinoy.com/dyanamite-lumpia/
 * cheese
 * spring roll wrappers, egg or rice rolls okay
 * clove, fennel, worcestershire, light soy sauce, liquid smoke
+
+---
 
 notes:
 

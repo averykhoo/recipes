@@ -20,36 +20,36 @@ I found that a 1 ¼-inch cookie scooper is the best way to form the balls, but y
 teaspoon measure and your hands-keep your hands thoroughly moistened with water to prevent the meat mixture from
 sticking to them.
 
-MEATBALLS
-1/3 cup chopped onion
-1 large egg
-1 egg white
-1/3 cup beef broth
-2 tablespoons water
-½ pound ground beef
-(20 percent fat)
-½ pound ground pork
-½ cup plain bread crumbs
-1 teaspoon salt
-½ teaspoon white pepper
-1/8 teaspoon allspice
+## INGREDIENTS FOR MEATBALLS
+* 1/3 cup chopped onion
+* 1 large egg
+* 1 egg white
+* 1/3 cup beef broth
+* 2 tablespoons water
+* ½ pound ground beef
+* (20 percent fat)
+* ½ pound ground pork
+* ½ cup plain bread crumbs
+* 1 teaspoon salt
+* ½ teaspoon white pepper
+* 1/8 teaspoon allspice
 
-CREAM SAUCE
-1 ¼ cups beef broth
-1/3 cup heavy cream
-4 teaspoons cornstarch
-1 tablespoon apple juice
-¼ teaspoon salt
-1/8 teaspoon garlic powder
-1/8 teaspoon onion powder
-1/8 teaspoon white pepper
-1 bay leaf
-2 teaspoons vegetable oil
+## INGREDIENTS FOR CREAM SAUCE
+* 1 ¼ cups beef broth
+* 1/3 cup heavy cream
+* 4 teaspoons cornstarch
+* 1 tablespoon apple juice
+* ¼ teaspoon salt
+* 1/8 teaspoon garlic powder
+* 1/8 teaspoon onion powder
+* 1/8 teaspoon white pepper
+* 1 bay leaf
+* 2 teaspoons vegetable oil
 
-ON THE SIDE (OPTIONAL)
-Lingonberry preserves
+## INGREDIENTS FOR SIDE
+* (optional) Lingonberry preserves
 
-Directions
+## Directions
 
 1. Combine the onion, egg, egg white, beef broth, and water in a food processor or blender and mix on high speed for 15
    seconds or until the onion is completely pulverized.

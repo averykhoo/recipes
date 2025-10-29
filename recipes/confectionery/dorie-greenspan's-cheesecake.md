@@ -3,13 +3,13 @@
 * from: "Baking: From my Home to Yours"
 * Total time: 30 min prep, 1.5 hr bake, 1-2 hr rest in oven, 2-4 hr cool, 4 hr chill == 10 hours
 
-GRAHAM CRACKER BASE
+## INGREDIENTS FOR GRAHAM CRACKER BASE
 
 * 1.75 cups graham crackers, blended into fine crumbs (150g)
 * 4 tablespoons sugar (50g)
 * pinch of salt
 * 3 tablespoons unsalted butter, melted in a small pot (45g)
-* ==========================
+
 * 1 tsp cinnamon powder
 * 0.5 tsp ground nutmeg
 * 0.5 tsp ground ginger
@@ -18,9 +18,12 @@ GRAHAM CRACKER BASE
 * pinch ground cardamom
 * pinch white pepper
 * pinch ground anise
-* (or use lotus biscuits and no spice/sugar/salt)
 
-CHEESECAKE BATTER
+---
+
+or use crushed lotus biscuits and butter and skip all the above - no spice/sugar/salt/etc
+
+## INGREDIENTS FOR CHEESECAKE BATTER
 
 * 2 pounds (900 grams, or just use 1kg) cream cheese, at room temperature
 * 0.75 cup (150 grams) sugar
@@ -32,14 +35,14 @@ CHEESECAKE BATTER
 * 4 egg whites
 * 0.5 cup (100g) fine sugar
 
-TOPPING
+## INGREDIENTS FOR TOPPING
 
 * 0.33 cups sour cream (about 8ml)
 * 0.25 cup powdered sugar (50g)
 * 1 teaspoon vanilla (0.5 tsp)
 * 1.33 cup sour cream (about 320ml)
 
-MORE TOPPING
+## INGREDIENTS FOR MORE TOPPING
 
 * 1 pint = 12 ounces (340 g) fresh raspberries / strawberries
 * 0.5 cup granulated sugar (100 g) (or 1/3 cup for less sweet)
@@ -48,24 +51,25 @@ MORE TOPPING
 * (erin's mile-high) zest of 1/2 orange / 0.5tsp orange extract (zest as finely as possible)
 * (erin's mile-high) 1 Tbsp grand marnier
 
-SPECIAL EQUIPMENT NEEDED
+## SPECIAL EQUIPMENT NEEDED
 
 * 9-inch diameter circle 2.75-inch high springform pan, or two 6-inch square pans of similar height
 * Heavy-duty, 15-inch wide aluminum foil
 * A large, high-sided roasting pan that fits the springform pan(s)
 
-INSTRUCTIONS
-Prepare the springform pan so that no water leaks into it while cooking:
-Place a large 18-inch by 18-inch square of aluminum foil on a flat surface.
-Place the springform pan in the middle of the foil.
-Gently fold up the sides of the foil around the pan.
-Make sure to do this gently so that you don't create any holes in the foil.
-(If there are any holes, water will get into the pan and ruin the crust.)
-Press the foil around the edges of the pan.
-Place a second large square of foil underneath the pan, and repeat.
-Gently crimp the top of the foil sheets around the top edge of the pan.
+## DIRECTIONS FOR PAN PREPARATION
 
-GRAHAM CRACKER BASE
+1. Prepare the springform pan so that no water leaks into it while cooking:
+2. Place a large 18-inch by 18-inch square of aluminum foil on a flat surface.
+3. Place the springform pan in the middle of the foil.
+4. Gently fold up the sides of the foil around the pan.
+5. Make sure to do this gently so that you don't create any holes in the foil.
+6. (If there are any holes, water will get into the pan and ruin the crust.)
+7. Press the foil around the edges of the pan.
+8. Place a second large square of foil underneath the pan, and repeat.
+9. Gently crimp the top of the foil sheets around the top edge of the pan.
+
+## DIRECTIONS FOR GRAHAM CRACKER BASE
 
 1. Pulse the graham crackers in a food processor or blender until finely ground.
 2. Put in a large bowl, and stir in the sugar and salt.
@@ -81,7 +85,7 @@ GRAHAM CRACKER BASE
 12. Place in the oven for 10 minutes. (Prebaking the crust gives it the nice crunch.)
 13. Remove from the oven and let cool.
 
-CHEESECAKE BATTER
+## DIRECTIONS FOR CHEESECAKE BATTER
 
 1. Reduce the oven temperature to 325°F. (160°C)
 2. Cut the cream cheese into chunks and place in the bowl of an electric mixer with metal blades
@@ -111,17 +115,19 @@ CHEESECAKE BATTER
 20. Cover the top of the cheesecake with foil, so that it doesn't actually touch the cheesecake.
 21. Chill in the refrigerator for a minimum of 4 hours, or preferably overnight.
 
-TOPPING
-
-* Note: this is enough for a VERY thick topping and some extra to spoon over individual pieces of cheesecake, if
-  desired.
-* If you would like a thinner layer of topping and no extra, reduce the sour cream topping ingredients in half.
+## DIRECTIONS FOR TOPPING
 
 1. Place 1/3 cup sour cream in a medium sized bowl, stir/blend in the powdered sugar and vanilla, until smooth
 2. Fold into the remaining sour cream
 3. Chill until you are ready to serve the cake.
 
-MORE TOPPING
+---
+
+* Note: this is enough for a VERY thick topping and some extra to spoon over individual pieces of cheesecake, if
+  desired.
+* If you would like a thinner layer of topping and no extra, reduce the sour cream topping ingredients in half.
+
+## DIRECTIONS FOR MORE TOPPING
 
 1. Place raspberries/strawberries, sugar, and water in a small saucepan.
 2. Use a potato masher to mash the raspberries.
@@ -131,7 +137,7 @@ MORE TOPPING
 6. Let cool.
 7. Serve chilled
 
-TO SERVE
+## DIRECTIONS FOR SERVING
 
 1. Remove the cake from the refrigerator.
 2. Remove the foil from the sides of the pan, and place the cake on your cake serving dish.
@@ -144,6 +150,8 @@ TO SERVE
 9. Serve plain or drizzled with raspberry sauce.
 10. Wrapped well, the cake will keep for up to 1 week in the refrigerator or for up to 2 months in the freezer.
     (If frozen, it's best to defrost the still-wrapped cheesecake overnight in the refrigerator.)
+
+---
 
 NOTES:
 

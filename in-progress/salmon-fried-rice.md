@@ -1,5 +1,7 @@
 # salmon fried rice
 
+## ingredients
+
 * 2 portions leftover rice
 * 2 egg yolks
 * 3-5 cloves garlic, minced, crushed, or sliced, but not whole
@@ -9,6 +11,8 @@
 * 1 Tbsp mayo
 * 1-2 spring onions, chopped
 * handful of chives, chopped
+
+## directions
 
 1. mix egg yolks with reheated rice in a pan that isn't hot yet
 2. start frying, moving and scraping constantly until the yolk is cooked onto the surface of the rice

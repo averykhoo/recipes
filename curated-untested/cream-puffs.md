@@ -2,15 +2,13 @@
 
 https://www.youtube.com/watch?v=3xtSr5iIuTo
 
-Ingredients:
-
-cookie
+## Ingredients for cookie
 
 * 33g unsalted butter (softened / room temperature)
 * 40g sugar
 * 40g all-purpose flour
 
-choux
+## Ingredients for choux
 
 * 65g All-purpose flour
 * 65g milk
@@ -19,7 +17,7 @@ choux
 * 2g salt
 * 3 whole eggs
 
-custard cream
+## Ingredients for custard cream
 
 * 2 egg yolks
 * 35g sugar
@@ -29,9 +27,7 @@ custard cream
 * 170g heavy cream
 * 17g sugar
 
-Instructions:
-
-Choux Pastry:
+## Directions for Choux Pastry:
 
 1. Cut the sides of a plastic bag with scissors.
 2. In a bowl, mix 33g unsalted butter (softened) with 40g sugar until well combined.
@@ -49,7 +45,7 @@ Choux Pastry:
 14. Add the frozen butter. Bake at 190°C (375°F) for 15 minutes, then at 170°C (338°F) for another 15 minutes.
 15. Open the oven door slightly and take it out after 10 minutes. Let it cool.
 
-Custard Cream:
+## Directions for Custard Cream:
 
 1. In a bowl, mix 2 egg yolks with 35g sugar until pale yellow.
 2. Add 10g cornstarch and mix well.
@@ -62,6 +58,8 @@ Custard Cream:
 9. Enjoy your delicious choux pastry with custard cream!
 10. Note: The recipe is based on the provided video transcript and may require adjustments based on personal preferences
     and cooking conditions.
+
+---
 
 Notes:
 

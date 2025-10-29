@@ -3,6 +3,8 @@
 * https://www.the-girl-who-ate-everything.com/magnolia-bakerys-famous-banana-pudding/
 * https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221jwyLxdi_EUWitPu6iqiDydJ1OAD7WQDN%22%5D,%22action%22:%22open%22,%22userId%22:%22117280320071755292615%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing
 
+---
+
 ## Ingredients
 
 * 6 Tbsp sweetened condensed milk
@@ -12,7 +14,7 @@
 * 250g (8oz) pack of Biscoff Lotus biscuits <- can use less, maybe 200g
 * 3-4 ripe bananas, peeled, de-stringed, and sliced
 
-#### Instructions
+## Directions
 
 1. **Create the pudding base:**
    In a medium bowl, whisk together the sweetened condensed milk, ice, and water until combined.

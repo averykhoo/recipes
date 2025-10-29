@@ -1,5 +1,7 @@
 # Pesto (from Thai basil)
 
+## ingredients
+
 * leaves from 3 bunches of thai basil (about 200g dry)
     * these basil leaves are larger than holy basil, and don't smell like mint
     * also pluck off the tippy tops since those bits have flavor - basically put in everything except the stem
@@ -18,6 +20,8 @@
     * note from 2023-02-19:
         * used 1 cup (60g) of grated gran moravia (hard cheese) since that was in the fridge
         * using 2/3 cup (40g) was still too little
+
+## directions
 
 1. add oil to blender
 2. add basil leaves - about 1/3 of the leaves will fit
