@@ -1,6 +1,6 @@
 # [Ikea Meatballs](https://twitter.com/IKEAUK/status/1252269467515617280/photo/1) (untested)
 
-* makes 4 servings (16-20 meatballs)
+* yields 4 servings (16-20 meatballs)
 * released during the 2020 pandemic
 * see also: [Ikea SG recipe card](https://www.ikea.com/ms/en_SG/pdf/restaurant/Meatballs_w_creamsauce.pdf)
 
@@ -47,3 +47,8 @@ Directions
    Bring it to simmer and allow sauce to thicken.
 6. When ready to eat, serve with your favourite potatoes - either creamy mash or mini new boiled potatoes.
    Enjoy!
+
+
+Source:
+
+![assembly instructions for meatballs](meatballs-recipe-card.png)

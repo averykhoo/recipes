@@ -43,9 +43,11 @@ Your goal is to develop a robust mental model of this repository based *only* on
 │   ├── french-silk-pie.md
 │   ├── high-as-a-kite-biscuits.md
 │   ├── ikea-meatballs
+│   │   ├── Meatballs_w_creamsauce.pdf
 │   │   ├── ikea-meatballs-sg.md
 │   │   ├── ikea-meatballs.md
 │   │   ├── ikea-swedish-meatballs.md
+│   │   ├── meatballs-recipe-card.png
 │   │   └── swedish-meatballs.md
 │   ├── japchae.md
 │   ├── pecan-pie.md
@@ -1245,7 +1247,9 @@ How to make it
 --- End of File: curated-untested/high-as-a-kite-biscuits.md ---
 --- File: curated-untested/ikea-meatballs/ikea-meatballs-sg.md ---
 ````markdown
-# [Meatballs with Cream Sauce](https://www.ikea.com/ms/en_SG/pdf/restaurant/Meatballs_w_creamsauce.pdf)
+# [Meatballs with Cream Sauce](./Meatballs_w_creamsauce.pdf)
+
+Originally from: https://www.ikea.com/ms/en_SG/pdf/restaurant/Meatballs_w_creamsauce.pdf
 
 Without a doubt, meatballs is the best known of all Swedish dishes, traditionally served with potatoes, lingonberry jam
 and cream sauce.
@@ -1305,7 +1309,7 @@ We also have these easy-to-prepare solutions:
 ````markdown
 # [Ikea Meatballs](https://twitter.com/IKEAUK/status/1252269467515617280/photo/1) (untested)
 
-* makes 4 servings (16-20 meatballs)
+* yields 4 servings (16-20 meatballs)
 * released during the 2020 pandemic
 * see also: [Ikea SG recipe card](https://www.ikea.com/ms/en_SG/pdf/restaurant/Meatballs_w_creamsauce.pdf)
 
@@ -1353,6 +1357,10 @@ Directions
 6. When ready to eat, serve with your favourite potatoes - either creamy mash or mini new boiled potatoes.
    Enjoy!
 
+
+Source:
+
+![assembly instructions for meatballs](meatballs-recipe-card.png)
 ````
 --- End of File: curated-untested/ikea-meatballs/ikea-meatballs.md ---
 --- File: curated-untested/ikea-meatballs/ikea-swedish-meatballs.md ---
