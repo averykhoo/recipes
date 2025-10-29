@@ -6,6 +6,8 @@ https://howtofeedaloon.com/provencal-chicken-stew/
 
 Basically regular stew with olives and different herbs
 
+## Ingredients
+
 * 4 boneless chicken thighs
 * 1 Tbsp herbs de provence:
     * traditionally rosemary, savory/thyme, oregano/marjoram
@@ -25,7 +27,7 @@ Basically regular stew with olives and different herbs
 * finished with a bit of butter
 * a few slices of bread
 
-Not provencal:
+## Ingredients for non-provencal version, additional and optional:
 
 * excess flour from fried chicken is fried and added into the stew to thicken
 * peas, zucchini
@@ -36,7 +38,7 @@ Not provencal:
 * apple for sweetness, large cubes
 * potatoes, small cubes
 
-PREPARATION
+## Directions
 
 1. Dredge the chicken parts in flour
 2. Fry the chicken until browned but not cooked through, then reserve.

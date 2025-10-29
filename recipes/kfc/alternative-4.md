@@ -1,8 +1,9 @@
-KFC Colonels Sanders' Employee Recipe Episode #7
+# KFC Colonels Sanders' Employee Recipe Episode #7
 
 https://youtu.be/7CZwrJBAkq4
 
-Ingredients:
+## Ingredients:
+
 * 102g (12 Tbsp / 36 tsp) white pepper
 * 66g (9 Tbsp + 1 tsp / 28 tsp) black pepper
 * 18g (4 Tbsp / 12 tsp) ground sage
@@ -17,11 +18,12 @@ Ingredients:
 * 19g (4 tsp) msg
 * 480g (24 Tbsp / 72 tsp) salt 
 
-Method:
-Place all ingredients except salt in a spice grinder; grind and shake to combine.
-Transfer to a sealable container, add the salt and shake to combine.
-Preheat pressure fryer to 165ºC.
-Mix together 48g spice to 100g flour.
-Prepare an egg wash of 1 egg to 1 cup of milk.
-Dip chicken in egg wash, then dredge in flour spice mix.
-Deep fry until golden brown and cooked through.
+## Directions:
+
+1. Place all ingredients except salt in a spice grinder; grind and shake to combine.
+2. Transfer to a sealable container, add the salt and shake to combine.
+3. Preheat pressure fryer to 165ºC.
+4. Mix together 48g spice to 100g flour.
+5. Prepare an egg wash of 1 egg to 1 cup of milk.
+6. Dip chicken in egg wash, then dredge in flour spice mix.
+7. Deep fry until golden brown and cooked through.

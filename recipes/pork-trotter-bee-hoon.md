@@ -4,6 +4,8 @@ https://ieatishootipost.sg/easy-ter-kar-bee-hoon-recipe/
 
 https://annieliciousfood.blogspot.com/2012/09/pig-trotters-bee-hoon.html
 
+## Ingredients
+
 * 3-4 cloves garlic, minced
 * about half a carrot, julienned (sliced into thin strips)
 * half a lettuce, sliced about 1cm thick, the end cuts need to be cut again because they'll be too huge otherwise
@@ -14,6 +16,8 @@ https://annieliciousfood.blogspot.com/2012/09/pig-trotters-bee-hoon.html
 * 1 Tbsp shoyu
 * 1 Tbsp dark soy sauce
 * 1-2 stalks spring onion, sliced thin
+
+## Directions
 
 1. Pre-soak the bee hoon and mushrooms.
 2. Fry the garlic, carrots, and mushrooms in a pan until fragrant.

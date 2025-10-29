@@ -9,7 +9,7 @@
 * works with garlic fried rice or pasta
 * potato dauphinoise makes a good side dish
 
-## WITH AN OVEN:
+# INGREDIENTS FOR AN OVEN:
 
 * 1-2 teaspoons salt
 * 1 teaspoon chili powder
@@ -18,12 +18,16 @@
 * 1/2 cup butter
 * 1 cup heavy cream
 
+## DIRECTIONS FOR AN OVEN
+
 1. Put into blender.
 2. Blend.
 3. Cover chicken.
 4. Bake at low heat until chicken is cooked.
 
-## IN A PAN:
+---
+
+# FOR COOKING IN A PAN:
 
 (partial merge with alfredo recipe)
 
@@ -53,7 +57,9 @@
 4. Switch off heat
 5. When the pot is below 60°C add and mix these in
 
-## [Chicken Lazone](https://www.food.com/recipe/chicken-lazone-65768)
+---
+
+# Original: [Chicken Lazone](https://www.food.com/recipe/chicken-lazone-65768)
 
 * originally from [RecipeZaar #65768](http://www.recipezaar.com/65768)
 * by "@Luby Luby Luby"
@@ -65,7 +71,7 @@ No one has to know how simple and quick it is.
 I posted this recipe exactly as it was in the book, however, if you like a little "heat" please feel free to add some
 cayenne pepper to taste.
 
-Ingredients
+## Ingredients
 
 * 1 teaspoon salt
 * 1.5 teaspoons chili powder
@@ -75,7 +81,7 @@ Ingredients
 * 0.25 cup butter, divided
 * 0.5 cup heavy cream
 
-Directions
+## Directions
 
 1. Combine the seasonings and coat chicken breasts.
 2. In large saute pan melt half of the butter and cook chicken over medium heat for about 7 to 8 minutes, turning once.

@@ -20,7 +20,7 @@ https://www.themediterraneandish.com/baba-ganoush-recipe/
 * pinch of smoked paprika
 
 
-## Instructions:
+## Directions:
 
 1. Preheat oven to 220°C.
 2. Slice eggplants in half and brush the cut sides lightly with olive oil.

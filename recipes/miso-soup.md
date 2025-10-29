@@ -1,6 +1,6 @@
 # Miso Soup
 
-Ingredients:
+## Ingredients:
 
 * 4-6 cups (1-1.5 liters) dashi (either kombu or bonito is fine)
 * 1-2 Tbsp mirin or ryorishu (optional)
@@ -9,7 +9,7 @@ Ingredients:
 * 1-2 tsp dried wakame
 * 1 spring onion, sliced thinly
 
-Instructions:
+## directions:
 
 1. In a large pot, bring the dashi to a boil and add the mirin.
 2. Stir in the wakame and let it rehydrate.
@@ -20,7 +20,7 @@ Instructions:
 5. Add the sliced spring onions to the pot. Also add the tofu, but do that gently.
 6. Using a soup ladle, scoop the soup into individual bowls, taking care not to break the tofu. Serve hot and enjoy!
 
-Notes:
+## Notes:
 
 * The amount of miso required depends on the concentration of the dashi and the type and saltiness of the miso. It's
   better to taste and adjust upwards.

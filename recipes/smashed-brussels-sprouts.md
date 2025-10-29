@@ -2,6 +2,8 @@
 
 The same method works for potatoes, sweet potatoes, and beetroot
 
+## Ingredients
+
 * Brussels sprouts, with root end trimmed
 * Herbs & spices options
     * Paprika
@@ -13,6 +15,8 @@ The same method works for potatoes, sweet potatoes, and beetroot
     * Manchego
     * Parmesan
     * Mozzarella
+
+## Directions
 
 1. Parboil brussels sprouts in salted water (optionally with a bit of soda bicarb)
 2. (Very much optional) cool in an ice bath to retain color. Pat dry.

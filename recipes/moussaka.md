@@ -3,6 +3,8 @@
 https://www.mygreekdish.com/recipe/mousakas/
 https://www.recipetineats.com/moussaka-greek-eggplant-beef-bake/
 
+## Ingredients
+
 * 2 eggplants, sliced 1 cm thick, salted to remove water, rinse excess salt off, patted dry, fried golden brown
     * TODO: try slicing it round instead of long next time
 * 2 zucchini, sliced 0.5-1 cm thick, patted dry, fried golden brown
@@ -24,6 +26,8 @@ https://www.recipetineats.com/moussaka-greek-eggplant-beef-bake/
     * not too much salt
     * 1 egg yolk added at the end helps thicken the sauce
 * cheese on top
+
+## Directions
 
 1. Preheat oven to 180°C.
 2. Prepare the veggies. Frying / baking the veggies is optional. Consider cutting the veg into smaller pieces so that

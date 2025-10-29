@@ -3,7 +3,7 @@
 https://www.bbcgoodfood.com/recipes/dauphinoise-potatoes
 https://www.greatbritishchefs.com/recipes/potato-dauphinoise-recipe
 
-Ingredients:
+## Ingredients:
 
 * (optional) bunch of garlic chives (koo chye), cut on a bias
 * 3 cloves garlic, pressed
@@ -17,7 +17,7 @@ Ingredients:
 * (optional) 1/2 cup grated cheese (usually Gruyere)
 * (optional) truffle oil
 
-Instructions:
+## Directions:
 
 1. Press the garlic cloves and simmer in cream in a large pan over medium heat. Also add chives, if using.
 2. Add the nutmeg and clove powder (and optional pepper and paprika) and stir to combine.

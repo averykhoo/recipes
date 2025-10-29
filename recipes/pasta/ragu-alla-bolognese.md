@@ -6,7 +6,7 @@ https://www.pastagrammar.com/post/rag%C3%B9-alla-bolognese-authentic-bolognese-s
 about 50-65g dried pasta per person (500g packet of dried pasta usually feeds 8-10)
 and pepper is important too
 
-## ingredients, part 1
+## ingredients for passata
 
 [//]: # (TODO: this is pretty much passata and could be a separate page)
 
@@ -20,10 +20,10 @@ and pepper is important too
 * optional (fresh?) herbs
 * salt and pepper
 
-## ingredients, part 2
+## ingredients for the rest of the sauce
 
 * 100g-200g bacon, sliced very thinly and cut into small bits
-  * to make this halal, substitute with 50g beef fat plus a bit of salt
+    * to make this halal, substitute with 50g beef fat plus a bit of salt
 * 250g ground mutton
 * 250g ground beef
 * 100-200g chicken livers, blended into a liquid paste
@@ -37,7 +37,7 @@ and pepper is important too
     * mushroom
     * parmesan
 
-## directions, part 1
+## directions for passata
 
 1. blend/dice/mince the carrot, onion, celery, and capsicum
 2. fry with little to no oil until well cooked through
@@ -45,7 +45,7 @@ and pepper is important too
 4. add stock and optional herbs and cook, covered, until it looks about done
 5. reserve in an airtight container in the fridge for up to a week, or in the freezer for maybe a month
 
-## directions, part 2
+## directions for the sauce
 
 1. fry the bacon to render the fat
 2. add the rest of the meat and fry until no longer raw or wet (if the meat releases water, boil it off)
@@ -61,8 +61,7 @@ and pepper is important too
 * to do this in one pan: fry the soffrito dry, render bacon, add meat, then tomatoes, garlic, herbs, spices
 * for lasagna: omit milk and nutmeg, and consider using more (maybe 2x?) tomatoes
 * any color of wine will work, but red gives the final sauce a nicer color
-
-use for:
-* pasta bolognese
-* lasagna
-* chili cheese fries
+* use for:
+    * pasta bolognese
+    * lasagna
+    * chili cheese fries

@@ -3,7 +3,7 @@
 https://www.allrecipes.com/recipe/285205/that-zucchini-spaghetti-stanley-tucci-loves-spaghetti-alla-nerano/
 https://www.newyorker.com/culture/kitchen-notes/the-secrets-of-stanley-tuccis-zucchini-spaghetti
 
-Ingredients
+## Ingredients
 
 * 1 quart【950 mL】 sunflower oil, or as needed, for deep frying
 * 6 medium green zucchini
@@ -18,7 +18,7 @@ Ingredients
 * optional 1 clove garlic
 * optional pat of butter to finish
 
-Directions
+## Directions
 
 1. Slice zucchini into 1/8-inch【3.2 mm】rounds.
 2. Place sunflower oil in a deep fryer and heat to 350 degrees F (175 degrees C).
@@ -38,6 +38,8 @@ Directions
 14. Mix in Pecorino Romano and Parmigiano-Reggiano cheeses.
 15. Add a final splash of pasta water and adjust salt if needed.
 16. Serve with more grated cheese, fresh basil, pepper, and optional butter.
+
+---
 
 Chef's Notes
 

@@ -1,8 +1,12 @@
 # Self-raising flour
 
+## Ingredients
+
 * 1 cup flour
 * 1.5 tsp baking powder
 * 0.5 tsp salt
+
+---
 
 Notes:
 

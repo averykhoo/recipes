@@ -1,6 +1,8 @@
-Ken's Recipe v7:
+# KFC - Ken's Recipe v7:
 
 https://youtu.be/g6RPP_9Lwbc
+
+## Ingredients
 
 * 3g MSG
 * 3g white pepper
@@ -14,5 +16,7 @@ https://youtu.be/g6RPP_9Lwbc
 * 0.125g marjoram
 * 0.125g summer savoury
 * 0.125g thyme
+
+---
 
 All ground and mixed with 200g flour and 25g salt 

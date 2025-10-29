@@ -30,7 +30,7 @@
 * hint of dijon mustard, optional
 * Optional handful of additional shredded cheese. for topping
 
-## Instructions
+## Directions
 
 1. Fry bacon until browned, reserve but leave the fat in the pan
 2. Add butter / additional bacon fat, and fry onion, ~~salt,~~ pepper, paprika, and optional cayenne, until onions are soft

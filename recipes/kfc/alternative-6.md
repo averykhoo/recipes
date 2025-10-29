@@ -1,8 +1,8 @@
-The Final KFC Recipe #10
+## The Final KFC Recipe #10
 
 https://youtu.be/7WJYOgzFydc
 
-Ingredient list:
+## Ingredients:
 
 * Fine Salt
 * Fine Ground Black Pepper
@@ -16,6 +16,8 @@ Ingredient list:
 * Rubbed Thyme
 * Ground Sage
 * Rubbed Marjoram
+
+---
 
 Of course there is more than just the spice mix; if you want that old school taste, you need to use a low protein flour,
 dip in an egg and milk wash, and pressure fry in hydrogenated cotton seed oil.

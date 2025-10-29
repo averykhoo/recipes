@@ -2,7 +2,9 @@
 
 somewhere between tomato pasta and pasta alla gricia
 
-makes 2 portions
+yields 2 portions
+
+## Ingredients:
 
 * olive oil
 * 250g fatty pork
@@ -11,6 +13,8 @@ makes 2 portions
 * about 100-125g spaghetti
 * optional beef/chicken stock
 * optional cheese
+
+## Directions
 
 1. Render fat from the pork over low to medium heat, about 30 mins
 2. At the same time, cook the tomatoes with salt, pepper, and herbs (and maybe paprika)

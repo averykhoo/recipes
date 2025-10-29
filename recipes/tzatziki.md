@@ -4,7 +4,7 @@ from: https://www.seriouseats.com/kolokithokeftedes-greek-zucchini-fritters-with
 see also: https://cookieandkate.com/how-to-make-tzatziki/
 see also: https://www.loveandlemons.com/tzatziki-sauce/
 
-For Tzatziki:
+## Ingredients For Tzatziki:
 
 * 1 cup thick greek yogurt
 * 1-2 cloves raw garlic, minced
@@ -15,6 +15,8 @@ For Tzatziki:
 * pepper
 * salt to taste
 * 1-2 tablespoons chopped mint or dill
+
+## Directions
 
 1. Squeeze excess moisture from cucumber.
 2. In a small bowl, mix yogurt, garlic, cucumber.

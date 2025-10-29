@@ -2,7 +2,7 @@
 
 make some fizzy fruit
 
-ingredients:
+## ingredients:
 
 * dry ice
 * wide-mouth polycarbonate bottle (ideally from a reputable brand, e.g. nalgene)
@@ -13,7 +13,7 @@ ingredients:
     * peeled grapes
     * orange slices
 
-instructions:
+## directions:
 
 1. peel, slice, and chill the fruit in the fridge
 2. put fruit in bottle
@@ -24,7 +24,9 @@ instructions:
    (this can be done in the fridge)
 7. very slowly uncap the bottle, letting the gas leak out before fully unscrewing the cap
 
-slightly hand-wavy science:
+---
+
+## slightly hand-wavy science:
 
 * a marble has a diameter of about 1/2 inches to 1.5cm -> the volume of dry ice is about 1 to 2 ml (~= 1.5 ml)
 * dry ice has a density of 1.6g/cm3 -> the mass of dry ice is 1.6 * 1.5 = 2.4g

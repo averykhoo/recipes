@@ -4,6 +4,8 @@ https://www.reddit.com/r/GrandTourTopgearFans/comments/kdzrma/oh_cook_i_made_jam
 
 [//]: # (todo: https://thehappyfoodie.co.uk/recipes/luxury-smoked-fish-pie/)
 
+## Ingredients
+
 * 500g floury potatoes, peeled and quartered
 * 1/4 cup milk
 * Butter
@@ -17,6 +19,8 @@ https://www.reddit.com/r/GrandTourTopgearFans/comments/kdzrma/oh_cook_i_made_jam
 * Optional peas, boiled
 * Salt and pepper
 * Optional panko or crumbled ritz on top for texture
+
+## Directions
 
 1. Preheat oven to 180-200°C.
 2. Boil potatoes and mash with milk and butter until smooth. Optional yolk. Season with pepper.

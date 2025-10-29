@@ -7,13 +7,11 @@
 
 ## Ingredients
 
-Cabbage:
-
+[//]: # (Cabbage:)
 * 1.5kg napa cabbage cores, quartered and washed
 * 2.5 tablespoons salt
 
-Fillings:
-
+[//]: # (Fillings:)
 * 250g Korean radish (or daikon), peeled and julienned
 * 1 carrot, julienned
 * 0.75 cup buchu (Asian chives), cut into 1 inch pieces
@@ -26,8 +24,7 @@ Fillings:
 * (optional) parsley
 * (optional) some apple or pear, julienned
 
-Pickling liquid:
-
+[//]: # (Pickling liquid:)
 * 1 medium (about 2 cups) pear (or apple), peeled and cored
 * 4-8 garlic cloves
 * 0.5 cup onion

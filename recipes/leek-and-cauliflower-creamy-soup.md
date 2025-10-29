@@ -2,13 +2,13 @@
 
 * From inmaculada
 * 20 minutes to make
-* Serves 8
+* Yields 8 servings
 
 Creamy soup ready in 30 minutes, low-fat but very tasty.
 Hubby loves it!! Make double batch since it freezes nice, so you can always have a comforting soup for supper.
 We like this cream with hot garlic bread.
 
-Ingredients
+## Ingredients
 
 * 3 leeks, sliced
 * 2 garlic cloves, chopped
@@ -20,7 +20,7 @@ Ingredients
 * salt and pepper
 * 0.5 cup goat, Cheddar or feta cheese
 
-How to make it
+## Directions
 
 1. In a medium pan heat oil on medium, add leeks and garlic.
    Cook until leek is transparent.

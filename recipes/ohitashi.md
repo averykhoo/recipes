@@ -5,7 +5,7 @@
 
 serves 4
 
-instructions:
+## Ingredients:
 
 * 600g spinach, washed and stems discarded
 * 1 tsp sesame oil
@@ -15,7 +15,7 @@ instructions:
 * 1 tsp toasted sesame seeds
 * optional katsuobushi
 
-directions:
+## Directions:
 
 1. boil spinach, then strain and allow to cool
 2. wring out all the water using a cloth bag or towel - make sure it's really quite dry

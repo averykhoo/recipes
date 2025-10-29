@@ -1,8 +1,12 @@
 ## honey lemon
 
+## ingredients
+
 * 2 large lemons
 * about 800ml water
 * 250g honey
+
+## directions
 
 1. zest the lemons into a saucepan
 2. add half the water and boil to extract the flavor
@@ -13,7 +17,7 @@
 7. leave to cool, then keep in the fridge
 8. serve cold, with ice, optionally diluted with more water
 
-notes:
+## notes:
 
 * to make it less sour without adding more honey, only use the juice of one lemon
 * orange zest or juice does not help

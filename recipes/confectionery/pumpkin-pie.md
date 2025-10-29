@@ -7,7 +7,7 @@ Original source: Meta Given's Modern Encyclopedia of Cooking, 1969
 see also: https://sallysbakingaddiction.com/the-great-pumpkin-pie-recipe/
 see also: meringue pumpkin pie recipe below
 
-Ingredients:
+## Ingredients:
 
 * 3 1/2 cups [fresh cooked](#fresh-cooked-pumpkin-puree) or canned pumpkin (one 29-ounce can will do)
 * 4 large eggs, lightly beaten
@@ -21,7 +21,7 @@ Ingredients:
 * 2-3 unbaked, 9-inch [pie shells](./pie-crust.md)
 * [Whipped cream for topping (optional)](chantilly-cream.md)
 
-Procedures:
+## Directions:
 
 1. Optionally, put pumpkin in nonstick saucepan and stir over direct heat for 10 minutes until somewhat dry and slightly
    caramelized, stirring frequently. Remove from heat but keep hot.
@@ -36,11 +36,13 @@ Procedures:
    pie and the crust is deep golden brown, about 40-45 minutes. 
 10. Let the pies cool to room temperature before cutting and serving. Top with powdered sugar and whipped cream, if desired.
 
-## ALTERNATIVE: Pumpkin Meringue Pie
+---
+
+# ALTERNATIVE: Pumpkin Meringue Pie
 
 Makes one 9-inch pie
 
-For the Pie:
+## Ingredients for the Pie:
 
 * 2 cups fresh cooked or canned pumpkin (one 15-ounce can will do) (recipe follows)
 * 4 egg yolks
@@ -52,13 +54,13 @@ For the Pie:
 * 1/2 teaspoon ground cloves
 * One 9-inch blind-baked piecrust
 
-For the Meringue:
+## Ingredients for the Meringue:
 
 * 4 egg whites
 * Pinch cream of tartar
 * 1/2 cup granulated sugar
 
-Procedures:
+## Directions:
 
 1. Preheat the oven to 350°F.
 2. Place the pumpkin in a large, heatproof mixing bowl and whisk in the egg yolks. Add the brown sugar, cinnamon,
@@ -76,12 +78,15 @@ Procedures:
 6. Transfer to the oven and bake until the meringue peaks are golden brown, 10 to 12 minutes. Let the pie cool
    completely on a wire rack before serving.
 
-## Fresh-Cooked Pumpkin Puree
-Ingredients:
+---
+
+# Fresh-Cooked Pumpkin Puree
+
+## Ingredients:
 
 * 6-pound cheese or Cinderella pumpkin, halved horizontally
 
-Procedures:
+## Directions:
 
 1. Preheat the oven to 400°F.
 2. Place the pumpkin halves cut-side up on a baking pan and cover tightly with foil. Bake until the flesh is tender when

@@ -2,6 +2,8 @@
 
 Gyudon, but with optional tweaks / substitutions
 
+## Ingredients
+
 * 300g beef (or lamb), sliced about 5mm thick
 * 2-3 cups dashi (or beef or chicken stock)
 * 2 carrots, roll cut (not the purple kind, otherwise it looks like borscht)
@@ -13,6 +15,7 @@ Gyudon, but with optional tweaks / substitutions
 * Green onions or scallions for garnish
 * (optional) black pepper
 
+## Directions
 
 1. Preheat the oil, sear the meat on both sides, then reserve separately. Keep oil and drippings in the pan.
 2. Add dashi and deglaze

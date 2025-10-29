@@ -1,11 +1,15 @@
 # Ramen Eggs (aka "Ajitsuke Tamago" or "Ajitama")
 
+## Ingredients
+
 * 7 eggs
 * 1/4 cup shoyu
 * 1/4 cup mirin
 * 1/4 cup sake (optionally less or none, to taste)
 * 2 Tbsp sugar
 * 1/4 - 1/2 cup dashi or water
+
+## Directions
 
 1. Boil eggs until just about done, about 7 minutes, starting in boiling water
 2. Transfer eggs directly into ice bath
@@ -16,7 +20,7 @@
 7. Keep in fridge for at least 24 hours (and at most 2-3 days, otherwise the marinade will harden the eggs)
 8. Slice with a tomato knife or dental floss
 
-Notes:
+## Notes:
 
 * Optionally add 1 Tbsp of vinegar into the water when boiling the eggs for easier peeling
 * Add a teaspoon of dark soy sauce for darker colored eggs

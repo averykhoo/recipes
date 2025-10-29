@@ -4,6 +4,8 @@ this recipe probably works with just about any vegetable
 
 should also work in the oven or broiler with a little bit more oil
 
+## Ingredients
+
 * zucchini / japanese cucumbers, sliced thinly
 * olive oil
 * salt and pepper
@@ -11,6 +13,8 @@ should also work in the oven or broiler with a little bit more oil
 * shallots or onions, minced or thinly sliced
 * basil / oregano / rosemary / thyme / chives / parsley / paprika / etc
 * mature cheddar
+
+## Directions
 
 1. Fry the cucumber (and garlic, if not crushed) until it's translucent and starts to turn brown.
 2. Add the salt, pepper, garlic, shallots, and herbs.

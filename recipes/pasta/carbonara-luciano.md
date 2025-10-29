@@ -12,7 +12,9 @@ a bain-marie, so the eggs are cooked but not scrambled, and the sauce is thick a
 
 ![la-carbonara-luciano-monosilo-card](carbonara-luciano-monosilo-card.png)
 
-INGREDIENTS (serves 4)
+yields 4 servings
+
+## INGREDIENTS
 
 * 280g dry spaghettoni, monograno brand
 * 4 egg yolks
@@ -21,7 +23,7 @@ INGREDIENTS (serves 4)
 * 20g Pecorino Romano, grated
 * 2g pepper, freshly ground
 
-PREPARATION
+## DIRECTIONS
 
 1. Guanciale
     1. Cut off the rind and the pepper layer. Discard or store for another use. It should be about 1.5 cm thick.
@@ -52,6 +54,8 @@ PREPARATION
     3. Sprinkle additional pecorino Romano over the top.
     4. Sprinkle each portion of carbonara generously with freshly ground pepper.
     5. Serve immediately, or the sauce will dry out and become sticky.
+
+---
 
 COOKING TIPS
 

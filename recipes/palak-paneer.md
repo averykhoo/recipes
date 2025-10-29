@@ -10,6 +10,8 @@ https://www.vegrecipesofindia.com/palak-paneer/
 https://www.bbcgoodfood.com/recipes/saag-paneer
 https://cooking.nytimes.com/recipes/1021954-saag-paneer
 
+## Ingredients
+
 * lots of spinach / fenugreek - about 400g, stems okay
 * salt
 * lots of paneer - about 150-200g
@@ -20,6 +22,8 @@ https://cooking.nytimes.com/recipes/1021954-saag-paneer
 * some clove, bay (powder), black pepper
 * tablespoon or two of fenugreek leaves, half to one cup cream, maybe yoghurt
 * tablespoon of cashew paste for thickening?
+
+## Directions
 
 1. blanch spinach and fenugreek (mustard leaves) in salty water. Blanching removes the raw, bitter, and metallic flavor
    of spinach. Drain, chop, and set aside.

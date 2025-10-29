@@ -3,6 +3,8 @@
 Based off a pomodoro / marinara sauce
 See also this [reddit pomodoro recipe](https://www.reddit.com/r/oddlysatisfying/comments/tvunbp/_/i45u5wy)
 
+## Directions
+
 1. Slice a lot of tomatoes, maybe 500g-750g into a fry-able size
 2. Also slice (or press) half a head of garlic
 3. Fry in some olive oil until lightly browned on the skin side

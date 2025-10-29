@@ -31,7 +31,9 @@
         * 2 parts milk, 1 part egg
         * Beaten egg
 
-## Unedited Original Recipe
+---
+
+# Unedited Original Recipe
 
 ![recipe card](kfc-seasoning-1.jpg)
 ![labelled vials](kfc-seasoning-2.jpg)
@@ -53,7 +55,11 @@
 |      |  0.25      | MSG                | "Sexton Super Pep"     |   21.16666667 |    7           |  0.085    |   2.985 |      1.53 |
 |      |  4.25      | Salt               | Popcorn, Indiana (USA) |  359.65625    |  119.8888889   |  1.671    |  58.94  |      1.76 |
 
-## *BONUS*: Colonel's Coleslaw
+---
+
+# *BONUS*: Colonel's Coleslaw
+
+## Ingredients
 
 * ½ cup Miracle Whip (he said other brands turned the mixture grey)
 * ½ cup tarragon vinegar (The Col used Heinz but it is hard to find these days)
@@ -63,6 +69,8 @@
 * 1 head cabbage, cored and chopped not shredded
 * 1-2 carrots, shredded - optional
 * 1/4 cup shredded onion - optional
+
+## Directions
 
 1. Chop the cabbage, grate the carrots and onion.
 2. Add other ingredients, mix well, cover well, let flavors meld over night in refrigerator.

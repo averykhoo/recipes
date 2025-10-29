@@ -2,6 +2,8 @@
 
 https://www.themediterraneandish.com/roast-lamb-rack-recipe/
 
+## Ingredients
+
 * 3 Tbsp dry rosemary
 * 1 Tbsp oregano
 * 1 Tbsp thyme
@@ -11,6 +13,8 @@ https://www.themediterraneandish.com/roast-lamb-rack-recipe/
 * 20-30 cloves raw garlic
 * about 1/2 cup olive oil
 * 1 rack of lamb
+
+## Directions
 
 1. Blend the spices and 3/4 of the olive oil in the smallest blender vessel possible to minimize the mess. Slowly add
    just enough olive oil until it forms a gluey paste. A full-size blender may be too small to make this portion size.

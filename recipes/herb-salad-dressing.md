@@ -1,6 +1,6 @@
 # Aglio Olio inspired Salad Dressing
 
-Ingredients
+## Ingredients
 
 * 1.5 cups olive oil - butter doesn't keep well
 * 2 tsp salt
@@ -12,13 +12,13 @@ Ingredients
 * 4 tsp dried parsley
 * 20 cloves garlic, peeled
 
-Directions
+## Directions
 
 1. Blend everything
 2. Fry till garlic is brown
 3. Store in glass bottle
 
-Notes
+## Notes
 
 * Total about 5-6 Tbsp herbs is the right proportion
 * Garlic increased from 12 to 20, since Italians' garlic tolerance is weak

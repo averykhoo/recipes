@@ -1,6 +1,6 @@
 # Spaghetti All'Assassina 
 
-Ingredients:
+## Ingredients:
 
 * 1/4 cup decent olive oil
 * 1 red bell pepper, seeded, ~~roasted until slightly charred,~~ chopped fine
@@ -13,7 +13,7 @@ Ingredients:
 * optional stracciatella or burrata (or maybe some whipped cream cheese) to serve
 * fresh basil to serve
 
-Directions:
+## Directions:
 
 1. fry the bell peppers in the oil until slightly charred
 2. add nduja, paprika, and garlic

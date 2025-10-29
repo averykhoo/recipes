@@ -4,7 +4,10 @@ https://www.seriouseats.com/kolokithokeftedes-greek-zucchini-fritters-with-tzatz
 see also: https://www.mygreekdish.com/recipe/kolokithokeftedes-fried-zucchini-balls-or-courgette/
 see also: https://akispetretzikis.com/en/recipe/1338/kolokythokeftedes
 
-Ingredients
+
+Yields about 6 pieces
+
+## Ingredients
 
 * 1 large zucchini: grated, salted, drained in a strainer, squeezed to remove more juice (~1 cup if compacted)
 * 1-2 tablespoons chopped dill or mint
@@ -17,16 +20,18 @@ Ingredients
 * 3 Tbsp flour or almond meal
 * oil for frying
 
-Makes about 6 pieces
+## Directions
 
 1. Mix zucchini, herbs, onion, spices, cheese, pepper. Add salt to taste.
 2. Mix in the egg, which should already be beaten. It should be wet but not drippy.
 3. Mix in the flour until it forms something a bit like a sticky wet sponge.
 4. Fry over low heat as squished balls, in olive oil, until browned on both sides and well cooked through
 
-## original from seriouseats
+---
 
-For Fritters:
+# original from seriouseats
+
+## Ingredients for Fritters:
 
 * 3 cups packed, grated zucchini (from about 6 large zucchini)
 * 6 tablespoons dill, chopped
@@ -38,7 +43,7 @@ For Fritters:
 * Salt and pepper
 * 4 tablespoons olive oil
 
-Directions
+## Directions
 
 1. Acquire [Tzatziki](tzatziki.md)
 2. Make Fritters: Lay out a layer of paper towels and spread out grated zucchini. Sprinkle zucchini with salt and let

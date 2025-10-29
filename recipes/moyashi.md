@@ -1,6 +1,6 @@
 # Japanese-ish Beansprouts
 
-Ingredients:
+## Ingredients:
 
 * 200 to 300 grams of bean sprouts
 * 2 tablespoons shoyu (soy sauce)
@@ -12,7 +12,7 @@ Ingredients:
 * 1/8 teaspoon salt
 * 1/8 (or less) teaspoon shichimi togarashi (Japanese seven-spice blend)
 
-Instructions:
+## Directions:
 
 1. Fill a large pot with salted water and bring to a boil.
 2. Add the bean sprouts to the boiling water and blanch for 1-2 minutes.

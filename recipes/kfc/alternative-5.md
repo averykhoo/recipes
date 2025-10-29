@@ -1,8 +1,8 @@
-Suggested Copycat Recipe
+## KFC - Suggested Copycat Recipe
 
 https://youtu.be/8BslfOheMIc
 
-Ingredients:
+## Ingredients:
 
 * 18g MSG
 * 22.5g white pepper
@@ -19,7 +19,7 @@ Ingredients:
 * 0.56g ground star anise
 * 0.38g ground clove
 
-Breading mix:
+## Ingredients for Breading mix:
 
 * 21g spice mix
 * 36g fine flake salt
@@ -27,15 +27,18 @@ Breading mix:
 * 25g egg white powder
 * 25g dry milk powder
 
+---
+
 165ºC
 5 pounds pressure
 10 - 12 minutes
 
-Method:
-If brining add 2 tsp of spice mix to 4 cups cold water and soak chicken for 2-3 hours.
-Bring a pot of hot oil (canola, vegetable oil, or shortening) to 350ºF.
-Mix the spice mix with the cake  (or pastry) flour.
-Mix together 1 egg and two cups of milk, for an egg wash.
-Dip the chicken in the egg wash, then dredge it in the flour, coating the chicken well.
-Carefully drop the dredged chicken in the hot oil and fry for 11-15 minutes or until chicken registers 165ºF on an
-instant read thermometer.
+## Directions:
+
+1. If brining add 2 tsp of spice mix to 4 cups cold water and soak chicken for 2-3 hours.
+2. Bring a pot of hot oil (canola, vegetable oil, or shortening) to 350ºF.
+3. Mix the spice mix with the cake  (or pastry) flour.
+4. Mix together 1 egg and two cups of milk, for an egg wash.
+5. Dip the chicken in the egg wash, then dredge it in the flour, coating the chicken well.
+6. Carefully drop the dredged chicken in the hot oil and fry for 11-15 minutes or until chicken registers 165ºF on an
+   instant read thermometer.

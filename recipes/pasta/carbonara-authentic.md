@@ -1,8 +1,8 @@
 # [Spaghetti alla Carbonara](https://www.accademiaitalianadellacucina.it/it/ricette/ricetta/spaghetti-alla-carbonara)
 
-serves 4
+yields 4 servings
 
-Ingredients:
+## Ingredients:
 
 * 120 g guanciale
 * 1 tablespoon of olive oil
@@ -12,6 +12,8 @@ Ingredients:
 * 350 g spaghetti
 * salt
 * black pepper
+
+## Directions
 
 1. Cut the guanciale into strips 0.5 cm thick.
 2. Brown the guanciale in a frying pan with the olive oil and the crushed garlic.
