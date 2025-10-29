@@ -2,8 +2,7 @@
 
 * From inmaculada
 * 20 minutes to make
-* Yields 8 servings
-
+* Serves 8
 Creamy soup ready in 30 minutes, low-fat but very tasty.
 Hubby loves it!! Make double batch since it freezes nice, so you can always have a comforting soup for supper.
 We like this cream with hot garlic bread.

@@ -7,8 +7,7 @@
     * http://www.allonseat.com/creamed-spinach-gratin/
     * https://www.wgbh.org/dining-in/2018/08/08/julia-childs-epinards-au-jus-epinards-a-la-creme
     * Julia and Jaques – Cooking at Home
-* Yields 4 Servings
-
+* Serves 4
 ## Ingredients
 
 * 1 pound / 500g baby spinach

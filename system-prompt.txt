@@ -35,6 +35,8 @@ Your goal is to develop a robust mental model of this repository based *only* on
 ├── build_system_prompt.py
 ├── curated-untested
 │   ├── banana-pudding.md
+│   ├── butter-chicken.md
+│   ├── cacio-e-pepe.md
 │   ├── cheese-sauce.md
 │   ├── chocolate-marquise.md
 │   ├── chocolate-mousse.md
@@ -47,23 +49,22 @@ Your goal is to develop a robust mental model of this repository based *only* on
 │   │   ├── ikea-meatballs-sg.md
 │   │   ├── ikea-meatballs.md
 │   │   ├── ikea-swedish-meatballs.md
+│   │   ├── kottbullar.md
+│   │   ├── kottbullar.png
 │   │   ├── meatballs-recipe-card.png
 │   │   └── swedish-meatballs.md
 │   ├── japchae.md
 │   ├── pecan-pie.md
 │   ├── polpette-di-melanzane.md
 │   ├── polpette-di-ricotta.md
-│   ├── prize-winning-banana-bread.md
-│   └── test.md
+│   └── prize-winning-banana-bread.md
 ├── in-progress
 │   ├── artichoke-pasta.md
 │   ├── bacon-wrapped-smokies.md
 │   ├── baked-feta-pasta.md
 │   ├── beef-stroganoff.md
 │   ├── better-brownies.md
-│   ├── butter-chicken.md
 │   ├── cabbage-rolls.md
-│   ├── cacio-e-pepe.md
 │   ├── cauliflower-cheese-casserole.md
 │   ├── cheese-crackers.md
 │   ├── chicken-stew.md
@@ -851,6 +852,8 @@ if __name__ == '__main__':
 * https://www.the-girl-who-ate-everything.com/magnolia-bakerys-famous-banana-pudding/
 * https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221jwyLxdi_EUWitPu6iqiDydJ1OAD7WQDN%22%5D,%22action%22:%22open%22,%22userId%22:%22117280320071755292615%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing
 
+---
+
 ## Ingredients
 
 * 6 Tbsp sweetened condensed milk
@@ -860,7 +863,7 @@ if __name__ == '__main__':
 * 250g (8oz) pack of Biscoff Lotus biscuits <- can use less, maybe 200g
 * 3-4 ripe bananas, peeled, de-stringed, and sliced
 
-#### Instructions
+## Directions
 
 1. **Create the pudding base:**
    In a medium bowl, whisk together the sweetened condensed milk, ice, and water until combined.
@@ -914,6 +917,18 @@ SERVES 12-15
 *Page 113*
 ````
 --- End of File: curated-untested/banana-pudding.md ---
+--- File: curated-untested/butter-chicken.md ---
+````markdown
+# todo - butter chicken / murgh makhni
+````
+--- End of File: curated-untested/butter-chicken.md ---
+--- File: curated-untested/cacio-e-pepe.md ---
+````markdown
+# todo - cacio e pepe
+
+https://www.youtube.com/watch?v=AztjQDIi3Sw
+````
+--- End of File: curated-untested/cacio-e-pepe.md ---
 --- File: curated-untested/cheese-sauce.md ---
 ````markdown
 # Nacho Cheese Sauce
@@ -963,48 +978,50 @@ https://youtu.be/IF11KUj6LWY
 
 Serves 8
 
+## Ingredients
+
 * 1 1/4 cups (200g) dark chocolate (60% cocoa is best)
-
 * 1/2 cup (100g) unsalted butter
-
 * 1/2 cup (100g) sugar
-
 * 2 TBS cocoa powder
-
 * 3 egg yolks
-
 * 2 TBS brandy
-
 * 1 1/4 cups (300ml) heavy/double cream
-
 * 1 1lb loaf tin, lined with plastic wrap/cling film
 
-Cream the butter and sugar in an electric mixer until light and fluffy. Scrape down the sides of the bowl and add the egg yolks, brandy and cocoa powder. Cream until combined.
+## Directions
 
-Melt the chocolate in a separate bowl, set aside. Whip the cream to soft peaks, set aside.
+1. Cream the butter and sugar in an electric mixer until light and fluffy.
+   Scrape down the sides of the bowl and add the egg yolks, brandy and cocoa powder. Cream until combined.
+2. Melt the chocolate in a separate bowl, set aside. Whip the cream to soft peaks, set aside.
+3. Whisk the butter cocoa mix into the melted chocolate and carefully fold in the cream until combined. 
+4. Spoon into prepared loaf tin (or individual lined ramekins) and freeze overnight. 
+5. This dessert will keep in the freezer for three months.
 
-Whisk the butter cocoa mix into the melted chocolate and carefully fold in the cream until combined. Spoon into prepared loaf tin (or individual lined ramekins)
-
-Whisk the butter cocoa mix into the melted chocolate and carefully fold in the cream until combined. Spoon into prepared loaf tin (or individual lined ramekins) and freeze overnight. This dessert will keep in the freezer for three months.
+---
 
 Prepare the coffee creme anglaise;
 
+## Ingredients
+
 * 1 1/2 cups (355ml) heavy/double cream
-
 * 4 egg yolks
-
 * 1/4 cup (50g) sugar
-
 * 1 tsp espresso powder
 
-Whisk until combined the egg yolks, sugar and coffee. Bring the cream to a boil and whisk onto the egg mix. Return the mix to the pan over a low heat and stir until the mixture slightly thickens. Pour into a bowl and cool before serving
+## Directions
+
+1. Whisk until combined the egg yolks, sugar and coffee. 
+2. Bring the cream to a boil and whisk onto the egg mix. 
+3. Return the mix to the pan over a low heat and stir until the mixture slightly thickens. 
+4. Pour into a bowl and cool before serving
 ````
 --- End of File: curated-untested/chocolate-marquise.md ---
 --- File: curated-untested/chocolate-mousse.md ---
 ````markdown
 # [Nuage Chocolat – Chocolate Cloud](https://parischezsharon.com/2020/04/nuage-chocolat-chocolate-cloud.html)
 
-* 4-6 servings
+* Serves 4-6
 
 My followers know I love chocolate very much: Chocolate cakes, chocolate cookies and everything related to chocolate.
 In a city where chocolate is revered as an art form, it's as if it “flows” in the Seine River!
@@ -1018,7 +1035,7 @@ It is very simple to make.
 With an airy and light texture, it is a dessert that leaves you wanting a second helping.
 You'll be asking for more!
 
-Ingredients
+## Ingredients
 
 * 100 g fresh milk
 * 190 g dark chocolate, chopped 70%
@@ -1026,7 +1043,7 @@ Ingredients
 * 175 g egg whites (usually from 5 eggs L)
 * 40 g caster sugar
 
-Preparation
+## Directions
 
 1. Heat the milk until simmering
 2. Melt the chocolate in a double boiler or the microwave.
@@ -1047,15 +1064,13 @@ Preparation
 
 https://www.youtube.com/watch?v=3xtSr5iIuTo
 
-Ingredients:
-
-cookie
+## Ingredients for cookie
 
 * 33g unsalted butter (softened / room temperature)
 * 40g sugar
 * 40g all-purpose flour
 
-choux
+## Ingredients for choux
 
 * 65g All-purpose flour
 * 65g milk
@@ -1064,7 +1079,7 @@ choux
 * 2g salt
 * 3 whole eggs
 
-custard cream
+## Ingredients for custard cream
 
 * 2 egg yolks
 * 35g sugar
@@ -1074,9 +1089,7 @@ custard cream
 * 170g heavy cream
 * 17g sugar
 
-Instructions:
-
-Choux Pastry:
+## Directions for Choux Pastry:
 
 1. Cut the sides of a plastic bag with scissors.
 2. In a bowl, mix 33g unsalted butter (softened) with 40g sugar until well combined.
@@ -1094,7 +1107,7 @@ Choux Pastry:
 14. Add the frozen butter. Bake at 190°C (375°F) for 15 minutes, then at 170°C (338°F) for another 15 minutes.
 15. Open the oven door slightly and take it out after 10 minutes. Let it cool.
 
-Custard Cream:
+## Directions for Custard Cream:
 
 1. In a bowl, mix 2 egg yolks with 35g sugar until pale yellow.
 2. Add 10g cornstarch and mix well.
@@ -1107,6 +1120,8 @@ Custard Cream:
 9. Enjoy your delicious choux pastry with custard cream!
 10. Note: The recipe is based on the provided video transcript and may require adjustments based on personal preferences
     and cooking conditions.
+
+---
 
 Notes:
 
@@ -1123,6 +1138,8 @@ From https://www.youtube.com/watch?v=R75oLxw292o
 
 Makes one 9 x 12-inch tin (about 16-20 pieces )
 
+## Ingredients
+
 * 8 oz (200 grams) salted butter
 * 4 Tbsp golden syrup (you can substitute honey or maple syrup but it won't be authentic)
 * 8 oz (200 grams) granulated sugar
@@ -1130,17 +1147,19 @@ Makes one 9 x 12-inch tin (about 16-20 pieces )
 * 4oz (100 grams) self rising flour
 * 6oz (150 grams) cornflakes (lightly crushed)
 
-optional:
+* (optional) Nuts
+* (optional) Dried fruit
+* (optional) Chocolate chips
 
-* Nuts
-* Dried fruit
-* Chocolate chips
+## Directions
 
 1. Melt the butter and syrup together.
 2. Mix the dry ingredients together in a large bowl. Add the melted butter/golden syrup mixture and mix well
-3. Spread evenly in a greases swiss roll tin and press down firmly.
+3. Spread evenly in a greased or lined tray and press down firmly.
 4. Bake in a moderate oven 190c/ 350f for 20 mins.
-5. Cut into fingers while still warm.
+5. Cut into fingers while still warm, allow to cool, then chill to serve
+
+---
 
 Instructions from video:
 
@@ -1168,7 +1187,7 @@ While the name implies otherwise, French silk pie was an American creation.
 The name refers to the light and smooth texture that leaves a silky rich feeling in the mouth.
 
 
-Ingredients
+## Ingredients
 
 * 1 sheet refrigerated pie crust
 * 2/3 cup sugar
@@ -1180,7 +1199,8 @@ Ingredients
 * 2 teaspoons confectioners' sugar
 * Optional: Whipped cream and chocolate curls
 
-Directions
+## Directions
+
 1. Cut pie crust in half. Repackage and refrigerate 1 half for another use. 
 2. On a lightly floured surface, roll out remaining half into an 8-in circle. 
 3. Transfer to a 7-in pie plate; flute edge.
@@ -1216,7 +1236,7 @@ These are the biscuits I make for biscuits and gravy.
 The trick is to work the dough as little as possible, and if you can get the hang of that, you will have biscuits that
 bake up higher than anything you've ever seen.
 
-Ingredients
+## Ingredients
 
 * 2 cups all-purpose flour
 * 1 tablespoon baking powder
@@ -1225,7 +1245,7 @@ Ingredients
 * 1.5 cups heavy whipping cream (DO NOT SUBSTITUTE - I've tried! These biscuits will only pop up sky-high if you use
   heavy cream - they were flat and not fluffy inside when I tried half-and-half or whole milk)
 
-How to make it
+## Directions
 
 1. In a medium bowl, stir together all ingredients just until the dough forms a ball and ingredients are moistened.
 2. Turn the dough out onto a work surface that is dusted with a very small amount of additional flour.
@@ -1249,14 +1269,16 @@ How to make it
 ````markdown
 # [Meatballs with Cream Sauce](./Meatballs_w_creamsauce.pdf)
 
-Originally from: https://www.ikea.com/ms/en_SG/pdf/restaurant/Meatballs_w_creamsauce.pdf
+> Originally from: https://www.ikea.com/ms/en_SG/pdf/restaurant/Meatballs_w_creamsauce.pdf
+
+Yields 30–40 meatballs, serves 4
 
 Without a doubt, meatballs is the best known of all Swedish dishes, traditionally served with potatoes, lingonberry jam
 and cream sauce.
 The dish is an unexpected meeting of flavours as the lingonberry sweetness contrasts, yet harmonizes, with the
 meatballs, while the cream sauce serves as a neutral “mediator” between the two.
 
-This is what you need (30–40 meatballs, serves 4):
+## Ingredients - Meatballs
 
 * 250 g minced beef
 * 250 g minced pork
@@ -1270,7 +1292,7 @@ This is what you need (30–40 meatballs, serves 4):
 * white pepper
 * (allspice)
 
-This is how you do it:
+## Directions - Meatballs
 
 1. Heat the onion until golden in a couple of tablespoons of lightly browned butter.
 2. Mash the potatoes and moisten the rusk flour in a little water.
@@ -1279,7 +1301,7 @@ This is how you do it:
 4. Shape the farce into round balls and transfer to a floured chopping board, then fry them quite slowly in plenty of
    butter.
 
-This is what you need (cream sauce, serves 4):
+## Ingredients - Cream Sauce
 
 * 100 ml double cream
 * 200 l water or beef stock
@@ -1288,20 +1310,13 @@ This is what you need (cream sauce, serves 4):
 * white pepper
 * (1 Tbsp white flour)
 
-This is how you do it:
+## Directions - Cream sauce
 
 1. Swirl out the pan with a couple of decilitres of boiling water or meat stock.
 2. Strain the pan juices and dilute with cream.
 3. Thicken with white flour if preferred.
 4. Season well, and serve this and the meatballs with freshly boiled potatoes, lingonberry jam, a green salad and salted
    or pickled gherkins.
-
-We also have these easy-to-prepare solutions:
-
-* SYLT LINGON - lingonberry jam (400g)
-* GURKA INLAGD - pickled cucumber (375g)
-* KÖTTBULLAR - swedish meatballs (1kg)
-* GRÄDDSÅS - meatball sauce (40g)
 
 ````
 --- End of File: curated-untested/ikea-meatballs/ikea-meatballs-sg.md ---
@@ -1313,7 +1328,7 @@ We also have these easy-to-prepare solutions:
 * released during the 2020 pandemic
 * see also: [Ikea SG recipe card](https://www.ikea.com/ms/en_SG/pdf/restaurant/Meatballs_w_creamsauce.pdf)
 
-Ingredients - Meatballs
+## Ingredients - Meatballs
 
 * 500g beef mince
 * 250g pork mince
@@ -1324,7 +1339,7 @@ Ingredients - Meatballs
 * 5 tablespoons of whole milk
 * generous salt and pepper to taste
 
-Ingredients – Cream Sauce
+## Ingredients – Cream Sauce
 
 * dash of oil
 * 40g butter
@@ -1357,6 +1372,7 @@ Directions
 6. When ready to eat, serve with your favourite potatoes - either creamy mash or mini new boiled potatoes.
    Enjoy!
 
+---
 
 Source:
 
@@ -1387,36 +1403,36 @@ I found that a 1 ¼-inch cookie scooper is the best way to form the balls, but y
 teaspoon measure and your hands-keep your hands thoroughly moistened with water to prevent the meat mixture from
 sticking to them.
 
-MEATBALLS
-1/3 cup chopped onion
-1 large egg
-1 egg white
-1/3 cup beef broth
-2 tablespoons water
-½ pound ground beef
-(20 percent fat)
-½ pound ground pork
-½ cup plain bread crumbs
-1 teaspoon salt
-½ teaspoon white pepper
-1/8 teaspoon allspice
+## INGREDIENTS FOR MEATBALLS
+* 1/3 cup chopped onion
+* 1 large egg
+* 1 egg white
+* 1/3 cup beef broth
+* 2 tablespoons water
+* ½ pound ground beef
+* (20 percent fat)
+* ½ pound ground pork
+* ½ cup plain bread crumbs
+* 1 teaspoon salt
+* ½ teaspoon white pepper
+* 1/8 teaspoon allspice
 
-CREAM SAUCE
-1 ¼ cups beef broth
-1/3 cup heavy cream
-4 teaspoons cornstarch
-1 tablespoon apple juice
-¼ teaspoon salt
-1/8 teaspoon garlic powder
-1/8 teaspoon onion powder
-1/8 teaspoon white pepper
-1 bay leaf
-2 teaspoons vegetable oil
+## INGREDIENTS FOR CREAM SAUCE
+* 1 ¼ cups beef broth
+* 1/3 cup heavy cream
+* 4 teaspoons cornstarch
+* 1 tablespoon apple juice
+* ¼ teaspoon salt
+* 1/8 teaspoon garlic powder
+* 1/8 teaspoon onion powder
+* 1/8 teaspoon white pepper
+* 1 bay leaf
+* 2 teaspoons vegetable oil
 
-ON THE SIDE (OPTIONAL)
-Lingonberry preserves
+## INGREDIENTS FOR SIDE
+* (optional) Lingonberry preserves
 
-Directions
+## Directions
 
 1. Combine the onion, egg, egg white, beef broth, and water in a food processor or blender and mix on high speed for 15
    seconds or until the onion is completely pulverized.
@@ -1447,6 +1463,73 @@ Directions
 
 ````
 --- End of File: curated-untested/ikea-meatballs/ikea-swedish-meatballs.md ---
+--- File: curated-untested/ikea-meatballs/kottbullar.md ---
+````markdown
+# Köttbullar
+
+![](kottbullar.png)
+
+> found in "Die schwedische Küche" in ikea, translated by gemini
+
+SERVES 4 PEOPLE
+
+Here is the English translation of the recipe:
+
+---
+
+If it is claimed that one dish is at the center of Swedish food culture – a dish around which everything revolves – it
+is Köttbullar, the meatball. Swedish meatballs are known worldwide and gained their global reputation not only thanks to
+famous chefs but also through the chef from the "Muppet Show". In today's Swedish cuisine, meatballs are part of every
+Christmas buffet and are also an everyday dish, especially popular with children served with spaghetti or mashed
+potatoes.
+
+---
+
+The meatballs are best shaped with a hand moistened with water and a silver spoon dipped in warm water. It's even easier
+if two spoons are used alternately.
+
+Fry the meatballs in butter, taking care not to put too many in the pan at once. Swirl the pan now and then so that the
+meatballs become round. Place the finished meatballs in an ovenproof dish or a pot.
+
+If sauce is desired with the meatballs, brown butter in a pot, add flour, and stir with a whisk. Add beef broth and
+beer, bring to a boil, and simmer for 10 minutes to let the flour taste disappear. Season to taste with lingonberries,
+salt, and pepper.
+
+Serve the meatballs with mashed potatoes, cold-stirred lingonberry jam, and salted pickles.
+
+## Ingredients for meatballs
+
+* 200 ML MILK
+* 2 HEAPING TBSP OLD WHITE BREAD OR BREADCRUMBS
+* 1 ONION, FINELY CHOPPED
+* BUTTER FOR FRYING
+* 400 G MINCED MEAT (300 G BEEF AND 100 G PORK)
+* 1 EGG* 
+* SALT, WHITE PEPPER AND POSSIBLY ALLSPICE
+* A LITTLE WATER IF NEEDED
+
+## Ingredients or the sauce
+
+* 2 TBSP BUTTER
+* 2 TBSP WHEAT FLOUR
+* 300 ML DARK BEEF BROTH
+* 100 ML BEER
+* 2 TBSP LINGONBERRIES
+* SALT AND PEPPER
+
+## Directions
+
+1. Pour the milk over the grated bread and let it soak. Sauté the finely chopped onion in butter until browned.
+2. In a spacious bowl, combine the minced meat with the bread and milk mixture, the egg, and the onion.
+   Season with salt and pepper – a little allspice gives the meatballs an extra festive touch for Christmas.
+   Work the mixture with a wooden spoon – adding water if necessary – until the meat dough is smooth.
+3. The minced meat should not be overworked, as it is sensitive to heat.
+   To test, fry a few small meatballs in lightly browned butter and taste.
+   Season more if necessary and then form the meatballs.
+   Place the round meatballs on a wet cutting board lined with buttered paper or on a plate rinsed with water.
+
+````
+--- End of File: curated-untested/ikea-meatballs/kottbullar.md ---
 --- File: curated-untested/ikea-meatballs/swedish-meatballs.md ---
 ````markdown
 # [Swedish Meatballs](http://www.grouprecipes.com/20899/swedish-meatballs.html)
@@ -1482,7 +1565,7 @@ Ingredients
     * 1 cup chicken or beef stock (I prefer stock to broth – more flavor)
 * seasonings, as needed – see directions
 
-How to make it
+Directions
 
 1. Put all meatball ingredients into a large bowl.
    I always find it easiest to use your hands to gently "squish" the mixture, blending all ingredients together well.
@@ -1511,11 +1594,12 @@ How to make it
 --- File: curated-untested/japchae.md ---
 ````markdown
 # Japchae (Korean Sweet Potato Starch Noodles with Vegetables and Beef)
+
 https://www.americastestkitchen.com/recipes/15175-japchae-korean-sweet-potato-starch-noodles-with-vegetables-and-beef
 By Lan Lam
 
 
-Ingredients:
+## Ingredients:
 
 * 8 ounces boneless beef short ribs, trimmed
 * 2 teaspoons plus ¼ cup soy sauce, divided
@@ -1534,14 +1618,15 @@ Ingredients:
 * 1 small red bell pepper, stemmed, seeded, and cut into ⅛-inch-wide strips
 * 2 tablespoons sesame seeds, toasted, divided
 
+## Notes
 
-
-Notes: 
 * Dangmyeon, Korean sweet potato starch noodles, are sometimes labeled as japchae noodles or sweet potato starch vermicelli. 
 * Do not substitute other noodles or use frozen spinach instead of fresh.
 * Halve lengthwise any scallions wider than ½ inch.
 * To streamline assembly, cut, cover, and refrigerate the vegetables in advance. 
 * Serve this dish warm or at room temperature.
+
+## Directions
 
 1. Bring 2 quarts water to boil in large pot.
 2. Slice beef crosswise ¼-inch thick. 
@@ -1595,6 +1680,8 @@ defy the odds. The result is half pie, half candy bar, and 100% delicious.
 Yield: one 9-inch pie, 8 to 12 slices
 Active time: about 30 minutes
 
+## Ingredients
+
 * 4 large eggs
 * 1 cup, 8 ounces water
 * 3 cups, 21 ounces plain or toasted sugar
@@ -1603,6 +1690,8 @@ Active time: about 30 minutes
 * 1 Tablespoon vanilla extract, Scotch, or bourbon
 * 2 1/2 cups, 10 ounces pecan halves, raw
 * 1 fully baked 9-inch pie crust
+
+## Directions
 
 1. Before getting started, place the whole eggs in a small bowl, cover with hot tap water and set aside.
 2. Combine 8 ounces (1 cup) water with the sugar and salt in a 3-quart stainless steel saucier over medium heat. Stir
@@ -1624,6 +1713,8 @@ Active time: about 30 minutes
    slicing with a chef's knife; prior to that the filling will be warm and runny.
 6. Wrapped in plastic, leftovers will keep 3 days at room temperature, or a week in the fridge.
 
+---
+
 Troubleshooting:
 
 * This recipe depends on an accurate digital thermometer, and when things go wrong you can bet the readings were off.
@@ -1632,9 +1723,11 @@ Troubleshooting:
   heat, or when the batteries start to fade. Check the temperature range of your thermometer to be certain it can
   register 335°, then test its accuracy by making sure it reads 212° in a pot of boiling water.
 
+---
+
 # [Recommended Pie Crust Recipe](https://www.seriouseats.com/old-fashioned-flaky-pie-dough-recipe)
 
-Ingredients
+## Ingredients
 
 * 8 ounces【227 g】 low-protein all-purpose flour, such as Gold Medal Blue Label (1 2/3 cups【394 mL】; 225g), plus more for
   dusting
@@ -1643,60 +1736,72 @@ Ingredients
 * 8 ounces【227 g】 unsalted, American-style butter, straight from the fridge (2 sticks; 225g), cold
 * 4 ounces【113 g】 cold tap water (1/2 cup【118 mL】; 115g)
 
-Directions
+## Directions
 
-* For the Dough:
-    1. Whisk flour, sugar, and salt together in a medium bowl.
-    2. Cut butter into cubes no smaller than 1/2 inch【1.27 cm】, and toss with flour mixture to break up the pieces.
-    3. With your fingertips, smash each cube flat—that's it! No rubbing or cutting.
-    4. Stir in water, then knead dough against sides of the bowl until it comes together in a shaggy ball.
-    5. Dough temperature should register between 65 and 70°F (18 and 21°C);
-       if not, refrigerate briefly before rolling and folding (see note).
-* Make the Layers:
-    1. On a generously floured work surface, roll dough into a roughly 10- by 15-inch【38.1 cm】 rectangle.
-    2. Fold the 10-inch【25.4 cm】 sides to the center, then close the newly formed packet like a book.
-    3. Fold in half once more, bringing the short sides together to create a thick block.
-    4. Divide in half with a sharp knife or bench scraper.
-    5. Dough temperature should still be somewhere between 65 and 70°F (18 and 21°C);
-       if not, refrigerate briefly before proceeding (see note).
-* For Single-Crusted Pies:
-    1. Using as much flour as needed, roll one piece into a 14-inch【35.56 cm】 circle;
-       this size allows ample room to line pie plate, with enough overhang to form a generous border.
-    2. At smaller sizes, dough will fall short, making it difficult to shape edges,
-       and thicker dough will not crisp as intended. Transfer to 9-inch【22.86 cm】 pie plate;
-       dough should be easy to handle, and will not require any special procedures to move.
-    3. Dust off excess flour with a pastry brush, using it to nestle dough into corners of pan.
-    4. With scissors or kitchen shears, trim edge so that it overhangs by 1 1/4 inches【3.18 cm】.
-    5. Fold overhang over itself to create thick border that sits on top edge of pie plate, not below.
-    6. Crimp or shape crust as desired. Repeat with remaining dough.
-    7. Wrap with plastic and refrigerate at least 2 hours and up to overnight.
-    8. Use as directed in your favorite recipe.
-* For a Double-Crusted Pie:
-    1. Using as much flour as needed, roll one piece into a 14-inch【35.56 cm】 circle;
-       this size allows ample room to line pie plate, with enough overhang to form a generous border.
-    2. At smaller sizes, dough will fall short, making it difficult to shape edges,
-       and thicker dough will not crisp as intended.
-    3. Transfer to 9-inch【22.86 cm】 pie plate;
-       dough should be easy to handle, and will not require any special procedures to move.
-    4. Dust off excess flour with a pastry brush, using it to nestle dough into corners of pan.
-    5. With scissors or kitchen shears, trim edge so that it overhangs by 1 1/4 inches【3.18 cm】.
-    6. For solid top crust, roll remaining dough as before; for lattice-top pie,
-       roll into a 9- by 15-inch【38.1 cm】 rectangle instead.
-    7. Transfer to a baking sheet or parchment-lined cutting board.
-    8. (The parchment will prevent dough from absorbing any savory odors from the board.)
-    9. Wrap both portions in plastic and refrigerate at least 2 hours and up to overnight.
-    10. Use as directed in your favorite recipe; after filling pie and sealing crusts together,
-        refrigerate 30 minutes before baking.
-* For a Blind-Baked Pie:
-    1. Adjust oven rack to lower-middle position and preheat to 350°F (180°C).
-    2. Line pie shell that has been chilled for at least 2 hours (as outlined in Step 3) with a large sheet of aluminum
-       foil, pressing so it conforms to curves of plate.
-    3. (A second sheet of foil may be needed for full coverage.)
-    4. Fill to brim with sugar, transfer to a half sheet pan,
-       and bake until fully set and golden around the edges, 60 to 75 minutes.
-    5. Fold long sides of foil toward middle, gather short sides,
-       and use both hands to carefully transfer sugar to heat-safe bowl. Let sugar cool to room temperature.
-    6. If needed, continue baking crust a few minutes more to brown along the bottom.
+
+For the Dough:
+
+1. Whisk flour, sugar, and salt together in a medium bowl.
+2. Cut butter into cubes no smaller than 1/2 inch【1.27 cm】, and toss with flour mixture to break up the pieces.
+3. With your fingertips, smash each cube flat—that's it! No rubbing or cutting.
+4. Stir in water, then knead dough against sides of the bowl until it comes together in a shaggy ball.
+5. Dough temperature should register between 65 and 70°F (18 and 21°C);
+   if not, refrigerate briefly before rolling and folding (see note).
+
+Make the Layers:
+
+1. On a generously floured work surface, roll dough into a roughly 10- by 15-inch【38.1 cm】 rectangle.
+2. Fold the 10-inch【25.4 cm】 sides to the center, then close the newly formed packet like a book.
+3. Fold in half once more, bringing the short sides together to create a thick block.
+4. Divide in half with a sharp knife or bench scraper.
+5. Dough temperature should still be somewhere between 65 and 70°F (18 and 21°C);
+   if not, refrigerate briefly before proceeding (see note).
+
+For Single-Crusted Pies:
+
+1. Using as much flour as needed, roll one piece into a 14-inch【35.56 cm】 circle;
+   this size allows ample room to line pie plate, with enough overhang to form a generous border.
+2. At smaller sizes, dough will fall short, making it difficult to shape edges,
+   and thicker dough will not crisp as intended. Transfer to 9-inch【22.86 cm】 pie plate;
+   dough should be easy to handle, and will not require any special procedures to move.
+3. Dust off excess flour with a pastry brush, using it to nestle dough into corners of pan.
+4. With scissors or kitchen shears, trim edge so that it overhangs by 1 1/4 inches【3.18 cm】.
+5. Fold overhang over itself to create thick border that sits on top edge of pie plate, not below.
+6. Crimp or shape crust as desired. Repeat with remaining dough.
+7. Wrap with plastic and refrigerate at least 2 hours and up to overnight.
+8. Use as directed in your favorite recipe.
+
+For a Double-Crusted Pie:
+
+1. Using as much flour as needed, roll one piece into a 14-inch【35.56 cm】 circle;
+   this size allows ample room to line pie plate, with enough overhang to form a generous border.
+2. At smaller sizes, dough will fall short, making it difficult to shape edges,
+   and thicker dough will not crisp as intended.
+3. Transfer to 9-inch【22.86 cm】 pie plate;
+   dough should be easy to handle, and will not require any special procedures to move.
+4. Dust off excess flour with a pastry brush, using it to nestle dough into corners of pan.
+5. With scissors or kitchen shears, trim edge so that it overhangs by 1 1/4 inches【3.18 cm】.
+6. For solid top crust, roll remaining dough as before; for lattice-top pie,
+   roll into a 9- by 15-inch【38.1 cm】 rectangle instead.
+7. Transfer to a baking sheet or parchment-lined cutting board.
+8. (The parchment will prevent dough from absorbing any savory odors from the board.)
+9. Wrap both portions in plastic and refrigerate at least 2 hours and up to overnight.
+10. Use as directed in your favorite recipe; after filling pie and sealing crusts together,
+    refrigerate 30 minutes before baking.
+
+For a Blind-Baked Pie:
+
+1. Adjust oven rack to lower-middle position and preheat to 350°F (180°C).
+2. Line pie shell that has been chilled for at least 2 hours (as outlined in Step 3) with a large sheet of aluminum
+   foil, pressing so it conforms to curves of plate.
+3. (A second sheet of foil may be needed for full coverage.)
+4. Fill to brim with sugar, transfer to a half sheet pan,
+   and bake until fully set and golden around the edges, 60 to 75 minutes.
+5. Fold long sides of foil toward middle, gather short sides,
+   and use both hands to carefully transfer sugar to heat-safe bowl. Let sugar cool to room temperature.
+6. If needed, continue baking crust a few minutes more to brown along the bottom.
+
+---
 
 Special Equipment
 
@@ -1727,7 +1832,7 @@ Make-Ahead and Storage
 
 https://www.pastagrammar.com/post/polpette-di-melanzane-authentic-italian-eggplant-meatball-recipe
 
-For this recipe, you will need:
+## Ingredients
 
 * Salt
 * About 26 ounces (750 g) eggplant, cut into ½ inch (1.25 cm) cubes
@@ -1740,6 +1845,7 @@ For this recipe, you will need:
 * About 1 cup (100 g) fresh bread crumbs, plus extra for breading, adjusted to taste
 * Vegetable oil for frying
 
+## Directions
 
 1. Bring a large pot of water to a rolling boil and salt it generously.
 2. Add the cubed eggplant and boil for about 10 minutes, or until the eggplant is very tender.
@@ -1771,7 +1877,7 @@ Makes: About 20 polpette
 
 Cook Time: 35 minutes
 
-For this recipe, you will need:
+## Ingredients
 
 * 18 ounces (500 g) ricotta
 * 1.75 ounces (50 g) grated pecorino cheese, or to taste
@@ -1784,6 +1890,7 @@ For this recipe, you will need:
 * 4 tablespoons (60 g) extra-virgin olive oil
 * 1 clove garlic, peeled
 
+## Directions
 
 1. In a large mixing bowl combine the ricotta, cheeses, eggs, parsley, plenty of black pepper, and a big pinch of salt.
 2. Add about half of the bread crumbs and mix together with a spoon.
@@ -1799,6 +1906,8 @@ For this recipe, you will need:
 11. If the water evaporates completely, add a little bit more as necessary to keep a simmer going.
 12. Serve warm and fresh, drizzled with the pan juices.
 13. Buon appetito!
+
+---
 
 Notes:
 
@@ -1817,7 +1926,7 @@ This recipe won 1st place at the Nicollet County Fair in 1981 and it stills rema
 bread.
 I've modified it ever so slightly over the years, but the end result remains moist and flavorful.
 
-Ingredients
+## Ingredients
 
 * 0.5 cup butter, softened
 * 0.25 cup vegetable oil
@@ -1832,7 +1941,7 @@ Ingredients
 * 0.5 teaspoon salt
 * additional brown sugar for top of batter
 
-How to make it
+## Directions
 
 1. Mix together butter, oil, sugars and eggs.
 2. Add mashed bananas, sour cream and vanilla, stirring together well.
@@ -1856,716 +1965,13 @@ How to make it
 
 ````
 --- End of File: curated-untested/prize-winning-banana-bread.md ---
---- File: curated-untested/test.md ---
-````markdown
-> from: https://raw.githubusercontent.com/RoneoOrg/markdown/main/README.md
-
-
-# Markdown Crash Test
-
-## Benchmarking the support of Markdown with a comprehensive checklist
-
-
-**You're working on a project featuring Markdown?**
-
-Drop [the source of this page](https://raw.githubusercontent.com/RoneoOrg/markdown/main/README.md) wherever you want to test *or showcase* the support of Markdown, and check that every single feature is properly rendered.
-
-
-**Table of Contents**
-
-- [Basic formatting](#basic-formatting)
-- [Blockquotes](#blockquotes)
-- [Lists](#lists)
-- [Linebreaks](#linebreaks)
-- [Links](#links)
-- [Code formatting](#code-formatting)
-- [Images](#images)
-- [Task lists](#task-lists)
-- [Tables](#tables)
-- [Footnotes](#footnotes)
-- [Definition List](#definition-list)
-- [Headings](#headings)
-
-
-## Basic formatting
-
-### **Bold** text
-
-**Syntax:**
-
-    You can mark some text as bold with **two asterisks**
-    or __two underscores__.
-
-**Output:**
-
-You can mark some text as bold with **two asterisks**
-or __two underscores__.
-
-### *Italic*
-
-    Use a *single asterisk* or a _single underscore_ for italic.
-
-**Output:**
-
-Use a *single asterisk* or a _single underscore_ for italic.
-
-### ***Bold and italic***
-
-    Three stars gives `***bold and italic***`
-
-Three stars gives ***bold and italic***
-
-### ~~Strikethrough~~
-
-Using `~~two tildes~~` will strikethrough:  ~~two tildes~~
-
-
-
-## Blockquotes
-
-**Syntax:**
-
-    > blockquote
-
-**Output**:
-
-> blockquote
-
-### Nested blockquotes
-
-**Syntax:**
-
-    > First level
-    >
-    >> Second level
-
-**Output:**
-
-> First level
->> Second level
-
-### Markdown in blockquotes
-
-```
-> **Markdown** can be used *inside quotes*
->
-> 1.   This is the first list item.
-> 1.   This is the second list item.
->
-> ~~strikethrough~~
->
-> Here's some example code:
->
->     return shell_exec("echo $input | $markdown_script");
-```
-
-**Output:**
-
-> **Markdown** can be used *inside quotes*
-> 1. This is the first list item.
-> 1. This is the second list item.
->
-> ~~strikethrough~~
->
-> Here's some example code:
->
->     return shell_exec("echo $input | $markdown_script");
-
-
-## Lists
-
-
-### Unordered list
-
-Cant be marked with `-`, `+` or `*`
-
-```markdown
-- First item
-- Second item
-- Third item
-```
-
-```markdown
-+ First item
-+ Second item
-+ Third item
-```
-
-```markdown
-* First item
-* Second item
-* Third item
-```
-
-**Output:**
-
-- First item
-- Second item
-- Third item
-
-+ First item
-+ Second item
-+ Third item
-
-* First item
-* Second item
-* Third item
-
-### Ordered lists
-
-Incrementation is automatic, you can simply use `1.` everywhere
-
-```
-1. First item
-1. Second item
-1. Third item
-```
-
-**Output:**
-
-1. First item
-1. Second item
-1. Third item
-
-
-
-### Nested list
-
-```
-- First item
-- Second item
-- Third item
-    1. Indented item
-    1. Indented item
-- Fourth item
-```
-
-**Output:**
-
-- First item
-- Second item
-- Third item
-    1. Indented item
-    1. Indented item
-- Fourth item
-
-
-## Linebreaks
-
-**When you hit enter just once** between two lines, both lines are joined into a single paragraph.
-
-But, if you **leave a blank line between them**, they will split into two paragraphs.
-
-**Demonstration**:
-
-```
-This text is a paragraph.
-This won't be another paragraph, it will join the line above it.
-
-This will be another paragraph, as it has a blank line above it.
-```
-
-**Output:**
-
-This text is a paragraph. This won't be another paragraph, it will join the line above it.
-
-This will be another paragraph, as it has a blank line above it.
-
-### Force line breaks
-
-To force a line break, **end a line with two or more whitespaces**, and then type return.
-
-```
-This is the first line.··
-Second line
-```
-
-**Output:**
-
-This is the first line.  
-Second line
-
-### Horizontal lines
-
-Can be inserted with four `*`, `-` or `_`
-
-```
-----
-
-****
-
-____
-```
-
-**Output:**
-
-----
-
-****
-
-____
-
-
-
-
-## Links
-
-
-### Basic links
-
-```
-[Semantic description](https://roneo.org/markdown)  
-<address@example.com>  
-<https://roneo.org/markdown> works too. Must be used for explicit links.
-```
-
-**Output:**
-
-[Semantic description](https://roneo.org/markdown)  
-<address@example.com>  
-<https://roneo.org/markdown> works too. Must be used for explicit links.
-
-
-### Links using text reference
-
-```
-[I'm a link][Reference text]
-
-[This link] will do the same as well. It works as the identifier itself.
-
-
-[reference text]: https://jamstack.club
-[this link]: https://roneo.org/markdown
-```
-
-**Output:**
-
-[I'm a link][Reference text]
-
-[This link] will do the same as well. It works as the identifier itself.
-
-
-[reference text]: https://jamstack.club
-[this link]: https://roneo.org/markdown
-
-**Note:** The reference text is *not* case sensitive
-
-
-### Link with a title on hover
-
-```
-[Random text][random-identifier].
-Hover the mouse over it to see the title.
-
-Several syntaxes are accepted:
-[One](https://eff.org "First site")
-[Two](https://example.com 'Second site')
-[Three](https://example.com (Third site))
-
-[random-identifier]: https://roneo.org/markdown "This example has a title"
-```
-
-**Output:**
-
-[Random text][random-identifier]. Hover the mouse over it to see the title.
-
-Several syntaxes are accepted:
-[One](https://eff.org "First site")
-[Two](https://jamstack.club 'Second site')
-[Three](https://debian.org (Third site))
-
-[random-identifier]: https://roneo.org/markdown "This example has a title"
-
-
-### Links with Markdown style
-
-To ***emphasize*** links, add asterisks before and after the brackets and parentheses.
-
-    I love supporting the **[EFF](https://eff.org)**.  
-    This is the *[Markdown Guide](https://www.markdownguide.org)*.
-
-To denote links as `code`, add backticks *inside* the brackets:
-
-    See the section on [`code`](#code).
-
-**Output:**
-
-I love supporting the **[EFF](https://eff.org)**.  
-This is the *[Markdown Guide](https://www.markdownguide.org)*.  
-See the section on [`code`](#code).
-
-
-### Attribute a custom anchor to a heading
-
-Anchors are automatically generated based on the heading's content. You can customize the anchor this way:
-
-    ### Heading {#custom-id}
-
-**Output:**
-
-#### Heading {#custom-id}
-
-
-
-## Code formatting
-
-
-### Inline
-
-Wrap with single backticks to highlight as`` `code` `` → `code`
-
-### Codeblocks
-
-Create a code block with three backticks `` ``` `` before and after your block of code.
-
-**Output:**
-
-
-```
-sudo apt hello
-cat /etc/apt/sources.list
-```
-
-Also possible with a tabulation or four empty spaces at the beginning of the lines:
-
-**Tabulation**
-
-	sudo apt hello
-	echo "hi"
-
-**Four whitespaces**
-
-    sudo apt hello
-
-Let's test the wrapping of a long line:
-
-	apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test apt install test
-
-### Codeblocks with syntax highlighting
-
-Set the language right after the first backticks (for example `` ```html  ``) to get syntax highlighting
-
-#### Samples:
-
-
-#### HTML
-
-```html
-<!DOCTYPE html>
-<html lang="fr" itemscope itemtype="http://schema.org/WebPage">
-  <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-```
-
-#### CSS
-
-```css
-/* Comment */
-.blog-post h2, h3 {
-  margin-top: 1.6em;
-  margin-bottom: 0.8em;
-}
-```
-
-#### Bash
-
-```bash
-# Comment
-
-if [[ ! $system =~ Linux|MacOS|BSD ]]; then
-	echo "This version of bashtop does not support $system platform."
-
-sudo apt install test
-```
-
-#### Diff
-
-```diff
-- delete
-+ add
-! test
-# comment
-```
-
-### Escaping with backslashes
-
-Any ASCII punctuation character may be escaped using a single backslash.
-
-Example:
-
-    \*this is not italic*
-
-**Output:**
-
-\*this is not italic*
-
-Markdown provides backslash escapes for the following characters:
-
-    \   backslash
-    `   backtick
-    *   asterisk
-    _   underscore
-    {}  curly braces
-    []  square brackets
-    ()  parentheses
-    #   hash mark
-	+	plus sign
-	-	minus sign (hyphen)
-    .   dot
-    !   exclamation mark
-
-
-## Images
-
-### Basic syntax
-
-``` markdown
-  ![Semantic description of the image](https://roneo.org/img/ok.png)
-```
-
-![Semantic description of the image](https://roneo.org/img/ok.png)
-
-**Note: The text inside the square brackets is important!**
-
-Screen reader users get informations about the image with this attribute called `ALT`, for _alternative text_.
-
-Including **descriptive** alt text [helps maintain accessibility](https://webaim.org/techniques/alttext/) for every visitor and should always be included with an image. When you add alt text be sure to describe the content and function of the picture.  
-In addition to the accessibility benefits, `ALT` is useful for SEO. It's also displayed when, for some reason, the picture is not loaded by the browser.
-
-
-### Image with title and caption
-
-```
-![Semantic description](https://roneo.org/img/ok.png "Your title")*Your caption*
-```
-
-![Semantic description](https://roneo.org/img/ok.png "Your title")*Your caption*
-
-
-### Clickable images
-
-For clickable images, simply wrap the image markup into a [link markup](#links):
-
-```
-[![Semantic description](https://roneo.org/img/ok.png "Your title")](http://jamstack.club)
-```
-
-**Output:**
-
-[![Semantic description](https://roneo.org/img/ok.png "Your title")](http://jamstack.club)
-
-
-
-### Image with an identifier
-
-You can call the image with an identifier as we do for [links](#links)
-
-```
-![Semantic desc.][image identifier]
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit [...]
-
-[image identifier]: https://roneo.org/img/ok.png "Title"
-```
-
-![Semantic desc.][image identifier]
-
-[image identifier]: https://roneo.org/img/ok.png "Title"
-
-
-## Task lists
-
-```
-- [X] Write the press release
-- [ ] Update the website
-```
-
-**Output:**
-
-- [x] Write the press release
-- [ ] Update the website
-
-
-
-## Tables
-
-
-```
-| Syntax    | Description |
-| --------- | ----------- |
-| Header    | Title       |
-| Paragraph | Text        |
-```
-
-or
-
-```
-| Syntax | Description |
-| - | --- |
-| Header | Title |
-| Paragraph | Text|
-```
-
-will render the same way:
-
-| Syntax | Description |
-| - | --- |
-| Header | Title |
-| Paragraph | Text|
-
-
-### Text alignment in tables
-
-
-```
-| Syntax    | Description |   Test Text |
-| :-------- | :---------: | ----------: |
-| Header    |    Title    | Here's this |
-| Paragraph |    Text     |    And more |
-```
-
-See the way the text is aligned, depending on the position of `':'`
-
-| Syntax    | Description |   Test Text |
-| :-------- | :---------: | ----------: |
-| Header    |    Title    | Here's this |
-| Paragraph |    Text     |    And more |
-
-
-
-## Footnotes
-
-```
-Here's a sentence with a footnote[^1].
-(see the result at the bottom of the page)
-
-[^1]: This is the first footnote.
-```
-
-**Output:**
-
-Here's a sentence with a footnote[^1].  
-(see the result at the bottom of the page)
-
-[^1]: This is the first footnote.
-
-### Long footnote
-
-```
-Here's a longer one.[^bignote]
-(see the result at the bottom of the page)
-
-[^bignote]: Here's one with multiple paragraphs and code.
-	
-	Indent paragraphs to include them in the footnote.
-	
-	`{ my code }`
-	
-	Note that you can place the footnote anywhere you want in your article
-```
-
-**Output:**
-
-Here's a longer one.[^bignote]
-(see the result at the bottom of the page)
-
-[^bignote]: Here's one with multiple paragraphs and code.
-	
-	Indent paragraphs to include them in the footnote.
-	
-	`{ my code }`
-	
-	Note that you can place the footnote anywhere you want in your article
-
-
-
-## Definition List
-
-
-```
-term
-: definition
-
-second term
-: meaning
-
-complex term
-: long definition including **bold text**. Velit tempor cillum aute culpa pariatur enim laboris consectetur tempor. Aute elit non do ipsum. Nisi quis culpa magna esse ipsum. Ad aliquip ullamco minim cillum in ullamco.
-```
-
-**Output:**
-
-term
-: definition
-
-second term
-: meaning
-
-complex term
-: long definition including **bold text**. Velit tempor cillum aute culpa pariatur enim laboris consectetur tempor. Aute elit non do ipsum. Nisi quis culpa magna esse ipsum. Ad aliquip ullamco minim cillum in ullamco.
-
-
-## Headings
-
-Add `##` at the beginning of a line to set as Heading.  
-You can use up to 6 `#` symbols for the corresponding Heading levels
-
-
-```
-## Heading 1
-[...]
-
-###### Heading 6
-```
-
-
-## Heading 2
-
-pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.
-
-
-### Heading 3 ##################################
-
-pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.
-
-#### Heading 4
-
-pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.
-
-##### Heading 5
-
-pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.
-
-###### Heading 6
-
-pedit quia voluptates atque nobis, perspiciatis deserunt perferendis, nostrum, voluptatem voluptas dolorem iure voluptatum? Accusantium a dolores dicta?Pariatur voluptates quam ut, cum aliquid eum, officiis laudantium totam suscipit, ducimus odit nobis! Corrupti, doloremque sed optio voluptatibus deserunt quas repellat eius minus quasi, ipsam unde esse sequi deleniti.
-
-
-## References
-
-- Source of this page: [roneo.org/markdown](https://roneo.org/markdown)
-- [Markdown Guide - Basic Syntax](https://www.markdownguide.org/basic-syntax)
-- [Markdown Guide - Extended Syntax](https://www.markdownguide.org/extended-syntax)
-- [Daring Fireball: Markdown Syntax Documentation](https://daringfireball.net/projects/markdown/syntax)
-- [Markdown Guide at Gitlab.com](https://about.gitlab.com/handbook/markdown-guide/)
-- [CommonMark Spec](https://spec.commonmark.org/0.29/)
-
-## Related projects
-
-- https://github.com/ericwbailey/markdown-test-file
-- https://scottspence.com/posts/writing-with-markdown
-- https://codingnconcepts.com/markdown/markdown-syntax/
-- https://codeit.suntprogramator.dev/basic-markdown-syntax/
-- https://daringfireball.net/projects/markdown/syntax.text
-````
---- End of File: curated-untested/test.md ---
 --- File: in-progress/artichoke-pasta.md ---
 ````markdown
 # artichoke pasta
 
 kind of a quattro stagioni pasta
+
+## Ingredients
 
 * pasta, boiled, salted water reserved? boil in water and stock?
 * butter or ghee
@@ -2586,10 +1992,14 @@ kind of a quattro stagioni pasta
 https://www.youtube.com/watch?v=JpPys439VHI
 https://www.youtube.com/watch?v=OqP-dcHEX2w
 
+## ingredients
+
 * thin bacon
 * smokies (small smoked sausages, about 4cm in length)
 * bbq seasoning
 * optional sugar
+
+## directions
 
 1. dry the sausages, wet bacon can't stick
 2. cut the bacon to size - at least 4x the diameter of the sausage, measure using 4 sausages
@@ -2612,7 +2022,7 @@ https://liemessa.fi/2020/09/baked-feta-pasta-original-recipe/
 https://iamafoodblog.com/tiktok-baked-feta-pasta/
 https://www.delish.com/cooking/recipe-ideas/a35421563/baked-feta-pasta-tiktok/
 
-Ingredients
+## Ingredients
 
 * 1/3 cup olive oil, the good stuff
 * 500g cherry tomatoes, halved
@@ -2627,7 +2037,7 @@ Ingredients
 * fresh basil, chopped, to finish
 * (?) saw someone add honey too, but that probably doesn't go?
 
-Instructions
+## Directions
 
 1. Preheat the oven to 400°F / 200°C.
 2. In a large baking dish, toss the tomatoes, crushed garlic, and quartered shallots with the olive oil.
@@ -2642,6 +2052,8 @@ Instructions
 11. Stir in the drained pasta until well coated and creamy, adding in a bit of pasta water to loosen if too thick.
 12. Taste and season with salt and pepper.
 13. Stir in some chopped basil and finish with crushed red pepper. Enjoy!
+
+---
 
 Notes
 
@@ -2667,7 +2079,7 @@ Notes
 ````markdown
 # beef stroganoff
 
-Ingredients:
+## Ingredients:
 
 * 1/2 pound beef, cut into strips or cubes
 * i tsp paprika
@@ -2686,12 +2098,10 @@ Ingredients:
 * salt and pepper to taste
 * about 120g dried pasta
 
-optional, if using, halve the worcestershire sauce:
+* (optional) 1/2 tsp shoyu - if using, replace 1/2 tsp sauce
+* (optional) 1/4 tsp fish sauce - if using, replace 1/2 tsp worcestershire sauce
 
-* 1/2 tsp shoyu
-* 1/4 tsp fish sauce
-
-Instructions:
+## Directions
 
 1. Season the beef with paprika and salt and pepper to taste
 2. Optionally dust the beef in the flour and shake off excess
@@ -2720,9 +2130,7 @@ Instructions:
 [//]: # (todo: seen on tiktok - add a frozen layer of nutella and speculoos in the middle)
 [//]: # (todo: maybe use the meringue as a base layer instead of the top layer)
 
-## ingredients
-
-Brownie:
+## ingredients for Brownie:
 
 * 1 cup (170g) 70% dark chocolate
 * 1 cup (250g) butter (1 full slab, keep the butter wrapper for flouring the baking pan)
@@ -2744,7 +2152,7 @@ Brownie:
     * nuts, toasted in the oven
     * or you could double the initial amount of melted chocolate droplets to 2 cups
 
-OPTIONAL top layer (crust):
+## Ingredients for OPTIONAL top layer (crust):
 
 * 2 egg whites
 * 0.5 cup (100g) fine white sugar
@@ -2752,7 +2160,7 @@ OPTIONAL top layer (crust):
 * 0.5 tsp vanilla essence
 * pinch of salt
 
-Topping:
+## Ingredients for Topping:
 
 * Icing sugar (for dusting)
 * Whipped cream (for topping)
@@ -2798,6 +2206,8 @@ To serve:
 6. Sprinkle Cocoa powder
 7. Give a spoon and a napkin
 
+---
+
 ## Notes:
 
 * Try bread flour?
@@ -2815,14 +2225,11 @@ To serve:
 
 ````
 --- End of File: in-progress/better-brownies.md ---
---- File: in-progress/butter-chicken.md ---
-````markdown
-# todo - butter chicken / murgh makhni
-````
---- End of File: in-progress/butter-chicken.md ---
 --- File: in-progress/cabbage-rolls.md ---
 ````markdown
 # Cabbage Rolls
+
+## ingredients
 
 * 10 long cabbage leaves, washed
 * 250g baby asparagus, washed (or normal asparagus, peeled)
@@ -2834,6 +2241,8 @@ To serve:
 * 2 tsp sesame oil
 * ponzu to serve
 
+## directions
+
 1. boil the cabbage leaves to soften, cool, and shake off excess water
 2. cut the baby asparagus into ~2 inch lengths (roughly in half) and roast them for 15 mins at about 170c
 3. cut the enoki into 2 inch lengths (roughly in half)
@@ -2844,18 +2253,13 @@ To serve:
 
 ````
 --- End of File: in-progress/cabbage-rolls.md ---
---- File: in-progress/cacio-e-pepe.md ---
-````markdown
-# todo - cacio e pepe
-
-https://www.youtube.com/watch?v=AztjQDIi3Sw
-````
---- End of File: in-progress/cacio-e-pepe.md ---
 --- File: in-progress/cauliflower-cheese-casserole.md ---
 ````markdown
 # Cauliflower Cheese
 
 https://www.bbcgoodfood.com/recipes/cauliflower-cheese-0
+
+## ingredients
 
 * 1 cauliflower
 * 50g butter
@@ -2863,6 +2267,8 @@ https://www.bbcgoodfood.com/recipes/cauliflower-cheese-0
 * 2 cups / 500ml milk
 * 100g strong cheddar, grated
 * 2-3 Tbsp breadcrumbs (optional)
+
+## directions
 
 1. boil cauliflower until soft, about 5 minutes
 2. drain, break into smaller chunks, and place in baking dish
@@ -2887,7 +2293,9 @@ https://joythebaker.com/2012/10/sharp-cheddar-cheese-crackers/
 see also: https://www.fifteenspatulas.com/puffed-cheddar-cheese-twists/ (which uses egg white instead of water)
 see also: https://preppykitchen.com/shortbread-cookies-recipe/
 
-makes about 30-35 crackers, or 6-8 shortbread brick cookies 
+yields 30-35 crackers, or 6-8 shortbread brick cookies 
+
+## ingredients
 
 * 2 tablespoons room temperature unsalted butter
 * 3 ounces【85 g】 sharp cheddar cheese, grated (about 3/4 cup【177 mL】 lightly packed)
@@ -2897,6 +2305,8 @@ makes about 30-35 crackers, or 6-8 shortbread brick cookies
 * 1/4 teaspoon salt
 * 1/2 cup【118 mL】 all-purpose flour (2.25 oz【64 g】 by weight)
 * 1 tablespoon cold water
+
+## directions
 
 1. Cream together the butter, cheese, spices, and salt. Use a fork.
 2. Add flour and keep mixing to form sand.
@@ -2908,6 +2318,8 @@ makes about 30-35 crackers, or 6-8 shortbread brick cookies
 8. Bake at 180C for 10-15 minutes.
 9. Allow to cool slightly before picking them up.
 10. Store in an airtight container.
+
+---
 
 Notes:
 
@@ -2927,6 +2339,8 @@ https://howtofeedaloon.com/provencal-chicken-stew/
 
 Basically regular stew with olives and different herbs
 
+## ingredients
+
 * 4 boneless chicken thighs, seasoned and floured
 * rosemary, savory/thyme, oregano/marjoram, maybe basil/parsley, tarragon, bay leaf, fennel seed, lavender
 * 1 cup chicken stock
@@ -2945,19 +2359,19 @@ Basically regular stew with olives and different herbs
 * apple for sweetness, large cubes
 * potatoes, small cubes
 
-PREPARATION
+## directions
 
-* Dredge the chicken parts in flour
-* Fry the chicken until browned but not cooked through, then reserve.
-* excess flour from fried chicken is fried and added into the stew to thicken
-* fry onions first, then remainder of mirepoix and garlic, and salt and pepper and spices
-* fry mushrooms separately in butter and herbs until browned
-* add tomato and fry and squish
-* Deglaze with wine and stock
-* Add remaining vegetables and olives and stew until tender with lid on, adding water/stock as needed.
-* Add chicken on top and allow to steam with lid on
-* Finish with butter and stir in the chicken
-* Serve with toasted brioche
+1. Dredge the chicken parts in flour
+2. Fry the chicken until browned but not cooked through, then reserve.
+3. excess flour from fried chicken is fried and added into the stew to thicken
+4. fry onions first, then remainder of mirepoix and garlic, and salt and pepper and spices
+5. fry mushrooms separately in butter and herbs until browned
+6. add tomato and fry and squish
+7. Deglaze with wine and stock
+8. Add remaining vegetables and olives and stew until tender with lid on, adding water/stock as needed.
+9. Add chicken on top and allow to steam with lid on
+10. Finish with butter and stir in the chicken
+11. Serve with toasted brioche
 ````
 --- End of File: in-progress/chicken-stew.md ---
 --- File: in-progress/chocolate-royal-trianon.md ---
@@ -2967,9 +2381,7 @@ PREPARATION
 https://www.bakinglikeachef.com/royal-chocolate-cake-by-christophe-felder/
 see also: https://www.tartedor.nl/chocolate-royal/
 
-**Ingredients:**
-
-For the dacquoise:
+## Ingredients for the dacquoise:
 
 * 3 ½ tablespoons (55g) egg whites (about 1.5 eggs worth of white, if each egg is 60g)
 * 2 ½ tablespoons (35g) granulated sugar
@@ -2977,20 +2389,20 @@ For the dacquoise:
 * ⅓ cup (30g) almond flour
 * 2 tablespoons (15g) hazelnut flour
 
-For the crunchy praline feuilletine:
+## Ingredients for the crunchy praline feuilletine:
 
 * 1.7 oz (50g) crêpes dentelles Gavottes
 * 1.7 oz (50g) milk chocolate
 * 1.7 oz (50g) hazelnut spread Nutella
 * 1.7 oz (50g) hazelnut praline paste
 
-For the chocolate mousse:
+## Ingredients for the chocolate mousse:
 
 * 2 cup + 3 tablespoons (500ml) whipping cream
 * 5 tablespoons (75ml) whole milk
 * 7 oz (200g) dark chocolate
 
-For the cocoa mirror glaze:
+## Ingredients for the cocoa mirror glaze:
 
 * ⅔ cup + 4 ½ tablespoons (210g) granulated sugar
 * 5 tablespoons (75ml) water
@@ -2998,9 +2410,7 @@ For the cocoa mirror glaze:
 * ½ cup + 2 tablespoons (145ml) whipping cream
 * 3 ⅓ gelatin sheets (or 8g powdered gelatin bloomed in ¼ cup (60ml) cold water)
 
-**Instructions:**
-
-To make the dacquoise (almond biscuit similar to a coarse macaron):
+## Directions for the dacquoise (almond biscuit similar to a coarse macaron):
 
 1. Preheat the oven to 335°F / 170°C.
 2. Sift powdered (icing) sugar, almond flour, and hazelnut flour through a flour sifter.
@@ -3012,7 +2422,7 @@ To make the dacquoise (almond biscuit similar to a coarse macaron):
 8. Bake for 20 to 25 minutes.
 9. Let it cool in a frame.
 
-To make the crunchy praline feuilletine:
+## Directions for the crunchy praline feuilletine:
 
 1. Crush crepes Gavottes roughly with your hands or a rolling pin.
 2. Melt milk chocolate in a bain-marie/water bath.
@@ -3022,7 +2432,7 @@ To make the crunchy praline feuilletine:
 6. Pour the crunchy mixture over dacquoise, spread it in a thin layer.
 7. Then remove the mold and freeze the dacquoise for about 10 to 15 minutes.
 
-To make the chocolate mousse:
+## Directions for the chocolate mousse:
 
 1. Whip the cold whipping cream in a bowl to get the whipped cream and refrigerate.
    (Note: philips blender with a whipping attachment can only reliably whip 1 cup at a time, so whip in 2 batches)
@@ -3031,7 +2441,7 @@ To make the chocolate mousse:
 4. When the chocolate mixture is lukewarm, add it to the whipped cream and mix with a spatula as fast as possible.
 5. Transfer the mousse to a pastry bag with a plain tip.
 
-To assemble the cake:
+## Directions for assembling the cake:
 
 1. Seal one side of the 8 inches/20 cm cake ring with a plastic film and place it on a wooden board or a baking sheet.
 2. Insert an acetate collar inside the ring.
@@ -3040,19 +2450,19 @@ To assemble the cake:
 5. Slightly press the disk and remove the excess mousse with a bent spatula.
 6. Cover with a plastic film and freeze for at least 5 hours.
 
-To make the cocoa mirror glaze:
+## Directions for the cocoa mirror glaze:
 
 1. Soak gelatin sheets in cold water for 10 minutes.
 2. Heat whipping cream over low heat and set aside.
 3. Pour water and sugar into a saucepan and bring to a boil.
-4. Once the sugar syrup starts boilng actively, pour it over the sifted cocoa powder and gently mix, trying not to
-   incorporate air.
+4. Once the sugar syrup starts boiling actively, pour it over the sifted cocoa powder and gently mix, 
+   trying not to incorporate air.
 5. Add the drained gelatin and mix it with a hand blender.
 6. Then pour hot whipping cream and mix again.
 7. Pass the mixture through a fine-mesh sieve and mix with a hand blender.
 8. Let the glaze cool down to 86°F/30°C.
 
-To glaze the cake:
+## Directions for glazing the cake:
 
 1. Take the dessert out of the freezer.
 2. Place the cake on a wire rack or a plate, which is itself placed on a baking sheet to collect the excess glaze.
@@ -3060,6 +2470,8 @@ To glaze the cake:
 4. Pour the glaze over the cake and remove the excess glaze with a bent spatula, passing it over the top once.
 5. Transfer the dessert to a cake board using two metal spatulas.
 6. Place the cake in the fridge to thaw for 3 to 4 hours.
+
+---
 
 **Notes:**
 
@@ -3076,16 +2488,18 @@ To glaze the cake:
 ````markdown
 # Cinnamon-glazed carrots
 
-Carrots
-Butter or ghee
-Cinnamon
-Nutmeg
-Ginger? probably powder?
-Thyme
-Salt
-Brown sugar or honey or both
-Pepper
-Orange juice? or stock?
+## Ingredients
+
+* Carrots
+* Butter or ghee
+* Cinnamon
+* Nutmeg
+* Ginger? probably powder?
+* Thyme
+* Salt
+* Brown sugar or honey or both
+* Pepper
+* Orange juice? or stock?
 
 ````
 --- End of File: in-progress/cinnamon-carrots.md ---
@@ -3123,6 +2537,8 @@ Instructions:
 ````markdown
 # TODO - Croque Monsieur / Croque Madame
 
+## ingredients
+
 * bread
 * cheese, traditionally emmental
 * ham
@@ -3130,22 +2546,22 @@ Instructions:
 * [bechamel](../recipes/bechamel.md)
 * optional egg on top, and more sauce to finish
 
-notes:
+## directions
 
-* bottom to top:
-  * bread
-  * thin sauce layer
-  * cheese
-  * ham
-  * thin sauce layer
-  * optional second slice of bread
-  * more sauce
-  * cheese
-  * egg
-  * more sauce and cheese
-* 200C for about 10 minutes
-* another 3-5 minutes with the egg on top
-* egg can be cooked beforehand to make it less likely to fall off, but don't cook the yolk
+1. layer from bottom to top:
+    * bread
+    * thin sauce layer
+    * cheese
+    * ham
+    * thin sauce layer
+    * optional second slice of bread
+    * more sauce
+    * cheese
+    * egg
+    * more sauce and cheese
+2. 200C for about 10 minutes
+3. another 3-5 minutes with the egg on top
+4. egg can be cooked beforehand to make it less likely to fall off, but don't cook the yolk
 ````
 --- End of File: in-progress/croque-monsieur.md ---
 --- File: in-progress/dynamite-lumpia.md ---
@@ -3159,6 +2575,8 @@ https://food52.com/recipes/84691-dynamite-lumpia-recipe
 https://www.kawalingpinoy.com/dynamite-lumpia/
 https://panlasangpinoy.com/dyanamite-lumpia/
 
+## ingredients
+
 * big fat chili peppers, seeds and pith thoroughly removed
 * meat
 * garlic
@@ -3170,6 +2588,8 @@ https://panlasangpinoy.com/dyanamite-lumpia/
 * cheese
 * spring roll wrappers, egg or rice rolls okay
 * clove, fennel, worcestershire, light soy sauce, liquid smoke
+
+---
 
 notes:
 
@@ -3188,6 +2608,8 @@ notes:
 ````markdown
 # Eggplant Parmesan (Parmigiana di Melanzane)
 
+## ingredients
+
 * passata (or marinara sauce)
 * eggplant slices, baked with olive oil and some salt
 * basil leaves
@@ -3196,6 +2618,7 @@ notes:
 * optional breadcrumbs
 * optional herbs in the sauce
 
+## directions
 
 1. layer sauce, basil, eggplant, cheese
 2. repeat until container is full
@@ -3206,6 +2629,8 @@ notes:
 --- File: in-progress/fish-meuniere.md ---
 ````markdown
 # fish meuniere with mornay
+
+## directions
 
 1. Poach at low to medium heat in vinegar water to defrost and almost cook through, change water once?, then reserve fish, which should be soft and tender
 2. Fry fresh herbs (sage or dill or tarragon) in butter until crispy
@@ -3223,6 +2648,8 @@ notes:
 --- File: in-progress/fried-garlic-shoots.md ---
 ````markdown
 # fried garlic shoots
+
+## ingredients
 
 * garlic shoots, root and brown tip discarded, cut into 4cm bits, blanched in salted water
 * onion, sliced or diced
@@ -3244,6 +2671,8 @@ notes:
 
 Not sure where this recipe originated from
 
+## ingredients
+
 * 4 (large) yolks
 * 1/4 tsp salt
 * 1/8 tsp sugar
@@ -3253,6 +2682,8 @@ Not sure where this recipe originated from
 * 200g butter (up to 100g more at the end, depending on consistency)
 * (optional) a pinch each of onion and garlic powder
 * (if it's to be served on fish) maybe some grated parmesan
+
+## Directions
 
 1. Aside from the butter, whisk the remaining ingredients well in a bowl 
 2. Bathe bowl in hot water bath and keep whisking until it thickens 
@@ -3269,6 +2700,8 @@ Not sure where this recipe originated from
 > Make sure to cut off the actual ham skin (but leaving behind the fat layer) because that's pretty much inedible.
 > After cutting one way, remove the skin in strips before cutting the other way to make the diamond hatch. 
 
+## Ingredients
+
 * 1/2 cup honey
 * 1/4 cup maple syrup
 * 1/4 cup (brown) sugar
@@ -3278,6 +2711,8 @@ Not sure where this recipe originated from
 * 1 pinch nutmeg
 * (optional) splash of white wine
 
+## Directions
+
 1. Mix and boil everything except the wine until foamy and homogenous
 2. Keep boiling until sticky
 3. Add a bit of wine to loosen it up, so that it can be painted onto ham
@@ -3285,9 +2720,13 @@ Not sure where this recipe originated from
 5. Defrost out of the fridge for an hour to liquefy
 6. Paint on a whole ham or on ham slices
 
+---
+
 Notes:
 
-* need to figure out how to make the ham skin crispy without overcooking the inside - maybe glaze the ham after it's crispy?
+* need to figure out how to make the ham skin crispy without overcooking the inside 
+  * maybe glaze the ham after it's crispy?
+* small hams are better because they're more tender
 ````
 --- End of File: in-progress/honey-glazed-ham.md ---
 --- File: in-progress/japanese-carrots.md ---
@@ -3295,6 +2734,8 @@ Notes:
 # Japanese-style fried carrots
 
 Based off a recipe for ["kinpara gobo"](https://www.thespruceeats.com/kinpira-gobo-recipe-2031655) (fried burdock)
+
+## Directions
 
 1. Julienne a couple of carrots
 2. Fry in oil until cooked through
@@ -3311,6 +2752,8 @@ Based off a recipe for ["kinpara gobo"](https://www.thespruceeats.com/kinpira-go
 
 served with fois gras on toast
 
+## Directions
+
 1. Cook onions down until dark brown with enough butter to prevent it from sticking
 2. Add wine, sugar, pepper
 3. Optional salt, optional vinegar, optional thyme/cardamom/whatever herbs and spices
@@ -3321,6 +2764,8 @@ served with fois gras on toast
 # Onion Soup
 
 see also: https://www.youtube.com/watch?v=rzL07v6w8AA
+
+## Ingredients
 
 * 4 biggish onions, sliced pole to pole
 * 1 Tbsp oil
@@ -3336,10 +2781,14 @@ see also: https://www.youtube.com/watch?v=rzL07v6w8AA
 * salt and pepper to taste
 * bread and gruyere
 
-## from NYT
+---
 
-French Onion Soup
+# French Onion Soup
+
 By Sara Bonisteel
+(from NYT)
+
+Yield: 4 to 6 servings
 
 Time: 1 hour 20 minutes
 
@@ -3348,8 +2797,7 @@ which had 20 recipes for soups “thick and thin, hot and cold,” including tho
 French onion soup. We've updated the recipe adding sherry and wine to layer in more flavors. The bulk of the time is
 spent on caramelizing the onions, a process that always takes longer than it seems it should. But it's worth the wait.
 
-INGREDIENTS
-Yield: 4 to 6 servings
+## INGREDIENTS
 
 * 3 tablespoons unsalted butter
 * 3 to 4 large red or yellow onions (about 3 pounds), peeled and thinly sliced
@@ -3362,7 +2810,7 @@ Yield: 4 to 6 servings
 * French bread cut into 8 to 12½-inch slices
 * 1½ cups grated Gruyère cheese
 
-PREPARATION
+## DIRECTIONS
 
 1. Melt butter in a heavy Dutch oven over medium heat. Add onions and ½ teaspoon salt, stir and cover, letting onions
    soften for 5 minutes. Remove lid and let onions caramelize until golden brown over medium heat, stirring
@@ -3380,13 +2828,16 @@ PREPARATION
    cover top with bread slices. Sprinkle each casserole generously with Gruyère. Broil for a minute or two, watching
    carefully, until cheese melts and browns. Serve immediately.
 
-### nyt comments
+---
+
+## nyt comments
 
 > diane
 > (2 years ago)
 > Simplify by making overnight caramelized onions. Fill slow cooker with 4-5 lbs sliced onions, pour 1/3 cup olive over
 > the onions & mix well. Cover with lid and cook on HIGH for 7-9 hours. Yes it does indeed needs to be High. I had my
-> doubts at first, but I've done this probably at least 20 times and the onions cook way down & caramelize beautifully. I
+> doubts at first, but I've done this probably at least 20 times and the onions cook way down & caramelize beautifully.
+> I
 > haven't tried this yet with my new multi-cooker but plan to try that next using slow cooker function.
 
 > Elisa
@@ -3396,7 +2847,8 @@ PREPARATION
 
 > Gonzalo
 > (2 years ago)
-> 1 Tbsp of Sherry is a very small amount, it won't add any significant flavour. Also, if Sherry boils for a long time, it
+> 1 Tbsp of Sherry is a very small amount, it won't add any significant flavour. Also, if Sherry boils for a long time,
+> it
 > completely loses its aroma. I suggest adding 2 Tbsp on each individual soup dish just before broiling (that's the way
 > people have fancy consomme in Madrid).
 ````
@@ -3404,6 +2856,8 @@ PREPARATION
 --- File: in-progress/oyakodon.md ---
 ````markdown
 # oyakodon
+
+## ingredients
 
 * 100-300g chicken, sliced into forkable chunks
 * 1 large onion (or 2 small)
@@ -3413,6 +2867,8 @@ PREPARATION
 * mirin
 * optional sake
 * 2 eggs
+
+## directions
 
 1. fry chicken to brown the outside, then reserve
 2. fry onions, carrots, any other veggies
@@ -3428,7 +2884,7 @@ PREPARATION
 
 (adapted from) https://www.allrecipes.com/recipe/21014/good-old-fashioned-pancakes/
 
-Ingredients
+## Ingredients
 
 * 1 cup flour -- try cake flour based on recipe below
 * 2 teaspoons baking powder
@@ -3438,7 +2894,7 @@ Ingredients
 * 2 tablespoons butter, melted
 * 1 egg
 
-Directions
+## Directions
 
 1. Sift flour, baking powder, sugar, and salt together in a large bowl. 
 2. Make a well in the center and add milk, melted butter, and egg; mix until smooth.
@@ -3448,7 +2904,9 @@ Directions
 6. Flip and cook until browned on the other side. 
 7. Repeat with remaining batter.
 
-Editor's Note:
+---
+
+## Editor's Note:
 
 * The salt amount has been reduced based on review feedback. The original recipe called for 1 teaspoon.
 
@@ -3541,7 +2999,13 @@ aellis1970. "They are so delicious, they were eaten without syrup."
 
 Editorial contributions by Corey Williams
 
-## see also: http://thepioneerwoman.com/cooking/2009/05/perfect-pancakes/
+---
+
+# Perfect Pancakes
+
+see also: http://thepioneerwoman.com/cooking/2009/05/perfect-pancakes/
+
+## Ingredients
 
 * 3 cups Plus 2 Tablespoons Cake Flour (essential ingredient)
 * 3 Tablespoons Baking Powder
@@ -3556,6 +3020,8 @@ Editorial contributions by Corey Williams
 * Extra Butter
 * Maple Or Pancake Syrup
 
+## Directions
+
 1. Mix together dry ingredients in large bowl.
 2. Mix together milk, eggs, and vanilla in a separate bowl.
 3. Add wet ingredients to dry ingredients, stirring very gently until just combined.
@@ -3568,6 +3034,8 @@ Editorial contributions by Corey Williams
 --- File: in-progress/pesto.md ---
 ````markdown
 # Pesto (from Thai basil)
+
+## ingredients
 
 * leaves from 3 bunches of thai basil (about 200g dry)
     * these basil leaves are larger than holy basil, and don't smell like mint
@@ -3588,6 +3056,8 @@ Editorial contributions by Corey Williams
         * used 1 cup (60g) of grated gran moravia (hard cheese) since that was in the fridge
         * using 2/3 cup (40g) was still too little
 
+## directions
+
 1. add oil to blender
 2. add basil leaves - about 1/3 of the leaves will fit
 3. blend in the leaves
@@ -3604,10 +3074,14 @@ Editorial contributions by Corey Williams
 ````markdown
 # pineapple sauce for ham
 
+## ingredients
+
 * 1 can pineapple, about 390g / 12oz drained weight
 * 1 cup sugar
     * brown sugar makes the sauce brown, so stick to white?
 * pinch of cinnamon, optional
+
+## directions
 
 1. cut fine or blend
 2. cook with sugar
@@ -3615,16 +3089,21 @@ Editorial contributions by Corey Williams
 4. add cinnamon
 5. optional splash of white wine
 
-## mummy's recipe
+---
 
-* mummy's recipe has
-    * 1/4 cup water
-    * 1/4 cup brown sugar
-    * 2 Tbsp ketchup
-    * 2 Tbsp shoyu
-    * 1 tsp (coarse) mustard
-    * 1 can pineapple rings, blended, including the water
-    * 1 Tbsp cornstarch, mixed into additional 1/4 cup water
+# mummy's recipe
+
+## ingredients
+
+* 1/4 cup water
+* 1/4 cup brown sugar
+* 2 Tbsp ketchup
+* 2 Tbsp shoyu
+* 1 tsp (coarse) mustard
+* 1 can pineapple rings, blended, including the water
+* 1 Tbsp cornstarch, mixed into additional 1/4 cup water
+
+## directions
 
 1. mix
 2. boil, then simmer with lid for 10 mins
@@ -3633,11 +3112,17 @@ Editorial contributions by Corey Williams
 5. cook until thickened
 6. serve with ham
 
-## QUICK & EASY LEG OF HAM
+---
+
+# QUICK & EASY LEG OF HAM
 
 Catherine's short-cut, Dec-2010
 
+## Ingredients
+
 * 2kg fully-cooked ham
+
+## Directions
 
 1. Carefully slice off the rind, leaving the fat on
 2. Score the fat in a diamond pattern, without cutting into the meat.
@@ -3646,6 +3131,8 @@ Catherine's short-cut, Dec-2010
 5. Place ham in a roasting pan, preferably on a rack.
 6. Bake at 160C, about 15 minutes.
 7. Brush again with honey and return to oven for 30 minutes till golden brown.
+
+---
 
 N.B.
 
@@ -3680,6 +3167,8 @@ For leftovers, to store ham on the bone:
 
 note: for this to turn out pink and not orange, the tomatoes must be red and not orange
 
+## ingredients
+
 1. fry bacon and halved cherry tomatoes (and pepper - salt comes from pasta water)
 2. add chicken stock to help tomatoes to cook
 3. also add herbs if desired
@@ -3703,7 +3192,7 @@ note: for this to turn out pink and not orange, the tomatoes must be red and not
 see also: https://www.youtube.com/watch?v=HnZ7XGYNfwA
 see also: https://www.nytimes.com/2007/06/13/dining/131rrex.html
 
-Ingredients:
+## Ingredients:
 
 * 4 red bell peppers
 * 2 tablespoons olive oil
@@ -3716,7 +3205,7 @@ Ingredients:
 * 1/2 teaspoon salt
 * 1/8 teaspoon black pepper
 
-Instructions:
+## Directions:
 
 1. Preheat the oven to 400°F (200°C).
 2. Cut the bell peppers in half lengthwise and remove the seeds and ribs.
@@ -3735,6 +3224,8 @@ Instructions:
 13. Stir peppers into the tomato sauce and simmer until peppers are tender and the mixture is thick, about 10 minutes.
 14. Serve the piperade hot, either as a side dish or over eggs. Enjoy!
 
+---
+
 Notes:
 
 * An alternative to the tomato, onion, etc. is to use some pomodoro sauce.
@@ -3749,12 +3240,16 @@ Notes:
 ````markdown
 # Pseudo Steamed Fish
 
+## Ingredients
+
 * Fillet of fish
 * 1/4 onion, handful cherry tomato, sprig of basil, 1/4 tsp ginger powder, no salt
 * Preheat then steam at water mark 3 at 150c for 7-10 mins
 * Heat 1-2 Tbsp sesame oil in a pan until really hot then pour over
 * Pour over some shoyu
 * Serve with steamed rice
+
+---
 
 note:
 
@@ -3766,11 +3261,13 @@ note:
 ````markdown
 # Pseudo Sweet and Sour Fish
 
-* Flour and fry fish
-* Slice tomatoes, shallots, couple cloves of garlic, and fry in a little oil
-* Add a bit of pineapple sauce, tomato paste, cook out the rawness of the paste
-* Dilute with orange juice and throw the fried fish back in to warm up
-* Serve with rice
+## Directions
+
+1. Flour and fry fish
+2. Slice tomatoes, shallots, couple cloves of garlic, and fry in a little oil
+3. Add a bit of pineapple sauce, tomato paste, cook out the rawness of the paste
+4. Dilute with orange juice and throw the fried fish back in to warm up
+5. Serve with rice
 
 ````
 --- End of File: in-progress/pseudo-sweet-and-sour-fish.md ---
@@ -3781,7 +3278,7 @@ note:
 https://www.nytimes.com/2007/06/13/dining/131rrex.html
 theme song: [le festin](https://www.youtube.com/watch?v=beamS4GZ5T8)
 
-Ingredients:
+## Ingredients:
 
 * 1/2 eggplant, sliced 3mm thick
 * 2-3 tomatoes, sliced 3mm thick (this might need a knife)
@@ -3791,7 +3288,7 @@ Ingredients:
 * 1/2 cup [piperade](./piperade-sauce.md), optionally blended (or use a tomato-based sauce like pomodoro)
 * 1-2 tablespoons olive oil or vinaigrette
 
-Directions:
+## Directions:
 
 1. Preheat oven to 140°C.
 2. Spread out purple eggplant slice on a large work surface. Sprinkle some salt and pepper.
@@ -3818,7 +3315,7 @@ https://recipe.cookswarehouse.com/fresh-natural-ratatouille-by-paul-bocuse/
 
 Note: a cocotte is a type of heavy pot with a tight-fitting lid - basically a dutch oven.
 
-Ingredients:
+## Ingredients:
 
 * 1/4 cup extra virgin olive oil
 * 1 large onion (230 g), coarsely chopped
@@ -3831,7 +3328,7 @@ Ingredients:
 * Sea salt
 * Freshly ground pepper
 
-Instructions:
+## Directions:
 
 1. Toss the eggplant with sea salt and leave it for 2-4 hours (or overnight).
 2. Rinse the eggplant to remove the excess salt and pat it dry with paper towels or a clean kitchen towel.
@@ -3849,15 +3346,21 @@ Instructions:
 ````markdown
 # roasted pineapple
 
+## ingredients
+
 * 1 pineapple, peeled and de-eyed
 * 1/4 cup sugar / syrup
 * 2 tsp cinnamon
 * water, juice, or a splash of wine or rum, optional, to loosen up the marinade
 
+## directions
+
 1. mix the marinade
 2. baste and roast at 190C for 15 mins
 3. repeat
 4. repeat
+
+---
 
 ## todo:
 
@@ -3872,6 +3375,8 @@ Instructions:
 ````markdown
 # salmon fried rice
 
+## ingredients
+
 * 2 portions leftover rice
 * 2 egg yolks
 * 3-5 cloves garlic, minced, crushed, or sliced, but not whole
@@ -3881,6 +3386,8 @@ Instructions:
 * 1 Tbsp mayo
 * 1-2 spring onions, chopped
 * handful of chives, chopped
+
+## directions
 
 1. mix egg yolks with reheated rice in a pan that isn't hot yet
 2. start frying, moving and scraping constantly until the yolk is cooked onto the surface of the rice
@@ -3898,6 +3405,8 @@ Instructions:
 --- File: in-progress/salmon-pasta.md ---
 ````markdown
 # salmon pasta
+
+## ingredients
 
 * butter
 * onion?
@@ -3919,12 +3428,16 @@ Instructions:
 
 from Ati
 
+## Ingredients
+
 * 380g cleaned deseeded chili
 * 100g garlic
 * 1 cup oil <- todo: not sure about this amount
 * 1 tsp salt
 * 1/2 tsp chicken bouillon powder (alternatively, a pinch of msg)
 * 1/8 tsp sugar (if not adding msg)
+
+## Directions
 
 1. Blend chili and garlic until they're about 3mm across
 2. Get the oil very hot (otherwise it'll be bitter)
@@ -3952,6 +3465,8 @@ from Ati
 ````markdown
 # greek-inspired salad recipe, randomly put together, not bad
 
+## Ingredients
+
 * mesclun
 * cherry tomatoes
 * cucumber, seeded (forgot to add this)
@@ -3977,7 +3492,9 @@ from Ati
 
 source: recipe card from kinmemai (rice brand)
 
-## Ingredients (8-10 portions)
+serves 8-10 portions
+
+## Ingredients
 
 * 5 cups white rice, uncooked
 * 6 cups Water
@@ -3987,14 +3504,14 @@ source: recipe card from kinmemai (rice brand)
 * 1-2 tsps Fish sauce
 * White pepper
 
-## Garnishes
+## Ingredients for Garnishes
 
 * 1 cup Peanut, roasted
 * 5-6 Fresh basil leaves
 * 2 Fresh red chillies, sliced
 * 1 Thin-skinned large lime, diced finely
 
-## Instructions
+## Directions
 
 1. Cook rice with water in a rice cooker till dry and fluffy. While rice is cooking, prepare the garnishes.
 2. Pour out two tablespoons of oil from the bottle of olive paste and heat in a wok.
@@ -4010,6 +3527,8 @@ source: recipe card from kinmemai (rice brand)
 ````markdown
 # Tortang Talong
 
+## directions
+
 1. roast eggplant until blackened
 2. slice like a fan
 3. add starch and a pinch of tumeric
@@ -4020,6 +3539,10 @@ source: recipe card from kinmemai (rice brand)
 8. flip and fry some more
 9. add optional ground pork, fish sauce, soy sauce, minced garlic, diced onion
 10. serve with rice
+
+---
+
+notes:
 
 * traditionally served with banana ketchup
 * air fryer might also work
@@ -4497,7 +4020,7 @@ https://www.themediterraneandish.com/baba-ganoush-recipe/
 * pinch of smoked paprika
 
 
-## Instructions:
+## Directions:
 
 1. Preheat oven to 220°C.
 2. Slice eggplants in half and brush the cut sides lightly with olive oil.
@@ -4538,6 +4061,8 @@ https://www.seriouseats.com/savory-cheese-souffle
 https://www.youtube.com/watch?v=7AAx0uIuoBQ&t=7s
 https://www.pastagrammar.com/post/basic-besciamella-sauce
 
+## ingredients
+
 * 1 heaped Tbsp (20g) butter
 * 2 heaped Tbsp (20g) flour
 * 1 cup milk
@@ -4546,11 +4071,15 @@ https://www.pastagrammar.com/post/basic-besciamella-sauce
 * nutmeg
 * (optional) dijon mustard
 
+## directions
+
 1. fry equal weights of butter and flour until cooked and blonde, and smells lightly nutty
 2. while whisking quickly, slowly pour in the milk
 3. bring to a boil, keep stirring to prevent it sticking to the bottom
 4. add salt, (white) pepper, nutmeg powder, maybe a touch of mustard
 5. cover surface with clingfilm to prevent it from forming a skin
+
+---
 
 notes:
 
@@ -4568,6 +4097,8 @@ notes:
 ````markdown
 # Japanese-ish Beef Meuniere
 
+## Ingredients
+
 * 200g frozen fatty sliced beef meant for yakiniku (about 9 slices)
 * 1 tsp pepper
 * 1 Tbsp plain flour
@@ -4576,7 +4107,7 @@ notes:
 * 2 tsp red wine
 * 1-2 tsp butter
 
-Instructions:
+## Directions:
 
 1. Season the frozen beef slices with pepper and lightly sprinkle / dust them with flour.
 2. Fry the beef over medium heat (either dry or with a pat of butter) until just barely cooked through.
@@ -4622,7 +4153,7 @@ Instructions:
 * hint of dijon mustard, optional
 * Optional handful of additional shredded cheese. for topping
 
-## Instructions
+## Directions
 
 1. Fry bacon until browned, reserve but leave the fat in the pan
 2. Add butter / additional bacon fat, and fry onion, ~~salt,~~ pepper, paprika, and optional cayenne, until onions are soft
@@ -4650,7 +4181,7 @@ Instructions:
 * https://mykoreankitchen.com/bulgogi-korean-bbq-beef/
 * https://damndelicious.net/2019/04/21/korean-beef-bulgogi/
 
-ingredients:
+## ingredients:
 
 * 250g minced or sukiyaki-sliced beef, defrosted and kneaded
 * 1 pear, grated or blended
@@ -4668,7 +4199,7 @@ ingredients:
 * toasted sesame seeds
 * (optional) spring onion, thinly sliced on a bias
 
-directions:
+## directions:
 
 1. (optional, instead of cutting) blend the marinade
 2. (also optional) strain through a cloth, except for the pepper
@@ -4687,7 +4218,7 @@ directions:
 
 make some fizzy fruit
 
-ingredients:
+## ingredients:
 
 * dry ice
 * wide-mouth polycarbonate bottle (ideally from a reputable brand, e.g. nalgene)
@@ -4698,7 +4229,7 @@ ingredients:
     * peeled grapes
     * orange slices
 
-instructions:
+## directions:
 
 1. peel, slice, and chill the fruit in the fridge
 2. put fruit in bottle
@@ -4709,7 +4240,9 @@ instructions:
    (this can be done in the fridge)
 7. very slowly uncap the bottle, letting the gas leak out before fully unscrewing the cap
 
-slightly hand-wavy science:
+---
+
+## slightly hand-wavy science:
 
 * a marble has a diameter of about 1/2 inches to 1.5cm -> the volume of dry ice is about 1 to 2 ml (~= 1.5 ml)
 * dry ice has a density of 1.6g/cm3 -> the mass of dry ice is 1.6 * 1.5 = 2.4g
@@ -4768,7 +4301,7 @@ Solubility of CO2 in pure water at different temperatures ([source](https://www.
 * works with garlic fried rice or pasta
 * potato dauphinoise makes a good side dish
 
-## WITH AN OVEN:
+# INGREDIENTS FOR AN OVEN:
 
 * 1-2 teaspoons salt
 * 1 teaspoon chili powder
@@ -4777,12 +4310,16 @@ Solubility of CO2 in pure water at different temperatures ([source](https://www.
 * 1/2 cup butter
 * 1 cup heavy cream
 
+## DIRECTIONS FOR AN OVEN
+
 1. Put into blender.
 2. Blend.
 3. Cover chicken.
 4. Bake at low heat until chicken is cooked.
 
-## IN A PAN:
+---
+
+# FOR COOKING IN A PAN:
 
 (partial merge with alfredo recipe)
 
@@ -4812,7 +4349,9 @@ Solubility of CO2 in pure water at different temperatures ([source](https://www.
 4. Switch off heat
 5. When the pot is below 60°C add and mix these in
 
-## [Chicken Lazone](https://www.food.com/recipe/chicken-lazone-65768)
+---
+
+# Original: [Chicken Lazone](https://www.food.com/recipe/chicken-lazone-65768)
 
 * originally from [RecipeZaar #65768](http://www.recipezaar.com/65768)
 * by "@Luby Luby Luby"
@@ -4824,7 +4363,7 @@ No one has to know how simple and quick it is.
 I posted this recipe exactly as it was in the book, however, if you like a little "heat" please feel free to add some
 cayenne pepper to taste.
 
-Ingredients
+## Ingredients
 
 * 1 teaspoon salt
 * 1.5 teaspoons chili powder
@@ -4834,7 +4373,7 @@ Ingredients
 * 0.25 cup butter, divided
 * 0.5 cup heavy cream
 
-Directions
+## Directions
 
 1. Combine the seasonings and coat chicken breasts.
 2. In large saute pan melt half of the butter and cook chicken over medium heat for about 7 to 8 minutes, turning once.
@@ -4851,6 +4390,8 @@ Directions
 see also: https://www.seriouseats.com/sichuan-style-smashed-cucumber-salad-recipe
 see also: https://cooking.nytimes.com/recipes/1017629-chinese-smashed-cucumbers-with-sesame-oil-and-garlic
 
+## ingredients
+
 * 500g japanese cucumbers
 * 1 shallot, finely minced
 * 2 stalks spring onion, chopped
@@ -4862,6 +4403,8 @@ see also: https://cooking.nytimes.com/recipes/1017629-chinese-smashed-cucumbers-
 * 1.5 Tbsp sugar
 * 1 Tbsp toasted sesame seeds
 * chopped cilantro to garnsish (optional)
+
+## directions
 
 1. crush cucumber into 4 quarters
 2. scoop out the insides and discard
@@ -4880,18 +4423,22 @@ see also: https://cooking.nytimes.com/recipes/1017629-chinese-smashed-cucumbers-
 
 https://www.allrecipes.com/recipe/247089/vanilla-chantilly-cream/
 
+## Ingredients for base cream
+
 * 1 cup cream, cold but not frozen
 * 2 Tbsp confectioners / icing sugar - the tiny bit of starch in there helps to stabilize the whipped cream
 * 1/2 tsp vanilla essence
 * (optional) seeds from 1/2 pod vanilla
 * if using a metal mixing bowl (or anything with high heat capacity), chill the bowl first
 
-For stabilizing:
+## Ingredients for stabilizing (optional):
 
 https://veenaazmanov.com/stabilize-whipped-cream-5-different-methods/
 
 * 1/2 tsp gelatin powder
 * 1 Tbsp cold water
+
+## directions
 
 1. allow to bloom in cold water to avoid grainy bits
 2. microwave for a short while until just transparent, not too long or the gelatin won't gel
@@ -4901,6 +4448,7 @@ https://veenaazmanov.com/stabilize-whipped-cream-5-different-methods/
 6. whip this mixture into the already whipped cream for a short while until it reaches hard peaks - too long and the
    texture will be weird
 
+---
 
 Notes:
 
@@ -4914,7 +4462,9 @@ Notes:
 * refer to [docx](Chocolate Chip Cookies v9.docx) for comments / details
 * do not update only this markdown!
 
-## Ingredients & Instructions
+## Ingredients
+
+[//]: # (step 1)
 
 * 400g cake (pastry/top) flour
 * 400g bread (strong) flour
@@ -4922,18 +4472,33 @@ Notes:
 * 2 teaspoons baking soda
 * 1.5 teaspoons fine salt
 
-1. Sift flours, baking soda, baking powder and salt into a medium bowl.
-   Set aside.
+[//]: # (step 2)
 
 * 450g unsalted butter (2 slabs, each 227g)
 * 400g white sugar
 * 450g light-brown sugar
 
-2. Using a mixer fitted with paddle attachment, cream butter and sugars together until very light, about 5 minutes.
-   Use a huge bowl. (Food processor, blender, hand mixer, or a fork or two otherwise.)
+[//]: # (step 3)
 
 * 4 large eggs (60g each)
 * 2 teaspoons pure vanilla extract
+
+[//]: # (step 6)
+
+* Either: 1 kg coverture ~60% baking chocolate, coarsely chopped
+* Or: 700g nuts + 500g chocolate
+
+[//]: # (step 10)
+
+* Several pinches fancy salt (sea salt is nice, or colored salt, or fleur de sel, or pyramid salt, etc)
+
+## Directions
+
+1. Sift flours, baking soda, baking powder and salt into a medium bowl.
+   Set aside.
+
+2. Using a mixer fitted with paddle attachment, cream butter and sugars together until very light, about 5 minutes.
+   Use a huge bowl. (Food processor, blender, hand mixer, or a fork or two otherwise.)
 
 3. (If mixing by hand, switch to a wooden spoon, minimum diameter 1cm (3/8 inch) or the spoon might break.)
    (If butter was browned, wait for it to cool first.)
@@ -4948,9 +4513,6 @@ Notes:
 5. Reduce speed to low, add (sift in if by hand) dry ingredients and mix until just combined.
    (About 5 to 10 seconds in a mixer / blender)
 
-* Either: 1 kg coverture ~60% baking chocolate, coarsely chopped
-* Or: 700g nuts + 500g chocolate
-
 6. (If splitting the batch into nut and no-nut cookies, try to prepare and store them separately for the sake of people
    with nut allergies)
    Drop chocolate (and nut) pieces in and incorporate them without breaking them too much.
@@ -4964,20 +4526,18 @@ Notes:
 9. Scoop 50g balls of dough (about a golf ball) onto baking paper, making sure to turn horizontally any chocolate pieces
    that are poking up; it will make for a more attractive cookie.
 
-* Several pinches fancy salt (sea salt is nice, or colored salt, or fleur de sel, or pyramid salt, etc)
-
 10. Sprinkle lightly with the salt.
 
 11. Bake one tray at a time until golden brown but still soft (select “convection” then “oven bake”).
     Cookies will appear to be too soft, but will harden significantly as it cools.
     (the following settings optimized for the Sharp AX-1500V oven, bottom tray only)
 
-| Cookie Weight | Cookie Diameter | Baking Time | Cookies Per Tray | Shape       |
-|---------------|-----------------|-------------|------------------|-------------|
-| 10 g          | 4.5 cm          | 8.5 mins    | 15 (rectilinear) | [⋮⋮⋮⋮⋮]     |        
-| 25 g          | 6.5 cm          | 9 mins      | 9 (rectilinear)  | [⋮⋮⋮]       |       
-| 50 g          | 8 cm            | 12 mins     | 5 (2-1-2)        | [ ˙̣ ⋅ ˙̣ ] | 
-| 100 g         | 12 cm           | 15 mins     | 4 (zigzag)       | [.˙.˙]      |  
+    | Cookie Weight | Cookie Diameter | Baking Time | Cookies Per Tray | Shape          |
+    |---------------|-----------------|-------------|------------------|----------------|
+    | 10 g          | 4.5 cm          | 8.5 mins    | 15 (rectilinear) | `[⋮⋮⋮⋮⋮]`      |        
+    | 25 g          | 6.5 cm          | 9 mins      | 9 (rectilinear)  | `[⋮⋮⋮]`        |       
+    | 50 g          | 8 cm            | 12 mins     | 5 (2-1-2)        | `[ ˙̣ ⋅ ˙̣ ]`  | 
+    | 100 g         | 12 cm           | 15 mins     | 4 (zigzag)       | `[.˙.˙]`       |  
 
 12. Allow to cool for 5-6 minutes. Transfer sheet to a wire rack for another 10 minutes, then slip cookies onto another
     rack to cool a bit more. Cookie will be soft and fragile for the first few minutes out of the oven, so be careful
@@ -4987,6 +4547,8 @@ Notes:
 
 14. Store in the fridge, separated with baking paper.
     Optionally toast before serving.
+
+---
 
 ## To-do:
 
@@ -5007,13 +4569,13 @@ Notes:
 * https://bluejeanchef.com/recipes/herve-this-chocolate-mousse
 * https://food52.com/recipes/16044-herve-this-chocolate-mousse
 
-Ingredients:
+## Ingredients:
 
 * 200g dark chocolate, finely chopped (high in cocoa butter)
 * 150g water
 * (optional) tiny pinch of fine salt
 
-Method:
+## Directions:
 
 1. Place chopped-up chocolate in a big bowl, and prepare an ice bath (with a towel on the bottom to hold it in place).
 2. Bring the water to a boil, then pour over the chocolate.
@@ -5024,6 +4586,8 @@ Method:
 7. Serve immediately at room temperature.
 8. Otherwise, keep covered in the fridge (it will eventually solidify).
 9. Reheat gently over a bain-marie (to soften it), and whisk before serving.
+
+---
 
 Notes:
 
@@ -5048,13 +4612,13 @@ my notes:
 * from: "Baking: From my Home to Yours"
 * Total time: 30 min prep, 1.5 hr bake, 1-2 hr rest in oven, 2-4 hr cool, 4 hr chill == 10 hours
 
-GRAHAM CRACKER BASE
+## INGREDIENTS FOR GRAHAM CRACKER BASE
 
 * 1.75 cups graham crackers, blended into fine crumbs (150g)
 * 4 tablespoons sugar (50g)
 * pinch of salt
 * 3 tablespoons unsalted butter, melted in a small pot (45g)
-* ==========================
+
 * 1 tsp cinnamon powder
 * 0.5 tsp ground nutmeg
 * 0.5 tsp ground ginger
@@ -5063,9 +4627,12 @@ GRAHAM CRACKER BASE
 * pinch ground cardamom
 * pinch white pepper
 * pinch ground anise
-* (or use lotus biscuits and no spice/sugar/salt)
 
-CHEESECAKE BATTER
+---
+
+or use crushed lotus biscuits and butter and skip all the above - no spice/sugar/salt/etc
+
+## INGREDIENTS FOR CHEESECAKE BATTER
 
 * 2 pounds (900 grams, or just use 1kg) cream cheese, at room temperature
 * 0.75 cup (150 grams) sugar
@@ -5077,14 +4644,14 @@ CHEESECAKE BATTER
 * 4 egg whites
 * 0.5 cup (100g) fine sugar
 
-TOPPING
+## INGREDIENTS FOR TOPPING
 
 * 0.33 cups sour cream (about 8ml)
 * 0.25 cup powdered sugar (50g)
 * 1 teaspoon vanilla (0.5 tsp)
 * 1.33 cup sour cream (about 320ml)
 
-MORE TOPPING
+## INGREDIENTS FOR MORE TOPPING
 
 * 1 pint = 12 ounces (340 g) fresh raspberries / strawberries
 * 0.5 cup granulated sugar (100 g) (or 1/3 cup for less sweet)
@@ -5093,24 +4660,25 @@ MORE TOPPING
 * (erin's mile-high) zest of 1/2 orange / 0.5tsp orange extract (zest as finely as possible)
 * (erin's mile-high) 1 Tbsp grand marnier
 
-SPECIAL EQUIPMENT NEEDED
+## SPECIAL EQUIPMENT NEEDED
 
 * 9-inch diameter circle 2.75-inch high springform pan, or two 6-inch square pans of similar height
 * Heavy-duty, 15-inch wide aluminum foil
 * A large, high-sided roasting pan that fits the springform pan(s)
 
-INSTRUCTIONS
-Prepare the springform pan so that no water leaks into it while cooking:
-Place a large 18-inch by 18-inch square of aluminum foil on a flat surface.
-Place the springform pan in the middle of the foil.
-Gently fold up the sides of the foil around the pan.
-Make sure to do this gently so that you don't create any holes in the foil.
-(If there are any holes, water will get into the pan and ruin the crust.)
-Press the foil around the edges of the pan.
-Place a second large square of foil underneath the pan, and repeat.
-Gently crimp the top of the foil sheets around the top edge of the pan.
+## DIRECTIONS FOR PAN PREPARATION
 
-GRAHAM CRACKER BASE
+1. Prepare the springform pan so that no water leaks into it while cooking:
+2. Place a large 18-inch by 18-inch square of aluminum foil on a flat surface.
+3. Place the springform pan in the middle of the foil.
+4. Gently fold up the sides of the foil around the pan.
+5. Make sure to do this gently so that you don't create any holes in the foil.
+6. (If there are any holes, water will get into the pan and ruin the crust.)
+7. Press the foil around the edges of the pan.
+8. Place a second large square of foil underneath the pan, and repeat.
+9. Gently crimp the top of the foil sheets around the top edge of the pan.
+
+## DIRECTIONS FOR GRAHAM CRACKER BASE
 
 1. Pulse the graham crackers in a food processor or blender until finely ground.
 2. Put in a large bowl, and stir in the sugar and salt.
@@ -5126,7 +4694,7 @@ GRAHAM CRACKER BASE
 12. Place in the oven for 10 minutes. (Prebaking the crust gives it the nice crunch.)
 13. Remove from the oven and let cool.
 
-CHEESECAKE BATTER
+## DIRECTIONS FOR CHEESECAKE BATTER
 
 1. Reduce the oven temperature to 325°F. (160°C)
 2. Cut the cream cheese into chunks and place in the bowl of an electric mixer with metal blades
@@ -5156,17 +4724,19 @@ CHEESECAKE BATTER
 20. Cover the top of the cheesecake with foil, so that it doesn't actually touch the cheesecake.
 21. Chill in the refrigerator for a minimum of 4 hours, or preferably overnight.
 
-TOPPING
-
-* Note: this is enough for a VERY thick topping and some extra to spoon over individual pieces of cheesecake, if
-  desired.
-* If you would like a thinner layer of topping and no extra, reduce the sour cream topping ingredients in half.
+## DIRECTIONS FOR TOPPING
 
 1. Place 1/3 cup sour cream in a medium sized bowl, stir/blend in the powdered sugar and vanilla, until smooth
 2. Fold into the remaining sour cream
 3. Chill until you are ready to serve the cake.
 
-MORE TOPPING
+---
+
+* Note: this is enough for a VERY thick topping and some extra to spoon over individual pieces of cheesecake, if
+  desired.
+* If you would like a thinner layer of topping and no extra, reduce the sour cream topping ingredients in half.
+
+## DIRECTIONS FOR MORE TOPPING
 
 1. Place raspberries/strawberries, sugar, and water in a small saucepan.
 2. Use a potato masher to mash the raspberries.
@@ -5176,7 +4746,7 @@ MORE TOPPING
 6. Let cool.
 7. Serve chilled
 
-TO SERVE
+## DIRECTIONS FOR SERVING
 
 1. Remove the cake from the refrigerator.
 2. Remove the foil from the sides of the pan, and place the cake on your cake serving dish.
@@ -5189,6 +4759,8 @@ TO SERVE
 9. Serve plain or drizzled with raspberry sauce.
 10. Wrapped well, the cake will keep for up to 1 week in the refrigerator or for up to 2 months in the freezer.
     (If frozen, it's best to defrost the still-wrapped cheesecake overnight in the refrigerator.)
+
+---
 
 NOTES:
 
@@ -5221,26 +4793,24 @@ Despite the weight of the pan, the texture is still light and not overly solid.
 The citrus adds just a hint of flavor, and makes this one really good with a fruit topping (but I also love it just
 plain).
 
-Ingredients
-Graham cracker crust:
+## Ingredients for Graham cracker crust:
 
-* 1 cup​ graham cracker crumbs
+* 1 cup graham cracker crumbs
 * 3 tablespoons butter
 * 3 tablespoons sugar
 
-cheesecake filling:
+## Ingredients for cheesecake filling:
 
 * 2.5 lbs (5x 8-ounce blocks) (1.15kg) cream cheese, softened (I don't recommend reduced or no-fat for this one)
-* 1.75 cups​ sugar
+* 1.75 cups sugar
 * zest of 1 lemon
 * zest of 1 orange, or 1/2 teaspoon orange extract
 * 1 teaspoon vanilla extract
 * 3 tablespoons flour
 * 5 eggs + 2 egg yolks
-* 0.5 cups​ sour cream
+* 0.5 cups sour cream
 
-Directions:
-For crust:
+## Directions for crust:
 
 1. Butter the bottom and sides of a 9-inch springform pan.
 2. In a mixing bowl, combine graham crumbs, butter and sugar – mix well.
@@ -5249,7 +4819,7 @@ For crust:
 5. NOTE: If you haven't invested in a pestle yet, go out and get yourself one...
    pressing crusts into pans/muffin tins is SO MUCH easier with that little tool!
 
-For cheesecake filling:
+## Directions for cheesecake filling:
 
 1. Preheat oven to 500F (260C) degrees.
 2. In a large mixing bowl with an electric mixer, combine cream cheese, sugar, zests, and vanilla ;
@@ -5266,14 +4836,20 @@ For cheesecake filling:
 8. It is best if refrigerated overnight or at least 10 hours
 9. Serve plain or with a strawberry sauce.
 
-Optional Strawberry Sauce:
+---
 
-* 2 pints​ fresh strawberries, stem removed, fruit chopped into large chunks
-* 0.75 cup​ sugar
-* 1 cup​ water
+# Optional Strawberry Sauce:
+
+## Ingredients
+
+* 2 pints fresh strawberries, stem removed, fruit chopped into large chunks
+* 0.75 cup sugar
+* 1 cup water
 * 1 teaspoon finely grated lemon zest
 * 1 teaspoon finely grated orange zest
 * 2 tablespoons Grand Marnier liqueur
+
+## Directions
 
 1. In a saucepan, combine strawberries, sugar, water, and zest;
    cook until strawberries are soft and liquid is thickened, about 10 minutes.
@@ -5285,37 +4861,33 @@ Optional Strawberry Sauce:
 --- End of File: recipes/confectionery/erins-mile-high-cheesecake.md ---
 --- File: recipes/confectionery/ginger-snaps.md ---
 ````markdown
-# Ginger Snaps / Biscuits
-
-TODO: CLEANUP RECIPE (but it works if followed)
+# Ginger Snaps
 
 (Australian Recipe, from Mrs Theva)
 
-Ingredients: 
+## Ingredients
 
-Melt & cool the followlng: 
-* 125g Butter 
-* 1 cup Castor Sugar 
-* 2 Tbsp Golden Syrup 
+* 125g Butter
+* 1 cup Castor Sugar
+* 2 Tbsp Golden Syrup
+* 1 beaten egg
+* 2 cups self-raising flour
+* 1 tsp powdered ginger
+* 2 pinches cinnamon
+* 1 pinch nutmeg
+* 5 Tbsp chopped preserved ginger (from 3 pieces Australian supermarket candied ginger)
 
+## Directions
 
-then:
-* 1 beaten egg  
-
-1. add to mixture
-And mix well 
-
-Sift together: 
-* 2 cups self-raising flour 
-* 1 tsp powdered ginger 
-* 2 pinches cinnamon to taste
-* 1 pinch nutmeg to taste 
-
-2. Add 5 Tbsp chopped preserved ginger (from 3. Australian supermarket candied ginger) 
-4. Mix well. 
-5. Make into ginger snap cookie shape. 
-
-6. Bake 20 min at 160 deg C. 
+1. Melt the butter, then let it cool.
+2. In a large bowl, combine the melted butter, castor sugar, and golden syrup.
+3. Add the beaten egg and mix well.
+4. In a separate bowl, sift together the self-raising flour, powdered ginger, cinnamon, and nutmeg.
+5. Gradually add the dry ingredients to the wet ingredients and mix well.
+6. Stir in the chopped preserved ginger.
+7. Roll the dough into small balls and place them on a baking sheet, flattening slightly to create a ginger snap shape.
+8. Bake at 160°C (320°F) for 20 minutes, or until golden brown.
+9. Let cool on a wire rack before serving.
 
 ````
 --- End of File: recipes/confectionery/ginger-snaps.md ---
@@ -5325,7 +4897,7 @@ Sift together:
 
 [http://allrecipes.co.uk/recipe/35663/fruity-buns.aspx](https://web.archive.org/web/20141018001557/http://allrecipes.co.uk/recipe/35663/fruity-buns.aspx)
 
-Makes 12 biscuits.
+Yields 12 biscuits.
 
 Tips:
 
@@ -5337,7 +4909,7 @@ Tips:
 * Leave plenty of space between the dough balls on the baking tray to allow for expansion as they bake
 * Keep an eye on the biscuits as they bake to ensure they don't burn
 
-Ingredients:
+## Ingredients:
 
 * 225g (1.6 cups) [self-raising flour](self-raising-flour.md), sifted
     * 210g flour or cake flour
@@ -5350,7 +4922,7 @@ Ingredients:
 * 50g raspberry jam
 * (to try out) 1 tsp vanilla, tiny pinch of cinnamon
 
-Method:
+## Directions:
 
 1. Preheat your oven to 200°C (400°F) and line two baking trays with baking paper.
 2. Sprinkle flour over the surface of the trays and spread it around by tipping the trays from side to side.
@@ -5367,6 +4939,8 @@ Method:
 11. Place 1 tsp (or melon scoop) of jam into the depression of each biscuit.
 12. Bake the biscuits at 200°C (400°F) for 10 minutes until they are risen and golden brown.
 13. Allow the biscuits to cool before serving. Enjoy with fresh whipped cream.
+
+---
 
 Storage:
 
@@ -5441,11 +5015,69 @@ turns out it might be better thinner, so maybe use a size up
 --- End of File: recipes/confectionery/lazy-brownies.md ---
 --- File: recipes/confectionery/meema's-sherry-trifle.md ---
 ````markdown
-# Meema's Sherry Trifle
+# Meema's Sherry Trifle 2019
+
+Avery's Meema's Recipe, Singapore, 1970s
+
+## Ingredients
+
+* 1 Walnut Butter Cake, 8"x8" – Cut into pieces, 1" width, by 1" length
+* 2 large cans Fruit Cocktail (with peaches, not pineapple) [May substitute with Sliced Peaches]
+* 3 TB Rum + 2 TB Sherry + 1 TB Brandy
+* 1.14 litres UHT Milk
+* Bird's Eye Custard Powder (N.B. 1 TB = 2 Dessertspoons!):
+* 1 ½ cups Whipping Cream (e.g. 38% fat Whipping Cream, from Phoon Huat)
+* 1 tsp Icing Sugar
+
+---
+
+1st Layer:  2 TB Custard Powder + 1.5 TB Sugar + 1 pint UHT Milk (570ml)
+2nd Layer: 2 ½ TB Custard Powder + 1.5 TB Sugar + 1 pint UHT Milk (570ml)
+
+## Directions
+
+1. 2 cans Fruit Cocktail:
+    * Drain Fruit till as dry as possible. Pour Syrup from can into a bowl.
+    * Select & separate the Red Cherries from the Fruit Cocktail – reserve for decoration
+    * Set aside 1 ½ cups Syrup. Add 3 TB Rum + 2 TB Sherry + 1 TB Brandy, to the Syrup
+
+2. Cut the Walnut Butter Cake into 1"inch x 1"slices
+
+3. Cook the Bird's Eye Custard with UHT Milk
+    * 1st Layer: Softer wobbly creamy custard for the bottom layer
+    * 2nd Layer: Firmer custard for the final top layer (add extra Custard Powder)
+
+    1. Blend the Custard Powder into a liquid, with 6 TB of the measured Milk
+    2. Pour the Milk into a small saucepan.  
+       Add in the Sugar to the Milk.
+       Bring the Milk to a boil, till fine foam bubbles are seen at the side
+    3. While continually stirring the hot milk over a stove, slowly pour the blended Custard Powder
+       liquid into the hot milk. Continue stirring until the mixture thickens and is boiling.
+    4. Add ½ tsp Vanilla Extract & continue to stir to mix it in. Then turn off the fire.
+4. Choose a pretty Crystal Bowl, start the 1st layering:
+    1. Place a layer of Walnut Cake slices on the bottom of the bowl. In a circular pattern.
+        * Use a tablespoon to pour the Liquor Syrup over each cake slice, to fully soak the cake.
+    2. Spoon a layer of Fruit Cocktail to fill spaces between the Cake.
+    3. Pour the freshly cooked Softer Custard over the cake & Fruit Cocktail.
+5. Start the 2nd layering:
+    * Cake -> Fruit
+    * Use a clean pot: Cook the 2nd batch of Firmer Custard for the final topping
+6. Put Whipping Cream in a clean bowl.
+   Add 1 tsp Icing Sugar to the Cream.
+   Whip the Cream with an electric mixer until soft peaks form, 3 to 5 minutes.
+
+7. Cover the Trifle with Whipped Cream.
+    * Decorate with the Red Cherries
+
+8. Optional:  Add fresh Blueberries in the fruit layers
+
+---
+
+# Meema's Sherry Trifle 2018
 
 * circa 1970
 
-Ingredients
+## Ingredients
 
 * 1 can fruit cocktail (with peaches, not pineapple)
 * 3 Tbsp sherry
@@ -5455,7 +5087,7 @@ Ingredients
 * 1.5 cups whipping cream (e.g. 38% fat whipping cream, from Phoon Huat)
 * 1 tsp icing sugar
 
-Method
+## Method
 
 1. 1 can fruit cocktail:
     * Separate fruit from syrup and reserve both separately
@@ -5480,6 +5112,8 @@ Method
 6. Cover the trifle with whipped cream.
     * Decorate with the red cherries
 
+---
+
 Optional:
 
 * Add fresh blueberries in the fruit layers
@@ -5490,12 +5124,16 @@ Optional:
 ````markdown
 # nama chocolate *a la royce*
 
+## ingredients
+
 * 100g dark chocolate (70g `callebaut 70-30-38` + 30g `callebaut 811`)
 * 66g cream (millac 38% fat) (more next time)
     * if the cream isn't 38% fat, make it up with some butter
 * 1/8 tsp vanilla
 * note: add a pinch of salt next time
 * cocoa powder for dusting
+
+## directions
 
 1. melt and mix
 2. pour into a square container onto baking paper
@@ -5518,6 +5156,8 @@ clingfilm, then use that to transfer it into the pie dish.
 
 lazy to edit so pasting the whole page here first
 
+## ingredients
+
 * 350 grams all-purpose flour (or pastry flour, or 1 part cake to 2 parts plain)
     * this is used in 2 parts below
 * 1 teaspoon kosher salt or use 1/2 teaspoon fine sea salt
@@ -5525,7 +5165,7 @@ lazy to edit so pasting the whole page here first
 * 250 grams very cold unsalted butter, cut into 1/2-inch【1.27 cm】 cubes (2 sticks)
 * 0 to 8 tablespoons ice water (skip)
 
-METHOD WHEN USING FOOD PROCESSOR
+## DIRECTIONS (WHEN USING FOOD PROCESSOR)
 
 1. Add 1 ½ cups【355 mL】 flour, salt, and sugar (optional) to a food processor. Pulse 2 to 3 times until combined. The
    remaining cup of flour will be added later.
@@ -5545,15 +5185,15 @@ METHOD WHEN USING FOOD PROCESSOR
 6. roll out and arrange in a pie tin about 2cm high (the pie is quite flat), then stab with a fork
 7. freeze in pie tin after docking with a fork. blind bake at 200c/400f for 20 mins, with baking beans
 
-blind baking:
+## Directions for blind baking:
 
-* stab with fork when the dough is not frozen, otherwise the dough will crack
-* line with parchment at the botton
-* line with parchment or foil, then pour over sugar, pressing it into the corners
-* bake at 200c for 15 mins
-* remove parchment and (very hot) sugar
-* bake at 200c for 5 more mins
-* store sugar (very carefully, it's hot)
+1. stab with fork when the dough is not frozen, otherwise the dough will crack
+2. line with parchment at the botton
+3. line with parchment or foil, then pour over sugar, pressing it into the corners
+4. bake at 200c for 15 mins
+5. remove parchment and (very hot) sugar
+6. bake at 200c for 5 more mins
+7. store sugar (very carefully, it's hot)
 
 ````
 --- End of File: recipes/confectionery/pie-crust.md ---
@@ -5568,7 +5208,7 @@ Original source: Meta Given's Modern Encyclopedia of Cooking, 1969
 see also: https://sallysbakingaddiction.com/the-great-pumpkin-pie-recipe/
 see also: meringue pumpkin pie recipe below
 
-Ingredients:
+## Ingredients:
 
 * 3 1/2 cups [fresh cooked](#fresh-cooked-pumpkin-puree) or canned pumpkin (one 29-ounce can will do)
 * 4 large eggs, lightly beaten
@@ -5582,7 +5222,7 @@ Ingredients:
 * 2-3 unbaked, 9-inch [pie shells](./pie-crust.md)
 * [Whipped cream for topping (optional)](chantilly-cream.md)
 
-Procedures:
+## Directions:
 
 1. Optionally, put pumpkin in nonstick saucepan and stir over direct heat for 10 minutes until somewhat dry and slightly
    caramelized, stirring frequently. Remove from heat but keep hot.
@@ -5597,11 +5237,13 @@ Procedures:
    pie and the crust is deep golden brown, about 40-45 minutes. 
 10. Let the pies cool to room temperature before cutting and serving. Top with powdered sugar and whipped cream, if desired.
 
-## ALTERNATIVE: Pumpkin Meringue Pie
+---
+
+# ALTERNATIVE: Pumpkin Meringue Pie
 
 Makes one 9-inch pie
 
-For the Pie:
+## Ingredients for the Pie:
 
 * 2 cups fresh cooked or canned pumpkin (one 15-ounce can will do) (recipe follows)
 * 4 egg yolks
@@ -5613,13 +5255,13 @@ For the Pie:
 * 1/2 teaspoon ground cloves
 * One 9-inch blind-baked piecrust
 
-For the Meringue:
+## Ingredients for the Meringue:
 
 * 4 egg whites
 * Pinch cream of tartar
 * 1/2 cup granulated sugar
 
-Procedures:
+## Directions:
 
 1. Preheat the oven to 350°F.
 2. Place the pumpkin in a large, heatproof mixing bowl and whisk in the egg yolks. Add the brown sugar, cinnamon,
@@ -5637,12 +5279,15 @@ Procedures:
 6. Transfer to the oven and bake until the meringue peaks are golden brown, 10 to 12 minutes. Let the pie cool
    completely on a wire rack before serving.
 
-## Fresh-Cooked Pumpkin Puree
-Ingredients:
+---
+
+# Fresh-Cooked Pumpkin Puree
+
+## Ingredients:
 
 * 6-pound cheese or Cinderella pumpkin, halved horizontally
 
-Procedures:
+## Directions:
 
 1. Preheat the oven to 400°F.
 2. Place the pumpkin halves cut-side up on a baking pan and cover tightly with foil. Bake until the flesh is tender when
@@ -5657,9 +5302,13 @@ Procedures:
 ````markdown
 # Self-raising flour
 
+## Ingredients
+
 * 1 cup flour
 * 1.5 tsp baking powder
 * 0.5 tsp salt
+
+---
 
 Notes:
 
@@ -5679,8 +5328,7 @@ Notes:
     * http://www.allonseat.com/creamed-spinach-gratin/
     * https://www.wgbh.org/dining-in/2018/08/08/julia-childs-epinards-au-jus-epinards-a-la-creme
     * Julia and Jaques – Cooking at Home
-* Yields 4 Servings
-
+* Serves 4
 ## Ingredients
 
 * 1 pound / 500g baby spinach
@@ -5715,6 +5363,8 @@ this recipe probably works with just about any vegetable
 
 should also work in the oven or broiler with a little bit more oil
 
+## Ingredients
+
 * zucchini / japanese cucumbers, sliced thinly
 * olive oil
 * salt and pepper
@@ -5722,6 +5372,8 @@ should also work in the oven or broiler with a little bit more oil
 * shallots or onions, minced or thinly sliced
 * basil / oregano / rosemary / thyme / chives / parsley / paprika / etc
 * mature cheddar
+
+## Directions
 
 1. Fry the cucumber (and garlic, if not crushed) until it's translucent and starts to turn brown.
 2. Add the salt, pepper, garlic, shallots, and herbs.
@@ -5737,7 +5389,7 @@ should also work in the oven or broiler with a little bit more oil
 
 adapted from https://downshiftology.com/recipes/best-ever-guacamole/, with instructions by chatgpt
 
-Ingredients:
+## Ingredients:
 
 * 300g avocado flesh (from 2-3 ripe avocados)
 * 70-140g diced red onion (1/2 or 1 onion)
@@ -5747,7 +5399,7 @@ Ingredients:
 * 15g lime juice (squeezed from half a 67g seedless vietnamese lime)
 * 5g salt (5 pinches ~= 1/2 tsp)
 
-Instructions:
+## Directions:
 
 1. Cut one avocado in half lengthwise and remove the pit. Scoop the flesh into a bowl.
 2. Mash the avocado with a fork until it is smooth.
@@ -5756,6 +5408,8 @@ Instructions:
 5. Add lime juice, and mix everything together lightly with a fork until combined but still slightly chunky.
 6. Add salt and pepper to taste.
 7. Serve the guacamole immediately, or cover and refrigerate it until you're ready to serve it.
+
+---
 
 Optional additions or substitutions:
 
@@ -5772,6 +5426,8 @@ Optional additions or substitutions:
 
 Gyudon, but with optional tweaks / substitutions
 
+## Ingredients
+
 * 300g beef (or lamb), sliced about 5mm thick
 * 2-3 cups dashi (or beef or chicken stock)
 * 2 carrots, roll cut (not the purple kind, otherwise it looks like borscht)
@@ -5783,6 +5439,7 @@ Gyudon, but with optional tweaks / substitutions
 * Green onions or scallions for garnish
 * (optional) black pepper
 
+## Directions
 
 1. Preheat the oil, sear the meat on both sides, then reserve separately. Keep oil and drippings in the pan.
 2. Add dashi and deglaze
@@ -5798,7 +5455,7 @@ Gyudon, but with optional tweaks / substitutions
 ````markdown
 # Aglio Olio inspired Salad Dressing
 
-Ingredients
+## Ingredients
 
 * 1.5 cups olive oil - butter doesn't keep well
 * 2 tsp salt
@@ -5810,13 +5467,13 @@ Ingredients
 * 4 tsp dried parsley
 * 20 cloves garlic, peeled
 
-Directions
+## Directions
 
 1. Blend everything
 2. Fry till garlic is brown
 3. Store in glass bottle
 
-Notes
+## Notes
 
 * Total about 5-6 Tbsp herbs is the right proportion
 * Garlic increased from 12 to 20, since Italians' garlic tolerance is weak
@@ -5829,9 +5486,13 @@ Notes
 ````markdown
 ## honey lemon
 
+## ingredients
+
 * 2 large lemons
 * about 800ml water
 * 250g honey
+
+## directions
 
 1. zest the lemons into a saucepan
 2. add half the water and boil to extract the flavor
@@ -5842,7 +5503,7 @@ Notes
 7. leave to cool, then keep in the fridge
 8. serve cold, with ice, optionally diluted with more water
 
-notes:
+## notes:
 
 * to make it less sour without adding more honey, only use the juice of one lemon
 * orange zest or juice does not help
@@ -5857,6 +5518,8 @@ https://www.reddit.com/r/GrandTourTopgearFans/comments/kdzrma/oh_cook_i_made_jam
 
 [//]: # (todo: https://thehappyfoodie.co.uk/recipes/luxury-smoked-fish-pie/)
 
+## Ingredients
+
 * 500g floury potatoes, peeled and quartered
 * 1/4 cup milk
 * Butter
@@ -5870,6 +5533,8 @@ https://www.reddit.com/r/GrandTourTopgearFans/comments/kdzrma/oh_cook_i_made_jam
 * Optional peas, boiled
 * Salt and pepper
 * Optional panko or crumbled ritz on top for texture
+
+## Directions
 
 1. Preheat oven to 180-200°C.
 2. Boil potatoes and mash with milk and butter until smooth. Optional yolk. Season with pepper.
@@ -5886,9 +5551,11 @@ https://www.reddit.com/r/GrandTourTopgearFans/comments/kdzrma/oh_cook_i_made_jam
 --- End of File: recipes/james-may-fish-pie.md ---
 --- File: recipes/kfc/alternative-1.md ---
 ````markdown
-Ken's Recipe v7:
+# KFC - Ken's Recipe v7:
 
 https://youtu.be/g6RPP_9Lwbc
+
+## Ingredients
 
 * 3g MSG
 * 3g white pepper
@@ -5903,17 +5570,20 @@ https://youtu.be/g6RPP_9Lwbc
 * 0.125g summer savoury
 * 0.125g thyme
 
+---
+
 All ground and mixed with 200g flour and 25g salt 
 ````
 --- End of File: recipes/kfc/alternative-1.md ---
 --- File: recipes/kfc/alternative-2.md ---
 ````markdown
-Dustin's KFC Recipe Episode #6
+# Dustin's KFC Recipe Episode #6
 
 https://youtu.be/vOPdps7fcAI
 https://youtu.be/8BslfOheMIc
 
-Ingredients
+## Ingredients
+
 * 28g (1oz) white pepper
 * 28g (1oz) black pepper
 * 14g (.5oz) garlic salt
@@ -5929,28 +5599,31 @@ Ingredients
 * 340g (12oz) salt
 * 25g msg
 
+---
+
 Tested 40g spice mix with 200g cake flour
 2 tsp spice in 4 cups water brine
 
+## Directions:
 
-Method:
-Place all ingredients except salt in a spice grinder; grind and shake to combine.
-Add salt to mix and shake to combine.
-Preheat pressure fryer to 165ºC.
-Mix together 18g spice to 100g flour.
-Prepare an egg wash of 1 egg to 1 cup of milk.
-Dip chicken in egg wash, then dredge in flour spice mix.
-Deep fry until golden brown and cooked through.
+1. Place all ingredients except salt in a spice grinder; grind and shake to combine.
+2. Add salt to mix and shake to combine.
+3. Preheat pressure fryer to 165ºC.
+4. Mix together 18g spice to 100g flour.
+5. Prepare an egg wash of 1 egg to 1 cup of milk.
+6. Dip chicken in egg wash, then dredge in flour spice mix.
+7. Deep fry until golden brown and cooked through.
 
 ````
 --- End of File: recipes/kfc/alternative-2.md ---
 --- File: recipes/kfc/alternative-3.md ---
 ````markdown
-Earl
+# KFC - Earl
 
 https://youtu.be/mHau8ZJCHD4
 
-Ingredients:
+## Ingredients:
+
 * 12g MSG
 * 12g white pepper
 * 9.2g black pepper 
@@ -5964,18 +5637,23 @@ Ingredients:
 * 0.92 oregano 
 * 0.92g cayenne
 
-Method:
-Place all ingredients in a spice grinder; grind and shake to combine.
-Preheat pressure fryer to 165ºC.
-Mix together 13g spice to 200g flour and 24g salt
-Prepare an egg wash of 1 egg to 1 cup of milk.
-Dip chicken in egg wash, then dredge in flour spit mix.
-Deep fry until golden brown and cooked through.
+## Directions:
 
+1. Place all ingredients in a spice grinder; grind and shake to combine.
+2. Preheat pressure fryer to 165ºC.
+3. Mix together 13g spice to 200g flour and 24g salt
+4. Prepare an egg wash of 1 egg to 1 cup of milk.
+5. Dip chicken in egg wash, then dredge in flour spit mix.
+6. Deep fry until golden brown and cooked through.
+
+---
+
+# KFC - Earls FINAL
 
 https://youtu.be/8BslfOheMIc
 
-Earls FINAL
+## Ingredients
+
 * 9g MSG                                    
 * 9g White Pepper 
 * 6.9g Black Pepper 
@@ -5989,28 +5667,31 @@ Earls FINAL
 * 0.75g Allspice      
 * 0.53g Red Cayenne Pepper   
 
+---
+
 Tested 13g spice per 200g cake flour and 24g Fine Flake Salt
 2 tsp spice in 4 cups water brine
 
+## Directions:
 
-Method:
-If brining add 2 tsp of spice mix to 4 cups cold water and soak chicken for 2-3 hours.
-Bring a pot of hot oil (canola, vegetable oil, or shortening) to 350ºF.
-Mix the spice mix with the cake  (or pastry) flour.
-Mix together 1 egg and two cups of milk, for an egg wash.
-Dip the chicken in the egg wash, then dredge it in the flour, coating the chicken well.
-Carefully drop the dredged chicken in the hot oil and fry for 11-15 minutes or until chicken registers 165ºF on an instant read thermometer.
+1. If brining add 2 tsp of spice mix to 4 cups cold water and soak chicken for 2-3 hours.
+2. Bring a pot of hot oil (canola, vegetable oil, or shortening) to 350ºF.
+3. Mix the spice mix with the cake  (or pastry) flour.
+4. Mix together 1 egg and two cups of milk, for an egg wash.
+5. Dip the chicken in the egg wash, then dredge it in the flour, coating the chicken well.
+6. Carefully drop the dredged chicken in the hot oil and fry for 11-15 minutes or until chicken registers 165ºF on an instant read thermometer.
 
 
 ````
 --- End of File: recipes/kfc/alternative-3.md ---
 --- File: recipes/kfc/alternative-4.md ---
 ````markdown
-KFC Colonels Sanders' Employee Recipe Episode #7
+# KFC Colonels Sanders' Employee Recipe Episode #7
 
 https://youtu.be/7CZwrJBAkq4
 
-Ingredients:
+## Ingredients:
+
 * 102g (12 Tbsp / 36 tsp) white pepper
 * 66g (9 Tbsp + 1 tsp / 28 tsp) black pepper
 * 18g (4 Tbsp / 12 tsp) ground sage
@@ -6025,23 +5706,24 @@ Ingredients:
 * 19g (4 tsp) msg
 * 480g (24 Tbsp / 72 tsp) salt 
 
-Method:
-Place all ingredients except salt in a spice grinder; grind and shake to combine.
-Transfer to a sealable container, add the salt and shake to combine.
-Preheat pressure fryer to 165ºC.
-Mix together 48g spice to 100g flour.
-Prepare an egg wash of 1 egg to 1 cup of milk.
-Dip chicken in egg wash, then dredge in flour spice mix.
-Deep fry until golden brown and cooked through.
+## Directions:
+
+1. Place all ingredients except salt in a spice grinder; grind and shake to combine.
+2. Transfer to a sealable container, add the salt and shake to combine.
+3. Preheat pressure fryer to 165ºC.
+4. Mix together 48g spice to 100g flour.
+5. Prepare an egg wash of 1 egg to 1 cup of milk.
+6. Dip chicken in egg wash, then dredge in flour spice mix.
+7. Deep fry until golden brown and cooked through.
 ````
 --- End of File: recipes/kfc/alternative-4.md ---
 --- File: recipes/kfc/alternative-5.md ---
 ````markdown
-Suggested Copycat Recipe
+## KFC - Suggested Copycat Recipe
 
 https://youtu.be/8BslfOheMIc
 
-Ingredients:
+## Ingredients:
 
 * 18g MSG
 * 22.5g white pepper
@@ -6058,7 +5740,7 @@ Ingredients:
 * 0.56g ground star anise
 * 0.38g ground clove
 
-Breading mix:
+## Ingredients for Breading mix:
 
 * 21g spice mix
 * 36g fine flake salt
@@ -6066,28 +5748,31 @@ Breading mix:
 * 25g egg white powder
 * 25g dry milk powder
 
+---
+
 165ºC
 5 pounds pressure
 10 - 12 minutes
 
-Method:
-If brining add 2 tsp of spice mix to 4 cups cold water and soak chicken for 2-3 hours.
-Bring a pot of hot oil (canola, vegetable oil, or shortening) to 350ºF.
-Mix the spice mix with the cake  (or pastry) flour.
-Mix together 1 egg and two cups of milk, for an egg wash.
-Dip the chicken in the egg wash, then dredge it in the flour, coating the chicken well.
-Carefully drop the dredged chicken in the hot oil and fry for 11-15 minutes or until chicken registers 165ºF on an
-instant read thermometer.
+## Directions:
+
+1. If brining add 2 tsp of spice mix to 4 cups cold water and soak chicken for 2-3 hours.
+2. Bring a pot of hot oil (canola, vegetable oil, or shortening) to 350ºF.
+3. Mix the spice mix with the cake  (or pastry) flour.
+4. Mix together 1 egg and two cups of milk, for an egg wash.
+5. Dip the chicken in the egg wash, then dredge it in the flour, coating the chicken well.
+6. Carefully drop the dredged chicken in the hot oil and fry for 11-15 minutes or until chicken registers 165ºF on an
+   instant read thermometer.
 
 ````
 --- End of File: recipes/kfc/alternative-5.md ---
 --- File: recipes/kfc/alternative-6.md ---
 ````markdown
-The Final KFC Recipe #10
+## The Final KFC Recipe #10
 
 https://youtu.be/7WJYOgzFydc
 
-Ingredient list:
+## Ingredients:
 
 * Fine Salt
 * Fine Ground Black Pepper
@@ -6101,6 +5786,8 @@ Ingredient list:
 * Rubbed Thyme
 * Ground Sage
 * Rubbed Marjoram
+
+---
 
 Of course there is more than just the spice mix; if you want that old school taste, you need to use a low protein flour,
 dip in an egg and milk wash, and pressure fry in hydrogenated cotton seed oil.
@@ -6143,7 +5830,9 @@ Sanders: http://gracesperfectblend.com/
         * 2 parts milk, 1 part egg
         * Beaten egg
 
-## Unedited Original Recipe
+---
+
+# Unedited Original Recipe
 
 ![recipe card](kfc-seasoning-1.jpg)
 ![labelled vials](kfc-seasoning-2.jpg)
@@ -6165,7 +5854,11 @@ Sanders: http://gracesperfectblend.com/
 |      |  0.25      | MSG                | "Sexton Super Pep"     |   21.16666667 |    7           |  0.085    |   2.985 |      1.53 |
 |      |  4.25      | Salt               | Popcorn, Indiana (USA) |  359.65625    |  119.8888889   |  1.671    |  58.94  |      1.76 |
 
-## *BONUS*: Colonel's Coleslaw
+---
+
+# *BONUS*: Colonel's Coleslaw
+
+## Ingredients
 
 * ½ cup Miracle Whip (he said other brands turned the mixture grey)
 * ½ cup tarragon vinegar (The Col used Heinz but it is hard to find these days)
@@ -6175,6 +5868,8 @@ Sanders: http://gracesperfectblend.com/
 * 1 head cabbage, cored and chopped not shredded
 * 1-2 carrots, shredded - optional
 * 1/4 cup shredded onion - optional
+
+## Directions
 
 1. Chop the cabbage, grate the carrots and onion.
 2. Add other ingredients, mix well, cover well, let flavors meld over night in refrigerator.
@@ -6200,6 +5895,8 @@ Note: KFC may not use buttermilk... I use it because it makes the chicken taste 
 --- End of File: recipes/kfc/kfc-seasoning.md ---
 --- File: recipes/kfc/more-stuff.md ---
 ````markdown
+# More KFC recipes from reddit
+
 https://www.reddit.com/r/food/comments/1ww8h1/comment/cf79qxf
 
 I will give you what I have, the first quote is a debate from the forum about how the Colonel pressure cooked his
@@ -6223,7 +5920,7 @@ Cut one 3½- 4lb fryer into 9 pieces and brine for 4 hours.
 
 Make sure you have corn oil on hand for frying.
 
-**Brine:**
+## Ingredients for Brine:
 
 * 4 cups of water
 * 1 Tbsp white Vinegar
@@ -6234,64 +5931,85 @@ Make sure you have corn oil on hand for frying.
   from brine and rinse in fresh water.
 * Add the brined chicken to egg wash.
 
-**Egg Wash:**
+## Ingredients for Egg Wash:
 
 * 3/4 cup whole milk
 * 1 large egg
 
-Mix well in a pan large enough to hold the chicken. Place chicken into egg wash and mix to coat the pieces. Let sit for
-10 minutes on the counter while you prepare your seasoned flour. You are going to need anywhere from 2 - 3 1/2 cups of
-seasoned flour depending on the size of your bird. It is best to start off with a smaller amount and add more as you
-need it. If you like crumbly chicken breading you can add a bit of milk, (between 1-3 teaspoons) to the flour and mix it
-up well. This will make shaggy, crumbly pieces. If you don't use cake flour for your breading this step can cause your
-breading to get tough and hard from gluten formation.
+## Directions for deep frying
 
-If you don't use low protein flour like cake flour or White Lily then the chicken coating will become very gluey, dense
-and hard. You also will need low protein flour for the biscuits too. If you can find unbleached pastry flour it is
-ideal. The bleaching process allows manufacturers to include substandard parts of the wheat that can cause the breading
-to be tough.)
+1. Mix well in a pan large enough to hold the chicken. Place chicken into egg wash and mix to coat the pieces. Let sit
+   for
+   10 minutes on the counter while you prepare your seasoned flour. You are going to need anywhere from 2 - 3 1/2 cups
+   of
+   seasoned flour depending on the size of your bird. It is best to start off with a smaller amount and add more as you
+   need it. If you like crumbly chicken breading you can add a bit of milk, (between 1-3 teaspoons) to the flour and mix
+   it up well. This will make shaggy, crumbly pieces. If you don't use cake flour for your breading this step can cause
+   your breading to get tough and hard from gluten formation.
 
-The salt is added after the chicken has been cooked, for each 4lb chicken use about 4ts popcorn salt. Some people find
-that too salty so you might want to reduce it some. I use finely ground sea salt.
+2. If you don't use low protein flour like cake flour or White Lily then the chicken coating will become very gluey,
+   dense and hard. You also will need low protein flour for the biscuits too. If you can find unbleached pastry flour it
+   is ideal. The bleaching process allows manufacturers to include substandard parts of the wheat that can cause the
+   breading to be tough.)
 
-You need about 2 to 2 1/2 cups of this breading for a 3 1/2 to 4 lb bird plus extra for the milk gravy.
+3. The salt is added after the chicken has been cooked, for each 4lb chicken use about 4ts popcorn salt. Some people
+   find that too salty so you might want to reduce it some. I use finely ground sea salt.
 
-If you have a pressure fryer that is the Colonel's method to fry chicken. If you don't, deep fat frying is also good but
-the chicken will be less moist but the crust will be crispy.
+4. You need about 2 to 2 1/2 cups of this breading for a 3 1/2 to 4 lb bird plus extra for the milk gravy.
 
-**Pan Fry/Oven Method**
+5. If you have a pressure fryer that is the Colonel's method to fry chicken. If you don't, deep fat frying is also good
+   but the chicken will be less moist but the crust will be crispy.
 
-Preheat your oven to 400 degrees.
+## Directions for Pan Fry/Oven Method:
 
-Dip chicken in seasoned flour and shake off the excess. If you want crunchier chicken mix a little milk with the
-breading, about an ounce or so, enough to make the flour shaggy. (If you don't use low protein flour this step will
-cause your chicken to be gluey and hard.) Press the flour firmly on the egg/milk dipped chicken.
+1. Preheat your oven to 400 degrees.
 
-Heat corn or vegetable oil in 11-inch straight-sided sauté pan over medium-high heat to 355 degrees. Carefully place
-chicken pieces in pan, skin side down, and cook until golden brown, 3 to 5 minutes. Carefully flip and continue to cook
-chicken until instant-read thermometer inserted into thickest part of chicken registers 160 degrees for breasts and 175
-for legs and thighs, 15 to 20 minutes. (Smaller pieces may cook faster than larger pieces. Transfer chicken to wire rack
-set in rimmed baking sheet. Sprinkle with salt and keep warm while you fry the next batch.
+2. Dip chicken in seasoned flour and shake off the excess. If you want crunchier chicken mix a little milk with the
+   breading, about an ounce or so, enough to make the flour shaggy. (If you don't use low protein flour this step will
+   cause your chicken to be gluey and hard.) Press the flour firmly on the egg/milk dipped chicken.
 
-Alternative Method - Heat corn or vegetable oil in 11-inch straight-sided sauté pan over medium-high heat to 375
-degrees. Carefully place chicken pieces in pan, skin side down, and cook until golden brown, 3 to 5 minutes. Carefully
-flip and continue to cook until golden brown on second side, 2 to 4 minutes longer. Transfer chicken to wire rack set in
-rimmed baking sheet. Sprinkle with salt, bake chicken until instant-read thermometer inserted into thickest part of
-chicken registers 160 degrees for breasts and 175 for legs and thighs, 15 to 20 minutes. (Smaller pieces may cook faster
-than larger pieces. Remove pieces from oven as they reach -correct temperature.) Let chicken rest 5 minutes before
-serving.
+3. Heat corn or vegetable oil in 11-inch straight-sided sauté pan over medium-high heat to 355 degrees. Carefully place
+   chicken pieces in pan, skin side down, and cook until golden brown, 3 to 5 minutes. Carefully flip and continue to
+   cook
+   chicken until instant-read thermometer inserted into thickest part of chicken registers 160 degrees for breasts and
+   175
+   for legs and thighs, 15 to 20 minutes. (Smaller pieces may cook faster than larger pieces. Transfer chicken to wire
+   rack
+   set in rimmed baking sheet. Sprinkle with salt and keep warm while you fry the next batch.
 
-Alternative Method Some people think it is better to add the chicken to the hot oil, brown for one minute then put the
-lid on the pan, reduce heat to and continue cooking for 8 minutes, flip and cook 3-5 minutes longer or until the proper
-temperature is reached. If you have a lid, this method will produce a moisture chicken, but be careful. With the lid on
-condensation will form on the lid, be careful not to splash it all at once into the hot fat. You could start a grease
-fire if you aren't careful.
+## Directions for Alternative Method
 
-Sometimes when I experiment with this method I will add a bit of baking powder to the flour mixture. Since the
-temperature is reduced it can inhibit browning, the baking powder will help counter balance that problem. Do not use too
-much or your chicken will be over browned. For 2 cups of seasoned flour add 1/8 to 1/4 tsp of baking powder.
+1. Heat corn or vegetable oil in 11-inch straight-sided sauté pan over medium-high heat to 375
+   degrees. Carefully place chicken pieces in pan, skin side down, and cook until golden brown, 3 to 5 minutes.
+   Carefully
+   flip and continue to cook until golden brown on second side, 2 to 4 minutes longer. Transfer chicken to wire rack set
+   in
+   rimmed baking sheet. Sprinkle with salt, bake chicken until instant-read thermometer inserted into thickest part of
+   chicken registers 160 degrees for breasts and 175 for legs and thighs, 15 to 20 minutes. (Smaller pieces may cook
+   faster
+   than larger pieces. Remove pieces from oven as they reach -correct temperature.) Let chicken rest 5 minutes before
+   serving.
 
-Milk Gravy with Cracklins
+## Notes
+
+1. Some people think it is better to add the chicken to the hot oil, brown for one minute then put the
+   lid on the pan, reduce heat to and continue cooking for 8 minutes, flip and cook 3-5 minutes longer or until the
+   proper
+   temperature is reached. If you have a lid, this method will produce a moisture chicken, but be careful. With the lid
+   on
+   condensation will form on the lid, be careful not to splash it all at once into the hot fat. You could start a grease
+   fire if you aren't careful.
+
+2. Sometimes when I experiment with this method I will add a bit of baking powder to the flour mixture. Since the
+   temperature is reduced it can inhibit browning, the baking powder will help counter balance that problem. Do not use
+   too
+   much or your chicken will be over browned. For 2 cups of seasoned flour add 1/8 to 1/4 tsp of baking powder.
+
+---
+
+# Milk Gravy with Cracklins
+
+## Ingredients
 
 * 1 TBSP butter (not margarine!!)
 * 1/4 cup seasoned breading flour (if you have any left over from breading your chicken use that)
@@ -6300,16 +6018,21 @@ Milk Gravy with Cracklins
 * 1 cup boiling water
 * 1/4 cup whole cream - cold
 
-Put the butter, flour and cracklings into a frying pan over low to medium heat. Stir continuously until the ingredients
-are fully blended and the raw flour is lightly browned. This takes a few minutes. The roux should not be darker than
-peanut butter brown. If you burn it, dump it, clean the pan start again. (If you are a novice gravy maker you might want
-to save your cracklins until the end so you won't waste them on a burned batch.)
+## Directions
 
-Gently pour the milk, hot water, and cream, continue stirring until it begins to thicken. Taste the gravy and add extra
-salt or pepper if needed. Allow the mixture to come to a light boil, when it is the thickness you want turn off the heat
-and serve.
+1. Put the butter, flour and cracklings into a frying pan over low to medium heat. Stir continuously until the
+   ingredients are fully blended and the raw flour is lightly browned. This takes a few minutes. The roux should not be
+   darker than peanut butter brown. If you burn it, dump it, clean the pan start again. (If you are a novice gravy maker
+   you might want to save your cracklins until the end so you won't waste them on a burned batch.)
+2. Gently pour the milk, hot water, and cream, continue stirring until it begins to thicken. Taste the gravy and add
+   extra salt or pepper if needed. Allow the mixture to come to a light boil, when it is the thickness you want turn off
+   the heat and serve.
 
-COLONEL SANDERS' "KENTUCKY” BISCUITS
+---
+
+# COLONEL SANDERS' "KENTUCKY” BISCUITS
+
+## Ingredients
 
 * 1 ½ Cup flour (before sifting)
 * 1 ½ Tsp Salt
@@ -6318,13 +6041,22 @@ COLONEL SANDERS' "KENTUCKY” BISCUITS
 * Sift into mixing bowl
 * 1 Scant Cup Milk – sweet
 
-Shortening size of large egg. Nest the flour, add most of milk, put in shortening, begin squeezing the shortening and
-flour in the milk until thoroughly mixed, add rest of milk if needed and mix. Turn on to floured board, knead until
-consistency desired, cut into biscuits. Makes 13 biscuits.
+---
 
 (Use Standard Measuring Cup and Spoon – Level Measurements)
 
-Coleslaw
+## Directions
+
+1. Shortening size of large egg.
+2. Nest the flour, add most of milk, put in shortening,
+   begin squeezing the shortening and flour in the milk until thoroughly mixed, add rest of milk if needed and mix.
+3. Turn on to floured board, knead until consistency desired, cut into biscuits. Makes 13 biscuits.
+
+---
+
+# Coleslaw
+
+## Ingredients
 
 * ½ cup Miracle Whip (he said other brands turned the mixture grey)
 * ½ cup tarragon vinegar (The Col used Heinz but it is hard to find these days)
@@ -6335,13 +6067,20 @@ Coleslaw
 * 1-2 carrots, shredded - optional
 * 1/4 cup shredded onion - optional
 
-Chop the cabbage, grate the carrots and onion. Add other ingredients, mix well, cover well, let flavors meld over night
-in refrigerator. Some people say that carrots and onion were not in the original coleslaw recipe so feel free to leave
-them out. Chopped the cabbage, don't shred it.
+## Directions
 
-KFC Whipped Mashed Potatoes
+1. Chop the cabbage, grate the carrots and onion.
+2. Add other ingredients, mix well, cover well, let flavors meld over night in refrigerator.
+3. Some people say that carrots and onion were not in the original coleslaw recipe so feel free to leave them out.
+4. Chopped the cabbage, don't shred it.
 
-Ingredients:
+---
+
+# KFC Whipped Mashed Potatoes
+
+Yields 4 to 6 servings
+
+## Ingredients:
 
 * 2 pounds Russet potatoes, about 8 medium
 * 1/3 to 1/2 cup milk, half and half, heavy cream or whipping cream
@@ -6349,22 +6088,30 @@ Ingredients:
 * 1/8 teaspoon fresh ground black pepper
 * 1 tsp of Kosher salt
 
-Preparation:
-Peel potatoes and quarter. Place in a medium saucepan; add water and a few teaspoons of salt. Bring to a boil; cover and
-cook for 15 to 20 minutes, until tender.* Drain well.
+## Directions:
 
-Beat potatoes in saucepan over low heat with electric hand-held mixer on low speed until broken up. Heat milk and butter
-together. Pour hot milk and butter over hot potatoes and beat on high speed until fluffy, scraping sides and bottom of
-pan occasionally.** Season with salt and pepper. Serves 4 to 6.
+1. Peel potatoes and quarter. Place in a medium saucepan; add water and a few teaspoons of salt.
+   Bring to a boil; cover and cook for 15 to 20 minutes, until tender.* Drain well.
+2. Beat potatoes in saucepan over low heat with electric hand-held mixer on low speed until broken up.
+   Heat milk and butter together.
+   Pour hot milk and butter over hot potatoes and beat on high speed until fluffy,
+   scraping sides and bottom of pan occasionally.
+3. Season with salt and pepper.
 
-Tip if it starts to boil over drop in a couple of ice cubes and turn the flame down a little. You can also prevent
+---
+
+Tip: if it starts to boil over drop in a couple of ice cubes and turn the flame down a little. You can also prevent
 boiling over by adding a tablespoon of oil.
 
 *Also add the milk and butter a little at a time. If it's too runny you can't fix it unless you add in some instant
 mashed potatoes (a little trick someone on IRON CHEF could have used when they made a disastrous attempt at whipped
 potatoes that even baking didn't fix!)*
 
-COLONEL SANDERS' BEAN SALAD
+---
+
+# COLONEL SANDERS' BEAN SALAD
+
+## Ingredients
 
 * 1 No. 2 Can Green Beans (Blue Lake or some good quality)
 * 1 No. 2 Can Wax Beans
@@ -6377,8 +6124,10 @@ COLONEL SANDERS' BEAN SALAD
 * 1 1/2 Tsp. Salt
 * 1/2 Tsp. Black Pepper
 
-Drain all beans well, then rinse the kidney beans well. Now combine all ingredients - Let marinate overnight and they
-are better after 3 or 4 days.
+## Directions
+
+1. Drain all beans well, then rinse the kidney beans well.
+2. Now combine all ingredients - Let marinate overnight and they are better after 3 or 4 days.
 ````
 --- End of File: recipes/kfc/more-stuff.md ---
 --- File: recipes/kolokithokeftedes.md ---
@@ -6389,7 +6138,10 @@ https://www.seriouseats.com/kolokithokeftedes-greek-zucchini-fritters-with-tzatz
 see also: https://www.mygreekdish.com/recipe/kolokithokeftedes-fried-zucchini-balls-or-courgette/
 see also: https://akispetretzikis.com/en/recipe/1338/kolokythokeftedes
 
-Ingredients
+
+Yields about 6 pieces
+
+## Ingredients
 
 * 1 large zucchini: grated, salted, drained in a strainer, squeezed to remove more juice (~1 cup if compacted)
 * 1-2 tablespoons chopped dill or mint
@@ -6402,16 +6154,18 @@ Ingredients
 * 3 Tbsp flour or almond meal
 * oil for frying
 
-Makes about 6 pieces
+## Directions
 
 1. Mix zucchini, herbs, onion, spices, cheese, pepper. Add salt to taste.
 2. Mix in the egg, which should already be beaten. It should be wet but not drippy.
 3. Mix in the flour until it forms something a bit like a sticky wet sponge.
 4. Fry over low heat as squished balls, in olive oil, until browned on both sides and well cooked through
 
-## original from seriouseats
+---
 
-For Fritters:
+# original from seriouseats
+
+## Ingredients for Fritters:
 
 * 3 cups packed, grated zucchini (from about 6 large zucchini)
 * 6 tablespoons dill, chopped
@@ -6423,7 +6177,7 @@ For Fritters:
 * Salt and pepper
 * 4 tablespoons olive oil
 
-Directions
+## Directions
 
 1. Acquire [Tzatziki](tzatziki.md)
 2. Make Fritters: Lay out a layer of paper towels and spread out grated zucchini. Sprinkle zucchini with salt and let
@@ -6442,16 +6196,22 @@ Directions
 
 https://www.pastagrammar.com/post/lasagna-alla-bolognese-authentic-italian-lasagna-recipe
 
+## ingredients
+
 * [bolognese](pasta/ragu-alla-bolognese.md)
 * optional intermediate mild cheese - mozzarella, ricotta, etc
 * [mornay](./bechamel.md) using parmesan
 * lasagna noodles, either fresh or quick cooking, otherwise parboil them
 * topping cheese - parmegiano, mature cheddar
 
+## directions
+
 1. start with a thin layer of ragu and bechamel, then put a layer of pasta
 2. layer the lasagna, repeating red, optional extra cheese, white, pasta, ...
 3. top with a thicker layer of ragu, bechamel, and finish with parmegiano
 4. bake at 170c for 30 mins or until pasta is cooked
+
+## notes
 
 * traditionally, lasagna noodles are green - see italian flag
 * healthy option: add a layer of very thinly sliced zucchini (use a peeler or mandoline)
@@ -6465,12 +6225,11 @@ https://www.pastagrammar.com/post/lasagna-alla-bolognese-authentic-italian-lasag
 * From inmaculada
 * 20 minutes to make
 * Serves 8
-
 Creamy soup ready in 30 minutes, low-fat but very tasty.
 Hubby loves it!! Make double batch since it freezes nice, so you can always have a comforting soup for supper.
 We like this cream with hot garlic bread.
 
-Ingredients
+## Ingredients
 
 * 3 leeks, sliced
 * 2 garlic cloves, chopped
@@ -6482,7 +6241,7 @@ Ingredients
 * salt and pepper
 * 0.5 cup goat, Cheddar or feta cheese
 
-How to make it
+## Directions
 
 1. In a medium pan heat oil on medium, add leeks and garlic.
    Cook until leek is transparent.
@@ -6503,6 +6262,8 @@ How to make it
 ````markdown
 # Potage Parmentier (Leek & Potato Soup)
 
+## ingredients
+
 * 1-2 Tbsp butter
 * 300g thinly sliced leeks (about 2 leeks)
 * 3 cloves garlic, sliced or minced
@@ -6512,6 +6273,8 @@ How to make it
 * 2 Tbsp white wine
 * 1 Tbsp butter to finish
 * chives or dill and cream to garnish
+
+## directions
 
 1. fry the leek and garlic in butter until softened, about 5 mins.
 2. blend the leek and 1 cup of cold/room-temp stock in a blender until smooth, and reserve.
@@ -6523,7 +6286,7 @@ How to make it
 8. drizzle in some wine. finish with butter.
 9. serve with a drizzle of cream and a garnish of chopped chive or dill.
 
-Notes:
+## Notes:
 
 * a food mill can replace the blender and potato ricer
 * don't blend hot stock
@@ -6535,7 +6298,7 @@ Notes:
 ````markdown
 # Miso Soup
 
-Ingredients:
+## Ingredients:
 
 * 4-6 cups (1-1.5 liters) dashi (either kombu or bonito is fine)
 * 1-2 Tbsp mirin or ryorishu (optional)
@@ -6544,7 +6307,7 @@ Ingredients:
 * 1-2 tsp dried wakame
 * 1 spring onion, sliced thinly
 
-Instructions:
+## directions:
 
 1. In a large pot, bring the dashi to a boil and add the mirin.
 2. Stir in the wakame and let it rehydrate.
@@ -6555,7 +6318,7 @@ Instructions:
 5. Add the sliced spring onions to the pot. Also add the tofu, but do that gently.
 6. Using a soup ladle, scoop the soup into individual bowls, taking care not to break the tofu. Serve hot and enjoy!
 
-Notes:
+## Notes:
 
 * The amount of miso required depends on the concentration of the dashi and the type and saltiness of the miso. It's
   better to taste and adjust upwards.
@@ -6569,6 +6332,8 @@ Notes:
 
 https://www.mygreekdish.com/recipe/mousakas/
 https://www.recipetineats.com/moussaka-greek-eggplant-beef-bake/
+
+## Ingredients
 
 * 2 eggplants, sliced 1 cm thick, salted to remove water, rinse excess salt off, patted dry, fried golden brown
     * TODO: try slicing it round instead of long next time
@@ -6592,6 +6357,8 @@ https://www.recipetineats.com/moussaka-greek-eggplant-beef-bake/
     * 1 egg yolk added at the end helps thicken the sauce
 * cheese on top
 
+## Directions
+
 1. Preheat oven to 180°C.
 2. Prepare the veggies. Frying / baking the veggies is optional. Consider cutting the veg into smaller pieces so that
    the moussaka is easier to scoop.
@@ -6606,7 +6373,7 @@ https://www.recipetineats.com/moussaka-greek-eggplant-beef-bake/
 ````markdown
 # Japanese-ish Beansprouts
 
-Ingredients:
+## Ingredients:
 
 * 200 to 300 grams of bean sprouts
 * 2 tablespoons shoyu (soy sauce)
@@ -6618,7 +6385,7 @@ Ingredients:
 * 1/8 teaspoon salt
 * 1/8 (or less) teaspoon shichimi togarashi (Japanese seven-spice blend)
 
-Instructions:
+## Directions:
 
 1. Fill a large pot with salted water and bring to a boil.
 2. Add the bean sprouts to the boiling water and blanch for 1-2 minutes.
@@ -6638,7 +6405,7 @@ Instructions:
 
 serves 4
 
-instructions:
+## Ingredients:
 
 * 600g spinach, washed and stems discarded
 * 1 tsp sesame oil
@@ -6648,7 +6415,7 @@ instructions:
 * 1 tsp toasted sesame seeds
 * optional katsuobushi
 
-directions:
+## Directions:
 
 1. boil spinach, then strain and allow to cool
 2. wring out all the water using a cloth bag or towel - make sure it's really quite dry
@@ -6672,6 +6439,8 @@ https://www.vegrecipesofindia.com/palak-paneer/
 https://www.bbcgoodfood.com/recipes/saag-paneer
 https://cooking.nytimes.com/recipes/1021954-saag-paneer
 
+## Ingredients
+
 * lots of spinach / fenugreek - about 400g, stems okay
 * salt
 * lots of paneer - about 150-200g
@@ -6682,6 +6451,8 @@ https://cooking.nytimes.com/recipes/1021954-saag-paneer
 * some clove, bay (powder), black pepper
 * tablespoon or two of fenugreek leaves, half to one cup cream, maybe yoghurt
 * tablespoon of cashew paste for thickening?
+
+## Directions
 
 1. blanch spinach and fenugreek (mustard leaves) in salty water. Blanching removes the raw, bitter, and metallic flavor
    of spinach. Drain, chop, and set aside.
@@ -6699,7 +6470,9 @@ https://cooking.nytimes.com/recipes/1021954-saag-paneer
 
 somewhere between tomato pasta and pasta alla gricia
 
-makes 2 portions
+yields 2 portions
+
+## Ingredients:
 
 * olive oil
 * 250g fatty pork
@@ -6708,6 +6481,8 @@ makes 2 portions
 * about 100-125g spaghetti
 * optional beef/chicken stock
 * optional cheese
+
+## Directions
 
 1. Render fat from the pork over low to medium heat, about 30 mins
 2. At the same time, cook the tomatoes with salt, pepper, and herbs (and maybe paprika)
@@ -6725,9 +6500,8 @@ makes 2 portions
 ````markdown
 # [Spaghetti alla Carbonara](https://www.accademiaitalianadellacucina.it/it/ricette/ricetta/spaghetti-alla-carbonara)
 
-serves 4
-
-Ingredients:
+Serves 4
+## Ingredients:
 
 * 120 g guanciale
 * 1 tablespoon of olive oil
@@ -6737,6 +6511,8 @@ Ingredients:
 * 350 g spaghetti
 * salt
 * black pepper
+
+## Directions
 
 1. Cut the guanciale into strips 0.5 cm thick.
 2. Brown the guanciale in a frying pan with the olive oil and the crushed garlic.
@@ -6753,7 +6529,8 @@ Ingredients:
 ````markdown
 # Pasta Carbonara
 
-serves 2
+Serves 2
+## Directions
 
 1. cut 100g pork belly bacon (or leftover xmas ham) into strips and fry
 2. skin and crush 2 cloves garlic, fry that too
@@ -6785,7 +6562,8 @@ a bain-marie, so the eggs are cooked but not scrambled, and the sauce is thick a
 
 ![la-carbonara-luciano-monosilo-card](carbonara-luciano-monosilo-card.png)
 
-INGREDIENTS (serves 4)
+Serves 4
+## INGREDIENTS
 
 * 280g dry spaghettoni, monograno brand
 * 4 egg yolks
@@ -6794,7 +6572,7 @@ INGREDIENTS (serves 4)
 * 20g Pecorino Romano, grated
 * 2g pepper, freshly ground
 
-PREPARATION
+## DIRECTIONS
 
 1. Guanciale
     1. Cut off the rind and the pepper layer. Discard or store for another use. It should be about 1.5 cm thick.
@@ -6825,6 +6603,8 @@ PREPARATION
     3. Sprinkle additional pecorino Romano over the top.
     4. Sprinkle each portion of carbonara generously with freshly ground pepper.
     5. Serve immediately, or the sauce will dry out and become sticky.
+
+---
 
 COOKING TIPS
 
@@ -6907,6 +6687,8 @@ COOKING TIPS
 Based off a pomodoro / marinara sauce
 See also this [reddit pomodoro recipe](https://www.reddit.com/r/oddlysatisfying/comments/tvunbp/_/i45u5wy)
 
+## Directions
+
 1. Slice a lot of tomatoes, maybe 500g-750g into a fry-able size
 2. Also slice (or press) half a head of garlic
 3. Fry in some olive oil until lightly browned on the skin side
@@ -6938,7 +6720,7 @@ https://www.pastagrammar.com/post/rag%C3%B9-alla-bolognese-authentic-bolognese-s
 about 50-65g dried pasta per person (500g packet of dried pasta usually feeds 8-10)
 and pepper is important too
 
-## ingredients, part 1
+## ingredients for passata
 
 [//]: # (TODO: this is pretty much passata and could be a separate page)
 
@@ -6952,10 +6734,10 @@ and pepper is important too
 * optional (fresh?) herbs
 * salt and pepper
 
-## ingredients, part 2
+## ingredients for the rest of the sauce
 
 * 100g-200g bacon, sliced very thinly and cut into small bits
-  * to make this halal, substitute with 50g beef fat plus a bit of salt
+    * to make this halal, substitute with 50g beef fat plus a bit of salt
 * 250g ground mutton
 * 250g ground beef
 * 100-200g chicken livers, blended into a liquid paste
@@ -6969,7 +6751,7 @@ and pepper is important too
     * mushroom
     * parmesan
 
-## directions, part 1
+## directions for passata
 
 1. blend/dice/mince the carrot, onion, celery, and capsicum
 2. fry with little to no oil until well cooked through
@@ -6977,7 +6759,7 @@ and pepper is important too
 4. add stock and optional herbs and cook, covered, until it looks about done
 5. reserve in an airtight container in the fridge for up to a week, or in the freezer for maybe a month
 
-## directions, part 2
+## directions for the sauce
 
 1. fry the bacon to render the fat
 2. add the rest of the meat and fry until no longer raw or wet (if the meat releases water, boil it off)
@@ -6993,11 +6775,10 @@ and pepper is important too
 * to do this in one pan: fry the soffrito dry, render bacon, add meat, then tomatoes, garlic, herbs, spices
 * for lasagna: omit milk and nutmeg, and consider using more (maybe 2x?) tomatoes
 * any color of wine will work, but red gives the final sauce a nicer color
-
-use for:
-* pasta bolognese
-* lasagna
-* chili cheese fries
+* use for:
+    * pasta bolognese
+    * lasagna
+    * chili cheese fries
 
 ````
 --- End of File: recipes/pasta/ragu-alla-bolognese.md ---
@@ -7005,7 +6786,7 @@ use for:
 ````markdown
 # Spaghetti All'Assassina 
 
-Ingredients:
+## Ingredients:
 
 * 1/4 cup decent olive oil
 * 1 red bell pepper, seeded, ~~roasted until slightly charred,~~ chopped fine
@@ -7018,7 +6799,7 @@ Ingredients:
 * optional stracciatella or burrata (or maybe some whipped cream cheese) to serve
 * fresh basil to serve
 
-Directions:
+## Directions:
 
 1. fry the bell peppers in the oil until slightly charred
 2. add nduja, paprika, and garlic
@@ -7037,7 +6818,7 @@ Directions:
 https://www.allrecipes.com/recipe/285205/that-zucchini-spaghetti-stanley-tucci-loves-spaghetti-alla-nerano/
 https://www.newyorker.com/culture/kitchen-notes/the-secrets-of-stanley-tuccis-zucchini-spaghetti
 
-Ingredients
+## Ingredients
 
 * 1 quart【950 mL】 sunflower oil, or as needed, for deep frying
 * 6 medium green zucchini
@@ -7052,7 +6833,7 @@ Ingredients
 * optional 1 clove garlic
 * optional pat of butter to finish
 
-Directions
+## Directions
 
 1. Slice zucchini into 1/8-inch【3.2 mm】rounds.
 2. Place sunflower oil in a deep fryer and heat to 350 degrees F (175 degrees C).
@@ -7073,6 +6854,8 @@ Directions
 15. Add a final splash of pasta water and adjust salt if needed.
 16. Serve with more grated cheese, fresh basil, pepper, and optional butter.
 
+---
+
 Chef's Notes
 
 * Use any zucchini from your garden; different types and sizes are fine.
@@ -7090,6 +6873,8 @@ https://ieatishootipost.sg/easy-ter-kar-bee-hoon-recipe/
 
 https://annieliciousfood.blogspot.com/2012/09/pig-trotters-bee-hoon.html
 
+## Ingredients
+
 * 3-4 cloves garlic, minced
 * about half a carrot, julienned (sliced into thin strips)
 * half a lettuce, sliced about 1cm thick, the end cuts need to be cut again because they'll be too huge otherwise
@@ -7100,6 +6885,8 @@ https://annieliciousfood.blogspot.com/2012/09/pig-trotters-bee-hoon.html
 * 1 Tbsp shoyu
 * 1 Tbsp dark soy sauce
 * 1-2 stalks spring onion, sliced thin
+
+## Directions
 
 1. Pre-soak the bee hoon and mushrooms.
 2. Fry the garlic, carrots, and mushrooms in a pan until fragrant.
@@ -7117,7 +6904,7 @@ https://annieliciousfood.blogspot.com/2012/09/pig-trotters-bee-hoon.html
 https://www.bbcgoodfood.com/recipes/dauphinoise-potatoes
 https://www.greatbritishchefs.com/recipes/potato-dauphinoise-recipe
 
-Ingredients:
+## Ingredients:
 
 * (optional) bunch of garlic chives (koo chye), cut on a bias
 * 3 cloves garlic, pressed
@@ -7131,7 +6918,7 @@ Ingredients:
 * (optional) 1/2 cup grated cheese (usually Gruyere)
 * (optional) truffle oil
 
-Instructions:
+## Directions:
 
 1. Press the garlic cloves and simmer in cream in a large pan over medium heat. Also add chives, if using.
 2. Add the nutmeg and clove powder (and optional pepper and paprika) and stir to combine.
@@ -7155,6 +6942,8 @@ https://howtofeedaloon.com/provencal-chicken-stew/
 
 Basically regular stew with olives and different herbs
 
+## Ingredients
+
 * 4 boneless chicken thighs
 * 1 Tbsp herbs de provence:
     * traditionally rosemary, savory/thyme, oregano/marjoram
@@ -7174,7 +6963,7 @@ Basically regular stew with olives and different herbs
 * finished with a bit of butter
 * a few slices of bread
 
-Not provencal:
+## Ingredients for non-provencal version, additional and optional:
 
 * excess flour from fried chicken is fried and added into the stew to thicken
 * peas, zucchini
@@ -7185,7 +6974,7 @@ Not provencal:
 * apple for sweetness, large cubes
 * potatoes, small cubes
 
-PREPARATION
+## Directions
 
 1. Dredge the chicken parts in flour
 2. Fry the chicken until browned but not cooked through, then reserve.
@@ -7203,12 +6992,16 @@ PREPARATION
 ````markdown
 # Ramen Eggs (aka "Ajitsuke Tamago" or "Ajitama")
 
+## Ingredients
+
 * 7 eggs
 * 1/4 cup shoyu
 * 1/4 cup mirin
 * 1/4 cup sake (optionally less or none, to taste)
 * 2 Tbsp sugar
 * 1/4 - 1/2 cup dashi or water
+
+## Directions
 
 1. Boil eggs until just about done, about 7 minutes, starting in boiling water
 2. Transfer eggs directly into ice bath
@@ -7219,7 +7012,7 @@ PREPARATION
 7. Keep in fridge for at least 24 hours (and at most 2-3 days, otherwise the marinade will harden the eggs)
 8. Slice with a tomato knife or dental floss
 
-Notes:
+## Notes:
 
 * Optionally add 1 Tbsp of vinegar into the water when boiling the eggs for easier peeling
 * Add a teaspoon of dark soy sauce for darker colored eggs
@@ -7232,6 +7025,8 @@ Notes:
 
 https://www.themediterraneandish.com/roast-lamb-rack-recipe/
 
+## Ingredients
+
 * 3 Tbsp dry rosemary
 * 1 Tbsp oregano
 * 1 Tbsp thyme
@@ -7241,6 +7036,8 @@ https://www.themediterraneandish.com/roast-lamb-rack-recipe/
 * 20-30 cloves raw garlic
 * about 1/2 cup olive oil
 * 1 rack of lamb
+
+## Directions
 
 1. Blend the spices and 3/4 of the olive oil in the smallest blender vessel possible to minimize the mess. Slowly add
    just enough olive oil until it forms a gluey paste. A full-size blender may be too small to make this portion size.
@@ -7264,6 +7061,8 @@ https://www.themediterraneandish.com/roast-lamb-rack-recipe/
 
 The same method works for potatoes, sweet potatoes, and beetroot
 
+## Ingredients
+
 * Brussels sprouts, with root end trimmed
 * Herbs & spices options
     * Paprika
@@ -7275,6 +7074,8 @@ The same method works for potatoes, sweet potatoes, and beetroot
     * Manchego
     * Parmesan
     * Mozzarella
+
+## Directions
 
 1. Parboil brussels sprouts in salted water (optionally with a bit of soda bicarb)
 2. (Very much optional) cool in an ice bath to retain color. Pat dry.
@@ -7294,7 +7095,7 @@ from: https://www.seriouseats.com/kolokithokeftedes-greek-zucchini-fritters-with
 see also: https://cookieandkate.com/how-to-make-tzatziki/
 see also: https://www.loveandlemons.com/tzatziki-sauce/
 
-For Tzatziki:
+## Ingredients For Tzatziki:
 
 * 1 cup thick greek yogurt
 * 1-2 cloves raw garlic, minced
@@ -7305,6 +7106,8 @@ For Tzatziki:
 * pepper
 * salt to taste
 * 1-2 tablespoons chopped mint or dill
+
+## Directions
 
 1. Squeeze excess moisture from cucumber.
 2. In a small bowl, mix yogurt, garlic, cucumber.
@@ -7324,13 +7127,11 @@ For Tzatziki:
 
 ## Ingredients
 
-Cabbage:
-
+[//]: # (Cabbage:)
 * 1.5kg napa cabbage cores, quartered and washed
 * 2.5 tablespoons salt
 
-Fillings:
-
+[//]: # (Fillings:)
 * 250g Korean radish (or daikon), peeled and julienned
 * 1 carrot, julienned
 * 0.75 cup buchu (Asian chives), cut into 1 inch pieces
@@ -7343,8 +7144,7 @@ Fillings:
 * (optional) parsley
 * (optional) some apple or pear, julienned
 
-Pickling liquid:
-
+[//]: # (Pickling liquid:)
 * 1 medium (about 2 cups) pear (or apple), peeled and cored
 * 4-8 garlic cloves
 * 0.5 cup onion

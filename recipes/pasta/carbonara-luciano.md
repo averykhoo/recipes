@@ -12,8 +12,7 @@ a bain-marie, so the eggs are cooked but not scrambled, and the sauce is thick a
 
 ![la-carbonara-luciano-monosilo-card](carbonara-luciano-monosilo-card.png)
 
-yields 4 servings
-
+Serves 4
 ## INGREDIENTS
 
 * 280g dry spaghettoni, monograno brand

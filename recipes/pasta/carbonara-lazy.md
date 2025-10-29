@@ -1,7 +1,6 @@
 # Pasta Carbonara
 
-yields 2 servings
-
+Serves 2
 ## Directions
 
 1. cut 100g pork belly bacon (or leftover xmas ham) into strips and fry
