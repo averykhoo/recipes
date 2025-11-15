@@ -6,3 +6,4 @@
 * beef or lamb roast? 
 * pumpkin pie
 * baked brie
+* hasselback gratin Kenji Lopez alt
