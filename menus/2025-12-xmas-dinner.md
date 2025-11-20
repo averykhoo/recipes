@@ -6,5 +6,15 @@
 * beef or lamb roast? 
 * pumpkin pie
 * baked brie
+
+ideas
 * hasselback gratin Kenji Lopez alt
-* beef pasta? beef pie? or braised cheeks? 
+* beef pasta? beef pie? or braised cheeks
+* bread and butter pudding
+* duck
+* lamb shank slow cooked in red wine
+* coq au vin
+* beef cheek bourguignon
+* sous vide beef Wellington
+* salmon coulibiac
+* lamb rack
