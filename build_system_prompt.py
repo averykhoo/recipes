@@ -1,5 +1,5 @@
 # ==============================================================================
-# Build Repository Prompt Script (Using File Extensions & Regex Token Estimation) # MODIFIED
+# Build Repository Prompt Script (Using File Extensions & Regex Token Estimation)
 # ==============================================================================
 # This script scans a Git repository, identifies relevant text files based on
 # their extensions while respecting ignore rules, estimates content size using
@@ -50,7 +50,7 @@ INCLUDED_EXTENSIONS = {
     "ml", "mli", "pas", "pl", "pm", "php", "ps1", "pro", "proto", "py", "pyw",
     "r", "rb", "rs", "sass", "scss", "scala", "scm", "ss", "sh", "bash", "zsh",
     "sql", "swift", "tcl", "tf", "toml", "tsv", "tsx", "ts", "vb", "vbs",
-    "v", "sv", "vhdl", "xml", "yaml", "yml",
+    "v", "sv", "vhdl", "xml", "yaml", "yml", "ipynb"
 }
 # Define extensions (lowercase, without the dot) to explicitly exclude,
 # even if they are text-like (e.g., large data files you don't want).
