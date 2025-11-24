@@ -13,3 +13,4 @@ ideas
 * sous vide beef Wellington
 * salmon coulibiac
 * lamb rack
+* fish paella
