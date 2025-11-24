@@ -4,9 +4,9 @@ https://www.pastagrammar.com/post/lasagna-alla-bolognese-authentic-italian-lasag
 
 ## ingredients
 
-* [bolognese](pasta/ragu-alla-bolognese.md)
+* [bolognese](ragu-alla-bolognese.md)
 * optional intermediate mild cheese - mozzarella, ricotta, etc
-* [mornay](./bechamel.md) using parmesan
+* [mornay](../bechamel.md) using parmesan
 * lasagna noodles, either fresh or quick cooking, otherwise parboil them
 * topping cheese - parmegiano, mature cheddar
 
