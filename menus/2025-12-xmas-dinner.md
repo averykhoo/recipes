@@ -1,17 +1,12 @@
-* broccoli cheese ham soup
-* deep fried olives (all'ascolana) stuffed with meat like Io served with mayo
+ideas
+* deep fried olives (all'ascolana) stuffed with meat like IO served with mayo
 * strawberry lemonade green tea cooler? 
 * flower salad? 
-* ham as usual, tet the small one
 * beef or lamb roast? 
-* pumpkin pie
-* baked brie
-
-ideas
-* hasselback gratin Kenji Lopez alt
-* beef pasta? beef pie? or braised cheeks
+* [hasselback gratin Kenji Lopez alt](https://www.seriouseats.com/hasselback-potato-gratin-casserole-holiday-food-lab)
+* [beef pasta?](https://www.sprinklesandsprouts.com/beef-broth-pasta/) beef pie? or braised cheeks
 * bread and butter pudding
-* duck
+* duck a l'orange
 * lamb shank slow cooked in red wine
 * coq au vin
 * beef cheek bourguignon
