@@ -10,6 +10,7 @@
 
 import os
 import re
+import json
 from pathlib import Path
 from typing import Callable
 from typing import Dict
@@ -409,11 +410,71 @@ def find_longest_backtick_sequence(content: str) -> int:
     return longest
 
 
+# --- NEW FUNCTION FOR IPYNB CONVERSION ---
+def convert_ipynb_to_python(filepath: Path) -> Optional[str]:
+    """
+    Reads a Jupyter Notebook and converts it to a simplified Python string.
+    Code cells are preserved. Markdown cells are converted to comments.
+    """
+    try:
+        with filepath.open('r', encoding='utf-8') as f:
+            notebook_data = json.load(f)
+
+        converted_lines = []
+        converted_lines.append(f"# [NOTE] This is a converted Jupyter Notebook: {filepath.name}")
+        converted_lines.append(f"# [NOTE] Markdown cells are commented out.\n")
+
+        cells = notebook_data.get("cells", [])
+
+        for i, cell in enumerate(cells):
+            cell_type = cell.get("cell_type", "")
+            source_lines = cell.get("source", [])
+
+            # Handle if source is a string instead of list
+            if isinstance(source_lines, str):
+                source_lines = source_lines.splitlines(keepends=True)
+
+            if not source_lines:
+                continue
+
+            converted_lines.append(f"\n# %% [{cell_type}] cell_id: {i}")
+
+            if cell_type == "code":
+                # Join lines and append
+                code_block = "".join(source_lines)
+                converted_lines.append(code_block)
+
+            elif cell_type == "markdown":
+                # Comment out markdown lines
+                for line in source_lines:
+                    # Use simple # commenting
+                    converted_lines.append(f"# {line.rstrip()}")
+
+            else:
+                # Raw or other types, just comment them
+                for line in source_lines:
+                    converted_lines.append(f"# [Raw/Other] {line.rstrip()}")
+
+        return "\n".join(converted_lines)
+
+    except json.JSONDecodeError:
+        print(f"Warning: Could not parse JSON in notebook {filepath}")
+        return None
+    except Exception as e:
+        print(f"Warning: Error converting notebook {filepath}: {e}")
+        return None
+
+
 def read_file_content(filepath: Path) -> Optional[str]:
     """
     Reads file content, trying UTF-8 first, then falling back to Latin-1.
+    If .ipynb, converts to Python script representation.
     Returns None if the file cannot be read or decoded.
     """
+    # Handle Jupyter Notebooks specially
+    if filepath.suffix.lower() == '.ipynb':
+        return convert_ipynb_to_python(filepath)
+
     try:
         # Try reading as UTF-8 first, the most common encoding
         return filepath.read_text(encoding='utf-8')
