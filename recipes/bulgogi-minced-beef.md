@@ -7,29 +7,31 @@
 
 ## ingredients:
 
-* 250g minced or sukiyaki-sliced beef, defrosted and kneaded
-* 1 pear, grated or blended
-* 8 cloves minced/blended/pressed garlic
-* 2-3 shallots or 1/2 onion, finely diced or blended
-* 1/2 to 1 Tbsp grated ginger (about 1.5cm)
+* 200-250g minced or sukiyaki-sliced beef, defrosted and kneaded
+* 1 pear, peeled and deseeded, then grated
+* 8 cloves garlic, grated
+* 2-3 shallots or 1/4-1/2 onion, grated
+* 1/2 to 1 Tbsp (about 1.5cm) ginger, grated
 * 1 Tbsp miso
-* 4 Tbsp shoyu
+* (optional) 2-4 Tbsp shoyu
 * 2 Tbsp sesame oil
-* 3 Tbsp brown sugar
+* 2 Tbsp brown sugar
 * 1/2 tsp liquid smoke
-* 1/2 onion, sliced pole to pole
-* 1-2 small carrots, julienned
+* 1/4-1/2 onion, sliced pole to pole
 * 1 tsp pepper
-* toasted sesame seeds
+* (optional) 1-2 small carrots, julienned
+* (optional) wine or sake
 * (optional) spring onion, thinly sliced on a bias
+* (optional) toasted sesame seeds
 
 ## directions:
 
-1. (optional, instead of cutting) blend the marinade
-2. (also optional) strain through a cloth, except for the pepper
-3. add to beef in a bag and massage a little
-4. chill for 2 to 24 hours
-5. cook onion and carrot in sesame oil
-6. add beef with marinade and keep cooking until dry-ish and done
-7. top with sesame seeds and spring onion, and stir it in
-8. serve with rice, flavored with sesame oil
+1. (optional, instead of grating) blend the marinade very finely
+2. add to beef in a bag and massage a little and leave to marinade a while
+3. pull out beef, approximately wipe off the marinade, and fry
+4. fry onion and carrot
+5. use the marinade to deglaze, and keep frying until dry-ish
+6. add beef and drippings back to marinade and stir to combine
+7. optionally deglaze one last time with alcohol, mixing the remainder into the bulgogi
+8. top with spring onion and white sesame seeds
+9. serve with rice, flavored with sesame oil and topped with toasted or black sesame seeds
