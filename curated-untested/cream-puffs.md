@@ -61,7 +61,7 @@ https://www.youtube.com/watch?v=3xtSr5iIuTo
 
 ---
 
-Notes:
+## Notes:
 
 1. After filling in the cream, the choux gets damp easily. 
 2. To keep the crispness the longest, you have no choice but to fill it with cream every time you eat it.

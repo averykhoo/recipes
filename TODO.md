@@ -76,3 +76,17 @@ print("hello world!")
 * better link cleaning via markdown-soup, which will probably a concrete syntax tree wrapper around markdown-it-py
 * consider not using the github jekyll action since it's very outdated
 * change logo to cookie book / 🍪📖 / :cookie: :book: (does :cookie::book: work)
+
+## parsing script
+
+| component                  | match                        | comment                               |
+|----------------------------|------------------------------|---------------------------------------|
+| title                      | `# ...`                      | there should only be markdown h1      |
+| portion / servings         | `yields ...` or `serves ...` | possibly in a bulleted list           |
+| ingredients                | `## ingredients`             |                                       |
+| sub-lists for ingredients  | `## ingredients for ...`     |                                       |
+| instructions               | `## directions`              |                                       |
+| sub-lists for instructions | `## directions for ...`      |                                       |
+| notes                      | `## notes` or `> ...` blocks |                                       |
+| links                      | often bare urls              | should probably be wrapped in `<>`    |
+| sub-recipes                | `---`                        | section                               |

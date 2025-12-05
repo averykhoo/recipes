@@ -10,7 +10,7 @@ https://www.allrecipes.com/recipe/247089/vanilla-chantilly-cream/
 * (optional) seeds from 1/2 pod vanilla
 * if using a metal mixing bowl (or anything with high heat capacity), chill the bowl first
 
-## Ingredients for stabilizing (optional):
+## Ingredients for stabilizing (optional and not veg friendly):
 
 https://veenaazmanov.com/stabilize-whipped-cream-5-different-methods/
 
@@ -29,6 +29,6 @@ https://veenaazmanov.com/stabilize-whipped-cream-5-different-methods/
 
 ---
 
-Notes:
+## Notes:
 
 * the recipe is quite lenient, you can up to double any ingredient (except maybe the water) and it'll still taste okay

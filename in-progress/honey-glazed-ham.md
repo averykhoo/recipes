@@ -26,7 +26,7 @@
 
 ---
 
-Notes:
+## Notes:
 
 * need to figure out how to make the ham skin crispy without overcooking the inside 
   * maybe glaze the ham after it's crispy?

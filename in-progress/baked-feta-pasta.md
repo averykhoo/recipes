@@ -37,7 +37,7 @@ https://www.delish.com/cooking/recipe-ideas/a35421563/baked-feta-pasta-tiktok/
 
 ---
 
-Notes
+## Notes
 
 * cherry tomatoes – the sweeter the better! There are so many types of mini tomatoes these days, from strawberry to
   grape to on the vine to heirloom. I used one package of classic cherry tomatoes and one package of cherry tomatoes on

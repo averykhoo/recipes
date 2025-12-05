@@ -15,7 +15,7 @@ see also: meringue pumpkin pie recipe below
 * 1 teaspoon salt
 * 1 teaspoon ground ginger (dried powder)
 * 1 teaspoon ground cloves
-* 1 teaspoon ground mace
+* 1 teaspoon ground mace / nutmeg
 * 1 1/2 cups granulated sugar
 * 3 cups heavy cream or 2 12-ounce cans evaporated milk (or replace up to 1/3 of the cream with milk)
 * 2-3 unbaked, 9-inch [pie shells](./pie-crust.md)

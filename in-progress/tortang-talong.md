@@ -15,7 +15,7 @@
 
 ---
 
-notes:
+## Notes:
 
 * traditionally served with banana ketchup
 * air fryer might also work

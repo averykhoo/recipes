@@ -7,7 +7,7 @@ https://www.pastagrammar.com/post/lasagna-alla-bolognese-authentic-italian-lasag
 * [bolognese](ragu-alla-bolognese.md)
 * optional intermediate mild cheese - mozzarella, ricotta, etc
 * [mornay](../bechamel.md) using parmesan
-* lasagna noodles, either fresh or quick cooking, otherwise parboil them
+* lasagna noodles, either quick cooking or fresh, otherwise parboil them
 * topping cheese - parmegiano, mature cheddar
 
 ## directions
@@ -21,3 +21,4 @@ https://www.pastagrammar.com/post/lasagna-alla-bolognese-authentic-italian-lasag
 
 * traditionally, lasagna noodles are green - see italian flag
 * healthy option: add a layer of very thinly sliced zucchini (use a peeler or mandoline)
+* if noodles are added dry, make the sauce a bit more liquid or splash in some stock or milk

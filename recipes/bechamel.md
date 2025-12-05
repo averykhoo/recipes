@@ -27,7 +27,7 @@ https://www.pastagrammar.com/post/basic-besciamella-sauce
 
 ---
 
-notes:
+## Notes:
 
 * too thick? add milk. too thin? boil it down.
 * escoffier's recipe involved onion and veal

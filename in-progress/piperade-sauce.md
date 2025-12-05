@@ -37,7 +37,7 @@ see also: https://www.nytimes.com/2007/06/13/dining/131rrex.html
 
 ---
 
-Notes:
+## Notes:
 
 * An alternative to the tomato, onion, etc. is to use some pomodoro sauce.
 * There's sometimes piment d'Espelette, hot paprika, or chili flakes to make the sauce spicy.

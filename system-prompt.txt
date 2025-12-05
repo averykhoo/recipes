@@ -1123,7 +1123,7 @@ https://www.youtube.com/watch?v=3xtSr5iIuTo
 
 ---
 
-Notes:
+## Notes:
 
 1. After filling in the cream, the choux gets damp easily. 
 2. To keep the crispness the longest, you have no choice but to fill it with cream every time you eat it.
@@ -1809,7 +1809,7 @@ Special Equipment
 * 9-inch【22.86 cm】 pie pan (preferably tempered glass; see note),
 * pastry brush
 
-Notes
+## Notes
 
 * Compared to stoneware or heavy enameled ceramic, tempered-glass pie plates conduct heat quickly and evenly, so the
   crust bakes up light and crisp, never greasy or soft.
@@ -1909,7 +1909,7 @@ Cook Time: 35 minutes
 
 ---
 
-Notes:
+## Notes:
 
 1. This recipe works best with real ricotta, not the poor substitute you'll find in a store.
 ````
@@ -2055,7 +2055,7 @@ https://www.delish.com/cooking/recipe-ideas/a35421563/baked-feta-pasta-tiktok/
 
 ---
 
-Notes
+## Notes
 
 * cherry tomatoes – the sweeter the better! There are so many types of mini tomatoes these days, from strawberry to
   grape to on the vine to heirloom. I used one package of classic cherry tomatoes and one package of cherry tomatoes on
@@ -2321,7 +2321,7 @@ yields 30-35 crackers, or 6-8 shortbread brick cookies
 
 ---
 
-Notes:
+## Notes:
 
 * maybe a bit of sugar would be nice
 * can substitute with 4oz of almost any cheese
@@ -2591,7 +2591,7 @@ https://panlasangpinoy.com/dyanamite-lumpia/
 
 ---
 
-notes:
+## Notes:
 
 * beef is done taco or quesadilla style in this recipe
 * wear gloves when de-seeding the chili
@@ -2722,7 +2722,7 @@ Not sure where this recipe originated from
 
 ---
 
-Notes:
+## Notes:
 
 * need to figure out how to make the ham skin crispy without overcooking the inside 
   * maybe glaze the ham after it's crispy?
@@ -3226,7 +3226,7 @@ see also: https://www.nytimes.com/2007/06/13/dining/131rrex.html
 
 ---
 
-Notes:
+## Notes:
 
 * An alternative to the tomato, onion, etc. is to use some pomodoro sauce.
 * There's sometimes piment d'Espelette, hot paprika, or chili flakes to make the sauce spicy.
@@ -3542,7 +3542,7 @@ serves 8-10 portions
 
 ---
 
-notes:
+## Notes:
 
 * traditionally served with banana ketchup
 * air fryer might also work
@@ -4081,7 +4081,7 @@ https://www.pastagrammar.com/post/basic-besciamella-sauce
 
 ---
 
-notes:
+## Notes:
 
 * too thick? add milk. too thin? boil it down.
 * escoffier's recipe involved onion and veal
@@ -4450,7 +4450,7 @@ https://veenaazmanov.com/stabilize-whipped-cream-5-different-methods/
 
 ---
 
-Notes:
+## Notes:
 
 * the recipe is quite lenient, you can up to double any ingredient (except maybe the water) and it'll still taste okay
 ````
@@ -4589,7 +4589,7 @@ Notes:
 
 ---
 
-Notes:
+## Notes:
 
 * The chocolate will thicken all of a sudden, so do watch for this and remove from the ice bath as soon as you see this
   happening, lest it'll turn hard and clumpy if left to cool too much. Don't worry if this happens though, just heat the
@@ -4762,7 +4762,7 @@ or use crushed lotus biscuits and butter and skip all the above - no spice/sugar
 
 ---
 
-NOTES:
+## Notes:
 
 * Does supersteam work?
 * Is it okay to not immerse the cheesecake in the water bath?
@@ -5310,7 +5310,7 @@ Makes one 9-inch pie
 
 ---
 
-Notes:
+## Notes:
 
 * Use cake flour instead of plain if you're baking something soft
 * One recipe calls for 1 tsp baking powder and 0.5 tsp baking soda

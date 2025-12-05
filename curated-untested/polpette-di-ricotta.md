@@ -37,6 +37,6 @@ Cook Time: 35 minutes
 
 ---
 
-Notes:
+## Notes:
 
 1. This recipe works best with real ricotta, not the poor substitute you'll find in a store.

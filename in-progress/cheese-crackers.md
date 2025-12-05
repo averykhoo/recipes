@@ -35,7 +35,7 @@ yields 30-35 crackers, or 6-8 shortbread brick cookies
 
 ---
 
-Notes:
+## Notes:
 
 * maybe a bit of sugar would be nice
 * can substitute with 4oz of almost any cheese

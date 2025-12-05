@@ -23,7 +23,7 @@ https://panlasangpinoy.com/dyanamite-lumpia/
 
 ---
 
-notes:
+## Notes:
 
 * beef is done taco or quesadilla style in this recipe
 * wear gloves when de-seeding the chili

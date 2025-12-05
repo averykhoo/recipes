@@ -137,7 +137,7 @@ Special Equipment
 * 9-inch【22.86 cm】 pie pan (preferably tempered glass; see note),
 * pastry brush
 
-Notes
+## Notes
 
 * Compared to stoneware or heavy enameled ceramic, tempered-glass pie plates conduct heat quickly and evenly, so the
   crust bakes up light and crisp, never greasy or soft.

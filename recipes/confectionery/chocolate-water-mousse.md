@@ -26,7 +26,7 @@
 
 ---
 
-Notes:
+## Notes:
 
 * The chocolate will thicken all of a sudden, so do watch for this and remove from the ice bath as soon as you see this
   happening, lest it'll turn hard and clumpy if left to cool too much. Don't worry if this happens though, just heat the

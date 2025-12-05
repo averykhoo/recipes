@@ -153,7 +153,7 @@ or use crushed lotus biscuits and butter and skip all the above - no spice/sugar
 
 ---
 
-NOTES:
+## Notes:
 
 * Does supersteam work?
 * Is it okay to not immerse the cheesecake in the water bath?

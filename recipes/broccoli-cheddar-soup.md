@@ -12,7 +12,7 @@
 
 ## Ingredients
 
-* 1 lb bacon, chopped
+* 1 lb bacon, chopped thinly
 * 2 Tbsp butter or bacon fat
 * 2 medium yellow onions, diced
 * Pepper, to taste
