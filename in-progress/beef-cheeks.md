@@ -17,7 +17,7 @@
 ## directions
 
 1. (optional) briefly sear cheeks in hot butter to brown the outsides
-2. slow-cook all ingredients at 68C for 24-48 hours (or 75C for 2 hours if you're in a rush)
+2. slow-cook all ingredients at 64C for 24 hours (or 70C for 2 hours if you're in a rush)
 3. strain out the poky herbs (ie dried rosemary) and cook the glaze down to thicken it
 4. slice the beef cheek against the grain
 5. finish the sauce with butter and serve over the beef cheek
