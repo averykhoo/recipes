@@ -11,8 +11,9 @@
 
 ## directions
 
-1. melt and mix
-2. pour into a square container onto baking paper
+1. melt and mix all ingredients (e.g., over a bain marie) to form a ganache
+2. pour into a square container (about 13cm x 13cm) lined on the bottom with baking paper
 3. lay another sheet of baking paper on top, and remove any bubbles - helps keep it flat and smooth
-4. toss with cocoa powder
-5. let it defrost a bit just before serving
+4. cool in the fridge until quite solid
+5. trim the edges, cut into ~2x2cm squares (about 36 total), and toss with cocoa powder
+6. let sit *outside* the fridge for a couple minutes just before serving
