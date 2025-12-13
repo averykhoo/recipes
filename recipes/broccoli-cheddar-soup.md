@@ -35,7 +35,7 @@
 1. Fry bacon until browned, reserve but leave the fat in the pan
 2. Add butter / additional bacon fat, and fry onion, ~~salt,~~ pepper, paprika, and optional cayenne, until onions are soft
 3. Add garlic and flour, cook until fragrant
-4. Add broth, broccoli, carrots, optional bouillon, and simmer until veggies are tender
+4. Add broth, broccoli, carrots, optional bouillon, and simmer until veggies are tender - do NOT add any dairy at this stage
 5. Add most of the reserved bacon, cream, cheese, nutmeg, and simmer until cheese is just melted
    (do not boil, or the cheese will separate)
 6. Serve topped with melted cheese and reserved bacon
@@ -43,6 +43,6 @@
 ## Notes
 
 * Removed salt because it was too salty
-* Used leftover Christmas ham instead of bacon; skipped frying and added a bit more butter
+* Used leftover Christmas ham instead of bacon; skipped frying and added a bit more butter to fry the roux
 * Skipped cayenne
 * Also forgot to add nutmeg and mustard, but it was still good
