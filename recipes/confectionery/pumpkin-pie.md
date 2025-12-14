@@ -30,8 +30,8 @@ see also: meringue pumpkin pie recipe below
 4. Add the cinnamon, salt, ginger, cloves, and mace and whisk to thoroughly combine.
 5. Gradually add the sugar, followed by the heavy cream, whisking until all ingredients are incorporated.
 6. Divide the pumpkin filling between the two pie shells. 
-7. Draw lines on top with a fork
-8. Transfer the pies to the oven and bake for 15 minutes at 200c.
+7. (optional) chill the pies in the fridge, then draw lines on top with a fork
+8. Transfer the pies to the oven and bake for 15 minutes at 200c to set the top
 9. Reduce the oven temperature to 160c (350°F) and continue baking until the filling is just set in the center of each
    pie and the crust is deep golden brown, about 40-45 minutes. 
 10. Let the pies cool to room temperature before cutting and serving. Top with powdered sugar and whipped cream, if desired.
