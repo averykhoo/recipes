@@ -7,7 +7,7 @@ https://www.allrecipes.com/recipe/235589/chef-johns-creamy-mushroom-soup/
 * 600g mushrooms, sliced 
 * 1 onion, chopped fine
 * 3 Tbsp butter
-* 1 Tbsp flour
+* 2 tsp flour
 * 2 cloves garlic
 * herbs
 * 2-3 cups stock 
