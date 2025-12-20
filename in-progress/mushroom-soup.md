@@ -4,8 +4,8 @@ https://www.allrecipes.com/recipe/235589/chef-johns-creamy-mushroom-soup/
 
 ## Ingredients 
 
-* 600g mushrooms
-* 1 onion
+* 600g mushrooms, sliced 
+* 1 onion, chopped fine
 * 3 Tbsp butter
 * 1 Tbsp flour
 * 2 cloves garlic
@@ -19,4 +19,5 @@ https://www.allrecipes.com/recipe/235589/chef-johns-creamy-mushroom-soup/
 1. fry mushrooms and onion
 2. add garlic and flour
 3. boil with stock but no cream 
-4. finish with cream
+4. blend
+5. finish with cream
