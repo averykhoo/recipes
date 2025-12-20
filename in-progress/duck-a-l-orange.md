@@ -13,10 +13,12 @@
 * (optional) orange bitters
 * butter
 * precooked duck breast
+* orange supremes
+* grand marnier / cointreau / white wine 
 
 ## directions
 
-1. boil zest in some water, then add juice and stock
+1. boil zest in some water, then add juice and stock and reduce
 2. add the mirepoix and optional tomato paste (cook the raw tomato paste on the side of the pan)
 3. thicken slightly with gelatin if needed, and reduce
 4. mix in the sugar/caramel and vinegar
