@@ -13,3 +13,6 @@ ideas
 * salmon coulibiac
 * lamb rack
 * fish paella
+* wellington
+* https://youtu.be/R2ccbO-oR5Q onion bacon quiche
+* 
