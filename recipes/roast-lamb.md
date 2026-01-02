@@ -26,6 +26,7 @@ https://www.themediterraneandish.com/roast-lamb-rack-recipe/
     * seasoning the meat with 2 tsp salt
 3. Slather all over the rack, as well as into the cuts and scores, and store in the fridge in a ziploc bag for a few
    hours or days. The pastiness of the garlic should help it stick on fairly well.
-4. Preheat the oven to 250C and roast for 40 minutes
-5. Poke around inside the cut between the bones to see how red it looks
+4. Preheat the oven to 120C and roast for 25 minutes
+5. Poke around inside a small cut between the bones to see how red it looks
+6. Increase the temperature to 200C and finish for 5-10 minutes
 7. To serve, pre-slice the fat cap in the appropriate locations, flip, then slice through from the bone side. Also have mint sauce and/or jelly, and maybe some red wine shallot (or Bordelaise) sauce.
