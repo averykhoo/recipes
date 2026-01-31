@@ -1,5 +1,9 @@
 # fish meuniere with mornay
 
+this frozen "dory" tastes a bit like it's been soaked in bicarbonate to tenderize it, and we really need to neutralize the pH for it to taste normal again 
+
+also can be served with beurre blanc
+
 ## directions
 
 1. Poach at low to medium heat in vinegar water to defrost and almost cook through, change water once?, then reserve fish, which should be soft and tender
