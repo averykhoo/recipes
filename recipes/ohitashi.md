@@ -7,12 +7,12 @@ serves 4
 
 ## Ingredients:
 
-* 600g spinach, washed and stems discarded
-* 1 tsp sesame oil
-* 3 Tbsp (reduced salt) shoyu
+* 2x 300g baby spinach, discard stems and wash the leaves
+* 1 Tbsp sesame oil
+* 2 Tbsp (reduced salt) shoyu
 * 2 Tbsp mirin
-* 1/4 cup Tbsp kombu dashi
-* 1 tsp toasted sesame seeds
+* 3 Tbsp kombu dashi
+* 1 Tbsp toasted sesame seeds
 * optional katsuobushi
 
 ## Directions:
