@@ -17,6 +17,7 @@ Yields 2 portions
 * 6 basil leaves, torn into small pieces
 * 4 tablespoons grated Pecorino Romano / Parmegiano / Grana Padano cheese
 * black pepper to taste
+* pine nuts?
 
 ## Directions
 
