@@ -1,22 +1,32 @@
-# Japanese-ish Beansprouts
+# Japanese-ish Soya Sprouts (Daizu Moyashi)
 
 ## Ingredients:
 
-* 200 to 300 grams of bean sprouts
-* 2 tablespoons shoyu (soy sauce)
-* 2 tablespoons toasted sesame oil
-* ~~2 teaspoons tahini~~
-* 1 teaspoon vinegar
-* 1/4 teaspoon black pepper
-* 1/4 teaspoon sugar
-* 1/8 teaspoon salt
-* 1/8 (or less) teaspoon shichimi togarashi (Japanese seven-spice blend)
+Dressing:
+
+* 1 Tbsp shoyu (soy sauce)
+* 1 Tbsp toasted sesame oil
+* 1/2 Tbsp black vinegar
+* 1/2 tsp sugar
+* 1/8 tsp shichimi togarashi (Japanese seven-spice blend)
+* 1 clove garlic, finely minced
+* 1/8 tsp msg / 1/4 tsp bouillon powder
+
+Everything else:
+
+* 200 grams (1 bag) of soya sprouts, brown tails removed
+* (optional) black fungus
+* 1 Tbsp toasted sesame seeds, optionally slightly crushed
 
 ## Directions:
 
-1. Fill a large pot with salted water and bring to a boil.
-2. Add the bean sprouts to the boiling water and blanch for 1-2 minutes.
-3. Drain the bean sprouts but keep them in the pan. Allow the dampness to evaporate off the warm sprouts.
-4. In a small bowl, whisk together the shoyu, sesame oil, tahini, vinegar, pepper, sugar, salt, and shichimi.
-5. Pour the sauce over the bean sprouts and toss until the sprouts are evenly coated.
-6. Stir-fry for 1-2 minutes or until the sauce is sticky and adheres to the sprouts.
+1. In a small bowl, whisk together the dressing ingredients,
+   and allow to sit for a while so the vinegar mellows the garlic.
+2. Fill a large pot with salted water and bring to a boil.
+3. Add the sprouts (and optional fungus) to the boiling water and boil, covered,
+   for 5-7 minutes, until the raw bean flavor us just gone.
+4. Drain the sprouts, chill in ice / cold water.
+5. Squeeze out excess water and place in a mixing bowl.
+6. Pour the sauce over the bean sprouts and toss until the sprouts are evenly coated.
+7. Move to a glass tupperware (leaving behind excess marinade) and top with sesame seeds.
+8. Fridge for 30 mins to overnight
