@@ -15,8 +15,9 @@ Dressing:
 Everything else:
 
 * 200 grams (1 bag) of soya sprouts, brown tails removed
-* (optional) black fungus
+* (Optional) Dried black fungus, rehydrated and sliced thin
 * 1 Tbsp toasted sesame seeds, optionally slightly crushed
+* Salt (for boiling water)
 
 ## Directions:
 
@@ -28,5 +29,5 @@ Everything else:
 4. Drain the sprouts, chill in ice / cold water.
 5. Squeeze out excess water and place in a mixing bowl.
 6. Pour the sauce over the bean sprouts and toss until the sprouts are evenly coated.
-7. Move to a glass tupperware (leaving behind excess marinade) and top with sesame seeds.
-8. Fridge for 30 mins to overnight
+7. Move to a glass container (leaving behind excess marinade) and top with sesame seeds.
+8. Fridge for 30 mins, ideally overnight. Serve cold.
