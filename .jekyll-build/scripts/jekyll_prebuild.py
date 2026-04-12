@@ -30,6 +30,14 @@ RE_MARKDOWN_LINK = re.compile(
     re.IGNORECASE,
 )
 
+# Finds bare URLs while using negative lookbehinds to ignore URLs that are
+# already inside < >, " ", ' ', backticks, or Markdown links `](`
+RE_BARE_URL = re.compile(
+    r'(?<![<"\'`=])(?<!]\()(https?://[^\s<>"\'`]+[^\s<>"\'`.,;:!?)]+)',
+    re.IGNORECASE,
+)
+RE_BARE_URL_SUB = r'<\1>'
+
 
 # --- Helper Functions ---
 
@@ -191,24 +199,25 @@ if __name__ == '__main__':
             )
             print(f"Processed recipe file: {md_file}")
 
-    # 4. Fix internal Markdown links to point to .html
-
-    # Regex to find .md links, capturing the part before the extension.
-    # It is case-insensitive and handles anchors correctly.
-
-    print("\n--- Fixing internal markdown links ---")
+    # 4. Fix internal Markdown links and bare URLs
+    print("\n--- Fixing internal markdown links and bare URLs ---")
     all_md_files = [_md for _dir in COLLECTION_DIRS for _md in _dir.glob('**/*.[mM][dD]')]
     for md_file in all_md_files:
         try:
             content = md_file.read_text(encoding='utf-8')
 
-            # Replace the matched .md extension with .html, preserving the captured path.
-            new_content, num_replacements = RE_MARKDOWN_LINK_MD.subn(RE_MARKDOWN_LINK_SUB, content)
+            # Replace the matched .md extension with .html
+            new_content, num_md_links = RE_MARKDOWN_LINK_MD.subn(RE_MARKDOWN_LINK_SUB, content)
+
+            # Wrap bare HTTP/HTTPS URLs in angle brackets
+            new_content, num_bare_urls = RE_BARE_URL.subn(RE_BARE_URL_SUB, new_content)
+
+            total_replacements = num_md_links + num_bare_urls
 
             # Only write to the file if a change was actually made.
-            if num_replacements > 0:
+            if total_replacements > 0:
                 md_file.write_text(new_content, encoding='utf-8')
-                print(f"Fixed {num_replacements} link(s) in: {md_file}")
+                print(f"Fixed {num_md_links} internal link(s) and {num_bare_urls} bare URL(s) in: {md_file}")
 
         except Exception as e:
             print(f"Error processing {md_file}: {e}")
