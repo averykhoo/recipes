@@ -58,7 +58,7 @@ jobs:
 
       # STEP 3: Upload the final, built site from the correct location.
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           # Point the uploader to the destination we specified above
           path: ./.jekyll-build/_site
