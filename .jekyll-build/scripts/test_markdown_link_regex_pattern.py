@@ -93,21 +93,13 @@ if __name__ == '__main__':
         print(f"  Input:    '{input_str}'")
 
         # --- Test Your Logic (with code protection) ---
-        parts = re.split(r'(```+[\s\S]*?```+|`[^`\n]+?`)', input_str)
+        parts = re.split(r'(```+[\s\S]*?```+|``[^`\n]*?``|`[^`\n]+?`)', input_str)
         for j in range(len(parts)):
             if j % 2 == 0:
                 parts[j] = RE_MARKDOWN_LINK_MD.sub(RE_MARKDOWN_LINK_SUB, parts[j])
-                # We don't strictly need RE_BARE_URL here for these tests but it matches the prebuild logic
                 parts[j] = RE_BARE_URL.sub(RE_BARE_URL_SUB, parts[j])
 
         your_result = ''.join(parts)
-
-        # NOTE: Since the new logic also applies RE_BARE_URL, we might need to adjust expected values if any tests contain bare URLs.
-        # Checking test_cases... none of them seem to have bare URLs that would be affected, except maybe Test 27.
-        # Test 27: Go to https://example.com/file.md/page
-        # Original Expected: Go to https://example.com/file.md/page
-        # With RE_BARE_URL: Go to <https://example.com/file.md/page>
-
         your_pass = your_result == expected
         your_status = f"PASS" if your_pass else f"FAIL"
         print(f"  Your Regex Result: '{your_result}' [{your_status}]")

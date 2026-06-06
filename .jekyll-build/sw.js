@@ -107,18 +107,16 @@ self.addEventListener('fetch', event => {
 
       // Fallback: Resolve extension-less requests to compiled .html pages in cache
       if (!cachedResponse && !url.pathname.endsWith('.html') && !url.pathname.endsWith('/')) {
-        const htmlUrl = url.href + '.html';
-        cachedResponse = await cache.match(htmlUrl, { ignoreSearch: true });
+        const fallbackUrl = new URL(url.href);
+        fallbackUrl.pathname += '.html';
+        cachedResponse = await cache.match(fallbackUrl.href, { ignoreSearch: true });
       }
 
       // Stale-While-Revalidate: fetch in background, store in cache, return cached response if available
       const fetchPromise = (async () => {
+        let networkResponse;
         try {
-          const networkResponse = await fetch(event.request);
-          if (networkResponse.ok) {
-            await cache.put(requestToMatch, networkResponse.clone());
-          }
-          return networkResponse;
+          networkResponse = await fetch(event.request);
         } catch (err) {
           if (!cachedResponse) {
             return new Response('You are offline and this recipe is not cached.', {
@@ -126,7 +124,17 @@ self.addEventListener('fetch', event => {
               headers: { 'Content-Type': 'text/plain' }
             });
           }
+          return;
         }
+
+        if (networkResponse.ok) {
+          try {
+            await cache.put(requestToMatch, networkResponse.clone());
+          } catch (cacheError) {
+            console.error('Failed to update cache:', cacheError);
+          }
+        }
+        return networkResponse;
       })();
 
       if (cachedResponse) {

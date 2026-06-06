@@ -206,7 +206,7 @@ if __name__ == '__main__':
             content = md_file.read_text(encoding='utf-8')
 
             # Protect inline code and code block segments from regex substitution
-            parts = re.split(r'(```+[\s\S]*?```+|`[^`\n]+?`)', content)
+            parts = re.split(r'(```+[\s\S]*?```+|``[^`\n]*?``|`[^`\n]+?`)', content)
 
             num_md_links = 0
             num_bare_urls = 0
