@@ -212,8 +212,8 @@ if __name__ == '__main__':
             num_bare_urls = 0
 
             for i in range(len(parts)):
-                # Apply replacements only on non-code segments
-                if not parts[i].startswith('`'):
+                # Apply replacements only on non-code segments (even indices)
+                if i % 2 == 0:
                     parts[i], links_replaced = RE_MARKDOWN_LINK_MD.subn(RE_MARKDOWN_LINK_SUB, parts[i])
                     parts[i], urls_replaced = RE_BARE_URL.subn(RE_BARE_URL_SUB, parts[i])
                     num_md_links += links_replaced

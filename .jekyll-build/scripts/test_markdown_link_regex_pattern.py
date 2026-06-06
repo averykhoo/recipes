@@ -95,7 +95,7 @@ if __name__ == '__main__':
         # --- Test Your Logic (with code protection) ---
         parts = re.split(r'(```+[\s\S]*?```+|`[^`\n]+?`)', input_str)
         for j in range(len(parts)):
-            if not parts[j].startswith('`'):
+            if j % 2 == 0:
                 parts[j] = RE_MARKDOWN_LINK_MD.sub(RE_MARKDOWN_LINK_SUB, parts[j])
                 # We don't strictly need RE_BARE_URL here for these tests but it matches the prebuild logic
                 parts[j] = RE_BARE_URL.sub(RE_BARE_URL_SUB, parts[j])

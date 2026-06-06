@@ -120,11 +120,21 @@ self.addEventListener('fetch', event => {
           }
           return networkResponse;
         } catch (err) {
-          // Suppress network errors inside background update promise
+          if (!cachedResponse) {
+            return new Response('You are offline and this recipe is not cached.', {
+              status: 503,
+              headers: { 'Content-Type': 'text/plain' }
+            });
+          }
         }
       })();
 
-      return cachedResponse || fetchPromise;
+      if (cachedResponse) {
+        event.waitUntil(fetchPromise);
+        return cachedResponse;
+      }
+
+      return fetchPromise;
     })()
   );
 });
