@@ -14,7 +14,7 @@ const PRECACHE_ASSETS = [
 
   // 2. Precache index pages of nested directories
   {% for p in site.pages -%}
-    {%- if p.url contains "index.html" or p.url == "/" -%}
+    {%- if p.name == "index.md" or p.name == "index.html" or p.url == "/" -%}
       {{ p.url | relative_url | jsonify }},
     {%- endif -%}
   {% endfor -%}
@@ -105,11 +105,22 @@ self.addEventListener('fetch', event => {
         cachedResponse = await cache.match(event.request, { ignoreSearch: true });
       }
 
-      // Fallback: Resolve extension-less requests to compiled .html pages in cache
+      // Fallback: Resolve extension-less requests to compiled .html pages or directory indices in cache
       if (!cachedResponse && !url.pathname.endsWith('.html') && !url.pathname.endsWith('/')) {
-        const fallbackUrl = new URL(url.href);
-        fallbackUrl.pathname += '.html';
-        cachedResponse = await cache.match(fallbackUrl.href, { ignoreSearch: true });
+        const fallbackHtml = new URL(url.href);
+        fallbackHtml.pathname += '.html';
+        cachedResponse = await cache.match(fallbackHtml.href, { ignoreSearch: true });
+
+        if (!cachedResponse) {
+          const fallbackDir = new URL(url.href);
+          fallbackDir.pathname += '/';
+          cachedResponse = await cache.match(fallbackDir.href, { ignoreSearch: true });
+          if (cachedResponse) {
+            requestToMatch = fallbackDir.href;
+          }
+        } else {
+          requestToMatch = fallbackHtml.href;
+        }
       }
 
       // Stale-While-Revalidate: fetch in background, store in cache, return cached response if available

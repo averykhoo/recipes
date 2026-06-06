@@ -205,8 +205,18 @@ if __name__ == '__main__':
         try:
             content = md_file.read_text(encoding='utf-8')
 
-            # Protect inline code and code block segments from regex substitution
-            parts = re.split(r'(```+[\s\S]*?```+|``[^`\n]*?``|`[^`\n]+?`)', content)
+            # Split front matter to protect it from regex substitution
+            fm_match = re.match(r'^---[\s\S]*?^---\s*', content, re.MULTILINE)
+            if fm_match:
+                fm_length = fm_match.end()
+                fm_part = content[:fm_length]
+                body_part = content[fm_length:]
+            else:
+                fm_part = ""
+                body_part = content
+
+            # Protect inline code and code block segments in the body
+            parts = re.split(r'(```+[\s\S]*?```+|``[^`\n]*?``|`[^`\n]+?`)', body_part)
 
             num_md_links = 0
             num_bare_urls = 0
@@ -223,7 +233,7 @@ if __name__ == '__main__':
 
             # Only write to the file if modifications were applied
             if total_replacements > 0:
-                md_file.write_text(''.join(parts), encoding='utf-8')
+                md_file.write_text(fm_part + ''.join(parts), encoding='utf-8')
                 print(f"Fixed {num_md_links} internal link(s) and {num_bare_urls} bare URL(s) in: {md_file}")
 
         except Exception as e:
