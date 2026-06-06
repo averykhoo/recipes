@@ -73,6 +73,17 @@ self.addEventListener('install', event => {
               const isNullBody = [204, 205].includes(response.status);
               const responseBlob = isNullBody ? null : await response.blob();
 
+              // Prevent caching truncated or corrupted files
+              if (responseBlob) {
+                const expectedLength = response.headers.get('content-length');
+                if (expectedLength !== null) {
+                  const expectedSize = parseInt(expectedLength, 10);
+                  if (!isNaN(expectedSize) && responseBlob.size !== expectedSize) {
+                    throw new Error(`Truncated response: expected ${expectedSize} bytes, got ${responseBlob.size} bytes`);
+                  }
+                }
+              }
+
               const completeResponse = new Response(responseBlob, {
                 status: response.status,
                 statusText: response.statusText,
@@ -240,6 +251,17 @@ self.addEventListener('fetch', event => {
             const responseToCache = networkResponse.clone();
             const isNullBody = [204, 205].includes(networkResponse.status);
             const responseBlob = isNullBody ? null : await responseToCache.blob();
+
+            // Prevent caching truncated or corrupted files
+            if (responseBlob) {
+              const expectedLength = networkResponse.headers.get('content-length');
+              if (expectedLength !== null) {
+                const expectedSize = parseInt(expectedLength, 10);
+                if (!isNaN(expectedSize) && responseBlob.size !== expectedSize) {
+                  throw new Error(`Truncated response: expected ${expectedSize} bytes, got ${responseBlob.size} bytes`);
+                }
+              }
+            }
 
             const completeResponse = new Response(responseBlob, {
               status: networkResponse.status,
