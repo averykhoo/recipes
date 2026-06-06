@@ -3,6 +3,7 @@ layout: null
 ---
 // Version cache using Unix timestamp for cleanliness
 const CACHE_NAME = 'recipes-{{ site.time | date: "%s" }}';
+const STATUS_PATH = '/--cache-status.json';
 
 const PRECACHE_ASSETS = [
   {{ "/" | relative_url | jsonify }},
@@ -31,16 +32,35 @@ const PRECACHE_ASSETS = [
 // Clean out empty lines and duplicates
 const UNIQUE_ASSETS = [...new Set(PRECACHE_ASSETS)].filter(url => url && url.trim() !== '');
 
+let isPrecaching = false;
+let precacheProgress = 0;
+let precacheFails = 0;
+
+async function broadcast(message) {
+  const clients = await self.clients.matchAll({ includeUncontrolled: true });
+  clients.forEach(client => client.postMessage(message));
+}
+
 self.addEventListener('install', event => {
   self.skipWaiting();
 
   event.waitUntil(
     caches.open(CACHE_NAME).then(async cache => {
       console.log(`Precaching shell assets: ${UNIQUE_ASSETS.length}`);
+      isPrecaching = true;
+      precacheProgress = 0;
+      precacheFails = 0;
+
+      broadcast({
+        type: 'CACHE_STATUS',
+        status: 'loading',
+        progress: 0,
+        total: UNIQUE_ASSETS.length
+      });
 
       const CONCURRENCY_LIMIT = 5;
       const assets = [...UNIQUE_ASSETS];
-      const results = [];
+      const total = assets.length;
 
       async function worker() {
         while (assets.length > 0) {
@@ -50,18 +70,48 @@ self.addEventListener('install', event => {
             const response = await fetch(request);
             if (response.ok) {
               await cache.put(request, response);
-              results.push({ url, status: 'ok' });
             } else {
-              results.push({ url, status: 'fail', code: response.status });
+              precacheFails++;
             }
           } catch (error) {
-            results.push({ url, status: 'error', error: error.message });
+            precacheFails++;
+          } finally {
+            precacheProgress++;
+            broadcast({
+              type: 'CACHE_STATUS',
+              status: 'loading',
+              progress: precacheProgress,
+              total: total
+            });
           }
         }
       }
 
       const workers = Array(Math.min(CONCURRENCY_LIMIT, assets.length)).fill(null).map(worker);
       await Promise.all(workers);
+
+      isPrecaching = false;
+      const statusData = {
+        status: 'ready',
+        fails: precacheFails,
+        total: total
+      };
+
+      try {
+        await cache.put(
+          new Request(STATUS_PATH),
+          new Response(JSON.stringify(statusData), {
+            headers: { 'Content-Type': 'application/json' }
+          })
+        );
+      } catch (e) {
+        console.error('Failed to save cache status:', e);
+      }
+
+      await broadcast({
+        type: 'CACHE_STATUS',
+        ...statusData
+      });
     })
   );
 });
@@ -76,6 +126,43 @@ self.addEventListener('activate', event => {
       );
     }).then(() => self.clients.claim())
   );
+});
+
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'GET_STATUS' && event.source) {
+    if (isPrecaching) {
+      event.source.postMessage({
+        type: 'CACHE_STATUS',
+        status: 'loading',
+        progress: precacheProgress,
+        total: UNIQUE_ASSETS.length
+      });
+    } else {
+      event.waitUntil(
+        caches.open(CACHE_NAME)
+          .then(cache => cache.match(STATUS_PATH))
+          .then(response => response ? response.json() : { status: 'ready', fails: 0, total: UNIQUE_ASSETS.length })
+          .then(statusData => {
+            if (event.source) {
+              event.source.postMessage({
+                type: 'CACHE_STATUS',
+                ...statusData
+              });
+            }
+          })
+          .catch(() => {
+            if (event.source) {
+              event.source.postMessage({
+                type: 'CACHE_STATUS',
+                status: 'ready',
+                fails: 0,
+                total: UNIQUE_ASSETS.length
+              });
+            }
+          })
+      );
+    }
+  }
 });
 
 self.addEventListener('fetch', event => {
