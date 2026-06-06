@@ -3,6 +3,7 @@ layout: null
 ---
 // Version cache using Unix timestamp for cleanliness
 const CACHE_NAME = 'recipes-{{ site.time | date: "%s" }}';
+const STATUS_PATH = '/--cache-status.json';
 
 const PRECACHE_ASSETS = [
   {{ "/" | relative_url | jsonify }},
@@ -90,11 +91,21 @@ self.addEventListener('install', event => {
       await Promise.all(workers);
 
       isPrecaching = false;
-      broadcast({
-        type: 'CACHE_STATUS',
+      const statusData = {
         status: 'ready',
         fails: precacheFails,
         total: total
+      };
+
+      try {
+        await cache.put(new Request(STATUS_PATH), new Response(JSON.stringify(statusData)));
+      } catch (e) {
+        console.error('Failed to save cache status:', e);
+      }
+
+      await broadcast({
+        type: 'CACHE_STATUS',
+        ...statusData
       });
     })
   );
@@ -113,7 +124,7 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('message', event => {
-  if (event.data && event.data.type === 'GET_STATUS') {
+  if (event.data && event.data.type === 'GET_STATUS' && event.source) {
     if (isPrecaching) {
       event.source.postMessage({
         type: 'CACHE_STATUS',
@@ -122,11 +133,29 @@ self.addEventListener('message', event => {
         total: UNIQUE_ASSETS.length
       });
     } else {
-      event.source.postMessage({
-        type: 'CACHE_STATUS',
-        status: 'ready',
-        fails: precacheFails,
-        total: UNIQUE_ASSETS.length
+      caches.open(CACHE_NAME).then(cache => {
+        return cache.match(STATUS_PATH);
+      }).then(response => {
+        if (response) {
+          return response.json();
+        }
+        return { status: 'ready', fails: 0, total: UNIQUE_ASSETS.length };
+      }).then(statusData => {
+        if (event.source) {
+          event.source.postMessage({
+            type: 'CACHE_STATUS',
+            ...statusData
+          });
+        }
+      }).catch(() => {
+        if (event.source) {
+          event.source.postMessage({
+            type: 'CACHE_STATUS',
+            status: 'ready',
+            fails: 0,
+            total: UNIQUE_ASSETS.length
+          });
+        }
       });
     }
   }

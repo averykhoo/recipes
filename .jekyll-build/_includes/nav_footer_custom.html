@@ -16,10 +16,19 @@
     const progressBar = document.getElementById('cache-progress-bar');
 
     let isOffline = !navigator.onLine;
+    let lastStatus = 'checking';
+    let lastProgress = 0;
+    let lastTotal = 0;
+    let lastFails = 0;
 
     function updateUI(status, progress, total, fails) {
+      if (status !== undefined) lastStatus = status;
+      if (progress !== undefined) lastProgress = progress;
+      if (total !== undefined) lastTotal = total;
+      if (fails !== undefined) lastFails = fails;
+
       if (isOffline) {
-        if (status === 'ready' && fails > 0) {
+        if (lastStatus === 'ready' && lastFails > 0) {
           statusText.innerText = 'Offline (Partial Cache)';
           statusIcon.innerText = '⚠️';
         } else {
@@ -30,18 +39,18 @@
         return;
       }
 
-      switch (status) {
+      switch (lastStatus) {
         case 'loading':
           statusText.innerText = 'Loading cache...';
           statusIcon.innerText = '⏳';
           progressContainer.style.display = 'block';
-          if (total > 0) {
-            const percent = Math.round((progress / total) * 100);
+          if (lastTotal > 0) {
+            const percent = Math.round((lastProgress / lastTotal) * 100);
             progressBar.style.width = percent + '%';
           }
           break;
         case 'ready':
-          if (fails > 0) {
+          if (lastFails > 0) {
             statusText.innerText = 'Cache ready (with warnings)';
             statusIcon.innerText = '⚠️';
           } else {
@@ -58,6 +67,16 @@
       }
     }
 
+    function requestStatus() {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.ready.then(registration => {
+          if (registration.active) {
+            registration.active.postMessage({ type: 'GET_STATUS' });
+          }
+        });
+      }
+    }
+
     // Listen for messages from Service Worker
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.addEventListener('message', event => {
@@ -67,19 +86,13 @@
       });
 
       // Request initial status when SW is ready
-      navigator.serviceWorker.ready.then(registration => {
-        if (registration.active) {
-          registration.active.postMessage({ type: 'GET_STATUS' });
-        }
-      });
+      requestStatus();
     }
 
     // Listen for online/offline events
     window.addEventListener('online', () => {
       isOffline = false;
-      if (navigator.serviceWorker.controller) {
-        navigator.serviceWorker.controller.postMessage({ type: 'GET_STATUS' });
-      }
+      requestStatus();
     });
 
     window.addEventListener('offline', () => {
