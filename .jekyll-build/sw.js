@@ -69,8 +69,8 @@ self.addEventListener('install', event => {
             const request = new Request(url, { cache: 'no-cache' });
             const response = await fetch(request);
             if (response.ok) {
-              // Consume stream to ensure the download is complete before caching
-              const responseBlob = await response.clone().blob();
+              // Directly consume stream to avoid cloning overhead
+              const responseBlob = await response.blob();
               const completeResponse = new Response(responseBlob, {
                 status: response.status,
                 statusText: response.statusText,
@@ -217,25 +217,6 @@ self.addEventListener('fetch', event => {
         }
       }
 
-      // --- LAYER 1: SELF-HEALING CORRUPTED CACHE VALIDATION ---
-      if (cachedResponse) {
-        const contentLength = cachedResponse.headers.get('content-length');
-        if (contentLength) {
-          try {
-            const blob = await cachedResponse.clone().blob();
-            if (blob.size !== parseInt(contentLength, 10)) {
-              console.warn(`Truncated cache detected for ${url.pathname}. Expected ${contentLength} bytes, got ${blob.size}. Evicting.`);
-              await cache.delete(requestToMatch);
-              cachedResponse = null; // Force network bypass
-            }
-          } catch (e) {
-            await cache.delete(requestToMatch);
-            cachedResponse = null;
-          }
-        }
-      }
-      // --------------------------------------------------------
-
       // Stale-While-Revalidate: fetch in background, store in cache, return cached response if available
       const fetchPromise = (async () => {
         let networkResponse;
@@ -253,16 +234,15 @@ self.addEventListener('fetch', event => {
 
         if (networkResponse.ok) {
           try {
-            // --- LAYER 2: STREAM PREVENTION ---
-            // Consume the network response stream fully before writing to the cache
-            const responseBlob = await networkResponse.clone().blob();
+            // Directly consume the original network stream to avoid cloning overhead
+            const responseBlob = await networkResponse.blob();
             const completeResponse = new Response(responseBlob, {
               status: networkResponse.status,
               statusText: networkResponse.statusText,
               headers: networkResponse.headers
             });
-            await cache.put(requestToMatch, completeResponse);
-            // ----------------------------------
+            await cache.put(requestToMatch, completeResponse.clone());
+            networkResponse = completeResponse;
           } catch (cacheError) {
             console.error('Failed to update cache:', cacheError);
           }
