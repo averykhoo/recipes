@@ -3,7 +3,7 @@
     <span id="cache-status-text">Checking for updates...</span>
     <span id="cache-status-icon">🔄</span>
   </div>
-  <div id="cache-progress-bar-container" style="width: 100%; height: 4px; background-color: #eee; border-radius: 2px; overflow: hidden; display: none;">
+  <div id="cache-progress-bar-container" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 100%; height: 4px; background-color: #eee; border-radius: 2px; overflow: hidden; display: none;">
     <div id="cache-progress-bar" style="width: 0%; height: 100%; background-color: #2c84fa; transition: width 0.3s ease;"></div>
   </div>
 </div>
@@ -23,7 +23,11 @@
 
     function updateUI(status, progress, total, fails) {
       if (status !== undefined) lastStatus = status;
-      if (progress !== undefined) lastProgress = progress;
+      if (progress !== undefined) {
+        if (progress > lastProgress || progress === 0) {
+          lastProgress = progress;
+        }
+      }
       if (total !== undefined) lastTotal = total;
       if (fails !== undefined) lastFails = fails;
 
@@ -47,6 +51,7 @@
           if (lastTotal > 0) {
             const percent = Math.round((lastProgress / lastTotal) * 100);
             progressBar.style.width = percent + '%';
+            progressContainer.setAttribute('aria-valuenow', percent);
           }
           break;
         case 'ready':
@@ -70,8 +75,9 @@
     function requestStatus() {
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.ready.then(registration => {
-          if (registration.active) {
-            registration.active.postMessage({ type: 'GET_STATUS' });
+          const worker = registration.installing || registration.waiting || registration.active;
+          if (worker) {
+            worker.postMessage({ type: 'GET_STATUS' });
           }
         });
       }

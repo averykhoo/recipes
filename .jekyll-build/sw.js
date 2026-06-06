@@ -98,7 +98,12 @@ self.addEventListener('install', event => {
       };
 
       try {
-        await cache.put(new Request(STATUS_PATH), new Response(JSON.stringify(statusData)));
+        await cache.put(
+          new Request(STATUS_PATH),
+          new Response(JSON.stringify(statusData), {
+            headers: { 'Content-Type': 'application/json' }
+          })
+        );
       } catch (e) {
         console.error('Failed to save cache status:', e);
       }
@@ -133,30 +138,29 @@ self.addEventListener('message', event => {
         total: UNIQUE_ASSETS.length
       });
     } else {
-      caches.open(CACHE_NAME).then(cache => {
-        return cache.match(STATUS_PATH);
-      }).then(response => {
-        if (response) {
-          return response.json();
-        }
-        return { status: 'ready', fails: 0, total: UNIQUE_ASSETS.length };
-      }).then(statusData => {
-        if (event.source) {
-          event.source.postMessage({
-            type: 'CACHE_STATUS',
-            ...statusData
-          });
-        }
-      }).catch(() => {
-        if (event.source) {
-          event.source.postMessage({
-            type: 'CACHE_STATUS',
-            status: 'ready',
-            fails: 0,
-            total: UNIQUE_ASSETS.length
-          });
-        }
-      });
+      event.waitUntil(
+        caches.open(CACHE_NAME)
+          .then(cache => cache.match(STATUS_PATH))
+          .then(response => response ? response.json() : { status: 'ready', fails: 0, total: UNIQUE_ASSETS.length })
+          .then(statusData => {
+            if (event.source) {
+              event.source.postMessage({
+                type: 'CACHE_STATUS',
+                ...statusData
+              });
+            }
+          })
+          .catch(() => {
+            if (event.source) {
+              event.source.postMessage({
+                type: 'CACHE_STATUS',
+                status: 'ready',
+                fails: 0,
+                total: UNIQUE_ASSETS.length
+              });
+            }
+          })
+      );
     }
   }
 });
