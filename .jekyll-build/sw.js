@@ -69,8 +69,10 @@ self.addEventListener('install', event => {
             const request = new Request(url, { cache: 'no-cache' });
             const response = await fetch(request);
             if (response.ok) {
-              // Directly consume stream to avoid cloning overhead
-              const responseBlob = await response.blob();
+              // Handle null-body status codes (204, 205) to avoid TypeError
+              const isNullBody = [204, 205].includes(response.status);
+              const responseBlob = isNullBody ? null : await response.blob();
+
               const completeResponse = new Response(responseBlob, {
                 status: response.status,
                 statusText: response.statusText,
@@ -234,15 +236,18 @@ self.addEventListener('fetch', event => {
 
         if (networkResponse.ok) {
           try {
-            // Directly consume the original network stream to avoid cloning overhead
-            const responseBlob = await networkResponse.blob();
+            // Clone the response first to leave the original stream undisturbed
+            const responseToCache = networkResponse.clone();
+            const isNullBody = [204, 205].includes(networkResponse.status);
+            const responseBlob = isNullBody ? null : await responseToCache.blob();
+
             const completeResponse = new Response(responseBlob, {
               status: networkResponse.status,
               statusText: networkResponse.statusText,
               headers: networkResponse.headers
             });
-            await cache.put(requestToMatch, completeResponse.clone());
-            networkResponse = completeResponse;
+
+            await cache.put(requestToMatch, completeResponse);
           } catch (cacheError) {
             console.error('Failed to update cache:', cacheError);
           }
