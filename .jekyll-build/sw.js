@@ -69,7 +69,27 @@ self.addEventListener('install', event => {
             const request = new Request(url, { cache: 'no-cache' });
             const response = await fetch(request);
             if (response.ok) {
-              await cache.put(request, response);
+              // Handle null-body status codes (204, 205) to avoid TypeError
+              const isNullBody = [204, 205].includes(response.status);
+              const responseBlob = isNullBody ? null : await response.blob();
+
+              // Prevent caching truncated or corrupted files
+              if (responseBlob) {
+                const expectedLength = response.headers.get('content-length');
+                if (expectedLength !== null) {
+                  const expectedSize = parseInt(expectedLength, 10);
+                  if (!isNaN(expectedSize) && responseBlob.size !== expectedSize) {
+                    throw new Error(`Truncated response: expected ${expectedSize} bytes, got ${responseBlob.size} bytes`);
+                  }
+                }
+              }
+
+              const completeResponse = new Response(responseBlob, {
+                status: response.status,
+                statusText: response.statusText,
+                headers: response.headers
+              });
+              await cache.put(request, completeResponse);
             } else {
               precacheFails++;
             }
@@ -227,7 +247,29 @@ self.addEventListener('fetch', event => {
 
         if (networkResponse.ok) {
           try {
-            await cache.put(requestToMatch, networkResponse.clone());
+            // Clone the response first to leave the original stream undisturbed
+            const responseToCache = networkResponse.clone();
+            const isNullBody = [204, 205].includes(networkResponse.status);
+            const responseBlob = isNullBody ? null : await responseToCache.blob();
+
+            // Prevent caching truncated or corrupted files
+            if (responseBlob) {
+              const expectedLength = networkResponse.headers.get('content-length');
+              if (expectedLength !== null) {
+                const expectedSize = parseInt(expectedLength, 10);
+                if (!isNaN(expectedSize) && responseBlob.size !== expectedSize) {
+                  throw new Error(`Truncated response: expected ${expectedSize} bytes, got ${responseBlob.size} bytes`);
+                }
+              }
+            }
+
+            const completeResponse = new Response(responseBlob, {
+              status: networkResponse.status,
+              statusText: networkResponse.statusText,
+              headers: networkResponse.headers
+            });
+
+            await cache.put(requestToMatch, completeResponse);
           } catch (cacheError) {
             console.error('Failed to update cache:', cacheError);
           }
