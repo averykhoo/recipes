@@ -33,7 +33,7 @@ test_cases = [
     ("Link where .md is in the title", "[link](file.html 'title.md')", "[link](file.html 'title.md')"),
     ("Link where .md is not at the end", "[link](file.mdf)", "[link](file.mdf)"),
     ("Reference-style link definition", "[reflink]: my-file.md", "[reflink]: my-file.md"),
-    ("URL with .md in it", "Go to https://example.com/file.md/page", "Go to https://example.com/file.md/page"),
+    ("URL with .md in it", "Go to https://example.com/file.md/page", "Go to <https://example.com/file.md/page>"),
     ("Link with no path, just anchor", "[link](#anchor)", "[link](#anchor)"),
 
     # --- NEW & WEIRD STRESS TESTS ---
@@ -65,7 +65,7 @@ test_cases = [
     ("Path with dots", "[link](version.1.2.md)", "[link](version.1.2.html)"),
 
     # Very tricky negatives (Should NOT change)
-    ("URL in plain text", "http://example.com/page.md", "http://example.com/page.md"),
+    ("URL in plain text", "http://example.com/page.md", "<http://example.com/page.md>"),
     ("Email context", "<info@example.md>", "<info@example.md>"),  # This is not a markdown link
     ("HTML link", '<a href="file.md">link</a>', '<a href="file.md">link</a>'),
     ("Image link immediately after text", "text![img](image.md)", "text![img](image.md)"),
@@ -85,12 +85,29 @@ if __name__ == '__main__':
 
     failed = []
 
+    import re
+    from jekyll_prebuild import RE_BARE_URL, RE_BARE_URL_SUB
+
     for i, (desc, input_str, expected) in enumerate(test_cases):
         print(f"Test {i + 1}: {desc}")
         print(f"  Input:    '{input_str}'")
 
-        # --- Test Your Regex ---
-        your_result = RE_MARKDOWN_LINK_MD.sub(RE_MARKDOWN_LINK_SUB, input_str)
+        # --- Test Your Logic (with code protection) ---
+        parts = re.split(r'(```+[\s\S]*?```+|`[^`\n]+?`)', input_str)
+        for j in range(len(parts)):
+            if not parts[j].startswith('`'):
+                parts[j] = RE_MARKDOWN_LINK_MD.sub(RE_MARKDOWN_LINK_SUB, parts[j])
+                # We don't strictly need RE_BARE_URL here for these tests but it matches the prebuild logic
+                parts[j] = RE_BARE_URL.sub(RE_BARE_URL_SUB, parts[j])
+
+        your_result = ''.join(parts)
+
+        # NOTE: Since the new logic also applies RE_BARE_URL, we might need to adjust expected values if any tests contain bare URLs.
+        # Checking test_cases... none of them seem to have bare URLs that would be affected, except maybe Test 27.
+        # Test 27: Go to https://example.com/file.md/page
+        # Original Expected: Go to https://example.com/file.md/page
+        # With RE_BARE_URL: Go to <https://example.com/file.md/page>
+
         your_pass = your_result == expected
         your_status = f"PASS" if your_pass else f"FAIL"
         print(f"  Your Regex Result: '{your_result}' [{your_status}]")

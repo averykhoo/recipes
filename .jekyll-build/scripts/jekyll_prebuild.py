@@ -118,7 +118,6 @@ def update_front_matter(file_path: Path,
         post = frontmatter.Post(content='')  # If file doesn't exist, start fresh
 
     # 3. Update the front matter with new or corrected info
-    post.metadata.setdefault('layout', setdefault_layout)
     post.metadata['title'] = title
     if parent:
         post.metadata['parent'] = parent
@@ -206,17 +205,25 @@ if __name__ == '__main__':
         try:
             content = md_file.read_text(encoding='utf-8')
 
-            # Replace the matched .md extension with .html
-            new_content, num_md_links = RE_MARKDOWN_LINK_MD.subn(RE_MARKDOWN_LINK_SUB, content)
+            # Protect inline code and code block segments from regex substitution
+            parts = re.split(r'(```+[\s\S]*?```+|`[^`\n]+?`)', content)
 
-            # Wrap bare HTTP/HTTPS URLs in angle brackets
-            new_content, num_bare_urls = RE_BARE_URL.subn(RE_BARE_URL_SUB, new_content)
+            num_md_links = 0
+            num_bare_urls = 0
+
+            for i in range(len(parts)):
+                # Apply replacements only on non-code segments
+                if not parts[i].startswith('`'):
+                    parts[i], links_replaced = RE_MARKDOWN_LINK_MD.subn(RE_MARKDOWN_LINK_SUB, parts[i])
+                    parts[i], urls_replaced = RE_BARE_URL.subn(RE_BARE_URL_SUB, parts[i])
+                    num_md_links += links_replaced
+                    num_bare_urls += urls_replaced
 
             total_replacements = num_md_links + num_bare_urls
 
-            # Only write to the file if a change was actually made.
+            # Only write to the file if modifications were applied
             if total_replacements > 0:
-                md_file.write_text(new_content, encoding='utf-8')
+                md_file.write_text(''.join(parts), encoding='utf-8')
                 print(f"Fixed {num_md_links} internal link(s) and {num_bare_urls} bare URL(s) in: {md_file}")
 
         except Exception as e:

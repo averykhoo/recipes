@@ -2,7 +2,13 @@
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register("{{ '/sw.js' | relative_url }}");
+      navigator.serviceWorker.register("{{ '/sw.js' | relative_url }}", { updateViaCache: 'none' })
+        .then(registration => {
+          registration.update();
+        })
+        .catch(error => {
+          console.error('Service Worker registration failed:', error);
+        });
     });
   }
 </script>
