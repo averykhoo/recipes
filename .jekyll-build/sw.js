@@ -39,22 +39,41 @@ self.addEventListener('install', event => {
 
   event.waitUntil(
     caches.open(CACHE_NAME).then(async cache => {
-      // Process files sequentially so 404s don't kill the whole offline experience
-      // and to avoid overwhelming the network stack
-      for (const url of UNIQUE_ASSETS) {
-        try {
-          // cache: 'no-cache' forces the browser to ask GitHub Pages: "Has this changed?"
-          // If no, GitHub sends 304 Not Modified (0 bytes). Browser gives SW the file from disk.
-          // If yes, GitHub sends 200 OK with new content. Delta update achieved natively.
-          const request = new Request(url, { cache: 'no-cache' });
-          const response = await fetch(request);
-          if (response.ok) {
-            await cache.put(request, response);
+      console.log(`Precaching ${UNIQUE_ASSETS.length} assets...`);
+
+      // Use a concurrency limit to avoid overwhelming the network stack while still being faster than sequential
+      const CONCURRENCY_LIMIT = 5;
+      const assets = [...UNIQUE_ASSETS];
+      const results = [];
+
+      async function worker() {
+        while (assets.length > 0) {
+          const url = assets.shift();
+          try {
+            // cache: 'no-cache' forces the browser to ask GitHub Pages: "Has this changed?"
+            // If no, GitHub sends 304 Not Modified (0 bytes). Browser gives SW the file from disk.
+            // If yes, GitHub sends 200 OK with new content. Delta update achieved natively.
+            const request = new Request(url, { cache: 'no-cache' });
+            const response = await fetch(request);
+            if (response.ok) {
+              await cache.put(request, response);
+              results.push({ url, status: 'ok' });
+            } else {
+              console.warn(`Failed to cache ${url}: ${response.status} ${response.statusText}`);
+              results.push({ url, status: 'fail', code: response.status });
+            }
+          } catch (error) {
+            console.warn(`Failed to cache ${url}:`, error);
+            results.push({ url, status: 'error', error: error.message });
           }
-        } catch (error) {
-          console.warn(`Failed to cache ${url}:`, error);
         }
       }
+
+      const workers = Array(Math.min(CONCURRENCY_LIMIT, assets.length)).fill(null).map(worker);
+      await Promise.all(workers);
+
+      const succeeded = results.filter(r => r.status === 'ok').length;
+      console.log(`Precaching complete. Succeeded: ${succeeded}/${UNIQUE_ASSETS.length}`);
     })
   );
 });
@@ -85,16 +104,19 @@ self.addEventListener('fetch', event => {
       const url = new URL(event.request.url);
       let requestToMatch = event.request;
 
-      // Fix Directory vs Index.html mismatch, handling query strings correctly
-      if (url.pathname.endsWith('/')) {
-        url.pathname += 'index.html';
-        requestToMatch = new Request(url.href, event.request);
+      // If the request is for index.html, try to match the directory path (with trailing slash) as well,
+      // since Jekyll canonical URLs typically use trailing slashes instead of index.html.
+      if (url.pathname.endsWith('/index.html')) {
+        const directoryPath = url.pathname.substring(0, url.pathname.length - 10);
+        const directoryUrl = new URL(url.href);
+        directoryUrl.pathname = directoryPath;
+        requestToMatch = directoryUrl.href;
       }
 
       // Ignore query strings (e.g., ?search=foo) to ensure cache matches
       let cachedResponse = await cache.match(requestToMatch, { ignoreSearch: true });
 
-      // If we miss the modified index, try the original request just in case
+      // If we modified the request and missed, try the original request just in case
       if (!cachedResponse && requestToMatch !== event.request) {
         cachedResponse = await cache.match(event.request, { ignoreSearch: true });
       }
