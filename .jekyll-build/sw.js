@@ -3,27 +3,28 @@ layout: null
 ---
 // Version cache using Unix timestamp for cleanliness
 const CACHE_NAME = 'recipes-{{ site.time | date: "%s" }}';
-const STATUS_PATH = '/--cache-status.json';
 
 const PRECACHE_ASSETS = [
   {{ "/" | relative_url | jsonify }},
 
-  // 1. Precache root indices of the collections
+  // 1. All Collection Docs (Recipes)
   {% for collection in site.collections -%}
-    {{ "/" | append: collection.label | append: "/" | relative_url | jsonify }},
+    {% for doc in collection.docs -%}
+      {{ doc.url | relative_url | jsonify }},
+    {% endfor -%}
   {% endfor -%}
 
-  // 2. Precache index pages of nested directories
+  // 2. Standalone Pages
   {% for p in site.pages -%}
-    {%- if p.name == "index.md" or p.name == "index.html" or p.url == "/" -%}
+    {%- if p.url != "/sw.js" and p.url != "/manifest.json" and p.url != "/robots.txt" and p.url != "/sitemap.xml" -%}
       {{ p.url | relative_url | jsonify }},
     {%- endif -%}
   {% endfor -%}
 
-  // 3. Precache critical static design assets only
+  // 3. Filtered Static Assets (Ignore Python scripts, txt files)
   {% for file in site.static_files -%}
     {% assign ext = file.extname | downcase %}
-    {% if ext == '.css' or ext == '.js' or ext == '.ico' or ext == '.png' %}
+    {% if ext == '.png' or ext == '.jpg' or ext == '.jpeg' or ext == '.ico' or ext == '.pdf' or ext == '.css' or ext == '.js' %}
       {{ file.url | relative_url | jsonify }},
     {% endif %}
   {% endfor -%}
@@ -32,77 +33,38 @@ const PRECACHE_ASSETS = [
 // Clean out empty lines and duplicates
 const UNIQUE_ASSETS = [...new Set(PRECACHE_ASSETS)].filter(url => url && url.trim() !== '');
 
-let isPrecaching = false;
-let precacheProgress = 0;
-let precacheFails = 0;
-
-async function broadcast(message) {
-  const clients = await self.clients.matchAll({ includeUncontrolled: true });
-  clients.forEach(client => client.postMessage(message));
-}
-
 self.addEventListener('install', event => {
+  // Activate immediately - enables silent updates
   self.skipWaiting();
 
   event.waitUntil(
     caches.open(CACHE_NAME).then(async cache => {
-      console.log(`Precaching shell assets: ${UNIQUE_ASSETS.length}`);
-      isPrecaching = true;
-      precacheProgress = 0;
-      precacheFails = 0;
+      console.log(`Precaching ${UNIQUE_ASSETS.length} assets...`);
 
-      broadcast({
-        type: 'CACHE_STATUS',
-        status: 'loading',
-        progress: 0,
-        total: UNIQUE_ASSETS.length
-      });
-
+      // Use a concurrency limit to avoid overwhelming the network stack while still being faster than sequential
       const CONCURRENCY_LIMIT = 5;
       const assets = [...UNIQUE_ASSETS];
-      const total = assets.length;
+      const results = [];
 
       async function worker() {
         while (assets.length > 0) {
           const url = assets.shift();
           try {
+            // cache: 'no-cache' forces the browser to ask GitHub Pages: "Has this changed?"
+            // If no, GitHub sends 304 Not Modified (0 bytes). Browser gives SW the file from disk.
+            // If yes, GitHub sends 200 OK with new content. Delta update achieved natively.
             const request = new Request(url, { cache: 'no-cache' });
             const response = await fetch(request);
             if (response.ok) {
-              // Handle null-body status codes (204, 205) to avoid TypeError
-              const isNullBody = [204, 205].includes(response.status);
-              const responseBlob = isNullBody ? null : await response.blob();
-
-              // Prevent caching truncated or corrupted files
-              if (responseBlob) {
-                const expectedLength = response.headers.get('content-length');
-                if (expectedLength !== null) {
-                  const expectedSize = parseInt(expectedLength, 10);
-                  if (!isNaN(expectedSize) && responseBlob.size !== expectedSize) {
-                    throw new Error(`Truncated response: expected ${expectedSize} bytes, got ${responseBlob.size} bytes`);
-                  }
-                }
-              }
-
-              const completeResponse = new Response(responseBlob, {
-                status: response.status,
-                statusText: response.statusText,
-                headers: response.headers
-              });
-              await cache.put(request, completeResponse);
+              await cache.put(request, response);
+              results.push({ url, status: 'ok' });
             } else {
-              precacheFails++;
+              console.warn(`Failed to cache ${url}: ${response.status} ${response.statusText}`);
+              results.push({ url, status: 'fail', code: response.status });
             }
           } catch (error) {
-            precacheFails++;
-          } finally {
-            precacheProgress++;
-            broadcast({
-              type: 'CACHE_STATUS',
-              status: 'loading',
-              progress: precacheProgress,
-              total: total
-            });
+            console.warn(`Failed to cache ${url}:`, error);
+            results.push({ url, status: 'error', error: error.message });
           }
         }
       }
@@ -110,28 +72,8 @@ self.addEventListener('install', event => {
       const workers = Array(Math.min(CONCURRENCY_LIMIT, assets.length)).fill(null).map(worker);
       await Promise.all(workers);
 
-      isPrecaching = false;
-      const statusData = {
-        status: 'ready',
-        fails: precacheFails,
-        total: total
-      };
-
-      try {
-        await cache.put(
-          new Request(STATUS_PATH),
-          new Response(JSON.stringify(statusData), {
-            headers: { 'Content-Type': 'application/json' }
-          })
-        );
-      } catch (e) {
-        console.error('Failed to save cache status:', e);
-      }
-
-      await broadcast({
-        type: 'CACHE_STATUS',
-        ...statusData
-      });
+      const succeeded = results.filter(r => r.status === 'ok').length;
+      console.log(`Precaching complete. Succeeded: ${succeeded}/${UNIQUE_ASSETS.length}`);
     })
   );
 });
@@ -139,50 +81,14 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys => {
+      // Delete old versions of the cache
       return Promise.all(
         keys
           .filter(key => key !== CACHE_NAME)
           .map(key => caches.delete(key))
       );
-    }).then(() => self.clients.claim())
+    }).then(() => self.clients.claim()) // Immediately take control of the page
   );
-});
-
-self.addEventListener('message', event => {
-  if (event.data && event.data.type === 'GET_STATUS' && event.source) {
-    if (isPrecaching) {
-      event.source.postMessage({
-        type: 'CACHE_STATUS',
-        status: 'loading',
-        progress: precacheProgress,
-        total: UNIQUE_ASSETS.length
-      });
-    } else {
-      event.waitUntil(
-        caches.open(CACHE_NAME)
-          .then(cache => cache.match(STATUS_PATH))
-          .then(response => response ? response.json() : { status: 'ready', fails: 0, total: UNIQUE_ASSETS.length })
-          .then(statusData => {
-            if (event.source) {
-              event.source.postMessage({
-                type: 'CACHE_STATUS',
-                ...statusData
-              });
-            }
-          })
-          .catch(() => {
-            if (event.source) {
-              event.source.postMessage({
-                type: 'CACHE_STATUS',
-                status: 'ready',
-                fails: 0,
-                total: UNIQUE_ASSETS.length
-              });
-            }
-          })
-      );
-    }
-  }
 });
 
 self.addEventListener('fetch', event => {
@@ -194,95 +100,43 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     (async () => {
       const cache = await caches.open(CACHE_NAME);
+
       const url = new URL(event.request.url);
       let requestToMatch = event.request;
 
-      // Robust index.html conversion to directory paths
+      // If the request is for index.html, try to match the directory path (with trailing slash) as well,
+      // since Jekyll canonical URLs typically use trailing slashes instead of index.html.
       if (url.pathname.endsWith('/index.html')) {
-        const normalizedPath = url.pathname.replace(/\/index\.html$/, '/');
-        const normalizedUrl = new URL(url.href);
-        normalizedUrl.pathname = normalizedPath;
-        requestToMatch = normalizedUrl.href;
+        const directoryPath = url.pathname.substring(0, url.pathname.length - 10);
+        const directoryUrl = new URL(url.href);
+        directoryUrl.pathname = directoryPath;
+        requestToMatch = directoryUrl.href;
       }
 
-      // Try to find a direct cached response
+      // Ignore query strings (e.g., ?search=foo) to ensure cache matches
       let cachedResponse = await cache.match(requestToMatch, { ignoreSearch: true });
 
+      // If we modified the request and missed, try the original request just in case
       if (!cachedResponse && requestToMatch !== event.request) {
         cachedResponse = await cache.match(event.request, { ignoreSearch: true });
       }
 
-      // Fallback: Resolve extension-less requests to compiled .html pages or directory indices in cache
-      if (!cachedResponse && !url.pathname.endsWith('.html') && !url.pathname.endsWith('/')) {
-        const fallbackHtml = new URL(url.href);
-        fallbackHtml.pathname += '.html';
-        cachedResponse = await cache.match(fallbackHtml.href, { ignoreSearch: true });
-
-        if (!cachedResponse) {
-          const fallbackDir = new URL(url.href);
-          fallbackDir.pathname += '/';
-          cachedResponse = await cache.match(fallbackDir.href, { ignoreSearch: true });
-          if (cachedResponse) {
-            requestToMatch = fallbackDir.href;
-          }
-        } else {
-          requestToMatch = fallbackHtml.href;
-        }
-      }
-
-      // Stale-While-Revalidate: fetch in background, store in cache, return cached response if available
-      const fetchPromise = (async () => {
-        let networkResponse;
-        try {
-          networkResponse = await fetch(event.request);
-        } catch (err) {
-          if (!cachedResponse) {
-            return new Response('You are offline and this recipe is not cached.', {
-              status: 503,
-              headers: { 'Content-Type': 'text/plain' }
-            });
-          }
-          return;
-        }
-
-        if (networkResponse.ok) {
-          try {
-            // Clone the response first to leave the original stream undisturbed
-            const responseToCache = networkResponse.clone();
-            const isNullBody = [204, 205].includes(networkResponse.status);
-            const responseBlob = isNullBody ? null : await responseToCache.blob();
-
-            // Prevent caching truncated or corrupted files
-            if (responseBlob) {
-              const expectedLength = networkResponse.headers.get('content-length');
-              if (expectedLength !== null) {
-                const expectedSize = parseInt(expectedLength, 10);
-                if (!isNaN(expectedSize) && responseBlob.size !== expectedSize) {
-                  throw new Error(`Truncated response: expected ${expectedSize} bytes, got ${responseBlob.size} bytes`);
-                }
-              }
-            }
-
-            const completeResponse = new Response(responseBlob, {
-              status: networkResponse.status,
-              statusText: networkResponse.statusText,
-              headers: networkResponse.headers
-            });
-
-            await cache.put(requestToMatch, completeResponse);
-          } catch (cacheError) {
-            console.error('Failed to update cache:', cacheError);
-          }
-        }
-        return networkResponse;
-      })();
-
+      // Cache-First: Return from cache immediately. Fallback to network only if missing.
       if (cachedResponse) {
-        event.waitUntil(fetchPromise);
         return cachedResponse;
       }
 
-      return fetchPromise;
+      // Fallback: If it wasn't precached, fetch it and cache it for next time
+      try {
+        const networkResponse = await fetch(event.request);
+        if (networkResponse.ok) {
+          cache.put(event.request, networkResponse.clone());
+        }
+        return networkResponse;
+      } catch (error) {
+        // Here you could return a generic offline.html page if implemented
+        return new Response('You are offline and this recipe is not cached.', { status: 503 });
+      }
     })()
   );
 });
