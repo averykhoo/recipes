@@ -2,12 +2,7 @@
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register("{{ '/sw.js' | relative_url }}")
-        .then(reg => {
-          // Tell the browser to check the server for a newer sw.js
-          // Catch prevents console errors if offline
-          reg.update().catch(() => {});
-        });
+      navigator.serviceWorker.register("{{ '/sw.js' | relative_url }}");
     });
   }
 </script>

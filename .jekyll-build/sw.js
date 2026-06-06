@@ -5,19 +5,19 @@ layout: null
 const CACHE_NAME = 'recipes-{{ site.time | date: "%s" }}';
 
 const PRECACHE_ASSETS = [
-  '{{ "/" | relative_url }}',
+  {{ "/" | relative_url | jsonify }},
 
   // 1. All Collection Docs (Recipes)
   {% for collection in site.collections -%}
     {% for doc in collection.docs -%}
-      '{{ doc.url | relative_url }}',
+      {{ doc.url | relative_url | jsonify }},
     {% endfor -%}
   {% endfor -%}
 
   // 2. Standalone Pages
   {% for p in site.pages -%}
     {%- if p.url != "/sw.js" and p.url != "/manifest.json" and p.url != "/robots.txt" and p.url != "/sitemap.xml" -%}
-      '{{ p.url | relative_url }}',
+      {{ p.url | relative_url | jsonify }},
     {%- endif -%}
   {% endfor -%}
 
@@ -25,7 +25,7 @@ const PRECACHE_ASSETS = [
   {% for file in site.static_files -%}
     {% assign ext = file.extname | downcase %}
     {% if ext == '.png' or ext == '.jpg' or ext == '.jpeg' or ext == '.ico' or ext == '.pdf' or ext == '.css' or ext == '.js' %}
-      '{{ file.path | relative_url }}',
+      {{ file.url | relative_url | jsonify }},
     {% endif %}
   {% endfor -%}
 ];
@@ -39,8 +39,9 @@ self.addEventListener('install', event => {
 
   event.waitUntil(
     caches.open(CACHE_NAME).then(async cache => {
-      // Process files individually so 404s don't kill the whole offline experience
-      await Promise.all(UNIQUE_ASSETS.map(async url => {
+      // Process files sequentially so 404s don't kill the whole offline experience
+      // and to avoid overwhelming the network stack
+      for (const url of UNIQUE_ASSETS) {
         try {
           // cache: 'no-cache' forces the browser to ask GitHub Pages: "Has this changed?"
           // If no, GitHub sends 304 Not Modified (0 bytes). Browser gives SW the file from disk.
@@ -53,7 +54,7 @@ self.addEventListener('install', event => {
         } catch (error) {
           console.warn(`Failed to cache ${url}:`, error);
         }
-      }));
+      }
     })
   );
 });
@@ -63,9 +64,9 @@ self.addEventListener('activate', event => {
     caches.keys().then(keys => {
       // Delete old versions of the cache
       return Promise.all(
-        keys.map(key => {
-          if (key !== CACHE_NAME) return caches.delete(key);
-        })
+        keys
+          .filter(key => key !== CACHE_NAME)
+          .map(key => caches.delete(key))
       );
     }).then(() => self.clients.claim()) // Immediately take control of the page
   );
@@ -81,10 +82,13 @@ self.addEventListener('fetch', event => {
     (async () => {
       const cache = await caches.open(CACHE_NAME);
 
-      // Fix Directory vs Index.html mismatch
+      const url = new URL(event.request.url);
       let requestToMatch = event.request;
-      if (requestToMatch.url.endsWith('/')) {
-        requestToMatch = new Request(requestToMatch.url + 'index.html');
+
+      // Fix Directory vs Index.html mismatch, handling query strings correctly
+      if (url.pathname.endsWith('/')) {
+        url.pathname += 'index.html';
+        requestToMatch = new Request(url.href, event.request);
       }
 
       // Ignore query strings (e.g., ?search=foo) to ensure cache matches
