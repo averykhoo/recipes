@@ -6,6 +6,7 @@ module.exports = {
   swDest: '.jekyll-build/_site/sw.js',
   skipWaiting: true,
   clientsClaim: true,
+  maximumFileSizeToCacheInBytes: 10485760, // 10MB limit per file
   runtimeCaching: [
     {
       urlPattern: /^https:\/\/cdn\.jsdelivr\.net\/.*/i,

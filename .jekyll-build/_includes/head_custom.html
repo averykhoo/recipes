@@ -1,9 +1,10 @@
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
+      // relative_url ensures it works properly with GitHub Pages subpaths
       navigator.serviceWorker.register('{{ "/sw.js" | relative_url }}')
         .then(registration => {
-          console.log('Workbox Service Worker registered with scope:', registration.scope);
+          console.log('Workbox Service Worker registered successfully with scope:', registration.scope);
         })
         .catch(error => {
           console.error('Service Worker registration failed:', error);
