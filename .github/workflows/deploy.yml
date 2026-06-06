@@ -58,7 +58,9 @@ jobs:
 
       # Auto-generate the Service Worker using Workbox
       - name: Generate Service Worker with Workbox
-        run: npx workbox-cli generateSW workbox-config.js
+        run: |
+          sudo chown -R $USER:$USER ./.jekyll-build/_site
+          npx workbox-cli generateSW workbox-config.js
 
       # STEP 3: Upload the final, built site from the correct location.
       - name: Upload artifact
