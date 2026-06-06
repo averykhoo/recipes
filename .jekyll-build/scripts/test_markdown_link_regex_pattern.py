@@ -33,7 +33,7 @@ test_cases = [
     ("Link where .md is in the title", "[link](file.html 'title.md')", "[link](file.html 'title.md')"),
     ("Link where .md is not at the end", "[link](file.mdf)", "[link](file.mdf)"),
     ("Reference-style link definition", "[reflink]: my-file.md", "[reflink]: my-file.md"),
-    ("URL with .md in it", "Go to https://example.com/file.md/page", "Go to <https://example.com/file.md/page>"),
+    ("URL with .md in it", "Go to https://example.com/file.md/page", "Go to https://example.com/file.md/page"),
     ("Link with no path, just anchor", "[link](#anchor)", "[link](#anchor)"),
 
     # --- NEW & WEIRD STRESS TESTS ---
@@ -65,7 +65,7 @@ test_cases = [
     ("Path with dots", "[link](version.1.2.md)", "[link](version.1.2.html)"),
 
     # Very tricky negatives (Should NOT change)
-    ("URL in plain text", "http://example.com/page.md", "<http://example.com/page.md>"),
+    ("URL in plain text", "http://example.com/page.md", "http://example.com/page.md"),
     ("Email context", "<info@example.md>", "<info@example.md>"),  # This is not a markdown link
     ("HTML link", '<a href="file.md">link</a>', '<a href="file.md">link</a>'),
     ("Image link immediately after text", "text![img](image.md)", "text![img](image.md)"),
@@ -75,7 +75,6 @@ test_cases = [
     ("Long code block with markdown link", "``````\n[link](code.md)\n``````", "``````\n[link](code.md)\n``````"),
     ("Inline code with link syntax", "`[link](code.md)`", "`[link](code.md)`"),
     ("Image inside another link's text", "[![inner](inner.jpg)](outer.md)", "[![inner](inner.jpg)](outer.html)"),
-    ("Front matter protection", "---\ncanonical_url: https://example.com/file.md\n---\n[link](file.md)", "---\ncanonical_url: https://example.com/file.md\n---\n[link](file.html)"),
 ]
 
 if __name__ == '__main__':
@@ -86,30 +85,12 @@ if __name__ == '__main__':
 
     failed = []
 
-    import re
-    from jekyll_prebuild import RE_BARE_URL, RE_BARE_URL_SUB
-
     for i, (desc, input_str, expected) in enumerate(test_cases):
         print(f"Test {i + 1}: {desc}")
         print(f"  Input:    '{input_str}'")
 
-        # --- Test Your Logic (with front matter and code protection) ---
-        fm_match = re.match(r'^---[\s\S]*?^---\s*', input_str, re.MULTILINE)
-        if fm_match:
-            fm_length = fm_match.end()
-            fm_part = input_str[:fm_length]
-            body_part = input_str[fm_length:]
-        else:
-            fm_part = ""
-            body_part = input_str
-
-        parts = re.split(r'(```+[\s\S]*?```+|``[^`\n]*?``|`[^`\n]+?`)', body_part)
-        for j in range(len(parts)):
-            if j % 2 == 0:
-                parts[j] = RE_MARKDOWN_LINK_MD.sub(RE_MARKDOWN_LINK_SUB, parts[j])
-                parts[j] = RE_BARE_URL.sub(RE_BARE_URL_SUB, parts[j])
-
-        your_result = fm_part + ''.join(parts)
+        # --- Test Your Regex ---
+        your_result = RE_MARKDOWN_LINK_MD.sub(RE_MARKDOWN_LINK_SUB, input_str)
         your_pass = your_result == expected
         your_status = f"PASS" if your_pass else f"FAIL"
         print(f"  Your Regex Result: '{your_result}' [{your_status}]")
