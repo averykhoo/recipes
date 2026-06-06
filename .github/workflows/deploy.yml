@@ -56,6 +56,10 @@ jobs:
           # `Warning: Unexpected input(s) 'use_gemfile', valid inputs are ['entryPoint', 'args', 'source', ...]`
           #use_gemfile: true
 
+      # Auto-generate the Service Worker using Workbox
+      - name: Generate Service Worker with Workbox
+        run: npx workbox-cli generateSW workbox-config.js
+
       # STEP 3: Upload the final, built site from the correct location.
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
