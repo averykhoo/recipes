@@ -79,7 +79,3 @@ mermaid:
 
 # none of the github link options work because we dynamically rename folders like `recipes` to `_recipes`
 #gh_edit_link: true # show or hide edit this page link
-
-# Disable HTML compression to preserve standard formatting, whitespace, and comments
-compress_html:
-  blanklines: true
