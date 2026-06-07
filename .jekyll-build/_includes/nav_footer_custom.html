@@ -240,9 +240,19 @@
           /* Sync other visual toggles */
           syncAllToggles(targetState);
 
-          /* Apply theme using Just the Docs core switcher helper */
+          /* Apply theme using Just the Docs core switcher helper, or fallback if undefined */
           if (typeof jtd !== 'undefined') {
             jtd.setTheme(nextTheme);
+          } else {
+            document.documentElement.setAttribute('data-theme', nextTheme);
+            const oppositeTheme = nextTheme === 'dark' ? 'light' : 'dark';
+            const links = document.querySelectorAll('link[rel="stylesheet"]');
+            for (let link of links) {
+              if (link.href && link.href.includes('just-the-docs-' + oppositeTheme + '.css')) {
+                link.href = link.href.replace('just-the-docs-' + oppositeTheme + '.css', 'just-the-docs-' + nextTheme + '.css');
+                break;
+              }
+            }
           }
 
           try {
