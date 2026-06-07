@@ -1,41 +1,65 @@
 <div class="pwa-status-container">
   <label class="theme-toggle-label">
     <input type="checkbox" class="theme-checkbox" aria-label="Toggle theme">
-    <div class="theme-slider">
+    <!-- hold-transition blocks transitions/animations on initial render -->
+    <div class="slider-b hold-transition">
 
-      <!-- Stars (Dark Mode) -->
-      <div class="stars">
-        <div class="star star-1"></div>
-        <div class="star star-2"></div>
-        <div class="star star-3"></div>
-        <div class="star star-4"></div>
+      <!-- Rotating Dial Disk -->
+      <div class="disk-b">
+        <!-- Sun, Cloud & Flying Bird (Visible in Light Mode) -->
+        <div class="celestial-body sun sun-b"></div>
+        <div class="cloud cloud-b1"></div>
+        <div class="bird-b">🕊️</div>
+
+        <!-- Staggered Twinkling Stars (Before and After Moon) -->
+        <div class="star star-b01"></div><div class="star star-b02"></div><div class="star star-b03"></div>
+        <div class="star star-b04"></div><div class="star star-b05"></div><div class="star star-b06"></div>
+        <div class="star star-b07"></div><div class="star star-b08"></div><div class="star star-b12"></div>
+        <div class="star star-b13"></div><div class="star star-b14"></div><div class="star star-b15"></div>
+
+        <!-- Moon (Visible in Dark Mode) -->
+        <div class="celestial-body moon moon-b">
+          <div class="mare oceanus procellarum"></div>
+          <div class="mare imbrium"></div>
+          <div class="mare serenitatis"></div>
+          <div class="mare tranquillitatis"></div>
+          <div class="mare crisium"></div>
+          <div class="mare fecunditatis"></div>
+          <div class="mare nubium"></div>
+        </div>
       </div>
 
-      <!-- Clouds (Light Mode) -->
-      <div class="clouds"></div>
-
-      <!-- The Sun/Moon Button -->
-      <div class="toggle-button">
-        <div class="crater crater-1"></div>
-        <div class="crater crater-2"></div>
-        <div class="crater crater-3"></div>
-      </div>
-
+      <!-- Bezel Glare Overlay -->
+      <div class="glass-glare"></div>
     </div>
   </label>
 </div>
 
 <style>
-  /* --- Transition body background only when actively toggling theme --- */
-  body.theme-transition {
-    transition: background-color 0.6s ease;
+  /* --- Transition body and page layout elements only when actively toggling theme --- */
+  body.theme-transition,
+  body.theme-transition .site-header,
+  body.theme-transition .site-nav,
+  body.theme-transition .main-content,
+  body.theme-transition .side-bar,
+  body.theme-transition .pwa-status-container {
+    transition: background-color 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
+                color 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
+                border-color 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+
+  /* --- Disable transitions/animations on initial load --- */
+  .hold-transition,
+  .hold-transition * {
+    transition: none !important;
+    animation: none !important;
   }
 
   /* --- Disable native touch feedback blue overlay on tap --- */
   .pwa-status-container,
   .theme-toggle-label,
-  .theme-slider,
-  .toggle-button {
+  .slider-b,
+  .disk-b {
     -webkit-tap-highlight-color: transparent;
   }
 
@@ -65,139 +89,224 @@
   }
 
   /* --- Show focus outline when navigating via keyboard --- */
-  .theme-checkbox:focus-visible + .theme-slider {
+  .theme-checkbox:focus-visible + .slider-b {
     outline: 2px solid var(--link-color, #0056b3);
     outline-offset: 2px;
   }
 
-  /* --- The Main Container (The Pill, scaled to 0.7) --- */
-  .theme-slider {
+  /* --- The Main Container (The Celestial Dome Pill, scaled to fit sidebar) --- */
+  .slider-b {
     width: 160px;
-    height: 70px;
-    background-color: #56c8ff; /* Sky Blue */
-    border-radius: 35px;
+    height: 75px;
     position: relative;
     cursor: pointer;
     overflow: hidden;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.1);
-    transition: background-color 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
-    transform: scale(0.5); /* Scale component down to fit sidebar */
+    box-sizing: border-box;
+    border-radius: 100px;
+    transform: scale(0.5); /* Scale to fit sidebar properly */
+    transform-origin: center;
+
+    /* Bezel Default Light State */
+    border: 4px solid #cbd5e1;
+    background-color: #110e0d;
+    box-shadow:
+        inset 0 4px 10px rgba(0,0,0,0.8),
+        0 10px 20px rgba(0,0,0,0.4),
+        0 0 10px rgba(203, 213, 225, 0.2);
   }
 
-  /* When Checked: Change container to Night Space color */
-  .theme-checkbox:checked + .theme-slider {
-    background-color: #1f2235;
+  /* --- Bezel Keyframe Animations (Transitioning over 1.2s) --- */
+  .slider-b.animate-to-dark {
+    animation: border-to-dark 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
   }
 
-  /* --- The Sun/Moon Button --- */
-  .toggle-button {
-    width: 56px;
-    height: 56px;
-    background-color: #ffcc33; /* Sun Yellow */
-    border-radius: 50%;
+  .slider-b.animate-to-light {
+    animation: border-to-light 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+  }
+
+  @keyframes border-to-dark {
+    0% {
+      border-color: #cbd5e1;
+      box-shadow: inset 0 4px 10px rgba(0,0,0,0.8), 0 10px 20px rgba(0,0,0,0.4), 0 0 10px rgba(203, 213, 225, 0.2);
+    }
+    20% {
+      border-color: #e2e8f0;
+      box-shadow: inset 0 4px 10px rgba(0,0,0,0.7), 0 10px 20px rgba(0,0,0,0.4), 0 0 12px rgba(226, 232, 240, 0.35);
+    }
+    50% {
+      border-color: #334155;
+      box-shadow: inset 0 4px 12px rgba(0,0,0,0.9), 0 8px 18px rgba(0,0,0,0.5);
+    }
+    100% {
+      border-color: #475569;
+      box-shadow: inset 0 4px 10px rgba(0,0,0,0.8), 0 10px 20px rgba(0,0,0,0.5), 0 0 10px rgba(71, 85, 105, 0.3);
+    }
+  }
+
+  @keyframes border-to-light {
+    0% {
+      border-color: #475569;
+      box-shadow: inset 0 4px 10px rgba(0,0,0,0.8), 0 10px 20px rgba(0,0,0,0.5), 0 0 10px rgba(71, 85, 105, 0.3);
+    }
+    35% {
+      border-color: #334155;
+      box-shadow: inset 0 4px 12px rgba(0,0,0,0.9), 0 8px 18px rgba(0,0,0,0.5);
+    }
+    50% {
+      border-color: #e2e8f0;
+      box-shadow: inset 0 4px 10px rgba(0,0,0,0.7), 0 10px 20px rgba(0,0,0,0.4), 0 0 12px rgba(226, 232, 240, 0.35);
+    }
+    100% {
+      border-color: #cbd5e1;
+      box-shadow: inset 0 4px 10px rgba(0,0,0,0.8), 0 10px 20px rgba(0,0,0,0.4), 0 0 10px rgba(203, 213, 225, 0.2);
+    }
+  }
+
+  /* --- Rotating Dial Disk --- */
+  .disk-b {
     position: absolute;
-    top: 7px;
-    left: 7px;
-    box-shadow: 0 0 15px rgba(255, 204, 51, 0.6);
-    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
-                background-color 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
-                box-shadow 0.6s ease;
+    width: 720px;
+    height: 720px;
+    left: 50%;
+    top: 337.5px; /* Center of rotation */
+    transform: translate(-50%, -50%) rotate(0deg);
+    border-radius: 50%;
+    transition: transform 1.2s cubic-bezier(0.4, 0.0, 0.2, 1); /* Faster, responsive 1.2s transition */
+
+    /* Sky Gradient */
+    background: linear-gradient(to bottom, #56c8ff 0%, #4ca3dd 42%, #2f3e65 50%, #1a1e30 58%, #111422 100%);
+  }
+
+  .theme-checkbox:checked + .slider-b .disk-b {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  /* --- Celestial Bodies --- */
+  .celestial-body {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+  }
+
+  /* --- The Sun --- */
+  .sun {
+    background-color: #ffcc33;
+    box-shadow:
+        inset -3px -3px 8px rgba(0,0,0,0.15),
+        0 0 16px rgba(255, 204, 51, 0.7);
+  }
+
+  /* --- Moon --- */
+  .moon {
+    background: radial-gradient(circle at 30% 30%, #f1f5f9 0%, #cbd5e1 45%, #94a3b8 100%);
+    box-shadow:
+        inset -3px -3px 8px rgba(0,0,0,0.35),
+        0 0 10px rgba(255,255,255,0.15);
     overflow: hidden;
-    z-index: 10;
   }
 
-  /* When Checked: Slide right, change to Moon Grey */
-  .theme-checkbox:checked + .theme-slider .toggle-button {
-    transform: translateX(90px); /* 160(width) - 56(btn) - 14(margins) = 90 */
-    background-color: #c6cbd1;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-  }
-
-  /* --- Moon Craters (Hidden in Light Mode) --- */
-  .crater {
+  /* --- Lunar Maria (Dark Plains) --- */
+  .mare {
     position: absolute;
-    background-color: #a4adb6;
+    background-color: rgba(71, 85, 105, 0.28);
     border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.4s ease, transform 0.6s ease;
-    transform: scale(0);
+    filter: blur(1.5px);
   }
+  .imbrium { width: 22%; height: 22%; top: 16%; left: 18%; border-radius: 40% 50% 45% 50%; }
+  .serenitatis { width: 20%; height: 20%; top: 20%; left: 45%; }
+  .tranquillitatis { width: 24%; height: 22%; top: 32%; left: 52%; border-radius: 50% 40% 50% 40%; }
+  .crisium { width: 12%; height: 10%; top: 30%; left: 76%; }
+  .fecunditatis { width: 16%; height: 16%; top: 52%; left: 70%; }
+  .procellarum { width: 30%; height: 32%; top: 26%; left: 10%; border-radius: 45% 35% 40% 50%; }
+  .nubium { width: 20%; height: 18%; top: 58%; left: 25%; }
 
-  .crater-1 { width: 16px; height: 16px; top: 12px; left: 10px; }
-  .crater-2 { width: 12px; height: 12px; top: 30px; left: 28px; }
-  .crater-3 { width: 8px; height: 8px; top: 14px; left: 36px; }
-
-  /* When Checked: Show Craters */
-  .theme-checkbox:checked + .theme-slider .toggle-button .crater {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  /* --- Background Elements: Clouds --- */
-  .clouds {
+  /* --- Cloud --- */
+  .cloud {
     position: absolute;
-    width: 70px;
-    height: 24px;
-    background: white;
-    border-radius: 24px;
-    bottom: 12px;
-    right: 15px;
-    transition: transform 0.6s ease, opacity 0.4s ease;
+    background-color: rgba(255,255,255,0.85);
+    border-radius: 10px;
+    left: 50%;
+    top: 50%;
+    width: 44px; height: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   }
+  .cloud::before, .cloud::after {
+    content: ""; position: absolute; background-color: rgba(255,255,255,0.85); border-radius: 50%;
+  }
+  .cloud::before { width: 22px; height: 22px; bottom: 3px; left: 5px; }
+  .cloud-b1::after { width: 28px; height: 28px; bottom: 2px; right: 5px; }
 
-  /* Using pseudo-elements to create the fluffy bumps of the cloud */
-  .clouds::before, .clouds::after {
-    content: "";
+  /* --- Flying Dove (Flipped horizontally to fly forward) --- */
+  .bird-b {
     position: absolute;
-    background: white;
-    border-radius: 50%;
+    font-size: 18px;
+    left: 50%;
+    top: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%) rotate(-25deg) translateY(-307px) rotate(25deg) scaleX(-1);
   }
 
-  .clouds::before {
-    width: 30px; height: 30px;
-    bottom: 10px; left: 10px;
-  }
-
-  .clouds::after {
-    width: 40px; height: 40px;
-    bottom: 6px; right: 8px;
-  }
-
-  /* When Checked: Slide clouds down and fade out */
-  .theme-checkbox:checked + .theme-slider .clouds {
-    transform: translateY(40px);
-    opacity: 0;
-  }
-
-  /* --- Background Elements: Stars --- */
-  .stars {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transform: translateY(-40px);
-    transition: transform 0.6s ease, opacity 0.6s ease;
-  }
-
+  /* --- Twinkling Stars --- */
   .star {
     position: absolute;
     background-color: white;
     border-radius: 50%;
-    box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+    left: 50%;
+    top: 50%;
+    animation: twinkle 3s infinite ease-in-out;
+    box-shadow: 0 0 3px #fff;
   }
 
-  .star-1 { width: 4px; height: 4px; top: 20px; left: 20px; }
-  .star-2 { width: 6px; height: 6px; top: 45px; left: 35px; }
-  .star-3 { width: 3px; height: 3px; top: 15px; left: 55px; }
-  .star-4 { width: 4px; height: 4px; top: 35px; left: 70px; }
-
-  /* When Checked: Slide stars into place and fade in */
-  .theme-checkbox:checked + .theme-slider .stars {
-    transform: translateY(0);
-    opacity: 1;
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 1; }
   }
+
+  .star:nth-child(2n) { animation-delay: 0.7s; }
+  .star:nth-child(3n) { animation-delay: 1.4s; }
+  .star:nth-child(4n) { animation-delay: 2.1s; }
+
+  /* --- Glass Face Bezel Glare --- */
+  .glass-glare {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    border-radius: 38px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 50%);
+    z-index: 15;
+  }
+
+  /* =========================================================================
+     POLAR PLACEMENTS (Flat Arc Orbit: translateY(-307px) for exact centering)
+     ========================================================================= */
+  .sun-b {
+    transform: translate(-50%, -50%) rotate(-8.2deg) translateY(-307px) rotate(8.2deg);
+  }
+  .moon-b {
+    transform: translate(-50%, -50%) rotate(-171.8deg) translateY(-307px) rotate(171.8deg);
+  }
+  .cloud-b1 {
+    transform: translate(-50%, -50%) rotate(7deg) translateY(-292px) rotate(-7deg);
+  }
+
+  /* =========================================================================
+     STARS PLACEMENTS (Zone-based layout around Moon)
+     ========================================================================= */
+  .star-b01 { width: 2.5px; height: 2.5px; transform: translate(-50%, -50%) rotate(-195deg) translateY(-322px); }
+  .star-b02 { width: 1.5px; height: 1.5px; transform: translate(-50%, -50%) rotate(-192deg) translateY(-290px); }
+  .star-b03 { width: 3.0px; height: 3.0px; transform: translate(-50%, -50%) rotate(-189deg) translateY(-315px); }
+  .star-b04 { width: 2.0px; height: 2.0px; transform: translate(-50%, -50%) rotate(-186deg) translateY(-298px); }
+  .star-b05 { width: 1.5px; height: 1.5px; transform: translate(-50%, -50%) rotate(-183deg) translateY(-325px); }
+  .star-b06 { width: 2.5px; height: 2.5px; transform: translate(-50%, -50%) rotate(-180deg) translateY(-305px); }
+  .star-b07 { width: 2.0px; height: 2.0px; transform: translate(-50%, -50%) rotate(-191deg) translateY(-310px); }
+  .star-b08 { width: 1.5px; height: 1.5px; transform: translate(-50%, -50%) rotate(-184deg) translateY(-292px); }
+  .star-b12 { width: 2.0px; height: 2.0px; transform: translate(-50%, -50%) rotate(-165deg) translateY(-294px); }
+  .star-b13 { width: 3.0px; height: 3.0px; transform: translate(-50%, -50%) rotate(-162deg) translateY(-318px); }
+  .star-b14 { width: 2.0px; height: 2.0px; transform: translate(-50%, -50%) rotate(-159deg) translateY(-290px); }
+  .star-b15 { width: 2.5px; height: 2.5px; transform: translate(-50%, -50%) rotate(-156deg) translateY(-312px); }
 </style>
 
 <script>
@@ -206,11 +315,25 @@
     if (window.themeToggleInitialized) return;
     window.themeToggleInitialized = true;
 
-    /* Helper to keep both desktop and mobile checkboxes synced */
+    /* Scoped timeouts to prevent overlapping events from rapid clicking */
+    let themeTimeout;
+    let transitionTimeout;
+
+    /* Sync checkbox inputs and dial bezel animation classes */
     const syncAllToggles = (isDark) => {
       const checkboxes = document.querySelectorAll('.theme-checkbox');
       checkboxes.forEach(cb => {
         cb.checked = isDark;
+        const slider = cb.nextElementSibling;
+        if (slider && slider.classList.contains('slider-b')) {
+          if (isDark) {
+            slider.classList.remove('animate-to-light');
+            slider.classList.add('animate-to-dark');
+          } else {
+            slider.classList.remove('animate-to-dark');
+            slider.classList.add('animate-to-light');
+          }
+        }
       });
     };
 
@@ -225,10 +348,18 @@
         activeTheme = 'light';
       }
 
-      /* Sync checkboxes on load */
-      syncAllToggles(activeTheme === 'dark');
+      /* Sync checkbox status on load without animations */
+      const isDark = activeTheme === 'dark';
+      syncAllToggles(isDark);
 
-      /* Apply the active theme on page load */
+      /* Remove the transition hold block after initial paint settles to allow future animations */
+      setTimeout(() => {
+        document.querySelectorAll('.slider-b').forEach(slider => {
+          slider.classList.remove('hold-transition');
+        });
+      }, 50);
+
+      /* Apply initial theme values */
       if (typeof jtd !== 'undefined') {
         jtd.setTheme(activeTheme);
       } else {
@@ -242,37 +373,49 @@
         }
       }
 
-      /* Bind transition and change logic to all checkbox instances */
+      /* Bind change event handlers */
       const checkboxes = document.querySelectorAll('.theme-checkbox');
       checkboxes.forEach(cb => {
         cb.addEventListener('change', (e) => {
+          // Clear any pending timeouts from rapid clicking to prevent race conditions
+          clearTimeout(themeTimeout);
+          clearTimeout(transitionTimeout);
+
+          // 1. Activate transitional smoothing on layout elements
           document.body.classList.add('theme-transition');
 
           const targetState = e.target.checked;
           const nextTheme = targetState ? 'dark' : 'light';
 
-          /* Sync other visual toggles */
+          // 2. Instantly animate the physical rotation of the toggles
           syncAllToggles(targetState);
 
-          /* Apply theme using Just the Docs core switcher helper, or fallback if undefined */
-          if (typeof jtd !== 'undefined') {
-            jtd.setTheme(nextTheme);
-          } else {
-            document.documentElement.setAttribute('data-theme', nextTheme);
-            const links = document.querySelectorAll('link[rel="stylesheet"]');
-            for (let link of links) {
-              if (link.href && link.href.includes('just-the-docs-') && !link.href.includes('head-nav')) {
-                link.href = link.href.replace(/just-the-docs-(default|light|dark)\.css/, `just-the-docs-${nextTheme}.css`);
-                break;
+          // 3. Defer the actual DOM theme variable change until the rotation midpoint (600ms)
+          themeTimeout = setTimeout(() => {
+            if (typeof jtd !== 'undefined') {
+              jtd.setTheme(nextTheme);
+            } else {
+              document.documentElement.setAttribute('data-theme', nextTheme);
+              const links = document.querySelectorAll('link[rel="stylesheet"]');
+              for (let link of links) {
+                if (link.href && link.href.includes('just-the-docs-') && !link.href.includes('head-nav')) {
+                  link.href = link.href.replace(/just-the-docs-(default|light|dark)\.css/, `just-the-docs-${nextTheme}.css`);
+                  break;
+                }
               }
             }
-          }
 
-          try {
-            localStorage.setItem('theme', nextTheme);
-          } catch (err) {
-            console.warn('Could not save theme selection:', err);
-          }
+            try {
+              localStorage.setItem('theme', nextTheme);
+            } catch (err) {
+              console.warn('Could not save theme selection:', err);
+            }
+          }, 600);
+
+          // 4. Safely clean up transitional styling class after entire rotation finishes (1200ms)
+          transitionTimeout = setTimeout(() => {
+            document.body.classList.remove('theme-transition');
+          }, 1200);
         });
       });
     };
