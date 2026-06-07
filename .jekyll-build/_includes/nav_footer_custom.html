@@ -1,3 +1,4 @@
+/* ONLY USE INLINE COMMENTS IN THIS REPO, because the Jekyll parser inlines the entire file in one line, and double-slash style comments break the single-line html */
 <div class="pwa-status-container">
     <label class="theme-toggle-label">
         <input type="checkbox" class="theme-checkbox" aria-label="Toggle theme">
@@ -540,20 +541,20 @@
             const checkboxes = document.querySelectorAll('.theme-checkbox');
             checkboxes.forEach(cb => {
                 cb.addEventListener('change', (e) => {
-                    // Clear any pending timeouts from rapid clicking to prevent race conditions
+                    /* Clear any pending timeouts from rapid clicking to prevent race conditions */
                     clearTimeout(themeTimeout);
                     clearTimeout(transitionTimeout);
 
-                    // 1. Immediately activate transitional smoothing class on html
+                    /* 1. Immediately activate transitional smoothing class on html */
                     document.documentElement.classList.add('theme-transition');
 
                     const targetState = e.target.checked;
                     const nextTheme = targetState ? 'dark' : 'light';
 
-                    // 2. Instantly animate the physical rotation of the toggles
+                    /* 2. Instantly animate the physical rotation of the toggles */
                     syncAllToggles(targetState, true);
 
-                    // 3. Swap theme variables immediately (at 0s) to start the fade simultaneously
+                    /* 3. Swap theme variables immediately (at 0s) to start the fade simultaneously */
                     if (typeof jtd !== 'undefined') {
                         jtd.setTheme(nextTheme);
                     } else {
@@ -573,7 +574,7 @@
                         console.warn('Could not save theme selection:', err);
                     }
 
-                    // 4. Clean up transitional class after entire visual rotation completes (1200ms)
+                    /* 4. Clean up transitional class after entire visual rotation completes (1200ms) */
                     transitionTimeout = setTimeout(() => {
                         document.documentElement.classList.remove('theme-transition');
                     }, 1200);
