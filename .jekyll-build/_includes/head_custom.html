@@ -17,11 +17,11 @@
 
     /* Swap stylesheet link href synchronously before rendering begins */
     if (savedTheme) {
-      const oppositeTheme = savedTheme === 'dark' ? 'light' : 'dark';
       const links = document.querySelectorAll('link[rel="stylesheet"]');
       for (let link of links) {
-        if (link.href.includes(`just-the-docs-${oppositeTheme}.css`)) {
-          link.href = link.href.replace(`just-the-docs-${oppositeTheme}.css`, `just-the-docs-${savedTheme}.css`);
+        // Target only the main theme stylesheet (default, light, or dark) and skip the head-nav stylesheet
+        if (link.href && link.href.includes('just-the-docs-') && !link.href.includes('head-nav')) {
+          link.href = link.href.replace(/just-the-docs-(default|light|dark)\.css/, `just-the-docs-${savedTheme}.css`);
           break;
         }
       }

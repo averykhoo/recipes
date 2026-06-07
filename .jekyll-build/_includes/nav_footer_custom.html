@@ -228,6 +228,20 @@
       /* Sync checkboxes on load */
       syncAllToggles(activeTheme === 'dark');
 
+      /* Apply the active theme on page load */
+      if (typeof jtd !== 'undefined') {
+        jtd.setTheme(activeTheme);
+      } else {
+        document.documentElement.setAttribute('data-theme', activeTheme);
+        const links = document.querySelectorAll('link[rel="stylesheet"]');
+        for (let link of links) {
+          if (link.href && link.href.includes('just-the-docs-') && !link.href.includes('head-nav')) {
+            link.href = link.href.replace(/just-the-docs-(default|light|dark)\.css/, `just-the-docs-${activeTheme}.css`);
+            break;
+          }
+        }
+      }
+
       /* Bind transition and change logic to all checkbox instances */
       const checkboxes = document.querySelectorAll('.theme-checkbox');
       checkboxes.forEach(cb => {
@@ -245,11 +259,10 @@
             jtd.setTheme(nextTheme);
           } else {
             document.documentElement.setAttribute('data-theme', nextTheme);
-            const oppositeTheme = nextTheme === 'dark' ? 'light' : 'dark';
             const links = document.querySelectorAll('link[rel="stylesheet"]');
             for (let link of links) {
-              if (link.href && link.href.includes('just-the-docs-' + oppositeTheme + '.css')) {
-                link.href = link.href.replace('just-the-docs-' + oppositeTheme + '.css', 'just-the-docs-' + nextTheme + '.css');
+              if (link.href && link.href.includes('just-the-docs-') && !link.href.includes('head-nav')) {
+                link.href = link.href.replace(/just-the-docs-(default|light|dark)\.css/, `just-the-docs-${nextTheme}.css`);
                 break;
               }
             }
