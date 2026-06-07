@@ -1,4 +1,4 @@
-<div class="pwa-status-container">
+<div class="header-theme-toggle-container">
   <label class="theme-toggle-label">
     <input type="checkbox" class="theme-checkbox" aria-label="Toggle theme">
     <div class="theme-slider">
@@ -31,24 +31,22 @@
     transition: background-color 0.6s ease;
   }
 
-  /* --- Disable native touch feedback blue overlay on tap --- */
-  .pwa-status-container,
+  /* --- Disable native touch feedback blue highlight overlay on mobile tap --- */
+  .header-theme-toggle-container,
   .theme-toggle-label,
   .theme-slider,
   .toggle-button {
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* --- Center and Scale the custom toggle to fit the sidebar naturally --- */
-  .pwa-status-container {
-    margin-top: 15px;
-    padding-top: 10px;
-    border-top: 1px solid var(--border-color);
-    display: flex;
+  /* --- Alignment and Sizing inside the JtD Top Header bar --- */
+  .header-theme-toggle-container {
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 50px;
+    height: 40px;
+    margin-right: 15px; /* Add margin to separate it from the "View on GitHub" text */
+    vertical-align: middle;
   }
 
   /* --- Visually hide the checkbox while keeping it keyboard-accessible --- */
@@ -70,7 +68,7 @@
     outline-offset: 2px;
   }
 
-  /* --- The Main Container (The Pill, scaled to 0.7) --- */
+  /* --- The Main Container (The Pill, scaled to fit the top bar naturally) --- */
   .theme-slider {
     width: 160px;
     height: 70px;
@@ -81,7 +79,8 @@
     overflow: hidden;
     box-shadow: inset 0 0 10px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.1);
     transition: background-color 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
-    transform: scale(0.5); /* Scale component down to fit sidebar */
+    transform: scale(0.48); /* Scale component down to sit nicely next to text links */
+    transform-origin: center;
   }
 
   /* When Checked: Change container to Night Space color */
@@ -198,23 +197,26 @@
     transform: translateY(0);
     opacity: 1;
   }
+
+  /* --- Mobile Responsive Rules --- */
+  @media (max-width: 50rem) {
+    .header-theme-toggle-container {
+      position: absolute;
+      right: 3.5rem; /* Sit nicely inside the mobile top bar to the left of the hamburger button */
+      top: 0.5rem;
+      height: auto;
+      margin-right: 0;
+      z-index: 100;
+    }
+  }
 </style>
 
 <script>
   (function() {
-    /* Guard against multiple executions when include is rendered twice */
-    if (window.themeToggleInitialized) return;
-    window.themeToggleInitialized = true;
+    if (window.headerThemeToggleInitialized) return;
+    window.headerThemeToggleInitialized = true;
 
-    /* Helper to keep both desktop and mobile checkboxes synced */
-    const syncAllToggles = (isDark) => {
-      const checkboxes = document.querySelectorAll('.theme-checkbox');
-      checkboxes.forEach(cb => {
-        cb.checked = isDark;
-      });
-    };
-
-    const initializeToggleLogic = () => {
+    const initializeHeaderToggleLogic = () => {
       let activeTheme;
       try {
         activeTheme = localStorage.getItem('theme');
@@ -225,36 +227,33 @@
         activeTheme = 'light';
       }
 
-      /* Sync checkboxes on load */
-      syncAllToggles(activeTheme === 'dark');
+      // Query the unique checkbox inside the header
+      const checkbox = document.querySelector('.header-theme-toggle-container .theme-checkbox');
+      if (checkbox) {
+        // Match visual state with saved preference
+        checkbox.checked = (activeTheme === 'dark');
 
-      /* Apply the active theme on page load */
-      if (typeof jtd !== 'undefined') {
-        jtd.setTheme(activeTheme);
-      } else {
-        document.documentElement.setAttribute('data-theme', activeTheme);
-        const links = document.querySelectorAll('link[rel="stylesheet"]');
-        for (let link of links) {
-          if (link.href && link.href.includes('just-the-docs-') && !link.href.includes('head-nav')) {
-            link.href = link.href.replace(/just-the-docs-(default|light|dark)\.css/, `just-the-docs-${activeTheme}.css`);
-            break;
+        // Apply theme programmatically on load as a fail-safe
+        if (typeof jtd !== 'undefined') {
+          jtd.setTheme(activeTheme);
+        } else {
+          document.documentElement.setAttribute('data-theme', activeTheme);
+          const links = document.querySelectorAll('link[rel="stylesheet"]');
+          for (let link of links) {
+            if (link.href && link.href.includes('just-the-docs-') && !link.href.includes('head-nav')) {
+              link.href = link.href.replace(/just-the-docs-(default|light|dark)\.css/, `just-the-docs-${activeTheme}.css`);
+              break;
+            }
           }
         }
-      }
 
-      /* Bind transition and change logic to all checkbox instances */
-      const checkboxes = document.querySelectorAll('.theme-checkbox');
-      checkboxes.forEach(cb => {
-        cb.addEventListener('change', (e) => {
+        // Bind event change listener
+        checkbox.addEventListener('change', (e) => {
           document.body.classList.add('theme-transition');
 
           const targetState = e.target.checked;
           const nextTheme = targetState ? 'dark' : 'light';
 
-          /* Sync other visual toggles */
-          syncAllToggles(targetState);
-
-          /* Apply theme using Just the Docs core switcher helper, or fallback if undefined */
           if (typeof jtd !== 'undefined') {
             jtd.setTheme(nextTheme);
           } else {
@@ -274,14 +273,13 @@
             console.warn('Could not save theme selection:', err);
           }
         });
-      });
+      }
     };
 
-    /* Run initialization once DOM elements are ready */
     if (document.readyState === 'loading') {
-      window.addEventListener('DOMContentLoaded', initializeToggleLogic);
+      window.addEventListener('DOMContentLoaded', initializeHeaderToggleLogic);
     } else {
-      initializeToggleLogic();
+      initializeHeaderToggleLogic();
     }
   })();
 </script>
