@@ -1,39 +1,34 @@
 <script>
-  /* 1. Synchronously apply saved theme in the <head> using the theme's core stylesheet switcher */
-  let savedTheme;
-  try {
-    savedTheme = localStorage.getItem('theme');
-  } catch (err) {
-    console.warn('Could not access localStorage:', err);
-  }
-
-  if (savedTheme && typeof jtd !== 'undefined') {
-    jtd.setTheme(savedTheme);
-  }
-
-  /* 2. Bind theme switch checkbox event listener (Kept separate so it works when SWs are disabled) */
-  window.addEventListener('load', () => {
-    const checkbox = document.getElementById('theme-toggle');
-    if (checkbox) {
-      /* Set checkbox state based on saved theme preference */
-      checkbox.checked = (document.documentElement.getAttribute('data-theme') === 'dark');
-
-      checkbox.addEventListener('change', (e) => {
-        document.body.classList.add('theme-transition');
-        const theme = e.target.checked ? 'dark' : 'light';
-        if (typeof jtd !== 'undefined') {
-          jtd.setTheme(theme);
-        }
-        try {
-          localStorage.setItem('theme', theme);
-        } catch (err) {
-          console.warn('Could not save theme to localStorage:', err);
-        }
-      });
+  /* 1. Synchronously swap theme stylesheet in <head> to prevent flashing on load */
+  (function() {
+    let savedTheme;
+    try {
+      savedTheme = localStorage.getItem('theme');
+      if (!savedTheme) {
+        /* Fallback to device system setting if no selection has been saved */
+        savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+    } catch (err) {
+      savedTheme = 'light';
     }
-  });
 
-  /* 3. Handle PWA Connection state monitoring */
+    /* Set the attribute immediately on the html element */
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    /* Swap stylesheet link href synchronously before rendering begins */
+    if (savedTheme) {
+      const oppositeTheme = savedTheme === 'dark' ? 'light' : 'dark';
+      const links = document.querySelectorAll('link[rel="stylesheet"]');
+      for (let link of links) {
+        if (link.href.includes(`just-the-docs-${oppositeTheme}.css`)) {
+          link.href = link.href.replace(`just-the-docs-${oppositeTheme}.css`, `just-the-docs-${savedTheme}.css`);
+          break;
+        }
+      }
+    }
+  })();
+
+  /* 2. Handle PWA Connection state monitoring (Leave your existing SW code below this line) */
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       const handleConnectionChange = () => {
