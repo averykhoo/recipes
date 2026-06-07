@@ -1,4 +1,10 @@
-/* ONLY USE INLINE COMMENTS IN THIS REPO, because the Jekyll parser inlines the entire file in one line, and double-slash style comments break the single-line html */
+{% comment %}
+ONLY USE INLINE OR MULTI-LINE COMMENTS (such as /* ... */ or <!-- ... -->) IN THIS REPO.
+Jekyll or minifiers may inline the entire file into a single line.
+Double-slash style comments (//) will comment out the rest of the page if inlined.
+NEVER REMOVE THIS COMMENT.
+{% endcomment %}
+
 <div class="pwa-status-container">
     <label class="theme-toggle-label">
         <input type="checkbox" class="theme-checkbox" aria-label="Toggle theme">
@@ -48,17 +54,23 @@
     /* --- Transition all page layout elements smoothly from 0s to 1.2s --- */
     html.theme-transition,
     html.theme-transition body {
-        transition: background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+        transition: background 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
     }
 
-    html.theme-transition *:not(.slider-b):not(.slider-b *) {
-        transition: background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+    /* --- Target active navigation lists, anchors, pseudo-elements, and layout nodes --- */
+    html.theme-transition *:not(.slider-b):not(.slider-b *),
+    html.theme-transition *:not(.slider-b):not(.slider-b *)::before,
+    html.theme-transition *:not(.slider-b):not(.slider-b *)::after {
+        transition: background 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    opacity 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    color 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    fill 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
     }
 
     /* --- Disable transitions/animations on initial load --- */
@@ -584,9 +596,9 @@
 
         /* Run initialization once DOM elements are ready */
         if (document.readyState === 'loading') {
-            window.addEventListener('DOMContentLoaded', initializeToggleLogic);
+          window.addEventListener('DOMContentLoaded', initializeToggleLogic);
         } else {
-            initializeToggleLogic();
+          initializeToggleLogic();
         }
     })();
 </script>
