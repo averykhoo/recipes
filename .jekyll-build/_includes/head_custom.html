@@ -1,86 +1,86 @@
 <script>
-  /* 1. Synchronously swap theme stylesheet in <head> to prevent flashing on load */
-  (function() {
-    let savedTheme;
-    try {
-      savedTheme = localStorage.getItem('theme');
-      if (!savedTheme) {
-        /* Fallback to device system setting if no selection has been saved */
-        savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-    } catch (err) {
-      savedTheme = 'light';
-    }
-
-    /* Set the attribute immediately on the html element */
-    document.documentElement.setAttribute('data-theme', savedTheme);
-
-    /* Swap stylesheet link href synchronously before rendering begins */
-    if (savedTheme) {
-      const links = document.querySelectorAll('link[rel="stylesheet"]');
-      for (let link of links) {
-        // Target only the main theme stylesheet (default, light, or dark) and skip the head-nav stylesheet
-        if (link.href && link.href.includes('just-the-docs-') && !link.href.includes('head-nav')) {
-          link.href = link.href.replace(/just-the-docs-(default|light|dark)\.css/, `just-the-docs-${savedTheme}.css`);
-          break;
-        }
-      }
-    }
-  })();
-
-  /* 2. Handle PWA Connection state monitoring (Leave your existing SW code below this line) */
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      const handleConnectionChange = () => {
-        if (!navigator.onLine) {
-          console.log('[PWA] Connection lost. Switching to offline mode.');
-        } else if (navigator.serviceWorker.controller) {
-          console.log('[PWA] Online. Site is offline ready.');
-        } else {
-          console.log('[PWA] Online and connected.');
-        }
-      };
-
-      window.addEventListener('online', handleConnectionChange);
-      window.addEventListener('offline', handleConnectionChange);
-
-      /* Dynamically detect base path to support both custom domains and GitHub Pages subpaths */
-      let basePath = '/';
-      const pathParts = window.location.pathname.split('/');
-      if (pathParts.length > 1 && pathParts[1] === 'recipes') {
-        basePath = '/recipes/';
-      }
-
-      const swUrl = basePath + 'sw.js';
-      console.log('[PWA] Registering Service Worker at:', swUrl);
-
-      navigator.serviceWorker.register(swUrl)
-        .then(registration => {
-          console.log('[PWA] Service Worker registered successfully with scope:', registration.scope);
-
-          registration.addEventListener('updatefound', () => {
-            const installingWorker = registration.installing;
-            if (installingWorker) {
-              console.log('[PWA] New Service Worker installing and pre-caching entire site...');
-
-              installingWorker.addEventListener('statechange', () => {
-                console.log('[PWA] Service Worker state changed to:', installingWorker.state);
-                if (installingWorker.state === 'installed') {
-                  if (navigator.serviceWorker.controller) {
-                    console.log('[PWA] New background update is ready; please refresh.');
-                  } else {
-                    console.log('[PWA] SUCCESS: Entire website is now eagerly cached offline!');
-                  }
-                } else if (installingWorker.state === 'redundant') {
-                  console.error('[PWA] ERROR: Caching failed.');
-                }
-              });
+    /* 1. Synchronously swap theme stylesheet in <head> to prevent flashing on load */
+    (function () {
+        let savedTheme;
+        try {
+            savedTheme = localStorage.getItem('theme');
+            if (!savedTheme) {
+                /* Fallback to device system setting if no selection has been saved */
+                savedTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             }
-          });
-        })
-        .catch(error => {
-          console.error('[PWA] Service Worker registration failed:', error);
+        } catch (err) {
+            savedTheme = 'light';
+        }
+
+        /* Set the attribute immediately on the html element */
+        document.documentElement.setAttribute('data-theme', savedTheme);
+
+        /* Swap stylesheet link href synchronously before rendering begins */
+        if (savedTheme) {
+            const links = document.querySelectorAll('link[rel="stylesheet"]');
+            for (let link of links) {
+                /* Target only the main theme stylesheet (default, light, or dark) and skip the head-nav stylesheet */
+                if (link.href && link.href.includes('just-the-docs-') && !link.href.includes('head-nav')) {
+                    link.href = link.href.replace(/just-the-docs-(default|light|dark)\.css/, `just-the-docs-${savedTheme}.css`);
+                    break;
+                }
+            }
+        }
+    })();
+
+    /* 2. Handle PWA Connection state monitoring (Leave your existing SW code below this line) */
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            const handleConnectionChange = () => {
+                if (!navigator.onLine) {
+                    console.log('[PWA] Connection lost. Switching to offline mode.');
+                } else if (navigator.serviceWorker.controller) {
+                    console.log('[PWA] Online. Site is offline ready.');
+                } else {
+                    console.log('[PWA] Online and connected.');
+                }
+            };
+
+            window.addEventListener('online', handleConnectionChange);
+            window.addEventListener('offline', handleConnectionChange);
+
+            /* Dynamically detect base path to support both custom domains and GitHub Pages subpaths */
+            let basePath = '/';
+            const pathParts = window.location.pathname.split('/');
+            if (pathParts.length > 1 && pathParts[1] === 'recipes') {
+                basePath = '/recipes/';
+            }
+
+            const swUrl = basePath + 'sw.js';
+            console.log('[PWA] Registering Service Worker at:', swUrl);
+
+            navigator.serviceWorker.register(swUrl)
+                .then(registration => {
+                    console.log('[PWA] Service Worker registered successfully with scope:', registration.scope);
+
+                    registration.addEventListener('updatefound', () => {
+                        const installingWorker = registration.installing;
+                        if (installingWorker) {
+                            console.log('[PWA] New Service Worker installing and pre-caching entire site...');
+
+                            installingWorker.addEventListener('statechange', () => {
+                                console.log('[PWA] Service Worker state changed to:', installingWorker.state);
+                                if (installingWorker.state === 'installed') {
+                                    if (navigator.serviceWorker.controller) {
+                                        console.log('[PWA] New background update is ready; please refresh.');
+                                    } else {
+                                        console.log('[PWA] SUCCESS: Entire website is now eagerly cached offline!');
+                                    }
+                                } else if (installingWorker.state === 'redundant') {
+                                    console.error('[PWA] ERROR: Caching failed.');
+                                }
+                            });
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('[PWA] Service Worker registration failed:', error);
+                });
         });
-    });
-  }
+    }
 </script>

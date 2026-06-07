@@ -377,20 +377,20 @@
       const checkboxes = document.querySelectorAll('.theme-checkbox');
       checkboxes.forEach(cb => {
         cb.addEventListener('change', (e) => {
-          // Clear any pending timeouts from rapid clicking to prevent race conditions
+          /* Clear any pending timeouts from rapid clicking to prevent race conditions */
           clearTimeout(themeTimeout);
           clearTimeout(transitionTimeout);
 
-          // 1. Activate transitional smoothing on layout elements
+          /* 1. Activate transitional smoothing on layout elements */
           document.body.classList.add('theme-transition');
 
           const targetState = e.target.checked;
           const nextTheme = targetState ? 'dark' : 'light';
 
-          // 2. Instantly animate the physical rotation of the toggles
+          /* 2. Instantly animate the physical rotation of the toggles */
           syncAllToggles(targetState);
 
-          // 3. Defer the actual DOM theme variable change until the rotation midpoint (600ms)
+          /* 3. Defer the actual DOM theme variable change until the rotation midpoint (600ms) */
           themeTimeout = setTimeout(() => {
             if (typeof jtd !== 'undefined') {
               jtd.setTheme(nextTheme);
@@ -412,7 +412,7 @@
             }
           }, 600);
 
-          // 4. Safely clean up transitional styling class after entire rotation finishes (1200ms)
+          /* 4. Safely clean up transitional styling class after entire rotation finishes (1200ms) */
           transitionTimeout = setTimeout(() => {
             document.body.classList.remove('theme-transition');
           }, 1200);
