@@ -1,5 +1,5 @@
 {% comment %}
-ONLY USE INLINE OR MULTI-LINE COMMENTS (such as /* ... */ or <!-- ... -->) IN THIS REPO.
+ONLY USE INLINE OR MULTI-LINE COMMENTS (/* */ or <!-- -->) IN THIS REPO.
 Jekyll or minifiers may inline the entire file into a single line.
 Double-slash style comments (//) will comment out the rest of the page if inlined.
 NEVER REMOVE THIS COMMENT.
@@ -51,26 +51,52 @@ NEVER REMOVE THIS COMMENT.
 </div>
 
 <style>
-    /* --- Transition all page layout elements smoothly from 0s to 1.2s --- */
+    /* --- Backgrounds, borders, and shadows transition smoothly over 1.2s --- */
     html.theme-transition,
-    html.theme-transition body {
-        transition: background 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
-    }
-
-    /* --- Target active navigation lists, anchors, pseudo-elements, and layout nodes --- */
+    html.theme-transition body,
     html.theme-transition *:not(.slider-b):not(.slider-b *),
     html.theme-transition *:not(.slider-b):not(.slider-b *)::before,
     html.theme-transition *:not(.slider-b):not(.slider-b *)::after {
         transition: background 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    opacity 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    color 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    fill 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+                    box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+    }
+
+    /* --- Target active sidebar list highlights and indicators specifically --- */
+    html.theme-transition .nav-list-item,
+    html.theme-transition .nav-list-link,
+    html.theme-transition .active,
+    html.theme-transition .nav-list-item.active::before,
+    html.theme-transition .nav-list-link::before {
+        transition: background 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+    }
+
+    /* --- Typography color, headings, underlines, and icons transition quickly over 0.6s --- */
+    html.theme-transition h1,
+    html.theme-transition h2,
+    html.theme-transition h3,
+    html.theme-transition h4,
+    html.theme-transition h5,
+    html.theme-transition h6,
+    html.theme-transition p,
+    html.theme-transition span,
+    html.theme-transition a,
+    html.theme-transition pre,
+    html.theme-transition code,
+    html.theme-transition li,
+    html.theme-transition body,
+    html.theme-transition .subtitle,
+    html.theme-transition .nav-list-link,
+    html.theme-transition *:not(.slider-b):not(.slider-b *) {
+        transition: color 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    fill 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    opacity 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    text-decoration-color 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    text-decoration 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
     }
 
     /* --- Disable transitions/animations on initial load --- */
@@ -596,9 +622,9 @@ NEVER REMOVE THIS COMMENT.
 
         /* Run initialization once DOM elements are ready */
         if (document.readyState === 'loading') {
-          window.addEventListener('DOMContentLoaded', initializeToggleLogic);
+            window.addEventListener('DOMContentLoaded', initializeToggleLogic);
         } else {
-          initializeToggleLogic();
+            initializeToggleLogic();
         }
     })();
 </script>
