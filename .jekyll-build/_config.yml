@@ -82,5 +82,4 @@ mermaid:
 
 # Disable HTML compression to preserve standard formatting, whitespace, and comments
 compress_html:
-  ignore:
-    envs: all
+  blanklines: true
