@@ -69,10 +69,10 @@ print("hello world!")
 
 ## other todo
 
-* pwa / serviceworker
+* [x] pwa / serviceworker (Completed: Pre-caching with Workbox CLI)
 * JSON-LD injection - inject via `json-ld` key into yaml frontmatter and use an _include template
 * recipe parsing - requires some schema first
-* dark mode toggle
+* [x] dark mode toggle (Completed: Dynamic Sun/Moon CSS slider)
 * better link cleaning via markdown-soup, which will probably a concrete syntax tree wrapper around markdown-it-py
 * consider not using the github jekyll action since it's very outdated
 * change logo to cookie book / 🍪📖 / :cookie: :book: (does :cookie::book: work)
