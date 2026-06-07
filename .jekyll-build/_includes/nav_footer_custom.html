@@ -1,7 +1,8 @@
 <div class="pwa-status-container">
   <label class="theme-toggle-label">
     <input type="checkbox" class="theme-checkbox" aria-label="Toggle theme">
-    <div class="slider-b">
+    <!-- hold-transition blocks transitions/animations on initial render -->
+    <div class="slider-b hold-transition">
 
       <!-- Rotating Dial Disk -->
       <div class="disk-b">
@@ -45,6 +46,13 @@
     transition: background-color 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
                 color 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
                 border-color 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+
+  /* --- Disable transitions/animations on initial load --- */
+  .hold-transition,
+  .hold-transition * {
+    transition: none !important;
+    animation: none !important;
   }
 
   /* --- Disable native touch feedback blue overlay on tap --- */
@@ -307,6 +315,10 @@
     if (window.themeToggleInitialized) return;
     window.themeToggleInitialized = true;
 
+    /* Scoped timeouts to prevent overlapping events from rapid clicking */
+    let themeTimeout;
+    let transitionTimeout;
+
     /* Sync checkbox inputs and dial bezel animation classes */
     const syncAllToggles = (isDark) => {
       const checkboxes = document.querySelectorAll('.theme-checkbox');
@@ -340,6 +352,13 @@
       const isDark = activeTheme === 'dark';
       syncAllToggles(isDark);
 
+      /* Remove the transition hold block after initial paint settles to allow future animations */
+      setTimeout(() => {
+        document.querySelectorAll('.slider-b').forEach(slider => {
+          slider.classList.remove('hold-transition');
+        });
+      }, 50);
+
       /* Apply initial theme values */
       if (typeof jtd !== 'undefined') {
         jtd.setTheme(activeTheme);
@@ -358,6 +377,10 @@
       const checkboxes = document.querySelectorAll('.theme-checkbox');
       checkboxes.forEach(cb => {
         cb.addEventListener('change', (e) => {
+          // Clear any pending timeouts from rapid clicking to prevent race conditions
+          clearTimeout(themeTimeout);
+          clearTimeout(transitionTimeout);
+
           // 1. Activate transitional smoothing on layout elements
           document.body.classList.add('theme-transition');
 
@@ -368,7 +391,7 @@
           syncAllToggles(targetState);
 
           // 3. Defer the actual DOM theme variable change until the rotation midpoint (600ms)
-          setTimeout(() => {
+          themeTimeout = setTimeout(() => {
             if (typeof jtd !== 'undefined') {
               jtd.setTheme(nextTheme);
             } else {
@@ -390,7 +413,7 @@
           }, 600);
 
           // 4. Safely clean up transitional styling class after entire rotation finishes (1200ms)
-          setTimeout(() => {
+          transitionTimeout = setTimeout(() => {
             document.body.classList.remove('theme-transition');
           }, 1200);
         });
