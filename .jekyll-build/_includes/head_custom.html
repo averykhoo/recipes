@@ -1,14 +1,18 @@
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      /* Helper function to update the UI status badge */
+      /* Helper function to update all UI status badges simultaneously */
       const updateBadge = (status, color) => {
-        const dot = document.getElementById('pwa-dot');
-        const text = document.getElementById('pwa-text');
-        if (dot && text) {
+        const dots = document.querySelectorAll('.pwa-dot');
+        const texts = document.querySelectorAll('.pwa-text');
+
+        dots.forEach(dot => {
           dot.style.backgroundColor = color;
+        });
+
+        texts.forEach(text => {
           text.textContent = status;
-        }
+        });
       };
 
       /* Handler for connection state changes (online/offline toggle) */
