@@ -1,7 +1,26 @@
 <script>
+  /* 1. Synchronously apply saved theme in the <head> to prevent white-flash flickering */
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme && typeof jtd !== 'undefined') {
+    jtd.setTheme(savedTheme);
+  }
+
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      /* Handler for connection state changes (online/offline toggle) */
+      /* 2. Bind theme switch checkbox event listener */
+      const checkbox = document.getElementById('theme-toggle');
+      if (checkbox) {
+        /* Set checkbox state based on saved theme */
+        checkbox.checked = (localStorage.getItem('theme') === 'dark');
+
+        checkbox.addEventListener('change', (e) => {
+          const theme = e.target.checked ? 'dark' : 'light';
+          jtd.setTheme(theme);
+          localStorage.setItem('theme', theme);
+        });
+      }
+
+      /* 3. Handle PWA Connection state monitoring */
       const handleConnectionChange = () => {
         if (!navigator.onLine) {
           console.log('[PWA] Connection lost. Switching to offline mode.');
@@ -15,7 +34,7 @@
       window.addEventListener('online', handleConnectionChange);
       window.addEventListener('offline', handleConnectionChange);
 
-      /* Dynamically detect base path to support both custom domains and GitHub Pages subpaths */
+      /* 4. Dynamically detect base path to support both custom domains and GitHub Pages subpaths */
       let basePath = '/';
       const pathParts = window.location.pathname.split('/');
       if (pathParts.length > 1 && pathParts[1] === 'recipes') {
