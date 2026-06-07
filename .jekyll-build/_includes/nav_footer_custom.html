@@ -1,6 +1,6 @@
 <div class="pwa-status-container">
-  <label for="theme-toggle">
-    <input type="checkbox" id="theme-toggle" class="theme-checkbox" aria-label="Toggle theme">
+  <label class="theme-toggle-label">
+    <input type="checkbox" class="theme-checkbox" aria-label="Toggle theme">
     <div class="theme-slider">
 
       <!-- Stars (Dark Mode) -->
@@ -31,6 +31,13 @@
     transition: background-color 0.6s ease;
   }
 
+  /* --- Disable native touch feedback blue overlay on tap --- */
+  .pwa-status-container,
+  .theme-toggle-label,
+  .theme-slider,
+  .toggle-button {
+    -webkit-tap-highlight-color: transparent;
+  }
 
   /* --- Center and Scale the custom toggle to fit the sidebar naturally --- */
   .pwa-status-container {
@@ -192,3 +199,76 @@
     opacity: 1;
   }
 </style>
+
+<script>
+  (function() {
+    /* Guard against multiple executions when include is rendered twice */
+    if (window.themeToggleInitialized) return;
+    window.themeToggleInitialized = true;
+
+    /* Helper to keep both desktop and mobile checkboxes synced */
+    const syncAllToggles = (isDark) => {
+      const checkboxes = document.querySelectorAll('.theme-checkbox');
+      checkboxes.forEach(cb => {
+        cb.checked = isDark;
+      });
+    };
+
+    const initializeToggleLogic = () => {
+      let activeTheme;
+      try {
+        activeTheme = localStorage.getItem('theme');
+        if (!activeTheme) {
+          activeTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+      } catch (err) {
+        activeTheme = 'light';
+      }
+
+      /* Sync checkboxes on load */
+      syncAllToggles(activeTheme === 'dark');
+
+      /* Bind transition and change logic to all checkbox instances */
+      const checkboxes = document.querySelectorAll('.theme-checkbox');
+      checkboxes.forEach(cb => {
+        cb.addEventListener('change', (e) => {
+          document.body.classList.add('theme-transition');
+
+          const targetState = e.target.checked;
+          const nextTheme = targetState ? 'dark' : 'light';
+
+          /* Sync other visual toggles */
+          syncAllToggles(targetState);
+
+          /* Apply theme using Just the Docs core switcher helper, or fallback if undefined */
+          if (typeof jtd !== 'undefined') {
+            jtd.setTheme(nextTheme);
+          } else {
+            document.documentElement.setAttribute('data-theme', nextTheme);
+            const oppositeTheme = nextTheme === 'dark' ? 'light' : 'dark';
+            const links = document.querySelectorAll('link[rel="stylesheet"]');
+            for (let link of links) {
+              if (link.href && link.href.includes('just-the-docs-' + oppositeTheme + '.css')) {
+                link.href = link.href.replace('just-the-docs-' + oppositeTheme + '.css', 'just-the-docs-' + nextTheme + '.css');
+                break;
+              }
+            }
+          }
+
+          try {
+            localStorage.setItem('theme', nextTheme);
+          } catch (err) {
+            console.warn('Could not save theme selection:', err);
+          }
+        });
+      });
+    };
+
+    /* Run initialization once DOM elements are ready */
+    if (document.readyState === 'loading') {
+      window.addEventListener('DOMContentLoaded', initializeToggleLogic);
+    } else {
+      initializeToggleLogic();
+    }
+  })();
+</script>
