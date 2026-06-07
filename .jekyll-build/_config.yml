@@ -32,7 +32,6 @@ collections:
 
 # 2. Configure how Just the Docs displays the collections in the navigation
 just_the_docs:
-  color_scheme: system
   collections:
     recipes:
       name: Recipes
