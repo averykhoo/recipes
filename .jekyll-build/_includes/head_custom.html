@@ -1,8 +1,8 @@
 <script>
   /* 1. Synchronously apply saved theme in the <head> to prevent white-flash flickering */
   const savedTheme = localStorage.getItem('theme');
-  if (savedTheme && typeof jtd !== 'undefined') {
-    jtd.setTheme(savedTheme);
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
   }
 
   if ('serviceWorker' in navigator) {
@@ -10,10 +10,11 @@
       /* 2. Bind theme switch checkbox event listener */
       const checkbox = document.getElementById('theme-toggle');
       if (checkbox) {
-        /* Set checkbox state based on saved theme */
-        checkbox.checked = (localStorage.getItem('theme') === 'dark');
+        /* Set checkbox state based on currently applied theme */
+        checkbox.checked = (document.documentElement.getAttribute('data-theme') === 'dark');
 
         checkbox.addEventListener('change', (e) => {
+          document.body.classList.add('theme-transition');
           const theme = e.target.checked ? 'dark' : 'light';
           jtd.setTheme(theme);
           localStorage.setItem('theme', theme);

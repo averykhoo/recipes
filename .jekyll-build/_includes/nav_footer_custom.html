@@ -1,6 +1,6 @@
 <div class="pwa-status-container">
   <label for="theme-toggle">
-    <input type="checkbox" id="theme-toggle" class="theme-checkbox">
+    <input type="checkbox" id="theme-toggle" class="theme-checkbox" aria-label="Toggle theme">
     <div class="theme-slider">
 
       <!-- Stars (Dark Mode) -->
@@ -26,12 +26,12 @@
 </div>
 
 <style>
-  /* --- Reset Page Body Transitions to prevent breaking layouts --- */
-  body {
+  /* --- Transition body background only when actively toggling theme --- */
+  body.theme-transition {
     transition: background-color 0.6s ease;
   }
 
-  /* --- Hide the status badge at the bottom of the main page on mobile --- */
+  /* --- Hide the badge from the bottom of the main content on mobile --- */
   .main-content-wrap footer .pwa-status-container {
     display: none !important;
   }
@@ -48,9 +48,23 @@
     height: 70px;
   }
 
-  /* --- Hide the actual checkbox --- */
+  /* --- Visually hide the checkbox while keeping it keyboard-accessible --- */
   .theme-checkbox {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* --- Show focus outline when navigating via keyboard --- */
+  .theme-checkbox:focus-visible + .theme-slider {
+    outline: 2px solid var(--link-color, #0056b3);
+    outline-offset: 2px;
   }
 
   /* --- The Main Container (The Pill, scaled to 0.7) --- */
