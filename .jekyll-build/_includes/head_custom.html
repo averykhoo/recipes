@@ -1,13 +1,85 @@
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      // relative_url ensures it works properly with GitHub Pages subpaths
-      navigator.serviceWorker.register('{{ "/sw.js" | relative_url }}')
+      // Helper function to update the UI status badge
+      const updateBadge = (status, color) => {
+        const dot = document.getElementById('pwa-dot');
+        const text = document.getElementById('pwa-text');
+        if (dot && text) {
+          dot.style.backgroundColor = color;
+          text.textContent = status;
+        }
+      };
+
+      // Handler for dynamic connection state changes
+      const handleConnectionChange = () => {
+        if (!navigator.onLine) {
+          console.log('[PWA] Connection lost. Browsing offline.');
+          updateBadge('Offline Mode', '#e67e22'); // Orange
+        } else if (navigator.serviceWorker.controller) {
+          console.log('[PWA] Online. Site is offline ready.');
+          updateBadge('Offline Ready', '#2ecc71'); // Green
+        } else {
+          updateBadge('Connected', '#3498db'); // Blue
+        }
+      };
+
+      window.addEventListener('online', handleConnectionChange);
+      window.addEventListener('offline', handleConnectionChange);
+
+      // Dynamically detect base path
+      let basePath = '/';
+      const pathParts = window.location.pathname.split('/');
+      if (pathParts.length > 1 && pathParts[1] === 'recipes') {
+        basePath = '/recipes/';
+      }
+
+      const swUrl = basePath + 'sw.js';
+      console.log('[PWA] Registering Service Worker at:', swUrl);
+
+      // Initial status state before registration finishes
+      if (!navigator.onLine) {
+        updateBadge('Offline Mode', '#e67e22');
+      } else {
+        updateBadge('Checking updates...', '#3498db');
+      }
+
+      navigator.serviceWorker.register(swUrl)
         .then(registration => {
-          console.log('Workbox Service Worker registered successfully with scope:', registration.scope);
+          console.log('[PWA] Service Worker registered successfully with scope:', registration.scope);
+
+          // Set to Offline Ready if we are already online and controlled
+          if (navigator.serviceWorker.controller && navigator.onLine) {
+            updateBadge('Offline Ready', '#2ecc71');
+          }
+
+          registration.addEventListener('updatefound', () => {
+            const installingWorker = registration.installing;
+            console.log('[PWA] New Service Worker installing and pre-caching entire site...');
+            updateBadge('Caching recipes...', '#3498db');
+
+            installingWorker.addEventListener('statechange', () => {
+              console.log('[PWA] Service Worker state changed to:', installingWorker.state);
+              if (installingWorker.state === 'installed') {
+                if (navigator.serviceWorker.controller) {
+                  console.log('[PWA] New background update is ready; please refresh.');
+                  updateBadge('Update ready (refresh)', '#9b59b6'); // Purple
+                } else {
+                  console.log('[PWA] SUCCESS: Entire website is now eagerly cached offline!');
+                  updateBadge('Offline Ready', '#2ecc71'); // Green
+                }
+              } else if (installingWorker.state === 'redundant') {
+                console.error('[PWA] ERROR: Caching failed.');
+                updateBadge('Cache Error', '#e74c3c'); // Red
+              }
+            });
+          });
         })
         .catch(error => {
-          console.error('Service Worker registration failed:', error);
+          console.error('[PWA] Service Worker registration failed:', error);
+          if (navigator.onLine) {
+            updateBadge('Offline Ready', '#2ecc71');
+          }
         });
     });
   }
