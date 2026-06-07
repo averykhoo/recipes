@@ -16,7 +16,7 @@
     const checkbox = document.getElementById('theme-toggle');
     if (checkbox) {
       /* Set checkbox state based on saved theme preference */
-      checkbox.checked = (savedTheme === 'dark');
+      checkbox.checked = (document.documentElement.getAttribute('data-theme') === 'dark');
 
       checkbox.addEventListener('change', (e) => {
         document.body.classList.add('theme-transition');
