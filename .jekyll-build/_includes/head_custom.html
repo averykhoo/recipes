@@ -1,7 +1,38 @@
 <script>
+  /* 1. Synchronously apply saved theme in the <head> to prevent white-flash flickering */
+  let savedTheme;
+  try {
+    savedTheme = localStorage.getItem('theme');
+  } catch (err) {
+    console.warn('Could not access localStorage:', err);
+  }
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }
+
+  /* 2. Bind theme switch checkbox event listener (Kept separate so it works when SWs are disabled) */
+  window.addEventListener('load', () => {
+    const checkbox = document.getElementById('theme-toggle');
+    if (checkbox) {
+      /* Set checkbox state based on currently applied theme */
+      checkbox.checked = (document.documentElement.getAttribute('data-theme') === 'dark');
+
+      checkbox.addEventListener('change', (e) => {
+        document.body.classList.add('theme-transition');
+        const theme = e.target.checked ? 'dark' : 'light';
+        jtd.setTheme(theme);
+        try {
+          localStorage.setItem('theme', theme);
+        } catch (err) {
+          console.warn('Could not save theme to localStorage:', err);
+        }
+      });
+    }
+  });
+
+  /* 3. Handle PWA Caching and Connection Monitoring */
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      /* Handler for connection state changes (online/offline toggle) */
       const handleConnectionChange = () => {
         if (!navigator.onLine) {
           console.log('[PWA] Connection lost. Switching to offline mode.');

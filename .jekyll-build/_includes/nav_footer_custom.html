@@ -1,0 +1,209 @@
+<div class="pwa-status-container">
+  <label for="theme-toggle">
+    <input type="checkbox" id="theme-toggle" class="theme-checkbox" aria-label="Toggle theme">
+    <div class="theme-slider">
+
+      <!-- Stars (Dark Mode) -->
+      <div class="stars">
+        <div class="star star-1"></div>
+        <div class="star star-2"></div>
+        <div class="star star-3"></div>
+        <div class="star star-4"></div>
+      </div>
+
+      <!-- Clouds (Light Mode) -->
+      <div class="clouds"></div>
+
+      <!-- The Sun/Moon Button -->
+      <div class="toggle-button">
+        <div class="crater crater-1"></div>
+        <div class="crater crater-2"></div>
+        <div class="crater crater-3"></div>
+      </div>
+
+    </div>
+  </label>
+</div>
+
+<style>
+  /* --- Transition body background only when actively toggling theme --- */
+  body.theme-transition {
+    transition: background-color 0.6s ease;
+  }
+
+  /* --- Hide the badge from the bottom of the main content on mobile --- */
+  .main-content-wrap footer .pwa-status-container {
+    display: none !important;
+  }
+
+  /* --- Center and Scale the custom toggle to fit the sidebar naturally --- */
+  .pwa-status-container {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+  }
+
+  /* --- Visually hide the checkbox while keeping it keyboard-accessible --- */
+  .theme-checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* --- Show focus outline when navigating via keyboard --- */
+  .theme-checkbox:focus-visible + .theme-slider {
+    outline: 2px solid var(--link-color, #0056b3);
+    outline-offset: 2px;
+  }
+
+  /* --- The Main Container (The Pill, scaled to 0.7) --- */
+  .theme-slider {
+    width: 160px;
+    height: 70px;
+    background-color: #56c8ff; /* Sky Blue */
+    border-radius: 35px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.1);
+    transition: background-color 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transform: scale(0.7); /* Scale component down to fit sidebar */
+  }
+
+  /* When Checked: Change container to Night Space color */
+  .theme-checkbox:checked + .theme-slider {
+    background-color: #1f2235;
+  }
+
+  /* --- The Sun/Moon Button --- */
+  .toggle-button {
+    width: 56px;
+    height: 56px;
+    background-color: #ffcc33; /* Sun Yellow */
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    box-shadow: 0 0 15px rgba(255, 204, 51, 0.6);
+    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
+                background-color 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
+                box-shadow 0.6s ease;
+    overflow: hidden;
+    z-index: 10;
+  }
+
+  /* When Checked: Slide right, change to Moon Grey */
+  .theme-checkbox:checked + .theme-slider .toggle-button {
+    transform: translateX(90px); /* 160(width) - 56(btn) - 14(margins) = 90 */
+    background-color: #c6cbd1;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  }
+
+  /* --- Moon Craters (Hidden in Light Mode) --- */
+  .crater {
+    position: absolute;
+    background-color: #a4adb6;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.6s ease;
+    transform: scale(0);
+  }
+
+  .crater-1 { width: 16px; height: 16px; top: 12px; left: 10px; }
+  .crater-2 { width: 12px; height: 12px; top: 30px; left: 28px; }
+  .crater-3 { width: 8px; height: 8px; top: 14px; left: 36px; }
+
+  /* When Checked: Show Craters */
+  .theme-checkbox:checked + .theme-slider .toggle-button .crater {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* --- Background Elements: Clouds --- */
+  .clouds {
+    position: absolute;
+    width: 70px;
+    height: 24px;
+    background: white;
+    border-radius: 24px;
+    bottom: 12px;
+    right: 15px;
+    transition: transform 0.6s ease, opacity 0.4s ease;
+  }
+
+  /* Using pseudo-elements to create the fluffy bumps of the cloud */
+  .clouds::before, .clouds::after {
+    content: "";
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+  }
+
+  .clouds::before {
+    width: 30px; height: 30px;
+    bottom: 10px; left: 10px;
+  }
+
+  .clouds::after {
+    width: 40px; height: 40px;
+    bottom: 6px; right: 8px;
+  }
+
+  /* When Checked: Slide clouds down and fade out */
+  .theme-checkbox:checked + .theme-slider .clouds {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+
+  /* --- Background Elements: Stars --- */
+  .stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+  }
+
+  .star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+  }
+
+  .star-1 { width: 4px; height: 4px; top: 20px; left: 20px; }
+  .star-2 { width: 6px; height: 6px; top: 45px; left: 35px; }
+  .star-3 { width: 3px; height: 3px; top: 15px; left: 55px; }
+  .star-4 { width: 4px; height: 4px; top: 35px; left: 70px; }
+
+  /* When Checked: Slide stars into place and fade in */
+  .theme-checkbox:checked + .theme-slider .stars {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* --- Force the sidebar's footer to be visible on mobile inside the hamburger menu --- */
+  @media (max-width: 50rem) {
+    .side-bar .site-footer {
+      display: block !important;
+      padding-bottom: 20px; /* Spacing at bottom of slide-out menu */
+    }
+    .side-bar .pwa-status-container {
+      display: flex !important;
+    }
+  }
+</style>
