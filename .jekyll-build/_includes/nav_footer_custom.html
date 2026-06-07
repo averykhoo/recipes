@@ -53,19 +53,18 @@ NEVER REMOVE THIS COMMENT.
 <style>
     /* --- Backgrounds, borders, and shadows transition smoothly over 1.2s --- */
     html.theme-transition,
-    html.theme-transition body,
-    html.theme-transition *:not(.slider-b):not(.slider-b *),
-    html.theme-transition *:not(.slider-b):not(.slider-b *)::before,
-    html.theme-transition *:not(.slider-b):not(.slider-b *)::after {
-        transition: background 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    opacity 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    fill 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    text-decoration 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    text-decoration-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+    html.theme-transition body {
+        transition: background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+        color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+        border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+        box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+    }
+
+    html.theme-transition *:not(.slider-b):not(.slider-b *) {
+        transition: background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+        color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+        border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+        box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
     }
 
     /* --- Target active sidebar list highlights and indicators specifically --- */
