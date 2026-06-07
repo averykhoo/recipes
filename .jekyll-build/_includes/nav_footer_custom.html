@@ -59,8 +59,13 @@ NEVER REMOVE THIS COMMENT.
     html.theme-transition *:not(.slider-b):not(.slider-b *)::after {
         transition: background 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+                    box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    opacity 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    fill 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    text-decoration 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    text-decoration-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
     }
 
     /* --- Target active sidebar list highlights and indicators specifically --- */
@@ -72,10 +77,14 @@ NEVER REMOVE THIS COMMENT.
         transition: background 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+                    box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    opacity 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    text-decoration 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    text-decoration-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
     }
 
-    /* --- Typography color, headings, underlines, and icons transition quickly over 0.6s --- */
+    /* --- Typography color, headings, underlines, and icons transition over the exact same 1.2s window --- */
     html.theme-transition h1,
     html.theme-transition h2,
     html.theme-transition h3,
@@ -92,11 +101,11 @@ NEVER REMOVE THIS COMMENT.
     html.theme-transition .subtitle,
     html.theme-transition .nav-list-link,
     html.theme-transition *:not(.slider-b):not(.slider-b *) {
-        transition: color 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    fill 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    opacity 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    text-decoration-color 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    text-decoration 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+        transition: color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    fill 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    opacity 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    text-decoration-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    text-decoration 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
     }
 
     /* --- Disable transitions/animations on initial load --- */
@@ -612,10 +621,10 @@ NEVER REMOVE THIS COMMENT.
                         console.warn('Could not save theme selection:', err);
                     }
 
-                    /* 4. Clean up transitional class after entire visual rotation completes (1200ms) */
+                    /* 4. Clean up transitional class after entire visual rotation completes plus stylesheet loading buffer (1500ms) */
                     transitionTimeout = setTimeout(() => {
                         document.documentElement.classList.remove('theme-transition');
-                    }, 1200);
+                    }, 1500);
                 });
             });
         };
