@@ -51,33 +51,37 @@ NEVER REMOVE THIS COMMENT.
 </div>
 
 <style>
-    /* --- Master transition for all layout elements, boosting specificity to defeat theme defaults --- */
+    /* --- 1. Master transition for all standard layout elements --- */
     html.theme-transition,
-    html.theme-transition body {
+    html.theme-transition body,
+    html.theme-transition body * {
         transition: background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
-    }
-
-    html.theme-transition body *:not(.slider-b):not(.slider-b *),
-    html.theme-transition body .nav-list-item.active .nav-list-link.active,
-    html.theme-transition body .markdown-body a {
-        transition: background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    background 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     border-bottom-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     fill 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    opacity 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    text-decoration-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    text-decoration 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+                    box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
     }
 
-    /* --- Disable transitions/animations on initial load --- */
+    /* --- 2. Fix the un-transitionable Gradients in Just the Docs --- */
+    /* Just the Docs uses linear-gradients for link underlines and active items.
+       CSS cannot transition gradients. We replace them here so they fade smoothly. */
+    .markdown-body a {
+        background-image: none !important;
+        border-bottom: 1px solid var(--link-color);
+        text-decoration: none !important;
+    }
+
+    .nav-list .nav-list-item.active > .nav-list-link {
+        background-image: none !important;
+        background-color: var(--nav-list-item-bg-active, rgba(128, 128, 128, 0.1)) !important;
+    }
+
+    /* --- Disable transitions/animations on initial load and on the toggle itself --- */
     .hold-transition,
-    .hold-transition * {
+    .hold-transition *,
+    html.theme-transition .slider-b,
+    html.theme-transition .slider-b * {
         transition: none !important;
         animation: none !important;
     }
@@ -573,14 +577,15 @@ NEVER REMOVE THIS COMMENT.
                         jtd.setTheme(nextTheme);
                     } else {
                         document.documentElement.setAttribute('data-theme', nextTheme);
-                    }
 
-                    /* ALWAYS swap stylesheet to catch hardcoded SCSS variables not covered by data-theme */
-                    const links = document.querySelectorAll('link[rel="stylesheet"]');
-                    for (let link of links) {
-                        if (link.href && link.href.includes('just-the-docs-') && !link.href.includes('head-nav')) {
-                            link.href = link.href.replace(/just-the-docs-(default|light|dark)\.css/, `just-the-docs-${nextTheme}.css`);
-                            break;
+                        /* DO NOT TRIGGER A NETWORK REQUEST HERE. The FOUC flash happens when you
+                           swap <link href="..."> over the network mid-animation. Only do it if jtd is totally broken. */
+                        const links = document.querySelectorAll('link[rel="stylesheet"]');
+                        for (let link of links) {
+                            if (link.href && link.href.includes('just-the-docs-') && !link.href.includes('head-nav')) {
+                                link.href = link.href.replace(/just-the-docs-(default|light|dark)\.css/, `just-the-docs-${nextTheme}.css`);
+                                break;
+                            }
                         }
                     }
 
