@@ -67,7 +67,8 @@ NEVER REMOVE THIS COMMENT.
         box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
     }
 
-    /* --- Target active sidebar list highlights and indicators specifically ---
+/* --- Target active sidebar list highlights and indicators specifically --- */
+    html.theme-transition .nav-list-item,
     html.theme-transition .nav-list-link {
         transition: background 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
@@ -77,9 +78,9 @@ NEVER REMOVE THIS COMMENT.
                     opacity 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     text-decoration 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     text-decoration-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
-    } */
+    }
 
-    /* --- Typography color, headings, underlines, and icons transition over the exact same 1.2s window ---
+    /* --- Typography color, headings, underlines, and icons transition over the exact same 1.2s window --- */
     html.theme-transition h1,
     html.theme-transition h2,
     html.theme-transition h3,
@@ -88,11 +89,14 @@ NEVER REMOVE THIS COMMENT.
     html.theme-transition h6,
     html.theme-transition p,
     html.theme-transition span,
+    html.theme-transition a,
     html.theme-transition pre,
     html.theme-transition code,
-    html.theme-transition li, */
-    html.theme-transition a {
-        transition: color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+    html.theme-transition li {
+        transition: background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     fill 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     opacity 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     text-decoration-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
