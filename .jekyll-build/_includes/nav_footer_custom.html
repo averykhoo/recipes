@@ -66,22 +66,14 @@ NEVER REMOVE THIS COMMENT.
     /* --- 2. Fix the un-transitionable Gradients in Just the Docs --- */
     /* Just the Docs uses linear-gradients for link underlines and active items.
        CSS cannot transition gradients. We replace them here so they fade smoothly. */
-    .markdown-body a {
-        background-image: none !important;
-        border-bottom: 1px solid var(--link-color);
-        text-decoration: none !important;
-    }
-
     .nav-list .nav-list-item.active > .nav-list-link {
         background-image: none !important;
         background-color: var(--nav-list-item-bg-active, rgba(128, 128, 128, 0.1)) !important;
     }
 
-    /* --- Disable transitions/animations on initial load and on the toggle itself --- */
+    /* --- Disable transitions/animations on initial load --- */
     .hold-transition,
-    .hold-transition *,
-    html.theme-transition .slider-b,
-    html.theme-transition .slider-b * {
+    .hold-transition * {
         transition: none !important;
         animation: none !important;
     }
@@ -595,10 +587,10 @@ NEVER REMOVE THIS COMMENT.
                         console.warn('Could not save theme selection:', err);
                     }
 
-                    /* 4. Clean up transitional class  */
+                    /* 4. Clean up transitional class after entire visual rotation completes (1200ms) */
                     transitionTimeout = setTimeout(() => {
                         document.documentElement.classList.remove('theme-transition');
-                    }, 1000);
+                    }, 1200);
                 });
             });
         };
