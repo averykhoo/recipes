@@ -51,27 +51,59 @@ NEVER REMOVE THIS COMMENT.
 </div>
 
 <style>
-    /* --- 1. Master transition for all standard layout elements --- */
+    /* --- 1. Master transition for main layout elements --- */
     html.theme-transition,
-    html.theme-transition body,
-    html.theme-transition body * {
-        transition: background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    border-bottom-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    fill 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+    html.theme-transition body {
+        transition: background-color 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    color 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    border-color 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    box-shadow 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    scrollbar-color 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
     }
 
-    /* --- 2. Fix the un-transitionable Gradients in Just the Docs --- */
-    /* Just the Docs uses linear-gradients for link underlines and active items.
-       CSS cannot transition gradients. We replace them here so they fade smoothly. */
-    .markdown-body a {
+    /* --- 2. Master transition for sub-layout elements --- */
+    html.theme-transition body *:not(.slider-b):not(.slider-b *) {
+        transition: background-color 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    color 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    border-color 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    box-shadow 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    fill 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    opacity 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+    }
+
+    /* --- 3. Scrollbar smooth transition (For Chrome 121+ and Firefox) --- */
+    html {
+        scrollbar-color: var(--scrollbar-thumb, var(--border-color)) var(--scrollbar-track, var(--body-background-color));
+    }
+
+    /* --- 4. Force Link Underlines to transition smoothly --- */
+    /* We strip Just the Docs' un-animatable linear-gradient underline and replace it
+       with a transitionable border-bottom so it fades smoothly. */
+    .markdown-body a,
+    .main-content a {
         background-image: none !important;
-        border-bottom: 1px solid var(--link-color);
+        border-bottom: 1px solid var(--link-color) !important;
         text-decoration: none !important;
     }
 
+    html.theme-transition .markdown-body a,
+    html.theme-transition .main-content a {
+        transition: border-color 0.8s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    color 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+    }
+
+    /* --- 5. Heading text smooth transition --- */
+    /* Target the headers explicitly to ensure they transition when the swapped stylesheet loads. */
+    html.theme-transition h1,
+    html.theme-transition h2,
+    html.theme-transition h3,
+    html.theme-transition h4,
+    html.theme-transition h5,
+    html.theme-transition h6 {
+        transition: color 0.8s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+    }
+
+    /* --- 6. Active sidebar highlight smooth transition --- */
     .nav-list .nav-list-item.active > .nav-list-link {
         background-image: none !important;
         background-color: var(--nav-list-item-bg-active, rgba(128, 128, 128, 0.1)) !important;
@@ -595,7 +627,7 @@ NEVER REMOVE THIS COMMENT.
                         console.warn('Could not save theme selection:', err);
                     }
 
-                    /* 4. Clean up transitional class  */
+                    /* 4. Clean up transitional class after entire visual rotation completes (1200ms) */
                     transitionTimeout = setTimeout(() => {
                         document.documentElement.classList.remove('theme-transition');
                     }, 1200);
