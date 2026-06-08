@@ -51,7 +51,7 @@ NEVER REMOVE THIS COMMENT.
 </div>
 
 <style>
-    /* --- Transition all page layout elements smoothly from 0s to 1.2s --- */
+    /* --- Master transition for all layout elements, boosting specificity to defeat theme defaults --- */
     html.theme-transition,
     html.theme-transition body {
         transition: background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
@@ -60,41 +60,13 @@ NEVER REMOVE THIS COMMENT.
         box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
     }
 
-    html.theme-transition *:not(.slider-b):not(.slider-b *) {
+    html.theme-transition body *:not(.slider-b):not(.slider-b *),
+    html.theme-transition body .nav-list-item.active .nav-list-link.active,
+    html.theme-transition body .markdown-body a {
         transition: background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
-    }
-
-/* --- Target active sidebar list highlights and indicators specifically --- */
-    html.theme-transition .nav-list-item,
-    html.theme-transition .nav-list-link {
-        transition: background 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    background 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    opacity 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    text-decoration 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    text-decoration-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
-    }
-
-    /* --- Typography color, headings, underlines, and icons transition over the exact same 1.2s window --- */
-    html.theme-transition h1,
-    html.theme-transition h2,
-    html.theme-transition h3,
-    html.theme-transition h4,
-    html.theme-transition h5,
-    html.theme-transition h6,
-    html.theme-transition p,
-    html.theme-transition span,
-    html.theme-transition a,
-    html.theme-transition pre,
-    html.theme-transition code,
-    html.theme-transition li {
-        transition: background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                    border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                    border-bottom-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
                     fill 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
@@ -601,12 +573,14 @@ NEVER REMOVE THIS COMMENT.
                         jtd.setTheme(nextTheme);
                     } else {
                         document.documentElement.setAttribute('data-theme', nextTheme);
-                        const links = document.querySelectorAll('link[rel="stylesheet"]');
-                        for (let link of links) {
-                            if (link.href && link.href.includes('just-the-docs-') && !link.href.includes('head-nav')) {
-                                link.href = link.href.replace(/just-the-docs-(default|light|dark)\.css/, `just-the-docs-${nextTheme}.css`);
-                                break;
-                            }
+                    }
+
+                    /* ALWAYS swap stylesheet to catch hardcoded SCSS variables not covered by data-theme */
+                    const links = document.querySelectorAll('link[rel="stylesheet"]');
+                    for (let link of links) {
+                        if (link.href && link.href.includes('just-the-docs-') && !link.href.includes('head-nav')) {
+                            link.href = link.href.replace(/just-the-docs-(default|light|dark)\.css/, `just-the-docs-${nextTheme}.css`);
+                            break;
                         }
                     }
 
@@ -616,10 +590,10 @@ NEVER REMOVE THIS COMMENT.
                         console.warn('Could not save theme selection:', err);
                     }
 
-                    /* 4. Clean up transitional class after entire visual rotation completes (1200ms) */
+                    /* 4. Clean up transitional class AFTER visual rotation completes plus a 200ms buffer (1400ms) to prevent jumping */
                     transitionTimeout = setTimeout(() => {
                         document.documentElement.classList.remove('theme-transition');
-                    }, 1200);
+                    }, 1400);
                 });
             });
         };
