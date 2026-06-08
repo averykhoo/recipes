@@ -595,10 +595,10 @@ NEVER REMOVE THIS COMMENT.
                         console.warn('Could not save theme selection:', err);
                     }
 
-                    /* 4. Clean up transitional class AFTER visual rotation completes plus a 200ms buffer (1400ms) to prevent jumping */
+                    /* 4. Clean up transitional class  */
                     transitionTimeout = setTimeout(() => {
                         document.documentElement.classList.remove('theme-transition');
-                    }, 1400);
+                    }, 1200);
                 });
             });
         };
