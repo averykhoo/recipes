@@ -13,35 +13,190 @@ NEVER REMOVE THIS COMMENT.
 
             <!-- Rotating Dial Disk -->
             <div class="disk-b">
-                <!-- Sun, Cloud & Flying Bird (Visible in Light Mode) -->
+                <!-- Sun, Cloud & Floating Hot Air Balloon (Visible in Light Mode) [0] -->
                 <div class="celestial-body sun sun-b"></div>
                 <div class="cloud cloud-b1"></div>
-                <div class="bird-b" aria-hidden="true">🕊️</div>
 
-                <!-- Staggered Twinkling Stars (Before and After Moon) -->
-                <div class="star star-b01"></div>
-                <div class="star star-b02"></div>
-                <div class="star star-b03"></div>
-                <div class="star star-b04"></div>
-                <div class="star star-b05"></div>
-                <div class="star star-b06"></div>
-                <div class="star star-b07"></div>
-                <div class="star star-b08"></div>
-                <div class="star star-b12"></div>
-                <div class="star star-b13"></div>
-                <div class="star star-b14"></div>
-                <div class="star star-b15"></div>
+                <!-- Whispy Day Clouds (Translucent streaks gliding faster in background) [0] -->
+                <div class="wispy-cloud wispy-cloud-1" style="width: 70px;"></div>
+                <div class="wispy-cloud wispy-cloud-2" style="width: 50px;"></div>
+
+                <!-- Vibrant Multi-colored Balloon (Positioned at -25deg, stays vertical during rotation) [0] -->
+                <svg class="balloon-b" viewBox="0 0 100 130">
+                    <!-- Outer Left & Right lobes (Vibrant Red) [0] -->
+                    <path d="M 50,10 C 75,10 90,30 90,55 C 90,80 75,95 62,100 L 38,100 C 25,95 10,80 10,55 C 10,30 25,10 50,10 Z" fill="#ef4444" />
+                    <!-- Next inner lobes (Orange) [0] -->
+                    <path d="M 50,10 C 69,10 80,30 80,55 C 80,80 69,95 59,100 C 53,95 41,80 41,55 C 41,30 53,10 50,10 Z" fill="#f97316" />
+                    <path d="M 50,10 C 31,10 20,30 20,55 C 20,80 31,95 41,100 C 47,95 59,80 59,55 C 59,30 47,10 50,10 Z" fill="#f97316" />
+                    <!-- Next inner lobes (Yellow) [0] -->
+                    <path d="M 50,10 C 63,10 71,30 71,55 C 71,80 63,95 55,100 C 47,95 39,80 39,55 C 39,30 47,10 50,10 Z" fill="#eab308" />
+                    <path d="M 50,10 C 37,10 29,30 29,55 C 29,80 37,95 45,100 C 53,95 61,80 61,55 C 61,30 53,10 50,10 Z" fill="#eab308" />
+                    <!-- Next inner lobes (Green) [0] -->
+                    <path d="M 50,10 C 57,10 63,30 63,55 C 63,80 57,95 51,100 C 45,95 37,80 37,55 C 37,30 45,10 50,10 Z" fill="#22c55e" />
+                    <path d="M 50,10 C 43,10 37,30 37,55 C 37,80 43,95 49,100 C 55,95 63,80 61,55 C 61,30 55,10 50,10 Z" fill="#22c55e" />
+                    <!-- Center lobes (Blue) [0] -->
+                    <path d="M 50,10 C 54,10 56,30 56,55 C 56,80 54,95 50,100 C 46,95 44,80 44,55 C 44,30 46,10 50,10 Z" fill="#3b82f6" />
+                    <path d="M 50,10 C 46,10 44,30 44,55 C 44,80 46,95 50,100 C 54,95 56,80 56,55 C 56,30 54,10 50,10 Z" fill="#3b82f6" />
+                    <!-- Innermost stripe (Purple) [0] -->
+                    <path d="M 50,10 C 51.5,10 52.5,30 52.5,55 C 52.5,80 51.5,95 50,100 C 48.5,95 47.5,80 47.5,55 C 47.5,30 48.5,10 50,10 Z" fill="#a855f7" />
+                    <!-- Bottom Burner Collar -->
+                    <rect x="38" y="100" width="24" height="6" fill="#1e293b" />
+                    <!-- Flame Glow -->
+                    <ellipse cx="50" cy="102" rx="4" ry="2" fill="#ffcc33" />
+                    <!-- Thick Rigging Ropes [0] -->
+                    <line x1="41" y1="106" x2="43" y2="114" stroke="#ffffff" stroke-width="2.2" opacity="0.65" />
+                    <line x1="59" y1="106" x2="57" y2="114" stroke="#ffffff" stroke-width="2.2" opacity="0.65" />
+                    <!-- Upscaled Wicker Basket [0] -->
+                    <rect x="40" y="114" width="20" height="15" rx="2" fill="#a16207" stroke="#1e293b" stroke-width="1" />
+                    <!-- Basket Weave Line Detail -->
+                    <line x1="44" y1="114" x2="44" y2="129" stroke="#1e293b" stroke-width="0.8" />
+                    <line x1="48" y1="114" x2="48" y2="129" stroke="#1e293b" stroke-width="0.8" />
+                    <line x1="52" y1="114" x2="52" y2="129" stroke="#1e293b" stroke-width="0.8" />
+                    <line x1="56" y1="114" x2="56" y2="129" stroke="#1e293b" stroke-width="0.8" />
+                </svg>
+
+                <!-- =========================================================
+                     CONSTELLATION: ORION (Left of the Moon in Dark Mode)
+                     Centered around -187deg & squeezed horizontally to reality [0]
+                     ========================================================= -->
+                <!-- Betelgeuse (Orange Supergiant, Slow Majestic Pulse) [0] -->
+                <div class="star" style="width: 3.2px; height: 3.2px; transform: translate(-50%, -50%) rotate(-190deg) translateY(-320px); background-color: #ffb380; box-shadow: 0 0 4px #ffb380; --tw-duration: 7.9s; --tw-delay: 1.1s; --tw-min-opacity: 0.6;"></div>
+                <!-- Rigel (Brilliant Blue-White Supergiant, Slow Majestic Pulse) [0] -->
+                <div class="star" style="width: 3.5px; height: 3.5px; transform: translate(-50%, -50%) rotate(-184.5deg) translateY(-281px); background-color: #e6f2ff; box-shadow: 0 0 4px #e6f2ff; --tw-duration: 7.3s; --tw-delay: 2.3s; --tw-min-opacity: 0.6;"></div>
+                <!-- Bellatrix (Right Shoulder) -->
+                <div class="star" style="width: 2.2px; height: 2.2px; transform: translate(-50%, -50%) rotate(-184deg) translateY(-324px); --tw-duration: 5.9s; --tw-delay: 4.7s; --tw-min-opacity: 0.25;"></div>
+                <!-- Saiph (Left Knee) -->
+                <div class="star" style="width: 2.2px; height: 2.2px; transform: translate(-50%, -50%) rotate(-189.5deg) translateY(-283px); --tw-duration: 6.1s; --tw-delay: 1.9s; --tw-min-opacity: 0.25;"></div>
+
+                <!-- Orion's Belt (Alnitak, Alnilam, Mintaka) -->
+                <div class="star" style="width: 1.8px; height: 1.8px; transform: translate(-50%, -50%) rotate(-188.2deg) translateY(-299px); --tw-duration: 5.3s; --tw-delay: 2.7s; --tw-min-opacity: 0.25;"></div>
+                <div class="star" style="width: 1.8px; height: 1.8px; transform: translate(-50%, -50%) rotate(-187deg) translateY(-302px); --tw-duration: 4.7s; --tw-delay: 0.7s; --tw-min-opacity: 0.25;"></div>
+                <div class="star" style="width: 1.8px; height: 1.8px; transform: translate(-50%, -50%) rotate(-185.8deg) translateY(-305px); --tw-duration: 4.3s; --tw-delay: 3.1s; --tw-min-opacity: 0.25;"></div>
+
+                <!-- Orion's Hanging Sword (Aligned straight down under Alnilam, tiny & dim) [0] -->
+                <div class="star" style="width: 0.8px; height: 0.8px; transform: translate(-50%, -50%) rotate(-187deg) translateY(-296px); --tw-duration: 4.1s; --tw-delay: 1.3s; --tw-min-opacity: 0.05;"></div>
+                <!-- Sword Middle - Representing the Orion Nebula with a faint pinkish purple glow [0] -->
+                <div class="star" style="width: 1.1px; height: 1.1px; transform: translate(-50%, -50%) rotate(-186.9deg) translateY(-292px); background-color: #ffb3ff; box-shadow: 0 0 5px #ffb3ff; --tw-duration: 3.7s; --tw-delay: 3.7s; --tw-min-opacity: 0.1;"></div>
+                <div class="star" style="width: 0.8px; height: 0.8px; transform: translate(-50%, -50%) rotate(-186.8deg) translateY(-288px); --tw-duration: 3.1s; --tw-delay: 0.5s; --tw-min-opacity: 0.05;"></div>
+
+                <!-- Orion's Curved Shield/Bow (Symmetrical and scaled vertically to match photo proportion) [0] -->
+                <div class="star" style="width: 0.9px; height: 0.9px; transform: translate(-50%, -50%) rotate(-182deg) translateY(-323px); --tw-duration: 4.1s; --tw-delay: 1.1s; --tw-min-opacity: 0.1;"></div>
+                <div class="star" style="width: 1.0px; height: 1.0px; transform: translate(-50%, -50%) rotate(-180.5deg) translateY(-315px); --tw-duration: 3.7s; --tw-delay: 2.7s; --tw-min-opacity: 0.1;"></div>
+                <div class="star" style="width: 0.9px; height: 0.9px; transform: translate(-50%, -50%) rotate(-179.2deg) translateY(-307px); --tw-duration: 4.7s; --tw-delay: 0.3s; --tw-min-opacity: 0.1;"></div>
+                <div class="star" style="width: 1.0px; height: 1.0px; transform: translate(-50%, -50%) rotate(-180.5deg) translateY(-299px); --tw-duration: 3.1s; --tw-delay: 3.3s; --tw-min-opacity: 0.1;"></div>
+                <div class="star" style="width: 0.9px; height: 0.9px; transform: translate(-50%, -50%) rotate(-182deg) translateY(-291px); --tw-duration: 3.7s; --tw-delay: 1.9s; --tw-min-opacity: 0.1;"></div>
+
+                <!-- =========================================================
+                     CONSTELLATION: GEMINI (Right of the Moon in Dark Mode)
+                     Sweeps across the viewport during dial rotation
+                     ========================================================= -->
+                <!-- Pollux (Brightest orange giant, Slow Majestic Pulse) [0] -->
+                <div class="star" style="width: 3.4px; height: 3.4px; transform: translate(-50%, -50%) rotate(-153deg) translateY(-321px); background-color: #ffe6cc; box-shadow: 0 0 4px #ffe6cc; --tw-duration: 7.9s; --tw-delay: 3.7s; --tw-min-opacity: 0.55;"></div>
+                <!-- Castor (Brilliant multiple star, Slow Majestic Pulse) [0] -->
+                <div class="star" style="width: 3.0px; height: 3.0px; transform: translate(-50%, -50%) rotate(-149deg) translateY(-323px); background-color: #ffffff; box-shadow: 0 0 4px #ffffff; --tw-duration: 7.3s; --tw-delay: 1.1s; --tw-min-opacity: 0.55;"></div>
+                <!-- Mebsuta -->
+                <div class="star" style="width: 2.0px; height: 2.0px; transform: translate(-50%, -50%) rotate(-146deg) translateY(-302px); --tw-duration: 5.3s; --tw-delay: 2.1s; --tw-min-opacity: 0.25;"></div>
+                <!-- Wasat -->
+                <div class="star" style="width: 1.8px; height: 1.8px; transform: translate(-50%, -50%) rotate(-154deg) translateY(-300px); --tw-duration: 4.7s; --tw-delay: 0.9s; --tw-min-opacity: 0.20;"></div>
+                <!-- Tejat Posterior -->
+                <div class="star" style="width: 2.1px; height: 2.1px; transform: translate(-50%, -50%) rotate(-144deg) translateY(-283px); --tw-duration: 5.9s; --tw-delay: 3.3s; --tw-min-opacity: 0.25;"></div>
+                <!-- Alhena -->
+                <div class="star" style="width: 2.4px; height: 2.4px; transform: translate(-50%, -50%) rotate(-156deg) translateY(-281px); --tw-duration: 6.1s; --tw-delay: 0.5s; --tw-min-opacity: 0.25;"></div>
+                <!-- Joined Hands Link -->
+                <div class="star" style="width: 1.2px; height: 1.2px; transform: translate(-50%, -50%) rotate(-150deg) translateY(-301px); --tw-duration: 4.1s; --tw-delay: 1.5s; --tw-min-opacity: 0.1;"></div>
+
+                <!-- =========================================================
+                     MINIMALIST STARRY BACKGROUND (Flanks Left side of Moon) [0]
+                     ========================================================= -->
+                <div class="star" style="width: 1.1px; height: 1.1px; transform: translate(-50%, -50%) rotate(-176deg) translateY(-315px); --tw-duration: 4.1s; --tw-delay: 2.7s; --tw-min-opacity: 0.15;"></div>
+                <div class="star" style="width: 1.0px; height: 1.0px; transform: translate(-50%, -50%) rotate(-196deg) translateY(-324px); --tw-duration: 4.7s; --tw-delay: 0.4s; --tw-min-opacity: 0.15;"></div>
+                <div class="star" style="width: 1.3px; height: 1.3px; transform: translate(-50%, -50%) rotate(-178deg) translateY(-293px); --tw-duration: 5.3s; --tw-delay: 1.8s; --tw-min-opacity: 0.25;"></div>
 
                 <!-- Moon (Visible in Dark Mode) -->
-                <div class="celestial-body moon moon-b">
-                    <div class="mare oceanus procellarum"></div>
-                    <div class="mare imbrium"></div>
-                    <div class="mare serenitatis"></div>
-                    <div class="mare tranquillitatis"></div>
-                    <div class="mare crisium"></div>
-                    <div class="mare fecunditatis"></div>
-                    <div class="mare nubium"></div>
-                </div>
+                <svg class="celestial-body moon moon-b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                    <defs>
+                        <!-- Native Vector Clip Path to force perfect round circular boundary -->
+                        <clipPath id="moon-clip">
+                            <circle cx="50" cy="50" r="50" />
+                        </clipPath>
+
+                        <radialGradient id="base-moon-grad" cx="40%" cy="40%" r="60%">
+                            <stop offset="0%" stop-color="#c2c0bd" />
+                            <stop offset="45%" stop-color="#a3a19f" />
+                            <stop offset="80%" stop-color="#858480" />
+                            <stop offset="100%" stop-color="#3d3d3d" />
+                        </radialGradient>
+                        <radialGradient id="sphere-shading" cx="50%" cy="50%" r="50%">
+                            <stop offset="45%" stop-color="#000000" stop-opacity="0" />
+                            <stop offset="87%" stop-color="#000000" stop-opacity="0.4" />
+                        </radialGradient>
+                        <radialGradient id="svg-grad-byrgius" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(255,255,255,1)" /><stop offset="60%" stop-color="transparent" /></radialGradient>
+                        <radialGradient id="svg-grad-stevinus" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(255,255,255,1)" /><stop offset="60%" stop-color="transparent" /></radialGradient>
+                        <radialGradient id="svg-grad-langrenus" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(255,255,255,1)" /><stop offset="60%" stop-color="transparent" /></radialGradient>
+                        <radialGradient id="svg-grad-tycho" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(255,255,255,1)" /><stop offset="15%" stop-color="rgba(255,255,255,0.15)" /><stop offset="60%" stop-color="transparent" /></radialGradient>
+                        <radialGradient id="svg-grad-copernicus" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(255,255,255,1)" /><stop offset="20%" stop-color="rgba(255,255,255,0.15)" /><stop offset="60%" stop-color="transparent" /></radialGradient>
+                        <radialGradient id="svg-grad-aristarchus" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(255,255,255,1)" /><stop offset="60%" stop-color="transparent" /></radialGradient>
+                        <radialGradient id="svg-grad-kepler" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="rgba(255,255,255,1)" /><stop offset="60%" stop-color="transparent" /></radialGradient>
+
+                        <filter id="svg-blur-0" x="-200%" y="-200%" width="500%" height="500%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="1.1" /></filter>
+                        <filter id="svg-blur-3" x="-200%" y="-200%" width="500%" height="500%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="0.9375" /></filter>
+                        <filter id="svg-blur-4" x="-200%" y="-200%" width="500%" height="500%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="1.25" /></filter>
+                        <filter id="svg-blur-5" x="-200%" y="-200%" width="500%" height="500%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="1.5625" /></filter>
+                        <filter id="svg-blur-6" x="-200%" y="-200%" width="500%" height="500%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="1.875" /></filter>
+                        <filter id="svg-blur-7" x="-200%" y="-200%" width="500%" height="500%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="2.1875" /></filter>
+                        <filter id="svg-blur-8" x="-200%" y="-200%" width="500%" height="500%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="2.5" /></filter>
+                        <filter id="svg-blur-9" x="-200%" y="-200%" width="500%" height="500%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="2.8125" /></filter>
+                        <filter id="svg-blur-10" x="-200%" y="-200%" width="500%" height="500%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="3.125" /></filter>
+                        <filter id="svg-blur-11" x="-200%" y="-200%" width="500%" height="500%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="3.4375" /></filter>
+                        <filter id="svg-blur-12" x="-200%" y="-200%" width="500%" height="500%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="3.75" /></filter>
+                        <filter id="svg-blur-13" x="-200%" y="-200%" width="500%" height="500%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="4.0625" /></filter>
+                        <filter id="svg-blur-14" x="-200%" y="-200%" width="500%" height="500%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="4.375" /></filter>
+                        <filter id="svg-blur-15" x="-200%" y="-200%" width="500%" height="500%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="4.6875" /></filter>
+                    </defs>
+
+                    <!-- Master Clip Group -->
+                    <g clip-path="url(#moon-clip)">
+                        <!-- Base Moon Plate -->
+                        <circle id="base-moon" cx="50" cy="50" r="50" fill="url(#base-moon-grad)" />
+
+                        <!-- Layer 1: Lunar Maria (Seas) - Opacities softened & lightened to decrease starkness -->
+                        <g id="lunar-maria">
+                            <ellipse id="svg-feature-frigoris" class="svg-feature mare" cx="66" cy="9.5" rx="24.5" ry="2" transform="rotate(20, 66, 9.5)" fill="rgba(68, 64, 60, 1)" opacity="0.4" filter="url(#svg-blur-5)"><title>Mare Frigoris</title></ellipse>
+                            <ellipse id="svg-feature-imbrium" class="svg-feature mare" cx="49" cy="20" rx="21.75" ry="12.75" transform="rotate(-7, 49, 20)" fill="rgba(68, 64, 60, 1)" opacity="0.48" filter="url(#svg-blur-15)"><title>Mare Imbrium</title></ellipse>
+                            <ellipse id="svg-feature-serenitatis" class="svg-feature mare" cx="73.5" cy="33.5" rx="7.5" ry="11.75" transform="rotate(-23, 73.5, 33.5)" fill="rgba(68, 64, 60, 1)" opacity="0.48" filter="url(#svg-blur-7)"><title>Mare Serenitatis</title></ellipse>
+                            <ellipse id="svg-feature-tranquillitatis" class="svg-feature mare" cx="77.5" cy="49" rx="13.25" ry="9.5" transform="rotate(-5, 77.5, 49)" fill="rgba(68, 64, 60, 1)" opacity="0.45" filter="url(#svg-blur-10)"><title>Mare Tranquillitatis</title></ellipse>
+                            <ellipse id="svg-feature-crisium" class="svg-feature mare" cx="95" cy="49.5" rx="3.25" ry="6.75" transform="rotate(-4, 95, 49.5)" fill="rgba(45, 42, 38, 1)" opacity="0.38" filter="url(#svg-blur-3)"><title>Mare Crisium</title></ellipse>
+                            <ellipse id="svg-feature-fecunditatis" class="svg-feature mare" cx="87" cy="63" rx="7" ry="12.25" transform="rotate(14, 87, 63)" fill="rgba(68, 64, 60, 1)" opacity="0.42" filter="url(#svg-blur-6)"><title>Mare Fecunditatis</title></ellipse>
+                            <ellipse id="svg-feature-nectaris" class="svg-feature mare" cx="74" cy="67" rx="5" ry="8" transform="rotate(0, 74, 67)" fill="rgba(68, 64, 60, 1)" opacity="0.45" filter="url(#svg-blur-9)"><title>Mare Nectaris</title></ellipse>
+                            <ellipse id="svg-feature-procellarum" class="svg-feature mare" cx="20.5" cy="25" rx="8" ry="21" transform="rotate(12, 20.5, 25)" fill="rgba(68, 64, 60, 1)" opacity="0.48" filter="url(#svg-blur-12)"><title>Oceanus Procellarum</title></ellipse>
+                            <ellipse id="svg-feature-insularum" class="svg-feature mare" cx="31" cy="31" rx="8" ry="10.25" transform="rotate(-8, 31, 31)" fill="rgba(68, 64, 60, 1)" opacity="0.35" filter="url(#svg-blur-14)"><title>Mare Insularum</title></ellipse>
+                            <ellipse id="svg-feature-nubium" class="svg-feature mare" cx="35.5" cy="61" rx="9" ry="9" transform="rotate(-18, 35.5, 61)" fill="rgba(68, 64, 60, 1)" opacity="0.45" filter="url(#svg-blur-13)"><title>Mare Nubium</title></ellipse>
+                            <ellipse id="svg-feature-humorum" class="svg-feature mare" cx="19" cy="56" rx="7.25" ry="6.75" transform="rotate(0, 19, 56)" fill="rgba(68, 64, 60, 1)" opacity="0.38" filter="url(#svg-blur-8)"><title>Mare Humorum</title></ellipse>
+                            <ellipse id="svg-feature-vaporum" class="svg-feature mare" cx="53.5" cy="38" rx="16.75" ry="9.5" transform="rotate(-14, 53.5, 38)" fill="rgba(68, 64, 60, 1)" opacity="0.45" filter="url(#svg-blur-10)"><title>Mare Vaporum</title></ellipse>
+                            <ellipse id="svg-feature-cognitum" class="svg-feature mare" cx="32" cy="45" rx="13.5" ry="12.25" transform="rotate(15, 32, 45)" fill="rgba(68, 64, 60, 1)" opacity="0.52" filter="url(#svg-blur-11)"><title>Mare Cognitum</title></ellipse>
+                        </g>
+
+                        <!-- Layer 2: Lunar Dark Craters -->
+                        <g id="lunar-dark-craters">
+                            <ellipse id="svg-feature-plato" class="svg-feature mare" cx="62" cy="11" rx="2.25" ry="1.75" transform="rotate(0, 62, 11)" fill="rgba(90, 85, 80, 1)" opacity="0.35" filter="url(#svg-blur-3)"><title>Plato</title></ellipse>
+                            <ellipse id="svg-feature-grimaldi" class="svg-feature mare" cx="7" cy="37" rx="2" ry="3.25" transform="rotate(22, 7, 37)" fill="rgba(90, 85, 80, 1)" opacity="0.35" filter="url(#svg-blur-4)"><title>Grimaldi</title></ellipse>
+                        </g>
+
+                        <!-- Layer 3: Lunar Light Craters & Ray Systems (On Top) -->
+                        <g id="lunar-ray-craters">
+                            <ellipse id="svg-feature-byrgius" class="svg-feature ray-system" cx="7" cy="53.5" rx="7" ry="7" transform="rotate(0, 7, 53.5)" fill="url(#svg-grad-byrgius)" opacity="0.25" filter="url(#svg-blur-4)"><title>Byrgius</title></ellipse>
+                            <ellipse id="svg-feature-stevinus" class="svg-feature ray-system" cx="74" cy="84" rx="4" ry="8.25" transform="rotate(57, 74, 84)" fill="url(#svg-grad-stevinus)" opacity="0.45" filter="url(#svg-blur-10)"><title>Stevinus</title></ellipse>
+                            <ellipse id="svg-feature-langrenus" class="svg-feature ray-system" cx="90" cy="70.5" rx="1.25" ry="5.5" transform="rotate(37, 90, 70.5)" fill="url(#svg-grad-langrenus)" opacity="0.15" filter="url(#svg-blur-4)"><title>Langrenus</title></ellipse>
+                            <ellipse id="svg-feature-tycho" class="svg-feature ray-system" cx="35" cy="77" rx="31" ry="31.75" transform="rotate(0, 35, 77)" fill="url(#svg-grad-tycho)" opacity="1" filter="url(#svg-blur-15)"><title>Tycho</title></ellipse>
+                            <ellipse id="svg-feature-copernicus" class="svg-feature ray-system" cx="41.5" cy="33" rx="19.25" ry="19" transform="rotate(0, 41.5, 33)" fill="url(#svg-grad-copernicus)" opacity="0.2" filter="url(#svg-blur-0)"><title>Copernicus</title></ellipse>
+                            <ellipse id="svg-feature-aristarchus" class="svg-feature ray-system" cx="28.5" cy="17.5" rx="9" ry="8.5" transform="rotate(0, 28.5, 17.5)" fill="url(#svg-grad-aristarchus)" opacity="0.3" filter="url(#svg-blur-3)"><title>Aristarchus</title></ellipse>
+                            <ellipse id="svg-feature-kepler" class="svg-feature ray-system" cx="27.5" cy="32" rx="9.5" ry="10.5" transform="rotate(0, 27.5, 32)" fill="url(#svg-grad-kepler)" opacity="0.1" filter="url(#svg-blur-3)"><title>Kepler</title></ellipse>
+                        </g>
+
+                        <!-- Standalone Spherical Shading Layer (Multiply Filter) -->
+                        <circle id="penumbra-vignette" cx="50" cy="50" r="50" fill="url(#sphere-shading)" opacity="0.3" transform="translate(-6, -4) scale(1.45)" style="transform-origin: 50px 50px; mix-blend-mode: multiply; pointer-events: none;" />
+                    </g>
+                </svg>
             </div>
 
             <!-- Bezel Glare Overlay -->
@@ -203,7 +358,7 @@ NEVER REMOVE THIS COMMENT.
         top: 337.5px; /* Center of rotation */
         transform: translate(-50%, -50%) rotate(0deg);
         border-radius: 50%;
-        transition: transform 1.2s cubic-bezier(0.4, 0.0, 0.2, 1); /* Faster, responsive 1.2s transition */
+        transition: transform 1.2s cubic-bezier(0.4, 0.0, 0.2, 1);
 
         /* Sky Gradient */
         background: linear-gradient(to bottom, #56c8ff 0%, #4ca3dd 42%, #2f3e65 50%, #1a1e30 58%, #111422 100%);
@@ -230,72 +385,10 @@ NEVER REMOVE THIS COMMENT.
         0 0 16px rgba(255, 204, 51, 0.7);
     }
 
-    /* --- Moon --- */
+    /* --- Moon (High-Accuracy SVG) --- */
     .moon {
-        background: radial-gradient(circle at 30% 30%, #f1f5f9 0%, #cbd5e1 45%, #94a3b8 100%);
-        box-shadow: inset -3px -3px 8px rgba(0, 0, 0, 0.35),
-        0 0 10px rgba(255, 255, 255, 0.15);
-        overflow: hidden;
-    }
-
-    /* --- Lunar Maria (Dark Plains) --- */
-    .mare {
-        position: absolute;
-        background-color: rgba(71, 85, 105, 0.28);
         border-radius: 50%;
-        filter: blur(1.5px);
-    }
-
-    .imbrium {
-        width: 22%;
-        height: 22%;
-        top: 16%;
-        left: 18%;
-        border-radius: 40% 50% 45% 50%;
-    }
-
-    .serenitatis {
-        width: 20%;
-        height: 20%;
-        top: 20%;
-        left: 45%;
-    }
-
-    .tranquillitatis {
-        width: 24%;
-        height: 22%;
-        top: 32%;
-        left: 52%;
-        border-radius: 50% 40% 50% 40%;
-    }
-
-    .crisium {
-        width: 12%;
-        height: 10%;
-        top: 30%;
-        left: 76%;
-    }
-
-    .fecunditatis {
-        width: 16%;
-        height: 16%;
-        top: 52%;
-        left: 70%;
-    }
-
-    .procellarum {
-        width: 30%;
-        height: 32%;
-        top: 26%;
-        left: 10%;
-        border-radius: 45% 35% 40% 50%;
-    }
-
-    .nubium {
-        width: 20%;
-        height: 18%;
-        top: 58%;
-        left: 25%;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     }
 
     /* --- Cloud --- */
@@ -331,49 +424,67 @@ NEVER REMOVE THIS COMMENT.
         right: 5px;
     }
 
-    /* --- Flying Dove (Flipped horizontally to fly forward) --- */
-    .bird-b {
+    /* --- Wispy Day Background Clouds (Drifting Parallax - High Speed) --- */
+    .wispy-cloud {
         position: absolute;
-        font-size: 18px;
+        background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 30%, rgba(255,255,255,0.15) 70%, rgba(255,255,255,0) 100%);
+        height: 3px;
+        border-radius: 50%;
+        left: 50%; top: 50%;
+        pointer-events: none;
+    }
+
+    .wispy-cloud-1 {
+        animation: cloud-drift-1 5.3s infinite ease-in-out;
+    }
+
+    .wispy-cloud-2 {
+        animation: cloud-drift-2 6.7s infinite ease-in-out;
+    }
+
+    @keyframes cloud-drift-1 {
+        0% { transform: translate(-50%, -50%) rotate(-8deg) translateY(-278px) rotate(8deg) translateX(-12px); }
+        50% { transform: translate(-50%, -50%) rotate(-8deg) translateY(-278px) rotate(8deg) translateX(12px); }
+        100% { transform: translate(-50%, -50%) rotate(-8deg) translateY(-278px) rotate(8deg) translateX(-12px); }
+    }
+
+    @keyframes cloud-drift-2 {
+        0% { transform: translate(-50%, -50%) rotate(4deg) translateY(-288px) rotate(-4deg) translateX(10px); }
+        50% { transform: translate(-50%, -50%) rotate(4deg) translateY(-288px) rotate(-4deg) translateX(-10px); }
+        100% { transform: translate(-50%, -50%) rotate(4deg) translateY(-288px) rotate(-4deg) translateX(10px); }
+    }
+
+    /* --- Hot Air Balloon (Mechanical Sweep / Stabilized to remain vertical) --- */
+    .balloon-b {
+        position: absolute;
+        width: 17px;
+        height: 22px;
         left: 50%;
         top: 50%;
         pointer-events: none;
-        transform: translate(-50%, -50%) rotate(-25deg) translateY(-307px) rotate(25deg) scaleX(-1);
+        transform: translate(-50%, -50%) rotate(-25deg) translateY(-307px) rotate(25deg) rotate(0deg);
+        transition: transform 1.2s cubic-bezier(0.4, 0.0, 0.2, 1);
     }
 
-    /* --- Twinkling Stars --- */
+    .theme-checkbox:checked + .slider-b .balloon-b {
+        transform: translate(-50%, -50%) rotate(-25deg) translateY(-307px) rotate(25deg) rotate(-180deg);
+    }
+
+    /* --- Twinkling Stars (Positions and Coprime Twinkle Speeds Set Inline) --- */
     .star {
         position: absolute;
-        background-color: white;
+        background-color: #ffffff;
         border-radius: 50%;
         left: 50%;
         top: 50%;
-        box-shadow: 0 0 3px #fff;
-    }
-
-    .theme-checkbox:checked + .slider-b .star {
-        animation: twinkle 3s infinite ease-in-out;
+        box-shadow: 0 0 3px #ffffff;
+        animation: twinkle var(--tw-duration, 6s) infinite ease-in-out;
+        animation-delay: var(--tw-delay, 0s);
     }
 
     @keyframes twinkle {
-        0%, 100% {
-            opacity: 0.25;
-        }
-        50% {
-            opacity: 1;
-        }
-    }
-
-    .star:nth-child(2n) {
-        animation-delay: 0.7s;
-    }
-
-    .star:nth-child(3n) {
-        animation-delay: 1.4s;
-    }
-
-    .star:nth-child(4n) {
-        animation-delay: 2.1s;
+        0%, 100% { opacity: var(--tw-min-opacity, 0.35); }
+        50% { opacity: 1; }
     }
 
     /* --- Glass Face Bezel Glare --- */
@@ -393,7 +504,7 @@ NEVER REMOVE THIS COMMENT.
        POLAR PLACEMENTS (Flat Arc Orbit: translateY(-307px) for exact centering)
        ========================================================================= */
     .sun-b {
-        transform: translate(-50%, -50%) rotate(-8.2deg) translateY(-307px) rotate(8.2deg);
+        transform: translate(-50%, -50%) rotate(-7.9deg) translateY(-307px) rotate(7.9deg);
     }
 
     .moon-b {
@@ -402,81 +513,6 @@ NEVER REMOVE THIS COMMENT.
 
     .cloud-b1 {
         transform: translate(-50%, -50%) rotate(7deg) translateY(-292px) rotate(-7deg);
-    }
-
-    /* =========================================================================
-       STARS PLACEMENTS (Zone-based layout around Moon)
-       ========================================================================= */
-    .star-b01 {
-        width: 2.5px;
-        height: 2.5px;
-        transform: translate(-50%, -50%) rotate(-195deg) translateY(-322px);
-    }
-
-    .star-b02 {
-        width: 1.5px;
-        height: 1.5px;
-        transform: translate(-50%, -50%) rotate(-192deg) translateY(-290px);
-    }
-
-    .star-b03 {
-        width: 3.0px;
-        height: 3.0px;
-        transform: translate(-50%, -50%) rotate(-189deg) translateY(-315px);
-    }
-
-    .star-b04 {
-        width: 2.0px;
-        height: 2.0px;
-        transform: translate(-50%, -50%) rotate(-186deg) translateY(-298px);
-    }
-
-    .star-b05 {
-        width: 1.5px;
-        height: 1.5px;
-        transform: translate(-50%, -50%) rotate(-183deg) translateY(-325px);
-    }
-
-    .star-b06 {
-        width: 2.5px;
-        height: 2.5px;
-        transform: translate(-50%, -50%) rotate(-180deg) translateY(-305px);
-    }
-
-    .star-b07 {
-        width: 2.0px;
-        height: 2.0px;
-        transform: translate(-50%, -50%) rotate(-191deg) translateY(-310px);
-    }
-
-    .star-b08 {
-        width: 1.5px;
-        height: 1.5px;
-        transform: translate(-50%, -50%) rotate(-184deg) translateY(-292px);
-    }
-
-    .star-b12 {
-        width: 2.0px;
-        height: 2.0px;
-        transform: translate(-50%, -50%) rotate(-165deg) translateY(-294px);
-    }
-
-    .star-b13 {
-        width: 3.0px;
-        height: 3.0px;
-        transform: translate(-50%, -50%) rotate(-162deg) translateY(-318px);
-    }
-
-    .star-b14 {
-        width: 2.0px;
-        height: 2.0px;
-        transform: translate(-50%, -50%) rotate(-159deg) translateY(-290px);
-    }
-
-    .star-b15 {
-        width: 2.5px;
-        height: 2.5px;
-        transform: translate(-50%, -50%) rotate(-156deg) translateY(-312px);
     }
 </style>
 
