@@ -604,6 +604,75 @@ NEVER REMOVE THIS COMMENT.
                     /* 2. Instantly animate the physical rotation of the toggles */
                     syncAllToggles(targetState, true);
 
+                    /* --- START TRANSITION TIMING CORRECTION PATCH --- */
+                    const startTime = performance.now();
+                    const targets = document.querySelectorAll('h1, h2, h3, h4, h5, h6, .nav-list-link.active, .nav-list-item.active > .nav-list-link');
+
+                    /* Lock all targeted elements to their current computed colors */
+                    const saved = [];
+                    targets.forEach(el => {
+                        const current = window.getComputedStyle(el).color;
+                        saved.push({ el, startColor: current });
+                        el.style.color = current;
+                    });
+
+                    let triggered = false;
+                    const triggerStaticTransitions = () => {
+                        if (triggered) return;
+                        triggered = true;
+
+                        const elapsed = Math.round(performance.now() - startTime);
+
+                        /* Calculate remaining transition window dynamically to sync animations */
+                        const remaining = Math.max(100, 1200 - elapsed);
+
+                        saved.forEach(({ el, startColor }) => {
+                            /* Disable transitions temporarily to measure JTD's new static stylesheet color */
+                            el.style.setProperty('transition', 'none', 'important');
+                            el.style.color = '';
+
+                            const targetColor = window.getComputedStyle(el).color;
+
+                            /* Restore starting color and remove temporary transition bypass override */
+                            el.style.color = startColor;
+                            el.style.removeProperty('transition');
+
+                            /* Force layout reflow so the browser registers the baseline start color */
+                            el.offsetHeight;
+
+                            /* Force the transition over the exact remaining window with static target color */
+                            el.style.setProperty('transition', `color ${remaining}ms cubic-bezier(0.4, 0.0, 0.2, 1)`, 'important');
+                            el.style.color = targetColor;
+
+                            /* Cleanup inline custom properties at the exact end of the transition */
+                            setTimeout(() => {
+                                el.style.color = '';
+                                el.style.removeProperty('transition');
+                            }, remaining);
+                        });
+
+                        /* Safely strip class at the exact millisecond all transitions finish */
+                        transitionTimeout = setTimeout(() => {
+                            document.documentElement.classList.remove('theme-transition');
+                        }, remaining);
+                    };
+
+                    /* Listen to document.body's native transitionrun to capture perfect stylesheet loading moment */
+                    const onStyleLoad = (evt) => {
+                        if (evt.target === document.body && (evt.propertyName === 'color' || evt.propertyName === 'background-color')) {
+                            document.body.removeEventListener('transitionrun', onStyleLoad);
+                            triggerStaticTransitions();
+                        }
+                    };
+                    document.body.addEventListener('transitionrun', onStyleLoad);
+
+                    /* Defensive fallback timeout (350ms) in case stylesheet load event is skipped */
+                    themeTimeout = setTimeout(() => {
+                        document.body.removeEventListener('transitionrun', onStyleLoad);
+                        triggerStaticTransitions();
+                    }, 350);
+                    /* --- END TRANSITION PATCH --- */
+
                     /* 3. Swap theme variables immediately (at 0s) to start the fade simultaneously */
                     if (typeof jtd !== 'undefined') {
                         jtd.setTheme(nextTheme);
@@ -627,10 +696,10 @@ NEVER REMOVE THIS COMMENT.
                         console.warn('Could not save theme selection:', err);
                     }
 
-                    /* 4. Clean up transitional class after entire visual rotation completes (1200ms) */
+                    /* 4. Clean up transitional class after entire visual rotation completes (1200ms) *
                     transitionTimeout = setTimeout(() => {
                         document.documentElement.classList.remove('theme-transition');
-                    }, 1200);
+                    }, 1200); */
                 });
             });
         };
