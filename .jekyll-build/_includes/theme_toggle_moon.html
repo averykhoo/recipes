@@ -1,0 +1,203 @@
+<svg class="celestial-body moon moon-b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <defs>
+        <!-- Native Vector Clip Path to force perfect round circular boundary -->
+        <clipPath id="moon-clip">
+            <circle cx="50" cy="50" r="50"/>
+        </clipPath>
+
+        <radialGradient id="base-moon-grad" cx="40%" cy="40%" r="60%">
+            <stop offset="0%" stop-color="#c2c0bd"/>
+            <stop offset="45%" stop-color="#a3a19f"/>
+            <stop offset="80%" stop-color="#858480"/>
+            <stop offset="100%" stop-color="#3d3d3d"/>
+        </radialGradient>
+        <radialGradient id="sphere-shading" cx="50%" cy="50%" r="50%">
+            <stop offset="45%" stop-color="#000000" stop-opacity="0"/>
+            <stop offset="87%" stop-color="#000000" stop-opacity="0.4"/>
+        </radialGradient>
+        <radialGradient id="svg-grad-byrgius" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(255,255,255,1)"/>
+            <stop offset="60%" stop-color="transparent"/>
+        </radialGradient>
+        <radialGradient id="svg-grad-stevinus" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(255,255,255,1)"/>
+            <stop offset="60%" stop-color="transparent"/>
+        </radialGradient>
+        <radialGradient id="svg-grad-langrenus" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(255,255,255,1)"/>
+            <stop offset="60%" stop-color="transparent"/>
+        </radialGradient>
+        <radialGradient id="svg-grad-tycho" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(255,255,255,1)"/>
+            <stop offset="15%" stop-color="rgba(255,255,255,0.15)"/>
+            <stop offset="60%" stop-color="transparent"/>
+        </radialGradient>
+        <radialGradient id="svg-grad-copernicus" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(255,255,255,1)"/>
+            <stop offset="20%" stop-color="rgba(255,255,255,0.15)"/>
+            <stop offset="60%" stop-color="transparent"/>
+        </radialGradient>
+        <radialGradient id="svg-grad-aristarchus" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(255,255,255,1)"/>
+            <stop offset="60%" stop-color="transparent"/>
+        </radialGradient>
+        <radialGradient id="svg-grad-kepler" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(255,255,255,1)"/>
+            <stop offset="60%" stop-color="transparent"/>
+        </radialGradient>
+
+        <filter id="svg-blur-0" x="-200%" y="-200%" width="500%" height="500%"
+                color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="1.1"/>
+        </filter>
+        <filter id="svg-blur-3" x="-200%" y="-200%" width="500%" height="500%"
+                color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="0.9375"/>
+        </filter>
+        <filter id="svg-blur-4" x="-200%" y="-200%" width="500%" height="500%"
+                color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="1.25"/>
+        </filter>
+        <filter id="svg-blur-5" x="-200%" y="-200%" width="500%" height="500%"
+                color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="1.5625"/>
+        </filter>
+        <filter id="svg-blur-6" x="-200%" y="-200%" width="500%" height="500%"
+                color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="1.875"/>
+        </filter>
+        <filter id="svg-blur-7" x="-200%" y="-200%" width="500%" height="500%"
+                color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="2.1875"/>
+        </filter>
+        <filter id="svg-blur-8" x="-200%" y="-200%" width="500%" height="500%"
+                color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="2.5"/>
+        </filter>
+        <filter id="svg-blur-9" x="-200%" y="-200%" width="500%" height="500%"
+                color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="2.8125"/>
+        </filter>
+        <filter id="svg-blur-10" x="-200%" y="-200%" width="500%" height="500%"
+                color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="3.125"/>
+        </filter>
+        <filter id="svg-blur-11" x="-200%" y="-200%" width="500%" height="500%"
+                color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="3.4375"/>
+        </filter>
+        <filter id="svg-blur-12" x="-200%" y="-200%" width="500%" height="500%"
+                color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="3.75"/>
+        </filter>
+        <filter id="svg-blur-13" x="-200%" y="-200%" width="500%" height="500%"
+                color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="4.0625"/>
+        </filter>
+        <filter id="svg-blur-14" x="-200%" y="-200%" width="500%" height="500%"
+                color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="4.375"/>
+        </filter>
+        <filter id="svg-blur-15" x="-200%" y="-200%" width="500%" height="500%"
+                color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="4.6875"/>
+        </filter>
+    </defs>
+
+    <!-- Master Clip Group -->
+    <g clip-path="url(#moon-clip)">
+        <!-- Base Moon Plate (Uses lunar-gray fallback if gradient fails) -->
+        <circle id="base-moon" cx="50" cy="50" r="50" fill="url(#base-moon-grad) #b0aeab"/>
+
+        <!-- Layer 1: Lunar Maria (Seas) - Opacities softened & lightened to decrease starkness -->
+        <g id="lunar-maria">
+            <ellipse id="svg-feature-frigoris" class="svg-feature mare" cx="66" cy="9.5" rx="24.5"
+                     ry="2" transform="rotate(20, 66, 9.5)" fill="rgba(68, 64, 60, 1)" opacity="0.4"
+                     filter="url(#svg-blur-5)"><title>Mare Frigoris</title></ellipse>
+            <ellipse id="svg-feature-imbrium" class="svg-feature mare" cx="49" cy="20" rx="21.75"
+                     ry="12.75" transform="rotate(-7, 49, 20)" fill="rgba(68, 64, 60, 1)" opacity="0.48"
+                     filter="url(#svg-blur-15)"><title>Mare Imbrium</title></ellipse>
+            <ellipse id="svg-feature-serenitatis" class="svg-feature mare" cx="73.5" cy="33.5" rx="7.5"
+                     ry="11.75" transform="rotate(-23, 73.5, 33.5)" fill="rgba(68, 64, 60, 1)"
+                     opacity="0.48" filter="url(#svg-blur-7)"><title>Mare Serenitatis</title></ellipse>
+            <ellipse id="svg-feature-tranquillitatis" class="svg-feature mare" cx="77.5" cy="49"
+                     rx="13.25" ry="9.5" transform="rotate(-5, 77.5, 49)" fill="rgba(68, 64, 60, 1)"
+                     opacity="0.45" filter="url(#svg-blur-10)"><title>Mare Tranquillitatis</title>
+            </ellipse>
+            <ellipse id="svg-feature-crisium" class="svg-feature mare" cx="95" cy="49.5" rx="3.25"
+                     ry="6.75" transform="rotate(-4, 95, 49.5)" fill="rgba(45, 42, 38, 1)"
+                     opacity="0.38" filter="url(#svg-blur-3)"><title>Mare Crisium</title></ellipse>
+            <ellipse id="svg-feature-fecunditatis" class="svg-feature mare" cx="87" cy="63" rx="7"
+                     ry="12.25" transform="rotate(14, 87, 63)" fill="rgba(68, 64, 60, 1)" opacity="0.42"
+                     filter="url(#svg-blur-6)"><title>Mare Fecunditatis</title></ellipse>
+            <ellipse id="svg-feature-nectaris" class="svg-feature mare" cx="74" cy="67" rx="5" ry="8"
+                     transform="rotate(0, 74, 67)" fill="rgba(68, 64, 60, 1)" opacity="0.45"
+                     filter="url(#svg-blur-9)"><title>Mare Nectaris</title></ellipse>
+            <ellipse id="svg-feature-procellarum" class="svg-feature mare" cx="20.5" cy="25" rx="8"
+                     ry="21" transform="rotate(12, 20.5, 25)" fill="rgba(68, 64, 60, 1)" opacity="0.48"
+                     filter="url(#svg-blur-12)"><title>Oceanus Procellarum</title></ellipse>
+            <ellipse id="svg-feature-insularum" class="svg-feature mare" cx="31" cy="31" rx="8"
+                     ry="10.25" transform="rotate(-8, 31, 31)" fill="rgba(68, 64, 60, 1)" opacity="0.35"
+                     filter="url(#svg-blur-14)"><title>Mare Insularum</title></ellipse>
+            <ellipse id="svg-feature-nubium" class="svg-feature mare" cx="35.5" cy="61" rx="9" ry="9"
+                     transform="rotate(-18, 35.5, 61)" fill="rgba(68, 64, 60, 1)" opacity="0.45"
+                     filter="url(#svg-blur-13)"><title>Mare Nubium</title></ellipse>
+            <ellipse id="svg-feature-humorum" class="svg-feature mare" cx="19" cy="56" rx="7.25"
+                     ry="6.75" transform="rotate(0, 19, 56)" fill="rgba(68, 64, 60, 1)" opacity="0.38"
+                     filter="url(#svg-blur-8)"><title>Mare Humorum</title></ellipse>
+            <ellipse id="svg-feature-vaporum" class="svg-feature mare" cx="53.5" cy="38" rx="16.75"
+                     ry="9.5" transform="rotate(-14, 53.5, 38)" fill="rgba(68, 64, 60, 1)"
+                     opacity="0.45" filter="url(#svg-blur-10)"><title>Mare Vaporum</title></ellipse>
+            <ellipse id="svg-feature-cognitum" class="svg-feature mare" cx="32" cy="45" rx="13.5"
+                     ry="12.25" transform="rotate(15, 32, 45)" fill="rgba(68, 64, 60, 1)" opacity="0.52"
+                     filter="url(#svg-blur-11)"><title>Mare Cognitum</title></ellipse>
+        </g>
+
+        <!-- Layer 2: Lunar Dark Craters -->
+        <g id="lunar-dark-craters">
+            <ellipse id="svg-feature-plato" class="svg-feature mare" cx="62" cy="11" rx="2.25" ry="1.75"
+                     transform="rotate(0, 62, 11)" fill="rgba(90, 85, 80, 1)" opacity="0.35"
+                     filter="url(#svg-blur-3)"><title>Plato</title></ellipse>
+            <ellipse id="svg-feature-grimaldi" class="svg-feature mare" cx="7" cy="37" rx="2" ry="3.25"
+                     transform="rotate(22, 7, 37)" fill="rgba(90, 85, 80, 1)" opacity="0.35"
+                     filter="url(#svg-blur-4)"><title>Grimaldi</title></ellipse>
+        </g>
+
+        <!-- Layer 3: Lunar Light Craters & Ray Systems (Uses solid white fallback opacities if gradients fail) -->
+        <g id="lunar-ray-craters">
+            <ellipse id="svg-feature-byrgius" class="svg-feature ray-system" cx="7" cy="53.5" rx="7"
+                     ry="7" transform="rotate(0, 7, 53.5)"
+                     fill="url(#svg-grad-byrgius) rgba(255, 255, 255, 0.20)" opacity="0.25"
+                     filter="url(#svg-blur-4)"><title>Byrgius</title></ellipse>
+            <ellipse id="svg-feature-stevinus" class="svg-feature ray-system" cx="74" cy="84" rx="4"
+                     ry="8.25" transform="rotate(57, 74, 84)"
+                     fill="url(#svg-grad-stevinus) rgba(255, 255, 255, 0.30)" opacity="0.45"
+                     filter="url(#svg-blur-10)"><title>Stevinus</title></ellipse>
+            <ellipse id="svg-feature-langrenus" class="svg-feature ray-system" cx="90" cy="70.5"
+                     rx="1.25" ry="5.5" transform="rotate(37, 90, 70.5)"
+                     fill="url(#svg-grad-langrenus) rgba(255, 255, 255, 0.15)" opacity="0.15"
+                     filter="url(#svg-blur-4)"><title>Langrenus</title></ellipse>
+            <ellipse id="svg-feature-tycho" class="svg-feature ray-system" cx="35" cy="77" rx="31"
+                     ry="31.75" transform="rotate(0, 35, 77)"
+                     fill="url(#svg-grad-tycho) rgba(255, 255, 255, 0.40)" opacity="1"
+                     filter="url(#svg-blur-15)"><title>Tycho</title></ellipse>
+            <ellipse id="svg-feature-copernicus" class="svg-feature ray-system" cx="41.5" cy="33"
+                     rx="19.25" ry="19" transform="rotate(0, 41.5, 33)"
+                     fill="url(#svg-grad-copernicus) rgba(255, 255, 255, 0.15)" opacity="0.2"
+                     filter="url(#svg-blur-0)"><title>Copernicus</title></ellipse>
+            <ellipse id="svg-feature-aristarchus" class="svg-feature ray-system" cx="28.5" cy="17.5"
+                     rx="9" ry="8.5" transform="rotate(0, 28.5, 17.5)"
+                     fill="url(#svg-grad-aristarchus) rgba(255, 255, 255, 0.30)" opacity="0.3"
+                     filter="url(#svg-blur-3)"><title>Aristarchus</title></ellipse>
+            <ellipse id="svg-feature-kepler" class="svg-feature ray-system" cx="27.5" cy="32" rx="9.5"
+                     ry="10.5" transform="rotate(0, 27.5, 32)"
+                     fill="url(#svg-grad-kepler) rgba(255, 255, 255, 0.10)" opacity="0.1"
+                     filter="url(#svg-blur-3)"><title>Kepler</title></ellipse>
+        </g>
+
+        <!-- Standalone Spherical Shading Layer (Multiply Filter) -->
+        <circle id="penumbra-vignette" cx="50" cy="50" r="50" fill="url(#sphere-shading) transparent"
+                opacity="0.3" transform="translate(-6, -4) scale(1.45)"
+                style="transform-origin: 50px 50px; mix-blend-mode: multiply; pointer-events: none;"/>
+    </g>
+</svg>

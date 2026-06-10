@@ -22,49 +22,7 @@ NEVER REMOVE THIS COMMENT.
                 <div class="wispy-cloud wispy-cloud-2" style="width: 50px;"></div>
 
                 <!-- Vibrant Multi-colored Balloon (Positioned at -25deg, stays vertical during rotation) [0] -->
-                <svg class="balloon-b" viewBox="0 0 100 130">
-                    <!-- Outer Left & Right lobes (Vibrant Red) [0] -->
-                    <path d="M 50,10 C 75,10 90,30 90,55 C 90,80 75,95 62,100 L 38,100 C 25,95 10,80 10,55 C 10,30 25,10 50,10 Z"
-                          fill="#ef4444"/>
-                    <!-- Next inner lobes (Orange) [0] -->
-                    <path d="M 50,10 C 69,10 80,30 80,55 C 80,80 69,95 59,100 C 53,95 41,80 41,55 C 41,30 53,10 50,10 Z"
-                          fill="#f97316"/>
-                    <path d="M 50,10 C 31,10 20,30 20,55 C 20,80 31,95 41,100 C 47,95 59,80 59,55 C 59,30 47,10 50,10 Z"
-                          fill="#f97316"/>
-                    <!-- Next inner lobes (Yellow) [0] -->
-                    <path d="M 50,10 C 63,10 71,30 71,55 C 71,80 63,95 55,100 C 47,95 39,80 39,55 C 39,30 47,10 50,10 Z"
-                          fill="#eab308"/>
-                    <path d="M 50,10 C 37,10 29,30 29,55 C 29,80 37,95 45,100 C 53,95 61,80 61,55 C 61,30 53,10 50,10 Z"
-                          fill="#eab308"/>
-                    <!-- Next inner lobes (Green) [0] -->
-                    <path d="M 50,10 C 57,10 63,30 63,55 C 63,80 57,95 51,100 C 45,95 37,80 37,55 C 37,30 45,10 50,10 Z"
-                          fill="#22c55e"/>
-                    <path d="M 50,10 C 43,10 37,30 37,55 C 37,80 43,95 49,100 C 55,95 63,80 61,55 C 61,30 55,10 50,10 Z"
-                          fill="#22c55e"/>
-                    <!-- Center lobes (Blue) [0] -->
-                    <path d="M 50,10 C 54,10 56,30 56,55 C 56,80 54,95 50,100 C 46,95 44,80 44,55 C 44,30 46,10 50,10 Z"
-                          fill="#3b82f6"/>
-                    <path d="M 50,10 C 46,10 44,30 44,55 C 44,80 46,95 50,100 C 54,95 56,80 56,55 C 56,30 54,10 50,10 Z"
-                          fill="#3b82f6"/>
-                    <!-- Innermost stripe (Purple) [0] -->
-                    <path d="M 50,10 C 51.5,10 52.5,30 52.5,55 C 52.5,80 51.5,95 50,100 C 48.5,95 47.5,80 47.5,55 C 47.5,30 48.5,10 50,10 Z"
-                          fill="#a855f7"/>
-                    <!-- Bottom Burner Collar -->
-                    <rect x="38" y="100" width="24" height="6" fill="#1e293b"/>
-                    <!-- Flame Glow -->
-                    <ellipse cx="50" cy="102" rx="4" ry="2" fill="#ffcc33"/>
-                    <!-- Thick Rigging Ropes [0] -->
-                    <line x1="41" y1="106" x2="43" y2="114" stroke="#ffffff" stroke-width="2.2" opacity="0.65"/>
-                    <line x1="59" y1="106" x2="57" y2="114" stroke="#ffffff" stroke-width="2.2" opacity="0.65"/>
-                    <!-- Upscaled Wicker Basket [0] -->
-                    <rect x="40" y="114" width="20" height="15" rx="2" fill="#a16207" stroke="#1e293b"
-                          stroke-width="1"/>
-                    <!-- Basket Weave Line Detail -->
-                    <line x1="44" y1="114" x2="44" y2="129" stroke="#1e293b" stroke-width="0.8"/>
-                    <line x1="48" y1="114" x2="48" y2="129" stroke="#1e293b" stroke-width="0.8"/>
-                    <line x1="52" y1="114" x2="52" y2="129" stroke="#1e293b" stroke-width="0.8"/>
-                    <line x1="56" y1="114" x2="56" y2="129" stroke="#1e293b" stroke-width="0.8"/>
-                </svg>
+                {% include theme_toggle_balloon.html %}
 
                 <!-- =========================================================
                      CONSTELLATION: ORION (Left of the Moon in Dark Mode)
@@ -149,209 +107,7 @@ NEVER REMOVE THIS COMMENT.
                      style="width: 1.3px; height: 1.3px; transform: translate(-50%, -50%) rotate(-178deg) translateY(-293px); --tw-duration: 5.3s; --tw-delay: 1.8s; --tw-min-opacity: 0.25;"></div>
 
                 <!-- Moon (Visible in Dark Mode) -->
-                <svg class="celestial-body moon moon-b" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                    <defs>
-                        <!-- Native Vector Clip Path to force perfect round circular boundary -->
-                        <clipPath id="moon-clip">
-                            <circle cx="50" cy="50" r="50"/>
-                        </clipPath>
-
-                        <radialGradient id="base-moon-grad" cx="40%" cy="40%" r="60%">
-                            <stop offset="0%" stop-color="#c2c0bd"/>
-                            <stop offset="45%" stop-color="#a3a19f"/>
-                            <stop offset="80%" stop-color="#858480"/>
-                            <stop offset="100%" stop-color="#3d3d3d"/>
-                        </radialGradient>
-                        <radialGradient id="sphere-shading" cx="50%" cy="50%" r="50%">
-                            <stop offset="45%" stop-color="#000000" stop-opacity="0"/>
-                            <stop offset="87%" stop-color="#000000" stop-opacity="0.4"/>
-                        </radialGradient>
-                        <radialGradient id="svg-grad-byrgius" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stop-color="rgba(255,255,255,1)"/>
-                            <stop offset="60%" stop-color="transparent"/>
-                        </radialGradient>
-                        <radialGradient id="svg-grad-stevinus" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stop-color="rgba(255,255,255,1)"/>
-                            <stop offset="60%" stop-color="transparent"/>
-                        </radialGradient>
-                        <radialGradient id="svg-grad-langrenus" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stop-color="rgba(255,255,255,1)"/>
-                            <stop offset="60%" stop-color="transparent"/>
-                        </radialGradient>
-                        <radialGradient id="svg-grad-tycho" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stop-color="rgba(255,255,255,1)"/>
-                            <stop offset="15%" stop-color="rgba(255,255,255,0.15)"/>
-                            <stop offset="60%" stop-color="transparent"/>
-                        </radialGradient>
-                        <radialGradient id="svg-grad-copernicus" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stop-color="rgba(255,255,255,1)"/>
-                            <stop offset="20%" stop-color="rgba(255,255,255,0.15)"/>
-                            <stop offset="60%" stop-color="transparent"/>
-                        </radialGradient>
-                        <radialGradient id="svg-grad-aristarchus" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stop-color="rgba(255,255,255,1)"/>
-                            <stop offset="60%" stop-color="transparent"/>
-                        </radialGradient>
-                        <radialGradient id="svg-grad-kepler" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" stop-color="rgba(255,255,255,1)"/>
-                            <stop offset="60%" stop-color="transparent"/>
-                        </radialGradient>
-
-                        <filter id="svg-blur-0" x="-200%" y="-200%" width="500%" height="500%"
-                                color-interpolation-filters="sRGB">
-                            <feGaussianBlur stdDeviation="1.1"/>
-                        </filter>
-                        <filter id="svg-blur-3" x="-200%" y="-200%" width="500%" height="500%"
-                                color-interpolation-filters="sRGB">
-                            <feGaussianBlur stdDeviation="0.9375"/>
-                        </filter>
-                        <filter id="svg-blur-4" x="-200%" y="-200%" width="500%" height="500%"
-                                color-interpolation-filters="sRGB">
-                            <feGaussianBlur stdDeviation="1.25"/>
-                        </filter>
-                        <filter id="svg-blur-5" x="-200%" y="-200%" width="500%" height="500%"
-                                color-interpolation-filters="sRGB">
-                            <feGaussianBlur stdDeviation="1.5625"/>
-                        </filter>
-                        <filter id="svg-blur-6" x="-200%" y="-200%" width="500%" height="500%"
-                                color-interpolation-filters="sRGB">
-                            <feGaussianBlur stdDeviation="1.875"/>
-                        </filter>
-                        <filter id="svg-blur-7" x="-200%" y="-200%" width="500%" height="500%"
-                                color-interpolation-filters="sRGB">
-                            <feGaussianBlur stdDeviation="2.1875"/>
-                        </filter>
-                        <filter id="svg-blur-8" x="-200%" y="-200%" width="500%" height="500%"
-                                color-interpolation-filters="sRGB">
-                            <feGaussianBlur stdDeviation="2.5"/>
-                        </filter>
-                        <filter id="svg-blur-9" x="-200%" y="-200%" width="500%" height="500%"
-                                color-interpolation-filters="sRGB">
-                            <feGaussianBlur stdDeviation="2.8125"/>
-                        </filter>
-                        <filter id="svg-blur-10" x="-200%" y="-200%" width="500%" height="500%"
-                                color-interpolation-filters="sRGB">
-                            <feGaussianBlur stdDeviation="3.125"/>
-                        </filter>
-                        <filter id="svg-blur-11" x="-200%" y="-200%" width="500%" height="500%"
-                                color-interpolation-filters="sRGB">
-                            <feGaussianBlur stdDeviation="3.4375"/>
-                        </filter>
-                        <filter id="svg-blur-12" x="-200%" y="-200%" width="500%" height="500%"
-                                color-interpolation-filters="sRGB">
-                            <feGaussianBlur stdDeviation="3.75"/>
-                        </filter>
-                        <filter id="svg-blur-13" x="-200%" y="-200%" width="500%" height="500%"
-                                color-interpolation-filters="sRGB">
-                            <feGaussianBlur stdDeviation="4.0625"/>
-                        </filter>
-                        <filter id="svg-blur-14" x="-200%" y="-200%" width="500%" height="500%"
-                                color-interpolation-filters="sRGB">
-                            <feGaussianBlur stdDeviation="4.375"/>
-                        </filter>
-                        <filter id="svg-blur-15" x="-200%" y="-200%" width="500%" height="500%"
-                                color-interpolation-filters="sRGB">
-                            <feGaussianBlur stdDeviation="4.6875"/>
-                        </filter>
-                    </defs>
-
-                    <!-- Master Clip Group -->
-                    <g clip-path="url(#moon-clip)">
-                        <!-- Base Moon Plate (Uses lunar-gray fallback if gradient fails) -->
-                        <circle id="base-moon" cx="50" cy="50" r="50" fill="url(#base-moon-grad) #b0aeab"/>
-
-                        <!-- Layer 1: Lunar Maria (Seas) - Opacities softened & lightened to decrease starkness -->
-                        <g id="lunar-maria">
-                            <ellipse id="svg-feature-frigoris" class="svg-feature mare" cx="66" cy="9.5" rx="24.5"
-                                     ry="2" transform="rotate(20, 66, 9.5)" fill="rgba(68, 64, 60, 1)" opacity="0.4"
-                                     filter="url(#svg-blur-5)"><title>Mare Frigoris</title></ellipse>
-                            <ellipse id="svg-feature-imbrium" class="svg-feature mare" cx="49" cy="20" rx="21.75"
-                                     ry="12.75" transform="rotate(-7, 49, 20)" fill="rgba(68, 64, 60, 1)" opacity="0.48"
-                                     filter="url(#svg-blur-15)"><title>Mare Imbrium</title></ellipse>
-                            <ellipse id="svg-feature-serenitatis" class="svg-feature mare" cx="73.5" cy="33.5" rx="7.5"
-                                     ry="11.75" transform="rotate(-23, 73.5, 33.5)" fill="rgba(68, 64, 60, 1)"
-                                     opacity="0.48" filter="url(#svg-blur-7)"><title>Mare Serenitatis</title></ellipse>
-                            <ellipse id="svg-feature-tranquillitatis" class="svg-feature mare" cx="77.5" cy="49"
-                                     rx="13.25" ry="9.5" transform="rotate(-5, 77.5, 49)" fill="rgba(68, 64, 60, 1)"
-                                     opacity="0.45" filter="url(#svg-blur-10)"><title>Mare Tranquillitatis</title>
-                            </ellipse>
-                            <ellipse id="svg-feature-crisium" class="svg-feature mare" cx="95" cy="49.5" rx="3.25"
-                                     ry="6.75" transform="rotate(-4, 95, 49.5)" fill="rgba(45, 42, 38, 1)"
-                                     opacity="0.38" filter="url(#svg-blur-3)"><title>Mare Crisium</title></ellipse>
-                            <ellipse id="svg-feature-fecunditatis" class="svg-feature mare" cx="87" cy="63" rx="7"
-                                     ry="12.25" transform="rotate(14, 87, 63)" fill="rgba(68, 64, 60, 1)" opacity="0.42"
-                                     filter="url(#svg-blur-6)"><title>Mare Fecunditatis</title></ellipse>
-                            <ellipse id="svg-feature-nectaris" class="svg-feature mare" cx="74" cy="67" rx="5" ry="8"
-                                     transform="rotate(0, 74, 67)" fill="rgba(68, 64, 60, 1)" opacity="0.45"
-                                     filter="url(#svg-blur-9)"><title>Mare Nectaris</title></ellipse>
-                            <ellipse id="svg-feature-procellarum" class="svg-feature mare" cx="20.5" cy="25" rx="8"
-                                     ry="21" transform="rotate(12, 20.5, 25)" fill="rgba(68, 64, 60, 1)" opacity="0.48"
-                                     filter="url(#svg-blur-12)"><title>Oceanus Procellarum</title></ellipse>
-                            <ellipse id="svg-feature-insularum" class="svg-feature mare" cx="31" cy="31" rx="8"
-                                     ry="10.25" transform="rotate(-8, 31, 31)" fill="rgba(68, 64, 60, 1)" opacity="0.35"
-                                     filter="url(#svg-blur-14)"><title>Mare Insularum</title></ellipse>
-                            <ellipse id="svg-feature-nubium" class="svg-feature mare" cx="35.5" cy="61" rx="9" ry="9"
-                                     transform="rotate(-18, 35.5, 61)" fill="rgba(68, 64, 60, 1)" opacity="0.45"
-                                     filter="url(#svg-blur-13)"><title>Mare Nubium</title></ellipse>
-                            <ellipse id="svg-feature-humorum" class="svg-feature mare" cx="19" cy="56" rx="7.25"
-                                     ry="6.75" transform="rotate(0, 19, 56)" fill="rgba(68, 64, 60, 1)" opacity="0.38"
-                                     filter="url(#svg-blur-8)"><title>Mare Humorum</title></ellipse>
-                            <ellipse id="svg-feature-vaporum" class="svg-feature mare" cx="53.5" cy="38" rx="16.75"
-                                     ry="9.5" transform="rotate(-14, 53.5, 38)" fill="rgba(68, 64, 60, 1)"
-                                     opacity="0.45" filter="url(#svg-blur-10)"><title>Mare Vaporum</title></ellipse>
-                            <ellipse id="svg-feature-cognitum" class="svg-feature mare" cx="32" cy="45" rx="13.5"
-                                     ry="12.25" transform="rotate(15, 32, 45)" fill="rgba(68, 64, 60, 1)" opacity="0.52"
-                                     filter="url(#svg-blur-11)"><title>Mare Cognitum</title></ellipse>
-                        </g>
-
-                        <!-- Layer 2: Lunar Dark Craters -->
-                        <g id="lunar-dark-craters">
-                            <ellipse id="svg-feature-plato" class="svg-feature mare" cx="62" cy="11" rx="2.25" ry="1.75"
-                                     transform="rotate(0, 62, 11)" fill="rgba(90, 85, 80, 1)" opacity="0.35"
-                                     filter="url(#svg-blur-3)"><title>Plato</title></ellipse>
-                            <ellipse id="svg-feature-grimaldi" class="svg-feature mare" cx="7" cy="37" rx="2" ry="3.25"
-                                     transform="rotate(22, 7, 37)" fill="rgba(90, 85, 80, 1)" opacity="0.35"
-                                     filter="url(#svg-blur-4)"><title>Grimaldi</title></ellipse>
-                        </g>
-
-                        <!-- Layer 3: Lunar Light Craters & Ray Systems (Uses solid white fallback opacities if gradients fail) -->
-                        <g id="lunar-ray-craters">
-                            <ellipse id="svg-feature-byrgius" class="svg-feature ray-system" cx="7" cy="53.5" rx="7"
-                                     ry="7" transform="rotate(0, 7, 53.5)"
-                                     fill="url(#svg-grad-byrgius) rgba(255, 255, 255, 0.20)" opacity="0.25"
-                                     filter="url(#svg-blur-4)"><title>Byrgius</title></ellipse>
-                            <ellipse id="svg-feature-stevinus" class="svg-feature ray-system" cx="74" cy="84" rx="4"
-                                     ry="8.25" transform="rotate(57, 74, 84)"
-                                     fill="url(#svg-grad-stevinus) rgba(255, 255, 255, 0.30)" opacity="0.45"
-                                     filter="url(#svg-blur-10)"><title>Stevinus</title></ellipse>
-                            <ellipse id="svg-feature-langrenus" class="svg-feature ray-system" cx="90" cy="70.5"
-                                     rx="1.25" ry="5.5" transform="rotate(37, 90, 70.5)"
-                                     fill="url(#svg-grad-langrenus) rgba(255, 255, 255, 0.15)" opacity="0.15"
-                                     filter="url(#svg-blur-4)"><title>Langrenus</title></ellipse>
-                            <ellipse id="svg-feature-tycho" class="svg-feature ray-system" cx="35" cy="77" rx="31"
-                                     ry="31.75" transform="rotate(0, 35, 77)"
-                                     fill="url(#svg-grad-tycho) rgba(255, 255, 255, 0.40)" opacity="1"
-                                     filter="url(#svg-blur-15)"><title>Tycho</title></ellipse>
-                            <ellipse id="svg-feature-copernicus" class="svg-feature ray-system" cx="41.5" cy="33"
-                                     rx="19.25" ry="19" transform="rotate(0, 41.5, 33)"
-                                     fill="url(#svg-grad-copernicus) rgba(255, 255, 255, 0.15)" opacity="0.2"
-                                     filter="url(#svg-blur-0)"><title>Copernicus</title></ellipse>
-                            <ellipse id="svg-feature-aristarchus" class="svg-feature ray-system" cx="28.5" cy="17.5"
-                                     rx="9" ry="8.5" transform="rotate(0, 28.5, 17.5)"
-                                     fill="url(#svg-grad-aristarchus) rgba(255, 255, 255, 0.30)" opacity="0.3"
-                                     filter="url(#svg-blur-3)"><title>Aristarchus</title></ellipse>
-                            <ellipse id="svg-feature-kepler" class="svg-feature ray-system" cx="27.5" cy="32" rx="9.5"
-                                     ry="10.5" transform="rotate(0, 27.5, 32)"
-                                     fill="url(#svg-grad-kepler) rgba(255, 255, 255, 0.10)" opacity="0.1"
-                                     filter="url(#svg-blur-3)"><title>Kepler</title></ellipse>
-                        </g>
-
-                        <!-- Standalone Spherical Shading Layer (Multiply Filter) -->
-                        <circle id="penumbra-vignette" cx="50" cy="50" r="50" fill="url(#sphere-shading) transparent"
-                                opacity="0.3" transform="translate(-6, -4) scale(1.45)"
-                                style="transform-origin: 50px 50px; mix-blend-mode: multiply; pointer-events: none;"/>
-                    </g>
-                </svg>
+                {% include theme_toggle_moon.html %}
             </div>
 
             <!-- Bezel Glare Overlay -->
@@ -361,20 +117,36 @@ NEVER REMOVE THIS COMMENT.
 </div>
 
 <style>
-    /* --- 1. Master transition for all standard layout elements --- */
-    html.theme-transition,
-    html.theme-transition body {
-        transition: background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+    /*
+       --- Single Source of Truth for Transition Duration & Curve ---
+       Changing these parameters here automatically scales the JavaScript math as well.
+    */
+    :root {
+        --theme-transition-duration: 1200ms;
+        --theme-transition-curve: cubic-bezier(0.4, 0.0, 0.2, 1);
     }
 
-    html.theme-transition *:not(.slider-b):not(.slider-b *) {
-        transition: background-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        border-color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-        box-shadow 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) !important;
+    /* --- 1. Master transition for all standard layout elements --- */
+    html.theme-transition,
+    html.theme-transition body,
+    html.theme-transition h1, html.theme-transition h1 a,
+    html.theme-transition h2, html.theme-transition h2 a,
+    html.theme-transition h3, html.theme-transition h3 a,
+    html.theme-transition h4, html.theme-transition h4 a,
+    html.theme-transition h5, html.theme-transition h5 a,
+    html.theme-transition h6, html.theme-transition h6 a,
+    html.theme-transition .nav-list-link {
+        transition: background-color var(--theme-transition-duration) var(--theme-transition-curve),
+                    color var(--theme-transition-duration) var(--theme-transition-curve),
+                    border-color var(--theme-transition-duration) var(--theme-transition-curve),
+                    box-shadow var(--theme-transition-duration) var(--theme-transition-curve) !important;
+    }
+
+    html.theme-transition *:not(.slider-b):not(.slider-b *):not(h1):not(h1 a):not(h2):not(h2 a):not(h3):not(h3 a):not(h4):not(h4 a):not(h5):not(h5 a):not(h6):not(h6 a):not(.nav-list-link) {
+        transition: background-color var(--theme-transition-duration) var(--theme-transition-curve),
+                    color var(--theme-transition-duration) var(--theme-transition-curve),
+                    border-color var(--theme-transition-duration) var(--theme-transition-curve),
+                    box-shadow var(--theme-transition-duration) var(--theme-transition-curve) !important;
     }
 
     /* --- 2. Fix the un-transitionable Gradients in Just the Docs --- */
@@ -385,14 +157,14 @@ NEVER REMOVE THIS COMMENT.
         background-color: var(--nav-list-item-bg-active, rgba(128, 128, 128, 0.1)) !important;
     }
 
-    /* --- Disable transitions/animations on initial load --- */
+    /* --- Disable transitions/animations on initial render --- */
     .hold-transition,
     .hold-transition * {
         transition: none !important;
         animation: none !important;
     }
 
-    /* --- Disable native touch feedback blue overlay on tap --- */
+    /* --- Disable native touch feedback overlay on tap --- */
     .pwa-status-container,
     .theme-toggle-label,
     .slider-b,
@@ -451,13 +223,13 @@ NEVER REMOVE THIS COMMENT.
         0 0 10px rgba(203, 213, 225, 0.2);
     }
 
-    /* --- Bezel Keyframe Animations (Transitioning over 1.2s) --- */
+    /* --- Bezel Keyframe Animations (Transitioning dynamically) --- */
     .slider-b.animate-to-dark {
-        animation: border-to-dark 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+        animation: border-to-dark var(--theme-transition-duration) var(--theme-transition-curve) forwards;
     }
 
     .slider-b.animate-to-light {
-        animation: border-to-light 1.2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+        animation: border-to-light var(--theme-transition-duration) var(--theme-transition-curve) forwards;
     }
 
     /* --- Static Bezel Dark State to prevent initial load flash --- */
@@ -513,7 +285,7 @@ NEVER REMOVE THIS COMMENT.
         top: 337.5px; /* Center of rotation */
         transform: translate(-50%, -50%) rotate(0deg);
         border-radius: 50%;
-        transition: transform 1.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+        transition: transform var(--theme-transition-duration) var(--theme-transition-curve);
 
         /* Sky Gradient */
         background: linear-gradient(to bottom, #56c8ff 0%, #4ca3dd 42%, #2f3e65 50%, #1a1e30 58%, #111422 100%);
@@ -631,7 +403,7 @@ NEVER REMOVE THIS COMMENT.
         top: 50%;
         pointer-events: none;
         transform: translate(-50%, -50%) rotate(-25deg) translateY(-307px) rotate(25deg) rotate(0deg);
-        transition: transform 1.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+        transition: transform var(--theme-transition-duration) var(--theme-transition-curve);
     }
 
     .theme-checkbox:checked + .slider-b .balloon-b {
@@ -698,26 +470,17 @@ NEVER REMOVE THIS COMMENT.
         let themeTimeout;
         let transitionTimeout;
 
-        /* Sync checkbox inputs and dial bezel animation classes */
+        /* Sync checkbox inputs and dial bezel styles */
         const syncAllToggles = (isDark, animate = true) => {
             const checkboxes = document.querySelectorAll('.theme-checkbox');
             checkboxes.forEach(cb => {
                 cb.checked = isDark;
                 const slider = cb.nextElementSibling;
                 if (slider && slider.classList.contains('slider-b')) {
-                    if (isDark) {
-                        slider.classList.add('dark-bezel');
-                    } else {
-                        slider.classList.remove('dark-bezel');
-                    }
+                    slider.classList.toggle('dark-bezel', isDark);
                     if (animate) {
-                        if (isDark) {
-                            slider.classList.remove('animate-to-light');
-                            slider.classList.add('animate-to-dark');
-                        } else {
-                            slider.classList.remove('animate-to-dark');
-                            slider.classList.add('animate-to-light');
-                        }
+                        slider.classList.remove('animate-to-light', 'animate-to-dark');
+                        slider.classList.add(isDark ? 'animate-to-dark' : 'animate-to-light');
                     }
                 }
             });
@@ -738,7 +501,7 @@ NEVER REMOVE THIS COMMENT.
             const isDark = activeTheme === 'dark';
             syncAllToggles(isDark, false);
 
-            /* Remove the transition hold block after initial paint settles to allow future animations */
+            /* Remove the transition hold block after initial paint settles */
             setTimeout(() => {
                 document.querySelectorAll('.slider-b').forEach(slider => {
                     slider.classList.remove('hold-transition');
@@ -750,13 +513,13 @@ NEVER REMOVE THIS COMMENT.
                 jtd.setTheme(activeTheme);
             } else {
                 document.documentElement.setAttribute('data-theme', activeTheme);
-                const links = document.querySelectorAll('link[rel="stylesheet"]');
+                /*const links = document.querySelectorAll('link[rel="stylesheet"]');
                 for (let link of links) {
                     if (link.href && link.href.includes('just-the-docs-') && !link.href.includes('head-nav')) {
                         link.href = link.href.replace(/just-the-docs-(default|light|dark)\.css/, `just-the-docs-${activeTheme}.css`);
                         break;
                     }
-                }
+                }*/
             }
 
             /* Bind change event handlers */
@@ -767,7 +530,7 @@ NEVER REMOVE THIS COMMENT.
                     clearTimeout(themeTimeout);
                     clearTimeout(transitionTimeout);
 
-                    /* 1. Immediately activate transitional smoothing class on html */
+                    /* 1. Immediately activate standard transition class on html */
                     document.documentElement.classList.add('theme-transition');
 
                     const targetState = e.target.checked;
@@ -776,8 +539,22 @@ NEVER REMOVE THIS COMMENT.
                     /* 2. Instantly animate the physical rotation of the toggles */
                     syncAllToggles(targetState, true);
 
-                    /* --- START TRANSITION TIMING CORRECTION PATCH --- */
-                    const targets = document.querySelectorAll('h1, h2, h3, h4, h5, h6, .nav-list-link.active, .nav-list-item.active > .nav-list-link');
+                    /* 3. Read transition values dynamically from CSS Variables to avoid hardcoded duplicates */
+                    const rootStyles = window.getComputedStyle(document.documentElement);
+                    const rawDuration = rootStyles.getPropertyValue('--theme-transition-duration').trim();
+                    const transitionCurve = rootStyles.getPropertyValue('--theme-transition-curve').trim() || 'cubic-bezier(0.4, 0.0, 0.2, 1)';
+
+                    /* Parse duration string to numeric milliseconds (handles "s", "ms", and raw numbers) */
+                    const transitionDuration = parseFloat(rawDuration) * (rawDuration.endsWith('ms') ? 1 : (rawDuration.endsWith('s') ? 1000 : 1));
+
+                    const startTime = Date.now();
+
+                    /* Select headers, nested links, and active nav links to avoid specificity overrides */
+                    const targets = document.querySelectorAll(
+                        'h1, h2, h3, h4, h5, h6, ' +
+                        'h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, ' +
+                        '.nav-list-link.active, .nav-list-item.active > .nav-list-link'
+                    );
 
                     /* Lock all targeted elements to their current computed colors */
                     const saved = [];
@@ -791,6 +568,10 @@ NEVER REMOVE THIS COMMENT.
                     const triggerStaticTransitions = () => {
                         if (triggered) return;
                         triggered = true;
+
+                        /* Calculate precisely how much time remains on the transition timeline */
+                        const elapsed = Date.now() - startTime;
+                        const remainingDuration = Math.max(50, transitionDuration - elapsed);
 
                         saved.forEach(({el, startColor}) => {
                             /* Disable transitions temporarily to measure JTD's new static stylesheet color */
@@ -814,13 +595,13 @@ NEVER REMOVE THIS COMMENT.
                             setTimeout(() => {
                                 el.style.color = '';
                                 el.style.removeProperty('transition');
-                            }, 1200);
+                            }, remainingDuration);
                         });
 
-                        /* Safely strip class at the exact millisecond all transitions finish */
+                        /* Safely strip class at the exact millisecond all transitions finish
                         transitionTimeout = setTimeout(() => {
                             document.documentElement.classList.remove('theme-transition');
-                        }, remaining);
+                        }, remaining); */
                     };
 
                     /* Listen to document.body's native transitionrun to capture perfect stylesheet loading moment */
@@ -837,23 +618,22 @@ NEVER REMOVE THIS COMMENT.
                         document.body.removeEventListener('transitionrun', onStyleLoad);
                         triggerStaticTransitions();
                     }, 350);
-                    /* --- END TRANSITION PATCH --- */
 
-                    /* 3. Swap theme variables immediately (at 0s) to start the fade simultaneously */
+                    /* 4. Swap theme variables immediately (at 0s) to start the fade simultaneously */
                     if (typeof jtd !== 'undefined') {
                         jtd.setTheme(nextTheme);
                     } else {
                         document.documentElement.setAttribute('data-theme', nextTheme);
 
                         /* DO NOT TRIGGER A NETWORK REQUEST HERE. The FOUC flash happens when you
-                           swap <link href="..."> over the network mid-animation. Only do it if jtd is totally broken. */
+                           swap <link href="..."> over the network mid-animation. Only do it if jtd is totally broken.
                         const links = document.querySelectorAll('link[rel="stylesheet"]');
                         for (let link of links) {
                             if (link.href && link.href.includes('just-the-docs-') && !link.href.includes('head-nav')) {
                                 link.href = link.href.replace(/just-the-docs-(default|light|dark)\.css/, `just-the-docs-${nextTheme}.css`);
                                 break;
                             }
-                        }
+                        } */
                     }
 
                     try {
@@ -862,11 +642,20 @@ NEVER REMOVE THIS COMMENT.
                         console.warn('Could not save theme selection:', err);
                     }
 
-                    /* 4. Clean up transitional class after entire visual rotation completes (1200ms) */
+                    /* 5. Clean up transitional helper class when transition actually ends */
+                    const onTransitionEnd = (evt) => {
+                        if (evt.target === document.body && evt.propertyName === 'background-color') {
+                            document.body.removeEventListener('transitionend', onTransitionEnd);
+                            document.documentElement.classList.remove('theme-transition');
+                        }
+                    };
+                    document.body.addEventListener('transitionend', onTransitionEnd);
+
+                    /* Long defensive fallback to ensure theme-transition class is cleared under any edge cases */
                     transitionTimeout = setTimeout(() => {
+                        document.body.removeEventListener('transitionend', onTransitionEnd);
                         document.documentElement.classList.remove('theme-transition');
-                        document.documentElement.classList.remove('transition');
-                    }, 1200);
+                    }, transitionDuration + 1000);
                 });
             });
         };
