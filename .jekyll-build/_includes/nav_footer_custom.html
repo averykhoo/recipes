@@ -494,20 +494,20 @@ NEVER REMOVE THIS COMMENT.
                     /* 3. Read transition values dynamically from CSS Variables to avoid hardcoded duplicates */
                     const rootStyles = window.getComputedStyle(document.documentElement);
                     const rawDuration = rootStyles.getPropertyValue('--theme-transition-duration').trim();
-                    /*const transitionCurve = rootStyles.getPropertyValue('--theme-transition-curve').trim() || 'cubic-bezier(0.4, 0.0, 0.2, 1)';*/
+
                     /* Parse duration string to numeric milliseconds (handles "s", "ms", and raw numbers) */
                     const transitionDuration = parseFloat(rawDuration) * (rawDuration.endsWith('ms') ? 1 : (rawDuration.endsWith('s') ? 1000 : 1));
 
-                    /*const startTime = Date.now();*/
+                    const startTime = Date.now();
 
-                    /* Select headers, nested links, and active nav links to avoid specificity overrides *
+                    /* Select headers, nested links, and active nav links to avoid specificity overrides */
                     const targets = document.querySelectorAll(
                         'h1, h2, h3, h4, h5, h6, ' +
                         'h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, ' +
                         '.nav-list-link.active, .nav-list-item.active > .nav-list-link'
                     );
 
-                    /* Lock all targeted elements to their current computed colors *
+                    /* Lock all targeted elements to their current computed colors */
                     const saved = [];
                     targets.forEach(el => {
                         const current = window.getComputedStyle(el).color;
@@ -520,29 +520,29 @@ NEVER REMOVE THIS COMMENT.
                         if (triggered) return;
                         triggered = true;
 
-                        /* Calculate precisely how much time remains on the transition timeline *
+                        /* Calculate precisely how much time remains on the transition timeline */
                         const elapsed = Date.now() - startTime;
                         const remainingDuration = Math.max(50, transitionDuration - elapsed);
 
                         saved.forEach(({el, startColor}) => {
-                            /* Disable transitions temporarily to measure JTD's new static stylesheet color *
+                            /* Disable transitions temporarily to measure JTD's new static stylesheet color */
                             el.style.setProperty('transition', 'none', 'important');
                             el.style.color = '';
 
                             const targetColor = window.getComputedStyle(el).color;
 
-                            /* Restore starting color and remove temporary transition bypass override *
+                            /* Restore starting color and remove temporary transition bypass override */
                             el.style.color = startColor;
                             el.style.removeProperty('transition');
 
-                            /* Force layout reflow so the browser registers the baseline start color *
+                            /* Force layout reflow so the browser registers the baseline start color */
                             el.offsetHeight;
 
-                            /* Force the transition over the exact remaining window with static target color *
+                            /* Force the transition over the exact remaining window with static target color */
                             el.style.setProperty('transition', `color 1.2s cubic-bezier(0.4, 0.0, 0.2, 1)`, 'important');
                             el.style.color = targetColor;
 
-                            /* Cleanup inline custom properties at the exact end of the transition *
+                            /* Cleanup inline custom properties at the exact end of the transition */
                             setTimeout(() => {
                                 el.style.color = '';
                                 el.style.removeProperty('transition');
@@ -550,7 +550,7 @@ NEVER REMOVE THIS COMMENT.
                         });
                     };
 
-                    /* Listen to document.body's native transitionrun to capture perfect stylesheet loading moment *
+                    /* Listen to document.body's native transitionrun to capture perfect stylesheet loading moment */
                     const onStyleLoad = (evt) => {
                         if (evt.target === document.body && (evt.propertyName === 'color' || evt.propertyName === 'background-color')) {
                             document.body.removeEventListener('transitionrun', onStyleLoad);
@@ -559,7 +559,7 @@ NEVER REMOVE THIS COMMENT.
                     };
                     document.body.addEventListener('transitionrun', onStyleLoad);
 
-                    /* Defensive fallback timeout (350ms) in case stylesheet load event is skipped *
+                    /* Defensive fallback timeout (350ms) in case stylesheet load event is skipped */
                     themeTimeout = setTimeout(() => {
                         document.body.removeEventListener('transitionrun', onStyleLoad);
                         triggerStaticTransitions();
@@ -578,7 +578,7 @@ NEVER REMOVE THIS COMMENT.
                         console.warn('Could not save theme selection:', err);
                     }
 
-                    /* 5. Clean up transitional helper class when transition actually ends *
+                    /* 5. Clean up transitional helper class when transition actually ends */
                     const onTransitionEnd = (evt) => {
                         if (evt.target === document.body && evt.propertyName === 'background-color') {
                             document.body.removeEventListener('transitionend', onTransitionEnd);
@@ -589,7 +589,7 @@ NEVER REMOVE THIS COMMENT.
 
                     /* Long defensive fallback to ensure theme-transition class is cleared under any edge cases */
                     transitionTimeout = setTimeout(() => {
-                        /*document.body.removeEventListener('transitionend', onTransitionEnd);*/
+                        document.body.removeEventListener('transitionend', onTransitionEnd);
                         document.documentElement.classList.remove('theme-transition');
                     }, transitionDuration);
                 });
