@@ -376,6 +376,11 @@
 </script>
 
 <script>
+    // --- ADJUSTABLE POLAR CAP LIMIT CONSTANT ---
+    // Represents degrees latitude (0.0 to 90.0) from the equator where the blur begins.
+    // 73.0 means blur operates on the top and bottom 17 degrees of latitude (the caps).
+    const POLAR_BLUR_LAT_LIMIT = 0.0 // 73.0;
+
     let scene, camera, renderer, controls;
     let moon, material, glowMesh, glowMaterial;
     let sunLight, earthshineLight, ambientLight;
@@ -405,12 +410,14 @@
     let colorCtx = colorCanvas.getContext('2d');
     let colorTexture;
     let origColorData = null;
+    let colorBlurRequestId = null;
 
     let originalHeightImage = null;
     let heightCanvas = document.createElement('canvas');
     let heightCtx = heightCanvas.getContext('2d');
     let heightTexture;
     let origHeightData = null;
+    let heightBlurRequestId = null;
 
     function init() {
         const container = document.getElementById('canvas-container');
@@ -459,7 +466,7 @@
         function checkLoading() {
             texturesLoaded++;
             if (texturesLoaded === 2) {
-                // Perform the initial blurs with the new default values
+          // Perform the initial blurs with the default values
                 updateColorTexture();
                 updateHeightTexture();
 
@@ -564,50 +571,77 @@
         scene.add(moon);
     }
 
-    // --- TRUE 3D GEODESIC POLAR BLUR (CPU) ---
-    // Smooths images exactly as if convolving radially on the final sphere
-    function applyGeodesicBlur(canvas, ctx, originalImgData, targetTexture, smoothness) {
+    // --- EXACT (NON-SPARSE) PROGRESSIVE INTERRUPTIBLE GEODESIC CONVOLUTION (CPU-ASYNC) ---
+    // Smooths textures with pixel-by-pixel accuracy inside the requested angular radius,
+    // and calculates progressively using requestAnimationFrame to prevent main thread stutters.
+    function applyGeodesicBlurAsync(canvas, ctx, originalImgData, targetTexture, smoothness, isColor) {
+        // Step 1: Immediately cancel any existing running loop for this texture to prevent overlaps
+        if (isColor) {
+            if (colorBlurRequestId !== null) {
+                cancelAnimationFrame(colorBlurRequestId);
+                colorBlurRequestId = null;
+            }
+        } else {
+            if (heightBlurRequestId !== null) {
+                cancelAnimationFrame(heightBlurRequestId);
+                heightBlurRequestId = null;
+            }
+        }
+
         const W = canvas.width;
         const H = canvas.height;
 
+        // If smoothness is 0.0, draw unblurred original image instantly and terminate
         if (smoothness <= 0.0) {
             ctx.putImageData(originalImgData, 0, 0);
             if (targetTexture) targetTexture.needsUpdate = true;
             return;
         }
 
-        const src = originalImgData.data;
-        const dst = new Uint8ClampedArray(src.length);
+        // Draw original unblurred canvas as our clean, static source
+        ctx.drawImage(isColor ? originalColorImage : originalHeightImage, 0, 0);
+        const srcData = ctx.getImageData(0, 0, W, H);
+        const src = srcData.data;
 
-        // Match slider value to physical equatorial pixels (e.g. 5 = 5 pixels radius at equator)
+        // Progressive updates will be written directly to our copy buffer
+        const dst = new Uint8ClampedArray(src);
         const radius_rad = smoothness * (2 * Math.PI / W);
-        const var2 = 2 * (radius_rad / 2.0) * (radius_rad / 2.0);
-        const cos_R = Math.cos(radius_rad);
 
-        for (let y = 0; y < H; y++) {
-            // Build the exact, non-sparse geodesic kernel once per row y
+        // Convert the latitude limit constant to pixel rows
+        const y_limit = Math.floor(H * (90.0 - POLAR_BLUR_LAT_LIMIT) / 180.0);
+        if (y_limit <= 0) return;
+
+        // Compile row queues for top and bottom polar caps to process concurrently
+        const rowsToProcess = [];
+        for (let y = 0; y < y_limit; y++) {
+            rowsToProcess.push(y);           // North cap row
+            rowsToProcess.push(H - 1 - y);   // South cap row
+        }
+
+        let rowIndex = 0;
+        const CHUNK_SIZE = 1; // Process exactly 1 row per pole (2 total) per frame to keep UI flawlessly responsive
+
+        function processChunk() {
+            const end = Math.min(rowIndex + CHUNK_SIZE, rowsToProcess.length);
+            
+            for (let i = rowIndex; i < end; i++) {
+                const y = rowsToProcess[i];
             const kernel = precomputeRowKernel(y, W, H, radius_rad);
+                if (kernel.length === 0) continue;
 
             for (let x = 0; x < W; x++) {
-                if (kernel.length === 0) {
-                    const dest_idx = (y * W + x) * 4;
-                    dst[dest_idx] = src[dest_idx];
-                    dst[dest_idx + 1] = src[dest_idx + 1];
-                    dst[dest_idx + 2] = src[dest_idx + 2];
-                    dst[dest_idx + 3] = src[dest_idx + 3];
-                    continue;
-                }
-
                 let r = 0, g = 0, b = 0, a = 0;
-                for (let i = 0; i < kernel.length; i++) {
-                    const tap = kernel[i];
+                    for (let k = 0; k < kernel.length; k++) {
+                        const tap = kernel[k];
                     let nx = x + tap.dx;
                     let ny = y + tap.dy;
 
                     // Toroidal Mapping to simulate Spherical topology
+                    // 1. Prime Meridian wrapping
                     nx = nx % W;
                     if (nx < 0) nx += W;
 
+                    // 2. Polar boundaries crossing
                     if (ny < 0) {
                         ny = -ny; // Reflect over pole
                         nx = (nx + Math.floor(W / 2)) % W; // Shift to opposite longitude
@@ -630,19 +664,40 @@
                 dst[dest_idx + 3] = a;
             }
         }
+
+            // Partially flush the processed chunk to the canvas
         ctx.putImageData(new ImageData(dst, W, H), 0, 0);
         if (targetTexture) targetTexture.needsUpdate = true;
+
+            rowIndex = end;
+
+            // Recurse to the next animation frame chunk
+            if (rowIndex < rowsToProcess.length) {
+                const nextId = requestAnimationFrame(processChunk);
+                if (isColor) colorBlurRequestId = nextId;
+                else heightBlurRequestId = nextId;
+            } else {
+                if (isColor) colorBlurRequestId = null;
+                else heightBlurRequestId = null;
+            }
     }
 
-    // --- Exact 3D Geodesic Circular Convolution Kernel Generator ---
+        const firstId = requestAnimationFrame(processChunk);
+        if (isColor) colorBlurRequestId = firstId;
+        else heightBlurRequestId = firstId;
+    }
+
+    // --- Mathematically Exact 3D Geodesic Circular Convolution Kernel Generator ---
     function precomputeRowKernel(y, W, H, blur_radius_rad) {
         const phi0 = (Math.PI / 2.0) - (y / (H - 1)) * Math.PI;
         const cos_phi0 = Math.cos(phi0);
         const sin_phi0 = Math.sin(phi0);
 
-        const dy_max = Math.ceil(blur_radius_rad * (H - 1) / Math.PI);
-        const y_start = y - dy_max;
-        const y_end = y + dy_max;
+        const phi_min = phi0 - blur_radius_rad;
+        const phi_max = phi0 + blur_radius_rad;
+        
+        const y_start = Math.max(0, Math.floor(((Math.PI / 2.0) - phi_max) / Math.PI * (H - 1)));
+        const y_end = Math.min(H - 1, Math.ceil(((Math.PI / 2.0) - phi_min) / Math.PI * (H - 1)));
 
         const kernel = [];
         const cos_R = Math.cos(blur_radius_rad);
@@ -924,29 +979,14 @@
         });
     }
 
-    function showSpinner() {
-        const overlay = document.getElementById('loading-overlay');
-        document.getElementById('loading-text').innerText = "Baking Mathematical Spherical Blur...";
-        overlay.style.display = 'flex';
-        overlay.style.opacity = '1';
-    }
-
-    function hideSpinner() {
-        const overlay = document.getElementById('loading-overlay');
-        overlay.style.opacity = '0';
-        setTimeout(() => {
-            overlay.style.display = 'none';
-        }, 500);
-    }
-
     function updateColorTexture() {
         if (!originalColorImage) return;
-        applyGeodesicBlur(colorCanvas, colorCtx, origColorData, colorTexture, parseFloat(document.getElementById('color-smoothness-slider').value));
+      applyGeodesicBlurAsync(colorCanvas, colorCtx, origColorData, colorTexture, parseFloat(document.getElementById('color-smoothness-slider').value), true);
     }
 
     function updateHeightTexture() {
         if (!originalHeightImage) return;
-        applyGeodesicBlur(heightCanvas, heightCtx, origHeightData, heightTexture, parseFloat(document.getElementById('smoothness-slider').value));
+      applyGeodesicBlurAsync(heightCanvas, heightCtx, origHeightData, heightTexture, parseFloat(document.getElementById('smoothness-slider').value), false);
     }
 
     function setupUI() {
@@ -959,33 +999,21 @@
             updateTopography(parseFloat(e.target.value));
         });
 
-        // Update values instantly on drag, execute heavy blur upon release (change)
+      // Update values instantly on drag, running the progressive thread seamlessly
         const smoothnessSlider = document.getElementById('smoothness-slider');
         const smoothnessVal = document.getElementById('smoothness-val');
 
         smoothnessSlider.addEventListener('input', (e) => {
-            smoothnessVal.innerText = parseFloat(e.target.value).toFixed(1);
-        });
-        smoothnessSlider.addEventListener('change', (e) => {
-            showSpinner();
-            setTimeout(() => {
+        smoothnessVal.innerText = parseFloat(e.target.value).toFixed(1);
                 updateHeightTexture();
-                hideSpinner();
-            }, 50);
         });
 
         const colorSmoothnessSlider = document.getElementById('color-smoothness-slider');
         const colorSmoothnessVal = document.getElementById('color-smoothness-val');
 
         colorSmoothnessSlider.addEventListener('input', (e) => {
-            colorSmoothnessVal.innerText = parseFloat(e.target.value).toFixed(1);
-        });
-        colorSmoothnessSlider.addEventListener('change', (e) => {
-            showSpinner();
-            setTimeout(() => {
+        colorSmoothnessVal.innerText = parseFloat(e.target.value).toFixed(1);
                 updateColorTexture();
-                hideSpinner();
-            }, 50);
         });
 
         const sunBrightnessSlider = document.getElementById('sun-brightness-slider');
@@ -1027,7 +1055,8 @@
     function updateCameraProjection(blendValue) {
         // Interpolate FOV and camera distance to transform perspective
         const baseFov = 45;
-        const targetFov = 2; // Approximates parallel lines (orthographic)
+        // Approximates parallel lines (orthographic)
+        const targetFov = 2;
         const currentFov = THREE.MathUtils.lerp(baseFov, targetFov, blendValue);
 
         camera.fov = currentFov;
@@ -1057,6 +1086,7 @@
         }
     }
 
+    // Restores default values
     function triggerReset() {
         resetting = true;
         resetTimer = 0.0;
@@ -1091,14 +1121,6 @@
             document.getElementById('sun-brightness-slider').value = 4.2;
             document.getElementById('sun-brightness-val').innerText = "4.2";
 
-            document.getElementById('smoothness-slider').value = 0.4;
-            document.getElementById('smoothness-val').innerText = "0.4";
-            updateHeightTexture();
-
-            document.getElementById('color-smoothness-slider').value = 0.5;
-            document.getElementById('color-smoothness-val').innerText = "0.5";
-            updateColorTexture();
-
             moon.quaternion.set(0, 0, 0, 1);
             glowMesh.quaternion.set(0, 0, 0, 1);
             updateSunSystem();
@@ -1108,10 +1130,10 @@
         // Smooth lerp transformations
         const aspect = window.innerWidth / window.innerHeight;
         const fovRad = (45 * Math.PI) / 180;
-        const targetCampPos = (1.25 * moonRadius) / (Math.tan(fovRad / 2) * Math.min(1.0, aspect));
-        const targetCamPos = new THREE.Vector3(0, 0, targetCampPos);
+        const target_camera_position = (1.25 * moonRadius) / (Math.tan(fovRad / 2) * Math.min(1.0, aspect));
+        const targetCamPos = new THREE.Vector3(0, 0, target_camera_position);
 
-        camera.position.lerp(targetCamPos, 0.08);
+      camera.position.lerp(target_camera_position, 0.08);
         camera.fov = THREE.MathUtils.lerp(camera.fov, 45, 0.08);
         camera.updateProjectionMatrix();
 
