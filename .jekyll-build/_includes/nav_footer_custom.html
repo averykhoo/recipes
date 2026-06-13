@@ -5,13 +5,6 @@ Double-slash style comments (//) will comment out the rest of the page if inline
 NEVER REMOVE THIS COMMENT.
 {% endcomment %}
 
-{% unless theme_toggle_defs_rendered %}
-  {% assign theme_toggle_defs_rendered = true %}
-  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position: absolute; pointer-events: none; overflow: hidden; visibility: hidden;">
-      {% include theme_toggle_defs.html %}
-  </svg>
-{% endunless %}
-
 <div class="pwa-status-container">
     <label class="theme-toggle-label">
         <input type="checkbox" class="theme-checkbox" aria-label="Toggle theme">

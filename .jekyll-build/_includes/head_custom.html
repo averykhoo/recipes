@@ -84,3 +84,8 @@
         });
     }
 </script>
+
+<!-- Globally shared SVG definitions (gradients and clipping paths) hidden visually without display:none -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position: absolute; pointer-events: none; overflow: hidden; visibility: hidden;">
+    {% include theme_toggle_defs.html %}
+</svg>
