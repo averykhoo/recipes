@@ -26,7 +26,7 @@
 * 2 teaspoons soy sauce
 * 1 teaspoon Dijon mustard
 
-Directions
+## Directions
 
 1. **Meatballs**:
    Combine beef and pork mince and mix with your fingers to break up any lumps.

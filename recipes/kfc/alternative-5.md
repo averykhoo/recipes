@@ -1,4 +1,4 @@
-## KFC - Suggested Copycat Recipe
+# KFC - Suggested Copycat Recipe
 
 https://youtu.be/8BslfOheMIc
 

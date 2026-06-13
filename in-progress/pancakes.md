@@ -2,6 +2,8 @@
 
 (adapted from) https://www.allrecipes.com/recipe/21014/good-old-fashioned-pancakes/
 
+* yields: 8 servings
+
 ## Ingredients
 
 * 1 cup flour -- try cake flour based on recipe below

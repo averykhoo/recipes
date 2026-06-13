@@ -1,4 +1,4 @@
-## The Final KFC Recipe #10
+# The Final KFC Recipe #10
 
 https://youtu.be/7WJYOgzFydc
 

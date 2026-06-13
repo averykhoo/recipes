@@ -11,7 +11,7 @@ The seasoning really depends on how much allspice and nutmeg flavor you prefer, 
 the amount you like.
 I tend to go pretty light with it.
 
-Ingredients
+## Ingredients
 
 * meatballs
     * 0.5 cup unseasoned bread crumbs
@@ -31,7 +31,7 @@ Ingredients
     * 1 cup chicken or beef stock (I prefer stock to broth – more flavor)
 * seasonings, as needed – see directions
 
-Directions
+## Directions
 
 1. Put all meatball ingredients into a large bowl.
    I always find it easiest to use your hands to gently "squish" the mixture, blending all ingredients together well.
