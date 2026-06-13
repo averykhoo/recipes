@@ -5,7 +5,7 @@
 
 serves 4
 
-## Ingredients:
+## Ingredients
 
 * 2x 300g baby spinach, discard stems and wash the leaves
 * 1 Tbsp sesame oil
@@ -15,7 +15,7 @@ serves 4
 * 1 Tbsp toasted sesame seeds
 * optional katsuobushi
 
-## Directions:
+## Directions
 
 1. boil spinach, then strain and allow to cool
 2. wring out all the water using a cloth bag or towel - make sure it's really quite dry

@@ -5,7 +5,7 @@ https://www.seriouseats.com/the-best-baba-ganoush-recipe
 https://cooking.nytimes.com/recipes/1014030-baba-ghanouj
 https://www.themediterraneandish.com/baba-ganoush-recipe/
 
-## Ingredients:
+## Ingredients
 
 * 2 large / 3 medium eggplants (2 pounds = 900 grams)
 * 1 tablespoon olive oil
@@ -20,7 +20,7 @@ https://www.themediterraneandish.com/baba-ganoush-recipe/
 * pinch of smoked paprika
 
 
-## Directions:
+## Directions
 
 1. Preheat oven to 220°C.
 2. Slice eggplants in half and brush the cut sides lightly with olive oil.

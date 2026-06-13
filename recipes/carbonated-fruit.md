@@ -2,7 +2,7 @@
 
 make some fizzy fruit
 
-## ingredients:
+## Ingredients
 
 * dry ice
 * wide-mouth polycarbonate bottle (ideally from a reputable brand, e.g. nalgene)
@@ -13,7 +13,7 @@ make some fizzy fruit
     * peeled grapes
     * orange slices
 
-## directions:
+## Directions
 
 1. peel, slice, and chill the fruit in the fridge
 2. put fruit in bottle

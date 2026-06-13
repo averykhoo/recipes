@@ -10,7 +10,7 @@
 * 2 tsp red wine
 * 1-2 tsp butter
 
-## Directions:
+## Directions
 
 1. Season the frozen beef slices with pepper and lightly sprinkle / dust them with flour.
 2. Fry the beef over medium heat (either dry or with a pat of butter) until just barely cooked through.

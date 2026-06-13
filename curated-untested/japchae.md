@@ -4,7 +4,7 @@ https://www.americastestkitchen.com/recipes/15175-japchae-korean-sweet-potato-st
 By Lan Lam
 
 
-## Ingredients:
+## Ingredients
 
 * 8 ounces boneless beef short ribs, trimmed
 * 2 teaspoons plus ¼ cup soy sauce, divided

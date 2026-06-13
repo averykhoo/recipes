@@ -5,7 +5,7 @@
 * https://mykoreankitchen.com/bulgogi-korean-bbq-beef/
 * https://damndelicious.net/2019/04/21/korean-beef-bulgogi/
 
-## ingredients:
+## Ingredients
 
 * 200-250g minced or sukiyaki-sliced beef, defrosted and kneaded
 * 1 pear, peeled and deseeded, then grated
@@ -24,7 +24,7 @@
 * (optional) spring onion, thinly sliced on a bias
 * (optional) toasted sesame seeds
 
-## directions:
+## Directions
 
 1. (optional, instead of grating) blend the marinade very finely
 2. add to beef in a bag and massage a little and leave to marinade a while

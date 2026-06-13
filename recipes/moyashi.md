@@ -1,6 +1,6 @@
 # Japanese-ish Soya Sprouts (Daizu Moyashi)
 
-## Ingredients:
+## Ingredients
 
 Dressing:
 
@@ -19,7 +19,7 @@ Everything else:
 * 1 Tbsp toasted sesame seeds, optionally slightly crushed
 * Salt (for boiling water)
 
-## Directions:
+## Directions
 
 1. In a small bowl, whisk together the dressing ingredients,
    and allow to sit for a while so the vinegar mellows the garlic.

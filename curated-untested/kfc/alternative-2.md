@@ -25,7 +25,7 @@ https://youtu.be/8BslfOheMIc
 Tested 40g spice mix with 200g cake flour
 2 tsp spice in 4 cups water brine
 
-## Directions:
+## Directions
 
 1. Place all ingredients except salt in a spice grinder; grind and shake to combine.
 2. Add salt to mix and shake to combine.

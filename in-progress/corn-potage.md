@@ -2,7 +2,7 @@
 
 written with the help of [ChatGPT](https://chat.openai.com/chat)
 
-## Ingredients:
+## Ingredients
 
 * 1 onion
 * 1 stalk of celery
@@ -14,7 +14,7 @@ written with the help of [ChatGPT](https://chat.openai.com/chat)
 * 1 cup cream
 * 1 cup milk
 
-## Directions:
+## Directions
 
 1. Dice the onion and celery and fry in a pan over medium heat until softened.
 2. Add the paprika and fry in the butter a while. Reserve.

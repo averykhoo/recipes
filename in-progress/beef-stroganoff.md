@@ -1,6 +1,6 @@
 # beef stroganoff
 
-## Ingredients:
+## Ingredients
 
 * 1/2 pound beef, cut into strips or cubes
 * i tsp paprika

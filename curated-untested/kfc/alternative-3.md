@@ -2,7 +2,7 @@
 
 https://youtu.be/mHau8ZJCHD4
 
-## Ingredients:
+## Ingredients
 
 * 12g MSG
 * 12g white pepper
@@ -17,7 +17,7 @@ https://youtu.be/mHau8ZJCHD4
 * 0.92 oregano 
 * 0.92g cayenne
 
-## Directions:
+## Directions
 
 1. Place all ingredients in a spice grinder; grind and shake to combine.
 2. Preheat pressure fryer to 165ºC.
@@ -52,7 +52,7 @@ https://youtu.be/8BslfOheMIc
 Tested 13g spice per 200g cake flour and 24g Fine Flake Salt
 2 tsp spice in 4 cups water brine
 
-## Directions:
+## Directions
 
 1. If brining add 2 tsp of spice mix to 4 cups cold water and soak chicken for 2-3 hours.
 2. Bring a pot of hot oil (canola, vegetable oil, or shortening) to 350ºF.

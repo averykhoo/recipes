@@ -2,7 +2,7 @@
 
 adapted from https://downshiftology.com/recipes/best-ever-guacamole/, with instructions by chatgpt
 
-## Ingredients:
+## Ingredients
 
 * 300g avocado flesh (from 2-3 ripe avocados)
 * 70-140g diced red onion (1/2 or 1 onion)
@@ -12,7 +12,7 @@ adapted from https://downshiftology.com/recipes/best-ever-guacamole/, with instr
 * 15g lime juice (squeezed from half a 67g seedless vietnamese lime)
 * 5g salt (5 pinches ~= 1/2 tsp)
 
-## Directions:
+## Directions
 
 1. Cut one avocado in half lengthwise and remove the pit. Scoop the flesh into a bowl.
 2. Mash the avocado with a fork until it is smooth.

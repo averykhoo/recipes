@@ -2,7 +2,7 @@
 
 https://youtu.be/7CZwrJBAkq4
 
-## Ingredients:
+## Ingredients
 
 * 102g (12 Tbsp / 36 tsp) white pepper
 * 66g (9 Tbsp + 1 tsp / 28 tsp) black pepper
@@ -18,7 +18,7 @@ https://youtu.be/7CZwrJBAkq4
 * 19g (4 tsp) msg
 * 480g (24 Tbsp / 72 tsp) salt 
 
-## Directions:
+## Directions
 
 1. Place all ingredients except salt in a spice grinder; grind and shake to combine.
 2. Transfer to a sealable container, add the salt and shake to combine.

@@ -2,7 +2,7 @@
 
 https://youtu.be/7WJYOgzFydc
 
-## Ingredients:
+## Ingredients
 
 * Fine Salt
 * Fine Ground Black Pepper

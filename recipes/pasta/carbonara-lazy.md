@@ -1,6 +1,17 @@
 # Pasta Carbonara
 
 Serves 2
+
+## Ingredients
+
+* 100g pork with fat
+* 2 cloves garlic
+* black pepper
+* 150g pasta
+* eggs
+* cheese
+* butter (optional)
+
 ## Directions
 
 1. cut 100g pork belly bacon (or leftover xmas ham) into strips and fry

@@ -4,7 +4,7 @@ somewhere between tomato pasta and pasta alla gricia
 
 yields 2 portions
 
-## Ingredients:
+## Ingredients
 
 * olive oil
 * 250g fatty pork

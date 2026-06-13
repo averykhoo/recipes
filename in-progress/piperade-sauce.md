@@ -3,7 +3,7 @@
 see also: https://www.youtube.com/watch?v=HnZ7XGYNfwA
 see also: https://www.nytimes.com/2007/06/13/dining/131rrex.html
 
-## Ingredients:
+## Ingredients
 
 * 4 red bell peppers
 * 2 tablespoons olive oil
@@ -16,7 +16,7 @@ see also: https://www.nytimes.com/2007/06/13/dining/131rrex.html
 * 1/2 teaspoon salt
 * 1/8 teaspoon black pepper
 
-## Directions:
+## Directions
 
 1. Preheat the oven to 400°F (200°C).
 2. Cut the bell peppers in half lengthwise and remove the seeds and ribs.

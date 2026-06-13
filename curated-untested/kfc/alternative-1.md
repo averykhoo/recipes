@@ -17,6 +17,7 @@ https://youtu.be/g6RPP_9Lwbc
 * 0.125g summer savoury
 * 0.125g thyme
 
----
+## Directions
 
-All ground and mixed with 200g flour and 25g salt 
+1. Grind all spices.
+2. Mix ground spices thoroughly with 200g flour and 25g salt.

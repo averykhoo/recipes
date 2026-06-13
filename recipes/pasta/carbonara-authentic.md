@@ -1,7 +1,7 @@
 # [Spaghetti alla Carbonara](https://www.accademiaitalianadellacucina.it/it/ricette/ricetta/spaghetti-alla-carbonara)
 
 Serves 4
-## Ingredients:
+## Ingredients
 
 * 120 g guanciale
 * 1 tablespoon of olive oil

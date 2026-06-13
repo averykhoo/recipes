@@ -2,7 +2,7 @@
 
 https://youtu.be/8BslfOheMIc
 
-## Ingredients:
+## Ingredients
 
 * 18g MSG
 * 22.5g white pepper
@@ -33,7 +33,7 @@ https://youtu.be/8BslfOheMIc
 5 pounds pressure
 10 - 12 minutes
 
-## Directions:
+## Directions
 
 1. If brining add 2 tsp of spice mix to 4 cups cold water and soak chicken for 2-3 hours.
 2. Bring a pot of hot oil (canola, vegetable oil, or shortening) to 350ºF.

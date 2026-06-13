@@ -14,7 +14,7 @@ Tips:
 * Leave plenty of space between the dough balls on the baking tray to allow for expansion as they bake
 * Keep an eye on the biscuits as they bake to ensure they don't burn
 
-## Ingredients:
+## Ingredients
 
 * 225g (1.6 cups) [self-raising flour](self-raising-flour.md), sifted
     * 210g flour or cake flour
@@ -27,7 +27,7 @@ Tips:
 * 50g raspberry jam
 * (to try out) 1 tsp vanilla, tiny pinch of cinnamon
 
-## Directions:
+## Directions
 
 1. Preheat your oven to 200°C (400°F) and line two baking trays with baking paper.
 2. Sprinkle flour over the surface of the trays and spread it around by tipping the trays from side to side.

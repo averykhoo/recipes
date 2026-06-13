@@ -7,7 +7,7 @@ Original source: Meta Given's Modern Encyclopedia of Cooking, 1969
 see also: https://sallysbakingaddiction.com/the-great-pumpkin-pie-recipe/
 see also: meringue pumpkin pie recipe below
 
-## Ingredients:
+## Ingredients
 
 * 3 1/2 cups [fresh cooked](#fresh-cooked-pumpkin-puree) or canned pumpkin (one 29-ounce can will do)
 * 4 large eggs, lightly beaten
@@ -21,7 +21,7 @@ see also: meringue pumpkin pie recipe below
 * 2 blind baked, 9-inch [pie shells](./pie-crust.md)
 * [Whipped cream for topping (optional)](chantilly-cream.md)
 
-## Directions:
+## Directions
 
 1. Optionally, put pumpkin in nonstick saucepan and stir over direct heat for 10 minutes until somewhat dry and slightly
    caramelized, stirring frequently. Remove from heat but keep hot.
@@ -60,7 +60,7 @@ Makes one 9-inch pie
 * Pinch cream of tartar
 * 1/2 cup granulated sugar
 
-## Directions:
+## Directions
 
 1. Preheat the oven to 350°F.
 2. Place the pumpkin in a large, heatproof mixing bowl and whisk in the egg yolks. Add the brown sugar, cinnamon,
@@ -82,11 +82,11 @@ Makes one 9-inch pie
 
 # Fresh-Cooked Pumpkin Puree
 
-## Ingredients:
+## Ingredients
 
 * 6-pound cheese or Cinderella pumpkin, halved horizontally
 
-## Directions:
+## Directions
 
 1. Preheat the oven to 400°F.
 2. Place the pumpkin halves cut-side up on a baking pan and cover tightly with foil. Bake until the flesh is tender when

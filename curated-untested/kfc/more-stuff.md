@@ -183,7 +183,7 @@ Make sure you have corn oil on hand for frying.
 
 Yields 4 to 6 servings
 
-## Ingredients:
+## Ingredients
 
 * 2 pounds Russet potatoes, about 8 medium
 * 1/3 to 1/2 cup milk, half and half, heavy cream or whipping cream
@@ -191,7 +191,7 @@ Yields 4 to 6 servings
 * 1/8 teaspoon fresh ground black pepper
 * 1 tsp of Kosher salt
 
-## Directions:
+## Directions
 
 1. Peel potatoes and quarter. Place in a medium saucepan; add water and a few teaspoons of salt.
    Bring to a boil; cover and cook for 15 to 20 minutes, until tender.* Drain well.
