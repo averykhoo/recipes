@@ -17,7 +17,7 @@ this is how big a pan you need for a 1-inch tall brownie:
 
 turns out it might be better thinner, so maybe use a size up
 
-## ingredients
+## Ingredients
 
 * 40g butter
 * 50g chocolate chips
@@ -30,7 +30,7 @@ turns out it might be better thinner, so maybe use a size up
 * 40g optional mixins (e.g., more (unmelted) chocolate chips, nuts, etc.)
     * chop choc chips a little finer - too big is hard to eat when cold
 
-## directions
+## Directions
 
 1. microwave the butter and chocolate until just melted, and mix to form a smooth cream
 2. preheat oven to 180°C, preset timer for 20 mins
@@ -43,7 +43,7 @@ turns out it might be better thinner, so maybe use a size up
 9. remove from pan once hardened and cut into pieces
 10. serve warmed (in a microwave for a few seconds) with ice cream
 
-## optional
+## Optional
 
 * small bit of instant coffee powder
 * malt / horlicks powder

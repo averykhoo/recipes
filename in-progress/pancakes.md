@@ -26,7 +26,7 @@
 
 ---
 
-## Editor's Note:
+## Editor's Note
 
 * The salt amount has been reduced based on review feedback. The original recipe called for 1 teaspoon.
 

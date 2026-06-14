@@ -7,7 +7,7 @@ https://food52.com/recipes/84691-dynamite-lumpia-recipe
 https://www.kawalingpinoy.com/dynamite-lumpia/
 https://panlasangpinoy.com/dyanamite-lumpia/
 
-## ingredients
+## Ingredients
 
 * big fat chili peppers, seeds and pith thoroughly removed
 * meat
@@ -23,7 +23,7 @@ https://panlasangpinoy.com/dyanamite-lumpia/
 
 ---
 
-## Notes:
+## Notes
 
 * beef is done taco or quesadilla style in this recipe
 * wear gloves when de-seeding the chili
@@ -33,4 +33,4 @@ https://panlasangpinoy.com/dyanamite-lumpia/
 * try to un-curve the chili if shallow-frying
 * allow to cool on a wire rack or paper towels to allow oil to drain and avoid molten cheese burning your tongue
 * ketchup mayo (and traditionally sriracha) dip works well
-* 
+*

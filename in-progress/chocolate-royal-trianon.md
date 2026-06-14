@@ -3,7 +3,7 @@
 https://www.bakinglikeachef.com/royal-chocolate-cake-by-christophe-felder/
 see also: https://www.tartedor.nl/chocolate-royal/
 
-## Ingredients for the dacquoise:
+## Ingredients for the dacquoise
 
 * 3.5 tablespoons (55g) egg whites (about 1.5 eggs worth of white, if each egg is 60g)
 * 2.5 tablespoons (35g) granulated sugar
@@ -11,20 +11,20 @@ see also: https://www.tartedor.nl/chocolate-royal/
 * 0.333 cup (30g) almond flour
 * 2 tablespoons (15g) hazelnut flour
 
-## Ingredients for the crunchy praline feuilletine:
+## Ingredients for the crunchy praline feuilletine
 
 * 1.7 oz (50g) crêpes dentelles Gavottes
 * 1.7 oz (50g) milk chocolate
 * 1.7 oz (50g) hazelnut spread Nutella
 * 1.7 oz (50g) hazelnut praline paste
 
-## Ingredients for the chocolate mousse:
+## Ingredients for the chocolate mousse
 
 * 2 cup + 3 tablespoons (500ml) whipping cream
 * 5 tablespoons (75ml) whole milk
 * 7 oz (200g) dark chocolate
 
-## Ingredients for the cocoa mirror glaze:
+## Ingredients for the cocoa mirror glaze
 
 * 0.667 cup + 4.5 tablespoons (210g) granulated sugar
 * 5 tablespoons (75ml) water
@@ -32,7 +32,7 @@ see also: https://www.tartedor.nl/chocolate-royal/
 * 0.5 cup + 2 tablespoons (145ml) whipping cream
 * 3.333 gelatin sheets (or 8g powdered gelatin bloomed in 0.25 cup (60ml) cold water)
 
-## Directions for the dacquoise (almond biscuit similar to a coarse macaron):
+## Directions for the dacquoise (almond biscuit similar to a coarse macaron)
 
 1. Preheat the oven to 335°F / 170°C.
 2. Sift powdered (icing) sugar, almond flour, and hazelnut flour through a flour sifter.
@@ -44,7 +44,7 @@ see also: https://www.tartedor.nl/chocolate-royal/
 8. Bake for 20 to 25 minutes.
 9. Let it cool in a frame.
 
-## Directions for the crunchy praline feuilletine:
+## Directions for the crunchy praline feuilletine
 
 1. Crush crepes Gavottes roughly with your hands or a rolling pin.
 2. Melt milk chocolate in a bain-marie/water bath.
@@ -54,7 +54,7 @@ see also: https://www.tartedor.nl/chocolate-royal/
 6. Pour the crunchy mixture over dacquoise, spread it in a thin layer.
 7. Then remove the mold and freeze the dacquoise for about 10 to 15 minutes.
 
-## Directions for the chocolate mousse:
+## Directions for the chocolate mousse
 
 1. Whip the cold whipping cream in a bowl to get the whipped cream and refrigerate.
    (Note: philips blender with a whipping attachment can only reliably whip 1 cup at a time, so whip in 2 batches)
@@ -63,7 +63,7 @@ see also: https://www.tartedor.nl/chocolate-royal/
 4. When the chocolate mixture is lukewarm, add it to the whipped cream and mix with a spatula as fast as possible.
 5. Transfer the mousse to a pastry bag with a plain tip.
 
-## Directions for assembling the cake:
+## Directions for assembling the cake
 
 1. Seal one side of the 8 inches/20 cm cake ring with a plastic film and place it on a wooden board or a baking sheet.
 2. Insert an acetate collar inside the ring.
@@ -72,7 +72,7 @@ see also: https://www.tartedor.nl/chocolate-royal/
 5. Slightly press the disk and remove the excess mousse with a bent spatula.
 6. Cover with a plastic film and freeze for at least 5 hours.
 
-## Directions for the cocoa mirror glaze:
+## Directions for the cocoa mirror glaze
 
 1. Soak gelatin sheets in cold water for 10 minutes.
 2. Heat whipping cream over low heat and set aside.
@@ -84,7 +84,7 @@ see also: https://www.tartedor.nl/chocolate-royal/
 7. Pass the mixture through a fine-mesh sieve and mix with a hand blender.
 8. Let the glaze cool down to 86°F/30°C.
 
-## Directions for glazing the cake:
+## Directions for glazing the cake
 
 1. Take the dessert out of the freezer.
 2. Place the cake on a wire rack or a plate, which is itself placed on a baking sheet to collect the excess glaze.

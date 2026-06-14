@@ -7,7 +7,7 @@ https://www.seriouseats.com/savory-cheese-souffle
 https://www.youtube.com/watch?v=7AAx0uIuoBQ&t=7s
 https://www.pastagrammar.com/post/basic-besciamella-sauce
 
-## ingredients
+## Ingredients
 
 * 1 heaped Tbsp (20g) butter
 * 2 heaped Tbsp (20g) flour
@@ -17,7 +17,7 @@ https://www.pastagrammar.com/post/basic-besciamella-sauce
 * nutmeg
 * (optional) dijon mustard
 
-## directions
+## Directions
 
 1. fry equal weights of butter and flour until cooked and blonde, and smells lightly nutty
 2. while whisking quickly, slowly pour in the milk
@@ -27,7 +27,7 @@ https://www.pastagrammar.com/post/basic-besciamella-sauce
 
 ---
 
-## Notes:
+## Notes
 
 * too thick? add milk. too thin? boil it down.
 * escoffier's recipe involved onion and veal

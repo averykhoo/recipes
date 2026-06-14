@@ -4,7 +4,7 @@ from: https://www.seriouseats.com/kolokithokeftedes-greek-zucchini-fritters-with
 see also: https://cookieandkate.com/how-to-make-tzatziki/
 see also: https://www.loveandlemons.com/tzatziki-sauce/
 
-## Ingredients For Tzatziki:
+## Ingredients For Tzatziki
 
 * 1 cup thick greek yogurt
 * 1-2 cloves raw garlic, minced

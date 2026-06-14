@@ -23,7 +23,7 @@ Cut one 3½- 4lb fryer into 9 pieces and brine for 4 hours.
 
 Make sure you have corn oil on hand for frying.
 
-## Ingredients for Brine:
+## Ingredients for Brine
 
 * 4 cups of water
 * 1 Tbsp white Vinegar
@@ -34,7 +34,7 @@ Make sure you have corn oil on hand for frying.
   from brine and rinse in fresh water.
 * Add the brined chicken to egg wash.
 
-## Ingredients for Egg Wash:
+## Ingredients for Egg Wash
 
 * 0.75 cup whole milk
 * 1 large egg
@@ -63,7 +63,7 @@ Make sure you have corn oil on hand for frying.
 5. If you have a pressure fryer that is the Colonel's method to fry chicken. If you don't, deep fat frying is also good
    but the chicken will be less moist but the crust will be crispy.
 
-## Directions for Pan Fry/Oven Method:
+## Directions for Pan Fry/Oven Method
 
 1. Preheat your oven to 400 degrees.
 

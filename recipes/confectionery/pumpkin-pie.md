@@ -42,7 +42,7 @@ see also: meringue pumpkin pie recipe below
 
 Makes one 9-inch pie
 
-## Ingredients for the Pie:
+## Ingredients for the Pie
 
 * 2 cups fresh cooked or canned pumpkin (one 15-ounce can will do) (recipe follows)
 * 4 egg yolks
@@ -54,7 +54,7 @@ Makes one 9-inch pie
 * 0.5 teaspoon ground cloves
 * One 9-inch blind-baked piecrust
 
-## Ingredients for the Meringue:
+## Ingredients for the Meringue
 
 * 4 egg whites
 * Pinch cream of tartar
@@ -93,4 +93,4 @@ Makes one 9-inch pie
    pierced with a knife, about 1 hour. Remove from the oven and set aside to let cool.
 3. Scoop out and discard the seeds. Scoop out the flesh and let drain in a colander for about 30 minutes.
 4. Transfer the flesh to a medium bowl and mash with a fork to smooth out any lumps. The cooked pumpkin can be stored in
-   a covered container in the refrigerator for up to 5 days. 
+   a covered container in the refrigerator for up to 5 days.

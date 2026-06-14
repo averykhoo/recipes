@@ -153,7 +153,7 @@ or use crushed lotus biscuits and butter and skip all the above - no spice/sugar
 
 ---
 
-## Notes:
+## Notes
 
 * Does supersteam work?
 * Is it okay to not immerse the cheesecake in the water bath?
@@ -162,4 +162,3 @@ or use crushed lotus biscuits and butter and skip all the above - no spice/sugar
     * https://www.geniuskitchen.com/recipe/juniors-famous-cheesecake-17927
     * https://www.epicurious.com/recipes/food/views/original-new-york-cheesecake-51200640
     * https://www.thespruceeats.com/juniors-original-new-york-cheesecake-recipe-1135432
-	

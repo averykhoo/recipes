@@ -1,4 +1,4 @@
-# ragu alla bolognese
+# Ragu alla bolognese
 
 https://www.seriouseats.com/the-best-slow-cooked-bolognese-sauce-recipe
 https://www.insidehook.com/article/food-and-drink/chef-marc-forgione-rules-traditional-bolognese
@@ -6,7 +6,7 @@ https://www.pastagrammar.com/post/rag%C3%B9-alla-bolognese-authentic-bolognese-s
 about 50-65g dried pasta per person (500g packet of dried pasta usually feeds 8-10)
 and pepper is important too
 
-## ingredients for passata
+## Ingredients for passata
 
 [//]: # (TODO: this is pretty much passata and could be a separate page)
 
@@ -20,7 +20,7 @@ and pepper is important too
 * optional (fresh?) herbs
 * salt and pepper
 
-## ingredients for the rest of the sauce
+## Ingredients for the rest of the sauce
 
 * 100g-200g bacon, sliced very thinly and cut into small bits
     * to make this halal, substitute with 50g beef fat plus a bit of salt
@@ -37,7 +37,7 @@ and pepper is important too
     * mushroom
     * parmesan
 
-## directions for passata
+## Directions for passata
 
 1. blend/dice/mince the carrot, onion, celery, and capsicum
 2. fry with little to no oil until well cooked through
@@ -45,7 +45,7 @@ and pepper is important too
 4. add stock and optional herbs and cook, covered, until it looks about done
 5. reserve in an airtight container in the fridge for up to a week, or in the freezer for maybe a month
 
-## directions for the sauce
+## Directions for the sauce
 
 1. fry the bacon to render the fat
 2. add the rest of the meat and fry until no longer raw or wet (if the meat releases water, boil it off)
@@ -56,7 +56,7 @@ and pepper is important too
 7. deglaze with wine and stir well to combine; repeat these 2 steps until you've added all the wine you want to add
 8. add milk and stir, letting it be fully absorbed
 
-## notes
+## Notes
 
 * to do this in one pan: fry the soffrito dry, render bacon, add meat, then tomatoes, garlic, herbs, spices
 * for lasagna: omit milk and nutmeg, and consider using more (maybe 2x?) tomatoes

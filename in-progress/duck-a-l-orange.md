@@ -1,6 +1,6 @@
-# duck a l'orange
+# Duck a l'orange
 
-## ingredients
+## Ingredients
 
 * 2-3 oranges worth of zest (peeled and roughly sliced)
 * some orange juice
@@ -16,7 +16,7 @@
 * orange supremes
 * grand marnier / cointreau / white wine 
 
-## directions
+## Directions
 
 1. boil zest in some water, then add juice and stock and reduce
 2. add the mirepoix and optional tomato paste (cook the raw tomato paste on the side of the pan)

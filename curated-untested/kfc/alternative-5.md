@@ -19,7 +19,7 @@ https://youtu.be/8BslfOheMIc
 * 0.56g ground star anise
 * 0.38g ground clove
 
-## Ingredients for Breading mix:
+## Ingredients for Breading mix
 
 * 21g spice mix
 * 36g fine flake salt

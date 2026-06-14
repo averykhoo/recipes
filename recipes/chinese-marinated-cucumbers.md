@@ -3,7 +3,7 @@
 see also: https://www.seriouseats.com/sichuan-style-smashed-cucumber-salad-recipe
 see also: https://cooking.nytimes.com/recipes/1017629-chinese-smashed-cucumbers-with-sesame-oil-and-garlic
 
-## ingredients
+## Ingredients
 
 * 500g japanese cucumbers
 * 1 shallot, finely minced
@@ -17,7 +17,7 @@ see also: https://cooking.nytimes.com/recipes/1017629-chinese-smashed-cucumbers-
 * 1 Tbsp toasted sesame seeds
 * chopped cilantro to garnsish (optional)
 
-## directions
+## Directions
 
 1. crush cucumber into 4 quarters
 2. scoop out the insides and discard

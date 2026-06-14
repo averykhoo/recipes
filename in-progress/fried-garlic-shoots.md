@@ -1,6 +1,6 @@
-# fried garlic shoots
+# Fried garlic shoots
 
-## ingredients
+## Ingredients
 
 * garlic shoots, root and brown tip discarded, cut into 4cm bits, blanched in salted water
 * onion, sliced or diced

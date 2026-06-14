@@ -14,13 +14,13 @@ Despite the weight of the pan, the texture is still light and not overly solid.
 The citrus adds just a hint of flavor, and makes this one really good with a fruit topping (but I also love it just
 plain).
 
-## Ingredients for Graham cracker crust:
+## Ingredients for Graham cracker crust
 
 * 1 cup graham cracker crumbs
 * 3 tablespoons butter
 * 3 tablespoons sugar
 
-## Ingredients for cheesecake filling:
+## Ingredients for cheesecake filling
 
 * 2.5 lbs (5x 8-ounce blocks) (1.15kg) cream cheese, softened (I don't recommend reduced or no-fat for this one)
 * 1.75 cups sugar
@@ -31,7 +31,7 @@ plain).
 * 5 eggs + 2 egg yolks
 * 0.5 cups sour cream
 
-## Directions for crust:
+## Directions for crust
 
 1. Butter the bottom and sides of a 9-inch springform pan.
 2. In a mixing bowl, combine graham crumbs, butter and sugar – mix well.
@@ -40,7 +40,7 @@ plain).
 5. NOTE: If you haven't invested in a pestle yet, go out and get yourself one...
    pressing crusts into pans/muffin tins is SO MUCH easier with that little tool!
 
-## Directions for cheesecake filling:
+## Directions for cheesecake filling
 
 1. Preheat oven to 500F (260C) degrees.
 2. In a large mixing bowl with an electric mixer, combine cream cheese, sugar, zests, and vanilla ;
@@ -59,7 +59,7 @@ plain).
 
 ---
 
-# Optional Strawberry Sauce:
+# Optional Strawberry Sauce
 
 ## Ingredients
 
@@ -76,4 +76,3 @@ plain).
    cook until strawberries are soft and liquid is thickened, about 10 minutes.
 2. Stir in the liqueur and cook 1 more minute.
 3. Serve chilled or at room temperature
-

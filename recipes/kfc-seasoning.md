@@ -77,13 +77,13 @@
 3. Some people say that carrots and onion were not in the original coleslaw recipe so feel free to leave them out.
 4. Chopped the cabbage, don't shred it.
 
-## Notes:
+## Notes
 
 * Chicago
   Tribune [said that they found](https://www.chicagotribune.com/travel/ct-kfc-recipe-revealed-20160818-story.html)
   the [original recipe](https://www.chicagotribune.com/dining/recipes/ct-kfc-recipe-test-20160818-story.html)
 
-## Directions from [reddit](https://www.reddit.com/r/food/comments/1ww8h1/kfc_clone_recipe_results/):
+## Directions from [reddit](https://www.reddit.com/r/food/comments/1ww8h1/kfc_clone_recipe_results/)
 
 Blend all spices together including the salt in spice grinder until mixed and powdery. Add to flour and mix by hand with
 whisk or in food processor.

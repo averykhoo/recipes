@@ -1,4 +1,4 @@
-# greek-inspired salad recipe, randomly put together, not bad
+# Greek-inspired salad recipe, randomly put together, not bad
 
 ## Ingredients
 
@@ -18,4 +18,4 @@
 * whole basil leaves
 * parsley leaves
 * walnuts
-* 
+*

@@ -1,6 +1,6 @@
 # Tortang Talong
 
-## directions
+## Directions
 
 1. roast eggplant until blackened
 2. slice like a fan
@@ -15,7 +15,7 @@
 
 ---
 
-## Notes:
+## Notes
 
 * traditionally served with banana ketchup
 * air fryer might also work

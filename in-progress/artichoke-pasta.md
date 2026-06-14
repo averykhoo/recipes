@@ -1,4 +1,4 @@
-# artichoke pasta
+# Artichoke pasta
 
 kind of a quattro stagioni pasta
 

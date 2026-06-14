@@ -26,7 +26,7 @@ make some fizzy fruit
 
 ---
 
-## slightly hand-wavy science:
+## Slightly hand-wavy science
 
 * a marble has a diameter of about 1/2 inches to 1.5cm -> the volume of dry ice is about 1 to 2 ml (~= 1.5 ml)
 * dry ice has a density of 1.6g/cm3 -> the mass of dry ice is 1.6 * 1.5 = 2.4g
@@ -69,4 +69,3 @@ Solubility of CO2 in pure water at different temperatures ([source](https://www.
 | 30               | 0.42                  |
 | 35               | 0.36                  |
 | 40               | 0.31                  |
- 	 

@@ -1,8 +1,8 @@
-# pink sauce pasta
+# Pink sauce pasta
 
 note: for this to turn out pink and not orange, the tomatoes must be red and not orange
 
-## ingredients
+## Ingredients
 
 1. fry bacon and halved cherry tomatoes (and pepper - salt comes from pasta water)
 2. add chicken stock to help tomatoes to cook

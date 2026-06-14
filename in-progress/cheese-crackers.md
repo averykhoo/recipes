@@ -9,7 +9,7 @@ see also: https://preppykitchen.com/shortbread-cookies-recipe/
 
 yields 30-35 crackers, or 6-8 shortbread brick cookies 
 
-## ingredients
+## Ingredients
 
 * 2 tablespoons room temperature unsalted butter
 * 3 ounces【85 g】 sharp cheddar cheese, grated (about 0.75 cup【177 mL】 lightly packed)
@@ -20,7 +20,7 @@ yields 30-35 crackers, or 6-8 shortbread brick cookies
 * 0.5 cup【118 mL】 all-purpose flour (2.25 oz【64 g】 by weight)
 * 1 tablespoon cold water
 
-## directions
+## Directions
 
 1. Cream together the butter, cheese, spices, and salt. Use a fork.
 2. Add flour and keep mixing to form sand.
@@ -35,7 +35,7 @@ yields 30-35 crackers, or 6-8 shortbread brick cookies
 
 ---
 
-## Notes:
+## Notes
 
 * maybe a bit of sugar would be nice
 * can substitute with 4oz of almost any cheese

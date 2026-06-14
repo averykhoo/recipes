@@ -6,7 +6,7 @@ https://howtofeedaloon.com/provencal-chicken-stew/
 
 Basically regular stew with olives and different herbs
 
-## ingredients
+## Ingredients
 
 * 4 boneless chicken thighs, seasoned and floured
 * rosemary, savory/thyme, oregano/marjoram, maybe basil/parsley, tarragon, bay leaf, fennel seed, lavender
@@ -26,7 +26,7 @@ Basically regular stew with olives and different herbs
 * apple for sweetness, large cubes
 * potatoes, small cubes
 
-## directions
+## Directions
 
 1. Dredge the chicken parts in flour
 2. Fry the chicken until browned but not cooked through, then reserve.

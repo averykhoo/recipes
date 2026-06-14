@@ -20,7 +20,7 @@
 5. Add the sliced spring onions to the pot. Also add the tofu, but do that gently.
 6. Using a soup ladle, scoop the soup into individual bowls, taking care not to break the tofu. Serve hot and enjoy!
 
-## Notes:
+## Notes
 
 * The amount of miso required depends on the concentration of the dashi and the type and saltiness of the miso. It's
   better to taste and adjust upwards.

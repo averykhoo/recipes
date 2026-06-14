@@ -1,13 +1,13 @@
-# pineapple sauce for ham
+# Pineapple sauce for ham
 
-## ingredients
+## Ingredients
 
 * 1 can pineapple, about 390g / 12oz drained weight
 * 1 cup sugar
     * brown sugar makes the sauce brown, so stick to white?
 * pinch of cinnamon, optional
 
-## directions
+## Directions
 
 1. cut fine or blend
 2. cook with sugar
@@ -17,9 +17,9 @@
 
 ---
 
-# mummy's recipe
+# Mummy's recipe
 
-## ingredients
+## Ingredients
 
 * 0.25 cup water
 * 0.25 cup brown sugar
@@ -29,7 +29,7 @@
 * 1 can pineapple rings, blended, including the water
 * 1 Tbsp cornstarch, mixed into additional 0.25 cup water
 
-## directions
+## Directions
 
 1. mix
 2. boil, then simmer with lid for 10 mins
@@ -82,4 +82,3 @@ For leftovers, to store ham on the bone:
 3. Change the tea towel every day.
 4. Once opened, do not store ham in its original packaging.
 5. Stored properly, the ham will last for up to 2 weeks, without having to freeze it.
-

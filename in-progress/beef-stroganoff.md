@@ -1,4 +1,4 @@
-# beef stroganoff
+# Beef stroganoff
 
 ## Ingredients
 

@@ -1,4 +1,4 @@
-# Spaghetti All'Assassina 
+# Spaghetti All'Assassina
 
 ## Ingredients
 

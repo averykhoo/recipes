@@ -1,16 +1,16 @@
-# bacon wrapped smokies
+# Bacon wrapped smokies
 
 https://www.youtube.com/watch?v=JpPys439VHI
 https://www.youtube.com/watch?v=OqP-dcHEX2w
 
-## ingredients
+## Ingredients
 
 * thin bacon
 * smokies (small smoked sausages, about 4cm in length)
 * bbq seasoning
 * optional sugar
 
-## directions
+## Directions
 
 1. dry the sausages, wet bacon can't stick
 2. cut the bacon to size - at least 4x the diameter of the sausage, measure using 4 sausages

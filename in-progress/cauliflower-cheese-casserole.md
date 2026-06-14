@@ -2,7 +2,7 @@
 
 https://www.bbcgoodfood.com/recipes/cauliflower-cheese-0
 
-## ingredients
+## Ingredients
 
 * 1 cauliflower
 * 50g butter
@@ -11,7 +11,7 @@ https://www.bbcgoodfood.com/recipes/cauliflower-cheese-0
 * 100g strong cheddar, grated
 * 2-3 Tbsp breadcrumbs (optional)
 
-## directions
+## Directions
 
 1. boil cauliflower until soft, about 5 minutes
 2. drain, break into smaller chunks, and place in baking dish

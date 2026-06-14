@@ -1,6 +1,6 @@
 # Pesto (from Thai basil)
 
-## ingredients
+## Ingredients
 
 * leaves from 3 bunches of thai basil (about 200g dry)
     * these basil leaves are larger than holy basil, and don't smell like mint
@@ -21,7 +21,7 @@
         * used 1 cup (60g) of grated gran moravia (hard cheese) since that was in the fridge
         * using 2/3 cup (40g) was still too little
 
-## directions
+## Directions
 
 1. add oil to blender
 2. add basil leaves - about 1/3 of the leaves will fit
@@ -32,4 +32,4 @@
 7. store in an airtight container for up to a couple months
 8. smooth the top surface of the pesto flat with a spatula, and cover with olive oil to prevent oxidation
 9. it does not need to be cooked before eating - that also weakens the garlic flavor
-10. the oil preventing oxidation is not wasted - it tastes pretty good after absorbing the basil flavor  
+10. the oil preventing oxidation is not wasted - it tastes pretty good after absorbing the basil flavor

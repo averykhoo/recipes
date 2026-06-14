@@ -1,4 +1,4 @@
-# tiktok baked feta pasta
+# Tiktok baked feta pasta
 
 https://liemessa.fi/2020/09/baked-feta-pasta-original-recipe/
 https://iamafoodblog.com/tiktok-baked-feta-pasta/

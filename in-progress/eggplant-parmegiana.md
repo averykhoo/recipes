@@ -1,6 +1,6 @@
 # Eggplant Parmesan (Parmigiana di Melanzane)
 
-## ingredients
+## Ingredients
 
 * passata (or marinara sauce)
 * eggplant slices, baked with olive oil and some salt
@@ -10,7 +10,7 @@
 * optional breadcrumbs
 * optional herbs in the sauce
 
-## directions
+## Directions
 
 1. layer sauce, basil, eggplant, cheese
 2. repeat until container is full

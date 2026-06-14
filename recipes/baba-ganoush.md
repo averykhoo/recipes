@@ -37,7 +37,7 @@ https://www.themediterraneandish.com/baba-ganoush-recipe/
 13. Adjust seasonings to taste - you may want to add more lemon juice or salt.
 14. To serve, swirl in a serving bowl, drizzle over some olive oil, and sprinkle over a pinch of paprika.
 
-### Notes:
+### Notes
 
 * Try roasting garlic with the eggplant. About 3x as much garlic will be needed.
 * Parsley can be substituted with celery leaves.

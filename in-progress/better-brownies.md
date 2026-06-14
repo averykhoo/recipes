@@ -3,7 +3,7 @@
 [//]: # (todo: seen on tiktok - add a frozen layer of nutella and speculoos in the middle)
 [//]: # (todo: maybe use the meringue as a base layer instead of the top layer)
 
-## ingredients for Brownie:
+## Ingredients for Brownie
 
 * 1 cup (170g) 70% dark chocolate
 * 1 cup (250g) butter (1 full slab, keep the butter wrapper for flouring the baking pan)
@@ -25,7 +25,7 @@
     * nuts, toasted in the oven
     * or you could double the initial amount of melted chocolate droplets to 2 cups
 
-## Ingredients for OPTIONAL top layer (crust):
+## Ingredients for OPTIONAL top layer (crust)
 
 * 2 egg whites
 * 0.5 cup (100g) fine white sugar
@@ -33,14 +33,14 @@
 * 0.5 tsp vanilla essence
 * pinch of salt
 
-## Ingredients for Topping:
+## Ingredients for Topping
 
 * Icing sugar (for dusting)
 * Whipped cream (for topping)
 * Chocolate sauce (for topping)
 * Cocoa powder (for dusting)
 
-## directions
+## Directions
 
 1. Preheat oven to 180 C
 2. If not silicone pan: (eg glass)
@@ -81,7 +81,7 @@ To serve:
 
 ---
 
-## Notes:
+## Notes
 
 * Try bread flour?
 * if using cocoa powder in place of chocolate:

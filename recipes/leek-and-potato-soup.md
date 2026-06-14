@@ -1,6 +1,6 @@
 # Potage Parmentier (Leek & Potato Soup)
 
-## ingredients
+## Ingredients
 
 * 1-2 Tbsp butter
 * 300g thinly sliced leeks (about 2 leeks)
@@ -12,7 +12,7 @@
 * 1 Tbsp butter to finish
 * chives or dill and cream to garnish
 
-## directions
+## Directions
 
 1. fry the leek and garlic in butter until softened, about 5 mins.
 2. blend the leek and 1 cup of cold/room-temp stock in a blender until smooth, and reserve.
@@ -24,7 +24,7 @@
 8. drizzle in some wine. finish with butter.
 9. serve with a drizzle of cream and a garnish of chopped chive or dill.
 
-## Notes:
+## Notes
 
 * a food mill can replace the blender and potato ricer
 * don't blend hot stock

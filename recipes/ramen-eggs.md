@@ -20,7 +20,7 @@
 7. Keep in fridge for at least 24 hours (and at most 2-3 days, otherwise the marinade will harden the eggs)
 8. Slice with a tomato knife or dental floss
 
-## Notes:
+## Notes
 
 * Optionally add 1 Tbsp of vinegar into the water when boiling the eggs for easier peeling
 * Add a teaspoon of dark soy sauce for darker colored eggs

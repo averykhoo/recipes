@@ -1,4 +1,4 @@
-# KFC - Ken's Recipe v7:
+# KFC - Ken's Recipe v7
 
 https://youtu.be/g6RPP_9Lwbc
 

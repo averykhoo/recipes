@@ -1,6 +1,6 @@
 # TODO - Croque Monsieur / Croque Madame
 
-## ingredients
+## Ingredients
 
 * bread
 * cheese, traditionally emmental
@@ -9,7 +9,7 @@
 * [bechamel](../recipes/bechamel.md)
 * optional egg on top, and more sauce to finish
 
-## directions
+## Directions
 
 1. layer from bottom to top:
     * bread

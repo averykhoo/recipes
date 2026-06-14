@@ -1,6 +1,6 @@
-# salmon pasta
+# Salmon pasta
 
-## ingredients
+## Ingredients
 
 * butter
 * onion?

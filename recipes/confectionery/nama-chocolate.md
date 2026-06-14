@@ -1,8 +1,8 @@
-# nama chocolate *a la royce*
+# Nama chocolate *a la royce*
 
 * yields 16 squares
 
-## ingredients
+## Ingredients
 
 * 100g dark chocolate (60g `callebaut 70-30-38` + 40g `callebaut 811`) (ratio reduced from 70-30)
 * 75g cream (millac 38% fat) (increased from 66g)
@@ -11,7 +11,7 @@
 * pinch of salt
 * cocoa powder for dusting
 
-## directions
+## Directions
 
 1. melt and mix all ingredients (e.g., over a bain marie) to form a ganache
 2. pour into a square container (about 13cm x 13cm) lined on the bottom with baking paper

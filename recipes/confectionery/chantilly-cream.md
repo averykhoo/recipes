@@ -10,14 +10,14 @@ https://www.allrecipes.com/recipe/247089/vanilla-chantilly-cream/
 * (optional) seeds from 1/2 pod vanilla
 * if using a metal mixing bowl (or anything with high heat capacity), chill the bowl first
 
-## Ingredients for stabilizing (optional and not veg friendly):
+## Ingredients for stabilizing (optional and not veg friendly)
 
 https://veenaazmanov.com/stabilize-whipped-cream-5-different-methods/
 
 * 0.5 tsp gelatin powder
 * 1 Tbsp cold water
 
-## directions
+## Directions
 
 1. allow to bloom in cold water to avoid grainy bits
 2. microwave for a short while until just transparent, not too long or the gelatin won't gel
@@ -29,6 +29,6 @@ https://veenaazmanov.com/stabilize-whipped-cream-5-different-methods/
 
 ---
 
-## Notes:
+## Notes
 
 * the recipe is quite lenient, you can up to double any ingredient (except maybe the water) and it'll still taste okay

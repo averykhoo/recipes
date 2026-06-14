@@ -2,7 +2,7 @@
 
 From: https://www.wellmadebykiley.com/blog/brownie-stuffed-banana-bread-with-brown-butter
 
-## Ingredients for Brownie Filling:
+## Ingredients for Brownie Filling
 
 * 0.5 cup (113g) salted butter
 * 3oz (85g) dark chocolate chips or chopped chocolate
@@ -16,7 +16,7 @@ From: https://www.wellmadebykiley.com/blog/brownie-stuffed-banana-bread-with-bro
 * 0.25 tsp (2g) salt
 * 0.5 cup (100g) chocolate chips or chopped chocolate of choice
 
-## Ingredients for Banana Bread:
+## Ingredients for Banana Bread
 
 * 0.5 cup (113g) salted butter
 * 3 large ripe bananas, mashed (~1.5 cups; 400g)
@@ -32,7 +32,7 @@ From: https://www.wellmadebykiley.com/blog/brownie-stuffed-banana-bread-with-bro
 * 1 cup (200g) chocolate chips or chopped chocolate of choice (I used semi-sweet chocolate chips)
 * Optional: 2 thin strips of cold butter for placing on top of the batter before baking (see instructions below)
 
-## Directions for Brownie Filling:
+## Directions for Brownie Filling
 
 1. Reusing the medium bowl, melt the butter and chocolate in the microwave at 20-second intervals to make a ganache.
 2. Then whisk in the cocoa powder and instant espresso powder (if using), until smooth, then allow to cool.
@@ -53,7 +53,7 @@ From: https://www.wellmadebykiley.com/blog/brownie-stuffed-banana-bread-with-bro
 7. Fold the dry ingredients into the wet, being careful not to over-mix. The batter will be lumpy!
 8. Then, gently fold in the chocolate chips.
 
-## Directions for assembly:
+## Directions for assembly
 
 1. Pour or scoop half of the banana bread batter into the prepared loaf pan and spread out evenly.
 2. Scoop or slice your brownie mixture and lay it along the center of the banana bread.

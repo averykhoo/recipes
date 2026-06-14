@@ -67,7 +67,7 @@ spent on caramelizing the onions, a process that always takes longer than it see
 
 ---
 
-## nyt comments
+## NYT comments
 
 > diane
 > (2 years ago)

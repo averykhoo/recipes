@@ -1,10 +1,10 @@
-# todo - easy hollandaise sauce
+# TODO - easy hollandaise sauce
 
 [//]: # (Todo: refer to serious eats blender recipe and update this)
 
 Not sure where this recipe originated from
 
-## ingredients
+## Ingredients
 
 * 4 (large) yolks
 * 0.25 tsp salt

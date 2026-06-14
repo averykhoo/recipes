@@ -9,7 +9,7 @@ clingfilm, then use that to transfer it into the pie dish.
 
 lazy to edit so pasting the whole page here first
 
-## ingredients
+## Ingredients
 
 * 400 grams all-purpose flour (or pastry flour, or 1 part cake to 2 parts plain)
     * this is used in 2 parts below
@@ -35,7 +35,7 @@ lazy to edit so pasting the whole page here first
    Wrap each disc with plastic wrap and refrigerate for at least 1 hour and up to 2 days.
    You can also freeze it for up to 3 months (just thaw it overnight in the fridge before using it).
 
-## Directions for blind baking:
+## Directions for blind baking
 
 1. prepare pie tin by lining the bottom with parchment paper
 2. roll dough out on clingfilm, then invert onto the pie tin

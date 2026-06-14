@@ -1,8 +1,8 @@
 # scripts/cleanup_headers.py
 """
 Utility script that searches all recipe Markdown files, identifies
-section headers with trailing colons, and cleans them directly
-within the source files.
+section headers (from H1 to H6) with trailing colons, strips the colons,
+and capitalizes the first character of the header text.
 """
 
 import re
@@ -16,24 +16,38 @@ RECIPE_DIRECTORIES = [
     Path("../curated-untested"),
 ]
 
-# Matches headers ending in trailing colons
-RE_HEADER_COLON = re.compile(r"^(?P<prefix>#{2,6}\s+)(?P<title>.+?)(?P<colon>:)\s*$")
+# Matches headers from level 1 to 6 ending with an optional trailing colon
+RE_HEADER = re.compile(r"^(?P<prefix>#{1,6}\s+)(?P<title>.+?)(?P<colon>:)?\s*$")
 
 
 def process_header_lines(markdown_body: str) -> tuple[str, int]:
     """
-    Scans document bodies line-by-line and removes trailing colons from headers.
+    Scans document bodies line-by-line, capitalizes the first character,
+    and removes trailing colons from all Markdown headers.
     """
     lines = markdown_body.splitlines()
     processed_lines = []
     modifications = 0
 
     for line in lines:
-        header_match = RE_HEADER_COLON.match(line)
+        header_match = RE_HEADER.match(line)
         if header_match:
-            cleaned_header = f"{header_match.group('prefix')}{header_match.group('title').strip()}"
-            processed_lines.append(cleaned_header)
-            modifications += 1
+            title = header_match.group("title").strip()
+            if title.lower().startswith('todo'):
+                # Capitalize only the first character of the header text
+                title = 'TODO' + title[4:]
+            elif title:
+                # Capitalize only the first character of the header text
+                title = title[0].upper() + title[1:]
+
+            cleaned_header = f"{header_match.group('prefix')}{title}"
+
+            # Save the change only if it differs from the original line
+            if cleaned_header != line:
+                processed_lines.append(cleaned_header)
+                modifications += 1
+            else:
+                processed_lines.append(line)
         else:
             processed_lines.append(line)
 
@@ -41,7 +55,7 @@ def process_header_lines(markdown_body: str) -> tuple[str, int]:
 
 
 def run_header_cleanup():
-    print("🧹 Running Header Colon Normalizer...")
+    print("🧹 Running Header Colon and Capitalization Normalizer...")
     files_processed = 0
     modifications_made = 0
 

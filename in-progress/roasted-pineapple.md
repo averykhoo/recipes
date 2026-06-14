@@ -1,13 +1,13 @@
-# roasted pineapple
+# Roasted pineapple
 
-## ingredients
+## Ingredients
 
 * 1 pineapple, peeled and de-eyed
 * 0.25 cup sugar / syrup
 * 2 tsp cinnamon
 * water, juice, or a splash of wine or rum, optional, to loosen up the marinade
 
-## directions
+## Directions
 
 1. mix the marinade
 2. baste and roast at 190C for 15 mins
@@ -16,7 +16,7 @@
 
 ---
 
-## todo:
+## TODO
 
 * butter?
 * vanilla?

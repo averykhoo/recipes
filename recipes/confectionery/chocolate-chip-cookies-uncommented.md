@@ -91,7 +91,7 @@
 
 ---
 
-## To-do:
+## To-do
 
 * Maybe try a pinch or two of nutmeg?
 * Add notes about equipment to the start of the recipe

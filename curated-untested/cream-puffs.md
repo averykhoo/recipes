@@ -27,7 +27,7 @@ https://www.youtube.com/watch?v=3xtSr5iIuTo
 * 170g heavy cream
 * 17g sugar
 
-## Directions for Choux Pastry:
+## Directions for Choux Pastry
 
 1. Cut the sides of a plastic bag with scissors.
 2. In a bowl, mix 33g unsalted butter (softened) with 40g sugar until well combined.
@@ -45,7 +45,7 @@ https://www.youtube.com/watch?v=3xtSr5iIuTo
 14. Add the frozen butter. Bake at 190°C (375°F) for 15 minutes, then at 170°C (338°F) for another 15 minutes.
 15. Open the oven door slightly and take it out after 10 minutes. Let it cool.
 
-## Directions for Custard Cream:
+## Directions for Custard Cream
 
 1. In a bowl, mix 2 egg yolks with 35g sugar until pale yellow.
 2. Add 10g cornstarch and mix well.
@@ -61,7 +61,7 @@ https://www.youtube.com/watch?v=3xtSr5iIuTo
 
 ---
 
-## Notes:
+## Notes
 
 1. After filling in the cream, the choux gets damp easily. 
 2. To keep the crispness the longest, you have no choice but to fill it with cream every time you eat it.

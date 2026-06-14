@@ -9,7 +9,7 @@
 * works with garlic fried rice or pasta
 * potato dauphinoise makes a good side dish
 
-# INGREDIENTS FOR AN OVEN:
+# INGREDIENTS FOR AN OVEN
 
 * 1-2 teaspoons salt
 * 1 teaspoon chili powder
@@ -27,7 +27,7 @@
 
 ---
 
-# FOR COOKING IN A PAN:
+# FOR COOKING IN A PAN
 
 (partial merge with alfredo recipe)
 
