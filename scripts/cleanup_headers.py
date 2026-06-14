@@ -11,9 +11,9 @@ import frontmatter
 
 # Target directories to clean up
 RECIPE_DIRECTORIES = [
-    Path("recipes"),
-    Path("in-progress"),
-    Path("curated-untested"),
+    Path("../recipes"),
+    Path("../in-progress"),
+    Path("../curated-untested"),
 ]
 
 # Matches headers ending in trailing colons
@@ -63,10 +63,14 @@ def run_header_cleanup():
             cleaned_content, file_changes = process_header_lines(recipe_post.content)
 
             if file_changes > 0:
-                recipe_post.content = cleaned_content
-                # Update the file content
-                with markdown_file.open("w", encoding="utf-8") as write_file:
-                    frontmatter.dump(recipe_post, write_file)
+                if recipe_post.metadata:
+                    recipe_post.content = cleaned_content
+                    # Write the updated content back to the source file
+                    with markdown_file.open("wb") as write_file:
+                        frontmatter.dump(recipe_post, write_file, encoding="utf-8")
+                else:
+                    with markdown_file.open("w", encoding='utf-8') as write_file:
+                        write_file.write(cleaned_content)
 
                 relative_path = markdown_file.relative_to(directory.parent)
                 print(f"  ✅ Removed {file_changes} colon(s) from: {relative_path}")
