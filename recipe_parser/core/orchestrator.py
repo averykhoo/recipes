@@ -2,27 +2,38 @@
 """
 The core orchestrator of the recipe parser package, coordinating
 frontmatter reading, sub-recipe splitting, block-level AST analysis,
-and structured serialization.
+character validation audits, and structured serialization.
 """
 
 import re
 from pathlib import Path
-from typing import List, Tuple, Dict, Any, Optional
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Optional
+from typing import Tuple
+
 import frontmatter
 from markdown_it import MarkdownIt
 from markdown_it.tree import SyntaxTreeNode
 
-from recipe_parser.models.schemas import (
-    Recipe,
-    RecipeDocument,
-    IngredientsComponent,
-    DirectionsComponent,
-)
-from recipe_parser.rules.ingredients import parse_ingredient_line
+from recipe_parser.models.schemas import DirectionsComponent
+from recipe_parser.models.schemas import IngredientsComponent
+from recipe_parser.models.schemas import Recipe
+from recipe_parser.models.schemas import RecipeDocument
 from recipe_parser.rules.directions import extract_flat_steps_recursively
-from recipe_parser.rules.links import wrap_bare_urls_in_markdown, rewrite_markdown_links_to_html
+from recipe_parser.rules.ingredients import parse_ingredient_line
+from recipe_parser.rules.links import rewrite_markdown_links_to_html
+from recipe_parser.rules.links import wrap_bare_urls_in_markdown
 from recipe_parser.utils.sanitizer import sanitize_header_text
+from recipe_parser.validation.characters import audit_non_ascii_characters
 from recipe_parser.validation.consistency import audit_component_consistency
+
+# Matches standard yield and serving keywords inside text blocks
+RE_YIELD_KEYWORDS = re.compile(
+    r"\b(yields?|serves?|makes|pax|portions?|people|servings?)\b",
+    re.IGNORECASE
+)
 
 
 class RecipeBlock:
@@ -30,12 +41,48 @@ class RecipeBlock:
     A helper structure representing the block-level elements
     of a single parsed recipe.
     """
+
     def __init__(self):
         self.title: Optional[str] = None
         self.yield_val: Optional[str] = None
         self.ingredients: Dict[Optional[str], List[str]] = {}
         self.directions: Dict[Optional[str], List[str]] = {}
         self.notes: List[str] = []
+
+
+def find_candidate_yield_line(block_tokens: List[Dict[str, Any]]) -> Optional[str]:
+    """
+    Scans all paragraph and list text runs inside the block tokens of a recipe.
+    Returns the first line that matches yield keywords, excluding directional verbs
+    such as 'Serve immediately' or 'Serve with'.
+    """
+    for token in block_tokens:
+        text_runs = []
+        if token["type"] == "Paragraph":
+            text_runs.append(token["text"])
+        elif token["type"] == "List":
+            # Lists hold their raw Markdown content under raw_text
+            text_runs.extend(token["raw_text"].splitlines())
+
+        for text_run in text_runs:
+            for line in text_run.splitlines():
+                line_stripped = line.strip().strip("*+-").strip()
+                if RE_YIELD_KEYWORDS.search(line_stripped):
+                    # Filter out standard instruction steps starting with "Serve"
+                    lower_line = line_stripped.lower()
+                    if lower_line.startswith((
+                            "serve immediately", "serve with", "serve hot",
+                            "serve cold", "serve alongside", "serve over"
+                    )):
+                        continue
+
+                    # Ignore general steps (such as: "Serve on plates") that do not contain numbers
+                    if re.match(r"^serve\b", line_stripped, re.IGNORECASE) and not re.search(r"\b\d+", line_stripped):
+                        continue
+
+                    return line_stripped
+
+    return None
 
 
 def split_sub_recipes(tokens: List[Dict[str, Any]]) -> List[List[Dict[str, Any]]]:
@@ -276,6 +323,16 @@ def process_recipe_document(file_path: Path) -> Tuple[RecipeDocument, List[str]]
     file_post = frontmatter.load(file_path)
     warnings = []
 
+    # Read the raw file content to scan for non-ASCII characters before processing
+    try:
+        with file_path.open("r", encoding="utf-8") as raw_file:
+            raw_text_content = raw_file.read()
+        character_warnings = audit_non_ascii_characters(raw_text_content)
+        warnings.extend(character_warnings)
+    except Exception:
+        # Gracefully proceed if raw file reading fails
+        pass
+
     # Process text-level rules (bare URLs and local link extensions)
     updated_content = wrap_bare_urls_in_markdown(file_post.content)
     updated_content = rewrite_markdown_links_to_html(updated_content)
@@ -298,12 +355,21 @@ def process_recipe_document(file_path: Path) -> Tuple[RecipeDocument, List[str]]
 
         # Resolve yield parameters
         if not parsed_block.yield_val:
+            # Check frontmatter metadata keys first
             for yield_key in ("yield", "yields", "serves", "servings", "portions", "pax"):
                 if yield_key in file_post.metadata:
                     parsed_block.yield_val = str(file_post.metadata[yield_key])
                     break
+
+            # If still missing, scan the entire recipe content blocks for a candidate yield string
             if not parsed_block.yield_val:
-                warnings.append(f"[{parsed_block.title}] Missing serving or yield metadata.")
+                candidate_yield = find_candidate_yield_line(block_tokens)
+                if candidate_yield:
+                    warnings.append(
+                        f"[{parsed_block.title}] Missing serving or yield metadata. "
+                        f"Did you mean: \"{candidate_yield}\"?"
+                    )
+                # If no candidate line is found anywhere, do not append a warning message
 
         # Bind ingredients and step components
         structured_ingredients = []

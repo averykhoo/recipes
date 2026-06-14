@@ -133,7 +133,7 @@ Make sure you have corn oil on hand for frying.
 
 ---
 
-# COLONEL SANDERS' "KENTUCKY” BISCUITS
+# COLONEL SANDERS' "KENTUCKY" BISCUITS
 
 ## Ingredients
 
