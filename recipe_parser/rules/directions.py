@@ -25,8 +25,11 @@ def extract_flat_steps_recursively(node: SyntaxTreeNode) -> List[str]:
         for child in node.children:
             if child.type not in ("bullet_list", "ordered_list"):
                 if child.type == "paragraph":
-                    text_content_runs.append(child.content)
-                elif child.type == "inline":
+                    # Traverse nested paragraph children to find the true inline node contents
+                    for grandchild in getattr(child, "children", []):
+                        if grandchild.type == "inline" and grandchild.content:
+                            text_content_runs.append(grandchild.content)
+                elif child.type == "inline" and child.content:
                     text_content_runs.append(child.content)
 
         item_text = " ".join(text_content_runs).strip()

@@ -1,7 +1,7 @@
 # Polpette di Ricotta - Vegetarian Ricotta "Meatball" Recipe
 
 https://www.pastagrammar.com/post/polpette-di-ricotta-vegetarian-ricotta-meatball-recipe
-Makes: About 20 polpette
+Yield: About 20 polpette
 
 Cook Time: 35 minutes
 

@@ -35,6 +35,12 @@ RE_YIELD_KEYWORDS = re.compile(
     re.IGNORECASE
 )
 
+# Matches at least one digit or common written-out English number words
+RE_HAS_NUMBER = re.compile(
+    r"\d|\b(one|two|three|four|five|six|seven|eight|nine|ten)\b",
+    re.IGNORECASE
+)
+
 
 class RecipeBlock:
     """
@@ -67,6 +73,16 @@ def find_candidate_yield_line(block_tokens: List[Dict[str, Any]]) -> Optional[st
         for text_run in text_runs:
             for line in text_run.splitlines():
                 line_stripped = line.strip().strip("*+-").strip()
+
+                # Rule 1: Limit candidate lines to a maximum of 8 words/tokens to ignore instructions
+                words = line_stripped.split()
+                if len(words) > 8:
+                    continue
+
+                # Rule 2: Require candidate line to contain a digit or a written-out number word
+                if not RE_HAS_NUMBER.search(line_stripped):
+                    continue
+
                 if RE_YIELD_KEYWORDS.search(line_stripped):
                     # Filter out standard instruction steps starting with "Serve"
                     lower_line = line_stripped.lower()
@@ -77,7 +93,7 @@ def find_candidate_yield_line(block_tokens: List[Dict[str, Any]]) -> Optional[st
                         continue
 
                     # Ignore general steps (such as: "Serve on plates") that do not contain numbers
-                    if re.match(r"^serve\b", line_stripped, re.IGNORECASE) and not re.search(r"\b\d+", line_stripped):
+                    if re.match(r"^serve\b", line_stripped, re.IGNORECASE) and not RE_HAS_NUMBER.search(line_stripped):
                         continue
 
                     return line_stripped
@@ -362,10 +378,17 @@ def process_recipe_document(file_path: Path) -> Tuple[RecipeDocument, List[str]]
                     parsed_block.yield_val = str(file_post.metadata[yield_key])
                     break
 
-            # If still missing, scan the entire recipe content blocks for a candidate yield string
+            # If still missing, scan ONLY preamble blocks (tokens before the first H2 heading)
             if not parsed_block.yield_val:
-                candidate_yield = find_candidate_yield_line(block_tokens)
+                preamble_tokens = []
+                for token in block_tokens:
+                    if token.get("type") == "Heading" and token.get("level") == 2:
+                        break
+                    preamble_tokens.append(token)
+
+                candidate_yield = find_candidate_yield_line(preamble_tokens)
                 if candidate_yield:
+                    parsed_block.yield_val = candidate_yield
                     warnings.append(
                         f"[{parsed_block.title}] Missing serving or yield metadata. "
                         f"Did you mean: \"{candidate_yield}\"?"
