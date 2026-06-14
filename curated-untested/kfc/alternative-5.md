@@ -29,16 +29,16 @@ https://youtu.be/8BslfOheMIc
 
 ---
 
-165ºC
+165°C
 5 pounds pressure
 10 - 12 minutes
 
 ## Directions
 
 1. If brining add 2 tsp of spice mix to 4 cups cold water and soak chicken for 2-3 hours.
-2. Bring a pot of hot oil (canola, vegetable oil, or shortening) to 350ºF.
+2. Bring a pot of hot oil (canola, vegetable oil, or shortening) to 350°F.
 3. Mix the spice mix with the cake  (or pastry) flour.
 4. Mix together 1 egg and two cups of milk, for an egg wash.
 5. Dip the chicken in the egg wash, then dredge it in the flour, coating the chicken well.
-6. Carefully drop the dredged chicken in the hot oil and fry for 11-15 minutes or until chicken registers 165ºF on an
+6. Carefully drop the dredged chicken in the hot oil and fry for 11-15 minutes or until chicken registers 165°F on an
    instant read thermometer.

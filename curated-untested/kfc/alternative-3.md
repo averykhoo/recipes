@@ -20,7 +20,7 @@ https://youtu.be/mHau8ZJCHD4
 ## Directions
 
 1. Place all ingredients in a spice grinder; grind and shake to combine.
-2. Preheat pressure fryer to 165ºC.
+2. Preheat pressure fryer to 165°C.
 3. Mix together 13g spice to 200g flour and 24g salt
 4. Prepare an egg wash of 1 egg to 1 cup of milk.
 5. Dip chicken in egg wash, then dredge in flour spit mix.
@@ -55,9 +55,9 @@ Tested 13g spice per 200g cake flour and 24g Fine Flake Salt
 ## Directions
 
 1. If brining add 2 tsp of spice mix to 4 cups cold water and soak chicken for 2-3 hours.
-2. Bring a pot of hot oil (canola, vegetable oil, or shortening) to 350ºF.
+2. Bring a pot of hot oil (canola, vegetable oil, or shortening) to 350°F.
 3. Mix the spice mix with the cake  (or pastry) flour.
 4. Mix together 1 egg and two cups of milk, for an egg wash.
 5. Dip the chicken in the egg wash, then dredge it in the flour, coating the chicken well.
-6. Carefully drop the dredged chicken in the hot oil and fry for 11-15 minutes or until chicken registers 165ºF on an instant read thermometer.
+6. Carefully drop the dredged chicken in the hot oil and fry for 11-15 minutes or until chicken registers 165°F on an instant read thermometer.
 

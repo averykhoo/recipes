@@ -3,8 +3,9 @@
 Validation module for identifying non-ASCII characters inside recipe files,
 supporting a configurable whitelist of allowed Unicode characters.
 """
-
 from typing import List
+
+import unicodedata
 
 # Whitelist of allowed non-ASCII Unicode characters.
 # This list can be modified by the author to suppress warnings for legitimate characters.

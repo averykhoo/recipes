@@ -63,7 +63,7 @@ From: https://www.wellmadebykiley.com/blog/brownie-stuffed-banana-bread-with-bro
 6. Bake at 170C for 70 minutes. Check the loaf after 50 minutes, and cover with foil if the top is browning too quickly.
 7. Remove from the oven and let cool in the pan for *at least 15-20 minutes*.
 8. Transfer to a wire cooling rack and allow to cool for *at least 45-60 minutes* to allow the brownie to set.
-   > PLEASE do not skip this, it’s very important!! If you cut into it too soon, the brownie filling WILL spill out.
+   > PLEASE do not skip this, it's very important!! If you cut into it too soon, the brownie filling WILL spill out.
    > Also just a note, the top will just slightly fall while cooling due to the fudgy brownie batter in the middle,
    > this is completely normal and what we actually want.
 9. Slice and serve warm with butter and flaky sea salt, if desired.

@@ -9,7 +9,7 @@ With 5 blocks of cream cheese in this bad boy, be sure to use both hands to carr
 My daughter, Erin, was actually the one to try this recipe out while she was living at home with us.
 Well, okay, she didn't make it for her mom and dad – she made it for a guy she was dating.
 
-He didn't last, but the recipe sure did…it is fantastic!
+He didn't last, but the recipe sure did...it is fantastic!
 Despite the weight of the pan, the texture is still light and not overly solid.
 The citrus adds just a hint of flavor, and makes this one really good with a fruit topping (but I also love it just
 plain).

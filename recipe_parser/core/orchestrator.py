@@ -4,7 +4,7 @@ The core orchestrator of the recipe parser package, coordinating
 frontmatter reading, sub-recipe splitting, block-level AST analysis,
 character validation audits, and structured serialization.
 """
-
+import logging
 import re
 from pathlib import Path
 from typing import Any
@@ -330,6 +330,7 @@ def process_recipe_document(file_path: Path) -> Tuple[RecipeDocument, List[str]]
         character_warnings = audit_non_ascii_characters(raw_text_content)
         warnings.extend(character_warnings)
     except Exception:
+        logging.exception('Error validating unicode')
         # Gracefully proceed if raw file reading fails
         pass
 

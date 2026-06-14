@@ -25,7 +25,7 @@ Active time: about 30 minutes
 2. Combine 8 ounces (1 cup) water with the sugar and salt in a 3-quart stainless steel saucier over medium heat. Stir
    with a fork until the sugar dissolves and the syrup begins to bubble, about 7 minutes. Fill a ramekin with water,
    then use it to wet a pastry brush and wipe all around the edges of the pot, wherever you see sugar crystals or
-   splashes of syrup. Re-wet the brush as needed, “washing” around the sides until totally clean. Be generous! Extra
+   splashes of syrup. Re-wet the brush as needed, "washing" around the sides until totally clean. Be generous! Extra
    water will not hurt the pie filling, but sugar crystals will.
 3. Crank the heat to medium-high and clip on a digital thermometer. Cook without stirring until the syrup is honey
    colored and 325°, about 12 minutes. Immediately remove from the heat, add the butter all at once, and stir with a

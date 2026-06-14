@@ -41,7 +41,7 @@
 5. Put the pouch into the bowl of brine, and squeeze to extract the juice
 6. Take a cabbage quarter and spread some of the vegetable fillings between each leaf
 7. Put it into a container, such as a glass jar, or Korean earthenware pot. Repeat with the remaining cabbage
-8. Pour the brine over the kimchi so it’s submerged
+8. Pour the brine over the kimchi so it's submerged
 9. ~~Cover and let sit at room temperature until it starts fermenting, which should be between 1 to 2 days~~
-   (Just keep an eye on the kimchi and taste it now and then: when the brine turns sour, it’s fermenting)
+   (Just keep an eye on the kimchi and taste it now and then: when the brine turns sour, it's fermenting)
 10. Store it to the fridge, which will slow down the fermentation process. It will keep for about 1 month. Serve cold.

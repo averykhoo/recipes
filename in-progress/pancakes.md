@@ -100,10 +100,10 @@ days. If you plan to keep it longer than that, it's best to freeze the batter.
 Can You Freeze Pancakes?
 Yes, you can freeze pancakes and pancake batter.
 
-· To freeze cooked pancakes: Allow the pancakes to cool completely, then arrange them in a single layer on a baking
+- To freeze cooked pancakes: Allow the pancakes to cool completely, then arrange them in a single layer on a baking
 sheet (make sure the edges aren't touching). Flash freeze for a few hours or up to overnight. Reheat in an oven set to
 350 degrees F【177°C】 until warmed through.
-· To freeze pancake batter: Ladle the pancake batter in serving size portions into freezer bags, then wrap the bags in
+- To freeze pancake batter: Ladle the pancake batter in serving size portions into freezer bags, then wrap the bags in
 foil. Freeze flat for up to one month. Thaw in the refrigerator overnight.
 
 Allrecipes Community Tips and Praise

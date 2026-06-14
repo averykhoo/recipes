@@ -7,7 +7,7 @@ Yields 30–40 meatballs, serves 4
 Without a doubt, meatballs is the best known of all Swedish dishes, traditionally served with potatoes, lingonberry jam
 and cream sauce.
 The dish is an unexpected meeting of flavours as the lingonberry sweetness contrasts, yet harmonizes, with the
-meatballs, while the cream sauce serves as a neutral “mediator” between the two.
+meatballs, while the cream sauce serves as a neutral "mediator" between the two.
 
 ## Ingredients - Meatballs
 

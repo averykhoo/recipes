@@ -69,7 +69,7 @@
 
 10. Sprinkle lightly with the salt.
 
-11. Bake one tray at a time until golden brown but still soft (select “convection” then “oven bake”).
+11. Bake one tray at a time until golden brown but still soft (select "convection" then "oven bake").
     Cookies will appear to be too soft, but will harden significantly as it cools.
     (the following settings optimized for the Sharp AX-1500V oven, bottom tray only)
 

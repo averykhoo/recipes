@@ -29,7 +29,7 @@ Tested 40g spice mix with 200g cake flour
 
 1. Place all ingredients except salt in a spice grinder; grind and shake to combine.
 2. Add salt to mix and shake to combine.
-3. Preheat pressure fryer to 165ºC.
+3. Preheat pressure fryer to 165°C.
 4. Mix together 18g spice to 100g flour.
 5. Prepare an egg wash of 1 egg to 1 cup of milk.
 6. Dip chicken in egg wash, then dredge in flour spice mix.

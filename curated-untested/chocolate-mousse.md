@@ -3,7 +3,7 @@
 * Serves 4-6
 
 My followers know I love chocolate very much: Chocolate cakes, chocolate cookies and everything related to chocolate.
-In a city where chocolate is revered as an art form, it's as if it “flows” in the Seine River!
+In a city where chocolate is revered as an art form, it's as if it "flows" in the Seine River!
 One of my favorite desserts is chocolate mousse, which I discovered far before my culinary journey in Paris.
 
 Actually, the first time I tasted it was in my childhood when the chocolate mousse was sold at the neighborhood

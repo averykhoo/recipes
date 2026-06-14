@@ -40,7 +40,7 @@ I've modified it ever so slightly over the years, but the end result remains moi
    chopped pecans or macadamia nuts.
 9. Try toasting your banana bread – spread hot toasted bread with butter and even add a sprinkling of cinnamon and sugar
    and some slices of banana, or top with a combination of honey and peanut butter, or spread hot toasted bread with
-   some Nutella…the possibilities are endless!
+   some Nutella...the possibilities are endless!
 10. Use slices of banana bread to make your French toast.
     Just dust the finished product with some powdered sugar, or a little powdered sugar glaze, or spread on some
-    Nutella, and maple syrup is good on it, too…you've gotta try it!
+    Nutella, and maple syrup is good on it, too...you've gotta try it!

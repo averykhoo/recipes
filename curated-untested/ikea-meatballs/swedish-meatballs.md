@@ -35,7 +35,7 @@ I tend to go pretty light with it.
 
 1. Put all meatball ingredients into a large bowl.
    I always find it easiest to use your hands to gently "squish" the mixture, blending all ingredients together well.
-2. When well blended, shape into 1” diameter meatballs.
+2. When well blended, shape into 1" diameter meatballs.
 3. Place about 2 tablespoons butter in a large frying pan; brown the meatballs in the butter, turning to brown all
    sides.
 4. Cover pan and gently cook over low heat for about 10 minutes, until meat is cooked through.
