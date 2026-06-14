@@ -15,7 +15,7 @@
 * 1 teaspoon chili powder
 * 2 onions
 * 2 cloves garlic
-* 1/2 cup butter
+* 0.5 cup butter
 * 1 cup heavy cream
 
 ## DIRECTIONS FOR AN OVEN
@@ -45,7 +45,7 @@
 * 1-2 Tbsp white wine
 * 1 cup heavy whipping cream
 * 1 tsp salt
-* 1/2 tsp pepper
+* 0.5 tsp pepper
 * 1 pinch ground nutmeg
 
 3. Boil for a few seconds to mix then reduce stove temp to under 80°C to avoid burning the pan or overcooking the

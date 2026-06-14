@@ -30,7 +30,7 @@ and pepper is important too
 * herbs & spices (oregano, fresh rosemary, parsley, bay, pepper, nutmeg, ...?)
 * 1 tsp worcestershire sauce, of half the amount of fish sauce
 * (as necessary) 1 Tbsp tomato paste
-* 1/4 to 1 cup wine
+* 0.25 to 1 cup wine
 * optional:
     * up to 1/2 cup milk, pinch of nutmeg
     * gelatin

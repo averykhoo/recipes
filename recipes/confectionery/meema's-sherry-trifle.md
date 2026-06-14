@@ -9,7 +9,7 @@ Avery's Meema's Recipe, Singapore, 1970s
 * 3 TB Rum + 2 TB Sherry + 1 TB Brandy
 * 1.14 litres UHT Milk
 * Bird's Eye Custard Powder (N.B. 1 TB = 2 Dessertspoons!):
-* 1 ½ cups Whipping Cream (e.g. 38% fat Whipping Cream, from Phoon Huat)
+* 1.5 cups Whipping Cream (e.g. 38% fat Whipping Cream, from Phoon Huat)
 * 1 tsp Icing Sugar
 
 ---

@@ -5,12 +5,12 @@ adapted from https://downshiftology.com/recipes/best-ever-guacamole/, with instr
 ## Ingredients
 
 * 300g avocado flesh (from 2-3 ripe avocados)
-* 70-140g diced red onion (1/2 or 1 onion)
+* 70-140g diced red onion (0.5 or 1 onion)
 * 100g thinly sliced cherry tomatoes
 * 4g finely chopped / julienned cilantro
 * 5g minced garlic (2-3 cloves)
 * 15g lime juice (squeezed from half a 67g seedless vietnamese lime)
-* 5g salt (5 pinches ~= 1/2 tsp)
+* 5g salt (5 pinches ~= 0.5 tsp)
 
 ## Directions
 

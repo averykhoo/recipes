@@ -9,13 +9,13 @@ https://www.themediterraneandish.com/baba-ganoush-recipe/
 
 * 2 large / 3 medium eggplants (2 pounds = 900 grams)
 * 1 tablespoon olive oil
-* 1/2 teaspoon salt
+* 0.5 teaspoon salt
 * 2 cloves of garlic, pressed or minced
 * 1 tablespoon of lemon juice (use 1 if you're not a fan of sour food)
-* 1/4 cup of tahini <- warning: nut allergy
-* 1/3 cup of good olive oil
+* 0.25 cup of tahini <- warning: nut allergy
+* 0.333 cup of good olive oil
 * 2 tablespoons chopped flat-leaf parsley
-* 1/4 teaspoon ground cumin
+* 0.25 teaspoon ground cumin
 * 1 tablespoon olive oil
 * pinch of smoked paprika
 

@@ -6,11 +6,11 @@ Dressing:
 
 * 1 Tbsp shoyu (soy sauce)
 * 1 Tbsp toasted sesame oil
-* 1/2 Tbsp black vinegar
-* 1/2 tsp sugar
-* 1/8 tsp shichimi togarashi (Japanese seven-spice blend)
+* 0.5 Tbsp black vinegar
+* 0.5 tsp sugar
+* 0.125 tsp shichimi togarashi (Japanese seven-spice blend)
 * 1 clove garlic, finely minced
-* 1/8 tsp msg / 1/4 tsp bouillon powder
+* 0.125 tsp msg / 0.25 tsp bouillon powder
 
 Everything else:
 

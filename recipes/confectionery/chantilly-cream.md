@@ -6,7 +6,7 @@ https://www.allrecipes.com/recipe/247089/vanilla-chantilly-cream/
 
 * 1 cup cream, cold but not frozen
 * 2 Tbsp confectioners / icing sugar - the tiny bit of starch in there helps to stabilize the whipped cream
-* 1/2 tsp vanilla essence
+* 0.5 tsp vanilla essence
 * (optional) seeds from 1/2 pod vanilla
 * if using a metal mixing bowl (or anything with high heat capacity), chill the bowl first
 
@@ -14,7 +14,7 @@ https://www.allrecipes.com/recipe/247089/vanilla-chantilly-cream/
 
 https://veenaazmanov.com/stabilize-whipped-cream-5-different-methods/
 
-* 1/2 tsp gelatin powder
+* 0.5 tsp gelatin powder
 * 1 Tbsp cold water
 
 ## directions

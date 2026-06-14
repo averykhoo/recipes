@@ -6,7 +6,7 @@ https://www.bbcgoodfood.com/recipes/cauliflower-cheese-0
 
 * 1 cauliflower
 * 50g butter
-* 1/4 cup flour
+* 0.25 cup flour
 * 2 cups / 500ml milk
 * 100g strong cheddar, grated
 * 2-3 Tbsp breadcrumbs (optional)

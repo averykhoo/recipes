@@ -61,14 +61,14 @@
 
 ## Ingredients
 
-* ½ cup Miracle Whip (he said other brands turned the mixture grey)
-* ½ cup tarragon vinegar (The Col used Heinz but it is hard to find these days)
-* ½ cup sugar
-* ¼ cup salad oil
+* 0.5 cup Miracle Whip (he said other brands turned the mixture grey)
+* 0.5 cup tarragon vinegar (The Col used Heinz but it is hard to find these days)
+* 0.5 cup sugar
+* 0.25 cup salad oil
 * dash salt to taste
 * 1 head cabbage, cored and chopped not shredded
 * 1-2 carrots, shredded - optional
-* 1/4 cup shredded onion - optional
+* 0.25 cup shredded onion - optional
 
 ## Directions
 

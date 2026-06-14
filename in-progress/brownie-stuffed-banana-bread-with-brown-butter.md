@@ -4,30 +4,30 @@ From: https://www.wellmadebykiley.com/blog/brownie-stuffed-banana-bread-with-bro
 
 ## Ingredients for Brownie Filling:
 
-* 1/2 cup (113g) salted butter
+* 0.5 cup (113g) salted butter
 * 3oz (85g) dark chocolate chips or chopped chocolate
-* 1/3 cup (32g) unsweetened dutch-process cocoa powder (regular unsweetened cocoa powder will also work)
+* 0.333 cup (32g) unsweetened dutch-process cocoa powder (regular unsweetened cocoa powder will also work)
 * Optional: 1/4 tsp instant espresso powder
 * 1 egg, at room temperature
-* 1/2 cup (100g) granulated sugar
-* 1/4 cup (60g) light brown sugar
+* 0.5 cup (100g) granulated sugar
+* 0.25 cup (60g) light brown sugar
 * 1 tsp (4g) vanilla bean paste or extract
-* 1/2 cup (60g) all-purpose flour
-* 1/4 tsp (2g) salt
-* 1/2 cup (100g) chocolate chips or chopped chocolate of choice
+* 0.5 cup (60g) all-purpose flour
+* 0.25 tsp (2g) salt
+* 0.5 cup (100g) chocolate chips or chopped chocolate of choice
 
 ## Ingredients for Banana Bread:
 
-* 1/2 cup (113g) salted butter
-* 3 large ripe bananas, mashed (~1 1/2 cups; 400g)
-* 3/4 cup (165g) brown sugar, light or dark
-* 1/2 cup (120g) Greek yogurt or sour cream, at room temperature *see notes below for using sourdough discard instead
+* 0.5 cup (113g) salted butter
+* 3 large ripe bananas, mashed (~1.5 cups; 400g)
+* 0.75 cup (165g) brown sugar, light or dark
+* 0.5 cup (120g) Greek yogurt or sour cream, at room temperature *see notes below for using sourdough discard instead
 * 2 eggs, at room temperature
 * 1 tsp (4g) vanilla bean paste or extract
 * 2 cups (260g) all-purpose flour
 * 1 tsp (6g) baking soda
-* 3/4 tsp (4g) baking powder
-* 1/2 tsp (3g) salt
+* 0.75 tsp (4g) baking powder
+* 0.5 tsp (3g) salt
 * Optional: 1 tsp (2g) cinnamon
 * 1 cup (200g) chocolate chips or chopped chocolate of choice (I used semi-sweet chocolate chips)
 * Optional: 2 thin strips of cold butter for placing on top of the batter before baking (see instructions below)

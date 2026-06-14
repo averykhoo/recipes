@@ -6,12 +6,12 @@ Note: a cocotte is a type of heavy pot with a tight-fitting lid - basically a du
 
 ## Ingredients
 
-* 1/4 cup extra virgin olive oil
+* 0.25 cup extra virgin olive oil
 * 1 large onion (230 g), coarsely chopped
-* 2 red peppers (280 g), cut into 1 cm / 1/2" cubes
-* 1/2 eggplant (280 g), cut into 2 cm / 1" cubes
-* 1 zucchini (300 g), cut into 1 cm / 1/2" cubes
-* 1 tomato (230 g), cut into 1 cm / 1/2" cubes
+* 2 red peppers (280 g), cut into 1 cm / 0.5" cubes
+* 0.5 eggplant (280 g), cut into 2 cm / 1" cubes
+* 1 zucchini (300 g), cut into 1 cm / 0.5" cubes
+* 1 tomato (230 g), cut into 1 cm / 0.5" cubes
 * 4 cloves garlic, chopped
 * A bouquet garni of chopped fresh parsley, thyme, and bay leaf
 * Sea salt

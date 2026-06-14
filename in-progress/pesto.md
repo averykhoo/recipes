@@ -11,9 +11,9 @@
 * 1 tsp salt
 * 2 heads / 12-15 cloves raw garlic, peeled (60g)
     * use up to 3 heads garlic
-* 1/2 cup pine nuts (100g)
+* 0.5 cup pine nuts (100g)
     * or 1/3 cup also okay
-* 1/3 cup freshly grated parmegiano (10-20g)
+* 0.333 cup freshly grated parmegiano (10-20g)
     * if using the pre-packaged powdered parmesan cheese, use 3/4 to 1 cup since its really weak
     * other cheeses are also okay (adjust the amount to taste)
         * hard cheeses usually have a better shelf life (if you're planning to make this ahead of time)

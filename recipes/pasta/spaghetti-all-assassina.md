@@ -2,12 +2,12 @@
 
 ## Ingredients
 
-* 1/4 cup decent olive oil
+* 0.25 cup decent olive oil
 * 1 red bell pepper, seeded, ~~roasted until slightly charred,~~ chopped fine
 * 1 tsp nduja (or a few chili flakes)
-* 1/2 tsp smoked paprika
+* 0.5 tsp smoked paprika
 * 5 cloves garlic, confited; or 2 cloves fresh garlic, minced
-* 166g (1/3 of a pack) teflon-extruded spaghetti
+* 166g (0.333 of a pack) teflon-extruded spaghetti
 * 3-4 cups passata: from 1kg cherry tomatoes, halved, boiled in water, pressed through a food mill
 * extra water (or stock) as needed
 * optional stracciatella or burrata (or maybe some whipped cream cheese) to serve

@@ -5,12 +5,12 @@ theme song: [le festin](https://www.youtube.com/watch?v=beamS4GZ5T8)
 
 ## Ingredients
 
-* 1/2 eggplant, sliced 3mm thick
+* 0.5 eggplant, sliced 3mm thick
 * 2-3 tomatoes, sliced 3mm thick (this might need a knife)
-* 1/2 green zucchini, sliced 3mm thick
-* 1/2 yellow zucchini (aka summer squash), sliced 3mm thick
+* 0.5 green zucchini, sliced 3mm thick
+* 0.5 yellow zucchini (aka summer squash), sliced 3mm thick
 * Salt and pepper to taste
-* 1/2 cup [piperade](./piperade-sauce.md), optionally blended (or use a tomato-based sauce like pomodoro)
+* 0.5 cup [piperade](./piperade-sauce.md), optionally blended (or use a tomato-based sauce like pomodoro)
 * 1-2 tablespoons olive oil or vinaigrette
 
 ## Directions

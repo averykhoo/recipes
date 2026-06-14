@@ -7,7 +7,7 @@ https://www.reddit.com/r/GrandTourTopgearFans/comments/kdzrma/oh_cook_i_made_jam
 ## Ingredients
 
 * 500g floury potatoes, peeled and quartered
-* 1/4 cup milk
+* 0.25 cup milk
 * Butter
 * 400g mixed selection of fish, e.g. smoked haddock, cod, salmon fillets ~~and prawns~~
 * 1 cup milk

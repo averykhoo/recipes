@@ -9,7 +9,7 @@
 * 1 cup flour -- try cake flour based on recipe below
 * 2 teaspoons baking powder
 * 1 tablespoon white sugar
-* ¼ teaspoon salt, or more to taste
+* 0.25 teaspoon salt, or more to taste
 * 1 cup milk
 * 2 tablespoons butter, melted
 * 1 egg
@@ -130,7 +130,7 @@ see also: http://thepioneerwoman.com/cooking/2009/05/perfect-pancakes/
 * 3 cups Plus 2 Tablespoons Cake Flour (essential ingredient)
 * 3 Tablespoons Baking Powder
 * 2 Tablespoons Sugar
-* 1/2 teaspoon Salt
+* 0.5 teaspoon Salt
 
 * 2 cups Milk
 * 2 whole Large Eggs

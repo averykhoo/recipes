@@ -45,7 +45,7 @@ or use crushed lotus biscuits and butter and skip all the above - no spice/sugar
 ## INGREDIENTS FOR MORE TOPPING
 
 * 1 pint = 12 ounces (340 g) fresh raspberries / strawberries
-* 0.5 cup granulated sugar (100 g) (or 1/3 cup for less sweet)
+* 0.5 cup granulated sugar (100 g) (or 0.333 cup for less sweet)
 * 0.5 cup water (120 ml)
 * (erin's mile-high) zest of 1/2 lemon
 * (erin's mile-high) zest of 1/2 orange / 0.5tsp orange extract (zest as finely as possible)

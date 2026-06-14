@@ -21,13 +21,13 @@
 
 ## ingredients
 
-* 1/4 cup water
-* 1/4 cup brown sugar
+* 0.25 cup water
+* 0.25 cup brown sugar
 * 2 Tbsp ketchup
 * 2 Tbsp shoyu
 * 1 tsp (coarse) mustard
 * 1 can pineapple rings, blended, including the water
-* 1 Tbsp cornstarch, mixed into additional 1/4 cup water
+* 1 Tbsp cornstarch, mixed into additional 0.25 cup water
 
 ## directions
 
@@ -82,5 +82,4 @@ For leftovers, to store ham on the bone:
 3. Change the tea towel every day.
 4. Once opened, do not store ham in its original packaging.
 5. Stored properly, the ham will last for up to 2 weeks, without having to freeze it.
-
 

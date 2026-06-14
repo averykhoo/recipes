@@ -9,15 +9,15 @@ see also: meringue pumpkin pie recipe below
 
 ## Ingredients
 
-* 3 1/2 cups [fresh cooked](#fresh-cooked-pumpkin-puree) or canned pumpkin (one 29-ounce can will do)
+* 3.5 cups [fresh cooked](#fresh-cooked-pumpkin-puree) or canned pumpkin (one 29-ounce can will do)
 * 4 large eggs, lightly beaten
 * 2 teaspoons ground cinnamon
 * 1 teaspoon salt
 * 1 teaspoon ground ginger (dried powder)
 * 1 teaspoon ground cloves
 * 1 teaspoon ground mace / nutmeg
-* 1 1/2 cups granulated sugar
-* 3 cups heavy cream or 2 12-ounce cans evaporated milk (or replace up to 1/3 of the cream with milk)
+* 1.5 cups granulated sugar
+* 3 cups heavy cream or 2 12-ounce cans evaporated milk (or replace up to 0.333 of the cream with milk)
 * 2 blind baked, 9-inch [pie shells](./pie-crust.md)
 * [Whipped cream for topping (optional)](chantilly-cream.md)
 
@@ -46,19 +46,19 @@ Makes one 9-inch pie
 
 * 2 cups fresh cooked or canned pumpkin (one 15-ounce can will do) (recipe follows)
 * 4 egg yolks
-* 3/4 cup dark brown sugar
-* 1/2 teaspoon ground cinnamon
-* 1/2 teaspoon ground ginger
-* 1/2 teaspoon salt
-* 1/2 teaspoon ground mace
-* 1/2 teaspoon ground cloves
+* 0.75 cup dark brown sugar
+* 0.5 teaspoon ground cinnamon
+* 0.5 teaspoon ground ginger
+* 0.5 teaspoon salt
+* 0.5 teaspoon ground mace
+* 0.5 teaspoon ground cloves
 * One 9-inch blind-baked piecrust
 
 ## Ingredients for the Meringue:
 
 * 4 egg whites
 * Pinch cream of tartar
-* 1/2 cup granulated sugar
+* 0.5 cup granulated sugar
 
 ## Directions
 

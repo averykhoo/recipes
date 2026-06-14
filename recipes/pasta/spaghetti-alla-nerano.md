@@ -7,13 +7,13 @@ Yields 2 portions
 
 ## Ingredients
 
-* 2 green zucchini, sliced into 0.8 cm (~1/3 inch) slices
+* 2 green zucchini, sliced into 0.8 cm (~0.333 inch) slices
 * 1-2 tablespoons olive oil
 * 1 pinch salt
 * 120g (~4 oz) spaghetti
-* 1/2 cup milk
+* 0.5 cup milk
 * ~1 tsp black pepper
-* 1/4 cup grated cheddar
+* 0.25 cup grated cheddar
 * 6 basil leaves, torn into small pieces
 * 4 tablespoons grated Pecorino Romano / Parmegiano / Grana Padano cheese
 * black pepper to taste

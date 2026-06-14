@@ -23,8 +23,8 @@ turns out it might be better thinner, so maybe use a size up
 * 50g chocolate chips
 * (todo: use this to dry it out a little) 2 Tbsp cocoa powder
 * 50g sugar (reduced from 80g)
-* 1/8 tsp (or one pinch) of salt
-* 1/4 tsp vanilla extract
+* 0.125 tsp (or one pinch) of salt
+* 0.25 tsp vanilla extract
 * 1 egg (55g)
 * 50g cake / plain flour
 * 40g optional mixins (e.g., more (unmelted) chocolate chips, nuts, etc.)

@@ -7,20 +7,20 @@ By Lan Lam
 ## Ingredients
 
 * 8 ounces boneless beef short ribs, trimmed
-* 2 teaspoons plus ¼ cup soy sauce, divided
-* 2 tablespoons plus ¼ teaspoon sugar, divided
-* 2¼ teaspoons minced garlic, divided
+* 2 teaspoons plus 0.25 cup soy sauce, divided
+* 2 tablespoons plus 0.25 teaspoon sugar, divided
+* 2.25 teaspoons minced garlic, divided
 * 1 teaspoon pepper, divided
-* 4¼ teaspoons toasted sesame oil, divided
-* 1¾ teaspoons kosher salt, divided
+* 4.25 teaspoons toasted sesame oil, divided
+* 1.75 teaspoons kosher salt, divided
 * 1 (10-ounce) bag curly-leaf spinach
-* 6 ounces shiitake mushrooms, stemmed and sliced ¼ inch thick
+* 6 ounces shiitake mushrooms, stemmed and sliced 0.25 inch thick
 * 8 ounces dangmyeon
-* 1¾ teaspoons vegetable oil, divided
+* 1.75 teaspoons vegetable oil, divided
 * 1 small onion, halved and sliced thin
 * 3 scallions, cut into 2-inch pieces
-* 2 carrots, peeled and cut into 2- to 2½-inch-long matchsticks (1 cup)
-* 1 small red bell pepper, stemmed, seeded, and cut into ⅛-inch-wide strips
+* 2 carrots, peeled and cut into 2- to 2.5-inch-long matchsticks (1 cup)
+* 1 small red bell pepper, stemmed, seeded, and cut into 0.125-inch-wide strips
 * 2 tablespoons sesame seeds, toasted, divided
 
 ## Notes

@@ -10,14 +10,14 @@
 * 200-250g minced or sukiyaki-sliced beef, defrosted and kneaded
 * 1 pear, peeled and deseeded, then grated
 * 8 cloves garlic, grated
-* 2-3 shallots or 1/4-1/2 onion, grated
-* 1/2 to 1 Tbsp (about 1.5cm) ginger, grated
+* 2-3 shallots or 0.25-0.5 onion, grated
+* 0.5 to 1 Tbsp (about 1.5cm) ginger, grated
 * 1 Tbsp miso
 * (optional) 2-4 Tbsp shoyu
 * 2 Tbsp sesame oil
 * 2 Tbsp brown sugar
-* 1/2 tsp liquid smoke
-* 1/4-1/2 onion, sliced pole to pole
+* 0.5 tsp liquid smoke
+* 0.25-0.5 onion, sliced pole to pole
 * 1 tsp pepper
 * (optional) 1-2 small carrots, julienned
 * (optional) wine or sake

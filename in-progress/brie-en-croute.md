@@ -5,7 +5,7 @@ https://foodwishes.blogspot.com/2015/12/baked-stuffed-brie-filled-with.html
 
 ## Ingredients
 
-* 1 (9½ by 9-inch) sheet frozen puff pastry, thawed (overnight in the fridge)
+* 1 (9.5 by 9-inch) sheet frozen puff pastry, thawed (overnight in the fridge)
 * 1 egg, lightly beaten
 * 1 small (8-ounce/5-inch) wheel firm Brie cheese, sliced in half into top and bottom circles
 * handful of chopped berries and/or nuts

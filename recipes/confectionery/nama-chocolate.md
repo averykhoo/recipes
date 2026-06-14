@@ -7,7 +7,7 @@
 * 100g dark chocolate (60g `callebaut 70-30-38` + 40g `callebaut 811`) (ratio reduced from 70-30)
 * 75g cream (millac 38% fat) (increased from 66g)
     * if the cream isn't 38% fat, make it up with some butter
-* 1/8 tsp vanilla
+* 0.125 tsp vanilla
 * pinch of salt
 * cocoa powder for dusting
 

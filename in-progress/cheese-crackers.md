@@ -12,12 +12,12 @@ yields 30-35 crackers, or 6-8 shortbread brick cookies
 ## ingredients
 
 * 2 tablespoons room temperature unsalted butter
-* 3 ounces【85 g】 sharp cheddar cheese, grated (about 3/4 cup【177 mL】 lightly packed)
-* 1 ounce【28 g】 Parmigiano-Reggiano cheese, finely grated (about 1/3 cup【79 mL】 lightly packed)
-* 1/2 tsp paprika
+* 3 ounces【85 g】 sharp cheddar cheese, grated (about 0.75 cup【177 mL】 lightly packed)
+* 1 ounce【28 g】 Parmigiano-Reggiano cheese, finely grated (about 0.333 cup【79 mL】 lightly packed)
+* 0.5 tsp paprika
 * pinch of cayenne (skipped)
-* 1/4 teaspoon salt
-* 1/2 cup【118 mL】 all-purpose flour (2.25 oz【64 g】 by weight)
+* 0.25 teaspoon salt
+* 0.5 cup【118 mL】 all-purpose flour (2.25 oz【64 g】 by weight)
 * 1 tablespoon cold water
 
 ## directions

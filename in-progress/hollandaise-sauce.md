@@ -7,9 +7,9 @@ Not sure where this recipe originated from
 ## ingredients
 
 * 4 (large) yolks
-* 1/4 tsp salt
-* 1/8 tsp sugar
-* 1/2 tsp paprika
+* 0.25 tsp salt
+* 0.125 tsp sugar
+* 0.5 tsp paprika
 * a pinch of turmeric for color
 * 2-2.5 Tbsp lemon juice
 * 200g butter (up to 100g more at the end, depending on consistency)

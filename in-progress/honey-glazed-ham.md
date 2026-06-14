@@ -6,9 +6,9 @@
 
 ## Ingredients
 
-* 1/2 cup honey
-* 1/4 cup maple syrup
-* 1/4 cup (brown) sugar
+* 0.5 cup honey
+* 0.25 cup maple syrup
+* 0.25 cup (brown) sugar
 * 2 Tbsp butter
 * 1 Tbsp mustard
 * 2 pinches cinnamon

@@ -5,7 +5,7 @@
 * 4-6 cups (1-1.5 liters) dashi (either kombu or bonito is fine)
 * 1-2 Tbsp mirin or ryorishu (optional)
 * 4-6 Tbsp miso paste
-* 100-200g silken (kinugoshi) tofu, cut into 1/2 inch (~1.5 cm) cubes
+* 100-200g silken (kinugoshi) tofu, cut into 0.5 inch (~1.5 cm) cubes
 * 1-2 tsp dried wakame
 * 1 spring onion, sliced thinly
 

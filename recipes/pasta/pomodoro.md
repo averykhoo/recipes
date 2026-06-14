@@ -6,7 +6,7 @@ See also this [reddit pomodoro recipe](https://www.reddit.com/r/oddlysatisfying/
 ## Ingredients
 
 * 500g-750g tomatoes
-* 1/2 head of garlic
+* 0.5 head of garlic
 * olive oil
 * salt and pepper
 * optional: beef / chicken stock, tomato paste, anchovy paste, chili flakes, oregano, finely diced shallot

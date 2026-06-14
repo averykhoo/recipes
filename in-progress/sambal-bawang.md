@@ -8,8 +8,8 @@ from Ati
 * 100g garlic
 * 1 cup oil <- todo: not sure about this amount
 * 1 tsp salt
-* 1/2 tsp chicken bouillon powder (alternatively, a pinch of msg)
-* 1/8 tsp sugar (if not adding msg)
+* 0.5 tsp chicken bouillon powder (alternatively, a pinch of msg)
+* 0.125 tsp sugar (if not adding msg)
 
 ## Directions
 

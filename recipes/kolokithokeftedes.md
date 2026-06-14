@@ -11,7 +11,7 @@ Yields about 6 pieces
 
 * 1 large zucchini: grated, salted, drained in a strainer, squeezed to remove more juice (~1 cup if compacted)
 * 1-2 tablespoons chopped dill or mint
-* 1/3 cup chopped onion
+* 0.333 cup chopped onion
 * pinch of nutmeg
 * (optional?) cheese
 * pepper
@@ -36,8 +36,8 @@ Yields about 6 pieces
 * 3 cups packed, grated zucchini (from about 6 large zucchini)
 * 6 tablespoons dill, chopped
 * 1 bunch (about 8) scallions, white and light green parts finely chopped
-* 1/2 teaspoon nutmeg
-* 1 1/2 cups crumbled feta
+* 0.5 teaspoon nutmeg
+* 1.5 cups crumbled feta
 * 4 large eggs, lightly beaten
 * 1 cup flour (plus more if needed)
 * Salt and pepper

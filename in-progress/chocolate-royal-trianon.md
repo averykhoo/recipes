@@ -5,10 +5,10 @@ see also: https://www.tartedor.nl/chocolate-royal/
 
 ## Ingredients for the dacquoise:
 
-* 3 ½ tablespoons (55g) egg whites (about 1.5 eggs worth of white, if each egg is 60g)
-* 2 ½ tablespoons (35g) granulated sugar
-* ½ cup + 1 teaspoon (65g) powdered/icing sugar
-* ⅓ cup (30g) almond flour
+* 3.5 tablespoons (55g) egg whites (about 1.5 eggs worth of white, if each egg is 60g)
+* 2.5 tablespoons (35g) granulated sugar
+* 0.5 cup + 1 teaspoon (65g) powdered/icing sugar
+* 0.333 cup (30g) almond flour
 * 2 tablespoons (15g) hazelnut flour
 
 ## Ingredients for the crunchy praline feuilletine:
@@ -26,11 +26,11 @@ see also: https://www.tartedor.nl/chocolate-royal/
 
 ## Ingredients for the cocoa mirror glaze:
 
-* ⅔ cup + 4 ½ tablespoons (210g) granulated sugar
+* 0.667 cup + 4.5 tablespoons (210g) granulated sugar
 * 5 tablespoons (75ml) water
-* 9 ½ tablespoons (70g) unsweetened cocoa powder
-* ½ cup + 2 tablespoons (145ml) whipping cream
-* 3 ⅓ gelatin sheets (or 8g powdered gelatin bloomed in ¼ cup (60ml) cold water)
+* 9.5 tablespoons (70g) unsweetened cocoa powder
+* 0.5 cup + 2 tablespoons (145ml) whipping cream
+* 3.333 gelatin sheets (or 8g powdered gelatin bloomed in 0.25 cup (60ml) cold water)
 
 ## Directions for the dacquoise (almond biscuit similar to a coarse macaron):
 

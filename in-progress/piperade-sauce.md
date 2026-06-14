@@ -10,11 +10,11 @@ see also: https://www.nytimes.com/2007/06/13/dining/131rrex.html
 * 1 medium onion, chopped
 * 2 cloves garlic, minced
 * 1 large or 2 medium tomatoes, diced or blended (or 200-250g halved cherry tomatoes)
-* 1/2 teaspoon dried thyme
-* 1/2 teaspoon dried parsley
-* 1/2 teaspoon paprika <- important
-* 1/2 teaspoon salt
-* 1/8 teaspoon black pepper
+* 0.5 teaspoon dried thyme
+* 0.5 teaspoon dried parsley
+* 0.5 teaspoon paprika <- important
+* 0.5 teaspoon salt
+* 0.125 teaspoon black pepper
 
 ## Directions
 

@@ -13,10 +13,10 @@ Active time: about 30 minutes
 * 4 large eggs
 * 1 cup, 8 ounces water
 * 3 cups, 21 ounces plain or toasted sugar
-* 1 1/2 teaspoon kosher salt, such as Diamond Crystal
+* 1.5 teaspoon kosher salt, such as Diamond Crystal
 * 1 stick, 4 ounces unsalted butter, cold
 * 1 Tablespoon vanilla extract, Scotch, or bourbon
-* 2 1/2 cups, 10 ounces pecan halves, raw
+* 2.5 cups, 10 ounces pecan halves, raw
 * 1 fully baked 9-inch pie crust
 
 ## Directions
@@ -57,12 +57,12 @@ Troubleshooting:
 
 ## Ingredients
 
-* 8 ounces【227 g】 low-protein all-purpose flour, such as Gold Medal Blue Label (1 2/3 cups【394 mL】; 225g), plus more for
+* 8 ounces【227 g】 low-protein all-purpose flour, such as Gold Medal Blue Label (1.667 cups【394 mL】; 225g), plus more for
   dusting
-* 1/2 ounce【14 g】 sugar (1 tablespoon; 15g)
+* 0.5 ounce【14 g】 sugar (1 tablespoon; 15g)
 * 1 teaspoon (4g) Diamond Crystal kosher salt; for table salt, use half as much by volume or use the same weight
 * 8 ounces【227 g】 unsalted, American-style butter, straight from the fridge (2 sticks; 225g), cold
-* 4 ounces【113 g】 cold tap water (1/2 cup【118 mL】; 115g)
+* 4 ounces【113 g】 cold tap water (0.5 cup【118 mL】; 115g)
 
 ## Directions
 

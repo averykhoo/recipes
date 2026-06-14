@@ -13,9 +13,9 @@ lazy to edit so pasting the whole page here first
 
 * 400 grams all-purpose flour (or pastry flour, or 1 part cake to 2 parts plain)
     * this is used in 2 parts below
-* 1 teaspoon kosher salt or use 1/2 teaspoon fine sea salt
+* 1 teaspoon kosher salt or use 0.5 teaspoon fine sea salt
 * 1 tablespoon sugar, optional
-* 250 grams very cold unsalted butter, cut into 1/2-inch【1.27 cm】 cubes (2 sticks)
+* 250 grams very cold unsalted butter, cut into 0.5-inch【1.27 cm】 cubes (2 sticks)
 * (optional) an ice cube or two
 
 ## Directions for pie dough

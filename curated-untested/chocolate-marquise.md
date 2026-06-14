@@ -6,13 +6,13 @@ Serves 8
 
 ## Ingredients
 
-* 1 1/4 cups (200g) dark chocolate (60% cocoa is best)
-* 1/2 cup (100g) unsalted butter
-* 1/2 cup (100g) sugar
+* 1.25 cups (200g) dark chocolate (60% cocoa is best)
+* 0.5 cup (100g) unsalted butter
+* 0.5 cup (100g) sugar
 * 2 TBS cocoa powder
 * 3 egg yolks
 * 2 TBS brandy
-* 1 1/4 cups (300ml) heavy/double cream
+* 1.25 cups (300ml) heavy/double cream
 * 1 1lb loaf tin, lined with plastic wrap/cling film
 
 ## Directions
@@ -30,9 +30,9 @@ Prepare the coffee creme anglaise;
 
 ## Ingredients
 
-* 1 1/2 cups (355ml) heavy/double cream
+* 1.5 cups (355ml) heavy/double cream
 * 4 egg yolks
-* 1/4 cup (50g) sugar
+* 0.25 cup (50g) sugar
 * 1 tsp espresso powder
 
 ## Directions

@@ -9,12 +9,12 @@ The name refers to the light and smooth texture that leaves a silky rich feeling
 ## Ingredients
 
 * 1 sheet refrigerated pie crust
-* 2/3 cup sugar
+* 0.667 cup sugar
 * 2 large eggs
 * 2 ounces【57 g】 unsweetened chocolate, melted
 * 1 teaspoon vanilla extract
-* 1/3 cup butter, softened
-* 2/3 cup heavy whipping cream
+* 0.333 cup butter, softened
+* 0.667 cup heavy whipping cream
 * 2 teaspoons confectioners' sugar
 * Optional: Whipped cream and chocolate curls
 

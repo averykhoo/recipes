@@ -36,7 +36,7 @@ Make sure you have corn oil on hand for frying.
 
 ## Ingredients for Egg Wash:
 
-* 3/4 cup whole milk
+* 0.75 cup whole milk
 * 1 large egg
 
 ## Directions for deep frying
@@ -115,11 +115,11 @@ Make sure you have corn oil on hand for frying.
 ## Ingredients
 
 * 1 TBSP butter (not margarine!!)
-* 1/4 cup seasoned breading flour (if you have any left over from breading your chicken use that)
-* 1/2 cup fried chicken cracklings strained from the pressure cooker or frying pan
+* 0.25 cup seasoned breading flour (if you have any left over from breading your chicken use that)
+* 0.5 cup fried chicken cracklings strained from the pressure cooker or frying pan
 * 1 cup whole milk - cold
 * 1 cup boiling water
-* 1/4 cup whole cream - cold
+* 0.25 cup whole cream - cold
 
 ## Directions
 
@@ -137,8 +137,8 @@ Make sure you have corn oil on hand for frying.
 
 ## Ingredients
 
-* 1 ½ Cup flour (before sifting)
-* 1 ½ Tsp Salt
+* 1.5 Cup flour (before sifting)
+* 1.5 Tsp Salt
 * 1 Tbs Sugar
 * 1 Tbs Baking Powder
 * Sift into mixing bowl
@@ -161,14 +161,14 @@ Make sure you have corn oil on hand for frying.
 
 ## Ingredients
 
-* ½ cup Miracle Whip (he said other brands turned the mixture grey)
-* ½ cup tarragon vinegar (The Col used Heinz but it is hard to find these days)
-* ½ cup sugar
-* ¼ cup salad oil
+* 0.5 cup Miracle Whip (he said other brands turned the mixture grey)
+* 0.5 cup tarragon vinegar (The Col used Heinz but it is hard to find these days)
+* 0.5 cup sugar
+* 0.25 cup salad oil
 * dash salt to taste
 * 1 head cabbage, cored and chopped not shredded
 * 1-2 carrots, shredded - optional
-* 1/4 cup shredded onion - optional
+* 0.25 cup shredded onion - optional
 
 ## Directions
 
@@ -186,9 +186,9 @@ Yields 4 to 6 servings
 ## Ingredients
 
 * 2 pounds Russet potatoes, about 8 medium
-* 1/3 to 1/2 cup milk, half and half, heavy cream or whipping cream
-* 1/4 cup butter (3 tablespoons)
-* 1/8 teaspoon fresh ground black pepper
+* 0.333 to 0.5 cup milk, half and half, heavy cream or whipping cream
+* 0.25 cup butter (3 tablespoons)
+* 0.125 teaspoon fresh ground black pepper
 * 1 tsp of Kosher salt
 
 ## Directions
@@ -221,11 +221,11 @@ potatoes that even baking didn't fix!)*
 * 1 No. 2 Can Kidney Beans
 * 1 Medium size Green Pepper (sliced and cut up)
 * 1 Medium size White Onion (sliced and cut up)
-* 1/2 Cup Salad Oil
-* 1/2 Cup Cider Vinegar
-* 3/4 Cup Sugar
-* 1 1/2 Tsp. Salt
-* 1/2 Tsp. Black Pepper
+* 0.5 Cup Salad Oil
+* 0.5 Cup Cider Vinegar
+* 0.75 Cup Sugar
+* 1.5 Tsp. Salt
+* 0.5 Tsp. Black Pepper
 
 ## Directions
 

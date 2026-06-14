@@ -42,7 +42,7 @@ SERVES 12-15
 ## Ingredients
 
 * One 14-ounce can sweetened condensed milk
-* 1½ cups ice-cold water
+* 1.5 cups ice-cold water
 * One 3.4-ounce package instant vanilla pudding mix (preferably Jell-O brand)
 * 3 cups heavy cream
 * One 12-ounce box Nabisco Nilla Wafers (no substitutions!)

@@ -38,14 +38,14 @@ spent on caramelizing the onions, a process that always takes longer than it see
 
 * 3 tablespoons unsalted butter
 * 3 to 4 large red or yellow onions (about 3 pounds), peeled and thinly sliced
-* ¾ teaspoon kosher salt, more to taste
+* 0.75 teaspoon kosher salt, more to taste
 * 2 quarts (8 cups) beef stock
 * 1 cup dry white wine
 * 1 tablespoon dry sherry
 * 1 tablespoon all-purpose flour
-* ½ teaspoon black pepper, more to taste
+* 0.5 teaspoon black pepper, more to taste
 * French bread cut into 8 to 12½-inch slices
-* 1½ cups grated Gruyère cheese
+* 1.5 cups grated Gruyère cheese
 
 ## DIRECTIONS
 

@@ -6,7 +6,7 @@ https://www.delish.com/cooking/recipe-ideas/a35421563/baked-feta-pasta-tiktok/
 
 ## Ingredients
 
-* 1/3 cup olive oil, the good stuff
+* 0.333 cup olive oil, the good stuff
 * 500g cherry tomatoes, halved
 * 200g-227g feta cheese (1 block)
 * 2-4 cloves garlic, squashed flat or cut in half lengthwise

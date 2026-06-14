@@ -2,7 +2,7 @@
 
 ## Ingredients
 
-* 1/2 pound beef, cut into strips or cubes
+* 0.5 pound beef, cut into strips or cubes
 * i tsp paprika
 * 1 tablespoon all-purpose flour
 * 1 tablespoons olive oil or butter
@@ -10,7 +10,7 @@
 * 1 small / medium onion, chopped
 * 1-2 cloves garlic, minced
 * 2-4 tablespoons dry white wine
-* 3/4 cup stock or water
+* 0.75 cup stock or water
 * 2 teaspoons Worcestershire sauce
 * 1 teaspoon dijon mustard
 * 50-75 ml sour cream

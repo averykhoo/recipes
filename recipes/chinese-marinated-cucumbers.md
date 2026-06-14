@@ -10,7 +10,7 @@ see also: https://cooking.nytimes.com/recipes/1017629-chinese-smashed-cucumbers-
 * 2 stalks spring onion, chopped
 * 2 cloves garlic, finely minced or crushed
 * 2 Tbsp shoyu
-* 1/4 tsp shichimi togarashi
+* 0.25 tsp shichimi togarashi
 * 1 Tbsp rice vinegar
 * 1 Tbsp sesame oil
 * 1.5 Tbsp sugar

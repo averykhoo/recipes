@@ -3,11 +3,11 @@
 ## Ingredients
 
 * 7 eggs
-* 1/4 cup shoyu
-* 1/4 cup mirin
-* 1/4 cup sake (optionally less or none, to taste)
+* 0.25 cup shoyu
+* 0.25 cup mirin
+* 0.25 cup sake (optionally less or none, to taste)
 * 2 Tbsp sugar
-* 1/4 - 1/2 cup dashi or water
+* 0.25 - 0.5 cup dashi or water
 
 ## Directions
 

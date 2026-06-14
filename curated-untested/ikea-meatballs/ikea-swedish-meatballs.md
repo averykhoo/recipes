@@ -21,28 +21,28 @@ teaspoon measure and your hands-keep your hands thoroughly moistened with water 
 sticking to them.
 
 ## INGREDIENTS FOR MEATBALLS
-* 1/3 cup chopped onion
+* 0.333 cup chopped onion
 * 1 large egg
 * 1 egg white
-* 1/3 cup beef broth
+* 0.333 cup beef broth
 * 2 tablespoons water
-* ½ pound ground beef
+* 0.5 pound ground beef
 * (20 percent fat)
-* ½ pound ground pork
-* ½ cup plain bread crumbs
+* 0.5 pound ground pork
+* 0.5 cup plain bread crumbs
 * 1 teaspoon salt
-* ½ teaspoon white pepper
-* 1/8 teaspoon allspice
+* 0.5 teaspoon white pepper
+* 0.125 teaspoon allspice
 
 ## INGREDIENTS FOR CREAM SAUCE
-* 1 ¼ cups beef broth
-* 1/3 cup heavy cream
+* 1.25 cups beef broth
+* 0.333 cup heavy cream
 * 4 teaspoons cornstarch
 * 1 tablespoon apple juice
-* ¼ teaspoon salt
-* 1/8 teaspoon garlic powder
-* 1/8 teaspoon onion powder
-* 1/8 teaspoon white pepper
+* 0.25 teaspoon salt
+* 0.125 teaspoon garlic powder
+* 0.125 teaspoon onion powder
+* 0.125 teaspoon white pepper
 * 1 bay leaf
 * 2 teaspoons vegetable oil
 

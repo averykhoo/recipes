@@ -3,7 +3,7 @@
 ## ingredients
 
 * 1 pineapple, peeled and de-eyed
-* 1/4 cup sugar / syrup
+* 0.25 cup sugar / syrup
 * 2 tsp cinnamon
 * water, juice, or a splash of wine or rum, optional, to loosen up the marinade
 

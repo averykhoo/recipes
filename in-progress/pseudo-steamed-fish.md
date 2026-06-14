@@ -3,7 +3,7 @@
 ## Ingredients
 
 * Fillet of fish
-* 1/4 onion, handful cherry tomato, sprig of basil, 1/4 tsp ginger powder, no salt
+* 0.25 onion, handful cherry tomato, sprig of basil, 0.25 tsp ginger powder, no salt
 * Preheat then steam at water mark 3 at 150c for 7-10 mins
 * Heat 1-2 Tbsp sesame oil in a pan until really hot then pour over
 * Pour over some shoyu

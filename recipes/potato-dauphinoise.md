@@ -10,7 +10,7 @@ https://www.greatbritishchefs.com/recipes/potato-dauphinoise-recipe
 * 1 cup cream, half-and-half, or full-fat milk
 * 1 pinch nutmeg powder
 * 1 small pinch clove powder
-* 1/4 teaspoon salt
+* 0.25 teaspoon salt
 * (optional) shake of white pepper
 * (optional) shake of paprika
 * 3-4 small potatoes (about 400g), sliced thinly
