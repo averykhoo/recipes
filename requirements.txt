@@ -1,1 +1,5 @@
 python-frontmatter
+pydantic
+pydantic-settings
+markdown-it-py
+pyyaml
