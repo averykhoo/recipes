@@ -25,21 +25,15 @@ from recipe_parser.rules.directions import extract_flat_steps_recursively
 from recipe_parser.rules.ingredients import parse_ingredient_line
 from recipe_parser.rules.links import rewrite_markdown_links_to_html
 from recipe_parser.rules.links import wrap_bare_urls_in_markdown
+from recipe_parser.rules.yields import extract_strict_yield
+from recipe_parser.rules.yields import find_lax_yield_candidate
 from recipe_parser.utils.sanitizer import sanitize_header_text
 from recipe_parser.validation.characters import audit_non_ascii_characters
 from recipe_parser.validation.consistency import audit_component_consistency
 
-# Matches standard yield and serving keywords inside text blocks
-RE_YIELD_KEYWORDS = re.compile(
-    r"\b(yields?|serves?|makes|pax|portions?|people|servings?)\b",
-    re.IGNORECASE
-)
-
-# Matches at least one digit or common written-out English number words
-RE_HAS_NUMBER = re.compile(
-    r"\d|\b(one|two|three|four|five|six|seven|eight|nine|ten)\b",
-    re.IGNORECASE
-)
+# Traditional regular expressions for sections
+RE_ING_HEADER = re.compile(r'^ingredients(?:\s+for\s+(.+))?$', re.IGNORECASE)
+RE_DIR_HEADER = re.compile(r'^(?:directions|instructions|method)(?:\s+for\s+(.+))?$', re.IGNORECASE)
 
 
 class RecipeBlock:
@@ -54,51 +48,6 @@ class RecipeBlock:
         self.ingredients: Dict[Optional[str], List[str]] = {}
         self.directions: Dict[Optional[str], List[str]] = {}
         self.notes: List[str] = []
-
-
-def find_candidate_yield_line(block_tokens: List[Dict[str, Any]]) -> Optional[str]:
-    """
-    Scans all paragraph and list text runs inside the block tokens of a recipe.
-    Returns the first line that matches yield keywords, excluding directional verbs
-    such as 'Serve immediately' or 'Serve with'.
-    """
-    for token in block_tokens:
-        text_runs = []
-        if token["type"] == "Paragraph":
-            text_runs.append(token["text"])
-        elif token["type"] == "List":
-            # Lists hold their raw Markdown content under raw_text
-            text_runs.extend(token["raw_text"].splitlines())
-
-        for text_run in text_runs:
-            for line in text_run.splitlines():
-                line_stripped = line.strip().strip("*+-").strip()
-
-                # Rule 1: Limit candidate lines to a maximum of 8 words/tokens to ignore instructions
-                words = line_stripped.split()
-                if len(words) > 8:
-                    continue
-
-                # Rule 2: Require candidate line to contain a digit or a written-out number word
-                if not RE_HAS_NUMBER.search(line_stripped):
-                    continue
-
-                if RE_YIELD_KEYWORDS.search(line_stripped):
-                    # Filter out standard instruction steps starting with "Serve"
-                    lower_line = line_stripped.lower()
-                    if lower_line.startswith((
-                            "serve immediately", "serve with", "serve hot",
-                            "serve cold", "serve alongside", "serve over"
-                    )):
-                        continue
-
-                    # Ignore general steps (such as: "Serve on plates") that do not contain numbers
-                    if re.match(r"^serve\b", line_stripped, re.IGNORECASE) and not RE_HAS_NUMBER.search(line_stripped):
-                        continue
-
-                    return line_stripped
-
-    return None
 
 
 def split_sub_recipes(tokens: List[Dict[str, Any]]) -> List[List[Dict[str, Any]]]:
@@ -206,11 +155,7 @@ def parse_structural_elements(block_tokens: List[Dict[str, Any]]) -> RecipeBlock
 
         if token["type"] == "Paragraph":
             text_run = token["text"].strip()
-            # Ignore lines starting with "Serve" when scanning for yield keywords
-            if "yield" in text_run.lower() or "serves" in text_run.lower():
-                if not text_run.lower().startswith("serve"):
-                    recipe_block.yield_val = text_run
-            elif current_section == "notes" or current_section is None:
+            if current_section == "notes" or current_section is None:
                 recipe_block.notes.append(text_run)
             continue
 
@@ -370,30 +315,18 @@ def process_recipe_document(file_path: Path) -> Tuple[RecipeDocument, List[str]]
                 parsed_block.title = f"Recipe {index + 1}"
                 warnings.append("Missing H1 Title ('# Title') in this recipe block.")
 
-        # Resolve yield parameters
+        # 1. Resolve highly confident yield parameters strictly from preamble / frontmatter
+        parsed_block.yield_val = extract_strict_yield(block_tokens, file_post.metadata)
+
+        # 2. If missing, look laxly across the entire block (including directions and notes)
         if not parsed_block.yield_val:
-            # Check frontmatter metadata keys first
-            for yield_key in ("yield", "yields", "serves", "servings", "portions", "pax"):
-                if yield_key in file_post.metadata:
-                    parsed_block.yield_val = str(file_post.metadata[yield_key])
-                    break
-
-            # If still missing, scan ONLY preamble blocks (tokens before the first H2 heading)
-            if not parsed_block.yield_val:
-                preamble_tokens = []
-                for token in block_tokens:
-                    if token.get("type") == "Heading" and token.get("level") == 2:
-                        break
-                    preamble_tokens.append(token)
-
-                candidate_yield = find_candidate_yield_line(preamble_tokens)
-                if candidate_yield:
-                    parsed_block.yield_val = candidate_yield
-                    warnings.append(
-                        f"[{parsed_block.title}] Missing serving or yield metadata. "
-                        f"Did you mean: \"{candidate_yield}\"?"
-                    )
-                # If no candidate line is found anywhere, do not append a warning message
+            candidate_yield = find_lax_yield_candidate(block_tokens)
+            if candidate_yield:
+                parsed_block.yield_val = candidate_yield
+                warnings.append(
+                    f"[{parsed_block.title}] Missing serving or yield metadata. "
+                    f"Did you mean: \"{candidate_yield}\"?"
+                )
 
         # Bind ingredients and step components
         structured_ingredients = []
