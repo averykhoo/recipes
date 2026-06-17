@@ -1,5 +1,5 @@
 python-frontmatter
 pydantic
 pydantic-settings
-markdown-it-py
+markdown-it-py[linkify]
 pyyaml

@@ -2,8 +2,6 @@
 """
 Rule processor for wrapping bare web links in angle brackets and
 rewriting local Markdown link extensions to target HTML outputs.
-Protects existing Markdown link structures (such as nested Web Archive URLs)
-to prevent corrupting them during processing.
 """
 
 import re
@@ -30,8 +28,6 @@ RE_LOCAL_MD_LINK = re.compile(
 def wrap_bare_urls_in_markdown(markdown_content: str) -> str:
     """
     Locates bare web links inside Markdown texts and encloses them inside <...> brackets.
-    Protects existing Markdown link structures (such as nested Web Archive URLs)
-    to prevent corrupting them during processing.
     """
     protected_links = []
 

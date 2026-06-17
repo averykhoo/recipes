@@ -2,7 +2,7 @@
 """
 Recipe Parser Package
 A layer-based Markdown recipe parser and validator with complete support for
-fractions, sub-recipes, local link rewriting, and component consistency audits.
+fractions, GFM tables, flat-sibling block DOM ASTs, and metric unit tolerance checks.
 """
 
 from recipe_parser.core.orchestrator import process_recipe_document

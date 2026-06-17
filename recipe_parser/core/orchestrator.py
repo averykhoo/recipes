@@ -1,200 +1,42 @@
 # recipe_parser/core/orchestrator.py
 """
 The core orchestrator of the recipe parser package, coordinating
-frontmatter reading, sub-recipe splitting, block-level AST analysis,
-character validation audits, and structured serialization.
+tokenization, sub-recipe splits, and semantic DOM AST block construction.
 """
+
 import logging
 import re
 from pathlib import Path
-from typing import Any
-from typing import Dict
-from typing import List
-from typing import Optional
-from typing import Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 import frontmatter
 from markdown_it import MarkdownIt
 from markdown_it.tree import SyntaxTreeNode
 
-from recipe_parser.models.schemas import DirectionsComponent
-from recipe_parser.models.schemas import IngredientsComponent
-from recipe_parser.models.schemas import Recipe
-from recipe_parser.models.schemas import RecipeDocument
-from recipe_parser.rules.directions import extract_flat_steps_recursively
+from recipe_parser.models.schemas import (
+    BlockType, HeadingBlock, TextBlock, ListBlock, TableBlock,
+    IngredientItem, Recipe, RecipeDocument
+)
+from recipe_parser.rules.directions import extract_flat_steps_recursively, scan_inline_metadata
 from recipe_parser.rules.ingredients import parse_ingredient_line
-from recipe_parser.rules.links import rewrite_markdown_links_to_html
-from recipe_parser.rules.links import wrap_bare_urls_in_markdown
-from recipe_parser.rules.yields import extract_strict_yield
-from recipe_parser.rules.yields import find_lax_yield_candidate
+from recipe_parser.rules.links import rewrite_markdown_links_to_html, wrap_bare_urls_in_markdown
+from recipe_parser.rules.yields import extract_strict_yield, find_lax_yield_candidate
 from recipe_parser.utils.sanitizer import sanitize_header_text
 from recipe_parser.validation.characters import audit_non_ascii_characters
 from recipe_parser.validation.consistency import audit_component_consistency
+from recipe_parser.validation.linter import lint_recipe_document
 
-# Traditional regular expressions for sections
+# Standard regular expressions for sections
 RE_ING_HEADER = re.compile(r'^ingredients(?:\s+for\s+(.+))?$', re.IGNORECASE)
 RE_DIR_HEADER = re.compile(r'^(?:directions|instructions|method)(?:\s+for\s+(.+))?$', re.IGNORECASE)
-
-
-class RecipeBlock:
-    """
-    A helper structure representing the block-level elements
-    of a single parsed recipe.
-    """
-
-    def __init__(self):
-        self.title: Optional[str] = None
-        self.yield_val: Optional[str] = None
-        self.ingredients: Dict[Optional[str], List[str]] = {}
-        self.directions: Dict[Optional[str], List[str]] = {}
-        self.notes: List[str] = []
-
-
-def split_sub_recipes(tokens: List[Dict[str, Any]]) -> List[List[Dict[str, Any]]]:
-    """
-    Splits the Markdown token array at thematic breaks only when they are
-    immediately followed by a Level 1 Heading (# Title).
-    """
-    blocks = []
-    current_block = []
-
-    for index, token in enumerate(tokens):
-        if token.get("type") == "ThematicBreak":
-            # Peek ahead to verify if the next block represents a Level 1 Heading
-            next_is_heading_1 = False
-            for peek_index in range(index + 1, len(tokens)):
-                peek_token = tokens[peek_index]
-                if peek_token.get("type") == "Heading":
-                    if peek_token.get("level") == 1:
-                        next_is_heading_1 = True
-                    break
-                if peek_token.get("type") != "ThematicBreak":
-                    break
-
-            if next_is_heading_1:
-                if current_block:
-                    blocks.append(current_block)
-                    current_block = []
-                continue
-
-        current_block.append(token)
-
-    if current_block:
-        blocks.append(current_block)
-
-    return blocks
-
-
-def parse_structural_elements(block_tokens: List[Dict[str, Any]]) -> RecipeBlock:
-    """
-    Evaluates layout and compiles list tokens into raw structural groups.
-    If the document has no headers, it evaluates each line inside list blocks
-    independently to support plain lists and interleaved ingredients/directions.
-    """
-    recipe_block = RecipeBlock()
-    current_section = None
-    current_component = None
-
-    # Establish a tracking scan to check if standard section headers are defined
-    has_ingredients_header = False
-    has_directions_header = False
-
-    for token in block_tokens:
-        if token["type"] == "Heading" and token["level"] == 2:
-            clean_title = sanitize_header_text(token["text"])
-            if clean_title.lower().startswith("ingredients"):
-                has_ingredients_header = True
-            elif clean_title.lower().startswith(("directions", "instructions", "method")):
-                has_directions_header = True
-
-    has_headers = has_ingredients_header or has_directions_header
-
-    for token in block_tokens:
-        if token["type"] == "ThematicBreak":
-            # Reset active section boundaries on thematic breaks inside a block
-            current_section = None
-            current_component = None
-            continue
-
-        if token["type"] == "Heading":
-            if token["level"] == 1:
-                recipe_block.title = sanitize_header_text(token["text"])
-            elif token["level"] == 2:
-                clean_title = sanitize_header_text(token["text"])
-                title_lower = clean_title.lower()
-
-                # Check for sub-component definitions (for example: "Ingredients for the dough")
-                if title_lower.startswith("ingredients"):
-                    current_section = "ingredients"
-                    # Perform a case-insensitive regular expression split to isolate the component name
-                    split_parts = re.split(r"\s+for\s+", clean_title, maxsplit=1, flags=re.IGNORECASE)
-                    if len(split_parts) > 1:
-                        current_component = split_parts[1].strip()
-                    else:
-                        current_component = None  # Resets to standard main component
-                elif title_lower.startswith(("directions", "instructions", "method")):
-                    current_section = "directions"
-                    # Perform a case-insensitive regular expression split to isolate the component name
-                    split_parts = re.split(r"\s+for\s+", clean_title, maxsplit=1, flags=re.IGNORECASE)
-                    if len(split_parts) > 1:
-                        current_component = split_parts[1].strip()
-                    else:
-                        current_component = None
-                elif any(note_keyword in title_lower for note_keyword in
-                         ("note", "comment", "science", "todo", "editor")):
-                    current_section = "notes"
-                    current_component = None
-                else:
-                    current_section = None
-                    current_component = None
-            continue
-
-        if token["type"] == "Quote":
-            recipe_block.notes.append(token["text"])
-            continue
-
-        if token["type"] == "Paragraph":
-            text_run = token["text"].strip()
-            if current_section == "notes" or current_section is None:
-                recipe_block.notes.append(text_run)
-            continue
-
-        if token["type"] == "List":
-            # Use recursive walk to prevent nested list flattening errors
-            parser_engine = MarkdownIt()
-            parsed_ast = parser_engine.parse(token["raw_text"])
-            tree_root = SyntaxTreeNode(parsed_ast)
-            steps_unrolled = extract_flat_steps_recursively(tree_root)
-
-            if not has_headers:
-                # Fallback layout: Route lines individually to support plain or interleaved lists
-                for item in steps_unrolled:
-                    stripped_item = item.strip()
-                    # Check if the line is ordered (for example: starts with "1." or "2)")
-                    is_ordered = bool(re.match(r"^\d+[\.\)]", stripped_item))
-                    if is_ordered:
-                        recipe_block.directions.setdefault(None, []).append(item)
-                    else:
-                        recipe_block.ingredients.setdefault(None, []).append(item)
-            else:
-                # Headered layout: Route all items to the currently active section
-                current_section_node = current_section
-                if current_section_node == "ingredients":
-                    recipe_block.ingredients.setdefault(current_component, []).extend(steps_unrolled)
-                elif current_section_node == "directions":
-                    recipe_block.directions.setdefault(current_component, []).extend(steps_unrolled)
-                elif current_section_node == "notes":
-                    recipe_block.notes.extend(steps_unrolled)
-
-    return recipe_block
 
 
 def assemble_token_array(content_string: str) -> List[Dict[str, Any]]:
     """
     Traverses raw files using markdown-it-py and builds a simplified token dictionary list.
-    Contains robust defensive boundaries to prevent list indexing crashes.
+    Saves tables as structured dict tokens.
     """
-    md_parser = MarkdownIt()
+    md_parser = MarkdownIt("gfm-like").enable("table")
     markdown_tokens = md_parser.parse(content_string)
     simplified_tokens = []
 
@@ -238,7 +80,6 @@ def assemble_token_array(content_string: str) -> List[Dict[str, Any]]:
 
         elif token.type in ("bullet_list_open", "ordered_list_open"):
             is_ordered = (token.type == "ordered_list_open")
-            # Safe extraction of token map lines with defaults
             list_start = token.map[0] if (token.map and len(token.map) > 0) else 0
             list_close_type = "bullet_list_close" if not is_ordered else "ordered_list_close"
             list_end = token.map[1] if (token.map and len(token.map) > 1) else len(content_string.splitlines())
@@ -270,10 +111,186 @@ def assemble_token_array(content_string: str) -> List[Dict[str, Any]]:
             })
             if index < len(markdown_tokens):
                 index += 1
+
+        elif token.type == "table_open":
+            table_tokens = []
+            while index < len(markdown_tokens) and markdown_tokens[index].type != "table_close":
+                table_tokens.append(markdown_tokens[index])
+                index += 1
+            if index < len(markdown_tokens):
+                table_tokens.append(markdown_tokens[index])
+                index += 1
+
+            headers = []
+            rows = []
+            current_row = []
+            is_header = False
+
+            for t in table_tokens:
+                if t.type == "thead_open":
+                    is_header = True
+                elif t.type == "thead_close":
+                    is_header = False
+                elif t.type == "tr_close":
+                    if is_header:
+                        headers = current_row
+                    else:
+                        rows.append(current_row)
+                    current_row = []
+                elif t.type == "inline":
+                    current_row.append(t.content)
+
+            simplified_tokens.append({
+                "type":    "Table",
+                "headers": headers,
+                "rows":    rows
+            })
+
         else:
             index += 1
 
     return simplified_tokens
+
+
+def split_sub_recipes_into_raw_runs(tokens: List[Dict[str, Any]]) -> List[List[Dict[str, Any]]]:
+    """
+    Splits the token list into distinct runs per recipe.
+    """
+    blocks = []
+    current_block = []
+
+    for index, token in enumerate(tokens):
+        if token.get("type") == "ThematicBreak":
+            next_is_heading_1 = False
+            for peek_index in range(index + 1, len(tokens)):
+                peek_token = tokens[peek_index]
+                if peek_token.get("type") == "Heading":
+                    if peek_token.get("level") == 1:
+                        next_is_heading_1 = True
+                    break
+                if peek_token.get("type") != "ThematicBreak":
+                    break
+
+            if next_is_heading_1:
+                if current_block:
+                    blocks.append(current_block)
+                    current_block = []
+                continue
+
+        current_block.append(token)
+
+    if current_block:
+        blocks.append(current_block)
+
+    return blocks
+
+
+def build_hierarchical_blocks(block_tokens: List[Dict[str, Any]]) -> List[Any]:
+    """
+    Assembles a raw token stream into a flat sequence of structured,
+    typed sibling block-nodes.
+    """
+    blocks = []
+
+    # 1. Detect if the document contains Level 2 section dividers
+    has_headers = any(
+        token["type"] == "Heading" and token["level"] == 2
+        for token in block_tokens
+    )
+
+    current_section_type = "preamble"
+    current_component = None
+
+    for token in block_tokens:
+        # --- Heading Nodes ---
+        if token["type"] == "Heading":
+            # Skip Recipe Title H1 in the sibling block sequence
+            if token["level"] == 1:
+                continue
+
+            heading_text = sanitize_header_text(token["text"])
+            heading_lower = heading_text.lower()
+
+            # Map semantic routing boundaries on Level 2 sub-headings
+            section_type = "notes"
+            component = None
+
+            if token["level"] == 2:
+                ing_match = RE_ING_HEADER.match(heading_text)
+                dir_match = RE_DIR_HEADER.match(heading_text)
+
+                if ing_match:
+                    section_type = "ingredients"
+                    component = ing_match.group(1) or "Main"
+                elif dir_match:
+                    section_type = "directions"
+                    component = dir_match.group(1) or "Main"
+                elif any(x in heading_lower for x in ["note", "comment", "science", "todo", "editor"]):
+                    section_type = "notes"
+
+                current_section_type = section_type
+                current_component = component
+
+            # Headings (including H3-H6) are appended as independent structural nodes
+            blocks.append(HeadingBlock(
+                level=token["level"],
+                text=heading_text,
+                section_type=section_type if token["level"] == 2 else "notes",
+                component=component
+            ))
+
+        # --- Text Nodes (Paragraphs & Quotes) ---
+        elif token["type"] in ("Paragraph", "Quote"):
+            is_quote = (token["type"] == "Quote")
+
+            if current_section_type == "ingredients" and has_headers:
+                blocks.append(TextBlock(text=token["text"], is_quote=is_quote))
+            else:
+                blocks.append(TextBlock(text=token["text"], is_quote=is_quote))
+
+        # --- Table Nodes ---
+        elif token["type"] == "Table":
+            blocks.append(TableBlock(headers=token["headers"], rows=token["rows"]))
+
+        # --- List Nodes (Core Ingredients or Directions lists) ---
+        elif token["type"] == "List":
+            parser_engine = MarkdownIt()
+            parsed_ast = parser_engine.parse(token["raw_text"])
+            tree_root = SyntaxTreeNode(parsed_ast)
+            steps_unrolled = extract_flat_steps_recursively(tree_root)
+
+            list_block = ListBlock(ordered=token["ordered"])
+
+            # Semantic extraction based on active container state
+            is_ingredients_list = False
+            if has_headers:
+                if current_section_type == "ingredients":
+                    is_ingredients_list = True
+            else:
+                # Headerless Fallback state machine
+                if not token["ordered"]:
+                    is_ingredients_list = True
+
+            if is_ingredients_list:
+                for raw_item in steps_unrolled:
+                    parsed_ing = parse_ingredient_line(raw_item)
+                    list_block.items.append(IngredientItem(
+                        raw_line=raw_item,
+                        parsed_ingredient=parsed_ing
+                    ))
+            else:
+                # Directions list: Extract steps and run inline metadata scanning
+                for idx, raw_step in enumerate(steps_unrolled):
+                    list_block.items.append(raw_step)
+                    temps, durations = scan_inline_metadata(raw_step)
+                    if temps:
+                        list_block.extracted_temps[idx] = temps
+                    if durations:
+                        list_block.extracted_durations[idx] = durations
+
+            blocks.append(list_block)
+
+    return blocks
 
 
 def process_recipe_document(file_path: Path) -> Tuple[RecipeDocument, List[str]]:
@@ -284,80 +301,65 @@ def process_recipe_document(file_path: Path) -> Tuple[RecipeDocument, List[str]]
     file_post = frontmatter.load(file_path)
     warnings = []
 
-    # Read the raw file content to scan for non-ASCII characters before processing
+    # 1. Unicode character validation
     try:
         with file_path.open("r", encoding="utf-8") as raw_file:
             raw_text_content = raw_file.read()
         character_warnings = audit_non_ascii_characters(raw_text_content)
         warnings.extend(character_warnings)
     except Exception:
-        logging.exception('Error validating unicode')
-        # Gracefully proceed if raw file reading fails
-        pass
+        logging.exception("Error validating unicode")
 
-    # Process text-level rules (bare URLs and local link extensions)
+    # 2. Text preprocessing (URLs & local links)
     updated_content = wrap_bare_urls_in_markdown(file_post.content)
     updated_content = rewrite_markdown_links_to_html(updated_content)
 
+    # 3. Assemble tokens and split blocks
     tokens = assemble_token_array(updated_content)
-    recipe_blocks = split_sub_recipes(tokens)
+    recipe_runs = split_sub_recipes_into_raw_runs(tokens)
 
     compiled_recipes = []
-    for index, block_tokens in enumerate(recipe_blocks):
-        parsed_block = parse_structural_elements(block_tokens)
+    for index, run_tokens in enumerate(recipe_runs):
+        title = f"Recipe {index + 1}"
+        for token in run_tokens:
+            if token["type"] == "Heading" and token["level"] == 1:
+                title = sanitize_header_text(token["text"])
+                break
 
-        # Resolve H1 title falls
-        if not parsed_block.title:
-            if index == 0 and "title" in file_post.metadata:
-                parsed_block.title = file_post.metadata["title"]
-                warnings.append("Missing H1 Title ('# Title') at start of file block (using frontmatter instead).")
-            else:
-                parsed_block.title = f"Recipe {index + 1}"
-                warnings.append("Missing H1 Title ('# Title') in this recipe block.")
+        # Build flat DOM blocks
+        sibling_blocks = build_hierarchical_blocks(run_tokens)
 
-        # 1. Resolve highly confident yield parameters strictly from preamble / frontmatter
-        parsed_block.yield_val = extract_strict_yield(block_tokens, file_post.metadata)
+        # Extract strict yields from preamble
+        preamble_blocks = []
+        for block in sibling_blocks:
+            if block.block_type == BlockType.HEADING and block.level == 2:
+                break
+            preamble_blocks.append(block)
 
-        # 2. If missing, look laxly across the entire block (including directions and notes)
-        if not parsed_block.yield_val:
-            candidate_yield = find_lax_yield_candidate(block_tokens)
+        yield_val = extract_strict_yield(preamble_blocks, file_post.metadata)
+
+        # 4. Fallback to lax scanning over preamble and notes blocks
+        if not yield_val:
+            candidate_yield = find_lax_yield_candidate(sibling_blocks)
             if candidate_yield:
-                parsed_block.yield_val = candidate_yield
+                yield_val = candidate_yield
                 warnings.append(
-                    f"[{parsed_block.title}] Missing serving or yield metadata. "
+                    f"[{title}] Missing serving or yield metadata. "
                     f"Did you mean: \"{candidate_yield}\"?"
                 )
 
-        # Bind ingredients and step components
-        structured_ingredients = []
-        for component_name, items in parsed_block.ingredients.items():
-            parsed_items = []
-            for raw_item in items:
-                ingredient = parse_ingredient_line(raw_item)
-                if ingredient:
-                    parsed_items.append(ingredient)
-            structured_ingredients.append(
-                IngredientsComponent(component=component_name, items=parsed_items)
-            )
-
-        structured_directions = []
-        for component_name, steps in parsed_block.directions.items():
-            structured_directions.append(
-                DirectionsComponent(component=component_name, steps=steps)
-            )
-
         recipe_model = Recipe(
-            title=parsed_block.title,
-            yield_val=parsed_block.yield_val,
-            ingredients=structured_ingredients,
-            directions=structured_directions,
-            notes=parsed_block.notes
+            title=title,
+            yield_val=yield_val,
+            blocks=sibling_blocks
         )
 
-        # Run read-only component consistency validations
+        # 5. Run Linter Audits (Conversions, Temperatures, Consistency, Unit checks)
+        linter_warnings = lint_recipe_document(recipe_model)
+        warnings.extend(linter_warnings)
+
         consistency_warnings = audit_component_consistency(recipe_model)
-        for warning in consistency_warnings:
-            warnings.append(f"[{recipe_model.title}] {warning}")
+        warnings.extend(consistency_warnings)
 
         compiled_recipes.append(recipe_model)
 

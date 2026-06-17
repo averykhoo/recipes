@@ -5,32 +5,28 @@ warning the author when sub-components are inconsistent.
 """
 
 from typing import List
-
-from recipe_parser.models.schemas import Recipe
+from recipe_parser.models.schemas import Recipe, BlockType
 
 
 def audit_component_consistency(recipe: Recipe) -> List[str]:
     """
-    Verifies that sub-components match across sections.
-    If a component lists ingredients (such as "the glaze"), it registers a warning
-    if no directions exist for preparing "the glaze".
+    Verifies that sub-components match across sections in the flat block sequence.
     """
     warnings = []
+    ingredient_components = set()
+    direction_components = set()
 
-    ingredient_components = {
-        comp.component.lower().strip()
-        for comp in recipe.ingredients
-        if comp.component is not None
-    }
-
-    direction_components = {
-        comp.component.lower().strip()
-        for comp in recipe.directions
-        if comp.component is not None
-    }
+    for block in recipe.blocks:
+        if block.block_type == BlockType.HEADING:
+            if block.section_type == "ingredients" and block.component:
+                ingredient_components.add(block.component.lower().strip())
+            elif block.section_type == "directions" and block.component:
+                direction_components.add(block.component.lower().strip())
 
     # Locate components with ingredients but no corresponding instructions
     for component in ingredient_components:
+        if component in ("main", "default"):
+            continue
         if component not in direction_components:
             warnings.append(
                 f"Component '{component}' has defined ingredients, "

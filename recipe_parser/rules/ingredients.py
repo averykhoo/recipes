@@ -1,139 +1,191 @@
 # recipe_parser/rules/ingredients.py
 """
 Rule processor for parsing individual ingredient lines, extracting
-canonical units, state modifiers, quantities, and optional flags.
+canonical units, alternative conversions, and piece-nested container capacities.
 """
 
 import re
-from typing import Optional
+from typing import List, Optional
 
-from recipe_parser.models.schemas import Ingredient
-from recipe_parser.utils.numeric import parse_quantity_string
+from recipe_parser.models.schemas import Ingredient, QuantityRepresentation, Measurement, UnitClass
+from recipe_parser.utils.numeric import parse_single_quantity
 from recipe_parser.utils.sanitizer import strip_html_and_markdown_comments
 
-# Normalization structure for mapping variations to standardized units.
-# Each key represents the standardized canonical unit of measure,
-# and the corresponding list contains the various aliases to match against.
-CANONICAL_UNITS: dict[str, list[str]] = {
-    "l":        ["l", "litre", "litres", "liter", "liters"],
-    "ml":       ["ml", "millilitre", "milli-litre", "milli litre", "millilitres", "milliliters", "milliliter",
-                 "milli-liter"],
-    "g":        ["g", "gram", "grams"],
-    "mg":       ["mg", "milligram", "milligrams"],
-    "kg":       ["kg", "kilogram", "kilograms"],
-    "oz":       ["oz", "ounce", "ounces", "-ounce"],
-    "qt":       ["qt", "quart", "quarts"],
-    "fl":       ["fl", "fl-oz", "fl. oz.", "fluid-ounce", "fluid ounce"],
-    "tsp":      ["tsp", "tsps", "tsp.", "tsps.", "teaspoon", "teaspoons"],
-    "Tbsp":     ["tbsp", "tbs", "tbsps", "tbsp.", "tbsps.", "tablespoon", "tablespoons"],
-    "cup":      ["cup", "cups", "c.", "c"],
-    "pint":     ["pint", "pints"],
-    "pinch":    ["pinch", "pinches"],
-    "strip":    ["strip", "strips"],
-    "envelope": ["envelope", "envelopes", "sheet", "sheets"],
-    "gal":      ["gal", "gallon", "gallons"],
-    "dash":     ["dash", "dashes"],
-    "can":      ["can", "cans"],
-    "lb":       ["lb", "lbs", "lb.", "lbs.", "pound", "pounds", "-pound"],
-    "whole":    ["whole"],
-    "head":     ["head", "heads"],
-    "clove":    ["clove", "cloves"],
-    "bunch":    ["bunch", "bunches"],
-    "handful":  ["handful", "handfuls"],
-    "piece":    ["piece", "pieces", "pc", "pc.", "pcs"],
-    "inch":     ["inch", "inches", "\""],
-    "cm":       ["cm"]
+# Unified canonical unit maps (mapping variations to full proper words)
+UNIT_CLASSIFICATIONS = {
+    # Volume
+    "tablespoon": (UnitClass.VOLUME, ["tbsp", "tbs", "tbsps", "tbsp.", "tablespoon", "tablespoons", "tbs"]),
+    "teaspoon": (UnitClass.VOLUME, ["tsp", "tsps", "tsp.", "teaspoon", "teaspoons"]),
+    "milliliter": (UnitClass.VOLUME, ["ml", "milliliter", "milliliters", "millilitre", "millilitres"]),
+    "liter": (UnitClass.VOLUME, ["l", "liter", "liters", "litre", "litres"]),
+    "cup": (UnitClass.VOLUME, ["cup", "cups", "c"]),
+    # Weight
+    "gram": (UnitClass.WEIGHT, ["g", "gram", "grams"]),
+    "kilogram": (UnitClass.WEIGHT, ["kg", "kilogram", "kilograms"]),
+    "ounce": (UnitClass.WEIGHT, ["oz", "ounce", "ounces"]),
+    "pound": (UnitClass.WEIGHT, ["lb", "lbs", "pound", "pounds"]),
+    # Piece
+    "whole": (UnitClass.PIECE, ["whole"]),
+    "clove": (UnitClass.PIECE, ["clove", "cloves"]),
+    "slice": (UnitClass.PIECE, ["slice", "slices"]),
+    "block": (UnitClass.PIECE, ["block", "blocks"]),
+    "can": (UnitClass.PIECE, ["can", "cans"]),
+    "stick": (UnitClass.PIECE, ["stick", "sticks"]),
+    "envelope": (UnitClass.PIECE, ["envelope", "envelopes", "sheet", "sheets"]),
+    "bunch": (UnitClass.PIECE, ["bunch", "bunches"]),
+    "head": (UnitClass.PIECE, ["head", "heads"]),
+    "piece": (UnitClass.PIECE, ["piece", "pieces", "pc", "pcs"]),
 }
 
-# Expand variations into a flat lookup table mapping lowercase strings to canonical keys
-UNIT_LOOKUP: dict[str, str] = {}
-for canonical_key, variations in CANONICAL_UNITS.items():
-    for variation in variations:
-        UNIT_LOOKUP[variation.lower()] = canonical_key
+# Reverse mapping for fast regex scanning
+UNIT_LOOKUP = {}
+for canonical, (u_class, aliases) in UNIT_CLASSIFICATIONS.items():
+    for alias in aliases:
+        UNIT_LOOKUP[alias.lower()] = (canonical, u_class)
 
-# Matches numbers, fractions, ranges, or approximate values at the beginning of a string
-RE_LEADING_QUANTITY = re.compile(
-    r"^(?P<qty>~\s*\d+(?:\s*/\s*|\s+-?\s*)\d+|\d+\s*-\s*\d+|~\s*\d+(?:\.\d+)?|\d+(?:\s*/\s*|\s+-?\s*)\d+|\d+(?:\.\d+)?|[\u00BC-\u00BE\u2150-\u215E])\s*(?P<rest>.+)$",
+# Matches leading floats, fractions, or range-midpoints
+RE_LEADING_NUM = re.compile(
+    r"^(?P<val>\d+(?:\s*/\s*|\s+-?\s*)\d+|\d+(?:\.\d+)?|[\u00BC-\u00BE\u2150-\u215E])\s*(?P<rest>.+)?$",
     re.UNICODE
 )
 
 
-def extract_optional_status(raw_item: str) -> tuple[str, bool]:
+def parse_single_term(term_text: str) -> Optional[Measurement]:
     """
-    Detects if an ingredient is marked as optional, returning the cleaned
-    string with the comments stripped and the optional status.
+    Extracts a single structured measurement from a trimmed string run (e.g. '1/2 cup').
     """
-    is_optional = False
-    cleaned_string = raw_item.strip()
+    match = RE_LEADING_NUM.match(term_text.strip())
+    if not match:
+        return None
 
-    # Look for leading "Optional: " text
-    if cleaned_string.lower().startswith("optional:"):
-        is_optional = True
-        cleaned_string = cleaned_string[len("optional:"):].strip()
+    raw_val = match.group("val")
+    rest = (match.group("rest") or "").strip()
 
-    # Look for trailing "(optional)" or ", optional" patterns
-    if cleaned_string.lower().endswith("(optional)"):
-        is_optional = True
-        cleaned_string = cleaned_string[:-len("(optional)")].strip().rstrip(",").strip()
-    elif cleaned_string.lower().endswith(", optional"):
-        is_optional = True
-        cleaned_string = cleaned_string[:-len(", optional")].strip()
+    words = rest.split(" ", 1)
+    if not words:
+        return None
 
-    return cleaned_string, is_optional
+    first_word = words[0].rstrip(".").strip().lower()
+
+    if first_word in UNIT_LOOKUP:
+        canonical_name, unit_class = UNIT_LOOKUP[first_word]
+        parsed_val = parse_single_quantity(raw_val)
+        if parsed_val is not None:
+            return Measurement(value=parsed_val, unit=canonical_name, unit_class=unit_class)
+
+    return None
+
+
+def parse_representation(text_run: str) -> QuantityRepresentation:
+    """
+    Parses additive terms inside a single representation run (e.g. '0.5 cup + 1 teaspoon').
+    """
+    representation = QuantityRepresentation(raw_text=text_run.strip())
+
+    # Split on standard addition operators
+    raw_terms = re.split(r"\s+(?:\+|\bplus\b|\band\b)\s+", text_run, flags=re.IGNORECASE)
+
+    for raw_term in raw_terms:
+        # Check if the term represents a piece-nested capacity: e.g. "2 cans (15 oz each)"
+        nested_match = re.match(
+            r"^(?P<mult>\d+)\s+(?P<container>\w+)\s*[\(\[【（](?P<cap>.+?)\s*(?:each|ea)?[\)\]】）]$",
+            raw_term.strip(),
+            re.IGNORECASE
+        )
+        if nested_match:
+            mult_val = parse_single_quantity(nested_match.group("mult"))
+            container_word = nested_match.group("container").lower().rstrip("s")
+
+            if container_word in UNIT_LOOKUP and mult_val is not None:
+                container_canonical, container_class = UNIT_LOOKUP[container_word]
+                if container_class == UnitClass.PIECE:
+                    nested_meas = parse_single_term(nested_match.group("cap"))
+                    if nested_meas and nested_meas.unit_class in (UnitClass.VOLUME, UnitClass.WEIGHT):
+                        meas = Measurement(
+                            value=mult_val,
+                            unit=container_canonical,
+                            unit_class=container_class,
+                            nested_capacity=nested_meas
+                        )
+                        representation.terms.append(meas)
+                        continue
+
+        # Standard Term Case
+        meas = parse_single_term(raw_term)
+        if meas:
+            representation.terms.append(meas)
+
+    return representation
 
 
 def parse_ingredient_line(raw_line: str) -> Optional[Ingredient]:
     """
-    Tokenizes raw Markdown ingredient strings into validated schemas,
-    extracting quantities, canonical units, and modifiers.
+    Transforms raw lists into Pydantic models. Resolves alternatives
+    nested inside brackets or parentheses.
     """
     cleaned_line = strip_html_and_markdown_comments(raw_line).strip()
     if not cleaned_line:
         return None
 
-    # Remove standard list item prefixes
     cleaned_line = re.sub(r"^[\*\-+]\s+", "", cleaned_line)
 
-    # Extract the optional flag status
-    cleaned_line, is_optional = extract_optional_status(cleaned_line)
+    # Check for optional flags
+    is_optional = False
+    if cleaned_line.lower().startswith("optional:"):
+        is_optional = True
+        cleaned_line = cleaned_line[len("optional:"):].strip()
+    if cleaned_line.lower().endswith("(optional)"):
+        is_optional = True
+        cleaned_line = cleaned_line[:-len("(optional)")].strip().rstrip(",").strip()
 
-    quantity_part = ""
-    unit_part = ""
-    name_part = cleaned_line
-    modifier_part = None
+    # Extract alternative representations inside parentheses or brackets
+    representations_text = []
+    main_and_modifier = cleaned_line
 
-    # Scan for a leading quantity format
-    qty_match = RE_LEADING_QUANTITY.match(cleaned_line)
-    if qty_match:
-        raw_qty = qty_match.group("qty")
-        remaining_text = qty_match.group("rest").strip()
+    # Matches brackets like (65g) or 【118 mL】
+    bracket_matches = list(re.finditer(r"[\(\[【（](?P<inner>.+?)[\)\]】）]", cleaned_line))
 
-        # Check if the subsequent word matches a recognized unit
-        words_in_rest = remaining_text.split(" ", 1)
-        first_word = words_in_rest[0].rstrip(".").strip()
+    # We only treat bracketed runs as alternative units if they begin with a digit
+    for match in bracket_matches:
+        inner_text = match.group("inner").strip()
+        if RE_LEADING_NUM.match(inner_text):
+            representations_text.append(inner_text)
+            # Remove the bracketed alternative from the main parsing string
+            main_and_modifier = main_and_modifier.replace(match.group(0), "").strip()
 
-        if first_word.lower() in UNIT_LOOKUP:
-            quantity_part = parse_quantity_string(raw_qty)
-            unit_part = UNIT_LOOKUP[first_word.lower()]
-            name_part = words_in_rest[1].strip() if len(words_in_rest) > 1 else ""
-        else:
-            # Simple count items (such as: "2 eggs")
-            quantity_part = parse_quantity_string(raw_qty)
-            name_part = remaining_text
+    # Parse the primary representation (everything before the alternative brackets)
+    primary_text = ""
+    modifier = None
 
-    # Extract preparation details separated by a comma (for example: "onions, diced")
-    if "," in name_part:
-        comma_parts = name_part.split(",", 1)
-        # Avoid splitting decimal coordinates or conversion brackets
-        if not (comma_parts[0] and comma_parts[0][-1].isdigit() and comma_parts[1] and comma_parts[1][0].isdigit()):
-            name_part = comma_parts[0].strip()
-            modifier_part = comma_parts[1].strip()
+    # Split preparation details on comma
+    if "," in main_and_modifier:
+        parts = main_and_modifier.split(",", 1)
+        # Prevent splitting decimals
+        if not (parts[0][-1].isdigit() and parts[1][0].isdigit()):
+            primary_text = parts[0].strip()
+            modifier = parts[1].strip()
+    else:
+        primary_text = main_and_modifier
+
+    primary_rep = parse_representation(primary_text)
+
+    parsed_representations = [primary_rep]
+    for alt_text in representations_text:
+        alt_rep = parse_representation(alt_text)
+        if alt_rep.terms:
+            parsed_representations.append(alt_rep)
+
+    # Extract the true ingredient name by removing measurements
+    ingredient_name = primary_text
+    if primary_rep.terms:
+        # Remove raw quantity text runs from the name string
+        for _ in primary_rep.terms:
+            ingredient_name = re.sub(r"\b\d+.*?\b", "", ingredient_name).strip()
 
     return Ingredient(
         raw=raw_line.strip(),
-        quantity=quantity_part,
-        unit=unit_part,
-        name=name_part,
-        modifier=modifier_part,
+        representations=parsed_representations,
+        name=ingredient_name or primary_text,
+        modifier=modifier,
         optional=is_optional
     )
