@@ -5,9 +5,12 @@ canonical units, alternative conversions, and piece-nested container capacities.
 """
 
 import re
-from typing import List, Optional
+from typing import Optional
 
-from recipe_parser.models.schemas import Ingredient, QuantityRepresentation, Measurement, UnitClass
+from recipe_parser.models.schemas import Ingredient
+from recipe_parser.models.schemas import Measurement
+from recipe_parser.models.schemas import QuantityRepresentation
+from recipe_parser.models.schemas import UnitClass
 from recipe_parser.utils.numeric import parse_single_quantity
 from recipe_parser.utils.sanitizer import strip_html_and_markdown_comments
 
@@ -15,26 +18,26 @@ from recipe_parser.utils.sanitizer import strip_html_and_markdown_comments
 UNIT_CLASSIFICATIONS = {
     # Volume
     "tablespoon": (UnitClass.VOLUME, ["tbsp", "tbs", "tbsps", "tbsp.", "tablespoon", "tablespoons", "tbs"]),
-    "teaspoon": (UnitClass.VOLUME, ["tsp", "tsps", "tsp.", "teaspoon", "teaspoons"]),
+    "teaspoon":   (UnitClass.VOLUME, ["tsp", "tsps", "tsp.", "teaspoon", "teaspoons"]),
     "milliliter": (UnitClass.VOLUME, ["ml", "milliliter", "milliliters", "millilitre", "millilitres"]),
-    "liter": (UnitClass.VOLUME, ["l", "liter", "liters", "litre", "litres"]),
-    "cup": (UnitClass.VOLUME, ["cup", "cups", "c"]),
+    "liter":      (UnitClass.VOLUME, ["l", "liter", "liters", "litre", "litres"]),
+    "cup":        (UnitClass.VOLUME, ["cup", "cups", "c"]),
     # Weight
-    "gram": (UnitClass.WEIGHT, ["g", "gram", "grams"]),
-    "kilogram": (UnitClass.WEIGHT, ["kg", "kilogram", "kilograms"]),
-    "ounce": (UnitClass.WEIGHT, ["oz", "ounce", "ounces"]),
-    "pound": (UnitClass.WEIGHT, ["lb", "lbs", "pound", "pounds"]),
+    "gram":       (UnitClass.WEIGHT, ["g", "gram", "grams"]),
+    "kilogram":   (UnitClass.WEIGHT, ["kg", "kilogram", "kilograms"]),
+    "ounce":      (UnitClass.WEIGHT, ["oz", "ounce", "ounces"]),
+    "pound":      (UnitClass.WEIGHT, ["lb", "lbs", "pound", "pounds"]),
     # Piece
-    "whole": (UnitClass.PIECE, ["whole"]),
-    "clove": (UnitClass.PIECE, ["clove", "cloves"]),
-    "slice": (UnitClass.PIECE, ["slice", "slices"]),
-    "block": (UnitClass.PIECE, ["block", "blocks"]),
-    "can": (UnitClass.PIECE, ["can", "cans"]),
-    "stick": (UnitClass.PIECE, ["stick", "sticks"]),
-    "envelope": (UnitClass.PIECE, ["envelope", "envelopes", "sheet", "sheets"]),
-    "bunch": (UnitClass.PIECE, ["bunch", "bunches"]),
-    "head": (UnitClass.PIECE, ["head", "heads"]),
-    "piece": (UnitClass.PIECE, ["piece", "pieces", "pc", "pcs"]),
+    "whole":      (UnitClass.PIECE, ["whole"]),
+    "clove":      (UnitClass.PIECE, ["clove", "cloves"]),
+    "slice":      (UnitClass.PIECE, ["slice", "slices"]),
+    "block":      (UnitClass.PIECE, ["block", "blocks"]),
+    "can":        (UnitClass.PIECE, ["can", "cans"]),
+    "stick":      (UnitClass.PIECE, ["stick", "sticks"]),
+    "envelope":   (UnitClass.PIECE, ["envelope", "envelopes", "sheet", "sheets"]),
+    "bunch":      (UnitClass.PIECE, ["bunch", "bunches"]),
+    "head":       (UnitClass.PIECE, ["head", "heads"]),
+    "piece":      (UnitClass.PIECE, ["piece", "pieces", "pc", "pcs"]),
 }
 
 # Reverse mapping for fast regex scanning

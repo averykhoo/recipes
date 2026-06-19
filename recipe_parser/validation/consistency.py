@@ -5,7 +5,9 @@ warning the author when sub-components are inconsistent.
 """
 
 from typing import List
-from recipe_parser.models.schemas import Recipe, BlockType
+
+from recipe_parser.models.schemas import BlockType
+from recipe_parser.models.schemas import Recipe
 
 
 def audit_component_consistency(recipe: Recipe) -> List[str]:

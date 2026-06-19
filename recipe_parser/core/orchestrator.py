@@ -7,20 +7,30 @@ tokenization, sub-recipe splits, and semantic DOM AST block construction.
 import logging
 import re
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any
+from typing import Dict
+from typing import List
+from typing import Tuple
 
 import frontmatter
 from markdown_it import MarkdownIt
 from markdown_it.tree import SyntaxTreeNode
 
-from recipe_parser.models.schemas import (
-    BlockType, HeadingBlock, TextBlock, ListBlock, TableBlock,
-    IngredientItem, Recipe, RecipeDocument
-)
-from recipe_parser.rules.directions import extract_flat_steps_recursively, scan_inline_metadata
+from recipe_parser.models.schemas import BlockType
+from recipe_parser.models.schemas import HeadingBlock
+from recipe_parser.models.schemas import IngredientItem
+from recipe_parser.models.schemas import ListBlock
+from recipe_parser.models.schemas import Recipe
+from recipe_parser.models.schemas import RecipeDocument
+from recipe_parser.models.schemas import TableBlock
+from recipe_parser.models.schemas import TextBlock
+from recipe_parser.rules.directions import extract_flat_steps_recursively
+from recipe_parser.rules.directions import scan_inline_metadata
 from recipe_parser.rules.ingredients import parse_ingredient_line
-from recipe_parser.rules.links import rewrite_markdown_links_to_html, wrap_bare_urls_in_markdown
-from recipe_parser.rules.yields import extract_strict_yield, find_lax_yield_candidate
+from recipe_parser.rules.links import rewrite_markdown_links_to_html
+from recipe_parser.rules.links import wrap_bare_urls_in_markdown
+from recipe_parser.rules.yields import extract_strict_yield
+from recipe_parser.rules.yields import find_lax_yield_candidate
 from recipe_parser.utils.sanitizer import sanitize_header_text
 from recipe_parser.validation.characters import audit_non_ascii_characters
 from recipe_parser.validation.consistency import audit_component_consistency
@@ -363,10 +373,14 @@ def process_recipe_document(file_path: Path) -> Tuple[RecipeDocument, List[str]]
 
         compiled_recipes.append(recipe_model)
 
+    # Ensure warnings returned are unique and preserve order
+    seen = set()
+    unique_warnings = [x for x in warnings if not (x in seen or seen.add(x))]
+
     doc = RecipeDocument(
         source_file=str(file_path),
         metadata=file_post.metadata,
         recipes=compiled_recipes
     )
 
-    return doc, warnings
+    return doc, unique_warnings

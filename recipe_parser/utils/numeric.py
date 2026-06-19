@@ -5,8 +5,9 @@ and range strings into unified, clean decimal floats.
 """
 
 import re
-import unicodedata
 from typing import Optional
+
+import unicodedata
 
 # Matches mixed numbers with ASCII fractions: e.g. "1 1/2", "3 3/4"
 RE_MIXED_ASCII = re.compile(r"^(?P<whole>\d+)\s+(?P<num>\d+)/(?P<den>\d+)$")

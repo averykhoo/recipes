@@ -1,6 +1,12 @@
 # recipe_parser/utils/conversions.py
-from typing import Dict, Optional
-from recipe_parser.models.schemas import UnitClass, Measurement
+import csv
+import fnmatch
+from pathlib import Path
+from typing import Dict
+from typing import Optional
+
+from recipe_parser.models.schemas import Measurement
+from recipe_parser.models.schemas import UnitClass
 
 # Standard conversion multipliers to standard metric base units (ml for volume, g for weight)
 METRIC_CONVERSIONS: Dict[str, float] = {
@@ -17,39 +23,6 @@ METRIC_CONVERSIONS: Dict[str, float] = {
     "cup":        240.0,
 }
 
-# Average ingredient densities (g/ml)
-INGREDIENT_DENSITIES: Dict[str, float] = {
-    # Base/Default items
-    "powdered_sugar":    0.50,
-    "granulated_sugar":  0.85,
-    "all_purpose_flour": 0.52,
-    "water":             1.00,
-    "butter":            0.96,
-    "whole_milk":        1.03,
-    "olive_oil":         0.91,
-    # Expanded mappings for common culinary ingredients in the repository
-    "cheddar":           0.45,
-    "cheese":            0.45,
-    "chocolate":         0.70,
-    "cocoa":             0.48,
-    "flour":             0.52,
-    "sugar":             0.85,
-    "brown_sugar":       0.80,
-    "sour_cream":        0.96,
-    "heavy_cream":       0.96,
-    "cream":             0.96,
-    "honey":             1.42,
-    "oil":               0.91,
-    "milk":              1.03,
-    "oats":              0.40,
-    "cornflakes":        0.12,
-    "salt":              1.20,
-    "peppers":           0.50,
-    "pepper":            0.50,
-    "almond_flour":      0.40,
-    "hazelnut_flour":    0.40,
-}
-
 # Nominal weights (g) for discrete items
 PIECEWISE_WEIGHTS: Dict[str, float] = {
     "egg":          50.0,
@@ -59,65 +32,126 @@ PIECEWISE_WEIGHTS: Dict[str, float] = {
 }
 
 
+def load_densities_from_csv() -> Dict[str, float]:
+    """
+    Loads ingredient densities from the sibling CSV configuration file.
+    Falls back to basic standard defaults if the file is missing or corrupted.
+    """
+    csv_path = Path(__file__).parent / "ingredient_densities.csv"
+    if not csv_path.exists():
+        return {
+            "powdered_sugar":    0.50,
+            "granulated_sugar":  0.85,
+            "all_purpose_flour": 0.52,
+            "water":             1.00,
+            "butter":            0.96,
+            "whole_milk":        1.03,
+            "olive_oil":         0.91,
+        }
+
+    densities = {}
+    try:
+        with csv_path.open("r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                pattern = row["pattern"].strip()
+                try:
+                    density = float(row["density"].strip())
+                    densities[pattern] = density
+                except (ValueError, KeyError):
+                    continue
+    except Exception:
+        # Graceful fallback to avoid pipeline crashes
+        return {
+            "powdered_sugar":    0.50,
+            "granulated_sugar":  0.85,
+            "all_purpose_flour": 0.52,
+            "water":             1.00,
+            "butter":            0.96,
+            "whole_milk":        1.03,
+            "olive_oil":         0.91,
+        }
+    return densities
+
+
+# Dynamic, package-relative density lookup dictionary
+INGREDIENT_DENSITIES = load_densities_from_csv()
+
+
 def normalize_measurement_to_grams(measurement: Measurement, ingredient_name: str) -> Optional[float]:
     """
     Translates any volumetric, weight-based, or piece-based measurement into standard grams.
     """
-    normalized_name = ingredient_name.lower().replace(" ", "_").replace("-", "_")
+    details = get_normalization_details(measurement, ingredient_name)
+    return details.get("value")
 
-    # 1. Nesting Multiplication Case (Multi-pack piece containers)
+
+def get_normalization_details(measurement: Measurement, ingredient_name: str) -> dict:
+    """
+    Returns a dictionary containing the matched category, density/piece weight,
+    and normalized gram weight for debugging/validation purposes.
+    """
+    normalized_name = ingredient_name.lower().replace(" ", "_").replace("-", "_").replace("/", "_")
+
+    # 1. Nesting Piece Case
     if measurement.unit_class == UnitClass.PIECE and measurement.nested_capacity:
         outer_multiplier = measurement.value
-        inner_capacity = normalize_measurement_to_grams(measurement.nested_capacity, ingredient_name)
-        if inner_capacity is not None:
-            return outer_multiplier * inner_capacity
-        return None
+        inner_details = get_normalization_details(measurement.nested_capacity, ingredient_name)
+        total_g = outer_multiplier * inner_details.get("value", 0.0)
+        return {
+            "value":   total_g,
+            "unit":    measurement.unit,
+            "details": f"Nested Piece container: {measurement.value} * {inner_details.get('value')}g ({inner_details.get('details')})"
+        }
 
-    # 2. Base Piece Case
+    # 2. Piece Case
     if measurement.unit_class == UnitClass.PIECE:
-        # Match standard singular terms
         singular_unit = measurement.unit.rstrip("s").lower()
-        if singular_unit in PIECEWISE_WEIGHTS:
-            return measurement.value * PIECEWISE_WEIGHTS[singular_unit]
-        return None
+        weight = PIECEWISE_WEIGHTS.get(singular_unit, 0.0)
+        return {
+            "value":   measurement.value * weight,
+            "unit":    measurement.unit,
+            "details": f"Piece weight for '{singular_unit}': {weight}g/pc" if weight > 0 else f"No piecewise weight matched for '{singular_unit}' (defaulting to 0.0g)"
+        }
 
     # 3. Weight Case
     if measurement.unit_class == UnitClass.WEIGHT:
-        factor = METRIC_CONVERSIONS.get(measurement.unit.lower())
-        if factor:
-            return measurement.value * factor
-        return None
+        factor = METRIC_CONVERSIONS.get(measurement.unit.lower(), 1.0)
+        return {
+            "value":   measurement.value * factor,
+            "unit":    measurement.unit,
+            "details": f"Weight conversion factor: {factor}g/{measurement.unit}"
+        }
 
-    # 4. Volume Case (Requires density lookup)
+    # 4. Volume Case (Requires glob density lookup)
     if measurement.unit_class == UnitClass.VOLUME:
-        factor = METRIC_CONVERSIONS.get(measurement.unit.lower())
-        if factor:
-            total_ml = measurement.value * factor
+        factor = METRIC_CONVERSIONS.get(measurement.unit.lower(), 1.0)
+        total_ml = measurement.value * factor
 
-            # Fuzzy density match (resolves multi-word naming variations)
-            density = None
-            if normalized_name in INGREDIENT_DENSITIES:
-                density = INGREDIENT_DENSITIES[normalized_name]
-            else:
-                # Find the best match using substring search on sorted key lengths
-                sorted_keys = sorted(INGREDIENT_DENSITIES.keys(), key=len, reverse=True)
-                for key in sorted_keys:
-                    if key in normalized_name:
-                        density = INGREDIENT_DENSITIES[key]
-                        break
+        # Search logic utilizing fnmatch globs
+        matched_key = "water (default)"
+        density = 1.0
 
-                if density is None:
-                    for key in sorted_keys:
-                        if normalized_name in key:
-                            density = INGREDIENT_DENSITIES[key]
-                            break
+        # Try direct match first
+        if normalized_name in INGREDIENT_DENSITIES:
+            matched_key = normalized_name
+            density = INGREDIENT_DENSITIES[normalized_name]
+        else:
+            # Sort keys by length descending to match more specific glob pattern keys first
+            sorted_keys = sorted(INGREDIENT_DENSITIES.keys(), key=len, reverse=True)
+            for key in sorted_keys:
+                if fnmatch.fnmatch(normalized_name, key) or fnmatch.fnmatch(normalized_name, f"*{key}*"):
+                    matched_key = key
+                    density = INGREDIENT_DENSITIES[key]
+                    break
 
-            if density is None:
-                density = 1.0  # Fallback to water
+        return {
+            "value":   total_ml * density,
+            "unit":    measurement.unit,
+            "details": f"Volume conversion factor: {factor}ml/{measurement.unit}, Density for pattern '{matched_key}': {density}g/ml"
+        }
 
-            return total_ml * density
-
-    return None
+    return {"value": 0.0, "unit": measurement.unit, "details": "Unknown unit class"}
 
 
 def calculate_mass_discrepancy(mass_a: float, mass_b: float) -> float:

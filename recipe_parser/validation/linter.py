@@ -6,10 +6,14 @@ and structural constraints on the parsed DOM block tree.
 
 import re
 from typing import List
-from recipe_parser.models.schemas import Recipe, BlockType, UnitClass
-from recipe_parser.utils.conversions import (
-    normalize_measurement_to_grams, calculate_mass_discrepancy, check_temperature_discrepancy
-)
+
+from recipe_parser.models.schemas import BlockType
+from recipe_parser.models.schemas import Recipe
+from recipe_parser.models.schemas import UnitClass
+from recipe_parser.utils.conversions import calculate_mass_discrepancy
+from recipe_parser.utils.conversions import check_temperature_discrepancy
+from recipe_parser.utils.conversions import get_normalization_details
+from recipe_parser.utils.conversions import normalize_measurement_to_grams
 
 MASS_TOLERANCE_PERCENT = 0.10  # 10% discrepancy allowed
 TEMP_TOLERANCE_C = 5.0  # 5°C discrepancy allowed
@@ -85,10 +89,21 @@ def lint_recipe_document(recipe: Recipe) -> List[str]:
                             if mass_primary > 0 and mass_alt > 0:
                                 discrepancy = calculate_mass_discrepancy(mass_primary, mass_alt)
                                 if discrepancy > MASS_TOLERANCE_PERCENT:
+                                    primary_details_list = []
+                                    for t in rep_primary.terms:
+                                        det = get_normalization_details(t, ing.name)
+                                        primary_details_list.append(f"{t.value} {t.unit} ({det.get('details')})")
+
+                                    alt_details_list = []
+                                    for t in rep_alt.terms:
+                                        det = get_normalization_details(t, ing.name)
+                                        alt_details_list.append(f"{t.value} {t.unit} ({det.get('details')})")
+
                                     lint_warnings.append(
-                                        f"[{recipe.title}] Conversion discrepancy: '{ing.name}' alternative "
-                                        f"({rep_alt.raw_text}) is inconsistent with primary ({rep_primary.raw_text}) "
-                                        f"by {discrepancy * 100:.1f}% (exceeds allowed {MASS_TOLERANCE_PERCENT * 100:.0f}%)"
+                                        f"[{recipe.title}] Conversion discrepancy: '{ing.name}'\n"
+                                        f"       ├─ Primary: {rep_primary.raw_text} -> calculated as {mass_primary:.1f}g based on: {', '.join(primary_details_list)}\n"
+                                        f"       ├─ Alternative: {rep_alt.raw_text} -> calculated as {mass_alt:.1f}g based on: {', '.join(alt_details_list)}\n"
+                                        f"       └─ Discrepancy of {discrepancy * 100:.1f}% (exceeds allowed {MASS_TOLERANCE_PERCENT * 100:.0f}%)"
                                     )
 
             else:

@@ -5,6 +5,7 @@ supporting a configurable whitelist of allowed Unicode characters.
 """
 
 from typing import List
+
 import unicodedata
 
 # Whitelist of allowed non-ASCII Unicode characters.

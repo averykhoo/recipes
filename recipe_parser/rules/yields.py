@@ -5,7 +5,9 @@ serving lines across the parsed flat-block AST sequence.
 """
 
 import re
-from typing import Any, List, Optional
+from typing import Any
+from typing import List
+from typing import Optional
 
 RE_STRICT_YIELD_START = re.compile(r"^(?:yields?|serves?|makes|portions?|pax|servings?)\b", re.IGNORECASE)
 RE_LAX_YIELD_KEYWORDS = re.compile(
@@ -13,7 +15,8 @@ RE_LAX_YIELD_KEYWORDS = re.compile(
     re.IGNORECASE
 )
 RE_HAS_NUMBER = re.compile(r"\d|\b(one|two|three|four|five|six|seven|eight|nine|ten)\b", re.IGNORECASE)
-EXCLUDE_PREFIXES = ("serve immediately", "serve with", "serve hot", "serve cold", "serve alongside", "serve over", "to serve", "toss to combine")
+EXCLUDE_PREFIXES = ("serve immediately", "serve with", "serve hot", "serve cold", "serve alongside", "serve over",
+                    "to serve", "toss to combine")
 
 
 def extract_strict_yield(preamble_blocks: List[Any], metadata: dict[str, Any]) -> Optional[str]:

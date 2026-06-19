@@ -5,8 +5,11 @@ for inline cooking durations (seconds) and temperatures.
 """
 
 import re
-from typing import List, Tuple
+from typing import List
+from typing import Tuple
+
 from markdown_it.tree import SyntaxTreeNode
+
 from recipe_parser.utils.sanitizer import strip_html_and_markdown_comments
 
 # Matches temperatures (Celsius or Fahrenheit)
