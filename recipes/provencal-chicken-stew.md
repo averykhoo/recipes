@@ -27,7 +27,9 @@ Basically regular stew with olives and different herbs
 * finished with a bit of butter
 * a few slices of bread
 
-## Ingredients for non-provencal version, additional and optional
+## Notes
+
+Ingredients for non-provencal version, additional and optional:
 
 * excess flour from fried chicken is fried and added into the stew to thicken
 * peas, zucchini

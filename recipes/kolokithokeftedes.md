@@ -31,7 +31,7 @@ Yields about 6 pieces
 
 # Original from seriouseats
 
-## Ingredients for Fritters
+## Ingredients
 
 * 3 cups packed, grated zucchini (from about 6 large zucchini)
 * 6 tablespoons dill, chopped

@@ -6,9 +6,9 @@
 ## INGREDIENTS FOR GRAHAM CRACKER BASE
 
 * 1.75 cups graham crackers, blended into fine crumbs (150g)
-* 4 tablespoons sugar (50g)
+* 3 tablespoons sugar (38g)
 * pinch of salt
-* 3 tablespoons unsalted butter, melted in a small pot (45g)
+* 4 tablespoons unsalted butter, melted (57g)
 
 * 1 tsp cinnamon powder
 * 0.5 tsp ground nutmeg
@@ -37,15 +37,15 @@ or use crushed lotus biscuits and butter and skip all the above - no spice/sugar
 
 ## INGREDIENTS FOR TOPPING
 
-* 0.33 cups sour cream (about 8ml)
-* 0.25 cup powdered sugar (50g)
-* 1 teaspoon vanilla (0.5 tsp)
+* 0.33 cups sour cream (about 80ml)
+* 0.25 cup powdered sugar (30g)
+* 1 teaspoon vanilla
 * 1.33 cup sour cream (about 320ml)
 
 ## INGREDIENTS FOR MORE TOPPING
 
 * 1 pint = 12 ounces (340 g) fresh raspberries / strawberries
-* 0.5 cup granulated sugar (100 g) (or 0.333 cup for less sweet)
+* 0.5 cup granulated sugar (100 g), or 0.333 cup for less sweet (67g)
 * 0.5 cup water (120 ml)
 * (erin's mile-high) zest of 1/2 lemon
 * (erin's mile-high) zest of 1/2 orange / 0.5tsp orange extract (zest as finely as possible)

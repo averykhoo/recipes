@@ -20,7 +20,7 @@ and pepper is important too
 * optional (fresh?) herbs
 * salt and pepper
 
-## Ingredients for the rest of the sauce
+## Ingredients for the sauce
 
 * 100g-200g bacon, sliced very thinly and cut into small bits
     * to make this halal, substitute with 50g beef fat plus a bit of salt

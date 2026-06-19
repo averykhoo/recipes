@@ -1,19 +1,19 @@
 # Lazy Brownies
 
-one portion makes about 260ml of brownie.
-scale up as necessary to fit your pan.
+yields one 4-inch square brownie (about 260ml)
+
 this is how big a pan you need for a 1-inch tall brownie:
 
-| scale | square | round |
-|-------|--------|-------|
-| 1x    | 4"     | 4.5"  |
-| 2x    | 5.5"   | 6"    |
-| 3x    | 7"     | 8"    |
-| 4x    | 8"     | 9"    |
-| 5x    | 9"     | 10"   |
-| 6x    | 9.5"   | 11"   |
-| 7x    | 10.5"  | 12"   |
-| 8x    | 11"    | 12.5" |
+| recipe scale | square pan | round pan |
+|--------------|------------|-----------|
+| 1x           | 4"         | 4.5"      |
+| 2x           | 5.5"       | 6"        |
+| 3x           | 7"         | 8"        |
+| 4x           | 8"         | 9"        |
+| 5x           | 9"         | 10"       |
+| 6x           | 9.5"       | 11"       |
+| 7x           | 10.5"      | 12"       |
+| 8x           | 11"        | 12.5"     |
 
 turns out it might be better thinner, so maybe use a size up
 
