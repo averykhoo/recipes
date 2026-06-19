@@ -49,6 +49,14 @@ RE_LEADING_NUM = re.compile(
     re.UNICODE
 )
 
+# Strips leading quantity values, approximate symbols, and canonical unit keywords
+unit_aliases_sorted = sorted(list(UNIT_LOOKUP.keys()), key=len, reverse=True)
+escaped_aliases = [re.escape(alias) for alias in unit_aliases_sorted]
+RE_UNIT_STRIP = re.compile(
+    r"^\s*~?\s*\d*(?:\s*/\s*|\s+-?\s*|\s*\.\s*)?\d*\s*(?:" + "|".join(escaped_aliases) + r")\s*(?:of\s+)?",
+    re.IGNORECASE
+)
+
 
 def parse_single_term(term_text: str) -> Optional[Measurement]:
     """
@@ -177,10 +185,29 @@ def parse_ingredient_line(raw_line: str) -> Optional[Ingredient]:
 
     # Extract the true ingredient name by removing measurements
     ingredient_name = primary_text
+
+    # 1. Strip leading unit and quantity if matched
     if primary_rep.terms:
-        # Remove raw quantity text runs from the name string
-        for _ in primary_rep.terms:
-            ingredient_name = re.sub(r"\b\d+.*?\b", "", ingredient_name).strip()
+        # Strip unit prefix cleanly
+        stripped_name = RE_UNIT_STRIP.sub("", ingredient_name).strip()
+        if stripped_name:
+            ingredient_name = stripped_name
+        else:
+            # Fallback if stripping emptied it
+            for _ in primary_rep.terms:
+                ingredient_name = re.sub(r"\b\d+.*?\b", "", ingredient_name).strip()
+    else:
+        # Fallback for plain names with leading numbers but no units
+        ingredient_name = re.sub(r"^\s*~?\s*\d*(?:\s*/\s*|\s+-?\s*|\s*\.\s*)?\d*\s*", "", ingredient_name).strip()
+
+    # 2. Strip Markdown link brackets: [self-raising flour](...) -> self-raising flour
+    ingredient_name = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", ingredient_name)
+
+    # 3. Strip any remaining descriptive brackets or parentheticals from the name
+    ingredient_name = re.sub(r"[\(\[【（].*?[\)\]】）]", "", ingredient_name).strip()
+
+    # 4. Clean up multiple spaces and trailing/leading junk
+    ingredient_name = re.sub(r"\s+", " ", ingredient_name).strip()
 
     return Ingredient(
         raw=raw_line.strip(),

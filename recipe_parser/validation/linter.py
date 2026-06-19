@@ -106,15 +106,17 @@ def lint_recipe_document(recipe: Recipe) -> List[str]:
                             val_a, scale_a = float(match_a.group(1)), match_a.group(2).upper()
                             val_b, scale_b = float(match_b.group(1)), match_b.group(2).upper()
 
-                            celsius = val_a if scale_a == "C" else (val_a - 32.0) * (5.0 / 9.0)
-                            fahr = val_b if scale_b == "F" else (val_b * (9.0 / 5.0)) + 32.0
+                            # Only compare scales if they are actually different (preventing range/option bugs)
+                            if scale_a != scale_b:
+                                temp_c = val_a if scale_a == "C" else val_b
+                                temp_f = val_b if scale_b == "F" else val_a
 
-                            diff = check_temperature_discrepancy(celsius, fahr)
-                            if diff is not None and diff > TEMP_TOLERANCE_C:
-                                lint_warnings.append(
-                                    f"[{recipe.title}] Temperature discrepancy in step: "
-                                    f"'{temp_a}' is inconsistent with alternative '{temp_b}' "
-                                    f"by {diff:.1f}°C (exceeds allowed {TEMP_TOLERANCE_C:.1f}°C offset)"
-                                )
+                                diff = check_temperature_discrepancy(temp_c, temp_f)
+                                if diff is not None and diff > TEMP_TOLERANCE_C:
+                                    lint_warnings.append(
+                                        f"[{recipe.title}] Temperature discrepancy in step: "
+                                        f"'{temp_a}' is inconsistent with alternative '{temp_b}' "
+                                        f"by {diff:.1f}°C (exceeds allowed {TEMP_TOLERANCE_C:.1f}°C offset)"
+                                    )
 
     return lint_warnings

@@ -19,6 +19,7 @@ METRIC_CONVERSIONS: Dict[str, float] = {
 
 # Average ingredient densities (g/ml)
 INGREDIENT_DENSITIES: Dict[str, float] = {
+    # Base/Default items
     "powdered_sugar":    0.50,
     "granulated_sugar":  0.85,
     "all_purpose_flour": 0.52,
@@ -26,6 +27,27 @@ INGREDIENT_DENSITIES: Dict[str, float] = {
     "butter":            0.96,
     "whole_milk":        1.03,
     "olive_oil":         0.91,
+    # Expanded mappings for common culinary ingredients in the repository
+    "cheddar":           0.45,
+    "cheese":            0.45,
+    "chocolate":         0.70,
+    "cocoa":             0.48,
+    "flour":             0.52,
+    "sugar":             0.85,
+    "brown_sugar":       0.80,
+    "sour_cream":        0.96,
+    "heavy_cream":       0.96,
+    "cream":             0.96,
+    "honey":             1.42,
+    "oil":               0.91,
+    "milk":              1.03,
+    "oats":              0.40,
+    "cornflakes":        0.12,
+    "salt":              1.20,
+    "peppers":           0.50,
+    "pepper":            0.50,
+    "almond_flour":      0.40,
+    "hazelnut_flour":    0.40,
 }
 
 # Nominal weights (g) for discrete items
@@ -41,7 +63,7 @@ def normalize_measurement_to_grams(measurement: Measurement, ingredient_name: st
     """
     Translates any volumetric, weight-based, or piece-based measurement into standard grams.
     """
-    normalized_name = ingredient_name.lower().replace(" ", "_")
+    normalized_name = ingredient_name.lower().replace(" ", "_").replace("-", "_")
 
     # 1. Nesting Multiplication Case (Multi-pack piece containers)
     if measurement.unit_class == UnitClass.PIECE and measurement.nested_capacity:
@@ -71,10 +93,29 @@ def normalize_measurement_to_grams(measurement: Measurement, ingredient_name: st
         factor = METRIC_CONVERSIONS.get(measurement.unit.lower())
         if factor:
             total_ml = measurement.value * factor
-            # Retrieve density, default to water (1.0) if ingredient is unknown
-            density = INGREDIENT_DENSITIES.get(normalized_name, 1.0)
+
+            # Fuzzy density match (resolves multi-word naming variations)
+            density = None
+            if normalized_name in INGREDIENT_DENSITIES:
+                density = INGREDIENT_DENSITIES[normalized_name]
+            else:
+                # Find the best match using substring search on sorted key lengths
+                sorted_keys = sorted(INGREDIENT_DENSITIES.keys(), key=len, reverse=True)
+                for key in sorted_keys:
+                    if key in normalized_name:
+                        density = INGREDIENT_DENSITIES[key]
+                        break
+
+                if density is None:
+                    for key in sorted_keys:
+                        if normalized_name in key:
+                            density = INGREDIENT_DENSITIES[key]
+                            break
+
+            if density is None:
+                density = 1.0  # Fallback to water
+
             return total_ml * density
-        return None
 
     return None
 
