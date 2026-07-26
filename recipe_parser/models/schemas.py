@@ -12,6 +12,7 @@ from typing import Optional
 from typing import Union
 
 from pydantic import BaseModel
+from pydantic import ConfigDict
 from pydantic import Field
 
 
@@ -27,8 +28,25 @@ class UnitClass(str, Enum):
 class Measurement(BaseModel):
     """Represents a single parsed metric value, unit, and class."""
     value: float = Field(description="Normalized mid-point float representation of the quantity.")
+    value_min: Optional[float] = Field(
+        default=None,
+        description="Low end of the quantity when written as a range (e.g. 1 for '1-2'); None if scalar."
+    )
+    value_max: Optional[float] = Field(
+        default=None,
+        description="High end of the quantity when written as a range (e.g. 2 for '1-2'); None if scalar."
+    )
     unit: str = Field(description="Canonical full proper English name of the unit, e.g. 'tablespoon'.")
     unit_class: UnitClass = Field(description="Semantic class used to categorize the unit type.")
+    implicit_unit: bool = Field(
+        default=False,
+        description="True when no unit word was written and a bare count was inferred (e.g. '2 lemons')."
+    )
+
+    @property
+    def is_range(self) -> bool:
+        """True when this measurement was written as a range rather than a single value."""
+        return self.value_min is not None and self.value_max is not None and self.value_min != self.value_max
     nested_capacity: Optional["Measurement"] = Field(
         default=None,
         description="Optional capacity inside a container unit (strictly allowed for PIECE units)."
@@ -42,6 +60,10 @@ class QuantityRepresentation(BaseModel):
         default_factory=list,
         description="Additive list of measurements making up this representation."
     )
+    per_unit: bool = Field(
+        default=False,
+        description="True when this states the size of ONE item, as in '4 eggs (60g each)'."
+    )
 
 
 class Ingredient(BaseModel):
@@ -54,6 +76,10 @@ class Ingredient(BaseModel):
     name: str = Field(description="The stripped canonical name of the ingredient.")
     modifier: Optional[str] = Field(default=None, description="Preparation instructions like chopped or sliced.")
     optional: bool = Field(default=False, description="True if explicitly marked as optional.")
+    annotation: Optional[str] = Field(
+        default=None,
+        description="Leading parenthetical aside that is not a quantity, e.g. \"(erin's mile-high)\"."
+    )
 
 
 class BlockType(str, Enum):
@@ -113,6 +139,18 @@ class ListBlock(BaseBlock):
     """Represents an ordered or unordered list of items."""
     block_type: BlockType = BlockType.LIST
     ordered: bool = Field(default=False, description="True if formatted as an ordered (numbered) list.")
+    section_type: Optional[str] = Field(
+        default=None,
+        description="Section this list was resolved into: 'ingredients', 'directions' or 'notes'."
+    )
+    component: Optional[str] = Field(
+        default=None,
+        description="Component this list belongs to, inherited from the enclosing heading."
+    )
+    inferred_section: bool = Field(
+        default=False,
+        description="True when section_type was guessed by the headerless fallback rather than read from a heading."
+    )
     items: List[Union[IngredientItem, str]] = Field(
         default_factory=list,
         description="List items. Holds IngredientItems if ingredients list, else raw step strings."
@@ -156,6 +194,12 @@ class TableBlock(BaseBlock):
 
 class Recipe(BaseModel):
     """Represents a single recipe, structured as a flat DOM block sequence."""
+
+    # `yield_val` is serialized as "yield", which is a Python keyword and cannot be a
+    # field name. Without this, Pydantic v2 accepts *only* the alias at construction
+    # time and silently discards `yield_val=...`, which left every recipe yield-less.
+    model_config = ConfigDict(populate_by_name=True)
+
     title: str = Field(description="Title of the recipe (H1 text).")
     yield_val: Optional[str] = Field(default=None, alias="yield", description="Parsed portion size or yield string.")
     blocks: List[Union[HeadingBlock, TextBlock, ListBlock, TableBlock]] = Field(

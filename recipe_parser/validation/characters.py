@@ -8,6 +8,10 @@ from typing import List
 
 import unicodedata
 
+from recipe_parser.validation.diagnostics import Code
+from recipe_parser.validation.diagnostics import Diagnostic
+from recipe_parser.validation.diagnostics import Severity
+
 # Whitelist of allowed non-ASCII Unicode characters.
 ALLOWED_UNICODE_CHARACTERS = {
     "°",  # The degree symbol (for temperatures like 180°C)
@@ -27,12 +31,12 @@ ALLOWED_UNICODE_CHARACTERS = {
 }
 
 
-def audit_non_ascii_characters(content_string: str) -> List[str]:
+def audit_non_ascii_characters(content_string: str) -> List[Diagnostic]:
     """
     Scans the raw document content and identifies any non-ASCII characters
     that are not explicitly defined in the allowed whitelist.
     """
-    warnings = []
+    warnings: List[Diagnostic] = []
     lines = content_string.splitlines()
 
     for line_index, line in enumerate(lines, start=1):
@@ -45,10 +49,15 @@ def audit_non_ascii_characters(content_string: str) -> List[str]:
                     seen_characters_on_line.add(character)
                     # Retrieve the official Unicode name of the character
                     character_name = unicodedata.name(character, "UNKNOWN CHARACTER")
-                    warnings.append(
-                        f"Line {line_index}: Found non-ASCII character '{character}' "
-                        f"({character_name}, Unicode: U+{ord(character):04X}) "
-                        f"in line: \"{line.strip()}\""
-                    )
+                    warnings.append(Diagnostic(
+                        severity=Severity.WARNING,
+                        code=Code.NON_ASCII_CHARACTER,
+                        line_number=line_index,
+                        context=line,
+                        message=(
+                            f"Non-ASCII character '{character}' "
+                            f"({character_name}, U+{ord(character):04X}) is not in the allowed set."
+                        ),
+                    ))
 
     return warnings

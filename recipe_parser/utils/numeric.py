@@ -6,23 +6,32 @@ and range strings into unified, clean decimal floats.
 
 import re
 from typing import Optional
+from typing import Tuple
 
 import unicodedata
 
-# Matches mixed numbers with ASCII fractions: e.g. "1 1/2", "3 3/4"
-RE_MIXED_ASCII = re.compile(r"^(?P<whole>\d+)\s+(?P<num>\d+)/(?P<den>\d+)$")
+# Character class of Unicode vulgar fractions (\u00BC, \u00BD, \u00BE, \u2153, \u2154, ...)
+VULGAR_FRACTION_CLASS = r"[\u00BC-\u00BE\u2150-\u215E]"
 
-# Matches standalone ASCII fractions: e.g. "1/2", "2/3"
-RE_SIMPLE_ASCII = re.compile(r"^(?P<num>\d+)/(?P<den>\d+)$")
+# Separators that indicate a range. Includes hyphen, en-dash, em-dash and the word "to".
+# NOTE: the hyphen must be allowed *without* surrounding whitespace ("1-2 tsp"), which is
+# by far the most common way ranges are written in this corpus.
+RANGE_SEPARATOR = r"\s*(?:[-\u2013\u2014]|\bto\b)\s*"
 
-# Matches Unicode vulgar fractions, optionally preceded by a whole number
-RE_VULGAR = re.compile(r"^(?P<whole>\d+)?(?P<vulgar>[\u00BC-\u00BE\u2150-\u215E])$")
+# Matches mixed numbers: e.g. "1 1/2", "3 3/4" (whitespace around the solidus tolerated)
+RE_MIXED_ASCII = re.compile(r"^(?P<whole>\d+)\s+(?P<num>\d+)\s*/\s*(?P<den>\d+)$")
+
+# Matches standalone ASCII fractions: e.g. "1/2", "2 / 3"
+RE_SIMPLE_ASCII = re.compile(r"^(?P<num>\d+)\s*/\s*(?P<den>\d+)$")
+
+# Matches Unicode vulgar fractions, optionally preceded by a whole number: "\u00BD", "1\u00BD", "1 \u00BD"
+RE_VULGAR = re.compile(rf"^(?:(?P<whole>\d+)\s*)?(?P<vulgar>{VULGAR_FRACTION_CLASS})$")
 
 # Matches simple integers or floats
 RE_DECIMAL = re.compile(r"^\d+(?:\.\d+)?$")
 
-# Matches range indicators: e.g. "1-2", "1.5 - 2.5", "1 to 2"
-RE_RANGE = re.compile(r"^(?P<start>.+?)\s*(?:-|to)\s*(?P<end>.+?)$", re.IGNORECASE)
+# Matches range indicators: e.g. "1-2", "1.5 - 2.5", "1 to 2", "200\u2013300", "4\u20145"
+RE_RANGE = re.compile(rf"^(?P<start>.+?){RANGE_SEPARATOR}(?P<end>.+?)$", re.IGNORECASE)
 
 
 def format_float_to_string(value: float) -> str:
@@ -37,10 +46,34 @@ def format_float_to_string(value: float) -> str:
     return f"{rounded_value:.3f}".rstrip("0").rstrip(".")
 
 
+def parse_quantity_bounds(quantity_string: str) -> Optional[Tuple[float, float]]:
+    """
+    Parses a quantity and returns its (low, high) bounds.
+
+    For a plain scalar both bounds are equal. For a range ("1-2", "200–300", "1 to 2")
+    the true endpoints are preserved rather than being collapsed to a midpoint, so
+    callers that care about the spread do not have to re-parse the raw text.
+    """
+    quantity_string = quantity_string.strip().lstrip("~").strip()
+
+    range_match = RE_RANGE.match(quantity_string)
+    if range_match:
+        start_val = parse_single_quantity(range_match.group("start"))
+        end_val = parse_single_quantity(range_match.group("end"))
+        if start_val is not None and end_val is not None:
+            return (min(start_val, end_val), max(start_val, end_val))
+
+    scalar = parse_single_quantity(quantity_string)
+    if scalar is None:
+        return None
+    return (scalar, scalar)
+
+
 def parse_single_quantity(quantity_string: str) -> Optional[float]:
     """
     Evaluates a substring containing a quantity and attempts to parse it.
-    Supports mid-point range conversion.
+    Ranges are resolved to their mid-point; use `parse_quantity_bounds` to keep the
+    endpoints.
     """
     quantity_string = quantity_string.strip()
 

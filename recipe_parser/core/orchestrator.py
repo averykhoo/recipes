@@ -33,7 +33,11 @@ from recipe_parser.rules.yields import extract_strict_yield
 from recipe_parser.rules.yields import find_lax_yield_candidate
 from recipe_parser.utils.sanitizer import sanitize_header_text
 from recipe_parser.validation.characters import audit_non_ascii_characters
+from recipe_parser.validation.completeness import audit_parse_completeness
 from recipe_parser.validation.consistency import audit_component_consistency
+from recipe_parser.validation.diagnostics import Code
+from recipe_parser.validation.diagnostics import Diagnostic
+from recipe_parser.validation.diagnostics import Severity
 from recipe_parser.validation.linter import lint_recipe_document
 
 # Standard regular expressions for sections
@@ -91,12 +95,22 @@ def assemble_token_array(content_string: str) -> List[Dict[str, Any]]:
         elif token.type in ("bullet_list_open", "ordered_list_open"):
             is_ordered = (token.type == "ordered_list_open")
             list_start = token.map[0] if (token.map and len(token.map) > 0) else 0
-            list_close_type = "bullet_list_close" if not is_ordered else "ordered_list_close"
             list_end = token.map[1] if (token.map and len(token.map) > 1) else len(content_string.splitlines())
 
-            while index < len(markdown_tokens) and markdown_tokens[index].type != list_close_type:
-                if markdown_tokens[index].map and len(markdown_tokens[index].map) > 1:
-                    list_end = markdown_tokens[index].map[1]
+            # Walk to the close that matches THIS open, counting nesting depth. Scanning
+            # for the first close of the same kind ends the outer list at the first nested
+            # sub-list instead, truncating it and leaving the remaining items to surface
+            # as stray empty lists.
+            depth = 0
+            while index < len(markdown_tokens):
+                current = markdown_tokens[index]
+                if current.type in ("bullet_list_open", "ordered_list_open"):
+                    depth += 1
+                elif current.type in ("bullet_list_close", "ordered_list_close"):
+                    depth -= 1
+                    if depth == 0:
+                        index += 1
+                        break
                 index += 1
 
             raw_lines = content_string.splitlines()[list_start:list_end]
@@ -105,8 +119,6 @@ def assemble_token_array(content_string: str) -> List[Dict[str, Any]]:
                 "ordered":  is_ordered,
                 "raw_text": "\n".join(raw_lines)
             })
-            if index < len(markdown_tokens):
-                index += 1
 
         elif token.type == "blockquote_open":
             index += 1
@@ -210,6 +222,7 @@ def build_hierarchical_blocks(block_tokens: List[Dict[str, Any]]) -> List[Any]:
 
     current_section_type = "preamble"
     current_component = None
+    seen_ordered_list = False
 
     for token in block_tokens:
         # --- Heading Nodes ---
@@ -219,33 +232,39 @@ def build_hierarchical_blocks(block_tokens: List[Dict[str, Any]]) -> List[Any]:
                 continue
 
             heading_text = sanitize_header_text(token["text"])
-            heading_lower = heading_text.lower()
 
-            # Map semantic routing boundaries on Level 2 sub-headings
-            section_type = "notes"
-            component = None
+            ing_match = RE_ING_HEADER.match(heading_text)
+            dir_match = RE_DIR_HEADER.match(heading_text)
 
-            if token["level"] == 2:
-                ing_match = RE_ING_HEADER.match(heading_text)
-                dir_match = RE_DIR_HEADER.match(heading_text)
-
-                if ing_match:
-                    section_type = "ingredients"
-                    component = ing_match.group(1) or "Main"
-                elif dir_match:
-                    section_type = "directions"
-                    component = dir_match.group(1) or "Main"
-                elif any(x in heading_lower for x in ["note", "comment", "science", "todo", "editor"]):
+            if ing_match:
+                section_type = "ingredients"
+                component = ing_match.group(1) or "Main"
+            elif dir_match:
+                section_type = "directions"
+                component = dir_match.group(1) or "Main"
+            elif token["level"] == 2:
+                # An unrecognised H2 closes whatever section was open; everything that is
+                # not ingredients or directions is treated as commentary.
+                section_type = "notes"
+                component = None
+            else:
+                # H3-H6 are sub-headings *within* the enclosing H2 and must inherit its
+                # section, otherwise ingredient lists nested under an "### Onion gravy"
+                # style sub-heading get silently reclassified as notes.
+                section_type = current_section_type
+                component = current_component
+                if section_type == "preamble":
+                    # An H3 before any H2 has no section to inherit.
                     section_type = "notes"
+                    component = None
 
-                current_section_type = section_type
-                current_component = component
+            current_section_type = section_type
+            current_component = component
 
-            # Headings (including H3-H6) are appended as independent structural nodes
             blocks.append(HeadingBlock(
                 level=token["level"],
                 text=heading_text,
-                section_type=section_type if token["level"] == 2 else "notes",
+                section_type=section_type,
                 component=component
             ))
 
@@ -269,17 +288,39 @@ def build_hierarchical_blocks(block_tokens: List[Dict[str, Any]]) -> List[Any]:
             tree_root = SyntaxTreeNode(parsed_ast)
             steps_unrolled = extract_flat_steps_recursively(tree_root)
 
-            list_block = ListBlock(ordered=token["ordered"])
-
             # Semantic extraction based on active container state
-            is_ingredients_list = False
+            inferred = False
             if has_headers:
-                if current_section_type == "ingredients":
-                    is_ingredients_list = True
+                resolved_section = current_section_type
+                resolved_component = current_component
             else:
-                # Headerless Fallback state machine
-                if not token["ordered"]:
-                    is_ingredients_list = True
+                # Headerless fallback. Without headings the only signal is list style:
+                # unordered lists before the first ordered list are ingredients, an
+                # ordered list is directions, and any unordered list *after* directions
+                # have started is commentary rather than more ingredients.
+                inferred = True
+                resolved_component = None
+                if token["ordered"]:
+                    resolved_section = "directions"
+                    seen_ordered_list = True
+                elif seen_ordered_list:
+                    resolved_section = "notes"
+                else:
+                    resolved_section = "ingredients"
+
+            if resolved_section == "preamble":
+                # A list before the first section heading is front-matter prose (yields,
+                # sourcing, "makes 16 meatballs"), not an unlabelled ingredients list.
+                resolved_section = "preamble"
+
+            is_ingredients_list = (resolved_section == "ingredients")
+
+            list_block = ListBlock(
+                ordered=token["ordered"],
+                section_type=resolved_section,
+                component=resolved_component,
+                inferred_section=inferred,
+            )
 
             if is_ingredients_list:
                 for raw_item in steps_unrolled:
@@ -303,25 +344,35 @@ def build_hierarchical_blocks(block_tokens: List[Dict[str, Any]]) -> List[Any]:
     return blocks
 
 
-def process_recipe_document(file_path: Path) -> Tuple[RecipeDocument, List[str]]:
+def process_recipe_document(file_path: Path) -> Tuple[RecipeDocument, List[Diagnostic]]:
     """
     Parses a single Markdown document, running layout, normalization,
     and semantic tokenization rules.
+
+    Returns the structured document alongside every diagnostic raised while reading it.
     """
     file_post = frontmatter.load(file_path)
-    warnings = []
+    warnings: List[Diagnostic] = []
 
     # 1. Unicode character validation
+    raw_text_content = ""
     try:
-        with file_path.open("r", encoding="utf-8") as raw_file:
+        # utf-8-sig transparently drops a byte-order mark. It is an encoding artifact
+        # rather than authored content, so it should not be reported as a stray character.
+        with file_path.open("r", encoding="utf-8-sig") as raw_file:
             raw_text_content = raw_file.read()
         character_warnings = audit_non_ascii_characters(raw_text_content)
         warnings.extend(character_warnings)
     except Exception:
         logging.exception("Error validating unicode")
 
+    source_lines = raw_text_content.splitlines()
+
     # 2. Text preprocessing (URLs & local links)
-    updated_content = wrap_bare_urls_in_markdown(file_post.content)
+    # A byte-order mark sits in front of the first "#" and stops markdown-it from seeing
+    # a heading at all, which silently costs the document its title.
+    updated_content = file_post.content.lstrip("﻿")
+    updated_content = wrap_bare_urls_in_markdown(updated_content)
     updated_content = rewrite_markdown_links_to_html(updated_content)
 
     # 3. Assemble tokens and split blocks
@@ -333,7 +384,10 @@ def process_recipe_document(file_path: Path) -> Tuple[RecipeDocument, List[str]]
         title = f"Recipe {index + 1}"
         for token in run_tokens:
             if token["type"] == "Heading" and token["level"] == 1:
-                title = sanitize_header_text(token["text"])
+                # An empty "#" heading is not a usable title; keep the positional fallback.
+                heading_title = sanitize_header_text(token["text"])
+                if heading_title:
+                    title = heading_title
                 break
 
         # Build flat DOM blocks
@@ -353,10 +407,19 @@ def process_recipe_document(file_path: Path) -> Tuple[RecipeDocument, List[str]]
             candidate_yield = find_lax_yield_candidate(sibling_blocks)
             if candidate_yield:
                 yield_val = candidate_yield
-                warnings.append(
-                    f"[{title}] Missing serving or yield metadata. "
-                    f"Did you mean: \"{candidate_yield}\"?"
-                )
+                warnings.append(Diagnostic(
+                    severity=Severity.INFO,
+                    code=Code.YIELD_INFERRED,
+                    recipe=title,
+                    context=candidate_yield,
+                    message=(
+                        "No yield line was found in the preamble, so one was inferred from "
+                        "further down the document."
+                    ),
+                    detail=[
+                        "to make this explicit, move a line like 'Serves 4' directly under the title",
+                    ],
+                ))
 
         recipe_model = Recipe(
             title=title,
@@ -371,11 +434,20 @@ def process_recipe_document(file_path: Path) -> Tuple[RecipeDocument, List[str]]
         consistency_warnings = audit_component_consistency(recipe_model)
         warnings.extend(consistency_warnings)
 
+        completeness_warnings = audit_parse_completeness(recipe_model, source_lines)
+        warnings.extend(completeness_warnings)
+
         compiled_recipes.append(recipe_model)
 
     # Ensure warnings returned are unique and preserve order
     seen = set()
-    unique_warnings = [x for x in warnings if not (x in seen or seen.add(x))]
+    unique_warnings = []
+    for diagnostic in warnings:
+        key = (diagnostic.code, diagnostic.recipe, diagnostic.message, diagnostic.context)
+        if key in seen:
+            continue
+        seen.add(key)
+        unique_warnings.append(diagnostic)
 
     doc = RecipeDocument(
         source_file=str(file_path),
