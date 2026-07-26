@@ -83,19 +83,22 @@ PIECEWISE_WEIGHTS: Dict[str, tuple] = {
 # exists specifically to replace heaping (Fannie Farmer, 1896). Published rules of thumb
 # disagree by a factor of nearly four, from 1.3x up to "4-5x for fine powders".
 #
-# The bounds below come from the two things that are actually evidence:
-#   - Measurement: Nichols et al., J Pediatr Pharmacol Ther, June 2024, weighed level vs
-#     heaping household spoons of PEG-3350 and found ~1.5x (10 g -> 15 g), while noting
-#     heaping was the most variable method tested. https://pubmed.ncbi.nlm.nih.gov/38863850/
-#   - Geometry: the heap is a cone at the material's angle of repose. Rice (~25-31 deg)
-#     implies ~1.4-1.5x, flour and cocoa (~40-50 deg) imply ~1.7-2.0x. The often-quoted
-#     3x would need a repose angle of 58-76 deg, which no dry food sustains - it would
-#     avalanche off the spoon. So 3x and above are physically unrealisable, not merely
-#     unsourced.
+# The band is centred on 1.5x, the only figure anyone has actually measured: Nichols et
+# al., J Pediatr Pharmacol Ther, June 2024, weighed level vs heaping household spoons of
+# PEG-3350 and found 10 g -> 15 g, while noting heaping was the most variable method they
+# tested. https://pubmed.ncbi.nlm.nih.gov/38863850/
+#
+# Geometry brackets it: the heap is a cone at the material's angle of repose, so rice
+# (~25-31 deg) implies ~1.4x and flour or cocoa (~40-50 deg) implies ~1.7-2.0x. That model
+# over-predicts in practice - the two heaped lines in this corpus imply only 1.31x (flour)
+# and 1.39x (butter) - so the band is widened downwards rather than trusting the cone.
+#
+# The often-quoted 3x would need a repose angle of 58-76 deg. No dry food sustains that;
+# it avalanches off the spoon. 3x and above are physically impossible, not merely unsourced.
 #
 # The interval starts above 1.0 deliberately: a heaped spoon is definitionally more than
 # a level one, so "1 heaped Tbsp" must not silently agree with "1 Tbsp".
-HEAPED_MULTIPLIER = (1.3, 2.0)
+HEAPED_MULTIPLIER = (1.25, 1.75)
 
 # Piece units that name a container or portion rather than the ingredient itself.
 # Their weight depends on what is inside them, so they are never guessed from the name.

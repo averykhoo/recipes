@@ -103,6 +103,26 @@ class TestHeapedSpoons:
         """
         assert HEAPED_MULTIPLIER[1] <= 2.0
 
+    def test_the_band_brackets_the_one_measured_value(self):
+        """1.5x is the only figure anyone has weighed, so it must sit inside the band."""
+        low, high = HEAPED_MULTIPLIER
+        assert low < 1.5 < high
+
+    @pytest.mark.parametrize("line, stated_grams", [
+        ("1 heaped Tbsp (20g) butter", 20.0),
+        ("2 heaped Tbsp (20g) flour", 20.0),
+    ])
+    def test_the_band_covers_what_this_corpus_actually_implies(self, line, stated_grams):
+        """
+        These two real lines imply 1.39x and 1.31x. The geometric cone model predicts
+        flour should heap at ~1.7x, so the band has to reach lower than the model
+        suggests or honest recipes get reported as errors.
+        """
+        from recipe_parser.validation.linter import representation_gram_bounds
+        ingredient = parse_ingredient_line(line)
+        low, high = representation_gram_bounds(ingredient.representations[0], ingredient.name)
+        assert low <= stated_grams <= high
+
     def test_a_level_spoon_is_unaffected(self):
         term = [t for rep in parse_ingredient_line("1 Tbsp butter").representations
                 for t in rep.terms][0]
