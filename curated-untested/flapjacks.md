@@ -22,7 +22,7 @@ Makes one 9 x 12-inch tin (about 16-20 pieces )
 1. Melt the butter and syrup together.
 2. Mix the dry ingredients together in a large bowl. Add the melted butter/golden syrup mixture and mix well
 3. Spread evenly in a greased or lined tray and press down firmly.
-4. Bake in a moderate oven 190c/ 350f for 20 mins.
+4. Bake in a moderate oven 190c/ 370f for 20 mins.
 5. Cut into fingers while still warm, allow to cool, then chill to serve
 
 ---
