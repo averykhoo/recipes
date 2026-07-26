@@ -42,6 +42,10 @@ class Measurement(BaseModel):
         default=False,
         description="True when no unit word was written and a bare count was inferred (e.g. '2 lemons')."
     )
+    fill_state: Optional[str] = Field(
+        default=None,
+        description="How the spoon was filled, when the recipe says so: 'heaped'. None means level."
+    )
 
     @property
     def is_range(self) -> bool:

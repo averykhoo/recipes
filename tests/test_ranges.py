@@ -11,6 +11,7 @@ from recipe_parser.models.schemas import Measurement
 from recipe_parser.models.schemas import QuantityRepresentation
 from recipe_parser.models.schemas import UnitClass
 from recipe_parser.rules.ingredients import parse_ingredient_line
+from recipe_parser.utils.conversions import HEAPED_MULTIPLIER
 from recipe_parser.validation.linter import format_interval
 from recipe_parser.validation.linter import interval_discrepancy
 from recipe_parser.validation.linter import representation_gram_bounds
@@ -35,7 +36,9 @@ class TestQualifierWords:
         ("about 3 tbsp oil", 3.0, "tablespoon", "oil"),
         ("roughly 3 cloves garlic", 3.0, "clove", "garlic"),
         ("a scant 1/2 cup sugar", 0.5, "cup", "sugar"),
-        ("heaping 1 tbsp cocoa", 1.0, "tablespoon", "cocoa"),
+        # "heaping" is deliberately absent here: it hedges the FILL, not the number,
+        # and genuinely changes the quantity. See TestHeapedSpoons.
+        ("nearly 1 tbsp cocoa", 1.0, "tablespoon", "cocoa"),
         ("generous 250g butter", 250.0, "gram", "butter"),
     ])
     def test_qualifier_is_consumed(self, line, value, unit, name):
@@ -46,12 +49,12 @@ class TestQualifierWords:
         assert terms[0].unit == unit
         assert ingredient.name == name
 
-    @pytest.mark.parametrize("line, value, unit, name", [
-        ("1 heaped Tbsp butter", 1.0, "tablespoon", "butter"),
-        ("2 rounded tsp salt", 2.0, "teaspoon", "salt"),
-        ("1 scant cup sugar", 1.0, "cup", "sugar"),
+    @pytest.mark.parametrize("line, unit, name", [
+        ("1 heaped Tbsp butter", "tablespoon", "butter"),
+        ("2 rounded tsp salt", "teaspoon", "salt"),
+        ("1 scant cup sugar", "cup", "sugar"),
     ])
-    def test_qualifier_between_number_and_unit(self, line, value, unit, name):
+    def test_qualifier_between_number_and_unit(self, line, unit, name):
         """
         Regression: a hedge sitting between the number and the unit hid the unit
         completely, so "1 heaped Tbsp butter" became a bare count of 1 with the
@@ -60,10 +63,84 @@ class TestQualifierWords:
         ingredient = parse_ingredient_line(line)
         terms = [t for rep in ingredient.representations for t in rep.terms]
         assert len(terms) == 1
-        assert terms[0].value == pytest.approx(value)
         assert terms[0].unit == unit
         assert terms[0].implicit_unit is False
         assert ingredient.name == name
+
+
+class TestHeapedSpoons:
+    """
+    No standards body defines a heaped spoon - the FDA and NIST define only the level
+    one - and published rules of thumb disagree by nearly 4x. It is therefore recorded
+    as an interval rather than a fabricated point value.
+    """
+
+    @pytest.mark.parametrize("line, unit", [
+        ("1 heaped Tbsp butter", "tablespoon"),
+        ("1 heaping tsp cocoa", "teaspoon"),
+        ("1 rounded Tbsp flour", "tablespoon"),
+    ])
+    def test_heaped_spoon_is_a_range_above_level(self, line, unit):
+        term = [t for rep in parse_ingredient_line(line).representations for t in rep.terms][0]
+        low, high = HEAPED_MULTIPLIER
+        assert term.unit == unit
+        assert term.fill_state == "heaped"
+        assert term.is_range
+        assert term.value_min == pytest.approx(low)
+        assert term.value_max == pytest.approx(high)
+
+    def test_a_heaped_spoon_never_agrees_with_a_level_one(self):
+        """
+        The lower bound sits strictly above 1.0 on purpose. A heaped spoon is by
+        definition more than a level spoon, so the two must not overlap.
+        """
+        assert HEAPED_MULTIPLIER[0] > 1.0
+
+    def test_physically_impossible_multipliers_are_excluded(self):
+        """
+        A 3x heap needs a 58-76 degree angle of repose; no dry food stands at that
+        angle, it avalanches off the spoon. The upper bound must stay well below it.
+        """
+        assert HEAPED_MULTIPLIER[1] <= 2.0
+
+    def test_a_level_spoon_is_unaffected(self):
+        term = [t for rep in parse_ingredient_line("1 Tbsp butter").representations
+                for t in rep.terms][0]
+        assert term.fill_state is None
+        assert term.value == pytest.approx(1.0)
+        assert not term.is_range
+
+    def test_the_count_scales_the_heap(self):
+        term = [t for rep in parse_ingredient_line("2 heaped Tbsp flour").representations
+                for t in rep.terms][0]
+        low, high = HEAPED_MULTIPLIER
+        assert term.value_min == pytest.approx(2 * low)
+        assert term.value_max == pytest.approx(2 * high)
+
+    def test_heaped_is_meaningless_for_weight_units(self):
+        """You cannot heap a gram. The word must not widen a weight."""
+        term = [t for rep in parse_ingredient_line("20 heaped g flour").representations
+                for t in rep.terms][0]
+        assert term.fill_state is None
+        assert not term.is_range
+
+    def test_a_heaped_spoon_reconciles_with_a_stated_weight(self):
+        """
+        "1 heaped Tbsp (20g) butter" is only consistent once heaping is accounted for:
+        a level tablespoon of butter is ~14g, which would look like a 28% error.
+        """
+        from recipe_parser.models.schemas import IngredientItem
+        from recipe_parser.models.schemas import ListBlock
+        from recipe_parser.models.schemas import Recipe
+        from recipe_parser.validation.diagnostics import Code
+        from recipe_parser.validation.linter import lint_recipe_document
+
+        line = "1 heaped Tbsp (20g) butter"
+        block = ListBlock(section_type="ingredients", items=[
+            IngredientItem(raw_line=line, parsed_ingredient=parse_ingredient_line(line))
+        ])
+        codes = [d.code for d in lint_recipe_document(Recipe(title="t", blocks=[block]))]
+        assert Code.CONVERSION_DISCREPANCY not in codes
 
     @pytest.mark.parametrize("line, name", [
         ("2 large lemons", "large lemons"),

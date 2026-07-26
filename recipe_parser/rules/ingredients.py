@@ -11,6 +11,7 @@ from recipe_parser.models.schemas import Ingredient
 from recipe_parser.models.schemas import Measurement
 from recipe_parser.models.schemas import QuantityRepresentation
 from recipe_parser.models.schemas import UnitClass
+from recipe_parser.utils.conversions import HEAPED_MULTIPLIER
 from recipe_parser.utils.numeric import RANGE_SEPARATOR
 from recipe_parser.utils.numeric import VULGAR_FRACTION_CLASS
 from recipe_parser.utils.numeric import parse_quantity_bounds
@@ -82,10 +83,14 @@ _QUALIFIER_PREFIX = rf"(?:(?:a\s+)?{_QUALIFIER}\s+)*"
 # The same hedge can also sit between the number and the unit: "1 heaped Tbsp butter".
 RE_QUALIFIER_AFTER_NUMBER = re.compile(rf"^{_QUALIFIER}\s+", re.IGNORECASE)
 
+# Hedges that describe how the spoon was FILLED rather than how loosely the number was
+# meant. These denote a genuinely larger quantity than a level spoon.
+RE_HEAPING_WORD = re.compile(r"\b(?:heaping|heaped|heaped-up|rounded)\b", re.IGNORECASE)
+
 # Matches leading floats, fractions, vulgar fractions, mixed numbers and ranges.
 # A leading "~" (approximately) or hedge word is consumed but not captured.
 RE_LEADING_NUM = re.compile(
-    rf"^{_QUALIFIER_PREFIX}~?\s*(?P<val>{_QUANTITY})\s*(?P<rest>.+)?$",
+    rf"^(?P<qualifier>{_QUALIFIER_PREFIX})~?\s*(?P<val>{_QUANTITY})\s*(?P<rest>.+)?$",
     re.UNICODE | re.IGNORECASE
 )
 
@@ -202,7 +207,13 @@ def parse_single_term(term_text: str, allow_bare_count: bool = False) -> Optiona
 
     # "1 heaped Tbsp butter" hedges between the number and the unit. Without this the
     # unit is never seen and the line collapses to a bare count of 1.
-    rest = RE_QUALIFIER_AFTER_NUMBER.sub("", rest).strip()
+    qualifier_text = match.group("qualifier") or ""
+    mid_qualifier = RE_QUALIFIER_AFTER_NUMBER.match(rest)
+    if mid_qualifier:
+        qualifier_text += " " + mid_qualifier.group(0)
+        rest = rest[mid_qualifier.end():].strip()
+
+    fill_state = "heaped" if RE_HEAPING_WORD.search(qualifier_text) else None
 
     parsed_val = parse_single_quantity(raw_val)
     if parsed_val is None:
@@ -215,12 +226,26 @@ def parse_single_term(term_text: str, allow_bare_count: bool = False) -> Optiona
 
     if first_word in UNIT_LOOKUP:
         canonical_name, unit_class = UNIT_LOOKUP[first_word]
+
+        # A heaped spoon holds more than a level one, by an amount nobody has ever
+        # standardised. Widen the interval rather than inventing a point value.
+        if fill_state == "heaped" and unit_class == UnitClass.VOLUME:
+            low_multiplier, high_multiplier = HEAPED_MULTIPLIER
+            base_min = value_min if value_min is not None else parsed_val
+            base_max = value_max if value_max is not None else parsed_val
+            value_min = base_min * low_multiplier
+            value_max = base_max * high_multiplier
+            parsed_val = (value_min + value_max) / 2.0
+        else:
+            fill_state = None
+
         return Measurement(
             value=parsed_val,
             value_min=value_min,
             value_max=value_max,
             unit=canonical_name,
             unit_class=unit_class,
+            fill_state=fill_state,
         )
 
     if not allow_bare_count:
