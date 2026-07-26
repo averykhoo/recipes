@@ -41,7 +41,7 @@ Serve the meatballs with mashed potatoes, cold-stirred lingonberry jam, and salt
 * SALT, WHITE PEPPER AND POSSIBLY ALLSPICE
 * A LITTLE WATER IF NEEDED
 
-## Ingredients or the sauce
+## Ingredients for the sauce
 
 * 2 TBSP BUTTER
 * 2 TBSP WHEAT FLOUR

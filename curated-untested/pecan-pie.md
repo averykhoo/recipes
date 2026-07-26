@@ -11,12 +11,12 @@ Active time: about 30 minutes
 ## Ingredients
 
 * 4 large eggs
-* 1 cup, 8 ounces water
-* 3 cups, 21 ounces plain or toasted sugar
+* 1 cup (8 ounces) water
+* 3 cups (21 ounces) plain or toasted sugar
 * 1.5 teaspoon kosher salt, such as Diamond Crystal
-* 1 stick, 4 ounces unsalted butter, cold
+* 1 stick (4 ounces) unsalted butter, cold
 * 1 Tablespoon vanilla extract, Scotch, or bourbon
-* 2.5 cups, 10 ounces pecan halves, raw
+* 2.5 cups (10 ounces) pecan halves, raw
 * 1 fully baked 9-inch pie crust
 
 ## Directions

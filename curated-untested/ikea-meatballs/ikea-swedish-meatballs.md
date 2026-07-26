@@ -26,8 +26,7 @@ sticking to them.
 * 1 egg white
 * 0.333 cup beef broth
 * 2 tablespoons water
-* 0.5 pound ground beef
-* (20 percent fat)
+* 0.5 pound ground beef (20 percent fat)
 * 0.5 pound ground pork
 * 0.5 cup plain bread crumbs
 * 1 teaspoon salt

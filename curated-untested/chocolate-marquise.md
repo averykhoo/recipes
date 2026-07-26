@@ -13,7 +13,7 @@ Serves 8
 * 3 egg yolks
 * 2 TBS brandy
 * 1.25 cups (300ml) heavy/double cream
-* 1 1lb loaf tin, lined with plastic wrap/cling film
+* 1 loaf tin (1lb), lined with plastic wrap/cling film
 
 ## Directions
 

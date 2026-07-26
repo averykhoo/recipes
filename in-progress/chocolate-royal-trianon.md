@@ -32,7 +32,9 @@ see also: https://www.tartedor.nl/chocolate-royal/
 * 0.5 cup + 2 tablespoons (145ml) whipping cream
 * 3.333 gelatin sheets (or 8g powdered gelatin bloomed in 0.25 cup (60ml) cold water)
 
-## Directions for the dacquoise (almond biscuit similar to a coarse macaron)
+## Directions for the dacquoise
+
+(almond biscuit similar to a coarse macaron)
 
 1. Preheat the oven to 335°F / 170°C.
 2. Sift powdered (icing) sugar, almond flour, and hazelnut flour through a flour sifter.

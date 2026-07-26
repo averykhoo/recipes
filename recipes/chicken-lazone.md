@@ -9,7 +9,7 @@
 * works with garlic fried rice or pasta
 * potato dauphinoise makes a good side dish
 
-# INGREDIENTS FOR AN OVEN
+## Ingredients for an oven
 
 * 1-2 teaspoons salt
 * 1 teaspoon chili powder
@@ -18,16 +18,14 @@
 * 0.5 cup butter
 * 1 cup heavy cream
 
-## DIRECTIONS FOR AN OVEN
+## Directions for an oven
 
 1. Put into blender.
 2. Blend.
 3. Cover chicken.
 4. Bake at low heat until chicken is cooked.
 
----
-
-# FOR COOKING IN A PAN
+## For cooking in a pan
 
 (partial merge with alfredo recipe)
 

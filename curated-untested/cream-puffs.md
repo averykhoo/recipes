@@ -27,7 +27,7 @@ https://www.youtube.com/watch?v=3xtSr5iIuTo
 * 170g heavy cream
 * 17g sugar
 
-## Directions for Choux Pastry
+## Directions for choux
 
 1. Cut the sides of a plastic bag with scissors.
 2. In a bowl, mix 33g unsalted butter (softened) with 40g sugar until well combined.

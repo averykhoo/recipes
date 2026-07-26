@@ -31,7 +31,7 @@ plain).
 * 5 eggs + 2 egg yolks
 * 0.5 cups sour cream
 
-## Directions for crust
+## Directions for Graham cracker crust
 
 1. Butter the bottom and sides of a 9-inch springform pan.
 2. In a mixing bowl, combine graham crumbs, butter and sugar – mix well.

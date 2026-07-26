@@ -9,7 +9,7 @@ and cream sauce.
 The dish is an unexpected meeting of flavours as the lingonberry sweetness contrasts, yet harmonizes, with the
 meatballs, while the cream sauce serves as a neutral "mediator" between the two.
 
-## Ingredients - Meatballs
+## Ingredients for Meatballs
 
 * 250 g minced beef
 * 250 g minced pork
@@ -23,7 +23,7 @@ meatballs, while the cream sauce serves as a neutral "mediator" between the two.
 * white pepper
 * (allspice)
 
-## Directions - Meatballs
+## Directions for Meatballs
 
 1. Heat the onion until golden in a couple of tablespoons of lightly browned butter.
 2. Mash the potatoes and moisten the rusk flour in a little water.
@@ -32,16 +32,16 @@ meatballs, while the cream sauce serves as a neutral "mediator" between the two.
 4. Shape the farce into round balls and transfer to a floured chopping board, then fry them quite slowly in plenty of
    butter.
 
-## Ingredients - Cream Sauce
+## Ingredients for Cream Sauce
 
 * 100 ml double cream
 * 200 l water or beef stock
 * soy
 * salt
 * white pepper
-* (1 Tbsp white flour)
+* 1 Tbsp white flour
 
-## Directions - Cream sauce
+## Directions for Cream Sauce
 
 1. Swirl out the pan with a couple of decilitres of boiling water or meat stock.
 2. Strain the pan juices and dilute with cream.
