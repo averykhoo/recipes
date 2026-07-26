@@ -61,7 +61,12 @@ PIECEWISE_WEIGHTS: Dict[str, tuple] = {
     "*egg*":         (44.0, 63.0),    # USDA medium (44g) to jumbo (63g), shelled
     "*egg_yolk*":    (15.0, 20.0),
     "*egg_white*":   (29.0, 38.0),
-    "*garlic*":      (3.0, 7.0),      # per clove; USDA nominal is 3 g
+    # Per clove, peeled. USDA's 3 g (SR Legacy 169230) is a legacy nominal for a small
+    # softneck clove and is best read as the floor, not the centre - the modern Foundation
+    # Foods entry dropped the per-clove portion entirely. Singapore retail garlic is
+    # Chinese: the Jinxiang PGI spec is a 40-80 g bulb of 8-11 cloves, which works out to
+    # roughly 3-9 g peeled per clove depending on where in the bulb it sat.
+    "*garlic*":      (3.0, 8.0),
     "*lemon*":       (58.0, 120.0),
     "*lime*":        (44.0, 90.0),
     "*onion*":       (70.0, 400.0),   # small to large
