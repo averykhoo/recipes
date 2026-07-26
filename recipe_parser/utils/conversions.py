@@ -9,27 +9,76 @@ from recipe_parser.models.schemas import Measurement
 from recipe_parser.models.schemas import UnitClass
 
 # Standard conversion multipliers to standard metric base units (ml for volume, g for weight)
+#
+# Weight factors are the exact international (1959) definitions, per NIST:
+#   1 lb (avoirdupois) = 0.453 592 37 kg exactly  -> 453.59237 g
+#   1 oz (avoirdupois) = 1/16 lb exactly          ->  28.349523125 g
+#   NIST HB 44 App. C: https://www.nist.gov/document/2023-nist-handbook-44-appendix-c-0
+#   NIST SP 811 App. B.9: https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9
+#
+# Volume factors use the FDA "legal"/labelling definitions (21 CFR 101.9(b)(5)(viii)):
+#   1 cup = 240 mL, 1 tablespoon = 15 mL, 1 teaspoon = 5 mL
+#   https://www.ecfr.gov/current/title-21/chapter-I/subchapter-B/part-101/subpart-A/section-101.9
+#
+# NOTE ON THE CHOICE OF SYSTEM. The US *customary* set is cup = 236.5882365 mL,
+# tablespoon = 14.78676478 mL, teaspoon = 4.92892159 mL. Either system is defensible,
+# but they must not be mixed: this table previously paired a legal 240 mL cup with
+# customary 14.7868/4.92892 spoons, which implies 16.23 tablespoons per cup instead of 16.
+# The FDA set is used here because it keeps the invariant cup == 16 * tablespoon == 48 * teaspoon,
+# it preserves the 240 mL cup the recipes in this repo were already written against, and the
+# 15 mL / 5 mL spoons match the UK/metric sources in the corpus as well as the US ones.
 METRIC_CONVERSIONS: Dict[str, float] = {
     # Weight (Base: gram)
     "gram":       1.0,
     "kilogram":   1000.0,
-    "ounce":      28.3495,
-    "pound":      453.5923,
+    "ounce":      28.349523125,
+    "pound":      453.59237,
     # Volume (Base: milliliter)
     "milliliter": 1.0,
     "liter":      1000.0,
-    "tablespoon": 14.7868,
-    "teaspoon":   4.92892,
+    "tablespoon": 15.0,
+    "teaspoon":   5.0,
     "cup":        240.0,
 }
 
-# Nominal weights (g) for discrete items
-PIECEWISE_WEIGHTS: Dict[str, float] = {
-    "egg":          50.0,
-    "butter_stick": 250.0,  # Tailored to local 250g butter sticks
-    "garlic_clove": 5.0,
-    "lemon":        100.0,
+# Nominal weights (g) for discrete items, keyed by glob patterns matched against the
+# *ingredient name* - not the unit. "2 cloves garlic" carries the unit "clove" and the
+# name "garlic", so the name is the only place the identity of the thing being counted
+# actually lives.
+#
+# An unmatched piece measurement yields None, meaning "unknown", never 0 g. Zero is a
+# confident claim that the ingredient is weightless, and it made "2 lemons (200 g)" look
+# like a 100% conversion error rather than something the parser simply cannot check.
+#
+# Reference values (USDA FoodData Central): large egg without shell = 50 g;
+# 1 garlic clove = 3 g (real cloves span roughly 3-7 g); lemon without peel = 58 g,
+# whole medium lemon = 100-110 g.
+# Each entry is the (min, max) weight of one item in grams. A range, not a point: a
+# "small potato" and a "large potato" differ by a factor of three, and pretending a
+# nominal figure is exact turns every honest count into a spurious conversion error.
+# The comparison logic works on intervals, so the uncertainty propagates properly.
+PIECEWISE_WEIGHTS: Dict[str, tuple] = {
+    "*egg*":         (44.0, 63.0),    # USDA medium (44g) to jumbo (63g), shelled
+    "*egg_yolk*":    (15.0, 20.0),
+    "*egg_white*":   (29.0, 38.0),
+    "*garlic*":      (3.0, 7.0),      # per clove; USDA nominal is 3 g
+    "*lemon*":       (58.0, 120.0),
+    "*lime*":        (44.0, 90.0),
+    "*onion*":       (70.0, 400.0),   # small to large
+    "*shallot*":     (20.0, 50.0),
+    "*carrot*":      (45.0, 90.0),
+    "*potato*":      (90.0, 300.0),   # small to large
+    "*banana*":      (90.0, 145.0),   # peeled
+    "*zucchini*":    (120.0, 320.0),
+    "*eggplant*":    (300.0, 550.0),
+    "*bell_pepper*": (90.0, 170.0),
+    "*capsicum*":    (90.0, 170.0),
+    "*tomato*":      (90.0, 250.0),   # salad tomato to beefsteak
 }
+
+# Piece units that name a container or portion rather than the ingredient itself.
+# Their weight depends on what is inside them, so they are never guessed from the name.
+OPAQUE_PIECE_UNITS = {"can", "block", "envelope", "bunch", "head", "stick", "piece", "slice"}
 
 
 def load_densities_from_csv() -> Dict[str, float]:
@@ -78,6 +127,30 @@ def load_densities_from_csv() -> Dict[str, float]:
 INGREDIENT_DENSITIES = load_densities_from_csv()
 
 
+def match_by_specificity(normalized_name: str, table: Dict[str, float]):
+    """
+    Finds the most specific glob pattern in `table` matching an ingredient name.
+
+    Ranking is (exact match, literal character count, total pattern length), all
+    descending, so "*ground_ginger*" beats the catch-all "*ground*" regardless of the
+    order the patterns happen to appear in. Returns (pattern, value), or (None, None).
+    """
+    matching_keys = [
+        key for key in table
+        if fnmatch.fnmatch(normalized_name, key) or fnmatch.fnmatch(normalized_name, f"*{key}*")
+    ]
+    if not matching_keys:
+        return (None, None)
+
+    def specificity(pattern: str) -> tuple:
+        is_exact = (pattern == normalized_name)
+        literal_length = len(pattern.replace("*", "").replace("?", ""))
+        return (is_exact, literal_length, len(pattern))
+
+    best = max(matching_keys, key=specificity)
+    return (best, table[best])
+
+
 def normalize_measurement_to_grams(measurement: Measurement, ingredient_name: str) -> Optional[float]:
     """
     Translates any volumetric, weight-based, or piece-based measurement into standard grams.
@@ -91,6 +164,7 @@ def get_normalization_details(measurement: Measurement, ingredient_name: str) ->
     Returns a dictionary containing the matched category, density/piece weight,
     and normalized gram weight for debugging/validation purposes.
     """
+    # Clean up name strings containing slashes or dashes to allow clean pattern matching
     normalized_name = ingredient_name.lower().replace(" ", "_").replace("-", "_").replace("/", "_")
 
     # 1. Nesting Piece Case
@@ -104,14 +178,31 @@ def get_normalization_details(measurement: Measurement, ingredient_name: str) ->
             "details": f"Nested Piece container: {measurement.value} * {inner_details.get('value')}g ({inner_details.get('details')})"
         }
 
-    # 2. Piece Case
+    # 2. Piece Case - resolved from the ingredient name, since the unit ("clove", "count")
+    #    says how it is portioned but not what it is.
     if measurement.unit_class == UnitClass.PIECE:
-        singular_unit = measurement.unit.rstrip("s").lower()
-        weight = PIECEWISE_WEIGHTS.get(singular_unit, 0.0)
+        unit_name = measurement.unit.lower()
+        if unit_name in OPAQUE_PIECE_UNITS:
+            return {
+                "value":   None,
+                "unit":    measurement.unit,
+                "details": f"'{unit_name}' is a container unit; its weight depends on the contents (unknown)"
+            }
+
+        matched_pattern, weight_range = match_by_specificity(normalized_name, PIECEWISE_WEIGHTS)
+        if weight_range is None:
+            return {
+                "value":   None,
+                "unit":    measurement.unit,
+                "details": f"No piece weight known for '{normalized_name}' (unknown, not zero)"
+            }
+        low_weight, high_weight = weight_range
         return {
-            "value":   measurement.value * weight,
-            "unit":    measurement.unit,
-            "details": f"Piece weight for '{singular_unit}': {weight}g/pc" if weight > 0 else f"No piecewise weight matched for '{singular_unit}' (defaulting to 0.0g)"
+            "value":     measurement.value * (low_weight + high_weight) / 2.0,
+            "value_min": measurement.value * low_weight,
+            "value_max": measurement.value * high_weight,
+            "unit":      measurement.unit,
+            "details":   f"Piece weight for pattern '{matched_pattern}': {low_weight:g}-{high_weight:g}g each"
         }
 
     # 3. Weight Case
@@ -128,22 +219,10 @@ def get_normalization_details(measurement: Measurement, ingredient_name: str) ->
         factor = METRIC_CONVERSIONS.get(measurement.unit.lower(), 1.0)
         total_ml = measurement.value * factor
 
-        # Search logic utilizing fnmatch globs
-        matched_key = "water (default)"
-        density = 1.0
-
-        # Try direct match first
-        if normalized_name in INGREDIENT_DENSITIES:
-            matched_key = normalized_name
-            density = INGREDIENT_DENSITIES[normalized_name]
-        else:
-            # Sort keys by length descending to match more specific glob pattern keys first
-            sorted_keys = sorted(INGREDIENT_DENSITIES.keys(), key=len, reverse=True)
-            for key in sorted_keys:
-                if fnmatch.fnmatch(normalized_name, key) or fnmatch.fnmatch(normalized_name, f"*{key}*"):
-                    matched_key = key
-                    density = INGREDIENT_DENSITIES[key]
-                    break
+        matched_key, density = match_by_specificity(normalized_name, INGREDIENT_DENSITIES)
+        if density is None:
+            matched_key = "water (default)"
+            density = 1.0
 
         return {
             "value":   total_ml * density,
