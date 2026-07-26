@@ -25,7 +25,7 @@ see also: meringue pumpkin pie recipe below
 
 1. Optionally, put pumpkin in nonstick saucepan and stir over direct heat for 10 minutes until somewhat dry and slightly
    caramelized, stirring frequently. Remove from heat but keep hot.
-2. Adjust oven rack to the middle upper position and preheat the oven to 200°C (400°F)
+2. Adjust oven rack to the middle upper position and preheat the oven to 200°C (390°F)
 3. Place pumpkin in a large mixing bowl and whisk in beaten eggs (only after the pumpkin is moderately cool, if it was cooked). 
 4. Add the cinnamon, salt, ginger, cloves, and mace and whisk to thoroughly combine.
 5. Gradually add the sugar, followed by the heavy cream, whisking until all ingredients are incorporated.

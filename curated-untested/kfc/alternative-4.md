@@ -27,3 +27,14 @@ https://youtu.be/7CZwrJBAkq4
 5. Prepare an egg wash of 1 egg to 1 cup of milk.
 6. Dip chicken in egg wash, then dredge in flour spice mix.
 7. Deep fry until golden brown and cooked through.
+
+## Notes
+
+* The gram figures and the spoon figures above do not agree with each other. Taking
+  standard spice weights, the stated grams run roughly 15-45% heavier than the stated
+  tablespoons and teaspoons, and the discrepancy is not consistent from spice to spice.
+* This was transcribed from the video linked above, so at least one of the two sets is
+  likely to be a mishearing. Neither has been verified, and nothing here has been
+  adjusted to make them match.
+* Pick one set and use it throughout rather than mixing the two. Check the source video
+  before trusting either.

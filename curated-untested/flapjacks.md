@@ -6,12 +6,12 @@ Makes one 9 x 12-inch tin (about 16-20 pieces )
 
 ## Ingredients
 
-* 8 oz (200 grams) salted butter
+* 200 grams salted butter
 * 4 Tbsp golden syrup (you can substitute honey or maple syrup but it won't be authentic)
-* 8 oz (200 grams) granulated sugar
-* 4oz (100 grams) oats
-* 4oz (100 grams) self rising flour
-* 6oz (150 grams) cornflakes (lightly crushed)
+* 200 grams granulated sugar
+* 100 grams oats
+* 100 grams self rising flour
+* 150 grams cornflakes (lightly crushed)
 
 * (optional) Nuts
 * (optional) Dried fruit
