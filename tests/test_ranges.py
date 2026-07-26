@@ -46,6 +46,38 @@ class TestQualifierWords:
         assert terms[0].unit == unit
         assert ingredient.name == name
 
+    @pytest.mark.parametrize("line, value, unit, name", [
+        ("1 heaped Tbsp butter", 1.0, "tablespoon", "butter"),
+        ("2 rounded tsp salt", 2.0, "teaspoon", "salt"),
+        ("1 scant cup sugar", 1.0, "cup", "sugar"),
+    ])
+    def test_qualifier_between_number_and_unit(self, line, value, unit, name):
+        """
+        Regression: a hedge sitting between the number and the unit hid the unit
+        completely, so "1 heaped Tbsp butter" became a bare count of 1 with the
+        tablespoon lost and "heaped Tbsp" stuck in the name.
+        """
+        ingredient = parse_ingredient_line(line)
+        terms = [t for rep in ingredient.representations for t in rep.terms]
+        assert len(terms) == 1
+        assert terms[0].value == pytest.approx(value)
+        assert terms[0].unit == unit
+        assert terms[0].implicit_unit is False
+        assert ingredient.name == name
+
+    @pytest.mark.parametrize("line, name", [
+        ("2 large lemons", "large lemons"),
+        ("2 small potatoes", "small potatoes"),
+        ("3 medium onions", "medium onions"),
+    ])
+    def test_size_adjectives_are_not_treated_as_hedges(self, line, name):
+        """"large" describes the ingredient and must stay in its name."""
+        assert parse_ingredient_line(line).name == name
+
+    def test_stranded_punctuation_is_trimmed_from_the_name(self):
+        line = "Custard Powder (N.B. 1 TB = 2 Dessertspoons!):"
+        assert parse_ingredient_line(line).name == "Custard Powder"
+
     def test_qualifier_in_front_of_a_range(self):
         """The hardest real case in the corpus: hedge + word-range + vulgar fraction."""
         ingredient = parse_ingredient_line("About 1 to 1½ cups (100-150 g) fresh bread crumbs")

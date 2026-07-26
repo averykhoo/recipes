@@ -71,11 +71,16 @@ _QUANTITY = rf"(?:{_SINGLE_NUM}(?:{RANGE_SEPARATOR}{_SINGLE_NUM})?)"
 
 # Hedge words that precede a quantity without changing it. "About 1 to 1½ cups" is a
 # quantity; the hedge only tells the cook the number is not exact.
+# Deliberately excludes size adjectives such as "large" or "small": those describe the
+# ingredient and belong to its name, whereas these only hedge the number.
 _QUALIFIER = (
     r"(?:about|approx|approx\.|approximately|roughly|around|nearly|"
-    r"scant|heaping|heaped|generous|big|small|good)"
+    r"scant|heaping|heaped|heaped-up|generous|rounded|level|full)"
 )
 _QUALIFIER_PREFIX = rf"(?:(?:a\s+)?{_QUALIFIER}\s+)*"
+
+# The same hedge can also sit between the number and the unit: "1 heaped Tbsp butter".
+RE_QUALIFIER_AFTER_NUMBER = re.compile(rf"^{_QUALIFIER}\s+", re.IGNORECASE)
 
 # Matches leading floats, fractions, vulgar fractions, mixed numbers and ranges.
 # A leading "~" (approximately) or hedge word is consumed but not captured.
@@ -130,7 +135,7 @@ RE_TRAILING_OPTIONAL = re.compile(r"\s*[,;(\-\u2013\u2014]?\s*\(?\s*optional\s*\
 # covers bare counts ("2 lemons"), hyphenated units ("6-pound pumpkin"), pack
 # multipliers ("2x 300g spinach") and ranges with the unit on either or both ends
 # ("1-2 tsp", "500g-750g").
-_UNIT_SUFFIX = rf"(?:[-–—]?\s*(?:{UNIT_ALTERNATION})\b\.?\s*)?"
+_UNIT_SUFFIX = rf"(?:[-–—]?\s*(?:{_QUALIFIER}\s+)?(?:{UNIT_ALTERNATION})\b\.?\s*)?"
 RE_NAME_STRIP = re.compile(
     rf"^\s*{_QUALIFIER_PREFIX}~?\s*"
     rf"(?:\d+\s*[x×]\s+)?"
@@ -194,6 +199,10 @@ def parse_single_term(term_text: str, allow_bare_count: bool = False) -> Optiona
     # a letter is a compound adjective, not a range.
     if re.match(r"^[-–—]\s*[a-z]", rest, re.IGNORECASE):
         rest = rest[1:].strip()
+
+    # "1 heaped Tbsp butter" hedges between the number and the unit. Without this the
+    # unit is never seen and the line collapses to a bare count of 1.
+    rest = RE_QUALIFIER_AFTER_NUMBER.sub("", rest).strip()
 
     parsed_val = parse_single_quantity(raw_val)
     if parsed_val is None:
@@ -398,8 +407,10 @@ def parse_ingredient_line(raw_line: str) -> Optional[Ingredient]:
     # 3. Strip any remaining descriptive brackets or parentheticals from the name
     ingredient_name = re.sub(r"[\(\[【（].*?[\)\]】）]", "", ingredient_name).strip()
 
-    # 4. Clean up multiple spaces and trailing/leading junk
+    # 4. Clean up multiple spaces and trailing/leading junk. Removing a parenthetical can
+    #    strand the punctuation that introduced it, e.g. "Custard Powder (...):" -> "... :".
     ingredient_name = re.sub(r"\s+", " ", ingredient_name).strip()
+    ingredient_name = ingredient_name.strip(" ,;:-–—").strip()
 
     return Ingredient(
         raw=raw_line.strip(),
