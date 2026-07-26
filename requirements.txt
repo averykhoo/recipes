@@ -3,3 +3,4 @@ pydantic
 pydantic-settings
 markdown-it-py[linkify]
 pyyaml
+pytest

@@ -17,8 +17,33 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # Gate: nothing is published unless the parser test suite passes.
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run parser test suite
+        run: python -m pytest -q
+
+      # Content lint. Reported for visibility but does not block publishing, since a
+      # recipe the parser cannot fully read is still a recipe worth putting on the site.
+      - name: Validate recipe corpus
+        continue-on-error: true
+        run: python validate_recipes_v2.py --no-json
+
   build:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
