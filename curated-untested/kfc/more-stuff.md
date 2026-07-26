@@ -187,7 +187,7 @@ Yields 4 to 6 servings
 
 * 2 pounds Russet potatoes, about 8 medium
 * 0.333 to 0.5 cup milk, half and half, heavy cream or whipping cream
-* 0.25 cup butter (3 tablespoons)
+* 0.25 cup butter (4 tablespoons)
 * 0.125 teaspoon fresh ground black pepper
 * 1 tsp of Kosher salt
 
