@@ -24,10 +24,10 @@ from recipe_parser.models.schemas import Recipe
 from recipe_parser.models.schemas import RecipeDocument
 from recipe_parser.models.schemas import TableBlock
 from recipe_parser.models.schemas import TextBlock
+from recipe_parser.rules.directions import extract_flagged_steps_recursively
 from recipe_parser.rules.directions import extract_flat_steps_recursively
 from recipe_parser.rules.directions import scan_inline_metadata
 from recipe_parser.rules.ingredients import parse_ingredient_line
-from recipe_parser.rules.links import rewrite_markdown_links_to_html
 from recipe_parser.rules.links import wrap_bare_urls_in_markdown
 from recipe_parser.rules.yields import extract_strict_yield
 from recipe_parser.rules.yields import find_lax_yield_candidate
@@ -35,6 +35,7 @@ from recipe_parser.utils.sanitizer import sanitize_header_text
 from recipe_parser.validation.characters import audit_non_ascii_characters
 from recipe_parser.validation.completeness import audit_parse_completeness
 from recipe_parser.validation.consistency import audit_component_consistency
+from recipe_parser.validation.coverage import audit_source_coverage
 from recipe_parser.validation.diagnostics import Code
 from recipe_parser.validation.diagnostics import Diagnostic
 from recipe_parser.validation.diagnostics import Severity
@@ -286,7 +287,6 @@ def build_hierarchical_blocks(block_tokens: List[Dict[str, Any]]) -> List[Any]:
             parser_engine = MarkdownIt()
             parsed_ast = parser_engine.parse(token["raw_text"])
             tree_root = SyntaxTreeNode(parsed_ast)
-            steps_unrolled = extract_flat_steps_recursively(tree_root)
 
             # Semantic extraction based on active container state
             inferred = False
@@ -323,15 +323,17 @@ def build_hierarchical_blocks(block_tokens: List[Dict[str, Any]]) -> List[Any]:
             )
 
             if is_ingredients_list:
-                for raw_item in steps_unrolled:
-                    parsed_ing = parse_ingredient_line(raw_item)
+                # Ingredients need the optional flag that a bare "optional:" group header
+                # carries on behalf of its nested children.
+                for raw_item, item_is_optional in extract_flagged_steps_recursively(tree_root):
+                    parsed_ing = parse_ingredient_line(raw_item, force_optional=item_is_optional)
                     list_block.items.append(IngredientItem(
                         raw_line=raw_item,
                         parsed_ingredient=parsed_ing
                     ))
             else:
-                # Directions list: Extract steps and run inline metadata scanning
-                for idx, raw_step in enumerate(steps_unrolled):
+                # Directions list: every line is prose and is kept exactly as written.
+                for idx, raw_step in enumerate(extract_flat_steps_recursively(tree_root)):
                     list_block.items.append(raw_step)
                     temps, durations = scan_inline_metadata(raw_step)
                     if temps:
@@ -371,9 +373,13 @@ def process_recipe_document(file_path: Path) -> Tuple[RecipeDocument, List[Diagn
     # 2. Text preprocessing (URLs & local links)
     # A byte-order mark sits in front of the first "#" and stops markdown-it from seeing
     # a heading at all, which silently costs the document its title.
+    #
+    # Local ".md" link targets are deliberately NOT rewritten to ".html" here. That rewrite
+    # is a rendering concern - the Jekyll prebuild (.jekyll-build/scripts/jekyll_prebuild.py)
+    # does its own, over the files it publishes - and running it first made every parsed
+    # raw_line claim a ".html" target that no source file contains.
     updated_content = file_post.content.lstrip("﻿")
     updated_content = wrap_bare_urls_in_markdown(updated_content)
-    updated_content = rewrite_markdown_links_to_html(updated_content)
 
     # 3. Assemble tokens and split blocks
     tokens = assemble_token_array(updated_content)
@@ -438,6 +444,10 @@ def process_recipe_document(file_path: Path) -> Tuple[RecipeDocument, List[Diagn
         warnings.extend(completeness_warnings)
 
         compiled_recipes.append(recipe_model)
+
+    # Source coverage compares the whole file against every recipe parsed from it, so it
+    # runs once here rather than inside the per-recipe loop above.
+    warnings.extend(audit_source_coverage(compiled_recipes, raw_text_content))
 
     # Ensure warnings returned are unique and preserve order
     seen = set()

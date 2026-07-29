@@ -12,6 +12,10 @@ from markdown_it.tree import SyntaxTreeNode
 
 from recipe_parser.utils.sanitizer import strip_html_and_markdown_comments
 
+# A list item that says nothing but "optional:" is a group header rather than an item of
+# its own: the nested list underneath it holds the ingredients that are optional.
+RE_OPTIONAL_GROUP_HEADER = re.compile(r"^optional\s*:?\s*$", re.IGNORECASE)
+
 # Matches temperatures (Celsius or Fahrenheit)
 RE_TEMP = re.compile(r"\b(?P<val>\d+)\s*(?:°|deg|degrees)?\s*(?P<scale>[CF])\b", re.IGNORECASE)
 
@@ -56,7 +60,23 @@ def extract_flat_steps_recursively(node: SyntaxTreeNode) -> List[str]:
     """
     Traverses markdown-it nodes to cleanly unroll nested lists.
     """
-    steps = []
+    return [text for text, _ in extract_flagged_steps_recursively(node, group_headers_are_items=True)]
+
+
+def extract_flagged_steps_recursively(
+        node: SyntaxTreeNode,
+        inherited_optional: bool = False,
+        group_headers_are_items: bool = False,
+) -> List[Tuple[str, bool]]:
+    """
+    Unrolls nested lists into (text, is_optional) pairs.
+
+    A bare "optional:" item introduces its nested sub-list rather than naming anything, so
+    its children inherit the marker and the header itself yields no item. Callers that
+    want the raw text of every line back - directions, where "optional:" is prose like any
+    other step - pass `group_headers_are_items` to keep the header in the output.
+    """
+    steps: List[Tuple[str, bool]] = []
 
     if node.type == "list_item":
         text_content_runs = []
@@ -71,16 +91,27 @@ def extract_flat_steps_recursively(node: SyntaxTreeNode) -> List[str]:
 
         item_text = " ".join(text_content_runs).strip()
         cleaned_text = strip_html_and_markdown_comments(item_text)
-        if cleaned_text:
-            steps.append(cleaned_text)
 
+        has_sub_list = any(child.type in ("bullet_list", "ordered_list") for child in node.children)
+        heads_an_optional_group = (
+                not group_headers_are_items
+                and has_sub_list
+                and bool(RE_OPTIONAL_GROUP_HEADER.match(cleaned_text.strip()))
+        )
+
+        if cleaned_text and not heads_an_optional_group:
+            steps.append((cleaned_text, inherited_optional))
+
+        child_optional = inherited_optional or heads_an_optional_group
         for child in node.children:
             if child.type in ("bullet_list", "ordered_list"):
-                steps.extend(extract_flat_steps_recursively(child))
+                steps.extend(extract_flagged_steps_recursively(
+                    child, child_optional, group_headers_are_items))
 
         return steps
 
     for child in node.children:
-        steps.extend(extract_flat_steps_recursively(child))
+        steps.extend(extract_flagged_steps_recursively(
+            child, inherited_optional, group_headers_are_items))
 
     return steps

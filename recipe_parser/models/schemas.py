@@ -21,6 +21,7 @@ class UnitClass(str, Enum):
     VOLUME = "volume"
     WEIGHT = "weight"
     PIECE = "piece"
+    LENGTH = "length"
     DURATION = "duration"
     TEMPERATURE = "temperature"
 
@@ -83,6 +84,14 @@ class Ingredient(BaseModel):
     annotation: Optional[str] = Field(
         default=None,
         description="Leading parenthetical aside that is not a quantity, e.g. \"(erin's mile-high)\"."
+    )
+    link: Optional[str] = Field(
+        default=None,
+        description=(
+            "Target of the Markdown link the ingredient was written as, exactly as the source "
+            "spells it (e.g. '../bechamel.md'). These form the cross-reference graph between "
+            "recipes. None when the line carries no link; the first target when it carries several."
+        )
     )
 
 

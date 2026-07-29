@@ -38,6 +38,8 @@
 ![recipe card](kfc-seasoning-1.jpg)
 ![labelled vials](kfc-seasoning-2.jpg)
 
+## Ingredients
+
 | Vial | Teaspoons  | Ingredient         | Origin                 | Scaled Tsp    | Scaled Tbsp    | Kilograms | Oz      | Price ($) |
 |------|------------|--------------------|------------------------|---------------|----------------|-----------|---------|-----------|
 |      | 48         | Cake Flour         |                        | 4062          | 1354           | 11.34     | 400     |     25.00 |

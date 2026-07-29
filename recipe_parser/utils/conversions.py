@@ -41,6 +41,25 @@ METRIC_CONVERSIONS: Dict[str, float] = {
     "cup":        240.0,
 }
 
+# Length factors live in their own table and are deliberately NOT in METRIC_CONVERSIONS.
+# 1 in = 25.4 mm exactly, by the international yard and pound agreement of 1959
+# (NIST HB 44 App. C).
+#
+# METRIC_CONVERSIONS is read by the WEIGHT branch as grams per unit and by the VOLUME
+# branch as millilitres per unit, both keyed on nothing but the unit's name. A length
+# sitting in that table is a dimensional landmine: it looks like a factor either branch
+# may use, and "millimeter" is one letter from "milliliter". The LENGTH branch of
+# get_normalization_details never reaches a factor at all - a length has no known mass,
+# for the reasons set out there - so these three entries were read by nothing. They are
+# kept here, out of harm's way, because the millimetre base is still the documented
+# relationship between the length units this parser accepts.
+LENGTH_CONVERSIONS: Dict[str, float] = {
+    # Base: millimeter
+    "millimeter": 1.0,
+    "centimeter": 10.0,
+    "inch":       25.4,
+}
+
 # Nominal weights (g) for discrete items, keyed by glob patterns matched against the
 # *ingredient name* - not the unit. "2 cloves garlic" carries the unit "clove" and the
 # name "garlic", so the name is the only place the identity of the thing being counted
@@ -200,7 +219,16 @@ def get_normalization_details(measurement: Measurement, ingredient_name: str) ->
     if measurement.unit_class == UnitClass.PIECE and measurement.nested_capacity:
         outer_multiplier = measurement.value
         inner_details = get_normalization_details(measurement.nested_capacity, ingredient_name)
-        total_g = outer_multiplier * inner_details.get("value", 0.0)
+        inner_value = inner_details.get("value")
+        # An unknown capacity makes the total unknown, not zero. Multiplying through would
+        # raise on the None that the PIECE and LENGTH branches both legitimately return.
+        if inner_value is None:
+            return {
+                "value":   None,
+                "unit":    measurement.unit,
+                "details": f"Nested Piece container of unknown content: {inner_details.get('details')}"
+            }
+        total_g = outer_multiplier * inner_value
         return {
             "value":   total_g,
             "unit":    measurement.unit,
@@ -257,6 +285,21 @@ def get_normalization_details(measurement: Measurement, ingredient_name: str) ->
             "value":   total_ml * density,
             "unit":    measurement.unit,
             "details": f"Volume conversion factor: {factor}ml/{measurement.unit}, Density for pattern '{matched_key}': {density}g/ml"
+        }
+
+    # 5. Length Case. "0.5-1 inch ginger" is a real amount, but the grams it stands for
+    #    depend entirely on the cross-section of the thing being cut - an inch of ginger,
+    #    of leek and of cinnamon stick share nothing. There is no generic length-to-mass
+    #    constant to apply, so the measurement stays dimensionally typed and its mass is
+    #    reported as unknown rather than guessed or defaulted to zero.
+    if measurement.unit_class == UnitClass.LENGTH:
+        return {
+            "value":   None,
+            "unit":    measurement.unit,
+            "details": (
+                f"'{measurement.unit}' measures a length; mass per unit length is "
+                f"ingredient-specific (unknown, not zero)"
+            )
         }
 
     return {"value": 0.0, "unit": measurement.unit, "details": "Unknown unit class"}

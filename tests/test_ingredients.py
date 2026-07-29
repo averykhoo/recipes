@@ -127,8 +127,7 @@ class TestBareCounts:
     @pytest.mark.parametrize("line", [
         "70% dark chocolate",  # a percentage, not 70 pieces
         "9-inch pie shell",  # a dimension, not 9 pieces
-        "0.5-1 inch ginger",  # a dimension range
-        "6cm piece of ginger",  # a dimension
+        "6cm pie tin",  # a dimension sizing an object
     ])
     def test_dimensions_and_percentages_are_not_counts(self, line):
         """These must produce no measurement rather than a nonsense count."""
@@ -220,6 +219,239 @@ class TestAnnotations:
     def test_leading_bracket_holding_a_quantity_is_not_an_annotation(self):
         """"(15 oz) tomatoes" opens with a measurement, which is not an aside."""
         assert parse_ingredient_line("(15 oz) tomatoes").annotation is None
+
+
+class TestMarkdownLinks:
+    """A linked ingredient names itself in the link text; the target is a cross-reference.
+
+    Regression: `[` opens an aside as far as the leading-parenthetical rule is concerned,
+    so a line *starting* with a link had its link text read as an annotation and its URL
+    left behind as the ingredient name. Six of the nine linked lines in the corpus were
+    wrong; the three that were not are pinned here too.
+    """
+
+    @pytest.mark.parametrize("line, name", [
+        # --- line-initial links: these were all corrupted -----------------------------
+        ("[bolognese](ragu-alla-bolognese.md)", "bolognese"),
+        ("[bechamel](../recipes/bechamel.md)", "bechamel"),
+        ("[mornay](../bechamel.md) using parmesan", "mornay"),
+        ("[Whipped cream for topping (optional)](chantilly-cream.md)", "Whipped cream for topping"),
+        ("[Bird's Custard](https://en.wikipedia.org/wiki/Bird's_Custard) powder", "Bird's Custard powder"),
+        # --- a leading quantity already shielded these; they must not regress ---------
+        ("0.5 cup [piperade](./piperade-sauce.md), optionally blended", "piperade"),
+        ("225g (1.6 cups) [self-raising flour](self-raising-flour.md), sifted", "self-raising flour"),
+        ("3.5 cups [fresh cooked](#fresh-cooked-pumpkin-puree) or canned pumpkin (one 29-ounce can will do)",
+         "fresh cooked or canned pumpkin"),
+        ("2 [pie shells](./pie-crust.md), blind baked, 9-inch", "pie shells"),
+    ])
+    def test_link_text_becomes_the_name(self, line, name):
+        assert parse_ingredient_line(line).name == name
+
+    @pytest.mark.parametrize("line, target", [
+        ("[bolognese](ragu-alla-bolognese.md)", "ragu-alla-bolognese.md"),
+        ("[bechamel](../recipes/bechamel.md)", "../recipes/bechamel.md"),
+        ("[mornay](../bechamel.md) using parmesan", "../bechamel.md"),
+        ("[Whipped cream for topping (optional)](chantilly-cream.md)", "chantilly-cream.md"),
+        ("[Bird's Custard](https://en.wikipedia.org/wiki/Bird's_Custard) powder",
+         "https://en.wikipedia.org/wiki/Bird's_Custard"),
+        ("0.5 cup [piperade](./piperade-sauce.md), optionally blended", "./piperade-sauce.md"),
+        ("225g (1.6 cups) [self-raising flour](self-raising-flour.md), sifted", "self-raising-flour.md"),
+        ("3.5 cups [fresh cooked](#fresh-cooked-pumpkin-puree) or canned pumpkin", "#fresh-cooked-pumpkin-puree"),
+        ("2 [pie shells](./pie-crust.md), blind baked, 9-inch", "./pie-crust.md"),
+    ])
+    def test_link_target_is_kept(self, line, target):
+        """The targets form the cross-reference graph between recipes; do not discard them."""
+        assert parse_ingredient_line(line).link == target
+
+    def test_no_link_leaves_the_field_empty(self):
+        assert parse_ingredient_line("2 cups flour").link is None
+
+    def test_a_linked_line_is_not_read_as_an_aside(self):
+        assert parse_ingredient_line("[bolognese](ragu-alla-bolognese.md)").annotation is None
+
+    def test_link_text_can_carry_the_optional_marker(self):
+        ingredient = parse_ingredient_line("[Whipped cream for topping (optional)](chantilly-cream.md)")
+        assert ingredient.optional is True
+
+    def test_a_clause_after_the_link_is_a_modifier(self):
+        """"using parmesan" says how the mornay is made; it is not part of its name."""
+        assert parse_ingredient_line("[mornay](../bechamel.md) using parmesan").modifier == "using parmesan"
+
+    def test_a_bare_noun_after_the_link_continues_the_name(self):
+        """Unlike a clause, "powder" is simply the rest of what the ingredient is called."""
+        ingredient = parse_ingredient_line("[Bird's Custard](https://example.com/custard) powder")
+        assert ingredient.name == "Bird's Custard powder"
+        assert ingredient.modifier is None
+
+    def test_quantity_survives_a_linked_name(self):
+        term = only_term("0.5 cup [piperade](./piperade-sauce.md), optionally blended")
+        assert term.value == pytest.approx(0.5)
+        assert term.unit == "cup"
+
+    def test_link_target_containing_spaces(self):
+        ingredient = parse_ingredient_line("[cookie notes](Chocolate Chip Cookies v9.docx)")
+        assert ingredient.name == "cookie notes"
+        assert ingredient.link == "Chocolate Chip Cookies v9.docx"
+
+    def test_two_links_on_one_line_keep_the_first_target(self):
+        ingredient = parse_ingredient_line("[ragu](ragu.md) and [bechamel](bechamel.md)")
+        assert ingredient.name == "ragu and bechamel"
+        assert ingredient.link == "ragu.md"
+
+    @pytest.mark.parametrize("line", [
+        "[whipped cream](chantilly-cream.md) with sugar (optional)",
+        "[mornay](../bechamel.md) using parmesan, optional",
+        "[cream](x.md) topped with nuts - optional",
+    ])
+    def test_a_clause_after_the_link_does_not_swallow_the_optional_marker(self, line):
+        """
+        Taking the clause truncates the line back to the link, and the marker used to
+        travel with the discarded tail. The result was a *required* ingredient the recipe
+        never wrote - the parser inventing an obligation out of an option.
+        """
+        assert parse_ingredient_line(line).optional is True
+
+    def test_an_optional_marker_without_a_clause_still_works(self):
+        """The no-clause path was already correct and must stay that way."""
+        ingredient = parse_ingredient_line("[whipped cream](x.md) (optional)")
+        assert ingredient.optional is True
+        assert ingredient.name == "whipped cream"
+
+    def test_the_clause_is_not_lost_to_a_comma_in_the_link_text(self):
+        """
+        A comma inside the link text produces a modifier of its own, and the clause after
+        the link exists nowhere else once the line is truncated. Keeping only one of the
+        two deleted "with sugar" without trace.
+        """
+        ingredient = parse_ingredient_line("[cream, whipped](x.md) with sugar")
+        assert ingredient.name == "cream"
+        assert ingredient.modifier == "whipped, with sugar"
+
+    def test_a_parenthesised_url_is_not_truncated(self):
+        """
+        Wikipedia targets contain balanced parentheses. Stopping at the first ")" cut the
+        URL short *and* left the survivor glued to the ingredient's name.
+        """
+        ingredient = parse_ingredient_line("[custard](https://en.wikipedia.org/wiki/Custard_(dessert))")
+        assert ingredient.name == "custard"
+        assert ingredient.link == "https://en.wikipedia.org/wiki/Custard_(dessert)"
+
+    def test_the_parser_and_the_bare_url_rewriter_share_one_link_pattern(self):
+        """Two spellings of the same construct drifted apart once; keep them identical."""
+        from recipe_parser.rules.ingredients import RE_MARKDOWN_LINK
+        from recipe_parser.rules.links import RE_MARKDOWN_LINK_OR_IMAGE
+        assert RE_MARKDOWN_LINK is RE_MARKDOWN_LINK_OR_IMAGE
+
+
+class TestLengthUnits:
+    """Some ingredients are portioned by length, and some numbers only state a size."""
+
+    @pytest.mark.parametrize("line, name, value, unit", [
+        ("0.5-1 inch ginger", "ginger", 0.75, "inch"),
+        ("1 inch ginger", "ginger", 1.0, "inch"),
+        ("2 inches lemongrass", "lemongrass", 2.0, "inch"),
+        ("3 cm ginger", "ginger", 3.0, "centimeter"),
+        ("5 mm ginger", "ginger", 5.0, "millimeter"),
+    ])
+    def test_a_length_can_be_the_amount(self, line, name, value, unit):
+        ingredient = parse_ingredient_line(line)
+        term = only_term(line)
+        assert ingredient.name == name
+        assert term.value == pytest.approx(value)
+        assert term.unit == unit
+        assert term.unit_class == UnitClass.LENGTH
+
+    def test_a_length_range_keeps_both_ends(self):
+        term = only_term("0.5-1 inch ginger")
+        assert term.value == pytest.approx(0.75)
+        assert term.value_min == pytest.approx(0.5)
+        assert term.value_max == pytest.approx(1.0)
+
+    @pytest.mark.parametrize("line", [
+        "9-inch pie shells",  # hyphenated: a compound adjective sizing the shells
+        "10-inch nonstick skillet",
+        "8 inches below tongs",  # positional, not an amount of anything
+        "1 inch thick slices",  # describes the cut
+        "2 inch pieces",  # sizes a countable piece
+        "2 inches",  # a length with nothing after it measures nothing
+    ])
+    def test_a_length_that_only_states_a_size_is_not_an_amount(self, line):
+        assert terms_of(line) == []
+
+    @pytest.mark.parametrize("line, name", [
+        # Hyphenated, so the whole compound survives untouched.
+        ("9-inch pie shells", "9-inch pie shells"),
+        ("10-inch nonstick skillet", "10-inch nonstick skillet"),
+        # Space-separated, so the leading number is stripped even though no amount was
+        # read, and the unit word is left stranded at the front of the name.
+        ("8 inches below tongs", "inches below tongs"),
+        ("2 inches", "inches"),
+        ("1 inch thick slices", "inch thick slices"),
+        ("2 inch pieces", "inch pieces"),
+        ("6 inch tortillas", "inch tortillas"),
+    ])
+    def test_a_size_word_stays_in_the_text_it_describes(self, line, name):
+        """
+        Records what the name stripper actually does, which is not what it should do.
+
+        A length word survives in the name whenever the line carried no length amount -
+        that part is intended. The leading *number* does not: the no-length stripper
+        removes it anyway, so "8 inches below tongs" loses its 8 and keeps its "inches".
+        Only the hyphenated forms escape, and only because the dangling-hyphen check puts
+        the whole compound back. Every space-separated line here is mildly mutilated, and
+        the cases are listed so that a fix shows up as a failure rather than passing
+        unnoticed.
+        """
+        assert parse_ingredient_line(line).name == name
+
+    @pytest.mark.parametrize("line, name, value, unit", [
+        # BUG 4: an allowlist decides which foods are portioned by length, so a length
+        # reaches its ingredient through an intervening portion noun as well.
+        ("1 inch piece of ginger", "ginger", 1.0, "inch"),
+        ("2 inch piece ginger", "ginger", 2.0, "inch"),
+        ("6cm piece of ginger", "ginger", 6.0, "centimeter"),
+        ("4 inch piece of lemongrass", "lemongrass", 4.0, "inch"),
+        ("2 inch cinnamon stick", "cinnamon stick", 2.0, "inch"),
+        ("5 cm galangal", "galangal", 5.0, "centimeter"),
+    ])
+    def test_a_portion_noun_does_not_hide_the_length(self, line, name, value, unit):
+        """""1 inch piece of ginger" is the commonest spelling and must not strand "inch"."""
+        ingredient = parse_ingredient_line(line)
+        term = only_term(line)
+        assert ingredient.name == name
+        assert term.value == pytest.approx(value)
+        assert term.unit == unit
+        assert term.unit_class == UnitClass.LENGTH
+
+    @pytest.mark.parametrize("line", [
+        "6 inch tortillas",  # the tortillas are six inches across, not six inches of them
+        '24" pizza base',
+        "1cm dice",  # a cut shape
+        "2 cm flour",  # a typo for "2 c flour"; must not parse confidently as a length
+        "500 mm milk",  # a typo for "500 ml"
+        "9 inch pie shell",
+        "12 inch skillet",
+    ])
+    def test_a_length_on_a_food_nobody_measures_by_length_is_a_size(self, line):
+        """
+        The dominant English reading of "N inch X" is how big X is, so an allowlist of
+        foods genuinely portioned by length is the only route to an amount. Without it
+        every size, and every "cm for c" / "mm for ml" typo, became a confident length.
+        """
+        assert terms_of(line) == []
+
+    def test_the_allowlist_is_consulted_past_a_shape_word(self):
+        """A geometric word still wins: this describes the cut, not how much ginger."""
+        assert terms_of("1 inch thick slices of ginger") == []
+
+    def test_a_hyphenated_weight_is_still_an_amount(self):
+        """Only lengths are barred from crossing a hyphen: "6-pound pumpkin" still counts."""
+        term = only_term("6-pound cheese pumpkin, halved")
+        assert term.unit == "pound"
+
+    def test_the_preposition_in_is_not_a_length_unit(self):
+        """"in" is far more often the preposition; reading it as inches would be a disaster."""
+        assert parse_ingredient_line("2 cups flour in a bowl").name == "flour in a bowl"
 
 
 class TestAlternativeRepresentations:

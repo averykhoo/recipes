@@ -356,6 +356,48 @@ class TestDensityLoading:
 
 
 # --------------------------------------------------------------------------
+# LENGTH
+# --------------------------------------------------------------------------
+
+class TestLengthUnits:
+    """A length is a real amount for some ingredients, but never a known mass."""
+
+    def test_inch_is_exactly_25_4_millimeters(self):
+        """The 1959 international definition; nothing here is rounded."""
+        assert C.LENGTH_CONVERSIONS["inch"] == pytest.approx(25.4, abs=1e-12)
+
+    def test_metric_length_ladder(self):
+        assert C.LENGTH_CONVERSIONS["millimeter"] == 1.0
+        assert C.LENGTH_CONVERSIONS["centimeter"] == 10.0
+
+    def test_length_conversions_do_not_collide_with_volume(self):
+        """
+        "millimeter" and "milliliter" differ by one letter and mean nothing alike.
+
+        METRIC_CONVERSIONS is read by the weight branch as grams per unit and by the
+        volume branch as millilitres per unit, keyed on the unit name alone. A length
+        in that table would be picked up by either. Keeping the two tables disjoint is
+        the invariant, so assert the separation rather than the values.
+        """
+        assert C.METRIC_CONVERSIONS["milliliter"] == 1.0
+        assert not set(C.LENGTH_CONVERSIONS) & set(C.METRIC_CONVERSIONS)
+        for length_unit in ("millimeter", "centimeter", "inch"):
+            assert length_unit not in C.METRIC_CONVERSIONS
+
+    @pytest.mark.parametrize("unit", ["inch", "centimeter", "millimeter"])
+    def test_a_length_has_no_known_mass(self, unit):
+        """Grams per inch depend on the ingredient's cross-section; unknown, never zero."""
+        m = Measurement(value=1.0, unit=unit, unit_class=UnitClass.LENGTH)
+        assert C.get_normalization_details(m, "ginger")["value"] is None
+        assert C.normalize_measurement_to_grams(m, "ginger") is None
+
+    def test_an_unknown_length_mass_is_explained(self):
+        m = Measurement(value=1.0, unit="inch", unit_class=UnitClass.LENGTH)
+        details = C.get_normalization_details(m, "ginger")["details"]
+        assert "unknown" in details.lower()
+
+
+# --------------------------------------------------------------------------
 # unknown unit class
 # --------------------------------------------------------------------------
 

@@ -44,6 +44,9 @@ class Code:
     INVALID_UNIT_CLASS = "invalid-unit-class"
     INVALID_NESTING = "invalid-nesting"
 
+    # --- source fidelity ---
+    SOURCE_CONTENT_DROPPED = "source-content-dropped"
+
     # --- metadata ---
     YIELD_INFERRED = "yield-inferred"
     NON_ASCII_CHARACTER = "non-ascii-character"

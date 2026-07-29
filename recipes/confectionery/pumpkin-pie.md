@@ -18,7 +18,7 @@ see also: meringue pumpkin pie recipe below
 * 1 teaspoon ground mace / nutmeg
 * 1.5 cups granulated sugar
 * 3 cups heavy cream or 2 12-ounce cans evaporated milk (or replace up to 0.333 of the cream with milk)
-* 2 blind baked, 9-inch [pie shells](./pie-crust.md)
+* 2 [pie shells](./pie-crust.md), blind baked, 9-inch
 * [Whipped cream for topping (optional)](chantilly-cream.md)
 
 ## Directions

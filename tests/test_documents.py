@@ -875,7 +875,8 @@ class TestMalformedSpecificBehaviour:
         assert recipe.title == "X"
         # Everything after the opening fence is code, so no sections survive.
         assert recipe.blocks == []
-        assert codes(diagnostics) == []
+        # That lost content is exactly what the source-coverage audit exists to report.
+        assert codes(diagnostics) == ["source-content-dropped"]
 
     def test_unbalanced_brackets_survive_as_literal_text(self, parse):
         doc, _ = parse("# X\n\n## Ingredients\n\n* 1 cup [water](\n* [broken\n", dedent=False)
@@ -1041,3 +1042,178 @@ class TestMalformedSpecificBehaviour:
         doc, _ = parse(BOM_DOCUMENT)
         recipe = doc.recipes[0]
         assert [b.section_type for b in lists_of(recipe)] == ["ingredients", "directions"]
+
+
+# =====================================================================================
+# Nested "optional:" groups
+# =====================================================================================
+
+OPTIONAL_GROUP = """
+    # Ragu
+
+    ## Ingredients
+
+    * 250g ground beef
+    * optional:
+        * 1/2 cup milk
+        * gelatin
+        * mushroom
+    * 1 tsp salt
+
+    ## Directions
+
+    1. Simmer.
+    """
+
+
+class TestOptionalGroupHeader:
+    """A bare "optional:" item heads a sub-list; it marks its children, not itself."""
+
+    def test_the_header_is_not_an_ingredient(self, parse):
+        """Regression: it parsed to an ingredient with an empty name."""
+        doc, _ = parse(OPTIONAL_GROUP)
+        ingredients = lists_of(doc.recipes[0])[0]
+        assert [item.raw_line for item in ingredients.items] == [
+            "250g ground beef",
+            "1/2 cup milk",
+            "gelatin",
+            "mushroom",
+            "1 tsp salt",
+        ]
+
+    def test_no_empty_name_is_produced(self, parse):
+        doc, diagnostics = parse(OPTIONAL_GROUP)
+        ingredients = lists_of(doc.recipes[0])[0]
+        assert all(item.parsed_ingredient.name.strip() for item in ingredients.items)
+        assert Code.NAME_EMPTY not in codes(diagnostics)
+
+    def test_children_of_the_group_are_optional(self, parse):
+        doc, _ = parse(OPTIONAL_GROUP)
+        ingredients = lists_of(doc.recipes[0])[0]
+        flags = {item.parsed_ingredient.name: item.parsed_ingredient.optional
+                 for item in ingredients.items}
+        assert flags == {
+            "ground beef": False,
+            "milk": True,
+            "gelatin": True,
+            "mushroom": True,
+            "salt": False,
+        }
+
+    def test_the_group_does_not_leak_past_its_sub_list(self, parse):
+        """The item after the group is a sibling of the header, not one of its children."""
+        doc, _ = parse(OPTIONAL_GROUP)
+        ingredients = lists_of(doc.recipes[0])[0]
+        assert ingredients.items[-1].parsed_ingredient.optional is False
+
+    def test_children_keep_their_own_quantities(self, parse):
+        doc, _ = parse(OPTIONAL_GROUP)
+        milk = lists_of(doc.recipes[0])[0].items[1].parsed_ingredient
+        assert milk.representations[0].terms[0].unit == "cup"
+
+    @pytest.mark.parametrize("header", ["optional:", "optional", "Optional:", "OPTIONAL :"])
+    def test_header_spellings(self, parse, header):
+        doc, _ = parse(f"""
+            # X
+
+            ## Ingredients
+
+            * {header}
+                * gelatin
+            """)
+        ingredients = lists_of(doc.recipes[0])[0]
+        assert [item.raw_line for item in ingredients.items] == ["gelatin"]
+        assert ingredients.items[0].parsed_ingredient.optional is True
+
+    def test_a_nested_list_under_a_real_ingredient_is_untouched(self, parse):
+        """Only a bare "optional:" is a group header; a normal item keeps its children."""
+        doc, _ = parse("""
+            # X
+
+            ## Ingredients
+
+            * 100g bacon
+                * to make this halal, substitute beef fat
+            """)
+        ingredients = lists_of(doc.recipes[0])[0]
+        assert len(ingredients.items) == 2
+        assert all(item.parsed_ingredient.optional is False for item in ingredients.items)
+
+    def test_a_bare_optional_in_directions_is_still_a_step(self, parse):
+        """Directions are prose; nothing there should silently disappear."""
+        doc, _ = parse("""
+            # X
+
+            ## Ingredients
+
+            * 1 cup water
+
+            ## Directions
+
+            1. Boil.
+            2. optional:
+                1. garnish with parsley
+            """)
+        directions = lists_of(doc.recipes[0])[1]
+        assert directions.items == ["Boil.", "optional:", "garnish with parsley"]
+
+
+# =====================================================================================
+# Raw text fidelity
+# =====================================================================================
+
+class TestRawTextMatchesTheSource:
+    """The parsed model must quote the file, not a rewritten form of it."""
+
+    LINKED = """
+        # Lasagna
+
+        ## Ingredients
+
+        * [bolognese](ragu-alla-bolognese.md)
+        * 0.5 cup [piperade](./piperade-sauce.md), blended
+
+        ## Directions
+
+        1. Layer it up.
+        """
+
+    def test_raw_line_keeps_the_md_extension(self, parse):
+        """
+        Regression: the ".md" -> ".html" rewrite for Jekyll ran before parsing, so every
+        stored raw_line claimed a target that appears in no source file.
+        """
+        doc, _ = parse(self.LINKED)
+        ingredients = lists_of(doc.recipes[0])[0]
+        assert [item.raw_line for item in ingredients.items] == [
+            "[bolognese](ragu-alla-bolognese.md)",
+            "0.5 cup [piperade](./piperade-sauce.md), blended",
+        ]
+
+    def test_ingredient_raw_keeps_the_md_extension(self, parse):
+        doc, _ = parse(self.LINKED)
+        ingredients = lists_of(doc.recipes[0])[0]
+        assert ingredients.items[0].parsed_ingredient.raw == "[bolognese](ragu-alla-bolognese.md)"
+
+    def test_the_link_target_is_the_source_target(self, parse):
+        doc, _ = parse(self.LINKED)
+        ingredients = lists_of(doc.recipes[0])[0]
+        assert [item.parsed_ingredient.link for item in ingredients.items] == [
+            "ragu-alla-bolognese.md",
+            "./piperade-sauce.md",
+        ]
+
+    def test_directions_keep_the_md_extension_too(self, parse):
+        doc, _ = parse("""
+            # X
+
+            ## Ingredients
+
+            * 1 cup water
+
+            ## Directions
+
+            1. See [the sauce](./sauce.md) first.
+            """)
+        directions = lists_of(doc.recipes[0])[1]
+        assert directions.items == ["See [the sauce](./sauce.md) first."]

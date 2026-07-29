@@ -11,6 +11,7 @@ from recipe_parser.models.schemas import Ingredient
 from recipe_parser.models.schemas import Measurement
 from recipe_parser.models.schemas import QuantityRepresentation
 from recipe_parser.models.schemas import UnitClass
+from recipe_parser.rules.links import RE_MARKDOWN_LINK_OR_IMAGE
 from recipe_parser.utils.conversions import HEAPED_MULTIPLIER
 from recipe_parser.utils.numeric import RANGE_SEPARATOR
 from recipe_parser.utils.numeric import VULGAR_FRACTION_CLASS
@@ -42,6 +43,15 @@ UNIT_CLASSIFICATIONS = {
     "bunch":      (UnitClass.PIECE, ["bunch", "bunches"]),
     "head":       (UnitClass.PIECE, ["head", "heads"]),
     "piece":      (UnitClass.PIECE, ["piece", "pieces", "pc", "pcs"]),
+    # Length. A few ingredients are genuinely portioned by length rather than by mass:
+    # "0.5-1 inch ginger" is how much ginger to use, and no weight in grams says the same
+    # thing to a cook holding a rhizome. Which ingredients those are is decided by
+    # LENGTH_MEASURED_FOODS below; for everything else a length states a size, not an
+    # amount. The bare word "in" is deliberately absent - it is far more often the
+    # preposition than the unit - and stays in DIMENSION_WORDS instead.
+    "inch":       (UnitClass.LENGTH, ["inch", "inches", "\""]),
+    "centimeter": (UnitClass.LENGTH, ["cm", "centimeter", "centimeters", "centimetre", "centimetres"]),
+    "millimeter": (UnitClass.LENGTH, ["mm", "millimeter", "millimeters", "millimetre", "millimetres"]),
 }
 
 # Reverse mapping for fast regex scanning
@@ -54,6 +64,15 @@ for canonical, (u_class, aliases) in UNIT_CLASSIFICATIONS.items():
 unit_aliases_sorted = sorted(list(UNIT_LOOKUP.keys()), key=len, reverse=True)
 escaped_aliases = [re.escape(alias) for alias in unit_aliases_sorted]
 UNIT_ALTERNATION = "|".join(escaped_aliases)
+
+# The same alternation minus the length units. A number hyphenated to its unit is a
+# compound adjective, and for a length that always describes an object rather than an
+# amount: "6-pound pumpkin" is six pounds of pumpkin, but "9-inch pie shell" is not nine
+# inches of pie shell. Only the non-length units may be reached across a hyphen.
+NON_LENGTH_ALTERNATION = "|".join(
+    re.escape(alias) for alias in unit_aliases_sorted
+    if UNIT_LOOKUP[alias][1] != UnitClass.LENGTH
+)
 
 # --- Leading quantity grammar -------------------------------------------------
 # Built up from named pieces so the range handling is legible. The previous version
@@ -98,22 +117,99 @@ RE_LEADING_NUM = re.compile(
 RE_PACK_MULTIPLIER = re.compile(r"^~?\s*(?P<mult>\d+)\s*[x×]\s+(?P<remainder>.+)$", re.IGNORECASE)
 
 # A range where the unit is repeated on both ends: "500g-750g", "100 g - 200 g".
+# The trailing unit is closed with a lookahead rather than \b for the same reason
+# build_name_stripper is: one alias is the inch symbol, and \b never holds after a
+# quotation mark, so '3"-4" ginger' could never match a rule that ended in \b.
 RE_DUAL_UNIT_RANGE = re.compile(
     rf"^~?\s*(?P<low>{_SINGLE_NUM})\s*(?P<low_unit>{UNIT_ALTERNATION})\s*[-–—]\s*"
-    rf"(?P<high>{_SINGLE_NUM})\s*(?P<high_unit>{UNIT_ALTERNATION})\b",
+    rf"(?P<high>{_SINGLE_NUM})\s*(?P<high_unit>{UNIT_ALTERNATION})(?![A-Za-z0-9])",
     re.IGNORECASE
 )
 
 # Words that follow a number but describe a *dimension*, not a quantity of the ingredient.
-# "9-inch pie shells" must not be read as 9 pieces of "inch pie shells".
+# "5 percent milk" must not be read as 5 pieces of "percent milk".
+#
+# This list only ever gates the *bare count* fallback, which is reached solely when the
+# word after the number is not a unit at all. Every length alias - "inch", "cm", "mm" and
+# the rest - therefore belonged here only in appearance: they are in UNIT_LOOKUP, so the
+# unit branch always claims them first and their entries here were unreachable. Deleting
+# them left the corpus and the probe output byte-identical. What remains are the words
+# that really are not units: "in" (deliberately kept out of UNIT_LOOKUP as it is far more
+# often the preposition), the imperial lengths this parser does not measure in, and the
+# non-length dimensions.
 DIMENSION_WORDS = {
-    "inch", "inches", "in", "cm", "mm", "m", "centimeter", "centimeters",
-    "centimetre", "centimetres", "millimeter", "millimeters", "foot", "feet",
-    "percent", "%", "degree", "degrees",
+    "in", "m", "foot", "feet", "percent", "%", "degree", "degrees",
 }
 
 # If the text immediately after a number starts with one of these, it is not a count.
 RE_NOT_A_COUNT = re.compile(r"^\s*[%\u00B0/\u00D7x\d]")
+
+# Geometric or positional words that turn a length into a description of how something is
+# shaped, cut or placed ("1 inch thick", "8 inches below the tongs", "1 cm dice"). These
+# are checked on the word immediately after the unit, before anything else, so that
+# "1 inch thick slices of ginger" stays a cut instruction rather than becoming an amount.
+LENGTH_DESCRIBES_SHAPE = {
+    "thick", "thickness", "thin", "deep", "depth", "wide", "width", "long", "length",
+    "lengths", "tall", "high", "height", "square", "squares", "round", "rounds",
+    "diameter", "across", "apart", "below", "above", "between", "from", "by", "x",
+    "cube", "cubes", "chunk", "chunks", "strip", "strips", "ball", "balls",
+    "log", "logs", "circle", "circles",
+    "dice", "diced", "julienne", "matchstick", "matchsticks", "baton", "batons",
+    "wedge", "wedges", "sliver", "slivers", "shred", "shreds",
+}
+
+# Foodstuffs that are genuinely portioned by length. This is an ALLOWlist, and it is the
+# only route by which "<number> <length unit> <text>" is read as an amount.
+#
+# The dominant English reading of "N inch X" is a SIZE, not a quantity of X: "6 inch
+# tortillas", '24" pizza base' and "9 inch pie shell" all say how big something is, and
+# reading them as amounts invents measurements that no cook wrote. A denylist of shape
+# words cannot separate the two, because the distinguishing information is not in the
+# following word's grammar - it is in what the ingredient physically is. Worse, an
+# open heuristic swallows typos with total confidence: "2 cm flour" is "2 c flour"
+# mistyped and "500 mm milk" is "500 ml", and both used to parse as lengths.
+#
+# The genuine cases all share one shape: a long, roughly uniform thing the cook cuts to
+# length, where grams are not the instruction the recipe is actually giving.
+# "0.5-1 inch ginger" is how much ginger to use; "10 g" does not say the same thing to
+# someone holding a rhizome. This is the entire reason length units exist in this parser.
+#
+# To extend: add the ingredient's own word in the singular. Plurals are handled
+# automatically, and the word may be matched anywhere in the text following the unit, so
+# "1 inch piece of ginger" and "2 inch knob of fresh ginger" both resolve through "ginger".
+LENGTH_MEASURED_FOODS = {
+    # Rhizomes and roots, cut across a length of the raw root.
+    "ginger", "galangal", "turmeric", "horseradish", "wasabi", "lotus root",
+    "burdock", "gobo", "daikon", "mooli",
+    # Stalks and stems, trimmed to length.
+    "lemongrass", "lemon grass", "leek", "rhubarb", "sugarcane", "sugar cane",
+    "spring onion", "scallion", "green onion", "negi", "cucumber",
+    # Barks, pods and quills, broken to length.
+    "cinnamon", "cassia", "vanilla", "vanilla bean", "vanilla pod", "pandan",
+    # Sea vegetables, cut from a sheet or a strap.
+    "kombu", "konbu", "kelp", "dashima",
+    # Long baked or cured goods, cut from a stick.
+    "baguette",
+}
+
+# Longest first so that "lemon grass" wins over "leek" would-be prefixes during alternation,
+# and an optional trailing "s" covers the plural of every entry above.
+RE_LENGTH_MEASURED_FOOD = re.compile(
+    r"\b(?:{})s?\b".format(
+        "|".join(re.escape(food) for food in sorted(LENGTH_MEASURED_FOODS, key=len, reverse=True))
+    ),
+    re.IGNORECASE,
+)
+
+# A length can reach its ingredient through a portion noun: "1 inch piece of ginger" is an
+# inch of ginger, spelled with an extra word in the middle. The noun says nothing the
+# measurement has not already said, so it is dropped from the name once the length has
+# been accepted as an amount.
+RE_LENGTH_PORTION_HEAD = re.compile(
+    r"^(?:piece|chunk|knob|length|segment|section|stick|nub|thumb|stub|bit|hunk)s?"
+    r"\s+(?:of\s+)?",
+    re.IGNORECASE,
+)
 
 # "2 cans (15 oz each) tomatoes" - a count of containers plus the capacity of each.
 # Trailing text after the bracket is allowed; the ingredient name is extracted separately.
@@ -125,6 +221,26 @@ RE_NESTED_CONTAINER = re.compile(
 
 # A leading parenthetical/bracketed aside at the very start of an ingredient line.
 RE_LEADING_PAREN = re.compile(r"^[\(\[\u3010\uFF08]\s*(?P<inner>[^)\]\u3011\uFF09]*?)\s*[\)\]\u3011\uFF09]\s*")
+
+# A Markdown link or image: "[bolognese](ragu-alla-bolognese.md)". The link text is the
+# ingredient's own words and the target is a cross-reference to another recipe, so the
+# two are separated rather than either being discarded. Shared with rules/links.py rather
+# than spelled a second time here: the local copy could not span a parenthesised URL, so
+# "[custard](https://en.wikipedia.org/wiki/Custard_(dessert))" lost the tail of its target
+# and gained a stray ")" on the end of its name.
+RE_MARKDOWN_LINK = RE_MARKDOWN_LINK_OR_IMAGE
+
+# An optional link title trailing the target: "(file.md \"My Title\")".
+RE_LINK_TITLE = re.compile(r"\s+(?:\"[^\"]*\"|'[^']*')$")
+
+# A clause that prepares or qualifies a linked ingredient rather than continuing its name.
+# "[mornay](../bechamel.md) using parmesan" is mornay, prepared a particular way, whereas
+# "[Bird's Custard](...) powder" is simply the name of the thing spelled across the link.
+RE_LINK_CLAUSE = re.compile(
+    r"^(?:using|made|prepared|seasoned|flavou?red|thinned|mixed|blended|folded|topped|"
+    r"with|without|plus)\b",
+    re.IGNORECASE
+)
 
 # Marks a measurement as applying to each item rather than to the whole quantity.
 RE_PER_UNIT = re.compile(r"\b(?:each|ea|apiece|per)\b\.?\s*$", re.IGNORECASE)
@@ -140,15 +256,68 @@ RE_TRAILING_OPTIONAL = re.compile(r"\s*[,;(\-\u2013\u2014]?\s*\(?\s*optional\s*\
 # covers bare counts ("2 lemons"), hyphenated units ("6-pound pumpkin"), pack
 # multipliers ("2x 300g spinach") and ranges with the unit on either or both ends
 # ("1-2 tsp", "500g-750g").
-_UNIT_SUFFIX = rf"(?:[-–—]?\s*(?:{_QUALIFIER}\s+)?(?:{UNIT_ALTERNATION})\b\.?\s*)?"
-RE_NAME_STRIP = re.compile(
-    rf"^\s*{_QUALIFIER_PREFIX}~?\s*"
-    rf"(?:\d+\s*[x×]\s+)?"
-    rf"{_SINGLE_NUM}{_UNIT_SUFFIX}"
-    rf"(?:{RANGE_SEPARATOR}{_SINGLE_NUM}{_UNIT_SUFFIX})?"
-    rf"(?:of\s+)?",
-    re.IGNORECASE
-)
+#
+# The two branches differ only in which units may follow a hyphen: a length hyphenated to
+# its number sizes an object ("9-inch pie shells") and must be left in the name, so the
+# stripper never reaches across a hyphen to one. The unit is closed with a lookahead
+# rather than \b because one alias is the inch symbol, after which \b never holds.
+_UNIT_HEAD = rf"(?:{_QUALIFIER}\s+)?"
+
+
+def build_name_stripper(alternation: str) -> re.Pattern:
+    """Compiles the head-stripping rule over a given set of unit aliases."""
+    unit_suffix = (
+        rf"(?:\s*{_UNIT_HEAD}(?:{alternation})(?![A-Za-z0-9])\.?\s*"
+        rf"|[-–—]\s*{_UNIT_HEAD}(?:{NON_LENGTH_ALTERNATION})(?![A-Za-z0-9])\.?\s*)?"
+    )
+    return re.compile(
+        rf"^\s*{_QUALIFIER_PREFIX}~?\s*"
+        rf"(?:\d+\s*[x×]\s+)?"
+        rf"{_SINGLE_NUM}{unit_suffix}"
+        rf"(?:{RANGE_SEPARATOR}{_SINGLE_NUM}{unit_suffix})?"
+        rf"(?:of\s+)?",
+        re.IGNORECASE
+    )
+
+
+RE_NAME_STRIP = build_name_stripper(UNIT_ALTERNATION)
+
+# The same rule with the length units withheld. A length is only sometimes an amount, so
+# the name stripper must follow whatever the measurement parser decided: "0.5-1 inch
+# ginger" leaves "ginger", but "8 inches below the tongs" carries no amount and the word
+# "inches" belongs to the text that remains.
+RE_NAME_STRIP_NO_LENGTH = build_name_stripper(NON_LENGTH_ALTERNATION)
+
+
+def length_reads_as_an_amount(hyphenated: bool, text_after_unit: str) -> bool:
+    """
+    Decides whether "<number> <length unit> <rest>" measures out the ingredient or merely
+    describes something's size.
+
+    The default answer is no. In English "N inch X" overwhelmingly gives the size of X
+    rather than an amount of it, so a length counts as an amount only when the text after
+    the unit names something on LENGTH_MEASURED_FOODS - an ingredient people really do
+    portion by length. "0.5-1 inch ginger" is how much ginger to buy; "6 inch tortillas"
+    is how wide the tortillas are.
+
+    Three things rule it out before the ingredient is even consulted: the number being
+    hyphenated onto the unit as a compound adjective ("9-inch pie shells"), nothing
+    following the unit at all (a length with no ingredient after it measures nothing), and
+    a geometric or positional word coming next ("1 inch thick slices of ginger" describes
+    the cut, not the amount, even though ginger is on the list).
+    """
+    if hyphenated:
+        return False
+
+    remainder = text_after_unit.strip()
+    if not remainder:
+        return False
+
+    next_word = remainder.split(" ", 1)[0].strip(".,;:").lower()
+    if next_word in LENGTH_DESCRIBES_SHAPE:
+        return False
+
+    return RE_LENGTH_MEASURED_FOOD.search(remainder) is not None
 
 
 def parse_single_term(term_text: str, allow_bare_count: bool = False) -> Optional[Measurement]:
@@ -166,6 +335,14 @@ def parse_single_term(term_text: str, allow_bare_count: bool = False) -> Optiona
     pack_match = RE_PACK_MULTIPLIER.match(raw_text)
     if pack_match:
         inner = parse_single_term(pack_match.group("remainder"), allow_bare_count=False)
+        # A pack multiplier may never multiply a length. "2 x 20 cm cake tins" is two tins
+        # that are 20 cm each, not 40 cm of tin, and the same is true of every "<count> x
+        # <size> <object>" line - the length sizes one item rather than totalling them.
+        # This is also the only place the dimension guard could be evaded: the recursive
+        # call starts a fresh parse in which the number is no longer hyphenated to its
+        # unit, so "2 x 9 inch pans" looked like a clean "<n> <length> <noun>" run.
+        if inner is not None and inner.unit_class == UnitClass.LENGTH:
+            inner = None
         if inner is not None:
             multiplier = float(pack_match.group("mult"))
             return Measurement(
@@ -183,7 +360,18 @@ def parse_single_term(term_text: str, allow_bare_count: bool = False) -> Optiona
         high_canonical, _ = UNIT_LOOKUP[dual_match.group("high_unit").lower()]
         low_val = parse_single_quantity(dual_match.group("low"))
         high_val = parse_single_quantity(dual_match.group("high"))
-        if low_canonical == high_canonical and low_val is not None and high_val is not None:
+
+        # A length spelled on both ends of a range is still only sometimes an amount, and
+        # this branch used to return before the guard could ever see it: "9 inch - 10 inch
+        # pie shells" became nine-and-a-half inches of pie shell. Falling through when the
+        # guard says no leaves the ordinary rules to read the line.
+        length_is_a_dimension = (
+            low_class == UnitClass.LENGTH
+            and not length_reads_as_an_amount(False, raw_text[dual_match.end():])
+        )
+
+        units_agree = low_canonical == high_canonical
+        if units_agree and not length_is_a_dimension and low_val is not None and high_val is not None:
             return Measurement(
                 value=(low_val + high_val) / 2.0,
                 value_min=min(low_val, high_val),
@@ -201,9 +389,12 @@ def parse_single_term(term_text: str, allow_bare_count: bool = False) -> Optiona
 
     # "6-pound pumpkin" hyphenates the number to its unit. The range branch above has
     # already consumed any "1-2" style hyphen, so a leftover leading hyphen followed by
-    # a letter is a compound adjective, not a range.
+    # a letter is a compound adjective, not a range. Whether the unit arrived that way
+    # matters for lengths, which read as a size rather than an amount when they do.
+    hyphenated_unit = False
     if re.match(r"^[-–—]\s*[a-z]", rest, re.IGNORECASE):
         rest = rest[1:].strip()
+        hyphenated_unit = True
 
     # "1 heaped Tbsp butter" hedges between the number and the unit. Without this the
     # unit is never seen and the line collapses to a bare count of 1.
@@ -226,6 +417,13 @@ def parse_single_term(term_text: str, allow_bare_count: bool = False) -> Optiona
 
     if first_word in UNIT_LOOKUP:
         canonical_name, unit_class = UNIT_LOOKUP[first_word]
+
+        # A length only measures out an ingredient in some grammatical positions; in the
+        # rest it is sizing an object and there is no amount on the line to extract.
+        if unit_class == UnitClass.LENGTH:
+            text_after_unit = rest.split(" ", 1)[1] if " " in rest else ""
+            if not length_reads_as_an_amount(hyphenated_unit, text_after_unit):
+                return None
 
         # A heaped spoon holds more than a level one, by an amount nobody has ever
         # standardised. Widen the interval rather than inventing a point value.
@@ -317,10 +515,13 @@ def parse_representation(text_run: str, allow_bare_count: bool = False) -> Quant
     return representation
 
 
-def parse_ingredient_line(raw_line: str) -> Optional[Ingredient]:
+def parse_ingredient_line(raw_line: str, force_optional: bool = False) -> Optional[Ingredient]:
     """
     Transforms raw lists into Pydantic models. Resolves alternatives
     nested inside brackets or parentheses.
+
+    `force_optional` marks the ingredient optional regardless of what the line itself
+    says, for children of an "optional:" group header that carries the marker for them.
     """
     cleaned_line = strip_html_and_markdown_comments(raw_line).strip()
     if not cleaned_line:
@@ -333,8 +534,46 @@ def parse_ingredient_line(raw_line: str) -> Optional[Ingredient]:
 
     cleaned_line = re.sub(r"^[\*\-+]\s+", "", cleaned_line)
 
+    # Markdown links resolve to their link text before anything else reads the line.
+    # RE_LEADING_PAREN treats "[" as the opening of an aside, so a line that *starts* with
+    # a link ("[bolognese](ragu-alla-bolognese.md)") would otherwise have its link text
+    # taken for an annotation and its URL left behind as the ingredient name.
+    link_target = None
+    link_clause = None
+    clause_was_optional = False
+
+    leading_link = RE_MARKDOWN_LINK.match(cleaned_line)
+    if leading_link and not leading_link.group("image"):
+        trailing_text = cleaned_line[leading_link.end():].strip()
+
+        # An "optional" marker at the end of the line belongs to the ingredient, not to
+        # the clause. It is lifted off first because taking the clause truncates the line
+        # to the link, which would otherwise carry the marker away with the rest of the
+        # tail and leave a required ingredient where the recipe wrote an optional one.
+        clause_optional = RE_TRAILING_OPTIONAL.search(trailing_text)
+        if clause_optional:
+            trailing_text = trailing_text[:clause_optional.start()].strip().rstrip(",;-").strip()
+
+        if RE_LINK_CLAUSE.match(trailing_text):
+            # "[mornay](../bechamel.md) using parmesan": the clause says how the linked
+            # ingredient is prepared, so it is a modifier rather than part of the name.
+            link_clause = trailing_text
+            clause_was_optional = bool(clause_optional)
+            cleaned_line = cleaned_line[:leading_link.end()]
+
+    def unwrap_markdown_link(match) -> str:
+        nonlocal link_target
+        if match.group("image"):
+            # An image is decoration; its alt text is not the name of an ingredient.
+            return ""
+        if link_target is None:
+            link_target = RE_LINK_TITLE.sub("", match.group("target")).strip().strip("<>")
+        return match.group("text")
+
+    cleaned_line = RE_MARKDOWN_LINK.sub(unwrap_markdown_link, cleaned_line).strip()
+
     # Check for optional flags
-    is_optional = False
+    is_optional = force_optional or clause_was_optional
     annotation = None
 
     if cleaned_line.lower().startswith("optional:"):
@@ -420,28 +659,48 @@ def parse_ingredient_line(raw_line: str) -> Optional[Ingredient]:
 
     # Strip "<quantity> [unit] [of]" from the front. This covers unitless counts
     # ("2 large lemons" -> "large lemons") as well as ranges ("1-2 tsp butter" -> "butter").
-    stripped_name = RE_NAME_STRIP.sub("", ingredient_name).strip()
-    # If stripping the number leaves a dangling "%" or "-", the number was part of the
-    # name ("70% dark chocolate", "9-inch pie shell") rather than a quantity of it.
-    if stripped_name and not re.match(r"^[%°\-–—]", stripped_name):
+    # A length word is only removed when it was read as an amount; where it merely sizes
+    # something ("8 inches below the tongs") it is part of what the line says, not a unit.
+    measured_a_length = any(
+        term.unit_class == UnitClass.LENGTH for term in primary_rep.terms
+    )
+    stripper = RE_NAME_STRIP if measured_a_length else RE_NAME_STRIP_NO_LENGTH
+    stripped_name = stripper.sub("", ingredient_name).strip()
+    # If stripping the number leaves a dangling "%", "-" or inch mark, the number was part
+    # of the name ("70% dark chocolate", "9-inch pie shell", '24" pizza base') rather than
+    # a quantity of it.
+    if stripped_name and not re.match(r"^[%°\-–—\"]", stripped_name):
         ingredient_name = stripped_name
 
-    # 2. Strip Markdown link brackets: [self-raising flour](...) -> self-raising flour
-    ingredient_name = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", ingredient_name)
+    # 1b. A length that was read as an amount often reaches its ingredient through a
+    #     portion noun: "1 inch piece of ginger" leaves "piece of ginger" behind. The noun
+    #     repeats what the measurement already says, so it goes.
+    if measured_a_length:
+        ingredient_name = RE_LENGTH_PORTION_HEAD.sub("", ingredient_name).strip()
 
-    # 3. Strip any remaining descriptive brackets or parentheticals from the name
+    # 2. Strip any remaining descriptive brackets or parentheticals from the name. Markdown
+    #    links are already gone: they were resolved to their link text at the top of this
+    #    function, before any rule that could mistake a link for a bracketed aside.
     ingredient_name = re.sub(r"[\(\[【（].*?[\)\]】）]", "", ingredient_name).strip()
 
-    # 4. Clean up multiple spaces and trailing/leading junk. Removing a parenthetical can
+    # 3. Clean up multiple spaces and trailing/leading junk. Removing a parenthetical can
     #    strand the punctuation that introduced it, e.g. "Custard Powder (...):" -> "... :".
     ingredient_name = re.sub(r"\s+", " ", ingredient_name).strip()
     ingredient_name = ingredient_name.strip(" ,;:-–—").strip()
+
+    # A comma inside the link text produces a modifier of its own ("[cream, whipped](x.md)
+    # with sugar"), and the clause after the link lives nowhere else once the line has been
+    # truncated to the link. Keeping only one of the two silently deleted the other, so
+    # both are kept, in the order the line wrote them.
+    modifier_parts = [part for part in (modifier, link_clause) if part]
+    combined_modifier = ", ".join(modifier_parts) or None
 
     return Ingredient(
         raw=raw_line.strip(),
         representations=parsed_representations,
         name=ingredient_name or primary_text,
-        modifier=modifier,
+        modifier=combined_modifier,
         optional=is_optional,
-        annotation=annotation
+        annotation=annotation,
+        link=link_target
     )
