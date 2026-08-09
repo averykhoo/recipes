@@ -81,11 +81,51 @@ jobs:
           # `Warning: Unexpected input(s) 'use_gemfile', valid inputs are ['entryPoint', 'args', 'source', ...]`
           #use_gemfile: true
 
-      # Auto-generate the Service Worker using Workbox
-      - name: Generate Service Worker with Workbox
+      # Generate the service worker from scripts/sw_template.js. Replaces workbox-cli:
+      # pages are served network-first so a deploy is visible on the next page view,
+      # and the offline copy is refreshed in the background after the worker activates.
+      - name: Generate Service Worker
         run: |
           sudo chown -R $USER:$USER ./.jekyll-build/_site
-          npx workbox-cli generateSW workbox-config.js
+          python scripts/build_sw.py
+
+      # Smoke-test the built site. These assertions need the real Jekyll output, so
+      # unlike the pytest suite in the `test` job they cannot run before the build.
+      - name: Verify built site
+        run: |
+          python - <<'EOF'
+          import sys
+          from pathlib import Path
+
+          site = Path('.jekyll-build/_site')
+          failures = []
+
+          service_worker = site / 'sw.js'
+          if not service_worker.is_file():
+              failures.append('sw.js was not generated')
+          else:
+              rendered = service_worker.read_text(encoding='utf-8')
+              for placeholder in ('__BUILD_ID__', '__SHELL_ASSETS__', '__PAGES__'):
+                  if placeholder in rendered:
+                      failures.append(f'sw.js still contains the {placeholder} placeholder')
+
+          published_source = sorted(p.relative_to(site).as_posix() for p in site.rglob('*.py'))
+          if published_source:
+              failures.append(f'python source published to the site: {published_source}')
+
+          if not (site / 'static' / '3d-moon-widget.html').is_file():
+              failures.append('static/3d-moon-widget.html is missing from the built site')
+
+          recipe_pages = list((site / 'recipes').rglob('*.html'))
+          if len(recipe_pages) < 10:
+              failures.append(f'only {len(recipe_pages)} recipe pages were built')
+
+          for failure in failures:
+              print(f'FAIL: {failure}')
+          if failures:
+              sys.exit(1)
+          print(f'Built site verified: {len(recipe_pages)} recipe pages, service worker stamped.')
+          EOF
 
       # STEP 3: Upload the final, built site from the correct location.
       - name: Upload artifact

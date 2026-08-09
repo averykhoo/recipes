@@ -20,6 +20,28 @@ description: A collection of recipes for real, actually-edible food.
 # Enable the theme's built-in search
 search_enabled: true
 
+# Keep the build helpers out of the published site. Without this they are served as
+# plain text at /scripts/*.py -- the prebuild step still runs them, since `exclude`
+# only governs what gets copied into _site.
+#
+# Note that `static/` is deliberately not excluded: the 3d moon widget lives there and
+# is meant to be published.
+#
+# Setting this key replaces Jekyll's default exclude list rather than adding to it,
+# so the defaults are repeated below.
+exclude:
+  - scripts
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
 # --- Jekyll Collections Configuration ---
 # 1. Define the collections for Jekyll to process
 collections:

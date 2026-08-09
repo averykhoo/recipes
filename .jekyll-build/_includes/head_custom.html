@@ -28,22 +28,65 @@
         }
     })();
 
-    /* 2. Handle PWA Connection state monitoring (Leave your existing SW code below this line) */
+    /* 2. Register the service worker and reload open pages onto new builds.
+     *
+     * Page content itself is kept fresh by the worker's network-first strategy, so a
+     * plain visit already shows the newest version. This block covers the other case:
+     * a page that was already open when a new build landed. */
     if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            const handleConnectionChange = () => {
-                if (!navigator.onLine) {
-                    console.log('[PWA] Connection lost. Switching to offline mode.');
-                } else if (navigator.serviceWorker.controller) {
-                    console.log('[PWA] Online. Site is offline ready.');
-                } else {
-                    console.log('[PWA] Online and connected.');
+        /* Read synchronously, before any worker can claim this page. A null controller
+         * means this load was never served by a worker, so there is nothing stale on
+         * screen and the first-ever registration must not trigger a reload. */
+        const WAS_CONTROLLED = !!navigator.serviceWorker.controller;
+        const RELOAD_GUARD_KEY = 'pwa-reloaded-for-build';
+        const UPDATE_CHECK_INTERVAL_MS = 60000;
+
+        let reloading = false;
+
+        /* Reloads at most once per build id. Without the guard, a worker that keeps
+         * re-activating would put the page into a reload loop. */
+        const reloadForBuild = (buildId) => {
+            if (!WAS_CONTROLLED || reloading) {
+                return;
+            }
+            if (buildId) {
+                try {
+                    if (sessionStorage.getItem(RELOAD_GUARD_KEY) === buildId) {
+                        return;
+                    }
+                    sessionStorage.setItem(RELOAD_GUARD_KEY, buildId);
+                } catch (err) {
+                    /* Private browsing can refuse sessionStorage; the `reloading` flag
+                     * still prevents a loop within this page's lifetime. */
                 }
-            };
+            }
+            reloading = true;
+            console.log('[PWA] New build activated, reloading onto it:', buildId || '(unknown)');
+            window.location.reload();
+        };
 
-            window.addEventListener('online', handleConnectionChange);
-            window.addEventListener('offline', handleConnectionChange);
+        navigator.serviceWorker.addEventListener('message', (event) => {
+            const data = event.data || {};
+            if (data.type === 'BUILD_ACTIVATED') {
+                reloadForBuild(data.buildId);
+            }
+        });
 
+        /* Messages from the worker stay queued until onmessage is assigned or this is
+         * called. Registering the listener above is not enough on its own, and without
+         * this the build id never arrives -- reloads would fall back to the blunter
+         * controllerchange path below. */
+        if (navigator.serviceWorker.startMessages) {
+            navigator.serviceWorker.startMessages();
+        }
+
+        /* Fallback for the case where the message is missed because the page was not
+         * yet listening when the worker activated. */
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            reloadForBuild(null);
+        });
+
+        window.addEventListener('load', () => {
             /* Dynamically detect base path to support both custom domains and GitHub Pages subpaths */
             let basePath = '/';
             const pathParts = window.location.pathname.split('/');
@@ -54,29 +97,28 @@
             const swUrl = basePath + 'sw.js';
             console.log('[PWA] Registering Service Worker at:', swUrl);
 
-            navigator.serviceWorker.register(swUrl)
+            /* updateViaCache:'none' keeps GitHub Pages' ten-minute max-age from
+             * delaying detection of a new worker. */
+            navigator.serviceWorker.register(swUrl, {updateViaCache: 'none'})
                 .then(registration => {
                     console.log('[PWA] Service Worker registered successfully with scope:', registration.scope);
 
-                    registration.addEventListener('updatefound', () => {
-                        const installingWorker = registration.installing;
-                        if (installingWorker) {
-                            console.log('[PWA] New Service Worker installing and pre-caching entire site...');
-
-                            installingWorker.addEventListener('statechange', () => {
-                                console.log('[PWA] Service Worker state changed to:', installingWorker.state);
-                                if (installingWorker.state === 'installed') {
-                                    if (navigator.serviceWorker.controller) {
-                                        console.log('[PWA] New background update is ready; please refresh.');
-                                    } else {
-                                        console.log('[PWA] SUCCESS: Entire website is now eagerly cached offline!');
-                                    }
-                                } else if (installingWorker.state === 'redundant') {
-                                    console.error('[PWA] ERROR: Caching failed.');
-                                }
-                            });
+                    const checkForUpdate = () => {
+                        if (document.hidden || !navigator.onLine) {
+                            return;
                         }
-                    });
+                        registration.update().catch(err => {
+                            console.log('[PWA] Update check failed:', err);
+                        });
+                    };
+
+                    /* Check on the occasions a new build is most likely to be waiting:
+                     * returning to an installed PWA, regaining connectivity, and
+                     * periodically while the page is actually on screen. */
+                    document.addEventListener('visibilitychange', checkForUpdate);
+                    window.addEventListener('online', checkForUpdate);
+                    window.addEventListener('focus', checkForUpdate);
+                    setInterval(checkForUpdate, UPDATE_CHECK_INTERVAL_MS);
                 })
                 .catch(error => {
                     console.error('[PWA] Service Worker registration failed:', error);
