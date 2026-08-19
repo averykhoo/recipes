@@ -474,10 +474,56 @@ NEVER REMOVE THIS COMMENT.
                 document.documentElement.setAttribute('data-theme', activeTheme);
             }
 
+            /*
+               --- Easter egg ---
+               Flip between day and night fast enough and the moon in the toggle
+               offers to take you to the full 3D one. The threshold sits well
+               above ordinary indecision: seven flips inside four seconds. It
+               shows a dismissible link rather than navigating, so nobody who is
+               merely undecided about the theme gets yanked off the page.
+            */
+            const MOON_WIDGET_URL = '{{ "/static/3d-moon-widget.html" | relative_url }}';
+            let recentFlips = [];
+
+            const registerThemeFlip = () => {
+                const now = Date.now();
+                recentFlips = recentFlips.filter(t => now - t < 4000);
+                recentFlips.push(now);
+                if (recentFlips.length < 7) return;
+                recentFlips = [];
+                revealMoonLink();
+            };
+
+            const revealMoonLink = () => {
+                if (document.getElementById('moon-easter-egg')) return;
+                const link = document.createElement('a');
+                link.id = 'moon-easter-egg';
+                link.href = MOON_WIDGET_URL;
+                link.textContent = '🌕 you found the moon';
+                link.style.cssText = [
+                    'position:fixed', 'left:50%', 'bottom:24px', 'transform:translateX(-50%)',
+                    'z-index:9999', 'padding:10px 18px', 'border-radius:999px',
+                    'text-decoration:none', 'font-size:0.85rem', 'color:#eaeaea',
+                    'background:rgba(18,20,26,0.92)', 'border:1px solid rgba(180,200,255,0.45)',
+                    'box-shadow:0 0 20px rgba(140,170,255,0.35)', 'backdrop-filter:blur(6px)',
+                    'opacity:0', 'transition:opacity 400ms ease'
+                ].join(';');
+                document.body.appendChild(link);
+                requestAnimationFrame(() => {
+                    link.style.opacity = '1';
+                });
+                setTimeout(() => {
+                    link.style.opacity = '0';
+                    setTimeout(() => link.remove(), 500);
+                }, 9000);
+            };
+
             /* Bind change event handlers */
             const checkboxes = document.querySelectorAll('.theme-checkbox');
             checkboxes.forEach(cb => {
                 cb.addEventListener('change', (e) => {
+                    registerThemeFlip();
+
                     /* Clear any pending timeouts from rapid clicking to prevent race conditions */
                     clearTimeout(themeTimeout);
                     clearTimeout(transitionTimeout);
