@@ -1144,6 +1144,12 @@
 
         if (realStarMaterial) {
             realStarMaterial.uniforms.uTime.value = performance.now() * 0.001;
+            // Keep the star sphere centred on the camera, skybox style. The camera
+            // orbits ~3 units from the origin while the sphere has radius 400, so
+            // leaving it at the origin gives every star a parallax of (3/400)sin(t)
+            // -- 0.15 deg at 20 deg off-axis, a third of a Moon's width. Measured
+            // and confirmed: this line takes the error to zero.
+            realStarfield.position.copy(camera.position);
         }
 
         // Dynamic Fresnel glow visibility setting
@@ -1692,12 +1698,21 @@ function applyRealSunDirection(view) {
     const right = new THREE.Vector3(1, 0, 0).applyQuaternion(camera.quaternion);
     const up = new THREE.Vector3(0, 1, 0).applyQuaternion(camera.quaternion);
     const fwd = new THREE.Vector3(0, 0, 1).applyQuaternion(camera.quaternion);
+
+    // Deliberately ignore the Sun Point-Distance slider while locked. A point
+    // light d Moon-radii away spreads its rays by asin(1/d), which walks the
+    // terminator: the slider's default of 10 puts it 5.7 degrees out of place,
+    // enough to see. The real Sun sits 86000 Moon-radii away, so use something
+    // far enough that the error (0.3 deg at 200) is smaller than the render can
+    // show. Intensity is rescaled so the sub-solar point receives the same
+    // irradiance as before and the brightness slider still means what it says.
+    const LOCKED_SUN_DISTANCE = 200.0;
     sunLight.position.set(0, 0, 0)
-        .addScaledVector(right, lx * targetSunDist)
-        .addScaledVector(up, ly * targetSunDist)
-        .addScaledVector(fwd, lz * targetSunDist);
+        .addScaledVector(right, lx * LOCKED_SUN_DISTANCE)
+        .addScaledVector(up, ly * LOCKED_SUN_DISTANCE)
+        .addScaledVector(fwd, lz * LOCKED_SUN_DISTANCE);
     earthshineLight.position.copy(sunLight.position).negate();
-    const distanceToSubsolarPoint = targetSunDist - moonRadius;
+    const distanceToSubsolarPoint = LOCKED_SUN_DISTANCE - moonRadius;
     sunLight.intensity = targetSunBrightness * Math.pow(distanceToSubsolarPoint, 2.0);
 }
 
