@@ -135,3 +135,4 @@ temp_parsed/
 
 # cached star catalogue for scripts/make_star_data.py (re-downloaded on demand)
 scripts/BSC5
+scripts/constellations.lines.json
