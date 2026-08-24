@@ -7,7 +7,7 @@ Serves 2 (small), with a slice or two of sourdough each, toasted but not too cri
 ## Ingredients
 
 ### Confit vegetables (made ahead — keeps for months)
-* 2 red bell peppers, cleaned and cut into strips, confit in oil (~1-2 hours)
+* 2 red bell peppers, *skinned*, cleaned and cut into strips, confit in oil (~1-2 hours)
 * 3 carrots, peeled and diced, confit in oil (~1 hour)
 * Garlic, confit in oil (~2-3 hours) — optional, whole cloves are fine
 
