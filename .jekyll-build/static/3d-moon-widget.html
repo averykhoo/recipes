@@ -913,20 +913,32 @@
         });
 
         // --- Decoupled Quaternion rotation on Drag ---
-        let isDraggingMoon = false;
-        let prevPointerPosition = {x: 0, y: 0};
+        // One pointer spins the Moon; two are OrbitControls' pinch-zoom and pan.
+        // Each pointer is measured against its OWN last position: with a single
+        // shared one, two fingers' alternating events read as jumps the size of
+        // the gap between them, and a pinch spun the Moon ~30 degrees. Once a
+        // gesture has used two fingers it spins nothing until all are lifted, so
+        // ending a pinch one finger at a time does not nudge it either.
+        const activePointers = new Map();       // pointerId -> last {x, y}
+        let gestureWasMultiTouch = false;
 
         renderer.domElement.addEventListener('pointerdown', (e) => {
             if (isDraggingSun) return;
-            isDraggingMoon = true;
-            prevPointerPosition = {x: e.clientX, y: e.clientY};
+            // Same for the mouse: right/middle drag and ctrl/shift/meta + left are
+            // OrbitControls' pan and zoom, and should not spin the Moon on the way.
+            if (e.pointerType === 'mouse' && (e.button !== 0 || e.ctrlKey || e.shiftKey || e.metaKey)) return;
+            activePointers.set(e.pointerId, {x: e.clientX, y: e.clientY});
+            if (activePointers.size > 1) gestureWasMultiTouch = true;
         });
 
         renderer.domElement.addEventListener('pointermove', (e) => {
-            if (!isDraggingMoon || isDraggingSun) return;
+            const prev = activePointers.get(e.pointerId);
+            if (!prev) return;
+            activePointers.set(e.pointerId, {x: e.clientX, y: e.clientY});
+            if (isDraggingSun || gestureWasMultiTouch || activePointers.size !== 1) return;
 
-            const deltaX = e.clientX - prevPointerPosition.x;
-            const deltaY = e.clientY - prevPointerPosition.y;
+            const deltaX = e.clientX - prev.x;
+            const deltaY = e.clientY - prev.y;
 
             // Map drag directions to screen perpendicular axes
             const dragAxisCamera = new THREE.Vector3(deltaY, deltaX, 0).normalize();
@@ -946,13 +958,13 @@
 
             moon.quaternion.premultiply(deltaRotation);
             glowMesh.quaternion.copy(moon.quaternion); // Keep atmosphere aligned with topography
-
-            prevPointerPosition = {x: e.clientX, y: e.clientY};
         });
 
-        window.addEventListener('pointerup', () => {
-            isDraggingMoon = false;
-        });
+        // pointercancel too: the browser sends it when it takes a touch over.
+        ['pointerup', 'pointercancel'].forEach((type) => window.addEventListener(type, (e) => {
+            activePointers.delete(e.pointerId);
+            if (activePointers.size === 0) gestureWasMultiTouch = false;
+        }));
     }
 
     function updateColorTexture() {
