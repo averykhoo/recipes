@@ -345,6 +345,8 @@
 
     <div class="control-group">
         <label>Real Sky <span id="sky-lock-status"></span></label>
+        <select id="obs-place" title="where you are looking from"
+                style="width:100%; margin-bottom:6px; background:rgba(255,255,255,0.08); border:1px solid #555; color:#eaeaea; color-scheme:dark; border-radius:6px; padding:4px 6px; font-size:0.75rem;"></select>
         <div style="display:flex; gap:6px; margin-bottom:6px;">
             <input type="number" id="obs-lat" step="0.01" style="width:50%; background:rgba(255,255,255,0.08); border:1px solid #555; color:#eaeaea; border-radius:6px; padding:4px 6px; font-size:0.75rem;"
                    title="observer latitude, degrees north">
@@ -353,7 +355,6 @@
         </div>
         <button id="btn-sky-lock" onclick="toggleSkyLock()" style="display:none;">Lock to the real Moon</button>
         <div id="sky-lock-readout" style="display:none; margin-top:8px; font-size:0.72rem; line-height:1.55; color:#b9c4d4; font-variant-numeric:tabular-nums;"></div>
-        <div style="margin-top:6px; font-size:0.7rem; color:#8a94a4; cursor:pointer; text-decoration:underline;" onclick="useMyLocation()">use my location</div>
     </div>
 
     <button id="btn-reset" onclick="triggerReset()">Reset Camera & Lights</button>
@@ -1662,20 +1663,26 @@ function gmst(jdUT) {
         + 0.000387933 * T * T - T * T * T / 38710000.0);
 }
 
-/** Geocentric -> topocentric equatorial (Meeus ch.40). */
+// The observer stands on the WGS84 ellipsoid: the datum GPS and the Geolocation
+// API report in, so their latitude and height go in unconverted. (Meeus uses the
+// IAU 1976 one; the two differ by 3 m in radius, which is far below visible.)
+const WGS84_A_M = 6378137.0;
+const WGS84_B_OVER_A = 1 - 1 / 298.257223563;
+
+/** Geocentric -> topocentric equatorial (Meeus ch.40), observer on WGS84. */
 function topocentric(ra, dec, distKm, lst, latDeg, elevM) {
-    const u = Math.atan(0.99664719 * tand(latDeg));
-    const rhoSin = 0.99664719 * Math.sin(u) + (elevM / 6378140) * sind(latDeg);
-    const rhoCos = Math.cos(u) + (elevM / 6378140) * cosd(latDeg);
-    const sinPi = EARTH_RADIUS_KM / distKm;
+    const u = Math.atan(WGS84_B_OVER_A * tand(latDeg));
+    const rhoSin = WGS84_B_OVER_A * Math.sin(u) + (elevM / WGS84_A_M) * sind(latDeg);
+    const rhoCos = Math.cos(u) + (elevM / WGS84_A_M) * cosd(latDeg);
+    const aKm = WGS84_A_M / 1000;
+    const sinPi = aKm / distKm;
     const H = norm360(lst - ra);
     const dra = Math.atan2(-rhoCos * sinPi * sind(H), cosd(dec) - rhoCos * sinPi * cosd(H));
     const decT = Math.atan2((sind(dec) - rhoSin * sinPi) * Math.cos(dra),
         cosd(dec) - rhoCos * sinPi * cosd(H)) / DEG;
     const xg = distKm * cosd(dec) * cosd(ra), yg = distKm * cosd(dec) * sind(ra),
         zg = distKm * sind(dec);
-    const xo = EARTH_RADIUS_KM * rhoCos * cosd(lst), yo = EARTH_RADIUS_KM * rhoCos * sind(lst),
-        zo = EARTH_RADIUS_KM * rhoSin;
+    const xo = aKm * rhoCos * cosd(lst), yo = aKm * rhoCos * sind(lst), zo = aKm * rhoSin;
     return {
         ra: norm360(ra + dra / DEG), dec: decT,
         dist: Math.sqrt((xg - xo) * (xg - xo) + (yg - yo) * (yg - yo) + (zg - zo) * (zg - zo))
@@ -1925,13 +1932,136 @@ function orientStarfield(view, latDeg, elevM) {
    Phase, libration and the tilt of the whole disc all come from the ephemeris.
    ========================================================================== */
 
-// Default observer. Editable in the panel. "Use my location" asks the browser
-// only when clicked -- nobody gets a geolocation prompt just for loading a page.
-let observerLat = 1.35, observerLon = 103.82, observerElev = 15;
+/*
+   Where the observer is, without asking. The tilt of the Moon depends on where
+   you stand -- the same Moon over Singapore and over Budapest is rotated ~110
+   degrees -- but a geolocation prompt on page load is rude. The browser's IANA
+   timezone names a city ("Europe/Budapest"), and a city is plenty: the tilt
+   drifts slowly with distance, it is the wrong continent that ruins it.
+
+   The same table fills the place picker, so anyone can pick where they are
+   instead. "Device location" in the picker asks the browser, but only when chosen.
+
+   TIMEZONE_COORDS_JSON is produced by scripts/make_timezone_data.py, the ONLY
+   producer. Format "tz-coords-2":
+     zones      {"Europe/Budapest": [4750, 1908, "HU"], "America/New_York":
+                 [4071, -7401, "US", "Eastern (most areas)"], ...}
+                every IANA location zone: its principal city in hundredths of a
+                degree, ISO country code, and tzdata's note where a country has
+                several zones.
+     links      {"Asia/Calcutta": "Asia/Kolkata", ...} old names browsers still
+                report, onto zones above. Not listed in the picker.
+     countries  {"HU": "Hungary", ...}
+*/
+const TIMEZONE_COORDS_JSON = '{"format":"tz-coords-2","tzdata":"2026e","zones":{"Africa/Abidjan":[532,-403,"CI"],"Africa/Accra":[555,-22,"GH"],"Africa/Addis_Ababa":[903,3870,"ET"],"Africa/Algiers":[3678,305,"DZ"],"Africa/Asmara":[1533,3888,"ER"],"Africa/Bamako":[1265,-800,"ML"],"Africa/Bangui":[437,1858,"CF"],"Africa/Banjul":[1347,-1665,"GM"],"Africa/Bissau":[1185,-1558,"GW"],"Africa/Blantyre":[-1578,3500,"MW"],"Africa/Brazzaville":[-427,1528,"CG"],"Africa/Bujumbura":[-338,2937,"BI"],"Africa/Cairo":[3005,3125,"EG"],"Africa/Casablanca":[3365,-758,"MA"],"Africa/Ceuta":[3588,-532,"ES","Ceuta, Melilla"],"Africa/Conakry":[952,-1372,"GN"],"Africa/Dakar":[1467,-1743,"SN"],"Africa/Dar_es_Salaam":[-680,3928,"TZ"],"Africa/Djibouti":[1160,4315,"DJ"],"Africa/Douala":[405,970,"CM"],"Africa/El_Aaiun":[2715,-1320,"EH"],"Africa/Freetown":[850,-1325,"SL"],"Africa/Gaborone":[-2465,2592,"BW"],"Africa/Harare":[-1783,3105,"ZW"],"Africa/Johannesburg":[-2625,2800,"ZA"],"Africa/Juba":[485,3162,"SS"],"Africa/Kampala":[32,3242,"UG"],"Africa/Khartoum":[1560,3253,"SD"],"Africa/Kigali":[-195,3007,"RW"],"Africa/Kinshasa":[-430,1530,"CD","Dem. Rep. of Congo (west)"],"Africa/Lagos":[645,340,"NG"],"Africa/Libreville":[38,945,"GA"],"Africa/Lome":[613,122,"TG"],"Africa/Luanda":[-880,1323,"AO"],"Africa/Lubumbashi":[-1167,2747,"CD","Dem. Rep. of Congo (east)"],"Africa/Lusaka":[-1542,2828,"ZM"],"Africa/Malabo":[375,878,"GQ"],"Africa/Maputo":[-2597,3258,"MZ"],"Africa/Maseru":[-2947,2750,"LS"],"Africa/Mbabane":[-2630,3110,"SZ"],"Africa/Mogadishu":[207,4537,"SO"],"Africa/Monrovia":[630,-1078,"LR"],"Africa/Nairobi":[-128,3682,"KE"],"Africa/Ndjamena":[1212,1505,"TD"],"Africa/Niamey":[1352,212,"NE"],"Africa/Nouakchott":[1810,-1595,"MR"],"Africa/Ouagadougou":[1237,-152,"BF"],"Africa/Porto-Novo":[648,262,"BJ"],"Africa/Sao_Tome":[33,673,"ST"],"Africa/Tripoli":[3290,1318,"LY"],"Africa/Tunis":[3680,1018,"TN"],"Africa/Windhoek":[-2257,1710,"NA"],"America/Adak":[5188,-17666,"US","Alaska - western Aleutians"],"America/Anchorage":[6122,-14990,"US","Alaska (most areas)"],"America/Anguilla":[1820,-6307,"AI"],"America/Antigua":[1705,-6180,"AG"],"America/Araguaina":[-720,-4820,"BR","Tocantins"],"America/Argentina/Buenos_Aires":[-3460,-5845,"AR","Buenos Aires (BA, CF)"],"America/Argentina/Catamarca":[-2847,-6578,"AR","Catamarca (CT), Chubut (CH)"],"America/Argentina/Cordoba":[-3140,-6418,"AR","Argentina (most areas: CB, CC, CN, ER, FM, MN, SE, SF)"],"America/Argentina/Jujuy":[-2418,-6530,"AR","Jujuy (JY)"],"America/Argentina/La_Rioja":[-2943,-6685,"AR","La Rioja (LR)"],"America/Argentina/Mendoza":[-3288,-6882,"AR","Mendoza (MZ)"],"America/Argentina/Rio_Gallegos":[-5163,-6922,"AR","Santa Cruz (SC)"],"America/Argentina/Salta":[-2478,-6542,"AR","Salta (SA, LP, NQ, RN)"],"America/Argentina/San_Juan":[-3153,-6852,"AR","San Juan (SJ)"],"America/Argentina/San_Luis":[-3332,-6635,"AR","San Luis (SL)"],"America/Argentina/Tucuman":[-2682,-6522,"AR","Tucuman (TM)"],"America/Argentina/Ushuaia":[-5480,-6830,"AR","Tierra del Fuego (TF)"],"America/Aruba":[1250,-6997,"AW"],"America/Asuncion":[-2527,-5767,"PY"],"America/Atikokan":[4876,-9162,"CA","EST - ON (Atikokan), NU (Coral H)"],"America/Bahia":[-1298,-3852,"BR","Bahia"],"America/Bahia_Banderas":[2080,-10525,"MX","Bahia de Banderas"],"America/Barbados":[1310,-5962,"BB"],"America/Belem":[-145,-4848,"BR","Para (east), Amapa"],"America/Belize":[1750,-8820,"BZ"],"America/Blanc-Sablon":[5142,-5712,"CA","AST - QC (Lower North Shore)"],"America/Boa_Vista":[282,-6067,"BR","Roraima"],"America/Bogota":[460,-7408,"CO"],"America/Boise":[4361,-11620,"US","Mountain - ID (south), OR (east)"],"America/Cambridge_Bay":[6911,-10505,"CA","Mountain - NU (west)"],"America/Campo_Grande":[-2045,-5462,"BR","Mato Grosso do Sul"],"America/Cancun":[2108,-8677,"MX","Quintana Roo"],"America/Caracas":[1050,-6693,"VE"],"America/Cayenne":[493,-5233,"GF"],"America/Cayman":[1930,-8138,"KY"],"America/Chicago":[4185,-8765,"US","Central (most areas)"],"America/Chihuahua":[2863,-10608,"MX","Chihuahua (most areas)"],"America/Ciudad_Juarez":[3173,-10648,"MX","Chihuahua (US border - west)"],"America/Costa_Rica":[993,-8408,"CR"],"America/Coyhaique":[-4557,-7207,"CL","Aysen Region"],"America/Creston":[4910,-11652,"CA","MST - BC (Creston)"],"America/Cuiaba":[-1558,-5608,"BR","Mato Grosso"],"America/Curacao":[1218,-6900,"CW"],"America/Danmarkshavn":[7677,-1867,"GL","National Park (east coast)"],"America/Dawson":[6407,-13942,"CA","MST - Yukon (west)"],"America/Dawson_Creek":[5577,-12023,"CA","MST - BC (Dawson Cr, Ft St John)"],"America/Denver":[3974,-10498,"US","Mountain (most areas)"],"America/Detroit":[4233,-8305,"US","Eastern - MI (most areas)"],"America/Dominica":[1530,-6140,"DM"],"America/Edmonton":[5355,-11347,"CA","CST - AB, BC(E), NT(E), SK(W)"],"America/Eirunepe":[-667,-6987,"BR","Amazonas (west)"],"America/El_Salvador":[1370,-8920,"SV"],"America/Fort_Nelson":[5880,-12270,"CA","MST - BC (Ft Nelson)"],"America/Fortaleza":[-372,-3850,"BR","Brazil (northeast: MA, PI, CE, RN, PB)"],"America/Glace_Bay":[4620,-5995,"CA","Atlantic - NS (Cape Breton)"],"America/Goose_Bay":[5333,-6042,"CA","Atlantic - Labrador (most areas)"],"America/Grand_Turk":[2147,-7113,"TC"],"America/Grenada":[1205,-6175,"GD"],"America/Guadeloupe":[1623,-6153,"GP"],"America/Guatemala":[1463,-9052,"GT"],"America/Guayaquil":[-217,-7983,"EC","Ecuador (mainland)"],"America/Guyana":[680,-5817,"GY"],"America/Halifax":[4465,-6360,"CA","Atlantic - NS (most areas), PE"],"America/Havana":[2313,-8237,"CU"],"America/Hermosillo":[2907,-11097,"MX","Sonora"],"America/Indiana/Indianapolis":[3977,-8616,"US","Eastern - IN (most areas)"],"America/Indiana/Knox":[4130,-8662,"US","Central - IN (Starke)"],"America/Indiana/Marengo":[3838,-8634,"US","Eastern - IN (Crawford)"],"America/Indiana/Petersburg":[3849,-8728,"US","Eastern - IN (Pike)"],"America/Indiana/Tell_City":[3795,-8676,"US","Central - IN (Perry)"],"America/Indiana/Vevay":[3875,-8507,"US","Eastern - IN (Switzerland)"],"America/Indiana/Vincennes":[3868,-8753,"US","Eastern - IN (Da, Du, K, Mn)"],"America/Indiana/Winamac":[4105,-8660,"US","Eastern - IN (Pulaski)"],"America/Inuvik":[6835,-13372,"CA","CST - NT (west)"],"America/Iqaluit":[6373,-6847,"CA","Eastern - NU (most areas)"],"America/Jamaica":[1797,-7679,"JM"],"America/Juneau":[5830,-13442,"US","Alaska - Juneau area"],"America/Kentucky/Louisville":[3825,-8576,"US","Eastern - KY (Louisville area)"],"America/Kentucky/Monticello":[3683,-8485,"US","Eastern - KY (Wayne)"],"America/Kralendijk":[1215,-6828,"BQ"],"America/La_Paz":[-1650,-6815,"BO"],"America/Lima":[-1205,-7705,"PE"],"America/Los_Angeles":[3405,-11824,"US","Pacific"],"America/Lower_Princes":[1805,-6305,"SX"],"America/Maceio":[-967,-3572,"BR","Alagoas, Sergipe"],"America/Managua":[1215,-8628,"NI"],"America/Manaus":[-313,-6002,"BR","Amazonas (east)"],"America/Marigot":[1807,-6308,"MF"],"America/Martinique":[1460,-6108,"MQ"],"America/Matamoros":[2583,-9750,"MX","Coahuila, Nuevo Leon, Tamaulipas (US border)"],"America/Mazatlan":[2322,-10642,"MX","Baja California Sur, Nayarit (most areas), Sinaloa"],"America/Menominee":[4511,-8761,"US","Central - MI (Wisconsin border)"],"America/Merida":[2097,-8962,"MX","Campeche, Yucatan"],"America/Metlakatla":[5513,-13158,"US","Alaska - Annette Island"],"America/Mexico_City":[1940,-9915,"MX","Central Mexico"],"America/Miquelon":[4705,-5633,"PM"],"America/Moncton":[4610,-6478,"CA","Atlantic - New Brunswick"],"America/Monterrey":[2567,-10032,"MX","Durango; Coahuila, Nuevo Leon, Tamaulipas (most areas)"],"America/Montevideo":[-3491,-5621,"UY"],"America/Montserrat":[1672,-6222,"MS"],"America/Nassau":[2508,-7735,"BS"],"America/New_York":[4071,-7401,"US","Eastern (most areas)"],"America/Nome":[6450,-16541,"US","Alaska (west)"],"America/Noronha":[-385,-3242,"BR","Atlantic islands"],"America/North_Dakota/Beulah":[4726,-10178,"US","Central - ND (Mercer)"],"America/North_Dakota/Center":[4712,-10130,"US","Central - ND (Oliver)"],"America/North_Dakota/New_Salem":[4684,-10141,"US","Central - ND (Morton rural)"],"America/Nuuk":[6418,-5173,"GL","most of Greenland"],"America/Ojinaga":[2957,-10442,"MX","Chihuahua (US border - east)"],"America/Panama":[897,-7953,"PA"],"America/Paramaribo":[583,-5517,"SR"],"America/Phoenix":[3345,-11207,"US","MST - AZ (except Navajo)"],"America/Port-au-Prince":[1853,-7233,"HT"],"America/Port_of_Spain":[1065,-6152,"TT"],"America/Porto_Velho":[-877,-6390,"BR","Rondonia"],"America/Puerto_Rico":[1847,-6611,"PR"],"America/Punta_Arenas":[-5315,-7092,"CL","Magallanes Region"],"America/Rankin_Inlet":[6282,-9208,"CA","Central - NU (central)"],"America/Recife":[-805,-3490,"BR","Pernambuco"],"America/Regina":[5040,-10465,"CA","CST - SK (most areas)"],"America/Resolute":[7470,-9483,"CA","Central - NU (Resolute)"],"America/Rio_Branco":[-997,-6780,"BR","Acre"],"America/Santarem":[-243,-5487,"BR","Para (west)"],"America/Santiago":[-3345,-7067,"CL","most of Chile"],"America/Santo_Domingo":[1847,-6990,"DO"],"America/Sao_Paulo":[-2353,-4662,"BR","Brazil (southeast: GO, DF, MG, ES, RJ, SP, PR, SC, RS)"],"America/Scoresbysund":[7048,-2197,"GL","Scoresbysund/Ittoqqortoormiit"],"America/Sitka":[5718,-13530,"US","Alaska - Sitka area"],"America/St_Barthelemy":[1788,-6285,"BL"],"America/St_Johns":[4757,-5272,"CA","Newfoundland, Labrador (SE)"],"America/St_Kitts":[1730,-6272,"KN"],"America/St_Lucia":[1402,-6100,"LC"],"America/St_Thomas":[1835,-6493,"VI"],"America/St_Vincent":[1315,-6123,"VC"],"America/Swift_Current":[5028,-10783,"CA","CST - SK (midwest)"],"America/Tegucigalpa":[1410,-8722,"HN"],"America/Thule":[7657,-6878,"GL","Thule/Pituffik"],"America/Tijuana":[3253,-11702,"MX","Baja California"],"America/Toronto":[4365,-7938,"CA","Eastern - ON & QC (most areas)"],"America/Tortola":[1845,-6462,"VG"],"America/Vancouver":[4927,-12312,"CA","MST - BC (most areas)"],"America/Whitehorse":[6072,-13505,"CA","MST - Yukon (east)"],"America/Winnipeg":[4988,-9715,"CA","EST - Manitoba, ON (northwest)"],"America/Yakutat":[5955,-13973,"US","Alaska - Yakutat"],"Antarctica/Casey":[-6628,11052,"AQ","Casey"],"Antarctica/Davis":[-6858,7797,"AQ","Davis"],"Antarctica/DumontDUrville":[-6667,14002,"AQ","Dumont-d\u0027Urville"],"Antarctica/Macquarie":[-5450,15895,"AU","Macquarie Island"],"Antarctica/Mawson":[-6760,6288,"AQ","Mawson"],"Antarctica/McMurdo":[-7783,16660,"AQ","New Zealand time - McMurdo, South Pole"],"Antarctica/Palmer":[-6480,-6410,"AQ","Palmer"],"Antarctica/Rothera":[-6757,-6813,"AQ","Rothera"],"Antarctica/Syowa":[-6901,3959,"AQ","Syowa"],"Antarctica/Troll":[-7201,253,"AQ","Troll"],"Antarctica/Vostok":[-7840,10690,"AQ","Vostok"],"Arctic/Longyearbyen":[7800,1600,"SJ"],"Asia/Aden":[1275,4520,"YE"],"Asia/Almaty":[4325,7695,"KZ","most of Kazakhstan"],"Asia/Amman":[3195,3593,"JO"],"Asia/Anadyr":[6475,17748,"RU","MSK+09 - Bering Sea"],"Asia/Aqtau":[4452,5027,"KZ","Mangghystau/Mankistau"],"Asia/Aqtobe":[5028,5717,"KZ","Aqtobe/Aktobe"],"Asia/Ashgabat":[3795,5838,"TM"],"Asia/Atyrau":[4712,5193,"KZ","Atyrau/Atirau/Gur\u0027yev"],"Asia/Baghdad":[3335,4442,"IQ"],"Asia/Bahrain":[2638,5058,"BH"],"Asia/Baku":[4038,4985,"AZ"],"Asia/Bangkok":[1375,10052,"TH"],"Asia/Barnaul":[5337,8375,"RU","MSK+04 - Altai"],"Asia/Beirut":[3388,3550,"LB"],"Asia/Bishkek":[4290,7460,"KG"],"Asia/Brunei":[493,11492,"BN"],"Asia/Chita":[5205,11347,"RU","MSK+06 - Zabaykalsky"],"Asia/Colombo":[693,7985,"LK"],"Asia/Damascus":[3350,3630,"SY"],"Asia/Dhaka":[2372,9042,"BD"],"Asia/Dili":[-855,12558,"TL"],"Asia/Dubai":[2530,5530,"AE"],"Asia/Dushanbe":[3858,6880,"TJ"],"Asia/Famagusta":[3512,3395,"CY","Northern Cyprus"],"Asia/Gaza":[3150,3447,"PS","Gaza Strip"],"Asia/Hebron":[3153,3510,"PS","West Bank"],"Asia/Ho_Chi_Minh":[1075,10667,"VN"],"Asia/Hong_Kong":[2228,11415,"HK"],"Asia/Hovd":[4802,9165,"MN","Bayan-Olgii, Hovd, Uvs"],"Asia/Irkutsk":[5227,10433,"RU","MSK+05 - Irkutsk, Buryatia"],"Asia/Jakarta":[-617,10680,"ID","Java, Sumatra"],"Asia/Jayapura":[-253,14070,"ID","New Guinea (West Papua / Irian Jaya), Malukus/Moluccas"],"Asia/Jerusalem":[3178,3522,"IL"],"Asia/Kabul":[3452,6920,"AF"],"Asia/Kamchatka":[5302,15865,"RU","MSK+09 - Kamchatka"],"Asia/Karachi":[2487,6705,"PK"],"Asia/Kathmandu":[2772,8532,"NP"],"Asia/Khandyga":[6266,13555,"RU","MSK+06 - Tomponsky, Ust-Maysky"],"Asia/Kolkata":[2253,8837,"IN"],"Asia/Krasnoyarsk":[5602,9283,"RU","MSK+04 - Krasnoyarsk area"],"Asia/Kuala_Lumpur":[317,10170,"MY","Malaysia (peninsula)"],"Asia/Kuching":[155,11033,"MY","Sabah, Sarawak"],"Asia/Kuwait":[2933,4798,"KW"],"Asia/Macau":[2220,11354,"MO"],"Asia/Magadan":[5957,15080,"RU","MSK+08 - Magadan"],"Asia/Makassar":[-512,11940,"ID","Borneo (east, south), Sulawesi/Celebes, Bali, Nusa Tengarra, Timor (west)"],"Asia/Manila":[1459,12097,"PH"],"Asia/Muscat":[2360,5858,"OM"],"Asia/Nicosia":[3517,3337,"CY","most of Cyprus"],"Asia/Novokuznetsk":[5375,8712,"RU","MSK+04 - Kemerovo"],"Asia/Novosibirsk":[5503,8292,"RU","MSK+04 - Novosibirsk"],"Asia/Omsk":[5500,7340,"RU","MSK+03 - Omsk"],"Asia/Oral":[5122,5135,"KZ","West Kazakhstan"],"Asia/Phnom_Penh":[1155,10492,"KH"],"Asia/Pontianak":[-3,10933,"ID","Borneo (west, central)"],"Asia/Pyongyang":[3902,12575,"KP"],"Asia/Qatar":[2528,5153,"QA"],"Asia/Qostanay":[5320,6362,"KZ","Qostanay/Kostanay/Kustanay"],"Asia/Qyzylorda":[4480,6547,"KZ","Qyzylorda/Kyzylorda/Kzyl-Orda"],"Asia/Riyadh":[2463,4672,"SA"],"Asia/Sakhalin":[4697,14270,"RU","MSK+08 - Sakhalin Island"],"Asia/Samarkand":[3967,6680,"UZ","Uzbekistan (west)"],"Asia/Seoul":[3755,12697,"KR"],"Asia/Shanghai":[3123,12147,"CN","Beijing Time"],"Asia/Singapore":[128,10385,"SG"],"Asia/Srednekolymsk":[6747,15372,"RU","MSK+08 - Sakha (E), N Kuril Is"],"Asia/Taipei":[2505,12150,"TW"],"Asia/Tashkent":[4133,6930,"UZ","Uzbekistan (east)"],"Asia/Tbilisi":[4172,4482,"GE"],"Asia/Tehran":[3567,5143,"IR"],"Asia/Thimphu":[2747,8965,"BT"],"Asia/Tokyo":[3565,13974,"JP"],"Asia/Tomsk":[5650,8497,"RU","MSK+04 - Tomsk"],"Asia/Ulaanbaatar":[4792,10688,"MN","most of Mongolia"],"Asia/Urumqi":[4380,8758,"CN","Xinjiang Time"],"Asia/Ust-Nera":[6456,14323,"RU","MSK+07 - Oymyakonsky"],"Asia/Vientiane":[1797,10260,"LA"],"Asia/Vladivostok":[4317,13193,"RU","MSK+07 - Amur River"],"Asia/Yakutsk":[6200,12967,"RU","MSK+06 - Lena River"],"Asia/Yangon":[1678,9617,"MM"],"Asia/Yekaterinburg":[5685,6060,"RU","MSK+02 - Urals"],"Asia/Yerevan":[4018,4450,"AM"],"Atlantic/Azores":[3773,-2567,"PT","Azores"],"Atlantic/Bermuda":[3228,-6477,"BM"],"Atlantic/Canary":[2810,-1540,"ES","Canary Islands"],"Atlantic/Cape_Verde":[1492,-2352,"CV"],"Atlantic/Faroe":[6202,-677,"FO"],"Atlantic/Madeira":[3263,-1690,"PT","Madeira Islands"],"Atlantic/Reykjavik":[6415,-2185,"IS"],"Atlantic/South_Georgia":[-5427,-3653,"GS"],"Atlantic/St_Helena":[-1592,-570,"SH"],"Atlantic/Stanley":[-5170,-5785,"FK"],"Australia/Adelaide":[-3492,13858,"AU","South Australia"],"Australia/Brisbane":[-2747,15303,"AU","Queensland (most areas)"],"Australia/Broken_Hill":[-3195,14145,"AU","New South Wales (Yancowinna)"],"Australia/Darwin":[-1247,13083,"AU","Northern Territory"],"Australia/Eucla":[-3172,12887,"AU","Western Australia (Eucla)"],"Australia/Hobart":[-4288,14732,"AU","Tasmania"],"Australia/Lindeman":[-2027,14900,"AU","Queensland (Whitsunday Islands)"],"Australia/Lord_Howe":[-3155,15908,"AU","Lord Howe Island"],"Australia/Melbourne":[-3782,14497,"AU","Victoria"],"Australia/Perth":[-3195,11585,"AU","Western Australia (most areas)"],"Australia/Sydney":[-3387,15122,"AU","New South Wales (most areas)"],"Europe/Amsterdam":[5237,490,"NL"],"Europe/Andorra":[4250,152,"AD"],"Europe/Astrakhan":[4635,4805,"RU","MSK+01 - Astrakhan"],"Europe/Athens":[3797,2372,"GR"],"Europe/Belgrade":[4483,2050,"RS"],"Europe/Berlin":[5250,1337,"DE","most of Germany"],"Europe/Bratislava":[4815,1712,"SK"],"Europe/Brussels":[5083,433,"BE"],"Europe/Bucharest":[4443,2610,"RO"],"Europe/Budapest":[4750,1908,"HU"],"Europe/Busingen":[4770,868,"DE","Busingen"],"Europe/Chisinau":[4700,2883,"MD"],"Europe/Copenhagen":[5567,1258,"DK"],"Europe/Dublin":[5333,-625,"IE"],"Europe/Gibraltar":[3613,-535,"GI"],"Europe/Guernsey":[4945,-254,"GG"],"Europe/Helsinki":[6017,2497,"FI"],"Europe/Isle_of_Man":[5415,-447,"IM"],"Europe/Istanbul":[4102,2897,"TR"],"Europe/Jersey":[4918,-211,"JE"],"Europe/Kaliningrad":[5472,2050,"RU","MSK-01 - Kaliningrad"],"Europe/Kirov":[5860,4965,"RU","MSK+00 - Kirov"],"Europe/Kyiv":[5043,3052,"UA","most of Ukraine"],"Europe/Lisbon":[3872,-913,"PT","Portugal (mainland)"],"Europe/Ljubljana":[4605,1452,"SI"],"Europe/London":[5151,-13,"GB"],"Europe/Luxembourg":[4960,615,"LU"],"Europe/Madrid":[4040,-368,"ES","Spain (mainland)"],"Europe/Malta":[3590,1452,"MT"],"Europe/Mariehamn":[6010,1995,"AX"],"Europe/Minsk":[5390,2757,"BY"],"Europe/Monaco":[4370,738,"MC"],"Europe/Moscow":[5576,3762,"RU","MSK+00 - Moscow area"],"Europe/Oslo":[5992,1075,"NO"],"Europe/Paris":[4887,233,"FR"],"Europe/Podgorica":[4243,1927,"ME"],"Europe/Prague":[5008,1443,"CZ"],"Europe/Riga":[5695,2410,"LV"],"Europe/Rome":[4190,1248,"IT"],"Europe/Samara":[5320,5015,"RU","MSK+01 - Samara, Udmurtia"],"Europe/San_Marino":[4392,1247,"SM"],"Europe/Sarajevo":[4387,1842,"BA"],"Europe/Saratov":[5157,4603,"RU","MSK+01 - Saratov"],"Europe/Simferopol":[4495,3410,"UA","Crimea"],"Europe/Skopje":[4198,2143,"MK"],"Europe/Sofia":[4268,2332,"BG"],"Europe/Stockholm":[5933,1805,"SE"],"Europe/Tallinn":[5942,2475,"EE"],"Europe/Tirane":[4133,1983,"AL"],"Europe/Ulyanovsk":[5433,4840,"RU","MSK+01 - Ulyanovsk"],"Europe/Vaduz":[4715,952,"LI"],"Europe/Vatican":[4190,1245,"VA"],"Europe/Vienna":[4822,1633,"AT"],"Europe/Vilnius":[5468,2532,"LT"],"Europe/Volgograd":[4873,4442,"RU","MSK+00 - Volgograd"],"Europe/Warsaw":[5225,2100,"PL"],"Europe/Zagreb":[4580,1597,"HR"],"Europe/Zurich":[4738,853,"CH"],"Indian/Antananarivo":[-1892,4752,"MG"],"Indian/Chagos":[-733,7242,"IO"],"Indian/Christmas":[-1042,10572,"CX"],"Indian/Cocos":[-1217,9692,"CC"],"Indian/Comoro":[-1168,4327,"KM"],"Indian/Kerguelen":[-4935,7022,"TF"],"Indian/Mahe":[-467,5547,"SC"],"Indian/Maldives":[417,7350,"MV"],"Indian/Mauritius":[-2017,5750,"MU"],"Indian/Mayotte":[-1278,4523,"YT"],"Indian/Reunion":[-2087,5547,"RE"],"Pacific/Apia":[-1383,-17173,"WS"],"Pacific/Auckland":[-3687,17477,"NZ","most of New Zealand"],"Pacific/Bougainville":[-622,15557,"PG","Bougainville"],"Pacific/Chatham":[-4395,-17655,"NZ","Chatham Islands"],"Pacific/Chuuk":[742,15178,"FM","Chuuk/Truk, Yap"],"Pacific/Easter":[-2715,-10943,"CL","Easter Island"],"Pacific/Efate":[-1767,16842,"VU"],"Pacific/Fakaofo":[-937,-17123,"TK"],"Pacific/Fiji":[-1813,17842,"FJ"],"Pacific/Funafuti":[-852,17922,"TV"],"Pacific/Galapagos":[-90,-8960,"EC","Galapagos Islands"],"Pacific/Gambier":[-2313,-13495,"PF","Gambier Islands"],"Pacific/Guadalcanal":[-953,16020,"SB"],"Pacific/Guam":[1347,14475,"GU"],"Pacific/Honolulu":[2131,-15786,"US","Hawaii"],"Pacific/Kanton":[-278,-17172,"KI","Phoenix Islands"],"Pacific/Kiritimati":[187,-15733,"KI","Line Islands"],"Pacific/Kosrae":[532,16298,"FM","Kosrae"],"Pacific/Kwajalein":[908,16733,"MH","Kwajalein"],"Pacific/Majuro":[715,17120,"MH","most of Marshall Islands"],"Pacific/Marquesas":[-900,-13950,"PF","Marquesas Islands"],"Pacific/Midway":[2822,-17737,"UM","Midway Islands"],"Pacific/Nauru":[-52,16692,"NR"],"Pacific/Niue":[-1902,-16992,"NU"],"Pacific/Norfolk":[-2905,16797,"NF"],"Pacific/Noumea":[-2227,16645,"NC"],"Pacific/Pago_Pago":[-1427,-17070,"AS"],"Pacific/Palau":[733,13448,"PW"],"Pacific/Pitcairn":[-2507,-13008,"PN"],"Pacific/Pohnpei":[697,15822,"FM","Pohnpei/Ponape"],"Pacific/Port_Moresby":[-950,14717,"PG","most of Papua New Guinea"],"Pacific/Rarotonga":[-2123,-15977,"CK"],"Pacific/Saipan":[1520,14575,"MP"],"Pacific/Tahiti":[-1753,-14957,"PF","Society Islands"],"Pacific/Tarawa":[142,17300,"KI","Gilbert Islands"],"Pacific/Tongatapu":[-2113,-17520,"TO"],"Pacific/Wake":[1928,16662,"UM","Wake Island"],"Pacific/Wallis":[-1330,-17617,"WF"]},"links":{"Africa/Asmera":"Africa/Nairobi","Africa/Timbuktu":"Africa/Abidjan","America/Argentina/ComodRivadavia":"America/Argentina/Catamarca","America/Atka":"America/Adak","America/Buenos_Aires":"America/Argentina/Buenos_Aires","America/Catamarca":"America/Argentina/Catamarca","America/Coral_Harbour":"America/Panama","America/Cordoba":"America/Argentina/Cordoba","America/Ensenada":"America/Tijuana","America/Fort_Wayne":"America/Indiana/Indianapolis","America/Godthab":"America/Nuuk","America/Indianapolis":"America/Indiana/Indianapolis","America/Jujuy":"America/Argentina/Jujuy","America/Knox_IN":"America/Indiana/Knox","America/Louisville":"America/Kentucky/Louisville","America/Mendoza":"America/Argentina/Mendoza","America/Montreal":"America/Toronto","America/Nipigon":"America/Toronto","America/Pangnirtung":"America/Iqaluit","America/Porto_Acre":"America/Rio_Branco","America/Rainy_River":"America/Winnipeg","America/Rosario":"America/Argentina/Cordoba","America/Santa_Isabel":"America/Tijuana","America/Shiprock":"America/Denver","America/Thunder_Bay":"America/Toronto","America/Virgin":"America/Puerto_Rico","America/Yellowknife":"America/Edmonton","Antarctica/South_Pole":"Pacific/Auckland","Asia/Ashkhabad":"Asia/Ashgabat","Asia/Calcutta":"Asia/Kolkata","Asia/Choibalsan":"Asia/Ulaanbaatar","Asia/Chongqing":"Asia/Shanghai","Asia/Chungking":"Asia/Shanghai","Asia/Dacca":"Asia/Dhaka","Asia/Harbin":"Asia/Shanghai","Asia/Istanbul":"Europe/Istanbul","Asia/Kashgar":"Asia/Urumqi","Asia/Katmandu":"Asia/Kathmandu","Asia/Macao":"Asia/Macau","Asia/Rangoon":"Asia/Yangon","Asia/Saigon":"Asia/Ho_Chi_Minh","Asia/Tel_Aviv":"Asia/Jerusalem","Asia/Thimbu":"Asia/Thimphu","Asia/Ujung_Pandang":"Asia/Makassar","Asia/Ulan_Bator":"Asia/Ulaanbaatar","Atlantic/Faeroe":"Atlantic/Faroe","Atlantic/Jan_Mayen":"Europe/Berlin","Australia/ACT":"Australia/Sydney","Australia/Canberra":"Australia/Sydney","Australia/Currie":"Australia/Hobart","Australia/LHI":"Australia/Lord_Howe","Australia/NSW":"Australia/Sydney","Australia/North":"Australia/Darwin","Australia/Queensland":"Australia/Brisbane","Australia/South":"Australia/Adelaide","Australia/Tasmania":"Australia/Hobart","Australia/Victoria":"Australia/Melbourne","Australia/West":"Australia/Perth","Australia/Yancowinna":"Australia/Broken_Hill","Brazil/Acre":"America/Rio_Branco","Brazil/DeNoronha":"America/Noronha","Brazil/East":"America/Sao_Paulo","Brazil/West":"America/Manaus","CET":"Europe/Brussels","Canada/Atlantic":"America/Halifax","Canada/Central":"America/Winnipeg","Canada/Eastern":"America/Toronto","Canada/Mountain":"America/Edmonton","Canada/Newfoundland":"America/St_Johns","Canada/Pacific":"America/Vancouver","Canada/Saskatchewan":"America/Regina","Canada/Yukon":"America/Whitehorse","Chile/Continental":"America/Santiago","Chile/EasterIsland":"Pacific/Easter","Cuba":"America/Havana","EET":"Europe/Athens","EST":"America/Panama","Egypt":"Africa/Cairo","Eire":"Europe/Dublin","Europe/Belfast":"Europe/London","Europe/Kiev":"Europe/Kyiv","Europe/Nicosia":"Asia/Nicosia","Europe/Tiraspol":"Europe/Chisinau","Europe/Uzhgorod":"Europe/Kyiv","Europe/Zaporozhye":"Europe/Kyiv","GB":"Europe/London","GB-Eire":"Europe/London","HST":"Pacific/Honolulu","Hongkong":"Asia/Hong_Kong","Iceland":"Africa/Abidjan","Iran":"Asia/Tehran","Israel":"Asia/Jerusalem","Jamaica":"America/Jamaica","Japan":"Asia/Tokyo","Kwajalein":"Pacific/Kwajalein","Libya":"Africa/Tripoli","MET":"Europe/Brussels","MST":"America/Phoenix","Mexico/BajaNorte":"America/Tijuana","Mexico/BajaSur":"America/Mazatlan","Mexico/General":"America/Mexico_City","NZ":"Pacific/Auckland","NZ-CHAT":"Pacific/Chatham","Navajo":"America/Denver","PRC":"Asia/Shanghai","Pacific/Enderbury":"Pacific/Kanton","Pacific/Johnston":"Pacific/Honolulu","Pacific/Ponape":"Pacific/Guadalcanal","Pacific/Samoa":"Pacific/Pago_Pago","Pacific/Truk":"Pacific/Port_Moresby","Pacific/Yap":"Pacific/Port_Moresby","Poland":"Europe/Warsaw","Portugal":"Europe/Lisbon","ROC":"Asia/Taipei","ROK":"Asia/Seoul","Singapore":"Asia/Singapore","Turkey":"Europe/Istanbul","US/Alaska":"America/Anchorage","US/Aleutian":"America/Adak","US/Arizona":"America/Phoenix","US/Central":"America/Chicago","US/East-Indiana":"America/Indiana/Indianapolis","US/Eastern":"America/New_York","US/Hawaii":"Pacific/Honolulu","US/Indiana-Starke":"America/Indiana/Knox","US/Michigan":"America/Detroit","US/Mountain":"America/Denver","US/Pacific":"America/Los_Angeles","US/Samoa":"Pacific/Pago_Pago","W-SU":"Europe/Moscow","WET":"Europe/Lisbon"},"countries":{"AD":"Andorra","AE":"United Arab Emirates","AF":"Afghanistan","AG":"Antigua & Barbuda","AI":"Anguilla","AL":"Albania","AM":"Armenia","AO":"Angola","AQ":"Antarctica","AR":"Argentina","AS":"Samoa (American)","AT":"Austria","AU":"Australia","AW":"Aruba","AX":"\u00c5land Islands","AZ":"Azerbaijan","BA":"Bosnia & Herzegovina","BB":"Barbados","BD":"Bangladesh","BE":"Belgium","BF":"Burkina Faso","BG":"Bulgaria","BH":"Bahrain","BI":"Burundi","BJ":"Benin","BL":"St Barthelemy","BM":"Bermuda","BN":"Brunei","BO":"Bolivia","BQ":"Caribbean NL","BR":"Brazil","BS":"Bahamas","BT":"Bhutan","BW":"Botswana","BY":"Belarus","BZ":"Belize","CA":"Canada","CC":"Cocos (Keeling) Islands","CD":"Congo (Dem. Rep.)","CF":"Central African Rep.","CG":"Congo (Rep.)","CH":"Switzerland","CI":"C\u00f4te d\u2019Ivoire","CK":"Cook Islands","CL":"Chile","CM":"Cameroon","CN":"China","CO":"Colombia","CR":"Costa Rica","CU":"Cuba","CV":"Cape Verde","CW":"Cura\u00e7ao","CX":"Christmas Island","CY":"Cyprus","CZ":"Czech Republic","DE":"Germany","DJ":"Djibouti","DK":"Denmark","DM":"Dominica","DO":"Dominican Republic","DZ":"Algeria","EC":"Ecuador","EE":"Estonia","EG":"Egypt","EH":"Western Sahara","ER":"Eritrea","ES":"Spain","ET":"Ethiopia","FI":"Finland","FJ":"Fiji","FK":"Falkland Islands","FM":"Micronesia","FO":"Faroe Islands","FR":"France","GA":"Gabon","GB":"Britain (UK)","GD":"Grenada","GE":"Georgia","GF":"French Guiana","GG":"Guernsey","GH":"Ghana","GI":"Gibraltar","GL":"Greenland","GM":"Gambia","GN":"Guinea","GP":"Guadeloupe","GQ":"Equatorial Guinea","GR":"Greece","GS":"South Georgia & the South Sandwich Islands","GT":"Guatemala","GU":"Guam","GW":"Guinea-Bissau","GY":"Guyana","HK":"Hong Kong","HN":"Honduras","HR":"Croatia","HT":"Haiti","HU":"Hungary","ID":"Indonesia","IE":"Ireland","IL":"Israel","IM":"Isle of Man","IN":"India","IO":"British Indian Ocean Territory","IQ":"Iraq","IR":"Iran","IS":"Iceland","IT":"Italy","JE":"Jersey","JM":"Jamaica","JO":"Jordan","JP":"Japan","KE":"Kenya","KG":"Kyrgyzstan","KH":"Cambodia","KI":"Kiribati","KM":"Comoros","KN":"St Kitts & Nevis","KP":"Korea (North)","KR":"Korea (South)","KW":"Kuwait","KY":"Cayman Islands","KZ":"Kazakhstan","LA":"Laos","LB":"Lebanon","LC":"St Lucia","LI":"Liechtenstein","LK":"Sri Lanka","LR":"Liberia","LS":"Lesotho","LT":"Lithuania","LU":"Luxembourg","LV":"Latvia","LY":"Libya","MA":"Morocco","MC":"Monaco","MD":"Moldova","ME":"Montenegro","MF":"St Martin (French)","MG":"Madagascar","MH":"Marshall Islands","MK":"North Macedonia","ML":"Mali","MM":"Myanmar (Burma)","MN":"Mongolia","MO":"Macau","MP":"Northern Mariana Islands","MQ":"Martinique","MR":"Mauritania","MS":"Montserrat","MT":"Malta","MU":"Mauritius","MV":"Maldives","MW":"Malawi","MX":"Mexico","MY":"Malaysia","MZ":"Mozambique","NA":"Namibia","NC":"New Caledonia","NE":"Niger","NF":"Norfolk Island","NG":"Nigeria","NI":"Nicaragua","NL":"Netherlands","NO":"Norway","NP":"Nepal","NR":"Nauru","NU":"Niue","NZ":"New Zealand","OM":"Oman","PA":"Panama","PE":"Peru","PF":"French Polynesia","PG":"Papua New Guinea","PH":"Philippines","PK":"Pakistan","PL":"Poland","PM":"St Pierre & Miquelon","PN":"Pitcairn","PR":"Puerto Rico","PS":"Palestine","PT":"Portugal","PW":"Palau","PY":"Paraguay","QA":"Qatar","RE":"R\u00e9union","RO":"Romania","RS":"Serbia","RU":"Russia","RW":"Rwanda","SA":"Saudi Arabia","SB":"Solomon Islands","SC":"Seychelles","SD":"Sudan","SE":"Sweden","SG":"Singapore","SH":"St Helena","SI":"Slovenia","SJ":"Svalbard & Jan Mayen","SK":"Slovakia","SL":"Sierra Leone","SM":"San Marino","SN":"Senegal","SO":"Somalia","SR":"Suriname","SS":"South Sudan","ST":"Sao Tome & Principe","SV":"El Salvador","SX":"St Maarten (Dutch)","SY":"Syria","SZ":"Eswatini (Swaziland)","TC":"Turks & Caicos Is","TD":"Chad","TF":"French S. Terr.","TG":"Togo","TH":"Thailand","TJ":"Tajikistan","TK":"Tokelau","TL":"East Timor","TM":"Turkmenistan","TN":"Tunisia","TO":"Tonga","TR":"Turkey","TT":"Trinidad & Tobago","TV":"Tuvalu","TW":"Taiwan","TZ":"Tanzania","UA":"Ukraine","UG":"Uganda","UM":"US minor outlying islands","US":"United States","UY":"Uruguay","UZ":"Uzbekistan","VA":"Vatican City","VC":"St Vincent","VE":"Venezuela","VG":"Virgin Islands (UK)","VI":"Virgin Islands (US)","VN":"Vietnam","VU":"Vanuatu","WF":"Wallis & Futuna","WS":"Samoa (western)","YE":"Yemen","YT":"Mayotte","ZA":"South Africa","ZM":"Zambia","ZW":"Zimbabwe"}}';
+
+// For a zone not in the table (UTC, Etc/GMT-3, a privacy browser): the offset
+// still gives a longitude at 15 degrees an hour, but latitude is anyone's
+// guess, so take a mid-northern one -- most people live between 20 and 40 N.
+const FALLBACK_LAT = 30;
+
+/** Unpack TIMEZONE_COORDS_JSON (format above) into place records by zone. */
+function parseTimezoneTable(jsonText) {
+    const t = JSON.parse(jsonText);
+    const places = {};
+    Object.keys(t.zones).forEach(function (zone) {
+        const z = t.zones[zone];
+        places[zone] = {zone: zone, lat: z[0] / 100, lon: z[1] / 100,
+                        country: t.countries[z[2]], note: z[3] || ''};
+    });
+    return {places: places, links: t.links};
+}
+
+const timezoneTable = parseTimezoneTable(TIMEZONE_COORDS_JSON);
+
+function placeForZone(zone) {
+    return timezoneTable.places[zone] || timezoneTable.places[timezoneTable.links[zone]] || null;
+}
+
+/** "Budapest" from "Europe/Budapest", "Buenos Aires" from ".../Buenos_Aires". */
+function zoneCity(zone) {
+    return zone.split('/').pop().replace(/_/g, ' ');
+}
+
+/** Picker text: country, the zone's place names, then tzdata's note if the country has several zones. */
+function placeLabel(place) {
+    const rest = place.zone.split('/').slice(1).join(' / ').replace(/_/g, ' ');
+    return place.country + ' — ' + rest + (place.note ? ' · ' + place.note : '');
+}
+
+const browserZone = (function () {
+    try { return Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) { return ''; }
+})();
+
+/** Current UTC offset of `zone`, as "UTC+1" or "UTC+5:30". Browser's own if it can't say. */
+function utcOffsetLabel(zone) {
+    let minutes = -new Date().getTimezoneOffset();
+    try {
+        const name = new Intl.DateTimeFormat('en-US', {timeZone: zone || undefined, timeZoneName: 'longOffset'})
+            .formatToParts(new Date()).find(function (p) { return p.type === 'timeZoneName'; }).value;
+        const m = /GMT([+\-−])(\d{1,2}):?(\d{2})?/.exec(name);       // "GMT+05:30", or bare "GMT"
+        minutes = m ? (m[1] === '+' ? 1 : -1) * (60 * Number(m[2]) + Number(m[3] || 0)) : 0;
+    } catch (e) { /* zone unknown to this browser, or no longOffset: keep the browser's */ }
+    const a = Math.abs(minutes);
+    return 'UTC' + (minutes < 0 ? '−' : '+') + Math.floor(a / 60)
+        + (a % 60 ? ':' + String(a % 60).padStart(2, '0') : '');
+}
+
+/** Where the browser's timezone says you are. */
+function observerFromTimezone() {
+    const place = placeForZone(browserZone);
+    if (place) return {lat: place.lat, lon: place.lon, elev: 0, source: 'timezone', zone: browserZone, place: place};
+    // Standard time, not summer time: DST would move the guess 15 degrees east.
+    const y = new Date().getFullYear();
+    const standard = -Math.max(new Date(y, 0, 1).getTimezoneOffset(), new Date(y, 6, 1).getTimezoneOffset());
+    return {lat: FALLBACK_LAT, lon: norm180(standard / 4), elev: 0, source: 'utc-offset', zone: browserZone, place: null};
+}
+
+// source: 'timezone' | 'utc-offset' (both automatic) | 'place' (picked) | 'device' | 'manual'
+let observer = observerFromTimezone();
 let skyLockReadoutDue = 0;
 
+function observerDescription() {
+    const where = observer.lat.toFixed(2) + '°, ' + observer.lon.toFixed(2) + '°';
+    const city = observer.place ? zoneCity(observer.place.zone) + ', ' + observer.place.country : '';
+    switch (observer.source) {
+        case 'timezone': return where + ' (' + city + ', from your timezone)';
+        case 'place': return where + ' (' + city + ')';
+        case 'utc-offset': return where + ' (rough guess from the UTC offset)';
+        case 'device': return where + ' (device location)';
+        default: return where + ' (entered)';
+    }
+}
+
+function lockButtonLabel() {
+    return observer.place
+        ? 'Lock to the real Moon over ' + zoneCity(observer.place.zone)
+        : 'Lock to the real Moon';
+}
+
+/** Move the observer, and bring the panel and the lock along with it. */
+function setObserver(next) {
+    observer = next;
+    document.getElementById('obs-lat').value = observer.lat.toFixed(2);
+    document.getElementById('obs-lon').value = observer.lon.toFixed(2);
+    document.getElementById('obs-place').value =
+        observer.source === 'place' ? observer.place.zone
+            : observer.source === 'device' ? 'device'
+            : observer.source === 'manual' ? 'custom' : 'auto';
+    skyLockReadoutDue = 0;
+    if (skyLock) refreshSkyLock();              // now, not whenever the next frame comes
+    updateSkyLockAvailability();
+}
+
 function currentMoonView() {
-    return computeMoonView(new Date(), observerLat, observerLon, observerElev);
+    return computeMoonView(new Date(), observer.lat, observer.lon, observer.elev);
+}
+
+/** Clock time at the observer's place, which need not be where the browser is. */
+function timeAtObserver(date) {
+    const opts = {hour: '2-digit', minute: '2-digit'};
+    try { return date.toLocaleTimeString([], Object.assign({timeZone: observer.zone || undefined}, opts)); }
+    catch (e) { return date.toLocaleTimeString([], opts); }
 }
 
 function compassPoint(az) {
@@ -1963,12 +2093,13 @@ function updateSkyLockAvailability() {
     if (!btn || !status) return;
     const up = v.altitude > 0;
     btn.style.display = (up || skyLock) ? 'block' : 'none';
+    if (!skyLock) btn.textContent = lockButtonLabel();
     if (up) {
         status.textContent = 'up, ' + v.altitude.toFixed(0) + '\u00b0 above ' + compassPoint(v.azimuth);
     } else {
-        const rise = nextMoonrise(new Date(), observerLat, observerLon, observerElev);
+        const rise = nextMoonrise(new Date(), observer.lat, observer.lon, observer.elev);
         status.textContent = Math.abs(v.altitude).toFixed(0) + '\u00b0 below the horizon'
-            + (rise ? ', rises ' + rise.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}) : '');
+            + (rise ? ', rises ' + timeAtObserver(rise) : '');
     }
 }
 
@@ -1976,14 +2107,14 @@ function updateSkyLockAvailability() {
 function refreshSkyLock() {
     skyLock = currentMoonView();
     applyRealMoonOrientation(skyLock);
-    if (realStarfield) orientStarfield(skyLock, observerLat, observerElev);
+    if (realStarfield) orientStarfield(skyLock, observer.lat, observer.elev);
 
     const now = performance.now();
     if (now < skyLockReadoutDue) return;        // the text only needs ~1 Hz
     skyLockReadoutDue = now + 1000;
     const v = skyLock;
     document.getElementById('sky-lock-readout').innerHTML = [
-        v.date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})
+        timeAtObserver(v.date)
             + ' &middot; alt ' + v.altitude.toFixed(1) + '\u00b0 az ' + v.azimuth.toFixed(0)
             + '\u00b0 (' + compassPoint(v.azimuth) + ')',
         phaseName(v) + ' &middot; ' + (v.illuminated * 100).toFixed(1) + '% lit',
@@ -1991,7 +2122,9 @@ function refreshSkyLock() {
         'north pole ' + clockPosition(v.poleFromZenith)
             + ' (' + (v.poleFromZenith >= 0 ? '+' : '') + v.poleFromZenith.toFixed(1) + '\u00b0)',
         'libration ' + v.subObserverLon.toFixed(2) + '\u00b0, ' + v.subObserverLat.toFixed(2) + '\u00b0',
-        (v.distanceKm / 1000).toFixed(0) + ' Mm &middot; ' + (v.semidiameter * 120).toFixed(1) + "'"
+        (v.distanceKm / 1000).toFixed(0) + ' Mm &middot; ' + (v.semidiameter * 120).toFixed(1) + "'",
+        'timezone ' + (observer.zone ? observer.zone + ' (' + utcOffsetLabel(observer.zone) + ')' : utcOffsetLabel('')),
+        'seen from ' + observerDescription()
     ].join('<br>');
 }
 
@@ -2001,7 +2134,7 @@ function toggleSkyLock() {
     if (skyLock) {
         skyLock = null;
         controls.enableRotate = true;
-        btn.textContent = 'Lock to the real Moon';
+        btn.textContent = lockButtonLabel();
         readout.style.display = 'none';
         updateSkyLockAvailability();
         return;
@@ -2022,33 +2155,68 @@ function toggleSkyLock() {
     readout.style.display = 'block';
 }
 
-function useMyLocation() {
-    if (!navigator.geolocation) return;
+function useDeviceLocation() {
+    const previous = observer;
     navigator.geolocation.getCurrentPosition(function (p) {
-        observerLat = p.coords.latitude;
-        observerLon = p.coords.longitude;
-        observerElev = p.coords.altitude || 0;
-        document.getElementById('obs-lat').value = observerLat.toFixed(2);
-        document.getElementById('obs-lon').value = observerLon.toFixed(2);
-        updateSkyLockAvailability();
+        // Geolocation altitude is height above the WGS84 ellipsoid, exactly what
+        // topocentric() wants. The browser's zone is the best guess at the clock.
+        setObserver({lat: p.coords.latitude, lon: p.coords.longitude, elev: p.coords.altitude || 0,
+                     source: 'device', zone: browserZone, place: null});
     }, function () {
+        setObserver(previous);
         document.getElementById('sky-lock-status').textContent = 'location unavailable';
     });
 }
 
+/** Your timezone first, then device / custom, then every zone by country. */
+function buildPlacePicker() {
+    const select = document.getElementById('obs-place');
+    function add(parent, value, text) {
+        const o = document.createElement('option');
+        o.value = value;
+        o.textContent = text;
+        parent.appendChild(o);
+    }
+    const auto = observerFromTimezone();
+    add(select, 'auto', 'Your timezone: ' + (auto.place
+        ? zoneCity(auto.place.zone) + ', ' + auto.place.country
+        : (browserZone || utcOffsetLabel('')) + ' (rough guess)'));
+    if (navigator.geolocation) add(select, 'device', 'Device location (asks permission)');
+    add(select, 'custom', 'Custom coordinates');
+    const group = document.createElement('optgroup');
+    group.label = 'Every timezone, by country';
+    Object.keys(timezoneTable.places)
+        .map(function (zone) { return [placeLabel(timezoneTable.places[zone]), zone]; })
+        .sort(function (a, b) { return a[0].localeCompare(b[0]); })
+        .forEach(function (entry) { add(group, entry[1], entry[0]); });
+    select.appendChild(group);
+
+    select.addEventListener('change', function () {
+        const v = select.value;
+        if (v === 'auto') setObserver(observerFromTimezone());
+        else if (v === 'device') useDeviceLocation();
+        else if (v === 'custom') {
+            setObserver(Object.assign({}, observer, {source: 'manual', zone: browserZone, place: null}));
+            document.getElementById('obs-lat').focus();
+        } else {
+            const place = timezoneTable.places[v];
+            setObserver({lat: place.lat, lon: place.lon, elev: 0, source: 'place', zone: place.zone, place: place});
+        }
+    });
+}
+
 function setupSkyLockUI() {
-    document.getElementById('obs-lat').value = observerLat.toFixed(2);
-    document.getElementById('obs-lon').value = observerLon.toFixed(2);
+    buildPlacePicker();
     ['obs-lat', 'obs-lon'].forEach(function (id) {
         document.getElementById(id).addEventListener('change', function () {
             const lat = parseFloat(document.getElementById('obs-lat').value);
             const lon = parseFloat(document.getElementById('obs-lon').value);
-            if (isFinite(lat)) observerLat = Math.max(-90, Math.min(90, lat));
-            if (isFinite(lon)) observerLon = norm180(lon);
-            updateSkyLockAvailability();
+            setObserver({lat: isFinite(lat) ? Math.max(-90, Math.min(90, lat)) : observer.lat,
+                         lon: isFinite(lon) ? norm180(lon) : observer.lon,
+                         elev: observer.elev, source: 'manual', zone: browserZone, place: null});
         });
     });
-    updateSkyLockAvailability();
+    setObserver(observer);
     // The Moon rises and sets; re-check now and then so the button appears on its own.
     setInterval(updateSkyLockAvailability, 60000);
 }
