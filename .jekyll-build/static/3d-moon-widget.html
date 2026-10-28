@@ -214,7 +214,32 @@
             transform: translateX(20px);
         }
 
-        #btn-sky-lock,
+        /* The real-sky controls are not settings: they pose the model as the sky
+           has it. A full-width rule and a heading of their own keep them apart. */
+        .panel-divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.18);
+            margin: 16px -15px 14px;
+        }
+
+        #real-sky h2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 8px;
+            margin: 0 0 8px 0;
+            font-size: 0.95rem;
+            color: #fff;
+        }
+
+        #real-sky h2 span {
+            font-size: 0.72rem;
+            font-weight: normal;
+            color: #8ab4f8;
+            text-align: right;
+        }
+
+        #btn-sky-jump,
         #btn-reset {
             width: 100%;
             background: rgba(138, 180, 248, 0.2);
@@ -229,7 +254,7 @@
             margin-top: 8px;
         }
 
-        #btn-sky-lock:active,
+        #btn-sky-jump:active,
         #btn-reset:active {
             transform: scale(0.97);
         }
@@ -312,22 +337,6 @@
     </div>
 
     <div class="toggle-container">
-        <span>Atmospheric Rim Glow</span>
-        <label class="switch">
-            <input type="checkbox" id="glow-toggle" unchecked>
-            <span class="slider"></span>
-        </label>
-    </div>
-
-    <div class="toggle-container">
-        <span>Earthshine (Dark Side Light)</span>
-        <label class="switch">
-            <input type="checkbox" id="earthshine-toggle" unchecked>
-            <span class="slider"></span>
-        </label>
-    </div>
-
-    <div class="toggle-container">
         <span>Constellations</span>
         <label class="switch">
             <input type="checkbox" id="constellation-toggle" checked>
@@ -343,8 +352,12 @@
         </label>
     </div>
 
-    <div class="control-group">
-        <label>Real Sky <span id="sky-lock-status"></span></label>
+    <button id="btn-reset" onclick="triggerReset()">Reset Camera & Lights</button>
+
+    <hr class="panel-divider">
+
+    <div id="real-sky">
+        <h2>Real Sky <span id="sky-status"></span></h2>
         <select id="obs-place" title="where you are looking from"
                 style="width:100%; margin-bottom:6px; background:rgba(255,255,255,0.08); border:1px solid #555; color:#eaeaea; color-scheme:dark; border-radius:6px; padding:4px 6px; font-size:0.75rem;"></select>
         <div style="display:flex; gap:6px; margin-bottom:6px;">
@@ -353,11 +366,9 @@
             <input type="number" id="obs-lon" step="0.01" style="width:50%; background:rgba(255,255,255,0.08); border:1px solid #555; color:#eaeaea; border-radius:6px; padding:4px 6px; font-size:0.75rem;"
                    title="observer longitude, degrees east">
         </div>
-        <button id="btn-sky-lock" onclick="toggleSkyLock()" style="display:none;">Lock to the real Moon</button>
-        <div id="sky-lock-readout" style="display:none; margin-top:8px; font-size:0.72rem; line-height:1.55; color:#b9c4d4; font-variant-numeric:tabular-nums;"></div>
+        <button id="btn-sky-jump" onclick="jumpToRealSky()" style="display:none;">Jump to the real Moon</button>
+        <div id="sky-readout" style="display:none; margin-top:8px; font-size:0.72rem; line-height:1.55; color:#b9c4d4; font-variant-numeric:tabular-nums;"></div>
     </div>
-
-    <button id="btn-reset" onclick="triggerReset()">Reset Camera & Lights</button>
 </div>
 
 <script>
@@ -371,30 +382,62 @@
 </script>
 
 <script>
-    // Custom Shaders for Cinematic Fresnel Rim Glow
-    const fresnelVertexShader = `
-      varying vec3 vNormal;
-      varying vec3 vViewPosition;
-      void main() {
-        vNormal = normalize(normalMatrix * normal);
-        vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-        vViewPosition = -mvPosition.xyz;
-        gl_Position = projectionMatrix * mvPosition;
-      }
-    `;
+    // The Earth's shadow, spliced into the Moon's standard material (see
+    // setupMaterialAndMoon). For each point on the surface it works out how
+    // much of the Sun's disc the Earth's disc covers, as seen from that point,
+    // and dims the sunlight to match: umbra and penumbra in their real shape and
+    // size, at next to no cost unless the shadow is actually on the Moon.
+    //
+    // Angles are divided through by the Sun's angular radius so that the disc
+    // overlap is computed on numbers near 1 rather than near 0.005.
+    const earthShadowGlsl = `
+      uniform vec3 uSunDir;      // view space, unit vector, Moon toward Sun
+      uniform vec3 uEarthPos;    // view space, Moon radii, the Earth's centre
 
-    const fresnelFragmentShader = `
-      varying vec3 vNormal;
-      varying vec3 vViewPosition;
-      uniform vec3 glowColor;
-      uniform float coefficient;
-      uniform float power;
-      uniform float uOpacity;
-      void main() {
-        vec3 normal = normalize(vNormal);
-        vec3 viewDir = normalize(vViewPosition);
-        float intensity = pow(clamp(coefficient - dot(normal, viewDir), 0.0, 1.0), power);
-        gl_FragColor = vec4(glowColor, intensity * uOpacity);
+      // 959.63" at 1 AU. It varies 1.7% over the year, which does not show.
+      const float SUN_ANGULAR_RADIUS = 0.0046524;
+      // 6378 km in Moon radii, plus Danjon's 1/85 for the atmosphere: the
+      // shadow is measurably bigger than the solid Earth would cast.
+      const float EARTH_RADIUS_EFF = 3.6711 * (1.0 + 1.0 / 85.0);
+      // Light bent into the umbra by the Earth's atmosphere -- every sunrise
+      // and sunset on the planet at once -- is what turns the Moon red. At the
+      // umbra's edge it is about a thousandth of full sunlight, a fifth of
+      // that at the centre.
+      const vec3 UMBRA_TINT = vec3(1.0, 0.28, 0.07);
+      const float UMBRA_BRIGHTNESS = 1.0e-3;
+      // A thousandth would render as black, but no one sees it that way: eyes
+      // (and cameras) adapt, and a totally eclipsed Moon looks copper, not
+      // gone. So the shadowed light's luminance is compressed as L^0.35. That
+      // keeps the order right -- the sunlit sliver of a deep partial eclipse
+      // still outshines the umbra -- and leaves full sunlight exactly as it was.
+      const float EYE_ADAPTATION = 0.35;
+      const vec3 LUMA = vec3(0.2126, 0.7152, 0.0722);
+
+      // Area where a disc of radius r and one of radius R > r overlap, d apart.
+      float discOverlap(float r, float R, float d) {
+        if (d <= R - r) return PI * r * r;
+        if (d >= R + r) return 0.0;
+        float a = r * r * acos(clamp((d * d + r * r - R * R) / (2.0 * d * r), -1.0, 1.0));
+        float b = R * R * acos(clamp((d * d + R * R - r * r) / (2.0 * d * R), -1.0, 1.0));
+        float k = 0.5 * sqrt(max((-d + r + R) * (d + r - R) * (d - r + R) * (d + r + R), 0.0));
+        return a + b - k;
+      }
+
+      vec3 earthShadow(vec3 p) {
+        vec3 toEarth = uEarthPos - p;
+        float dist = length(toEarth);
+        vec3 e = toEarth / dist;
+        // atan2 of sine and cosine, not acos: acos is useless this close to 1
+        float sep = atan(length(cross(e, uSunDir)), dot(e, uSunDir)) / SUN_ANGULAR_RADIUS;
+        float earth = asin(min(EARTH_RADIUS_EFF / dist, 1.0)) / SUN_ANGULAR_RADIUS;
+        if (sep >= earth + 1.0) return vec3(1.0);         // the usual case: no eclipse
+        float hidden = discOverlap(1.0, earth, sep) / PI;
+        // The refracted light is strongest near the umbra's edge and dimmest at
+        // its centre, which is why a deep eclipse is darker and browner.
+        float edge = clamp(sep / (earth - 1.0), 0.0, 1.0);
+        vec3 light = vec3(1.0 - hidden) + hidden * UMBRA_TINT / dot(UMBRA_TINT, LUMA)
+            * UMBRA_BRIGHTNESS * mix(0.2, 1.0, edge * edge);
+        return light * pow(dot(light, LUMA), EYE_ADAPTATION - 1.0);
       }
     `;
 </script>
@@ -406,12 +449,11 @@
     const POLAR_BLUR_LAT_LIMIT = 0.0 // 73.0;
 
     let scene, camera, renderer, controls;
-    let moon, material, glowMesh, glowMaterial;
-    let sunLight, earthshineLight, ambientLight;
+    let moon, material;
+    let sunLight, ambientLight;
     let starfield, starMaterial;
     let realStarfield, realStarMaterial;
     let constellationLines, constellationMaterial;
-    let skyLock = null;             // non-null while locked to the real sky
 
     const moonRadius = 1.0;
     const baseScale = 0.01142;
@@ -422,6 +464,48 @@
     let sunPhi = -Math.PI / 4;
     let sunDistNorm = 1.0;
     let targetSunDist = 10.0;
+
+    // How far the sun handle is from the disc centre, in Moon radii on screen,
+    // sets the phase angle: the angle at the Moon between the Sun and you. Over
+    // the disc it eases from 0 (full Moon) to 45 deg at the limb, as it always
+    // has; from the limb out to the guide ring it carries on to 180 deg, the
+    // Sun straight behind the Moon (new Moon), so every phase -- crescents
+    // included -- can be set by hand. The two pieces meet at the same slope, so
+    // the drag does not jerk at the limb.
+    const SUN_HANDLE_MAX = 1.5;
+    const SUN_HANDLE_A = Math.PI / 6, SUN_HANDLE_B = Math.PI / 12;      // A d^2 + B d inside the disc
+    const SUN_HANDLE_SLOPE = 2 * SUN_HANDLE_A + SUN_HANDLE_B;           // its slope at the limb
+    const SUN_HANDLE_C = (Math.PI - (SUN_HANDLE_A + SUN_HANDLE_B) - SUN_HANDLE_SLOPE * (SUN_HANDLE_MAX - 1))
+        / Math.pow(SUN_HANDLE_MAX - 1, 2);
+
+    function sunHandleToPhaseAngle(d) {
+        if (d <= 1) return SUN_HANDLE_A * d * d + SUN_HANDLE_B * d;
+        const x = d - 1;
+        return SUN_HANDLE_A + SUN_HANDLE_B + SUN_HANDLE_SLOPE * x + SUN_HANDLE_C * x * x;
+    }
+
+    function phaseAngleToSunHandle(angle) {
+        // a x^2 + b x = t for x >= 0, in the form that does not cancel near 0
+        const solve = (a, b, t) => 2 * t / (b + Math.sqrt(b * b + 4 * a * t));
+        const limb = SUN_HANDLE_A + SUN_HANDLE_B;
+        angle = Math.max(0, Math.min(Math.PI, angle));
+        return angle <= limb
+            ? solve(SUN_HANDLE_A, SUN_HANDLE_B, angle)
+            : 1 + solve(SUN_HANDLE_C, SUN_HANDLE_SLOPE, angle - limb);
+    }
+
+    // The Earth, for its shadow. Like the Sun it is placed relative to the
+    // camera -- you are standing on it -- as (right, up, toward you) in Moon
+    // radii. Until a jump to the real sky says otherwise, its centre is straight
+    // behind you at the mean distance, so putting the sun handle dead on the
+    // centre of the disc (the Sun behind your back) gives a lunar eclipse.
+    const MOON_RADIUS_KM = 1737.4;
+    const EARTH_MEAN_DISTANCE = 384400 / MOON_RADIUS_KM;
+    const earthFromMoon = new THREE.Vector3(0, 0, EARTH_MEAN_DISTANCE);
+    const earthShadowUniforms = {
+        uSunDir: {value: new THREE.Vector3(0, 0, 1)},
+        uEarthPos: {value: new THREE.Vector3(0, 0, EARTH_MEAN_DISTANCE)}
+    };
     let targetSunBrightness = 4.2;
 
     // Smooth resetting state
@@ -484,10 +568,6 @@
         sunLight = new THREE.PointLight(0xfffdf2, 4.2, 0, 2);
         scene.add(sunLight);
 
-        // Earthshine (faint blue light reflected from earth on dark side)
-        earthshineLight = new THREE.DirectionalLight(0x8ab4f8, 0.35);
-        scene.add(earthshineLight);
-
         let texturesLoaded = 0;
 
         function checkLoading() {
@@ -537,26 +617,8 @@
 
         createRealStarfield();
 
-        // Custom Fresnel Rim Glow Mesh
-        const glowGeometry = new THREE.SphereGeometry(moonRadius * 1.015, 64, 64);
-        glowMaterial = new THREE.ShaderMaterial({
-            vertexShader: fresnelVertexShader,
-            fragmentShader: fresnelFragmentShader,
-            uniforms: {
-                glowColor: {value: new THREE.Color(0xb0c4de)},
-                coefficient: {value: 1.0},
-                power: {value: 3.5},
-                uOpacity: {value: 0.25}
-            },
-            transparent: true,
-            blending: THREE.AdditiveBlending,
-            side: THREE.BackSide
-        });
-        glowMesh = new THREE.Mesh(glowGeometry, glowMaterial);
-        scene.add(glowMesh);
-
         setupUI();
-        setupSkyLockUI();
+        setupRealSkyUI();
         setupDragEvents();
         updateSunSystem();
         window.addEventListener('resize', onWindowResize);
@@ -591,6 +653,22 @@
             displacementMap: heightTexture,
             bumpMap: heightTexture,
         });
+
+        // Splice the Earth's shadow (earthShadowGlsl) onto the sunlight, the only
+        // point light, right after three.js works out how much of it arrives.
+        const sunlightHook = 'getPointDirectLightIrradiance( pointLight, geometry, directLight );';
+        material.onBeforeCompile = function (shader) {
+            Object.assign(shader.uniforms, earthShadowUniforms);
+            const lights = THREE.ShaderChunk.lights_fragment_begin;
+            if (lights.indexOf(sunlightHook) < 0) {
+                console.warn('three.js lighting chunk changed; the Earth casts no shadow');
+                return;
+            }
+            shader.fragmentShader = shader.fragmentShader
+                .replace('#include <common>', '#include <common>\n' + earthShadowGlsl)
+                .replace('#include <lights_fragment_begin>', lights.replace(sunlightHook,
+                    sunlightHook + '\n\t\tdirectLight.color *= earthShadow( geometry.position );'));
+        };
 
         const initialExaggeration = parseFloat(document.getElementById('exaggeration-slider').value);
         updateTopography(initialExaggeration);
@@ -819,24 +897,11 @@
     }
 
     function updateSunSystem() {
-        // While locked, the Sun's direction comes from the ephemeris rather than
-        // the draggable handle. The handle could not express it anyway: its screen
-        // radius maps to at most a 90 degree phase angle, so it cannot show a crescent.
-        if (skyLock) {
-            applyRealSunDirection(skyLock);
-            sunHandle.style.display = 'none';
-            orbitGuide.style.display = 'none';
-            earthshineLight.intensity =
-                document.getElementById('earthshine-toggle').checked ? 0.35 : 0.0;
-            return;
-        }
-        sunHandle.style.display = '';
-        orbitGuide.style.display = '';
         const rMoonPx = getMoonProjectedRadius();
         const centerX = window.innerWidth / 2;
         const centerY = window.innerHeight / 2;
 
-        const maxRadiusPx = rMoonPx * 1.5;
+        const maxRadiusPx = rMoonPx * SUN_HANDLE_MAX;
         orbitGuide.style.width = `${maxRadiusPx * 2}px`;
         orbitGuide.style.height = `${maxRadiusPx * 2}px`;
 
@@ -846,10 +911,12 @@
 
         sunHandle.style.left = `${sunScreenX}px`;
         sunHandle.style.top = `${sunScreenY}px`;
+        // Over the disc the Sun is behind you, so fade the handle: it is not in
+        // the sky there, and it should not blot out a full or eclipsed Moon.
+        sunHandle.style.opacity = sunDistNorm < 1 ? '0.4' : '';
 
         // Non-linear projection to map 2D handle position to 3D sphere coordinate
-        const d = sunDistNorm;
-        const theta = (Math.PI / 6) * d * d + (Math.PI / 12) * d;
+        const theta = sunHandleToPhaseAngle(sunDistNorm);
 
         const lx = Math.cos(sunPhi) * Math.sin(theta);
         const ly = -Math.sin(sunPhi) * Math.sin(theta);
@@ -867,17 +934,21 @@
 
         sunLight.position.copy(targetPos);
 
-        // Keep Earthshine light opposite to the sun to always illuminate the dark side
-        earthshineLight.position.copy(sunLight.position).negate();
-
         // --- Inverse Square Normalisation ---
         // Automatically increases PointLight intensity quadratically with distance to
         // keep the subsolar point's received illumination exactly stable at the user's intensity target.
         const distanceToSubsolarPoint = targetSunDist - moonRadius;
         sunLight.intensity = targetSunBrightness * Math.pow(distanceToSubsolarPoint, 2.0);
 
-        const earthshineEnabled = document.getElementById('earthshine-toggle').checked;
-        earthshineLight.intensity = earthshineEnabled ? 0.35 : 0.0;
+        // The shader works in view space, so hand it the Sun's direction and the
+        // Earth's centre there. The Moon sits at the world origin.
+        camera.updateMatrixWorld();
+        const earthWorld = new THREE.Vector3()
+            .addScaledVector(right, earthFromMoon.x)
+            .addScaledVector(up, earthFromMoon.y)
+            .addScaledVector(forward, earthFromMoon.z);
+        earthShadowUniforms.uSunDir.value.copy(targetPos).transformDirection(camera.matrixWorldInverse);
+        earthShadowUniforms.uEarthPos.value.copy(earthWorld).applyMatrix4(camera.matrixWorldInverse);
     }
 
     function setupDragEvents() {
@@ -899,7 +970,7 @@
 
             const rMoonPx = getMoonProjectedRadius();
             sunPhi = Math.atan2(dy, dx);
-            sunDistNorm = Math.min(dragDistancePx / rMoonPx, 1.5);
+            sunDistNorm = Math.min(dragDistancePx / rMoonPx, SUN_HANDLE_MAX);
 
             updateSunSystem();
         });
@@ -957,7 +1028,6 @@
             const deltaRotation = new THREE.Quaternion().setFromAxisAngle(dragAxisWorld, dragDistance * rotationSpeed);
 
             moon.quaternion.premultiply(deltaRotation);
-            glowMesh.quaternion.copy(moon.quaternion); // Keep atmosphere aligned with topography
         });
 
         // pointercancel too: the browser sends it when it takes a touch over.
@@ -1078,6 +1148,7 @@
     function triggerReset() {
         resetting = true;
         resetTimer = 0.0;
+        document.getElementById('sky-readout').style.display = 'none';    // no longer the real sky
 
         document.getElementById('color-smoothness-slider').value = 0.5;
         document.getElementById('color-smoothness-val').innerText = "0.5";
@@ -1110,7 +1181,7 @@
             document.getElementById('sun-brightness-val').innerText = "4.2";
 
             moon.quaternion.set(0, 0, 0, 1);
-            glowMesh.quaternion.set(0, 0, 0, 1);
+            earthFromMoon.set(0, 0, EARTH_MEAN_DISTANCE);
             updateSunSystem();
             return;
         }
@@ -1121,13 +1192,13 @@
         const target_camera_position = (1.25 * moonRadius) / (Math.tan(fovRad / 2) * Math.min(1.0, aspect));
         const targetCamPos = new THREE.Vector3(0, 0, target_camera_position);
 
-      camera.position.lerp(target_camera_position, 0.08);
+        camera.position.lerp(targetCamPos, 0.08);
         camera.fov = THREE.MathUtils.lerp(camera.fov, 45, 0.08);
         camera.updateProjectionMatrix();
 
         controls.target.set(0, 0, 0);
         moon.quaternion.slerp(new THREE.Quaternion(0, 0, 0, 1), 0.08);
-        glowMesh.quaternion.copy(moon.quaternion);
+        earthFromMoon.lerp(new THREE.Vector3(0, 0, EARTH_MEAN_DISTANCE), 0.08);
 
         sunPhi = THREE.MathUtils.lerp(sunPhi, -Math.PI / 4, 0.08);
         sunDistNorm = THREE.MathUtils.lerp(sunDistNorm, 1.0, 0.08);
@@ -1153,15 +1224,8 @@
         }
 
         const rotateChecked = document.getElementById('rotation-toggle').checked;
-        if (moon && rotateChecked && !resetting && !isDraggingSun && !skyLock) {
+        if (moon && rotateChecked && !resetting && !isDraggingSun) {
             moon.rotation.y += 0.0008;
-            glowMesh.rotation.y = moon.rotation.y;
-        }
-
-        // While locked, recompute every frame so the view tracks the real sky:
-        // libration, the terminator and the tilt of the disc all drift as you watch.
-        if (skyLock) {
-            refreshSkyLock();
         }
 
         if (realStarMaterial) {
@@ -1182,12 +1246,6 @@
             constellationMaterial.uniforms.uTime.value = performance.now() * 0.001;
         }
 
-        // Dynamic Fresnel glow visibility setting
-        const glowEnabled = document.getElementById('glow-toggle').checked;
-        if (glowMaterial) {
-            glowMaterial.uniforms.uOpacity.value = glowEnabled ? 0.35 : 0.0;
-        }
-
         controls.update();
 
         // Update coordinates
@@ -1198,8 +1256,8 @@
 
 /* ==========================================================================
    REAL SKY MODULE
-   Star catalogue rendering + a lunar ephemeris, so the widget can be locked
-   to the Moon as it actually appears from a given place right now.
+   Star catalogue rendering + a lunar ephemeris, so the widget can jump to
+   the Moon as it actually appears from a given place right now.
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -1789,7 +1847,7 @@ function computeMoonView(date, latDeg, lonDeg, elevM) {
     return {
         date: date,
         altitude: moonAA.alt, azimuth: moonAA.az,
-        sunAltitude: sunAA.alt, sunAzimuth: sunAA.az,
+        sunAltitude: sunAA.alt, sunAzimuth: sunAA.az, sunDistanceKm: sT.dist,
         distanceKm: mT.dist,
         semidiameter: Math.asin(1737.4 / mT.dist) / DEG,
         elongation: elongation,
@@ -1830,7 +1888,7 @@ function nextMoonrise(from, latDeg, lonDeg, elevM) {
 }
 
 /* ==========================================================================
-   LOCKING THE VIEW TO THE REAL SKY
+   POSING THE VIEW AS THE REAL SKY HAS IT
    ========================================================================== */
 
 /**
@@ -1853,44 +1911,73 @@ function applyRealMoonOrientation(view) {
     moon.rotateOnWorldAxis(X, view.subObserverLat * DEG);
     moon.rotateOnWorldAxis(Z, view.poleFromZenith * DEG);
     moon.rotation.setFromQuaternion(moon.quaternion);
-    if (glowMesh) glowMesh.quaternion.copy(moon.quaternion);
+}
+
+/** A direction in the horizon frame (East, North, Up) from altitude and azimuth. */
+function horizonVector(alt, az) {
+    return new THREE.Vector3(cosd(alt) * sind(az), cosd(alt) * cosd(az), sind(alt));
 }
 
 /**
- * Put the Sun where it really is relative to the Moon and the observer.
- *
- * The sub-solar point sits `phaseAngle` degrees away from the disc centre, in
- * the direction `limbFromZenith` measured counter-clockwise from up. Converting
- * that to a camera-space direction gives the exact terminator you would see.
- *
- * The draggable handle cannot express this: its screen radius maps to at most a
- * 90 degree phase angle, so it can never show a crescent. Hence the direct set.
+ * The view frame, as unit vectors in the horizon frame: x to the right, y up
+ * (the zenith, squared off against the line of sight), z from the Moon toward
+ * the observer. It is the camera's frame in its default pose, which is the
+ * pose everything real is put in.
  */
-function applyRealSunDirection(view) {
-    const i = view.phaseAngle * DEG;
-    const theta = view.limbFromZenith * DEG;
-    const lx = -Math.sin(theta) * Math.sin(i);
-    const ly = Math.cos(theta) * Math.sin(i);
-    const lz = Math.cos(i);
-    const right = new THREE.Vector3(1, 0, 0).applyQuaternion(camera.quaternion);
-    const up = new THREE.Vector3(0, 1, 0).applyQuaternion(camera.quaternion);
-    const fwd = new THREE.Vector3(0, 0, 1).applyQuaternion(camera.quaternion);
+function viewAxes(view) {
+    const z = horizonVector(view.altitude, view.azimuth).negate();
+    const zenith = new THREE.Vector3(0, 0, 1);
+    const y = zenith.clone().addScaledVector(z, -zenith.dot(z)).normalize();
+    return {x: y.clone().cross(z), y: y, z: z};
+}
 
-    // Deliberately ignore the Sun Point-Distance slider while locked. A point
-    // light d Moon-radii away spreads its rays by asin(1/d), which walks the
-    // terminator: the slider's default of 10 puts it 5.7 degrees out of place,
-    // enough to see. The real Sun sits 86000 Moon-radii away, so use something
-    // far enough that the error (0.3 deg at 200) is smaller than the render can
-    // show. Intensity is rescaled so the sub-solar point receives the same
-    // irradiance as before and the brightness slider still means what it says.
-    const LOCKED_SUN_DISTANCE = 200.0;
-    sunLight.position.set(0, 0, 0)
-        .addScaledVector(right, lx * LOCKED_SUN_DISTANCE)
-        .addScaledVector(up, ly * LOCKED_SUN_DISTANCE)
-        .addScaledVector(fwd, lz * LOCKED_SUN_DISTANCE);
-    earthshineLight.position.copy(sunLight.position).negate();
-    const distanceToSubsolarPoint = LOCKED_SUN_DISTANCE - moonRadius;
-    sunLight.intensity = targetSunBrightness * Math.pow(distanceToSubsolarPoint, 2.0);
+/**
+ * Where the Sun and the Earth's centre are, seen from the Moon, in the view
+ * frame: the Sun as a unit vector, the Earth in Moon radii.
+ *
+ * Worked from position vectors rather than the phase and bright-limb angles,
+ * because the Earth's shadow is unforgiving: the Earth is 221 Moon radii away,
+ * so a degree of error in the Sun's direction slides the shadow nearly four
+ * Moon radii across the sky. Nor is the Earth's centre where you stand: it is
+ * 6400 km below your feet, and taking one for the other moves the shadow 3.7.
+ */
+function realSkyVectors(view, latDeg, elevM) {
+    const moonKm = horizonVector(view.altitude, view.azimuth).multiplyScalar(view.distanceKm);
+    const sunKm = horizonVector(view.sunAltitude, view.sunAzimuth).multiplyScalar(view.sunDistanceKm);
+
+    // Observer -> Earth's centre, in the same horizon frame. On the WGS84
+    // ellipsoid that is not straight down: the normal under your feet passes
+    // a little south of the centre (north, in the southern hemisphere).
+    const e2 = 1 - WGS84_B_OVER_A * WGS84_B_OVER_A;
+    const N = (WGS84_A_M / 1000) / Math.sqrt(1 - e2 * sind(latDeg) * sind(latDeg));
+    const centreKm = new THREE.Vector3(0, N * e2 * sind(latDeg) * cosd(latDeg),
+        -(N + elevM / 1000 - N * e2 * sind(latDeg) * sind(latDeg)));
+
+    const axes = viewAxes(view);
+    const toView = (v) => new THREE.Vector3(v.dot(axes.x), v.dot(axes.y), v.dot(axes.z));
+    return {
+        sun: toView(sunKm.sub(moonKm)).normalize(),
+        earth: toView(centreKm.sub(moonKm)).divideScalar(MOON_RADIUS_KM)
+    };
+}
+
+/**
+ * Move the sun handle so the light comes from `dir`, a unit vector in the
+ * camera's frame (x right, y up, z toward you). The inverse of updateSunSystem.
+ */
+function setSunFromViewDirection(dir) {
+    sunPhi = Math.atan2(-dir.y, dir.x);
+    sunDistNorm = phaseAngleToSunHandle(Math.acos(Math.max(-1, Math.min(1, dir.z))));
+
+    // Push the point light out as far as the slider goes. One d Moon radii away
+    // spreads its rays by asin(1/d), which walks the terminator: the default of
+    // 10 puts it 5.7 degrees out of place, enough to see; 50 brings it to 1.1.
+    // Intensity is rescaled with distance, so the brightness does not change.
+    const slider = document.getElementById('sun-distance-slider');
+    targetSunDist = parseFloat(slider.max);
+    slider.value = targetSunDist;
+    document.getElementById('sun-dist-val').innerText = targetSunDist.toFixed(1) + 'x';
+    updateSunSystem();
 }
 
 /**
@@ -1906,15 +1993,7 @@ function orientStarfield(view, latDeg, elevM) {
     const T = (julianDay(view.date) - 2451545.0) / 36525.0;
     const eps = meanObliquity(T);
 
-    // Moon direction in the horizon frame (East, North, Up) -- the view axis.
-    const m = new THREE.Vector3(
-        cosd(view.altitude) * sind(view.azimuth),
-        cosd(view.altitude) * cosd(view.azimuth),
-        sind(view.altitude));
-    const zAxis = m.clone().negate();                   // from Moon toward observer
-    const zenith = new THREE.Vector3(0, 0, 1);
-    const yAxis = zenith.clone().addScaledVector(zAxis, -zenith.dot(zAxis)).normalize();
-    const xAxis = yAxis.clone().cross(zAxis);
+    const axes = viewAxes(view);
 
     function j2000ToView(v) {
         const r = Math.hypot(v.x, v.y, v.z);
@@ -1924,9 +2003,8 @@ function orientStarfield(view, latDeg, elevM) {
         const eq = eclToEq(ecl.lon + precession, ecl.lat, eps);
         const ha = norm180(view.localSiderealTime - eq.ra);
         const aa = altAz(ha, eq.dec, latDeg);
-        const h = new THREE.Vector3(
-            cosd(aa.alt) * sind(aa.az), cosd(aa.alt) * cosd(aa.az), sind(aa.alt));
-        return new THREE.Vector3(h.dot(xAxis), h.dot(yAxis), h.dot(zAxis));
+        const h = horizonVector(aa.alt, aa.az);
+        return new THREE.Vector3(h.dot(axes.x), h.dot(axes.y), h.dot(axes.z));
     }
 
     const bx = j2000ToView(new THREE.Vector3(1, 0, 0));
@@ -1937,11 +2015,14 @@ function orientStarfield(view, latDeg, elevM) {
 }
 
 /* ==========================================================================
-   SETTINGS PANEL: "lock to the real Moon"
+   REAL SKY PANEL: "jump to the real Moon"
 
    Point of this control: put the model into exactly the pose the real Moon is
    in right now, so you can hold the screen up next to the sky and compare.
-   Phase, libration and the tilt of the whole disc all come from the ephemeris.
+   Phase, libration, the tilt of the whole disc, the stars behind it and the
+   Earth's shadow all come from the ephemeris. It is a jump, not a lock: the
+   sun handle lands where the real Sun is, and from there everything can be
+   dragged about as usual.
    ========================================================================== */
 
 /*
@@ -2031,7 +2112,6 @@ function observerFromTimezone() {
 
 // source: 'timezone' | 'utc-offset' (both automatic) | 'place' (picked) | 'device' | 'manual'
 let observer = observerFromTimezone();
-let skyLockReadoutDue = 0;
 
 function observerDescription() {
     const where = observer.lat.toFixed(2) + '°, ' + observer.lon.toFixed(2) + '°';
@@ -2045,13 +2125,13 @@ function observerDescription() {
     }
 }
 
-function lockButtonLabel() {
+function jumpButtonLabel() {
     return observer.place
-        ? 'Lock to the real Moon over ' + zoneCity(observer.place.zone)
-        : 'Lock to the real Moon';
+        ? 'Jump to the real Moon over ' + zoneCity(observer.place.zone)
+        : 'Jump to the real Moon';
 }
 
-/** Move the observer, and bring the panel and the lock along with it. */
+/** Move the observer, and bring the panel along with them. */
 function setObserver(next) {
     observer = next;
     document.getElementById('obs-lat').value = observer.lat.toFixed(2);
@@ -2060,9 +2140,7 @@ function setObserver(next) {
         observer.source === 'place' ? observer.place.zone
             : observer.source === 'device' ? 'device'
             : observer.source === 'manual' ? 'custom' : 'auto';
-    skyLockReadoutDue = 0;
-    if (skyLock) refreshSkyLock();              // now, not whenever the next frame comes
-    updateSkyLockAvailability();
+    updateRealSkyStatus();
 }
 
 function currentMoonView() {
@@ -2097,15 +2175,32 @@ function phaseName(v) {
     return v.waxing ? 'waxing gibbous' : 'waning gibbous';
 }
 
-/** Show the lock button only while the Moon is actually above the horizon. */
-function updateSkyLockAvailability() {
+// The same figures as in earthShadowGlsl, for the readout's word on eclipses.
+const SUN_ANGULAR_RADIUS_DEG = 959.63 / 3600;
+const EARTH_SHADOW_RADIUS_KM = 6378.137 * (1 + 1 / 85);
+
+/** How deep in the Earth's shadow the Moon is, in words, or '' if it is not. */
+function eclipseDescription(earth, sun) {
+    const dist = earth.length();
+    const sep = earth.angleTo(sun) / DEG;                       // seen from the Moon's centre
+    const umbra = Math.asin(EARTH_SHADOW_RADIUS_KM / MOON_RADIUS_KM / dist) / DEG - SUN_ANGULAR_RADIUS_DEG;
+    const penumbra = umbra + 2 * SUN_ANGULAR_RADIUS_DEG;
+    const moon = Math.asin(1 / dist) / DEG;                     // the Moon's own radius, on that scale
+    if (sep + moon < umbra) return 'totally eclipsed, wholly in the Earth’s umbra';
+    if (sep - moon < umbra) return 'partially eclipsed, ' + (sep < umbra ? 'mostly' : 'partly') + ' in the umbra';
+    if (sep - moon < penumbra) return 'in the Earth’s penumbra (a faint dimming)';
+    return '';
+}
+
+/** Show the jump button only while the Moon is actually above the horizon. */
+function updateRealSkyStatus() {
     const v = currentMoonView();
-    const btn = document.getElementById('btn-sky-lock');
-    const status = document.getElementById('sky-lock-status');
+    const btn = document.getElementById('btn-sky-jump');
+    const status = document.getElementById('sky-status');
     if (!btn || !status) return;
     const up = v.altitude > 0;
-    btn.style.display = (up || skyLock) ? 'block' : 'none';
-    if (!skyLock) btn.textContent = lockButtonLabel();
+    btn.style.display = up ? 'block' : 'none';
+    btn.textContent = jumpButtonLabel();
     if (up) {
         status.textContent = 'up, ' + v.altitude.toFixed(0) + '\u00b0 above ' + compassPoint(v.azimuth);
     } else {
@@ -2115,21 +2210,38 @@ function updateSkyLockAvailability() {
     }
 }
 
-/** Recompute and re-apply. Called every frame so the view tracks the real sky. */
-function refreshSkyLock() {
-    skyLock = currentMoonView();
-    applyRealMoonOrientation(skyLock);
-    if (realStarfield) orientStarfield(skyLock, observer.lat, observer.elev);
+/**
+ * Pose everything as the real sky has it at `date` (default now): the Moon's
+ * face and tilt, the Sun, the stars and the Earth's shadow. Then hand the
+ * controls straight back -- it is a snapshot to start from, not a lock.
+ */
+function jumpToRealSky(date) {
+    const v = computeMoonView(date || new Date(), observer.lat, observer.lon, observer.elev);
 
-    const now = performance.now();
-    if (now < skyLockReadoutDue) return;        // the text only needs ~1 Hz
-    skyLockReadoutDue = now + 1000;
-    const v = skyLock;
-    document.getElementById('sky-lock-readout').innerHTML = [
+    // The pose is built in WORLD axes on the assumption that the camera sits on
+    // +Z with +Y up -- that is what makes "up" mean the zenith -- so put the
+    // camera back there first, and stop anything that would move it on.
+    resetting = false;
+    setCameraDefaultPosition();
+    camera.up.set(0, 1, 0);
+    controls.target.set(0, 0, 0);
+    controls.update();
+    document.getElementById('rotation-toggle').checked = false;
+
+    applyRealMoonOrientation(v);
+    if (realStarfield) orientStarfield(v, observer.lat, observer.elev);
+    const real = realSkyVectors(v, observer.lat, observer.elev);
+    earthFromMoon.copy(real.earth);
+    setSunFromViewDirection(real.sun);
+
+    const eclipse = eclipseDescription(real.earth, real.sun);
+    const readout = document.getElementById('sky-readout');
+    readout.innerHTML = [
         timeAtObserver(v.date)
             + ' &middot; alt ' + v.altitude.toFixed(1) + '\u00b0 az ' + v.azimuth.toFixed(0)
             + '\u00b0 (' + compassPoint(v.azimuth) + ')',
         phaseName(v) + ' &middot; ' + (v.illuminated * 100).toFixed(1) + '% lit',
+        ...(eclipse ? [eclipse] : []),
         'lit edge points ' + clockPosition(v.limbFromZenith),
         'north pole ' + clockPosition(v.poleFromZenith)
             + ' (' + (v.poleFromZenith >= 0 ? '+' : '') + v.poleFromZenith.toFixed(1) + '\u00b0)',
@@ -2138,32 +2250,6 @@ function refreshSkyLock() {
         'timezone ' + (observer.zone ? observer.zone + ' (' + utcOffsetLabel(observer.zone) + ')' : utcOffsetLabel('')),
         'seen from ' + observerDescription()
     ].join('<br>');
-}
-
-function toggleSkyLock() {
-    const btn = document.getElementById('btn-sky-lock');
-    const readout = document.getElementById('sky-lock-readout');
-    if (skyLock) {
-        skyLock = null;
-        controls.enableRotate = true;
-        btn.textContent = lockButtonLabel();
-        readout.style.display = 'none';
-        updateSkyLockAvailability();
-        return;
-    }
-    // The orientation is expressed in WORLD axes and assumes the camera sits on
-    // +Z with +Y up -- that is what makes "up" mean the zenith. If the user has
-    // orbited away from there the pose would be meaningless, so pin the camera
-    // back and disable rotation. Zoom still works.
-    setCameraDefaultPosition();
-    camera.up.set(0, 1, 0);
-    controls.target.set(0, 0, 0);
-    controls.enableRotate = false;
-    controls.update();
-    document.getElementById('rotation-toggle').checked = false;
-
-    refreshSkyLock();
-    btn.textContent = 'Unlock (free view)';
     readout.style.display = 'block';
 }
 
@@ -2176,7 +2262,7 @@ function useDeviceLocation() {
                      source: 'device', zone: browserZone, place: null});
     }, function () {
         setObserver(previous);
-        document.getElementById('sky-lock-status').textContent = 'location unavailable';
+        document.getElementById('sky-status').textContent = 'location unavailable';
     });
 }
 
@@ -2217,7 +2303,7 @@ function buildPlacePicker() {
     });
 }
 
-function setupSkyLockUI() {
+function setupRealSkyUI() {
     buildPlacePicker();
     ['obs-lat', 'obs-lon'].forEach(function (id) {
         document.getElementById(id).addEventListener('change', function () {
@@ -2230,7 +2316,7 @@ function setupSkyLockUI() {
     });
     setObserver(observer);
     // The Moon rises and sets; re-check now and then so the button appears on its own.
-    setInterval(updateSkyLockAvailability, 60000);
+    setInterval(updateRealSkyStatus, 60000);
 }
 
     init();
